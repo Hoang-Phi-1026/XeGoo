@@ -9,7 +9,7 @@ $routes = [
     '/register' => ['controller' => 'AuthController', 'action' => 'showRegister'],
     '/logout' => ['controller' => 'AuthController', 'action' => 'logout'],
     '/dashboard' => ['controller' => 'DashboardController', 'action' => 'index'],
-    '/profile' => ['controller' => 'UserController', 'action' => 'profile'],
+    '/profile' => ['controller' => 'ProfileController', 'action' => 'index'],
     '/about' => ['controller' => 'HomeController', 'action' => 'about'],
 ];
 
@@ -17,6 +17,9 @@ $routes = [
 $postRoutes = [
     '/login' => ['controller' => 'AuthController', 'action' => 'showLogin'],
     '/register' => ['controller' => 'AuthController', 'action' => 'showRegister'],
+    '/profile/update' => ['controller' => 'ProfileController', 'action' => 'updateProfile'],
+    '/profile/change-password' => ['controller' => 'ProfileController', 'action' => 'changePassword'],
+    '/profile/upload-avatar' => ['controller' => 'ProfileController', 'action' => 'uploadAvatar'],
 ];
 
 // Get current URL path and remove base directory

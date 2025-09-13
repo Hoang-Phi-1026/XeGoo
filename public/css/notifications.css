@@ -1,0 +1,77 @@
+/* Added comprehensive notification styling */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    min-width: 300px;
+    max-width: 500px;
+    padding: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    animation: slideIn 0.3s ease-out;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .notification-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    color: white;
+  }
+  
+  .notification-message {
+    flex: 1;
+    font-weight: 500;
+  }
+  
+  .notification-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 15px;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+  }
+  
+  .notification-close:hover {
+    opacity: 1;
+  }
+  
+  .notification-success {
+    background: linear-gradient(135deg, #10b981, #059669);
+  }
+  
+  .notification-error {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+  }
+  
+  .notification-warning {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+  }
+  
+  .notification-info {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+  }
+  
+  /* Form error styling */
+  .form-group input.error,
+  .form-group textarea.error {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+  }
+  
