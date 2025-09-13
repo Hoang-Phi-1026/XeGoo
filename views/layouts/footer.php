@@ -1,0 +1,77 @@
+</main>
+    
+    <!-- Restructured footer to match CSS classes -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="company-logo">
+                        <div class="company-logo-icon">XG</div>
+                        <span class="company-name">XeGoo</span>
+                    </div>
+                    <p>Nền tảng đặt vé xe liên tỉnh hàng đầu Việt Nam. Chúng tôi cam kết mang đến trải nghiệm di chuyển an toàn, tiện lợi và thoải mái nhất cho khách hàng.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Dịch vụ</h3>
+                    <ul class="footer-links">
+                        <li><a href="<?php echo BASE_URL; ?>/booking"><i class="fas fa-bus"></i> Đặt vé xe</a></li>
+                        <li><a href="<?php echo BASE_URL; ?>/routes"><i class="fas fa-route"></i> Tuyến đường</a></li>
+                        <li><a href="<?php echo BASE_URL; ?>/schedule"><i class="fas fa-clock"></i> Lịch trình</a></li>
+                        <li><a href="<?php echo BASE_URL; ?>/promotions"><i class="fas fa-gift"></i> Khuyến mãi</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Hỗ trợ</h3>
+                    <ul class="footer-links">
+                        <li><a href="<?php echo BASE_URL; ?>/faq"><i class="fas fa-question-circle"></i> Câu hỏi thường gặp</a></li>
+                        <li><a href="<?php echo BASE_URL; ?>/help"><i class="fas fa-life-ring"></i> Trung tâm trợ giúp</a></li>
+                        <li><a href="<?php echo BASE_URL; ?>/refund"><i class="fas fa-undo"></i> Chính sách hoàn vé</a></li>
+                        <li><a href="<?php echo BASE_URL; ?>/terms"><i class="fas fa-file-contract"></i> Điều khoản sử dụng</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Liên hệ</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <span>123 Đường ABC, Quận 1, TP.HCM</span>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                            <span>1900 1234</span>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <span>support@xegoo.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                            <span>24/7 - Hỗ trợ khách hàng</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <?php echo date('Y'); ?> XeGoo. Tất cả quyền được bảo lưu.</p>
+                <ul class="footer-bottom-links">
+                    <li><a href="<?php echo BASE_URL; ?>/privacy">Chính sách bảo mật</a></li>
+                    <li><a href="<?php echo BASE_URL; ?>/terms">Điều khoản</a></li>
+                    <li><a href="<?php echo BASE_URL; ?>/sitemap">Sơ đồ trang</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="<?php echo BASE_URL; ?>/public/js/main.js"></script>
+</body>
+</html>
