@@ -9,12 +9,14 @@ if (session_status() === PHP_SESSION_NONE) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XeGoo - Đặt vé xe liên tỉnh</title>
-    <!-- Updated CSS includes and added Google Fonts -->
+    <!-- Updated CSS includes with new design system -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/main.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/header.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/footer.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/notifications.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" href="<?php echo BASE_URL; ?>/public/favicon.ico" type="image/x-icon">
     
@@ -25,6 +27,8 @@ if (session_status() === PHP_SESSION_NONE) {
         echo '<link rel="stylesheet" href="' . BASE_URL . '/public/css/login.css">';
     } elseif (strpos($current_url, '/register') !== false) {
         echo '<link rel="stylesheet" href="' . BASE_URL . '/public/css/register.css">';
+    } elseif (strpos($current_url, '/profile') !== false) {
+        echo '<link rel="stylesheet" href="' . BASE_URL . '/public/css/profile.css">';
     } else {
         echo '<link rel="stylesheet" href="' . BASE_URL . '/public/css/home.css">';
     }
@@ -115,22 +119,29 @@ if (session_status() === PHP_SESSION_NONE) {
     </header>
 
     <main>
+        <!-- Replaced PHP alert divs with JavaScript notification system -->
+        <script src="<?php echo BASE_URL; ?>/public/js/notifications.js"></script>
+        <script>
+        // Display session messages using JavaScript notifications
         <?php
-        // Display session messages
         if (isset($_SESSION['success'])) {
-            echo '<div class="alert alert-success">' . $_SESSION['success'] . '</div>';
+            echo 'showSuccess("' . addslashes($_SESSION['success']) . '");';
             unset($_SESSION['success']);
         }
         if (isset($_SESSION['error'])) {
-            echo '<div class="alert alert-error">' . $_SESSION['error'] . '</div>';
+            echo 'showError("' . addslashes($_SESSION['error']) . '");';
             unset($_SESSION['error']);
         }
         if (isset($_SESSION['warning'])) {
-            echo '<div class="alert alert-warning">' . $_SESSION['warning'] . '</div>';
+            echo 'showWarning("' . addslashes($_SESSION['warning']) . '");';
             unset($_SESSION['warning']);
         }
         if (isset($_SESSION['info'])) {
-            echo '<div class="alert alert-info">' . $_SESSION['info'] . '</div>';
+            echo 'showInfo("' . addslashes($_SESSION['info']) . '");';
             unset($_SESSION['info']);
         }
         ?>
+        </script>
+    </main>
+</body>
+</html>

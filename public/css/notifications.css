@@ -1,77 +1,225 @@
-/* Added comprehensive notification styling */
-.notification {
+/* Modern notification system styling using design tokens */
+.notification-container {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    min-width: 300px;
-    max-width: 500px;
-    padding: 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    top: var(--space-lg);
+    right: var(--space-lg);
     z-index: 1000;
-    animation: slideIn 0.3s ease-out;
+    pointer-events: none;
   }
   
-  @keyframes slideIn {
-    from {
-      transform: translateX(100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
+  .notification {
+    position: relative;
+    min-width: 320px;
+    max-width: 480px;
+    margin-bottom: var(--space-md);
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    pointer-events: auto;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .notification-show {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  
+  .notification-hide {
+    transform: translateX(100%);
+    opacity: 0;
   }
   
   .notification-content {
     display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+  }
+  
+  .notification-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 16px 20px;
-    color: white;
+    justify-content: center;
+    border-radius: 50%;
+    margin-top: 2px;
   }
   
   .notification-message {
     flex: 1;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--gray-700);
     font-weight: 500;
   }
   
   .notification-close {
+    flex-shrink: 0;
     background: none;
     border: none;
-    color: white;
-    font-size: 20px;
+    color: var(--gray-400);
     cursor: pointer;
-    padding: 0;
-    margin-left: 15px;
-    opacity: 0.8;
-    transition: opacity 0.2s;
+    padding: var(--space-xs);
+    border-radius: var(--radius-sm);
+    transition: all 0.2s ease;
+    margin-top: -2px;
   }
   
   .notification-close:hover {
-    opacity: 1;
+    color: var(--gray-600);
+    background-color: var(--gray-100);
   }
   
+  /* Notification Types */
   .notification-success {
-    background: linear-gradient(135deg, #10b981, #059669);
+    border-left: 4px solid var(--success);
+  }
+  
+  .notification-success .notification-icon {
+    color: var(--success);
+    background-color: rgba(16, 185, 129, 0.1);
   }
   
   .notification-error {
-    background: linear-gradient(135deg, #ef4444, #dc2626);
+    border-left: 4px solid var(--error);
+  }
+  
+  .notification-error .notification-icon {
+    color: var(--error);
+    background-color: rgba(239, 68, 68, 0.1);
   }
   
   .notification-warning {
-    background: linear-gradient(135deg, #f59e0b, #d97706);
+    border-left: 4px solid var(--warning);
+  }
+  
+  .notification-warning .notification-icon {
+    color: var(--warning);
+    background-color: rgba(245, 158, 11, 0.1);
   }
   
   .notification-info {
-    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    border-left: 4px solid var(--info);
   }
   
-  /* Form error styling */
+  .notification-info .notification-icon {
+    color: var(--info);
+    background-color: rgba(59, 130, 246, 0.1);
+  }
+  
+  /* Form Error Styling */
   .form-group input.error,
-  .form-group textarea.error {
-    border-color: #ef4444;
+  .form-group textarea.error,
+  .form-group select.error {
+    border-color: var(--error);
     box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+  }
+  
+  .form-error {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    margin-top: var(--space-xs);
+    font-size: 0.75rem;
+    color: var(--error);
+  }
+  
+  .form-error svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+  
+  /* Success/Error Messages in Forms */
+  .form-success {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    margin-top: var(--space-xs);
+    font-size: 0.75rem;
+    color: var(--success);
+  }
+  
+  .form-success svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .notification-container {
+      top: var(--space-md);
+      right: var(--space-md);
+      left: var(--space-md);
+    }
+  
+    .notification {
+      min-width: auto;
+      max-width: none;
+      width: 100%;
+    }
+  
+    .notification-content {
+      padding: var(--space-md);
+    }
+  }
+  
+  /* Loading States */
+  .notification-loading {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .notification-loading::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    animation: loading 2s infinite;
+  }
+  
+  @keyframes loading {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+  
+  /* Notification Progress Bar */
+  .notification-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background-color: var(--primary);
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    transition: width linear;
+  }
+  
+  .notification-success .notification-progress {
+    background-color: var(--success);
+  }
+  
+  .notification-error .notification-progress {
+    background-color: var(--error);
+  }
+  
+  .notification-warning .notification-progress {
+    background-color: var(--warning);
+  }
+  
+  .notification-info .notification-progress {
+    background-color: var(--info);
   }
   
