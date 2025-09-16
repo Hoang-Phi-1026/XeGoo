@@ -11,6 +11,23 @@ $routes = [
     '/dashboard' => ['controller' => 'DashboardController', 'action' => 'index'],
     '/profile' => ['controller' => 'ProfileController', 'action' => 'index'],
     '/about' => ['controller' => 'HomeController', 'action' => 'about'],
+    '/vehicles' => ['controller' => 'VehicleController', 'action' => 'index'],
+    '/vehicles/create' => ['controller' => 'VehicleController', 'action' => 'create'],
+    '/vehicles/{id}' => ['controller' => 'VehicleController', 'action' => 'show'],
+    '/vehicles/{id}/edit' => ['controller' => 'VehicleController', 'action' => 'edit'],
+    '/vehicles/{id}/delete' => ['controller' => 'VehicleController', 'action' => 'delete'],
+    '/routes' => ['controller' => 'RouteController', 'action' => 'index'],
+    '/routes/create' => ['controller' => 'RouteController', 'action' => 'create'],
+    '/routes/{id}' => ['controller' => 'RouteController', 'action' => 'show'],
+    '/routes/{id}/edit' => ['controller' => 'RouteController', 'action' => 'edit'],
+    '/routes/{id}/delete' => ['controller' => 'RouteController', 'action' => 'delete'],
+    '/users' => ['controller' => 'UserController', 'action' => 'index'],
+    '/users/create' => ['controller' => 'UserController', 'action' => 'create'],
+    '/users/export' => ['controller' => 'UserController', 'action' => 'export'],
+    '/users/show/{id}' => ['controller' => 'UserController', 'action' => 'show'],
+    '/users/edit/{id}' => ['controller' => 'UserController', 'action' => 'edit'],
+    '/users/delete/{id}' => ['controller' => 'UserController', 'action' => 'delete'],
+    '/users/restore/{id}' => ['controller' => 'UserController', 'action' => 'restore'],
 ];
 
 // Handle POST requests
@@ -20,6 +37,12 @@ $postRoutes = [
     '/profile/update' => ['controller' => 'ProfileController', 'action' => 'updateProfile'],
     '/profile/change-password' => ['controller' => 'ProfileController', 'action' => 'changePassword'],
     '/profile/upload-avatar' => ['controller' => 'ProfileController', 'action' => 'uploadAvatar'],
+    '/vehicles/store' => ['controller' => 'VehicleController', 'action' => 'store'],
+    '/vehicles/{id}/update' => ['controller' => 'VehicleController', 'action' => 'update'],
+    '/routes/store' => ['controller' => 'RouteController', 'action' => 'store'],
+    '/routes/{id}/update' => ['controller' => 'RouteController', 'action' => 'update'],
+    '/users/store' => ['controller' => 'UserController', 'action' => 'store'],
+    '/users/update/{id}' => ['controller' => 'UserController', 'action' => 'update'],
 ];
 
 // Get current URL path and remove base directory
@@ -104,8 +127,7 @@ if (!$routeFound) {
     error_log("Router - No route found for: $method $path");
     http_response_code(404);
     
-    // Check if 404 error page exists
-    $errorFile = __DIR__ . '/views/errors/404.php';
+    $errorFile = __DIR__ . '/error/404.php';
     if (file_exists($errorFile)) {
         include $errorFile;
     } else {

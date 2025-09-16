@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/../config/config.php';
+
 class ProfileController {
     private $db;
     
@@ -9,7 +11,7 @@ class ProfileController {
     public function index() {
         // Check if user is logged in
         if (!isset($_SESSION['user_id'])) {
-            header('Location: /xegoo/login');
+            header('Location: ' . BASE_URL . '/login');
             exit;
         }
         
@@ -19,7 +21,7 @@ class ProfileController {
         
         if (!$user) {
             session_destroy();
-            header('Location: /xegoo/login?error=' . urlencode('Tài khoản không tồn tại'));
+            header('Location: ' . BASE_URL . '/login?error=' . urlencode('Tài khoản không tồn tại'));
             exit;
         }
         
@@ -28,12 +30,12 @@ class ProfileController {
     
     public function updateProfile() {
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-            header('Location: /xegoo/profile');
+            header('Location: ' . BASE_URL . '/profile');
             exit;
         }
         
         if (!isset($_SESSION['user_id'])) {
-            header('Location: /xegoo/login');
+            header('Location: ' . BASE_URL . '/login');
             exit;
         }
         
@@ -46,19 +48,19 @@ class ProfileController {
         
         // Validation
         if (empty($fullname) || empty($email)) {
-            header('Location: /xegoo/profile?error=' . urlencode('Vui lòng điền đầy đủ thông tin bắt buộc'));
+            header('Location: ' . BASE_URL . '/profile?error=' . urlencode('Vui lòng điền đầy đủ thông tin bắt buộc'));
             exit;
         }
         
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            header('Location: /xegoo/profile?error=' . urlencode('Email không hợp lệ'));
+            header('Location: ' . BASE_URL . '/profile?error=' . urlencode('Email không hợp lệ'));
             exit;
         }
         
         $stmt = $this->db->prepare("SELECT maNguoiDung FROM nguoidung WHERE eMail = ? AND maNguoiDung != ?");
         $stmt->execute([$email, $_SESSION['user_id']]);
         if ($stmt->fetch()) {
-            header('Location: /xegoo/profile?error=' . urlencode('Email đã được sử dụng bởi tài khoản khác'));
+            header('Location: ' . BASE_URL . '/profile?error=' . urlencode('Email đã được sử dụng bởi tài khoản khác'));
             exit;
         }
         
@@ -67,7 +69,7 @@ class ProfileController {
             $stmt = $this->db->prepare("SELECT maNguoiDung FROM nguoidung WHERE soDienThoai = ? AND maNguoiDung != ?");
             $stmt->execute([$phone, $_SESSION['user_id']]);
             if ($stmt->fetch()) {
-                header('Location: /xegoo/profile?error=' . urlencode('Số điện thoại đã được sử dụng bởi tài khoản khác'));
+                header('Location: ' . BASE_URL . '/profile?error=' . urlencode('Số điện thoại đã được sử dụng bởi tài khoản khác'));
                 exit;
             }
         }
@@ -80,21 +82,21 @@ class ProfileController {
             $_SESSION['user_fullname'] = $fullname;
             $_SESSION['user_email'] = $email;
             
-            header('Location: /xegoo/profile?success=' . urlencode('Cập nhật thông tin thành công'));
+            header('Location: ' . BASE_URL . '/profile?success=' . urlencode('Cập nhật thông tin thành công'));
         } catch (PDOException $e) {
-            header('Location: /xegoo/profile?error=' . urlencode('Có lỗi xảy ra khi cập nhật thông tin'));
+            header('Location: ' . BASE_URL . '/profile?error=' . urlencode('Có lỗi xảy ra khi cập nhật thông tin'));
         }
         exit;
     }
     
     public function changePassword() {
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-            header('Location: /xegoo/profile');
+            header('Location: ' . BASE_URL . '/profile');
             exit;
         }
         
         if (!isset($_SESSION['user_id'])) {
-            header('Location: /xegoo/login');
+            header('Location: ' . BASE_URL . '/login');
             exit;
         }
         
@@ -104,17 +106,17 @@ class ProfileController {
         
         // Validation
         if (empty($currentPassword) || empty($newPassword) || empty($confirmPassword)) {
-            header('Location: /xegoo/profile?error=' . urlencode('Vui lòng điền đầy đủ thông tin'));
+            header('Location: ' . BASE_URL . '/profile?error=' . urlencode('Vui lòng điền đầy đủ thông tin'));
             exit;
         }
         
         if ($newPassword !== $confirmPassword) {
-            header('Location: /xegoo/profile?error=' . urlencode('Mật khẩu xác nhận không khớp'));
+            header('Location: ' . BASE_URL . '/profile?error=' . urlencode('Mật khẩu xác nhận không khớp'));
             exit;
         }
         
         if (strlen($newPassword) < 6) {
-            header('Location: /xegoo/profile?error=' . urlencode('Mật khẩu mới phải có ít nhất 6 ký tự'));
+            header('Location: ' . BASE_URL . '/profile?error=' . urlencode('Mật khẩu mới phải có ít nhất 6 ký tự'));
             exit;
         }
         
@@ -124,7 +126,7 @@ class ProfileController {
         
         // Note: Database stores plain text passwords, need to check accordingly
         if (!$user || $currentPassword !== $user['matKhau']) {
-            header('Location: /xegoo/profile?error=' . urlencode('Mật khẩu hiện tại không đúng'));
+            header('Location: ' . BASE_URL . '/profile?error=' . urlencode('Mật khẩu hiện tại không đúng'));
             exit;
         }
         
@@ -133,26 +135,26 @@ class ProfileController {
             $stmt = $this->db->prepare("UPDATE nguoidung SET matKhau = ? WHERE maNguoiDung = ?");
             $stmt->execute([$newPassword, $_SESSION['user_id']]);
             
-            header('Location: /xegoo/profile?success=' . urlencode('Đổi mật khẩu thành công'));
+            header('Location: ' . BASE_URL . '/profile?success=' . urlencode('Đổi mật khẩu thành công'));
         } catch (PDOException $e) {
-            header('Location: /xegoo/profile?error=' . urlencode('Có lỗi xảy ra khi đổi mật khẩu'));
+            header('Location: ' . BASE_URL . '/profile?error=' . urlencode('Có lỗi xảy ra khi đổi mật khẩu'));
         }
         exit;
     }
     
     public function uploadAvatar() {
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-            header('Location: /xegoo/profile');
+            header('Location: ' . BASE_URL . '/profile');
             exit;
         }
         
         if (!isset($_SESSION['user_id'])) {
-            header('Location: /xegoo/login');
+            header('Location: ' . BASE_URL . '/login');
             exit;
         }
         
         if (!isset($_FILES['avatar']) || $_FILES['avatar']['error'] !== UPLOAD_ERR_OK) {
-            header('Location: /xegoo/profile?error=' . urlencode('Vui lòng chọn file ảnh'));
+            header('Location: ' . BASE_URL . '/profile?error=' . urlencode('Vui lòng chọn file ảnh'));
             exit;
         }
         
@@ -162,13 +164,13 @@ class ProfileController {
         
         // Validate file type
         if (!in_array($file['type'], $allowedTypes)) {
-            header('Location: /xegoo/profile?error=' . urlencode('Chỉ chấp nhận file ảnh (JPG, PNG, GIF)'));
+            header('Location: ' . BASE_URL . '/profile?error=' . urlencode('Chỉ chấp nhận file ảnh (JPG, PNG, GIF)'));
             exit;
         }
         
         // Validate file size
         if ($file['size'] > $maxSize) {
-            header('Location: /xegoo/profile?error=' . urlencode('File ảnh không được vượt quá 5MB'));
+            header('Location: ' . BASE_URL . '/profile?error=' . urlencode('File ảnh không được vượt quá 5MB'));
             exit;
         }
         
@@ -198,12 +200,12 @@ class ProfileController {
                 $stmt = $this->db->prepare("UPDATE nguoidung SET avt = ? WHERE maNguoiDung = ?");
                 $stmt->execute([$uploadPath, $_SESSION['user_id']]);
                 
-                header('Location: /xegoo/profile?success=' . urlencode('Cập nhật ảnh đại diện thành công'));
+                header('Location: ' . BASE_URL . '/profile?success=' . urlencode('Cập nhật ảnh đại diện thành công'));
             } else {
-                header('Location: /xegoo/profile?error=' . urlencode('Có lỗi xảy ra khi tải ảnh lên'));
+                header('Location: ' . BASE_URL . '/profile?error=' . urlencode('Có lỗi xảy ra khi tải ảnh lên'));
             }
         } catch (PDOException $e) {
-            header('Location: /xegoo/profile?error=' . urlencode('Có lỗi xảy ra khi cập nhật ảnh đại diện'));
+            header('Location: ' . BASE_URL . '/profile?error=' . urlencode('Có lỗi xảy ra khi cập nhật ảnh đại diện'));
         }
         exit;
     }

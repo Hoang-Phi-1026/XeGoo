@@ -9,7 +9,8 @@ require_once __DIR__ . '/../layouts/header.php';
         <div class="container">
             <div class="hero-content">
                 <div class="hero-badge">
-                    <span class="badge-text">🚌 Nền tảng đặt vé #1 Việt Nam</span>
+                    <i class="fas fa-bus"></i>
+                    <span class="badge-text">Nền tảng đặt vé #1 Việt Nam</span>
                 </div>
                 <h1 class="hero-title">
                     Đặt vé xe liên tỉnh 
@@ -64,6 +65,7 @@ require_once __DIR__ . '/../layouts/header.php';
                             Đặt vé ngay
                         </a>
                         <a href="<?php echo BASE_URL; ?>/my-tickets" class="btn btn-secondary btn-lg">
+                            <i class="fas fa-list"></i>
                             Vé của tôi
                         </a>
                     <?php else: ?>
@@ -72,15 +74,13 @@ require_once __DIR__ . '/../layouts/header.php';
                             Đăng ký ngay
                         </a>
                         <a href="<?php echo BASE_URL; ?>/login" class="btn btn-secondary btn-lg">
+                            <i class="fas fa-sign-in-alt"></i>
                             Đăng nhập
                         </a>
                     <?php endif; ?>
                 </div>
             </div>
             
-            <div class="hero-image">
-                <img src="/placeholder.svg?height=500&width=600" alt="XeGoo Bus Travel" class="hero-img">
-            </div>
         </div>
     </section>
 
@@ -175,19 +175,19 @@ require_once __DIR__ . '/../layouts/header.php';
         <div class="container">
             <div class="stats-grid grid grid-cols-2 lg:grid-cols-4 gap-lg">
                 <div class="stat-item text-center">
-                    <div class="stat-number text-primary">50K+</div>
+                    <div class="stat-number">50K+</div>
                     <div class="stat-label">Khách hàng tin tưởng</div>
                 </div>
                 <div class="stat-item text-center">
-                    <div class="stat-number text-primary">200+</div>
+                    <div class="stat-number">200+</div>
                     <div class="stat-label">Tuyến đường</div>
                 </div>
                 <div class="stat-item text-center">
-                    <div class="stat-number text-primary">100+</div>
+                    <div class="stat-number">100+</div>
                     <div class="stat-label">Nhà xe đối tác</div>
                 </div>
                 <div class="stat-item text-center">
-                    <div class="stat-number text-primary">99%</div>
+                    <div class="stat-number">99%</div>
                     <div class="stat-label">Khách hàng hài lòng</div>
                 </div>
             </div>
@@ -251,12 +251,12 @@ require_once __DIR__ . '/../layouts/header.php';
                 </p>
                 <div class="cta-actions">
                     <?php if (!isset($_SESSION['user_id'])): ?>
-                        <a href="<?php echo BASE_URL; ?>/register" class="btn btn-lg" style="background: white; color: var(--primary);">
+                        <a href="<?php echo BASE_URL; ?>/register" class="btn btn-lg">
                             <i class="fas fa-user-plus"></i>
                             Đăng ký miễn phí
                         </a>
                     <?php else: ?>
-                        <a href="<?php echo BASE_URL; ?>/booking" class="btn btn-lg" style="background: white; color: var(--primary);">
+                        <a href="<?php echo BASE_URL; ?>/booking" class="btn btn-lg">
                             <i class="fas fa-ticket-alt"></i>
                             Đặt vé ngay
                         </a>

@@ -17,6 +17,10 @@ if (session_status() === PHP_SESSION_NONE) {
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/header.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/footer.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/notifications.css">
+    <!-- Added theme toggle CSS -->
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/theme-toggle.css">
+    <!-- Added vehicle management CSS -->
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/vehicles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" href="<?php echo BASE_URL; ?>/public/favicon.ico" type="image/x-icon">
     
@@ -53,7 +57,22 @@ if (session_status() === PHP_SESSION_NONE) {
                     switch ($vai_tro) {
                         case 1: // Quản Trị Viên
                             ?>
-                            <li class="nav-item"><a href="<?php echo BASE_URL; ?>/admin" class="nav-link">Quản trị</a></li>
+                            
+                            <li class="nav-item"><a href="<?php echo BASE_URL;  ?>/vehicles" class="nav-link">Quản Lý Phương Tiện</a></li>
+                                  
+                            
+                            <li class="nav-item"><a href="<?php echo BASE_URL; ?>/routes"  class="nav-link" >Quản lý Tuyến Đường</a></li>
+    
+                            <!-- Added user management navigation for admin -->
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link">Quản lý Người Dùng</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a href="<?php echo BASE_URL; ?>/users">Danh Sách Người Dùng</a></li>
+                                    <li><a href="<?php echo BASE_URL; ?>/users/create">Thêm Người Dùng Mới</a></li>
+                                    <li><a href="<?php echo BASE_URL; ?>/users/export">Xuất Danh Sách</a></li>
+                                </ul>
+                            </li>
+                            
                             <li class="nav-item"><a href="<?php echo BASE_URL; ?>/dashboard" class="nav-link">Dashboard</a></li>
                             <?php
                             break;
@@ -121,6 +140,8 @@ if (session_status() === PHP_SESSION_NONE) {
     <main>
         <!-- Replaced PHP alert divs with JavaScript notification system -->
         <script src="<?php echo BASE_URL; ?>/public/js/notifications.js"></script>
+        <!-- Added theme toggle JavaScript -->
+        <script src="<?php echo BASE_URL; ?>/public/js/theme-toggle.js"></script>
         <script>
         // Display session messages using JavaScript notifications
         <?php
