@@ -21,6 +21,17 @@ $routes = [
     '/routes/{id}' => ['controller' => 'RouteController', 'action' => 'show'],
     '/routes/{id}/edit' => ['controller' => 'RouteController', 'action' => 'edit'],
     '/routes/{id}/delete' => ['controller' => 'RouteController', 'action' => 'delete'],
+    '/schedules' => ['controller' => 'ScheduleController', 'action' => 'index'],
+    '/schedules/create' => ['controller' => 'ScheduleController', 'action' => 'create'],
+    '/schedules/generate-trips' => ['controller' => 'ScheduleController', 'action' => 'generateTrips'],
+    '/schedules/{id}' => ['controller' => 'ScheduleController', 'action' => 'show'],
+    '/schedules/{id}/edit' => ['controller' => 'ScheduleController', 'action' => 'edit'],
+    '/schedules/{id}/delete' => ['controller' => 'ScheduleController', 'action' => 'delete'],
+    '/trips' => ['controller' => 'TripController', 'action' => 'index'],
+    '/trips/export' => ['controller' => 'TripController', 'action' => 'export'],
+    '/trips/statistics' => ['controller' => 'TripController', 'action' => 'statistics'],
+    '/trips/{id}' => ['controller' => 'TripController', 'action' => 'show'],
+    '/trips/{id}/delete' => ['controller' => 'TripController', 'action' => 'delete'],
     '/users' => ['controller' => 'UserController', 'action' => 'index'],
     '/users/create' => ['controller' => 'UserController', 'action' => 'create'],
     '/users/export' => ['controller' => 'UserController', 'action' => 'export'],
@@ -28,6 +39,13 @@ $routes = [
     '/users/edit/{id}' => ['controller' => 'UserController', 'action' => 'edit'],
     '/users/delete/{id}' => ['controller' => 'UserController', 'action' => 'delete'],
     '/users/restore/{id}' => ['controller' => 'UserController', 'action' => 'restore'],
+    '/prices' => ['controller' => 'PriceController', 'action' => 'index'],
+    '/prices/create' => ['controller' => 'PriceController', 'action' => 'create'],
+    '/prices/export' => ['controller' => 'PriceController', 'action' => 'export'],
+    '/prices/search' => ['controller' => 'PriceController', 'action' => 'search'],
+    '/prices/{id}' => ['controller' => 'PriceController', 'action' => 'show'],
+    '/prices/{id}/edit' => ['controller' => 'PriceController', 'action' => 'edit'],
+    '/prices/{id}/delete' => ['controller' => 'PriceController', 'action' => 'delete'],
 ];
 
 // Handle POST requests
@@ -41,8 +59,15 @@ $postRoutes = [
     '/vehicles/{id}/update' => ['controller' => 'VehicleController', 'action' => 'update'],
     '/routes/store' => ['controller' => 'RouteController', 'action' => 'store'],
     '/routes/{id}/update' => ['controller' => 'RouteController', 'action' => 'update'],
+    '/schedules/store' => ['controller' => 'ScheduleController', 'action' => 'store'],
+    '/schedules/{id}/update' => ['controller' => 'ScheduleController', 'action' => 'update'],
+    '/schedules/process-generate-trips' => ['controller' => 'ScheduleController', 'action' => 'processGenerateTrips'],
+    '/schedules/validate-trips' => ['controller' => 'ScheduleController', 'action' => 'validateTrips'],
+    '/trips/{id}/update-status' => ['controller' => 'TripController', 'action' => 'updateStatus'],
     '/users/store' => ['controller' => 'UserController', 'action' => 'store'],
     '/users/update/{id}' => ['controller' => 'UserController', 'action' => 'update'],
+    '/prices/store' => ['controller' => 'PriceController', 'action' => 'store'],
+    '/prices/{id}/update' => ['controller' => 'PriceController', 'action' => 'update'],
 ];
 
 // Get current URL path and remove base directory

@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/RoutePoint.php';
 
 class Route {
     
@@ -59,6 +60,17 @@ class Route {
     }
     
     /**
+     * Get route by ID with pickup/drop-off points
+     */
+    public static function getByIdWithPoints($id) {
+        $route = self::getById($id);
+        if ($route) {
+            $route['points'] = RoutePoint::getFormattedPoints($id);
+        }
+        return $route;
+    }
+    
+    /**
      * Create new route
      */
     public static function create($data) {
@@ -77,6 +89,26 @@ class Route {
         
         query($sql, $params);
         return lastInsertId();
+    }
+    
+    /**
+     * Create new route with pickup/drop-off points
+     */
+    public static function createWithPoints($data, $points = []) {
+        try {
+            // Create the route first
+            $routeId = self::create($data);
+            
+            // Then create the pickup/drop-off points if provided
+            if (!empty($points) && $routeId) {
+                RoutePoint::createMultiple($routeId, $points);
+            }
+            
+            return $routeId;
+        } catch (Exception $e) {
+            error_log("Error creating route with points: " . $e->getMessage());
+            throw $e;
+        }
     }
     
     /**
@@ -102,11 +134,47 @@ class Route {
     }
     
     /**
+     * Update route with pickup/drop-off points
+     */
+    public static function updateWithPoints($id, $data, $points = []) {
+        try {
+            // Update the route first
+            $result = self::update($id, $data);
+            
+            // Then update the pickup/drop-off points
+            if (!empty($points)) {
+                RoutePoint::createMultiple($id, $points);
+            }
+            
+            return $result;
+        } catch (Exception $e) {
+            error_log("Error updating route with points: " . $e->getMessage());
+            throw $e;
+        }
+    }
+    
+    /**
      * Delete route (set to inactive status)
      */
     public static function delete($id) {
         $sql = "UPDATE tuyenduong SET trangThai = 'Ngừng khai thác' WHERE maTuyenDuong = ?";
         return query($sql, [$id]);
+    }
+    
+    /**
+     * Delete route and its pickup/drop-off points
+     */
+    public static function deleteWithPoints($id) {
+        try {
+            // Delete pickup/drop-off points first
+            RoutePoint::deleteByRouteId($id);
+            
+            // Then set route to inactive
+            return self::delete($id);
+        } catch (Exception $e) {
+            error_log("Error deleting route with points: " . $e->getMessage());
+            throw $e;
+        }
     }
     
     /**

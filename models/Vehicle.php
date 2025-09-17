@@ -8,18 +8,20 @@ class Vehicle {
      */
     public static function getAll($status = null, $search = null) {
         try {
-            $sql = "SELECT * FROM phuongtien";
+            $sql = "SELECT p.*, lpt.tenLoaiPhuongTien, lpt.soChoMacDinh, lpt.loaiChoNgoiMacDinh, lpt.hangXe
+                    FROM phuongtien p 
+                    JOIN loaiphuongtien lpt ON p.maLoaiPhuongTien = lpt.maLoaiPhuongTien";
             $params = [];
             $conditions = [];
             
             if (!empty($search)) {
-                $conditions[] = "(bienSo LIKE ? OR loaiPhuongTien LIKE ?)";
+                $conditions[] = "(p.bienSo LIKE ? OR lpt.tenLoaiPhuongTien LIKE ?)";
                 $params[] = '%' . $search . '%';
                 $params[] = '%' . $search . '%';
             }
             
             if ($status !== null && $status !== '') {
-                $conditions[] = "trangThai = ?";
+                $conditions[] = "p.trangThai = ?";
                 $params[] = $status;
             }
             
@@ -27,7 +29,7 @@ class Vehicle {
                 $sql .= " WHERE " . implode(" AND ", $conditions);
             }
             
-            $sql .= " ORDER BY maPhuongTien DESC";
+            $sql .= " ORDER BY p.maPhuongTien DESC";
             
             error_log("[Vehicle Search] SQL: " . $sql);
             error_log("[Vehicle Search] Params: " . json_encode($params));
@@ -54,48 +56,69 @@ class Vehicle {
      * Get vehicle by ID
      */
     public static function getById($id) {
-        $sql = "SELECT * FROM phuongtien WHERE maPhuongTien = ?";
+        $sql = "SELECT p.*, lpt.tenLoaiPhuongTien, lpt.soChoMacDinh, lpt.loaiChoNgoiMacDinh, lpt.hangXe
+                FROM phuongtien p 
+                JOIN loaiphuongtien lpt ON p.maLoaiPhuongTien = lpt.maLoaiPhuongTien
+                WHERE p.maPhuongTien = ?";
         return fetch($sql, [$id]);
+    }
+    
+    public static function generateSeats($vehicleId) {
+        $sql = "CALL sp_generate_ghe(?)";
+        return query($sql, [$vehicleId]);
     }
     
     /**
      * Create new vehicle
      */
     public static function create($data) {
-        $sql = "INSERT INTO phuongtien (loaiPhuongTien, soChoNgoi, loaiChoNgoi, bienSo, trangThai) 
-                VALUES (?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO phuongtien (maLoaiPhuongTien, bienSo, trangThai) 
+                VALUES (?, ?, ?)";
         
         $params = [
-            $data['loaiPhuongTien'],
-            $data['soChoNgoi'],
-            $data['loaiChoNgoi'],
+            $data['maLoaiPhuongTien'],
             $data['bienSo'],
             $data['trangThai'] ?? 'Đang hoạt động'
         ];
         
         query($sql, $params);
-        return lastInsertId();
+        $vehicleId = lastInsertId();
+    
+        // 🔥 Gọi procedure generate ghế sau khi tạo xe
+        self::generateSeats($vehicleId);
+    
+        return $vehicleId;
     }
+    
     
     /**
      * Update vehicle
      */
     public static function update($id, $data) {
         $sql = "UPDATE phuongtien 
-                SET loaiPhuongTien = ?, soChoNgoi = ?, loaiChoNgoi = ?, bienSo = ?, trangThai = ?
+                SET maLoaiPhuongTien = ?, bienSo = ?, trangThai = ?
                 WHERE maPhuongTien = ?";
         
         $params = [
-            $data['loaiPhuongTien'],
-            $data['soChoNgoi'],
-            $data['loaiChoNgoi'],
+            $data['maLoaiPhuongTien'],
             $data['bienSo'],
             $data['trangThai'],
             $id
         ];
         
-        return query($sql, $params);
+        query($sql, $params);
+
+        $old = self::getById($id);
+        if ($data['maLoaiPhuongTien'] != $old['maLoaiPhuongTien']) {
+            // Xóa ghế cũ
+            query("DELETE FROM ghe WHERE maPhuongTien = ?", [$id]);
+            // Sinh lại ghế mới
+            self::generateSeats($id);
+        }
+
+        return true;
     }
+
     
     /**
      * Delete vehicle (set to maintenance status)
@@ -122,18 +145,18 @@ class Vehicle {
     }
     
     /**
-     * Get vehicle types
+     * Get vehicle types from loaiphuongtien table
      */
     public static function getVehicleTypes() {
-        return [
-            '7 chỗ' => '7 chỗ',
-            '16 chỗ' => '16 chỗ',
-            'Limousine' => 'Limousine',
-            'Ghế ngồi 32 chỗ' => 'Ghế ngồi 32 chỗ',
-            'Ghế ngồi 40 chỗ' => 'Ghế ngồi 40 chỗ',
-            'Giường nằm đơn' => 'Giường nằm đơn',
-            'Giường nằm đôi' => 'Giường nằm đôi'
-        ];
+        $sql = "SELECT maLoaiPhuongTien, tenLoaiPhuongTien FROM loaiphuongtien ORDER BY tenLoaiPhuongTien";
+        $types = fetchAll($sql);
+        
+        $result = [];
+        foreach ($types as $type) {
+            $result[$type['maLoaiPhuongTien']] = $type['tenLoaiPhuongTien'];
+        }
+        
+        return $result;
     }
     
     /**
@@ -142,9 +165,9 @@ class Vehicle {
     public static function getSeatTypes() {
         return [
             'Ghế ngồi' => 'Ghế ngồi',
-            'Ghế ngồi VIP' => 'Ghế ngồi VIP',
-            'Giường nằm đơn' => 'Giường nằm đơn',
-            'Giường nằm đôi' => 'Giường nằm đôi'
+            'Ghế VIP' => 'Ghế VIP',
+            'Giường đơn' => 'Giường đơn',
+            'Giường đôi' => 'Giường đôi'
         ];
     }
     
@@ -177,7 +200,11 @@ class Vehicle {
         $stats['maintenance'] = $result['maintenance'];
         
         // By vehicle type
-        $stats['by_type'] = fetchAll("SELECT loaiPhuongTien, COUNT(*) as count FROM phuongtien GROUP BY loaiPhuongTien ORDER BY count DESC");
+        $stats['by_type'] = fetchAll("SELECT lpt.tenLoaiPhuongTien, COUNT(*) as count 
+                                      FROM phuongtien p 
+                                      JOIN loaiphuongtien lpt ON p.maLoaiPhuongTien = lpt.maLoaiPhuongTien 
+                                      GROUP BY lpt.tenLoaiPhuongTien 
+                                      ORDER BY count DESC");
         
         return $stats;
     }
@@ -187,40 +214,42 @@ class Vehicle {
      */
     public static function search($criteria) {
         try {
-            $sql = "SELECT * FROM phuongtien";
+            $sql = "SELECT p.*, lpt.tenLoaiPhuongTien, lpt.soChoMacDinh, lpt.loaiChoNgoiMacDinh, lpt.hangXe
+                    FROM phuongtien p 
+                    JOIN loaiphuongtien lpt ON p.maLoaiPhuongTien = lpt.maLoaiPhuongTien";
             $params = [];
             $conditions = [];
             
             if (!empty($criteria['search'])) {
                 $searchTerm = '%' . trim($criteria['search']) . '%';
-                $conditions[] = "(bienSo LIKE ? OR loaiPhuongTien LIKE ? OR loaiChoNgoi LIKE ?)";
+                $conditions[] = "(p.bienSo LIKE ? OR lpt.tenLoaiPhuongTien LIKE ? OR lpt.loaiChoNgoiMacDinh LIKE ?)";
                 $params[] = $searchTerm;
                 $params[] = $searchTerm;
                 $params[] = $searchTerm;
             }
             
             if (!empty($criteria['vehicleType'])) {
-                $conditions[] = "loaiPhuongTien = ?";
+                $conditions[] = "p.maLoaiPhuongTien = ?";
                 $params[] = $criteria['vehicleType'];
             }
             
             if (!empty($criteria['seatType'])) {
-                $conditions[] = "loaiChoNgoi = ?";
+                $conditions[] = "lpt.loaiChoNgoiMacDinh = ?";
                 $params[] = $criteria['seatType'];
             }
             
             if (!empty($criteria['status'])) {
-                $conditions[] = "trangThai = ?";
+                $conditions[] = "p.trangThai = ?";
                 $params[] = $criteria['status'];
             }
             
             if (!empty($criteria['minSeats']) && is_numeric($criteria['minSeats'])) {
-                $conditions[] = "soChoNgoi >= ?";
+                $conditions[] = "lpt.soChoMacDinh >= ?";
                 $params[] = (int)$criteria['minSeats'];
             }
             
             if (!empty($criteria['maxSeats']) && is_numeric($criteria['maxSeats'])) {
-                $conditions[] = "soChoNgoi <= ?";
+                $conditions[] = "lpt.soChoMacDinh <= ?";
                 $params[] = (int)$criteria['maxSeats'];
             }
             
@@ -228,7 +257,7 @@ class Vehicle {
                 $sql .= " WHERE " . implode(" AND ", $conditions);
             }
             
-            $sql .= " ORDER BY maPhuongTien DESC";
+            $sql .= " ORDER BY p.maPhuongTien DESC";
             
             error_log("[Vehicle Advanced Search] SQL: " . $sql);
             error_log("[Vehicle Advanced Search] Params: " . json_encode($params));

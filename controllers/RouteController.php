@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../models/Route.php';
+require_once __DIR__ . '/../models/RoutePoint.php';
 require_once __DIR__ . '/../config/config.php';
 
 class RouteController {
@@ -53,7 +54,7 @@ class RouteController {
     public function show($id) {
         $this->checkAdminAccess();
         
-        $route = Route::getById($id);
+        $route = Route::getByIdWithPoints($id);
         
         if (!$route) {
             $_SESSION['error'] = 'Không tìm thấy tuyến đường.';
@@ -72,6 +73,7 @@ class RouteController {
         
         $statusOptions = Route::getStatusOptions();
         $popularCities = Route::getPopularCities();
+        $pointTypes = RoutePoint::getPointTypes();
         
         include __DIR__ . '/../views/routes/create.php';
     }
@@ -143,6 +145,44 @@ class RouteController {
         // Status
         $data['trangThai'] = $_POST['trangThai'] ?? 'Đang hoạt động';
         
+        $points = [];
+        
+        // Process pickup points
+        if (!empty($_POST['pickup_points'])) {
+            foreach ($_POST['pickup_points'] as $index => $pointName) {
+                if (!empty(trim($pointName))) {
+                    $points[] = [
+                        'tenDiem' => trim($pointName),
+                        'loaiDiem' => 'Đón',
+                        'diaChi' => trim($_POST['pickup_addresses'][$index] ?? ''),
+                        'thuTu' => $index + 1,
+                        'trangThai' => 'Hoạt động'
+                    ];
+                }
+            }
+        }
+        
+        // Process drop-off points
+        if (!empty($_POST['dropoff_points'])) {
+            foreach ($_POST['dropoff_points'] as $index => $pointName) {
+                if (!empty(trim($pointName))) {
+                    $points[] = [
+                        'tenDiem' => trim($pointName),
+                        'loaiDiem' => 'Trả',
+                        'diaChi' => trim($_POST['dropoff_addresses'][$index] ?? ''),
+                        'thuTu' => $index + 1,
+                        'trangThai' => 'Hoạt động'
+                    ];
+                }
+            }
+        }
+        
+        // Validate points
+        foreach ($points as $point) {
+            $pointErrors = RoutePoint::validatePoint($point);
+            $errors = array_merge($errors, $pointErrors);
+        }
+        
         if (!empty($errors)) {
             $_SESSION['error'] = implode('<br>', $errors);
             $_SESSION['form_data'] = $_POST;
@@ -150,9 +190,9 @@ class RouteController {
             exit;
         }
         
-        // Create route
+        // Create route with points
         try {
-            $routeId = Route::create($data);
+            $routeId = Route::createWithPoints($data, $points);
             $_SESSION['success'] = 'Thêm tuyến đường mới thành công.';
             header('Location: ' . BASE_URL . '/routes/' . $routeId);
         } catch (Exception $e) {
@@ -169,7 +209,7 @@ class RouteController {
     public function edit($id) {
         $this->checkAdminAccess();
         
-        $route = Route::getById($id);
+        $route = Route::getByIdWithPoints($id);
         
         if (!$route) {
             $_SESSION['error'] = 'Không tìm thấy tuyến đường.';
@@ -179,6 +219,7 @@ class RouteController {
         
         $statusOptions = Route::getStatusOptions();
         $popularCities = Route::getPopularCities();
+        $pointTypes = RoutePoint::getPointTypes();
         
         include __DIR__ . '/../views/routes/edit.php';
     }
@@ -257,6 +298,44 @@ class RouteController {
         // Status
         $data['trangThai'] = $_POST['trangThai'] ?? 'Đang hoạt động';
         
+        $points = [];
+        
+        // Process pickup points
+        if (!empty($_POST['pickup_points'])) {
+            foreach ($_POST['pickup_points'] as $index => $pointName) {
+                if (!empty(trim($pointName))) {
+                    $points[] = [
+                        'tenDiem' => trim($pointName),
+                        'loaiDiem' => 'Đón',
+                        'diaChi' => trim($_POST['pickup_addresses'][$index] ?? ''),
+                        'thuTu' => $index + 1,
+                        'trangThai' => 'Hoạt động'
+                    ];
+                }
+            }
+        }
+        
+        // Process drop-off points
+        if (!empty($_POST['dropoff_points'])) {
+            foreach ($_POST['dropoff_points'] as $index => $pointName) {
+                if (!empty(trim($pointName))) {
+                    $points[] = [
+                        'tenDiem' => trim($pointName),
+                        'loaiDiem' => 'Trả',
+                        'diaChi' => trim($_POST['dropoff_addresses'][$index] ?? ''),
+                        'thuTu' => $index + 1,
+                        'trangThai' => 'Hoạt động'
+                    ];
+                }
+            }
+        }
+        
+        // Validate points
+        foreach ($points as $point) {
+            $pointErrors = RoutePoint::validatePoint($point);
+            $errors = array_merge($errors, $pointErrors);
+        }
+        
         if (!empty($errors)) {
             $_SESSION['error'] = implode('<br>', $errors);
             $_SESSION['form_data'] = $_POST;
@@ -264,9 +343,9 @@ class RouteController {
             exit;
         }
         
-        // Update route
+        // Update route with points
         try {
-            Route::update($id, $data);
+            Route::updateWithPoints($id, $data, $points);
             $_SESSION['success'] = 'Cập nhật tuyến đường thành công.';
             header('Location: ' . BASE_URL . '/routes/' . $id);
         } catch (Exception $e) {
@@ -291,7 +370,7 @@ class RouteController {
         }
         
         try {
-            Route::delete($id);
+            Route::deleteWithPoints($id);
             $_SESSION['success'] = 'Đã chuyển tuyến đường sang trạng thái ngừng khai thác.';
         } catch (Exception $e) {
             $_SESSION['error'] = 'Có lỗi xảy ra khi xóa tuyến đường: ' . $e->getMessage();

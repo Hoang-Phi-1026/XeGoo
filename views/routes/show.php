@@ -68,6 +68,71 @@
                     </div>
                 </div>
 
+                <!-- Added pickup and drop-off points display section -->
+                <?php if (!empty($route['points']['pickup']) || !empty($route['points']['dropoff'])): ?>
+                    <div class="route-points-section">
+                        <h3><i class="fas fa-map-pin"></i> Điểm đón và trả khách</h3>
+                        
+                        <div class="points-grid">
+                            <!-- Pickup Points -->
+                            <?php if (!empty($route['points']['pickup'])): ?>
+                                <div class="points-column">
+                                    <h4><i class="fas fa-play-circle text-success"></i> Điểm đón khách</h4>
+                                    <div class="points-list">
+                                        <?php foreach ($route['points']['pickup'] as $point): ?>
+                                            <div class="point-card pickup">
+                                                <div class="point-header">
+                                                    <i class="fas fa-map-marker-alt"></i>
+                                                    <h5><?php echo htmlspecialchars($point['tenDiem']); ?></h5>
+                                                </div>
+                                                <?php if (!empty($point['diaChi'])): ?>
+                                                    <div class="point-address">
+                                                        <i class="fas fa-location-arrow"></i>
+                                                        <span><?php echo htmlspecialchars($point['diaChi']); ?></span>
+                                                    </div>
+                                                <?php endif; ?>
+                                                <div class="point-status">
+                                                    <span class="status-badge <?php echo $point['trangThai'] == 'Hoạt động' ? 'active' : 'inactive'; ?>">
+                                                        <?php echo $point['trangThai']; ?>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
+
+                            <!-- Drop-off Points -->
+                            <?php if (!empty($route['points']['dropoff'])): ?>
+                                <div class="points-column">
+                                    <h4><i class="fas fa-stop-circle text-danger"></i> Điểm trả khách</h4>
+                                    <div class="points-list">
+                                        <?php foreach ($route['points']['dropoff'] as $point): ?>
+                                            <div class="point-card dropoff">
+                                                <div class="point-header">
+                                                    <i class="fas fa-flag-checkered"></i>
+                                                    <h5><?php echo htmlspecialchars($point['tenDiem']); ?></h5>
+                                                </div>
+                                                <?php if (!empty($point['diaChi'])): ?>
+                                                    <div class="point-address">
+                                                        <i class="fas fa-location-arrow"></i>
+                                                        <span><?php echo htmlspecialchars($point['diaChi']); ?></span>
+                                                    </div>
+                                                <?php endif; ?>
+                                                <div class="point-status">
+                                                    <span class="status-badge <?php echo $point['trangThai'] == 'Hoạt động' ? 'active' : 'inactive'; ?>">
+                                                        <?php echo $point['trangThai']; ?>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                <?php endif; ?>
+
                 <?php if (!empty($route['moTa'])): ?>
                     <div class="route-description">
                         <h3><i class="fas fa-info-circle"></i> Mô tả tuyến đường</h3>
@@ -220,6 +285,106 @@ function confirmDelete(routeId) {
     color: #6c757d;
 }
 
+/* Added styles for pickup/drop-off points display */
+.route-points-section {
+    margin: 2rem 0;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+}
+
+.route-points-section h3 {
+    margin: 0 0 1.5rem 0;
+    color: #495057;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.points-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.points-column h4 {
+    margin: 0 0 1rem 0;
+    color: #495057;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.points-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.point-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.point-card.pickup {
+    border-left: 4px solid #28a745;
+}
+
+.point-card.dropoff {
+    border-left: 4px solid #dc3545;
+}
+
+.point-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.point-header i {
+    color: #6c757d;
+}
+
+.point-header h5 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #212529;
+}
+
+.point-address {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.point-address i {
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.point-status {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.text-success {
+    color: #28a745 !important;
+}
+
+.text-danger {
+    color: #dc3545 !important;
+}
+
 .route-description {
     margin: 2rem 0;
     padding: 1.5rem;
@@ -307,6 +472,11 @@ function confirmDelete(routeId) {
     .line-info {
         flex-direction: column;
         gap: 0.5rem;
+    }
+    
+    .points-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 }
 </style>

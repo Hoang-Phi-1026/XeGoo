@@ -21,6 +21,9 @@ if (session_status() === PHP_SESSION_NONE) {
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/theme-toggle.css">
     <!-- Added vehicle management CSS -->
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/vehicles.css">
+    <!-- Added schedule and trip management CSS -->
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/schedules.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/trips.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" href="<?php echo BASE_URL; ?>/public/favicon.ico" type="image/x-icon">
     
@@ -57,23 +60,22 @@ if (session_status() === PHP_SESSION_NONE) {
                     switch ($vai_tro) {
                         case 1: // Quản Trị Viên
                             ?>
-                            
-                            <li class="nav-item"><a href="<?php echo BASE_URL;  ?>/vehicles" class="nav-link">Quản Lý Phương Tiện</a></li>
-                                  
-                            
-                            <li class="nav-item"><a href="<?php echo BASE_URL; ?>/routes"  class="nav-link" >Quản lý Tuyến Đường</a></li>
-    
-                            <!-- Added user management navigation for admin -->
+
+                            <!-- Quản lý chung -->
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link">Quản lý Người Dùng</a>
+                                <a href="#" class="nav-link">Quản Lý Chung</a>
                                 <ul class="dropdown-menu">
-                                    <li class="nav-item"><a href="<?php echo BASE_URL; ?>/users">Danh Sách Người Dùng</a></li>
-                                    <li><a href="<?php echo BASE_URL; ?>/users/create">Thêm Người Dùng Mới</a></li>
-                                    <li><a href="<?php echo BASE_URL; ?>/users/export">Xuất Danh Sách</a></li>
+                                    <li class="nav-item"><a href="<?php echo BASE_URL;  ?>/vehicles" >Quản Lý Phương Tiện</a></li>
+                                    <li class="nav-item"><a href="<?php echo BASE_URL; ?>/routes" >Quản Lý Tuyến Đường</a></li>
+                                    <li class="nav-item"><a href="<?php echo BASE_URL; ?>/prices">Quản Lý Giá Vé</a></li>
+                                    <!-- Updated schedule and trip management links -->
+                                    <li class="nav-item"><a href="<?php echo BASE_URL; ?>/schedules">Quản Lý Lịch Trình</a></li>
+                                    <li class="nav-item"><a href="<?php echo BASE_URL; ?>/trips">Quản Lý Chuyến Xe</a></li>
+                                    <li class="nav-item"><a href="<?php echo BASE_URL; ?>/users">Quản Lý Người Dùng</a></li>
                                 </ul>
                             </li>
                             
-                            <li class="nav-item"><a href="<?php echo BASE_URL; ?>/dashboard" class="nav-link">Dashboard</a></li>
+                            <li class="nav-item"><a href="<?php echo BASE_URL; ?>/" class="nav-link">Thống Kê</a></li>
                             <?php
                             break;
                         case 2: // Nhân Viên Hỗ Trợ

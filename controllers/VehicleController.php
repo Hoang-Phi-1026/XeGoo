@@ -24,20 +24,30 @@ class VehicleController {
         // Get filter parameters
         $status = $_GET['status'] ?? null;
         $search = $_GET['search'] ?? '';
+        $vehicleType = $_GET['vehicleType'] ?? '';
+        $seatType = $_GET['seatType'] ?? '';
+        $minSeats = $_GET['minSeats'] ?? '';
+        $maxSeats = $_GET['maxSeats'] ?? '';
         
-        // Get vehicles
-        $vehicles = Vehicle::getAll($status);
+        // Build search criteria
+        $criteria = [
+            'search' => $search,
+            'status' => $status,
+            'vehicleType' => $vehicleType,
+            'seatType' => $seatType,
+            'minSeats' => $minSeats,
+            'maxSeats' => $maxSeats
+        ];
         
-        // Filter by search term if provided
-        if (!empty($search)) {
-            $vehicles = array_filter($vehicles, function($vehicle) use ($search) {
-                return stripos($vehicle['bienSo'], $search) !== false ||
-                       stripos($vehicle['loaiPhuongTien'], $search) !== false;
-            });
-        }
+        // Get vehicles using advanced search
+        $vehicles = Vehicle::search($criteria);
         
         // Get statistics
         $stats = Vehicle::getStats();
+        
+        // Get dropdown options
+        $vehicleTypes = Vehicle::getVehicleTypes();
+        $seatTypes = Vehicle::getSeatTypes();
         
         // Load view
         include __DIR__ . '/../views/vehicles/index.php';
@@ -67,7 +77,6 @@ class VehicleController {
         $this->checkAdminAccess();
         
         $vehicleTypes = Vehicle::getVehicleTypes();
-        $seatTypes = Vehicle::getSeatTypes();
         $statusOptions = Vehicle::getStatusOptions();
         
         include __DIR__ . '/../views/vehicles/create.php';
@@ -89,24 +98,10 @@ class VehicleController {
         $data = [];
         
         // Vehicle type
-        if (empty($_POST['loaiPhuongTien'])) {
+        if (empty($_POST['maLoaiPhuongTien'])) {
             $errors[] = 'Vui lòng chọn loại phương tiện.';
         } else {
-            $data['loaiPhuongTien'] = trim($_POST['loaiPhuongTien']);
-        }
-        
-        // Seat count
-        if (empty($_POST['soChoNgoi']) || !is_numeric($_POST['soChoNgoi']) || $_POST['soChoNgoi'] <= 0) {
-            $errors[] = 'Vui lòng nhập số chỗ ngồi hợp lệ.';
-        } else {
-            $data['soChoNgoi'] = (int)$_POST['soChoNgoi'];
-        }
-        
-        // Seat type
-        if (empty($_POST['loaiChoNgoi'])) {
-            $errors[] = 'Vui lòng chọn loại chỗ ngồi.';
-        } else {
-            $data['loaiChoNgoi'] = trim($_POST['loaiChoNgoi']);
+            $data['maLoaiPhuongTien'] = (int)$_POST['maLoaiPhuongTien'];
         }
         
         // License plate
@@ -159,7 +154,6 @@ class VehicleController {
         }
         
         $vehicleTypes = Vehicle::getVehicleTypes();
-        $seatTypes = Vehicle::getSeatTypes();
         $statusOptions = Vehicle::getStatusOptions();
         
         include __DIR__ . '/../views/vehicles/edit.php';
@@ -188,24 +182,10 @@ class VehicleController {
         $data = [];
         
         // Vehicle type
-        if (empty($_POST['loaiPhuongTien'])) {
+        if (empty($_POST['maLoaiPhuongTien'])) {
             $errors[] = 'Vui lòng chọn loại phương tiện.';
         } else {
-            $data['loaiPhuongTien'] = trim($_POST['loaiPhuongTien']);
-        }
-        
-        // Seat count
-        if (empty($_POST['soChoNgoi']) || !is_numeric($_POST['soChoNgoi']) || $_POST['soChoNgoi'] <= 0) {
-            $errors[] = 'Vui lòng nhập số chỗ ngồi hợp lệ.';
-        } else {
-            $data['soChoNgoi'] = (int)$_POST['soChoNgoi'];
-        }
-        
-        // Seat type
-        if (empty($_POST['loaiChoNgoi'])) {
-            $errors[] = 'Vui lòng chọn loại chỗ ngồi.';
-        } else {
-            $data['loaiChoNgoi'] = trim($_POST['loaiChoNgoi']);
+            $data['maLoaiPhuongTien'] = (int)$_POST['maLoaiPhuongTien'];
         }
         
         // License plate

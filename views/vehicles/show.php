@@ -36,17 +36,22 @@
                         <label>Mã phương tiện:</label>
                         <span><?php echo $vehicle['maPhuongTien']; ?></span>
                     </div>
+                    <!-- Updated to display vehicle type information from new table structure -->
                     <div class="detail-item">
                         <label>Loại phương tiện:</label>
-                        <span><?php echo htmlspecialchars($vehicle['loaiPhuongTien']); ?></span>
+                        <span><?php echo htmlspecialchars($vehicle['tenLoaiPhuongTien']); ?></span>
                     </div>
                     <div class="detail-item">
                         <label>Số chỗ ngồi:</label>
-                        <span><?php echo $vehicle['soChoNgoi']; ?> chỗ</span>
+                        <span><?php echo $vehicle['soChoMacDinh']; ?> chỗ</span>
                     </div>
                     <div class="detail-item">
                         <label>Loại chỗ ngồi:</label>
-                        <span><?php echo htmlspecialchars($vehicle['loaiChoNgoi']); ?></span>
+                        <span><?php echo htmlspecialchars($vehicle['loaiChoNgoiMacDinh']); ?></span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Hãng xe:</label>
+                        <span><?php echo htmlspecialchars($vehicle['hangXe'] ?? 'Không xác định'); ?></span>
                     </div>
                     <div class="detail-item">
                         <label>Biển số xe:</label>

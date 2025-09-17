@@ -152,7 +152,7 @@
                 <?php endif; ?>
                 <?php if (!empty($_GET['vehicleType'])): ?>
                     <span class="filter-tag">
-                        <i class="fas fa-bus"></i> <?php echo $_GET['vehicleType']; ?>
+                        <i class="fas fa-bus"></i> <?php echo $vehicleTypes[$_GET['vehicleType']] ?? $_GET['vehicleType']; ?>
                         <a href="<?php echo BASE_URL; ?>/vehicles?<?php echo http_build_query(array_diff_key($_GET, ['vehicleType' => ''])); ?>" class="remove-filter">×</a>
                     </span>
                 <?php endif; ?>
@@ -170,6 +170,7 @@
                     <th>Loại phương tiện</th>
                     <th>Số chỗ</th>
                     <th>Loại chỗ ngồi</th>
+                    <th>Hãng xe</th>
                     <th>Trạng thái</th>
                     <th>Thao tác</th>
                 </tr>
@@ -177,7 +178,7 @@
             <tbody>
                 <?php if (empty($vehicles)): ?>
                     <tr>
-                        <td colspan="7" class="no-data">
+                        <td colspan="8" class="no-data">
                             <i class="fas fa-search"></i>
                             <p>Không tìm thấy phương tiện nào phù hợp với tiêu chí tìm kiếm</p>
                             <a href="<?php echo BASE_URL; ?>/vehicles" class="btn btn-outline btn-sm">
@@ -190,9 +191,11 @@
                         <tr>
                             <td><?php echo $vehicle['maPhuongTien']; ?></td>
                             <td class="license-plate"><?php echo htmlspecialchars($vehicle['bienSo']); ?></td>
-                            <td><?php echo htmlspecialchars($vehicle['loaiPhuongTien']); ?></td>
-                            <td><?php echo $vehicle['soChoNgoi']; ?></td>
-                            <td><?php echo htmlspecialchars($vehicle['loaiChoNgoi']); ?></td>
+                            <!-- Updated to display vehicle type information from new table structure -->
+                            <td><?php echo htmlspecialchars($vehicle['tenLoaiPhuongTien']); ?></td>
+                            <td><?php echo $vehicle['soChoMacDinh']; ?></td>
+                            <td><?php echo htmlspecialchars($vehicle['loaiChoNgoiMacDinh']); ?></td>
+                            <td><?php echo htmlspecialchars($vehicle['hangXe'] ?? 'N/A'); ?></td>
                             <td>
                                 <span class="status-badge <?php echo $vehicle['trangThai'] == 'Đang hoạt động' ? 'active' : 'maintenance'; ?>">
                                     <?php echo $vehicle['trangThai']; ?>
