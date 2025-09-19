@@ -22,65 +22,111 @@ require_once __DIR__ . '/../layouts/header.php';
                     Kết nối bạn đến mọi miền đất nước với dịch vụ chất lượng cao.
                 </p>
                 
-                <!-- Quick Booking Form -->
-                <div class="quick-booking-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label class="form-label">Điểm đi</label>
-                            <select class="form-input">
-                                <option>Chọn điểm đi</option>
-                                <option>Hà Nội</option>
-                                <option>TP. Hồ Chí Minh</option>
-                                <option>Đà Nẵng</option>
-                                <option>Hải Phòng</option>
-                            </select>
+                <!-- Updated search form to use unified CSS classes and structure -->
+                <div class="search-form-container">
+                    <form id="searchForm" action="<?php echo BASE_URL; ?>/search" method="GET" class="search-form">
+                        <!-- Trip Type Selection -->
+                        <div class="trip-type-selector">
+                            <label class="trip-type-option">
+                                <input type="radio" name="trip_type" value="one_way" checked>
+                                <span>Một chiều</span>
+                            </label>
+                            <label class="trip-type-option">
+                                <input type="radio" name="trip_type" value="round_trip">
+                                <span>Khứ hồi</span>
+                            </label>
+                            <div class="trip-type-guide">
+                                <a href="#" class="text-orange-500 text-sm hover:underline">Hướng dẫn mua vé</a>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label class="form-label">Điểm đến</label>
-                            <select class="form-input">
-                                <option>Chọn điểm đến</option>
-                                <option>Hà Nội</option>
-                                <option>TP. Hồ Chí Minh</option>
-                                <option>Đà Nẵng</option>
-                                <option>Hải Phòng</option>
-                            </select>
+
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label">Điểm đi</label>
+                                <select name="from" class="form-select" required>
+                                    <option value="">Chọn điểm đi</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Điểm đến</label>
+                                <select name="to" class="form-select" required>
+                                    <option value="">Chọn điểm đến</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Ngày đi</label>
+                                <input type="date" name="departure_date" class="form-input" 
+                                       value="<?php echo date('Y-m-d'); ?>" 
+                                       min="<?php echo date('Y-m-d'); ?>" required>
+                            </div>
+                            
+                            <div class="form-group return-date-group" style="display: none;">
+                                <label class="form-label">Ngày về</label>
+                                <input type="date" name="return_date" class="form-input" 
+                                       min="<?php echo date('Y-m-d', strtotime('+1 day')); ?>">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label class="form-label">Ngày đi</label>
-                            <input type="date" class="form-input" value="<?php echo date('Y-m-d'); ?>">
+
+                        <!-- Recent searches -->
+                        <div class="recent-searches">
+                            <label class="form-label">Tìm kiếm gần đây</label>
+                            <div class="recent-searches-grid">
+                                <div class="recent-search-item">
+                                    <div class="recent-search-route">TP. Hồ Chí Minh - Đà Lạt</div>
+                                    <div class="recent-search-date">18/09/2025</div>
+                                </div>
+                                <div class="recent-search-item">
+                                    <div class="recent-search-route">An Giang - Ba Rịa - Vũng Tàu</div>
+                                    <div class="recent-search-date">11/09/2025</div>
+                                </div>
+                                <div class="recent-search-item">
+                                    <div class="recent-search-route">TP. Hồ Chí Minh - Tuy Hòa</div>
+                                    <div class="recent-search-date">Đã đi: 07/09/2025</div>
+                                </div>
+                                <div class="recent-search-item">
+                                    <div class="recent-search-route">Tuy Hòa - TP. Hồ Chí Minh</div>
+                                    <div class="recent-search-date">Đã đi: 11/09/2025</div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <button class="btn btn-primary btn-lg">
+                        
+                        <input type="hidden" name="passengers" value="1">
+                        <input type="hidden" name="is_round_trip" value="0">
+                        
+                        <div class="text-center">
+                            <button type="submit" class="search-button">
                                 <i class="fas fa-search"></i>
                                 Tìm chuyến xe
                             </button>
                         </div>
-                    </div>
+                    </form>
                 </div>
 
+                <!-- Updated hero actions to remove duplicate booking button -->
                 <div class="hero-actions">
-                    <?php if (isset($_SESSION['user_id'])): ?>
-                        <a href="<?php echo BASE_URL; ?>/booking" class="btn btn-primary btn-lg">
-                            <i class="fas fa-ticket-alt"></i>
-                            Đặt vé ngay
+                    <?php if (!isset($_SESSION['user_id'])): ?>
+                        <a href="<?php echo BASE_URL; ?>/register" class="btn btn-secondary btn-lg">
+                            <i class="fas fa-user-plus"></i>
+                            Đăng ký ngay
                         </a>
+                        <a href="<?php echo BASE_URL; ?>/login" class="btn btn-outline btn-lg">
+                            <i class="fas fa-sign-in-alt"></i>
+                            Đăng nhập
+                        </a>
+                    <?php else: ?>
                         <a href="<?php echo BASE_URL; ?>/my-tickets" class="btn btn-secondary btn-lg">
                             <i class="fas fa-list"></i>
                             Vé của tôi
                         </a>
-                    <?php else: ?>
-                        <a href="<?php echo BASE_URL; ?>/register" class="btn btn-primary btn-lg">
-                            <i class="fas fa-user-plus"></i>
-                            Đăng ký ngay
-                        </a>
-                        <a href="<?php echo BASE_URL; ?>/login" class="btn btn-secondary btn-lg">
-                            <i class="fas fa-sign-in-alt"></i>
-                            Đăng nhập
+                        <a href="<?php echo BASE_URL; ?>/profile" class="btn btn-outline btn-lg">
+                            <i class="fas fa-user"></i>
+                            Tài khoản
                         </a>
                     <?php endif; ?>
                 </div>
             </div>
-            
         </div>
     </section>
 
@@ -289,16 +335,90 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
     
-    // Quick booking form functionality
-    const quickBookingForm = document.querySelector('.quick-booking-form');
-    if (quickBookingForm) {
-        const searchBtn = quickBookingForm.querySelector('.btn-primary');
-        searchBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            showInfo('Tính năng tìm kiếm sẽ được triển khai sớm!');
+    // Load cities for dropdowns
+    loadCities();
+    
+    // Trip type toggle functionality
+    const tripTypeInputs = document.querySelectorAll('input[name="trip_type"]');
+    const returnDateGroup = document.querySelector('.return-date-group');
+    const returnDateInput = document.querySelector('input[name="return_date"]');
+    const isRoundTripInput = document.querySelector('input[name="is_round_trip"]');
+    
+    tripTypeInputs.forEach(input => {
+        input.addEventListener('change', function() {
+            if (this.value === 'round_trip') {
+                returnDateGroup.style.display = 'block';
+                returnDateInput.required = true;
+                isRoundTripInput.value = '1';
+            } else {
+                returnDateGroup.style.display = 'none';
+                returnDateInput.required = false;
+                returnDateInput.value = '';
+                isRoundTripInput.value = '0';
+            }
+        });
+    });
+
+    // Date validation
+    const departureDateInput = document.querySelector('input[name="departure_date"]');
+    const returnDateInput = document.querySelector('input[name="return_date"]');
+    
+    departureDateInput.addEventListener('change', function() {
+        const departureDate = new Date(this.value);
+        const nextDay = new Date(departureDate);
+        nextDay.setDate(nextDay.getDate() + 1);
+        
+        returnDateInput.min = nextDay.toISOString().split('T')[0];
+        
+        // Clear return date if it's before departure date
+        if (returnDateInput.value && new Date(returnDateInput.value) <= departureDate) {
+            returnDateInput.value = '';
+        }
+    });
+});
+</script>
+
+<script>
+// Load cities from API
+async function loadCities() {
+    try {
+        const response = await fetch('<?php echo BASE_URL; ?>/search/cities');
+        const cities = await response.json();
+        
+        const fromSelect = document.querySelector('select[name="from"]');
+        const toSelect = document.querySelector('select[name="to"]');
+        
+        cities.forEach(city => {
+            const option1 = new Option(city.name, city.id);
+            const option2 = new Option(city.name, city.id);
+            fromSelect.add(option1);
+            toSelect.add(option2);
+        });
+    } catch (error) {
+        console.error('Error loading cities:', error);
+        // Fallback to static cities
+        const staticCities = [
+            {id: 'Hà Nội', name: 'Hà Nội'},
+            {id: 'TP. Hồ Chí Minh', name: 'TP. Hồ Chí Minh'},
+            {id: 'Đà Nẵng', name: 'Đà Nẵng'},
+            {id: 'Hải Phòng', name: 'Hải Phòng'},
+            {id: 'Cần Thơ', name: 'Cần Thơ'},
+            {id: 'Nha Trang', name: 'Nha Trang'},
+            {id: 'Đà Lạt', name: 'Đà Lạt'},
+            {id: 'Vũng Tàu', name: 'Vũng Tàu'}
+        ];
+        
+        const fromSelect = document.querySelector('select[name="from"]');
+        const toSelect = document.querySelector('select[name="to"]');
+        
+        staticCities.forEach(city => {
+            const option1 = new Option(city.name, city.id);
+            const option2 = new Option(city.name, city.id);
+            fromSelect.add(option1);
+            toSelect.add(option2);
         });
     }
-});
+}
 </script>
 
 <?php

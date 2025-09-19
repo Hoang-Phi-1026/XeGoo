@@ -341,25 +341,25 @@ document.addEventListener('DOMContentLoaded', function() {
 <!-- Added CSS for points section styling (same as create.php) -->
 <style>
 .points-section {
-    margin-bottom: 2rem;
-    padding: 1.5rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
     background: #f8f9fa;
     border-radius: 8px;
     border: 1px solid #e9ecef;
 }
 
 .points-section h4 {
-    margin: 0 0 1rem 0;
+    margin: 0 0 0.75rem 0;
     color: #495057;
-    font-size: 1.1rem;
+    font-size: 1rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
 }
 
 .point-item {
-    margin-bottom: 1rem;
-    padding: 1rem;
+    margin-bottom: 0.75rem;
+    padding: 0.75rem;
     background: white;
     border-radius: 6px;
     border: 1px solid #dee2e6;
@@ -371,8 +371,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 .section-description {
     color: #6c757d;
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
     font-style: italic;
 }
 
@@ -393,7 +393,7 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 .remove-point {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
 }
 
 @media (max-width: 768px) {

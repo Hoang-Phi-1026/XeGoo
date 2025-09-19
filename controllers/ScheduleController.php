@@ -265,8 +265,22 @@ class ScheduleController {
             // Call stored procedure to generate trips
             $sql = "CALL sp_generate_chuyenxe(?, ?, ?)";
             query($sql, [$scheduleId, $vehicleId, $seatType]);
-            
-            $_SESSION['success'] = 'Sinh chuyến xe thành công! Bạn có thể xem các chuyến xe đã tạo trong trang Quản lý chuyến xe.';
+        
+            // Lấy danh sách các chuyến xe mới tạo (cùng lịch trình + phương tiện)
+            $newTrips = fetchAll("
+                SELECT maChuyenXe 
+                FROM chuyenxe 
+                WHERE maLichTrinh = ? 
+                  AND maPhuongTien = ?
+                  AND ngayTao >= NOW() - INTERVAL 1 MINUTE
+            ", [$scheduleId, $vehicleId]);
+        
+            // Gọi procedure sinh ghế cho từng chuyến xe
+            foreach ($newTrips as $trip) {
+                query("CALL sp_generate_chuyenxe_ghe(?)", [$trip['maChuyenXe']]);
+            }
+        
+            $_SESSION['success'] = 'Sinh chuyến xe thành công! Các chuyến đã có danh sách ghế.';
             header('Location: ' . BASE_URL . '/trips');
         } catch (Exception $e) {
             $_SESSION['error'] = 'Có lỗi xảy ra khi sinh chuyến xe: ' . $e->getMessage();

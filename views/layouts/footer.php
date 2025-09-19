@@ -72,6 +72,17 @@
         </div>
     </footer>
     
+    <!-- Load main.js after unified-search.js to avoid conflicts -->
     <script src="<?php echo BASE_URL; ?>/public/js/main.js"></script>
+    
+    <!-- Added debug script for development -->
+    <script>
+        // Debug unified search system
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            console.log('[XeGoo Debug] Unified Search System loaded');
+            console.log('[XeGoo Debug] BASE_URL:', window.BASE_URL);
+            console.log('[XeGoo Debug] UnifiedSearch instance:', window.unifiedSearch);
+        }
+    </script>
 </body>
 </html>

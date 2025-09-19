@@ -44,6 +44,10 @@ function fetchAll($sql, $params = []) {
     return query($sql, $params)->fetchAll();
 }
 
+function fetchOne($sql, $params = []) {
+    return query($sql, $params)->fetch();
+}
+
 function lastInsertId() {
     return Database::getInstance()->lastInsertId();
 }

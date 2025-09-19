@@ -193,10 +193,10 @@ function confirmDelete(routeId) {
 .route-journey {
     display: flex;
     align-items: center;
-    margin: 2rem 0;
-    padding: 2rem;
+    margin: 1rem 0;
+    padding: 1rem;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    border-radius: 12px;
+    border-radius: 10px;
     border: 1px solid #dee2e6;
 }
 
@@ -217,33 +217,33 @@ function confirmDelete(routeId) {
 }
 
 .point-icon {
-    width: 50px;
-    height: 50px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
-    margin-right: 1rem;
+    font-size: 1rem;
+    margin-right: 0.75rem;
 }
 
 .point-info h3 {
-    margin: 0 0 0.5rem 0;
-    font-size: 1rem;
+    margin: 0 0 0.25rem 0;
+    font-size: 0.95rem;
     font-weight: 600;
     color: #495057;
 }
 
 .point-info p {
     margin: 0;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     font-weight: 500;
     color: #212529;
 }
 
 .journey-line {
     flex: 1;
-    margin: 0 2rem;
+    margin: 0 1rem;
     position: relative;
 }
 
@@ -262,11 +262,11 @@ function confirmDelete(routeId) {
 .line-info {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
     background: white;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    border: 2px solid #e9ecef;
+    padding: 0.25rem 0.75rem;
+    border-radius: 16px;
+    border: 1px solid #e9ecef;
     position: relative;
     z-index: 1;
     width: fit-content;
@@ -276,9 +276,10 @@ function confirmDelete(routeId) {
 .info-item {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.375rem;
     font-weight: 500;
     color: #495057;
+    font-size: 0.9rem;
 }
 
 .info-item i {
@@ -287,17 +288,17 @@ function confirmDelete(routeId) {
 
 /* Added styles for pickup/drop-off points display */
 .route-points-section {
-    margin: 2rem 0;
-    padding: 2rem;
+    margin: 1rem 0;
+    padding: 1rem;
     background: #f8f9fa;
-    border-radius: 12px;
+    border-radius: 8px;
     border: 1px solid #e9ecef;
 }
 
 .route-points-section h3 {
-    margin: 0 0 1.5rem 0;
+    margin: 0 0 0.75rem 0;
     color: #495057;
-    font-size: 1.2rem;
+    font-size: 1rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -306,13 +307,13 @@ function confirmDelete(routeId) {
 .points-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .points-column h4 {
-    margin: 0 0 1rem 0;
+    margin: 0 0 0.75rem 0;
     color: #495057;
-    font-size: 1.1rem;
+    font-size: 1rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -321,13 +322,13 @@ function confirmDelete(routeId) {
 .points-list {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.75rem;
 }
 
 .point-card {
     background: white;
     border-radius: 8px;
-    padding: 1rem;
+    padding: 0.75rem;
     border: 1px solid #dee2e6;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
@@ -353,7 +354,7 @@ function confirmDelete(routeId) {
 
 .point-header h5 {
     margin: 0;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
     color: #212529;
 }
@@ -363,7 +364,7 @@ function confirmDelete(routeId) {
     align-items: flex-start;
     gap: 0.5rem;
     margin-bottom: 0.5rem;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #6c757d;
 }
 
@@ -386,37 +387,37 @@ function confirmDelete(routeId) {
 }
 
 .route-description {
-    margin: 2rem 0;
-    padding: 1.5rem;
+    margin: 1rem 0;
+    padding: 1rem;
     background: #f8f9fa;
     border-radius: 8px;
-    border-left: 4px solid #007bff;
+    border-left: 3px solid #007bff;
 }
 
 .route-description h3 {
-    margin: 0 0 1rem 0;
+    margin: 0 0 0.75rem 0;
     color: #495057;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .route-description p {
     margin: 0;
-    line-height: 1.6;
+    line-height: 1.5;
     color: #6c757d;
 }
 
 .detail-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    margin-top: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0.75rem;
+    margin-top: 1rem;
 }
 
 .detail-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.75rem;
+    padding: 0.5rem 0.75rem;
     background: #f8f9fa;
     border-radius: 6px;
     border: 1px solid #e9ecef;
@@ -436,17 +437,17 @@ function confirmDelete(routeId) {
 .route-badge {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
 }
 
 .route-code {
     background: #007bff;
     color: white;
-    padding: 0.5rem 1rem;
+    padding: 0.35rem 0.75rem;
     border-radius: 6px;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
 }
 
 @media (max-width: 768px) {

@@ -12,9 +12,9 @@ class AuthController {
     }
 
     public function showLogin() {
-        // If already logged in, redirect to home
+        // If already logged in, redirect based on role
         if (isset($_SESSION['user_id'])) {
-            header('Location: ' . BASE_URL . '/');
+            $this->redirectBasedOnRole();
             exit();
         }
         
@@ -28,9 +28,9 @@ class AuthController {
     }
 
     public function showRegister() {
-        // If already logged in, redirect to home
+        // If already logged in, redirect based on role
         if (isset($_SESSION['user_id'])) {
-            header('Location: ' . BASE_URL . '/');
+            $this->redirectBasedOnRole();
             exit();
         }
         
@@ -66,8 +66,7 @@ class AuthController {
             
             $_SESSION['success'] = 'Đăng nhập thành công!';
             
-            // Redirect to home page
-            header('Location: ' . BASE_URL . '/');
+            $this->redirectBasedOnRole();
             exit();
         } else {
             $_SESSION['error'] = 'Số điện thoại hoặc mật khẩu không chính xác!';
@@ -146,6 +145,26 @@ class AuthController {
         }
 
         return $errors;
+    }
+
+    private function redirectBasedOnRole() {
+        $role = $_SESSION['user_role'] ?? 4;
+        
+        switch ($role) {
+            case 1: // Admin - redirect to admin dashboard
+                header('Location: ' . BASE_URL . '/admin');
+                break;
+            case 2: // Support staff - redirect to dashboard
+                header('Location: ' . BASE_URL . '/dashboard');
+                break;
+            case 3: // Driver - redirect to dashboard
+                header('Location: ' . BASE_URL . '/dashboard');
+                break;
+            case 4: // Customer - redirect to home
+            default:
+                header('Location: ' . BASE_URL . '/');
+                break;
+        }
     }
 
     public function logout() {

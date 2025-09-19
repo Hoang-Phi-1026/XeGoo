@@ -28,7 +28,7 @@
   --error: #dc2626;
   --info: #0f172a;
 
-  /* Compact spacing scale - reduced padding sizes */
+  /* Reduced spacing scale for more compact design */
   --space-xs: 0.125rem;
   --space-sm: 0.25rem;
   --space-md: 0.5rem;
@@ -119,9 +119,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background-color var(--transition-normal), color var(--transition-normal);
+  /* Reduced base font size for more compact text */
+  font-size: 0.875rem;
 }
 
-/* Compact typography with reduced margins */
+/* Compact typography with reduced margins and smaller font sizes */
 h1,
 h2,
 h3,
@@ -136,28 +138,29 @@ h6 {
 }
 
 h1 {
-  font-size: 2rem;
-}
-h2 {
   font-size: 1.75rem;
 }
-h3 {
+h2 {
   font-size: 1.5rem;
 }
-h4 {
+h3 {
   font-size: 1.25rem;
 }
-h5 {
+h4 {
   font-size: 1.125rem;
 }
-h6 {
+h5 {
   font-size: 1rem;
+}
+h6 {
+  font-size: 0.875rem;
 }
 
 p {
   margin-bottom: var(--space-md);
   color: var(--text-secondary);
   line-height: 1.6;
+  font-size: 0.875rem;
 }
 
 a {
@@ -176,18 +179,18 @@ a:focus {
   border-radius: var(--radius-sm);
 }
 
-/* Compact button system with reduced padding */
+/* Compact button system with reduced padding and smaller font sizes */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--space-sm);
-  padding: var(--space-md) var(--space-lg);
+  padding: var(--space-sm) var(--space-md);
   border: 2px solid var(--accent-primary);
   border-radius: var(--radius-md);
   font-family: var(--font-primary);
   font-weight: 600;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   text-decoration: none;
   cursor: pointer;
   transition: all var(--transition-fast);
@@ -242,13 +245,13 @@ a:focus {
 }
 
 .btn-lg {
-  padding: var(--space-lg) var(--space-xl);
-  font-size: 1rem;
+  padding: var(--space-md) var(--space-lg);
+  font-size: 0.875rem;
 }
 
 .btn-sm {
-  padding: var(--space-sm) var(--space-md);
-  font-size: 0.75rem;
+  padding: var(--space-xs) var(--space-sm);
+  font-size: 0.625rem;
 }
 
 /* Compact card system with reduced padding */
@@ -268,33 +271,33 @@ a:focus {
 }
 
 .card-header {
-  padding: var(--space-lg);
+  padding: var(--space-md);
   border-bottom: 1px solid var(--border-primary);
   background: var(--bg-tertiary);
 }
 
 .card-body {
-  padding: var(--space-lg);
+  padding: var(--space-md);
 }
 
 .card-footer {
-  padding: var(--space-lg);
+  padding: var(--space-md);
   border-top: 1px solid var(--border-primary);
   background-color: var(--bg-tertiary);
 }
 
-/* Compact form system with reduced padding */
+/* Compact form system with reduced padding and smaller inputs */
 .form-group {
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
 }
 
 .form-label,
 label {
   display: block;
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-xs);
   font-weight: 600;
   color: var(--text-primary);
-  font-size: 0.875rem;
+  font-size: 0.75rem;
 }
 
 .form-input,
@@ -302,10 +305,10 @@ input,
 textarea,
 select {
   width: 100%;
-  padding: var(--space-md);
+  padding: var(--space-sm);
   border: 2px solid var(--border-primary);
   border-radius: var(--radius-md);
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-family: var(--font-primary);
   background-color: var(--bg-secondary);
   color: var(--text-primary);
@@ -327,101 +330,6 @@ select:focus {
 [data-theme="dark"] textarea:focus,
 [data-theme="dark"] select:focus {
   box-shadow: 0 0 0 3px rgba(16, 255, 239, 0.2);
-}
-
-/* Compact alert system */
-.alert {
-  padding: var(--space-md);
-  border-radius: var(--radius-md);
-  margin-bottom: var(--space-lg);
-  font-weight: 500;
-  border: 2px solid;
-}
-
-.alert-success {
-  background-color: var(--bg-tertiary);
-  color: var(--text-primary);
-  border-color: var(--success);
-}
-
-.alert-error {
-  background-color: var(--bg-tertiary);
-  color: var(--text-primary);
-  border-color: var(--error);
-}
-
-.alert-warning {
-  background-color: var(--bg-tertiary);
-  color: var(--text-primary);
-  border-color: var(--warning);
-}
-
-.alert-info {
-  background-color: var(--bg-tertiary);
-  color: var(--text-primary);
-  border-color: var(--info);
-}
-
-/* Compact status badges */
-.status-badge {
-  display: inline-flex;
-  align-items: center;
-  padding: var(--space-xs) var(--space-sm);
-  border-radius: var(--radius-sm);
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.status-active {
-  background-color: var(--bg-tertiary);
-  color: var(--text-primary);
-  border: 1px solid var(--success);
-}
-
-.status-maintenance {
-  background-color: var(--bg-tertiary);
-  color: var(--text-primary);
-  border: 1px solid var(--warning);
-}
-
-.status-locked {
-  background-color: var(--bg-tertiary);
-  color: var(--text-primary);
-  border: 1px solid var(--error);
-}
-
-/* Compact page layout with reduced padding */
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--space-lg);
-}
-
-.page-header {
-  text-align: center;
-  margin-bottom: var(--space-2xl);
-  padding: var(--space-xl) 0;
-  background: var(--bg-secondary);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-sm);
-}
-
-.page-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: var(--space-md);
-}
-
-.page-subtitle {
-  font-size: 1rem;
-  color: var(--text-secondary);
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.5;
 }
 
 /* Utility classes */
@@ -475,6 +383,37 @@ select:focus {
   gap: var(--space-lg);
 }
 
+/* Compact page layout with reduced padding */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  padding: var(--space-lg) 0;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.page-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.page-subtitle {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   .grid-cols-2 {
@@ -488,17 +427,17 @@ select:focus {
   }
 
   .container {
-    padding: 0 var(--space-md);
+    padding: 0 var(--space-sm);
   }
 
   h1 {
-    font-size: 1.75rem;
-  }
-  h2 {
     font-size: 1.5rem;
   }
-  h3 {
+  h2 {
     font-size: 1.25rem;
+  }
+  h3 {
+    font-size: 1.125rem;
   }
 }
 
@@ -508,13 +447,13 @@ select:focus {
   }
 
   .container {
-    padding: 0 var(--space-sm);
+    padding: 0 var(--space-xs);
   }
 
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
   h2 {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
   }
 }

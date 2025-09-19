@@ -17,6 +17,8 @@ if (session_status() === PHP_SESSION_NONE) {
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/header.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/footer.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/notifications.css">
+    <!-- Added unified search CSS for consistent styling across all pages -->
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/search.css">
     <!-- Added theme toggle CSS -->
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/theme-toggle.css">
     <!-- Added vehicle management CSS -->
@@ -36,10 +38,17 @@ if (session_status() === PHP_SESSION_NONE) {
         echo '<link rel="stylesheet" href="' . BASE_URL . '/public/css/register.css">';
     } elseif (strpos($current_url, '/profile') !== false) {
         echo '<link rel="stylesheet" href="' . BASE_URL . '/public/css/profile.css">';
+    } elseif (strpos($current_url, '/search') !== false) {
+        // echo '<link rel="stylesheet" href="' . BASE_URL . '/public/css/search.css">';
     } else {
         echo '<link rel="stylesheet" href="' . BASE_URL . '/public/css/home.css">';
     }
     ?>
+    
+    <!-- Added BASE_URL JavaScript variable for use in unified search -->
+    <script>
+        window.BASE_URL = '<?php echo BASE_URL; ?>';
+    </script>
 </head>
 <body>
     <!-- Completely restructured header to match CSS classes -->
@@ -62,20 +71,8 @@ if (session_status() === PHP_SESSION_NONE) {
                             ?>
 
                             <!-- Quản lý chung -->
-                            <li class="nav-item dropdown">
-                                <a href="#" class="nav-link">Quản Lý Chung</a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item"><a href="<?php echo BASE_URL;  ?>/vehicles" >Quản Lý Phương Tiện</a></li>
-                                    <li class="nav-item"><a href="<?php echo BASE_URL; ?>/routes" >Quản Lý Tuyến Đường</a></li>
-                                    <li class="nav-item"><a href="<?php echo BASE_URL; ?>/prices">Quản Lý Giá Vé</a></li>
-                                    <!-- Updated schedule and trip management links -->
-                                    <li class="nav-item"><a href="<?php echo BASE_URL; ?>/schedules">Quản Lý Lịch Trình</a></li>
-                                    <li class="nav-item"><a href="<?php echo BASE_URL; ?>/trips">Quản Lý Chuyến Xe</a></li>
-                                    <li class="nav-item"><a href="<?php echo BASE_URL; ?>/users">Quản Lý Người Dùng</a></li>
-                                </ul>
-                            </li>
                             
-                            <li class="nav-item"><a href="<?php echo BASE_URL; ?>/" class="nav-link">Thống Kê</a></li>
+                            <li class="nav-item"><a href="<?php echo BASE_URL; ?>/admin" class="nav-link">Quản Lý Chung</a></li>
                             <?php
                             break;
                         case 2: // Nhân Viên Hỗ Trợ
@@ -144,6 +141,8 @@ if (session_status() === PHP_SESSION_NONE) {
         <script src="<?php echo BASE_URL; ?>/public/js/notifications.js"></script>
         <!-- Added theme toggle JavaScript -->
         <script src="<?php echo BASE_URL; ?>/public/js/theme-toggle.js"></script>
+        <!-- Added unified search JavaScript for consistent functionality -->
+        <script src="<?php echo BASE_URL; ?>/public/js/unified-search.js"></script>
         <script>
         // Display session messages using JavaScript notifications
         <?php
