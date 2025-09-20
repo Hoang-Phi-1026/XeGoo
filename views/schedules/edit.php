@@ -156,5 +156,4 @@ startDateField.addEventListener('change', function() {
     endDateField.min = this.value;
 });
 </script>
-
 <?php include __DIR__ . '/../layouts/footer.php'; ?>

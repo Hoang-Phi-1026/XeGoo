@@ -6,8 +6,10 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="company-logo">
-                        <div class="company-logo-icon">XG</div>
-                        <span class="company-name">XeGoo</span>
+                    <a href="<?php echo BASE_URL; ?>/" class="logo">
+                <!-- LOGO IMAGE HERE -->
+                <img src="<?php echo BASE_URL; ?>/public/uploads/images/logo-dark.png" alt="XeGoo Logo" class="logo-img" style="height:40px;margin-right:8px;">
+            </a>
                     </div>
                     <p>Nền tảng đặt vé xe liên tỉnh hàng đầu Việt Nam. Chúng tôi cam kết mang đến trải nghiệm di chuyển an toàn, tiện lợi và thoải mái nhất cho khách hàng.</p>
                     <div class="social-links">

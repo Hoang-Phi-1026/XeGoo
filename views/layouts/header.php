@@ -57,8 +57,8 @@ if (session_status() === PHP_SESSION_NONE) {
     <header class="header">
         <div class="header-container">
             <a href="<?php echo BASE_URL; ?>/" class="logo">
-                <div class="logo-icon">XG</div>
-                <span>XeGoo</span>
+                <!-- LOGO IMAGE HERE -->
+                <img src="<?php echo BASE_URL; ?>/public/uploads/images/logo-light.png" alt="XeGoo Logo" class="logo-img" style="height:40px;margin-right:8px;">
             </a>
             
             <nav class="nav-menu">

@@ -1,6 +1,6 @@
-/* XeGoo Design System - Complete Redesign with New Color Scheme */
+/* XeGoo Design System - Soft & Gentle Redesign */
 :root {
-  /* New light theme colors - Background: #FFFEF0 and variants, Accent: #0f172a and variants */
+  /* New warm cream background with vibrant orange accent for light mode */
   --bg-primary: #fffef0;
   --bg-secondary: #fefdf8;
   --bg-tertiary: #fdf9e8;
@@ -8,95 +8,95 @@
   --bg-lighter: #ffffff;
   --bg-hover: #f8f6e8;
 
-  --text-primary: #0f172a;
-  --text-secondary: #1e293b;
-  --text-muted: #475569;
+  --text-primary: #2d2d2d;
+  --text-secondary: #4a4a4a;
+  --text-muted: #6b6b6b;
   --text-inverse: #fffef0;
 
-  --accent-primary: #0f172a;
-  --accent-secondary: #1e293b;
-  --accent-light: #334155;
-  --accent-lighter: #475569;
-  --accent-hover: #020617;
+  --accent-primary: #f4481f;
+  --accent-secondary: #e63e1a;
+  --accent-light: #f66b47;
+  --accent-lighter: #f88f73;
+  --accent-hover: #d93d17;
 
-  --border-primary: #e2e8f0;
-  --border-secondary: #cbd5e1;
+  /* Softer, lighter borders */
+  --border-primary: #f0ede0;
+  --border-secondary: #e8e3d3;
 
-  /* Status colors using variations of main colors */
-  --success: #059669;
-  --warning: #d97706;
-  --error: #dc2626;
-  --info: #0f172a;
+  /* Status colors with softer tones */
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --info: #f4481f;
 
-  /* Reduced spacing scale for more compact design */
-  --space-xs: 0.125rem;
-  --space-sm: 0.25rem;
-  --space-md: 0.5rem;
-  --space-lg: 0.75rem;
-  --space-xl: 1rem;
-  --space-2xl: 1.25rem;
-  --space-3xl: 1.5rem;
+  /* Increased spacing for more breathing room */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 0.75rem;
+  --space-lg: 1rem;
+  --space-xl: 1.5rem;
+  --space-2xl: 2rem;
+  --space-3xl: 2.5rem;
 
-  /* Border radius scale */
-  --radius-sm: 0.25rem;
-  --radius-md: 0.375rem;
-  --radius-lg: 0.5rem;
-  --radius-xl: 0.75rem;
-  --radius-2xl: 1rem;
+  /* Softer border radius for gentle curves */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.5rem;
 
-  /* Updated shadow system with new colors */
-  --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.1), 0 2px 4px -1px rgba(15, 23, 42, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.1), 0 4px 6px -2px rgba(15, 23, 42, 0.05);
-  --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 10px 10px -5px rgba(15, 23, 42, 0.04);
-  --shadow-colored: 0 10px 25px -5px rgba(15, 23, 42, 0.25);
+  /* Softer shadows with warm tones */
+  --shadow-sm: 0 1px 3px 0 rgba(244, 72, 31, 0.08);
+  --shadow-md: 0 4px 8px -2px rgba(244, 72, 31, 0.12), 0 2px 4px -1px rgba(244, 72, 31, 0.06);
+  --shadow-lg: 0 10px 20px -5px rgba(244, 72, 31, 0.15), 0 4px 8px -2px rgba(244, 72, 31, 0.08);
+  --shadow-xl: 0 20px 30px -8px rgba(244, 72, 31, 0.18), 0 10px 15px -5px rgba(244, 72, 31, 0.1);
+  --shadow-colored: 0 10px 25px -5px rgba(244, 72, 31, 0.25);
 
-  /* Transition timing */
-  --transition-fast: 0.15s ease;
-  --transition-normal: 0.3s ease;
-  --transition-slow: 0.5s ease;
+  /* Smooth transitions */
+  --transition-fast: 0.2s ease-out;
+  --transition-normal: 0.3s ease-out;
+  --transition-slow: 0.5s ease-out;
 
-  /* Typography */
+  /* Softer typography with better readability */
   --font-primary: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-heading: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-/* New dark theme colors - Background: #0f172a and variants, Accent: #10FFEF and variants */
+/* Deep purple background with bright magenta accent for dark mode */
 [data-theme="dark"] {
-  --bg-primary: #0f172a;
-  --bg-secondary: #1e293b;
-  --bg-tertiary: #334155;
-  --bg-light: #1e293b;
-  --bg-lighter: #334155;
-  --bg-hover: #475569;
+  --bg-primary: #240d27;
+  --bg-secondary: #2f1432;
+  --bg-tertiary: #3a1a3f;
+  --bg-light: #2f1432;
+  --bg-lighter: #3a1a3f;
+  --bg-hover: #451f4c;
 
-  /* Reduced use of #10FFEF, using white for primary text and subtle cyan accents */
-  --text-primary: #ffffff;
-  --text-secondary: #e2e8f0;
-  --text-muted: #94a3b8;
-  --text-inverse: #0f172a;
+  --text-primary: #f8f8f8;
+  --text-secondary: #e0e0e0;
+  --text-muted: #b8b8b8;
+  --text-inverse: #240d27;
 
-  --accent-primary: #10ffef;
-  --accent-secondary: #22d3ee;
-  --accent-light: #67e8f9;
-  --accent-lighter: #a7f3d0;
-  --accent-hover: #06b6d4;
+  --accent-primary: #9f2cae;
+  --accent-secondary: #b33cc4;
+  --accent-light: #c44dd5;
+  --accent-lighter: #d55ee6;
+  --accent-hover: #8a2598;
 
-  --border-primary: #334155;
-  --border-secondary: #475569;
+  --border-primary: #3a1a3f;
+  --border-secondary: #451f4c;
 
   /* Status colors for dark mode */
-  --success: #10b981;
-  --warning: #fbbf24;
-  --error: #f87171;
-  --info: #10ffef;
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --info: #9f2cae;
 
-  /* Dark mode shadows */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
-  --shadow-colored: 0 10px 25px -5px rgba(16, 255, 239, 0.3);
+  /* Dark mode shadows with purple tones */
+  --shadow-sm: 0 1px 3px 0 rgba(159, 44, 174, 0.15);
+  --shadow-md: 0 4px 8px -2px rgba(159, 44, 174, 0.2), 0 2px 4px -1px rgba(159, 44, 174, 0.1);
+  --shadow-lg: 0 10px 20px -5px rgba(159, 44, 174, 0.25), 0 4px 8px -2px rgba(159, 44, 174, 0.15);
+  --shadow-xl: 0 20px 30px -8px rgba(159, 44, 174, 0.3), 0 10px 15px -5px rgba(159, 44, 174, 0.2);
+  --shadow-colored: 0 10px 25px -5px rgba(159, 44, 174, 0.35);
 }
 
 /* Base Styles */
@@ -113,17 +113,18 @@ html {
 
 body {
   font-family: var(--font-primary);
-  line-height: 1.5;
+  line-height: 1.6;
   color: var(--text-primary);
   background-color: var(--bg-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background-color var(--transition-normal), color var(--transition-normal);
-  /* Reduced base font size for more compact text */
-  font-size: 0.875rem;
+  /* Comfortable base font size for better readability */
+  font-size: 1rem;
+  font-weight: 400;
 }
 
-/* Compact typography with reduced margins and smaller font sizes */
+/* Softer typography with gentle font weights and comfortable spacing */
 h1,
 h2,
 h3,
@@ -131,42 +132,51 @@ h4,
 h5,
 h6 {
   font-family: var(--font-heading);
-  font-weight: 600;
-  line-height: 1.2;
+  font-weight: 500;
+  line-height: 1.3;
   color: var(--text-primary);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-lg);
+  letter-spacing: -0.01em;
 }
 
 h1 {
-  font-size: 1.75rem;
+  font-size: 2.25rem;
+  font-weight: 600;
 }
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.875rem;
+  font-weight: 500;
 }
 h3 {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 h4 {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
+  font-weight: 500;
 }
 h5 {
-  font-size: 1rem;
+  font-size: 1.125rem;
+  font-weight: 500;
 }
 h6 {
-  font-size: 0.875rem;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 p {
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-lg);
   color: var(--text-secondary);
-  line-height: 1.6;
-  font-size: 0.875rem;
+  line-height: 1.7;
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 a {
   color: var(--accent-primary);
   text-decoration: none;
   transition: all var(--transition-fast);
+  font-weight: 500;
 }
 
 a:hover {
@@ -175,31 +185,31 @@ a:hover {
 
 a:focus {
   outline: 2px solid var(--accent-primary);
-  outline-offset: 2px;
+  outline-offset: 3px;
   border-radius: var(--radius-sm);
 }
 
-/* Compact button system with reduced padding and smaller font sizes */
+/* Softer button system with gentle padding and rounded corners */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--space-sm);
-  padding: var(--space-sm) var(--space-md);
-  border: 2px solid var(--accent-primary);
-  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-xl);
+  border: 1px solid var(--accent-primary);
+  border-radius: var(--radius-lg);
   font-family: var(--font-primary);
-  font-weight: 600;
-  font-size: 0.75rem;
+  font-weight: 500;
+  font-size: 0.95rem;
   text-decoration: none;
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: all var(--transition-normal);
   white-space: nowrap;
   box-shadow: var(--shadow-sm);
 }
 
 .btn:disabled {
-  opacity: 0.6;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
@@ -211,8 +221,8 @@ a:focus {
 .btn-primary:hover:not(:disabled) {
   background: var(--accent-hover);
   border-color: var(--accent-hover);
-  box-shadow: var(--shadow-colored);
-  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
 }
 
 .btn-secondary {
@@ -223,7 +233,8 @@ a:focus {
 .btn-secondary:hover:not(:disabled) {
   background-color: var(--accent-primary);
   color: var(--text-inverse);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
 
 .btn-success {
@@ -245,20 +256,20 @@ a:focus {
 }
 
 .btn-lg {
-  padding: var(--space-md) var(--space-lg);
-  font-size: 0.875rem;
+  padding: var(--space-lg) var(--space-2xl);
+  font-size: 1.1rem;
 }
 
 .btn-sm {
-  padding: var(--space-xs) var(--space-sm);
-  font-size: 0.625rem;
+  padding: var(--space-sm) var(--space-md);
+  font-size: 0.875rem;
 }
 
-/* Compact card system with reduced padding */
+/* Softer card system with gentle shadows and rounded corners */
 .card {
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-primary);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   box-shadow: var(--shadow-sm);
   overflow: hidden;
   transition: all var(--transition-normal);
@@ -266,38 +277,38 @@ a:focus {
 
 .card:hover {
   box-shadow: var(--shadow-lg);
-  transform: translateY(-1px);
+  transform: translateY(-3px);
   border-color: var(--accent-primary);
 }
 
 .card-header {
-  padding: var(--space-md);
+  padding: var(--space-xl);
   border-bottom: 1px solid var(--border-primary);
   background: var(--bg-tertiary);
 }
 
 .card-body {
-  padding: var(--space-md);
+  padding: var(--space-xl);
 }
 
 .card-footer {
-  padding: var(--space-md);
+  padding: var(--space-xl);
   border-top: 1px solid var(--border-primary);
   background-color: var(--bg-tertiary);
 }
 
-/* Compact form system with reduced padding and smaller inputs */
+/* Softer form system with gentle borders and comfortable padding */
 .form-group {
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-xl);
 }
 
 .form-label,
 label {
   display: block;
-  margin-bottom: var(--space-xs);
-  font-weight: 600;
+  margin-bottom: var(--space-sm);
+  font-weight: 500;
   color: var(--text-primary);
-  font-size: 0.75rem;
+  font-size: 0.95rem;
 }
 
 .form-input,
@@ -305,14 +316,15 @@ input,
 textarea,
 select {
   width: 100%;
-  padding: var(--space-sm);
-  border: 2px solid var(--border-primary);
-  border-radius: var(--radius-md);
-  font-size: 0.75rem;
+  padding: var(--space-md);
+  border: 1px solid var(--border-secondary);
+  border-radius: var(--radius-lg);
+  font-size: 1rem;
   font-family: var(--font-primary);
   background-color: var(--bg-secondary);
   color: var(--text-primary);
-  transition: all var(--transition-fast);
+  transition: all var(--transition-normal);
+  font-weight: 400;
 }
 
 .form-input:focus,
@@ -321,7 +333,7 @@ textarea:focus,
 select:focus {
   outline: none;
   border-color: var(--accent-primary);
-  box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.1);
+  box-shadow: 0 0 0 3px rgba(244, 72, 31, 0.1);
   background-color: var(--bg-primary);
 }
 
@@ -329,7 +341,7 @@ select:focus {
 [data-theme="dark"] input:focus,
 [data-theme="dark"] textarea:focus,
 [data-theme="dark"] select:focus {
-  box-shadow: 0 0 0 3px rgba(16, 255, 239, 0.2);
+  box-shadow: 0 0 0 3px rgba(159, 44, 174, 0.2);
 }
 
 /* Utility classes */
@@ -345,7 +357,7 @@ select:focus {
 
 .grid {
   display: grid;
-  gap: var(--space-lg);
+  gap: var(--space-xl);
 }
 
 .grid-cols-1 {
@@ -383,35 +395,36 @@ select:focus {
   gap: var(--space-lg);
 }
 
-/* Compact page layout with reduced padding */
+/* Comfortable page layout with generous padding */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--space-md);
+  padding: 0 var(--space-xl);
 }
 
 .page-header {
   text-align: center;
-  margin-bottom: var(--space-xl);
-  padding: var(--space-lg) 0;
+  margin-bottom: var(--space-2xl);
+  padding: var(--space-2xl) 0;
   background: var(--bg-secondary);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-2xl);
   box-shadow: var(--shadow-sm);
 }
 
 .page-title {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 2rem;
+  font-weight: 600;
   color: var(--text-primary);
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-md);
 }
 
 .page-subtitle {
-  font-size: 0.875rem;
+  font-size: 1.1rem;
   color: var(--text-secondary);
   max-width: 600px;
   margin: 0 auto;
-  line-height: 1.5;
+  line-height: 1.6;
+  font-weight: 400;
 }
 
 /* Responsive design */
@@ -427,17 +440,17 @@ select:focus {
   }
 
   .container {
-    padding: 0 var(--space-sm);
+    padding: 0 var(--space-lg);
   }
 
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.875rem;
   }
   h2 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
   h3 {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
   }
 }
 
@@ -447,13 +460,13 @@ select:focus {
   }
 
   .container {
-    padding: 0 var(--space-xs);
+    padding: 0 var(--space-md);
   }
 
   h1 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
   h2 {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
   }
 }
