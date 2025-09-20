@@ -325,24 +325,24 @@ class ScheduleController {
      */
     private function validateTripGeneration($scheduleId, $vehicleId) {
         $errors = [];
-        
+
         // 1 Kiểm tra xe có trạng thái khả dụng
         $vehicleStatus = $this->checkVehicleStatus($vehicleId);
         if (!$vehicleStatus['available']) {
             $errors[] = "Xe không thể sinh chuyến: " . $vehicleStatus['reason'];
         }
-        
+
         // 2 Kiểm tra xung đột thời gian
         $timeConflicts = $this->checkTimeConflicts($scheduleId, $vehicleId);
         if (!empty($timeConflicts)) {
             foreach ($timeConflicts as $conflict) {
                 $errors[] = "Xung đột thời gian: Xe đã có chuyến từ " . 
-                           date('H:i d/m/Y', strtotime($conflict['thoiGianKhoiHanh'])) . 
-                           " đến " . date('H:i d/m/Y', strtotime($conflict['thoiGianKetThuc'])) . 
-                           " (Lịch trình: " . $conflict['tenLichTrinh'] . ")";
+                        date('H:i d/m/Y', strtotime($conflict['thoiGianKhoiHanh'])) . 
+                        " đến " . date('H:i d/m/Y', strtotime($conflict['thoiGianKetThuc'])) . 
+                        " (Lịch trình: " . $conflict['tenLichTrinh'] . ")";
             }
         }
-        
+
         // 3 Kiểm tra xe có kịp quay lại điểm xuất phát
         $returnTimeIssues = $this->checkVehicleReturnTime($scheduleId, $vehicleId);
         if (!empty($returnTimeIssues)) {
@@ -350,9 +350,36 @@ class ScheduleController {
                 $errors[] = "Xe không kịp quay lại: " . $issue;
             }
         }
-        
+
+        // 4 Kiểm tra có giá vé hợp lệ hay chưa
+        $schedule = Schedule::getById($scheduleId);
+        if ($schedule) {
+            $sql = "SELECT COUNT(*) AS cnt
+                    FROM giave g
+                    JOIN phuongtien p ON p.maLoaiPhuongTien = g.maLoaiPhuongTien
+                    WHERE g.maTuyenDuong = ?
+                    AND g.loaiChoNgoi = ?
+                    AND p.maPhuongTien = ?
+                    AND g.ngayBatDau <= ?
+                    AND g.ngayKetThuc >= ?";
+            
+            $today = date('Y-m-d');
+            $row = fetch($sql, [
+                $schedule['maTuyenDuong'],
+                $_POST['loaiChoNgoi'] ?? '',   // lấy loại chỗ ngồi từ form
+                $vehicleId,
+                $today,
+                $today
+            ]);
+
+            if ($row['cnt'] == 0) {
+                $errors[] = "Chưa có giá vé cho tuyến " . $schedule['kyHieuTuyen'];
+            }
+        }
+
         return $errors;
     }
+
     
     /**
      * Check if vehicle is available for trip generation
