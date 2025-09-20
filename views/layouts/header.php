@@ -38,6 +38,8 @@ if (session_status() === PHP_SESSION_NONE) {
         echo '<link rel="stylesheet" href="' . BASE_URL . '/public/css/register.css">';
     } elseif (strpos($current_url, '/profile') !== false) {
         echo '<link rel="stylesheet" href="' . BASE_URL . '/public/css/profile.css">';
+    } elseif (strpos($current_url, '/admin') !== false) {
+        echo '<link rel="stylesheet" href="' . BASE_URL . '/public/css/admin-dashboard.css">';
     } elseif (strpos($current_url, '/search') !== false) {
         // echo '<link rel="stylesheet" href="' . BASE_URL . '/public/css/search.css">';
     } else {
