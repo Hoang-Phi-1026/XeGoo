@@ -3,8 +3,7 @@
 <div class="container">
     <div class="page-header">
         <div class="page-title">
-            <h1><i class="fas fa-route"></i> Chi tiết tuyến đường</h1>
-            <p>Thông tin chi tiết tuyến đường: <?php echo htmlspecialchars($route['kyHieuTuyen']); ?></p>
+            <h1>Chi tiết tuyến đường</h1>
         </div>
         <div class="page-actions">
             <a href="<?php echo BASE_URL; ?>/routes/<?php echo $route['maTuyenDuong']; ?>/edit" class="btn btn-warning">
@@ -71,7 +70,7 @@
                 <!-- Added pickup and drop-off points display section -->
                 <?php if (!empty($route['points']['pickup']) || !empty($route['points']['dropoff'])): ?>
                     <div class="route-points-section">
-                        <h3><i class="fas fa-map-pin"></i> Điểm đón và trả khách</h3>
+                        <h3>Điểm đón và trả khách</h3>
                         
                         <div class="points-grid">
                             <!-- Pickup Points -->

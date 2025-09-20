@@ -3,8 +3,7 @@
 <div class="container">
     <div class="page-header">
         <div class="page-title">
-            <h1><i class="fas fa-calendar-alt"></i> Quản lý Lịch Trình</h1>
-            <p>Danh sách tất cả lịch trình trong hệ thống</p>
+            <h1> Quản lý Lịch Trình</h1>
         </div>
         <div class="page-actions">
             <a href="<?php echo BASE_URL; ?>/schedules/create" class="btn btn-primary">
@@ -57,28 +56,22 @@
     </div>
 
     <!-- Search and Filters -->
-    <div class="filters-section">
-        <div class="search-header">
-            <h3><i class="fas fa-search"></i> Tìm kiếm và Lọc</h3>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Tìm kiếm và lọc</h3>
         </div>
-        
-        <form method="GET" class="filters-form" id="searchForm">
-            <div class="basic-search">
-                <div class="search-row">
-                    <div class="filter-group flex-2">
+        <div class="card-body">
+            <form method="GET" class="filter-form" id="searchForm">
+                <div class="form-row">
+                    <div class="form-group">
                         <label for="search">Tìm kiếm nhanh:</label>
-                        <div class="search-input-group">
-                            <input type="text" name="search" id="search" 
-                                   placeholder="Nhập tên lịch trình, ký hiệu tuyến..." 
-                                   value="<?php echo htmlspecialchars($_GET['search'] ?? ''); ?>">
-                            <button type="submit" class="search-btn">
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </div>
+                        <input type="text" name="search" id="search" class="form-control"
+                               placeholder="Nhập tên lịch trình, ký hiệu tuyến..." 
+                               value="<?php echo htmlspecialchars($_GET['search'] ?? ''); ?>">
                     </div>
-                    <div class="filter-group">
+                    <div class="form-group">
                         <label for="route">Tuyến đường:</label>
-                        <select name="route" id="route">
+                        <select name="route" id="route" class="form-control">
                             <option value="">Tất cả tuyến</option>
                             <?php foreach ($routes as $route): ?>
                                 <option value="<?php echo $route['maTuyenDuong']; ?>" 
@@ -88,18 +81,22 @@
                             <?php endforeach; ?>
                         </select>
                     </div>
+                    <div class="form-group">
+                        <label>&nbsp;</label>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-search"></i>
+                                Tìm kiếm
+                            </button>
+                            <a href="<?php echo BASE_URL; ?>/schedules" class="btn btn-secondary">
+                                <i class="fas fa-refresh"></i>
+                                Đặt lại
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <div class="filter-actions">
-                <button type="submit" class="btn btn-primary">
-                    <i class="fas fa-search"></i> Tìm kiếm
-                </button>
-                <a href="<?php echo BASE_URL; ?>/schedules" class="btn btn-outline">
-                    <i class="fas fa-times"></i> Xóa bộ lọc
-                </a>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 
     <!-- Search Results Summary -->
@@ -131,77 +128,85 @@
     <?php endif; ?>
 
     <!-- Schedules Table -->
-    <div class="table-container">
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Tên lịch trình</th>
-                    <th>Tuyến đường</th>
-                    <th>Giờ khởi hành</th>
-                    <th>Giờ kết thúc</th>
-                    <th>Ngày hoạt động</th>
-                    <th>Thứ trong tuần</th>
-                    <th>Trạng thái</th>
-                    <th>Thao tác</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php if (empty($schedules)): ?>
-                    <tr>
-                        <td colspan="9" class="no-data">
-                            <i class="fas fa-search"></i>
-                            <p>Không tìm thấy lịch trình nào phù hợp với tiêu chí tìm kiếm</p>
-                            <a href="<?php echo BASE_URL; ?>/schedules" class="btn btn-outline btn-sm">
-                                <i class="fas fa-list"></i> Xem tất cả lịch trình
-                            </a>
-                        </td>
-                    </tr>
-                <?php else: ?>
-                    <?php foreach ($schedules as $schedule): ?>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Danh sách lịch trình</h3>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
                         <tr>
-                            <td><?php echo $schedule['maLichTrinh']; ?></td>
-                            <td class="schedule-name"><?php echo htmlspecialchars($schedule['tenLichTrinh']); ?></td>
-                            <td>
-                                <div class="route-info">
-                                    <strong><?php echo htmlspecialchars($schedule['kyHieuTuyen']); ?></strong><br>
-                                    <small><?php echo htmlspecialchars($schedule['diemDi'] . ' → ' . $schedule['diemDen']); ?></small>
-                                </div>
-                            </td>
-                            <td><?php echo date('H:i', strtotime($schedule['gioKhoiHanh'])); ?></td>
-                            <td><?php echo date('H:i', strtotime($schedule['gioKetThuc'])); ?></td>
-                            <td>
-                                <small><?php echo date('d/m/Y', strtotime($schedule['ngayBatDau'])); ?> - <?php echo date('d/m/Y', strtotime($schedule['ngayKetThuc'])); ?></small>
-                            </td>
-                            <td>
-                                <span class="days-badge"><?php echo Schedule::formatDaysOfWeek($schedule['thuTrongTuan']); ?></span>
-                            </td>
-                            <td>
-                                <span class="status-badge <?php echo strtolower($schedule['trangThai']); ?>">
-                                    <?php echo $schedule['trangThai']; ?>
-                                </span>
-                            </td>
-                            <td class="actions">
-                                <a href="<?php echo BASE_URL; ?>/schedules/<?php echo $schedule['maLichTrinh']; ?>" 
-                                   class="btn btn-sm btn-info" title="Xem chi tiết">
-                                    <i class="fas fa-eye"></i>
-                                </a>
-                                <a href="<?php echo BASE_URL; ?>/schedules/<?php echo $schedule['maLichTrinh']; ?>/edit" 
-                                   class="btn btn-sm btn-warning" title="Chỉnh sửa">
-                                    <i class="fas fa-edit"></i>
-                                </a>
-                                <?php if ($schedule['trangThai'] != 'Ngừng'): ?>
-                                    <button onclick="confirmDelete(<?php echo $schedule['maLichTrinh']; ?>)" 
-                                            class="btn btn-sm btn-danger" title="Ngừng lịch trình">
-                                        <i class="fas fa-stop"></i>
-                                    </button>
-                                <?php endif; ?>
-                            </td>
+                            <th>STT</th>
+                            <th>Tên lịch trình</th>
+                            <th>Tuyến đường</th>
+                            <th>Giờ khởi hành</th>
+                            <th>Ngày hoạt động</th>
+                            <th>Thứ trong tuần</th>
+                            <th>Trạng thái</th>
+                            <th>Thao tác</th>
                         </tr>
-                    <?php endforeach; ?>
-                <?php endif; ?>
-            </tbody>
-        </table>
+                    </thead>
+                    <tbody>
+                        <?php if (empty($schedules)): ?>
+                            <tr>
+                                <td colspan="9" class="no-data">
+                                    <i class="fas fa-search"></i>
+                                    <p>Không tìm thấy lịch trình nào phù hợp với tiêu chí tìm kiếm</p>
+                                    <a href="<?php echo BASE_URL; ?>/schedules" class="btn btn-outline btn-sm">
+                                        <i class="fas fa-list"></i> Xem tất cả lịch trình
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php else: ?>
+                            <?php $dem = 0; foreach ($schedules as $schedule): ?>
+                                <?php $dem++; ?>
+                                <tr>
+                                    <td>
+                                        <?php echo $dem; ?>
+                                    </td>
+                                    <td class="schedule-name"><?php echo htmlspecialchars($schedule['tenLichTrinh']); ?></td>
+                                    <td>
+                                        <div class="route-info">
+                                            <strong><?php echo htmlspecialchars($schedule['kyHieuTuyen']); ?></strong><br>
+                                            <small><?php echo htmlspecialchars($schedule['diemDi'] . ' → ' . $schedule['diemDen']); ?></small>
+                                        </div>
+                                    </td>
+                                    <td><?php echo date('H:i', strtotime($schedule['gioKhoiHanh'])); ?></td>
+                                    <td>
+                                        <small><?php echo date('d/m/Y', strtotime($schedule['ngayBatDau'])); ?> - <?php echo date('d/m/Y', strtotime($schedule['ngayKetThuc'])); ?></small>
+                                    </td>
+                                    <td>
+                                        <span class="days-badge"><?php echo Schedule::formatDaysOfWeek($schedule['thuTrongTuan']); ?></span>
+                                    </td>
+                                    <td>
+                                        <span class="status-badge <?php echo strtolower($schedule['trangThai']); ?>">
+                                            <?php echo $schedule['trangThai']; ?>
+                                        </span>
+                                    </td>
+                                    <td class="actions">
+                                        <a href="<?php echo BASE_URL; ?>/schedules/<?php echo $schedule['maLichTrinh']; ?>" 
+                                           class="btn btn-sm btn-info" title="Xem chi tiết">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                        <a href="<?php echo BASE_URL; ?>/schedules/<?php echo $schedule['maLichTrinh']; ?>/edit" 
+                                           class="btn btn-sm btn-warning" title="Chỉnh sửa">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <?php if ($schedule['trangThai'] != 'Ngừng'): ?>
+                                            <button onclick="confirmDelete(<?php echo $schedule['maLichTrinh']; ?>)" 
+                                                    class="btn btn-sm btn-danger" title="Ngừng lịch trình">
+                                                <i class="fas fa-stop"></i>
+                                            </button>
+                                        <?php endif; ?>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
 

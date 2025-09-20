@@ -338,5 +338,23 @@ class Route {
             'Huế'
         ];
     }
+    
+    /**
+     * Get unique starting points from active routes
+     */
+    public static function getUniqueStartPoints() {
+        $sql = "SELECT DISTINCT diemDi FROM tuyenduong WHERE trangThai = 'Đang hoạt động' ORDER BY diemDi";
+        $results = fetchAll($sql);
+        return array_column($results, 'diemDi');
+    }
+    
+    /**
+     * Get unique end points from active routes
+     */
+    public static function getUniqueEndPoints() {
+        $sql = "SELECT DISTINCT diemDen FROM tuyenduong WHERE trangThai = 'Đang hoạt động' ORDER BY diemDen";
+        $results = fetchAll($sql);
+        return array_column($results, 'diemDen');
+    }
 }
 ?>

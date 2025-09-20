@@ -22,73 +22,117 @@
                     </div>
 
                     <!-- Search inputs -->
-                    <div class="form-grid">
-                        <div class="form-group">
+                    <div class="form-grid" style="display: flex; gap: 15px; align-items: end; flex-wrap: wrap;">
+                        <div class="form-group" style="flex: 1; min-width: 200px;">
                             <label class="form-label">Điểm đi</label>
                             <select name="from" class="form-select" required>
                                 <option value="">Chọn điểm đi</option>
                             </select>
                         </div>
                         
-                        <div class="form-group">
+                        <div class="form-group" style="flex: 1; min-width: 200px;">
                             <label class="form-label">Điểm đến</label>
                             <select name="to" class="form-select" required>
                                 <option value="">Chọn điểm đến</option>
                             </select>
                         </div>
                         
-                        <div class="form-group">
+                        <div class="form-group" style="flex: 0 0 150px;">
                             <label class="form-label">Ngày đi</label>
                             <input type="date" name="departure_date" value="<?php echo htmlspecialchars($ngayDi); ?>" 
                                    class="form-input" min="<?php echo date('Y-m-d'); ?>" required>
                         </div>
                         
-                        <div class="form-group return-date-group" id="returnDateGroup" style="<?php echo $isRoundTrip ? '' : 'display: none;'; ?>">
+                        <div class="form-group return-date-group" id="returnDateGroup" style="flex: 0 0 150px; <?php echo $isRoundTrip ? '' : 'display: none;'; ?>">
                             <label class="form-label">Ngày về</label>
                             <input type="date" name="return_date" value="<?php echo htmlspecialchars($ngayVe); ?>" 
                                    class="form-input" min="<?php echo $ngayDi ?: date('Y-m-d'); ?>">
                         </div>
                     </div>
 
-                    <!-- Recent searches -->
-                    <div class="recent-searches">
-                        <label class="form-label">Tìm kiếm gần đây</label>
-                        <div class="recent-searches-grid">
-                            <div class="recent-search-item">
-                                <div class="recent-search-route">TP. Hồ Chí Minh - Đà Lạt</div>
-                                <div class="recent-search-date">18/09/2025</div>
-                            </div>
-                            <div class="recent-search-item">
-                                <div class="recent-search-route">An Giang - Ba Rịa - Vũng Tàu</div>
-                                <div class="recent-search-date">11/09/2025</div>
-                            </div>
-                            <div class="recent-search-item">
-                                <div class="recent-search-route">TP. Hồ Chí Minh - Tuy Hòa</div>
-                                <div class="recent-search-date">Đã đi: 07/09/2025</div>
-                            </div>
-                            <div class="recent-search-item">
-                                <div class="recent-search-route">Tuy Hòa - TP. Hồ Chí Minh</div>
-                                <div class="recent-search-date">Đã đi: 11/09/2025</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <input type="hidden" name="passengers" value="<?php echo $soKhach; ?>">
-                    <input type="hidden" name="is_round_trip" value="<?php echo $isRoundTrip ? '1' : '0'; ?>">
-                    
-                    <div class="text-center">
+                    <!-- Search button on separate row -->
+                    <div class="text-center" style="margin-top: 20px;">
                         <button type="submit" class="search-button">
                             <i class="fas fa-search"></i>
                             Tìm chuyến xe
                         </button>
                     </div>
+
+                    <input type="hidden" name="passengers" value="<?php echo $soKhach; ?>">
+                    <input type="hidden" name="is_round_trip" value="<?php echo $isRoundTrip ? '1' : '0'; ?>">
                 </form>
             </div>
+            
+            <!-- Recent searches moved outside main search form -->
+            <?php
+            // Get recent searches from session (max 4 items)
+            $recentSearches = $_SESSION['recent_searches'] ?? [];
+            $recentSearches = array_slice($recentSearches, 0, 4); // Limit to 4 items
+            ?>
+            
+            <?php if (!empty($recentSearches)): ?>
+            <div class="recent-searches" style="margin-top: 20px;">
+                <label class="form-label">Tìm kiếm gần đây</label>
+                <div class="recent-searches-grid">
+                    <?php foreach ($recentSearches as $search): ?>
+                        <div class="recent-search-item" onclick="applyRecentSearch('<?php echo htmlspecialchars($search['from']); ?>', '<?php echo htmlspecialchars($search['to']); ?>', '<?php echo $search['departure_date']; ?>', '<?php echo $search['is_round_trip'] ? 'true' : 'false'; ?>', '<?php echo $search['return_date'] ?? ''; ?>')">
+                            <div class="recent-search-route">
+                                <?php echo htmlspecialchars($search['from']); ?> - <?php echo htmlspecialchars($search['to']); ?>
+                            </div>
+                            <div class="recent-search-date">
+                                <?php 
+                                $searchDate = new DateTime($search['departure_date']);
+                                $today = new DateTime();
+                                $yesterday = new DateTime('-1 day');
+                                
+                                if ($searchDate->format('Y-m-d') === $today->format('Y-m-d')) {
+                                    echo 'Hôm nay';
+                                } elseif ($searchDate->format('Y-m-d') === $yesterday->format('Y-m-d')) {
+                                    echo 'Hôm qua';
+                                } elseif ($searchDate < $today) {
+                                    echo 'Đã đi: ' . $searchDate->format('d/m/Y');
+                                } else {
+                                    echo $searchDate->format('d/m/Y');
+                                }
+                                ?>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+            <?php endif; ?>
         </div>
     </div>
 
     <div class="container mx-auto px-4 py-8">
         <?php if ($hasSearched): ?>
+            <?php
+            // Process ALL search results (before filtering) for dynamic filtering options
+            $allTrips = $searchResults['all'] ?? $searchResults['outbound']; // Use 'all' if available, fallback to 'outbound'
+            
+            $departureTimesCount = []; // Array to count trips by specific departure time
+            $vehicleTypes = [];
+            
+            // Analyze ALL trips (before filtering) for filter options
+            foreach ($allTrips as $trip) {
+                // Count trips by specific departure time (HH:MM format)
+                $departureTime = date('H:i', strtotime($trip['thoiGianKhoiHanh']));
+                if (!isset($departureTimesCount[$departureTime])) {
+                    $departureTimesCount[$departureTime] = 0;
+                }
+                $departureTimesCount[$departureTime]++;
+                
+                // Count vehicle types
+                $vehicleType = $trip['tenLoaiPhuongTien'] ?? 'Không xác định';
+                if (!isset($vehicleTypes[$vehicleType])) {
+                    $vehicleTypes[$vehicleType] = 0;
+                }
+                $vehicleTypes[$vehicleType]++;
+            }
+            
+            // Sort departure times chronologically
+            ksort($departureTimesCount);
+            ?>
             <!-- Updated results layout to use unified CSS classes -->
             <div class="search-results-container">
                 <!-- Filter sidebar -->
@@ -118,34 +162,31 @@
                             <div class="filter-options">
                                 <label class="filter-option">
                                     <input type="radio" name="departure_time" value="" <?php echo empty($filters['departure_time']) ? 'checked' : ''; ?>>
-                                    <span>Tất cả</span>
+                                    <span>Tất cả (<?php echo count($allTrips); ?>)</span>
                                 </label>
-                                <label class="filter-option">
-                                    <input type="radio" name="departure_time" value="early_morning" <?php echo $filters['departure_time'] === 'early_morning' ? 'checked' : ''; ?>>
-                                    <span>Sáng sớm 00:00 - 06:00 (0)</span>
-                                </label>
-                                <label class="filter-option">
-                                    <input type="radio" name="departure_time" value="morning" <?php echo $filters['departure_time'] === 'morning' ? 'checked' : ''; ?>>
-                                    <span>Buổi sáng 06:00 - 12:00 (0)</span>
-                                </label>
-                                <label class="filter-option">
-                                    <input type="radio" name="departure_time" value="afternoon" <?php echo $filters['departure_time'] === 'afternoon' ? 'checked' : ''; ?>>
-                                    <span>Buổi chiều 12:00 - 18:00 (0)</span>
-                                </label>
-                                <label class="filter-option">
-                                    <input type="radio" name="departure_time" value="evening" <?php echo $filters['departure_time'] === 'evening' ? 'checked' : ''; ?>>
-                                    <span>Buổi tối 18:00 - 24:00 (<?php echo count($searchResults['outbound']); ?>)</span>
-                                </label>
+                                <?php foreach ($departureTimesCount as $time => $count): ?>
+                                    <label class="filter-option">
+                                        <input type="radio" name="departure_time" value="<?php echo $time; ?>" <?php echo ($filters['departure_time'] ?? '') === $time ? 'checked' : ''; ?>>
+                                        <span><?php echo $time; ?> (<?php echo $count; ?> chuyến)</span>
+                                    </label>
+                                <?php endforeach; ?>
                             </div>
                         </div>
 
                         <!-- Vehicle type filters -->
                         <div class="filter-section">
                             <h4 class="filter-section-title">Loại xe</h4>
-                            <div class="filter-tags">
-                                <button type="button" class="filter-tag">Ghế</button>
-                                <button type="button" class="filter-tag">Giường</button>
-                                <button type="button" class="filter-tag active">Limousine</button>
+                            <div class="filter-options">
+                                <label class="filter-option">
+                                    <input type="radio" name="vehicle_type" value="" <?php echo empty($filters['vehicle_type']) ? 'checked' : ''; ?>>
+                                    <span>Tất cả (<?php echo count($allTrips); ?>)</span>
+                                </label>
+                                <?php foreach ($vehicleTypes as $type => $count): ?>
+                                    <label class="filter-option">
+                                        <input type="radio" name="vehicle_type" value="<?php echo htmlspecialchars($type); ?>" <?php echo ($filters['vehicle_type'] ?? '') === $type ? 'checked' : ''; ?>>
+                                        <span><?php echo htmlspecialchars($type); ?> (<?php echo $count; ?>)</span>
+                                    </label>
+                                <?php endforeach; ?>
                             </div>
                         </div>
                     </form>
@@ -162,10 +203,10 @@
                         <div class="results-tabs">
                             <!-- Add data attributes for tab switching -->
                             <button class="results-tab active" data-tab="outbound">
-                                CHUYẾN ĐI - THỨ 5, 18/09
+                                CHUYẾN ĐI
                             </button>
                             <button class="results-tab" data-tab="return">
-                                CHUYẾN VỀ - THỨ 7, 20/09
+                                CHUYẾN VỀ
                             </button>
                         </div>
                         <?php endif; ?>
@@ -232,25 +273,6 @@
                                                     Chọn chuyến
                                                 </a>
                                             </div>
-                                        </div>
-                                        
-                                        <div class="trip-actions">
-                                            <a href="#" class="trip-action">
-                                                <i class="fas fa-chair"></i>
-                                                Chọn ghế
-                                            </a>
-                                            <a href="#" class="trip-action">
-                                                <i class="fas fa-clock"></i>
-                                                Lịch trình
-                                            </a>
-                                            <a href="#" class="trip-action">
-                                                <i class="fas fa-route"></i>
-                                                Trung chuyển
-                                            </a>
-                                            <a href="#" class="trip-action">
-                                                <i class="fas fa-info-circle"></i>
-                                                Chính sách
-                                            </a>
                                         </div>
                                     </div>
                                 <?php endforeach; ?>
@@ -320,25 +342,6 @@
                                                 </a>
                                             </div>
                                         </div>
-                                        
-                                        <div class="trip-actions">
-                                            <a href="#" class="trip-action">
-                                                <i class="fas fa-chair"></i>
-                                                Chọn ghế
-                                            </a>
-                                            <a href="#" class="trip-action">
-                                                <i class="fas fa-clock"></i>
-                                                Lịch trình
-                                            </a>
-                                            <a href="#" class="trip-action">
-                                                <i class="fas fa-route"></i>
-                                                Trung chuyển
-                                            </a>
-                                            <a href="#" class="trip-action">
-                                                <i class="fas fa-info-circle"></i>
-                                                Chính sách
-                                            </a>
-                                        </div>
                                     </div>
                                 <?php endforeach; ?>
                             <?php endif; ?>
@@ -358,5 +361,85 @@
         <?php endif; ?>
     </div>
 </div>
+
+<style>
+.recent-search-item:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+}
+
+.recent-search-item {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+</style>
+
+<script>
+// Auto-submit filter form when radio buttons change
+document.addEventListener('DOMContentLoaded', function() {
+    const filterForm = document.getElementById('filterForm');
+    if (filterForm) {
+        const radioButtons = filterForm.querySelectorAll('input[type="radio"]');
+        
+        radioButtons.forEach(radio => {
+            radio.addEventListener('change', function() {
+                filterForm.submit();
+            });
+        });
+    }
+});
+
+// Function to apply recent search
+function applyRecentSearch(from, to, departureDate, isRoundTrip, returnDate) {
+    const searchForm = document.querySelector('.search-form');
+    if (!searchForm) return;
+    
+    // Set form values
+    const fromSelect = searchForm.querySelector('select[name="from"]');
+    const toSelect = searchForm.querySelector('select[name="to"]');
+    const departureDateInput = searchForm.querySelector('input[name="departure_date"]');
+    const returnDateInput = searchForm.querySelector('input[name="return_date"]');
+    const tripTypeInputs = searchForm.querySelectorAll('input[name="trip_type"]');
+    const isRoundTripInput = searchForm.querySelector('input[name="is_round_trip"]');
+    const returnDateGroup = searchForm.querySelector('.return-date-group');
+    
+    // Set trip type
+    tripTypeInputs.forEach(input => {
+        if ((isRoundTrip === 'true' && input.value === 'round_trip') || 
+            (isRoundTrip === 'false' && input.value === 'one_way')) {
+            input.checked = true;
+        }
+    });
+    
+    // Set return date visibility
+    if (returnDateGroup) {
+        if (isRoundTrip === 'true') {
+            returnDateGroup.style.display = 'block';
+            if (returnDateInput) returnDateInput.required = true;
+            if (isRoundTripInput) isRoundTripInput.value = '1';
+        } else {
+            returnDateGroup.style.display = 'none';
+            if (returnDateInput) returnDateInput.required = false;
+            if (isRoundTripInput) isRoundTripInput.value = '0';
+        }
+    }
+    
+    // Set form values
+    if (fromSelect) fromSelect.value = from;
+    if (toSelect) toSelect.value = to;
+    if (departureDateInput) departureDateInput.value = departureDate;
+    if (returnDateInput && returnDate) returnDateInput.value = returnDate;
+    
+    // Submit form
+    searchForm.submit();
+}
+
+// Add click cursor for recent search items
+document.querySelectorAll('.recent-search-item').forEach(item => {
+    item.style.cursor = 'pointer';
+});
+</script>
 
 <?php include __DIR__ . '/../layouts/footer.php'; ?>

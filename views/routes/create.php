@@ -3,8 +3,7 @@
 <div class="container">
     <div class="page-header">
         <div class="page-title">
-            <h1><i class="fas fa-plus"></i> Thêm tuyến đường mới</h1>
-            <p>Tạo tuyến đường mới trong hệ thống</p>
+            <h1>Thêm tuyến đường mới</h1>
         </div>
         <div class="page-actions">
             <a href="<?php echo BASE_URL; ?>/routes" class="btn btn-outline">
@@ -25,7 +24,6 @@
                                placeholder="VD: SG-DL" 
                                value="<?php echo htmlspecialchars($_SESSION['form_data']['kyHieuTuyen'] ?? ''); ?>" 
                                required>
-                        <small class="form-help">Ký hiệu ngắn gọn để nhận diện tuyến đường</small>
                     </div>
                     <div class="form-group">
                         <label for="trangThai">Trạng thái</label>
@@ -69,9 +67,7 @@
 
             <!-- Added pickup and drop-off points section -->
             <div class="form-section">
-                <h3><i class="fas fa-map-pin"></i> Điểm đón và trả khách</h3>
-                <p class="section-description">Thêm các điểm đón và trả khách cụ thể cho tuyến đường này</p>
-                
+                <h3> Điểm đón và trả khách</h3>
                 <!-- Pickup Points -->
                 <div class="points-section">
                     <h4><i class="fas fa-play-circle text-success"></i> Điểm đón khách</h4>

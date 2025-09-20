@@ -21,33 +21,33 @@ class VehicleController {
     public function index() {
         $this->checkAdminAccess();
         
-        // Get filter parameters
-        $status = $_GET['status'] ?? null;
+        // Get simple search parameters
         $search = $_GET['search'] ?? '';
         $vehicleType = $_GET['vehicleType'] ?? '';
-        $seatType = $_GET['seatType'] ?? '';
-        $minSeats = $_GET['minSeats'] ?? '';
-        $maxSeats = $_GET['maxSeats'] ?? '';
         
-        // Build search criteria
+        // Build search criteria - only use the simple fields
         $criteria = [
             'search' => $search,
-            'status' => $status,
-            'vehicleType' => $vehicleType,
-            'seatType' => $seatType,
-            'minSeats' => $minSeats,
-            'maxSeats' => $maxSeats
+            'vehicleType' => $vehicleType
         ];
         
-        // Get vehicles using advanced search
-        $vehicles = Vehicle::search($criteria);
+        // Remove empty criteria
+        $criteria = array_filter($criteria, function($value) {
+            return !empty($value);
+        });
+        
+        // Get vehicles using search
+        if (!empty($criteria)) {
+            $vehicles = Vehicle::search($criteria);
+        } else {
+            $vehicles = Vehicle::getAll();
+        }
         
         // Get statistics
         $stats = Vehicle::getStats();
         
         // Get dropdown options
         $vehicleTypes = Vehicle::getVehicleTypes();
-        $seatTypes = Vehicle::getSeatTypes();
         
         // Load view
         include __DIR__ . '/../views/vehicles/index.php';

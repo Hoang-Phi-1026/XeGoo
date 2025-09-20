@@ -3,8 +3,7 @@
 <div class="container">
     <div class="page-header">
         <div class="page-title">
-            <h1><i class="fas fa-plus"></i> Thêm phương tiện mới</h1>
-            <p>Nhập thông tin phương tiện mới vào hệ thống</p>
+            <h1>Thêm phương tiện mới</h1>
         </div>
         <div class="page-actions">
             <a href="<?php echo BASE_URL; ?>/vehicles" class="btn btn-outline">

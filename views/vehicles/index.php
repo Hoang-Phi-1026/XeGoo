@@ -3,8 +3,7 @@
 <div class="container">
     <div class="page-header">
         <div class="page-title">
-            <h1><i class="fas fa-bus"></i> Quản lý Phương tiện</h1>
-            <p>Danh sách tất cả phương tiện trong hệ thống</p>
+            <h1>Quản lý Phương tiện</h1>
         </div>
         <div class="page-actions">
             <a href="<?php echo BASE_URL; ?>/vehicles/create" class="btn btn-primary">
@@ -44,47 +43,23 @@
         </div>
     </div>
 
-    <!-- Enhanced Search and Filters -->
-    <div class="filters-section">
-        <div class="search-header">
-            <h3><i class="fas fa-search"></i> Tìm kiếm và Lọc</h3>
-            <button type="button" class="btn btn-outline btn-sm" onclick="toggleAdvancedSearch()">
-                <i class="fas fa-cog"></i> <span id="advancedToggleText">Tìm kiếm nâng cao</span>
-            </button>
+    <!-- Search and Filter Form -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Tìm kiếm và lọc</h3>
         </div>
-        
-        <form method="GET" class="filters-form" id="searchForm">
-            <!-- Enhanced basic search section -->
-            <div class="basic-search">
-                <div class="search-row">
-                    <div class="filter-group flex-2">
-                        <label for="search">Tìm kiếm nhanh:</label>
-                        <div class="search-input-group">
-                            <input type="text" name="search" id="search" 
-                                   placeholder="Nhập biển số hoặc loại xe..." 
-                                   value="<?php echo htmlspecialchars($_GET['search'] ?? ''); ?>">
-                            <button type="submit" class="search-btn">
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </div>
+        <div class="card-body">
+            <form method="GET" class="filter-form" id="searchForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="search">Biển số xe:</label>
+                        <input type="text" class="form-control" name="search" id="search" 
+                               placeholder="Nhập biển số xe..." 
+                               value="<?php echo htmlspecialchars($_GET['search'] ?? ''); ?>">
                     </div>
-                    <div class="filter-group">
-                        <label for="status">Trạng thái:</label>
-                        <select name="status" id="status">
-                            <option value="">Tất cả</option>
-                            <option value="Đang hoạt động" <?php echo (isset($_GET['status']) && $_GET['status'] == 'Đang hoạt động') ? 'selected' : ''; ?>>Đang hoạt động</option>
-                            <option value="Bảo trì" <?php echo (isset($_GET['status']) && $_GET['status'] == 'Bảo trì') ? 'selected' : ''; ?>>Bảo trì</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Added advanced search section -->
-            <div class="advanced-search" id="advancedSearch" style="display: none;">
-                <div class="search-row">
-                    <div class="filter-group">
+                    <div class="form-group">
                         <label for="vehicleType">Loại phương tiện:</label>
-                        <select name="vehicleType" id="vehicleType">
+                        <select class="form-control" name="vehicleType" id="vehicleType">
                             <option value="">Tất cả loại xe</option>
                             <?php foreach ($vehicleTypes as $key => $type): ?>
                                 <option value="<?php echo $key; ?>" <?php echo (isset($_GET['vehicleType']) && $_GET['vehicleType'] == $key) ? 'selected' : ''; ?>>
@@ -93,45 +68,26 @@
                             <?php endforeach; ?>
                         </select>
                     </div>
-                    <div class="filter-group">
-                        <label for="seatType">Loại chỗ ngồi:</label>
-                        <select name="seatType" id="seatType">
-                            <option value="">Tất cả loại chỗ</option>
-                            <?php foreach ($seatTypes as $key => $type): ?>
-                                <option value="<?php echo $key; ?>" <?php echo (isset($_GET['seatType']) && $_GET['seatType'] == $key) ? 'selected' : ''; ?>>
-                                    <?php echo $type; ?>
-                                </option>
-                            <?php endforeach; ?>
-                        </select>
+                    <div class="form-group">
+                        <label>&nbsp;</label>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-search"></i>
+                                Tìm kiếm
+                            </button>
+                            <a href="<?php echo BASE_URL; ?>/vehicles" class="btn btn-secondary">
+                                <i class="fas fa-refresh"></i>
+                                Đặt lại
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="search-row">
-                    <div class="filter-group">
-                        <label for="minSeats">Số chỗ tối thiểu:</label>
-                        <input type="number" name="minSeats" id="minSeats" min="1" max="100" 
-                               placeholder="VD: 7" value="<?php echo htmlspecialchars($_GET['minSeats'] ?? ''); ?>">
-                    </div>
-                    <div class="filter-group">
-                        <label for="maxSeats">Số chỗ tối đa:</label>
-                        <input type="number" name="maxSeats" id="maxSeats" min="1" max="100" 
-                               placeholder="VD: 40" value="<?php echo htmlspecialchars($_GET['maxSeats'] ?? ''); ?>">
-                    </div>
-                </div>
-            </div>
-
-            <div class="filter-actions">
-                <button type="submit" class="btn btn-primary">
-                    <i class="fas fa-search"></i> Tìm kiếm
-                </button>
-                <a href="<?php echo BASE_URL; ?>/vehicles" class="btn btn-outline">
-                    <i class="fas fa-times"></i> Xóa bộ lọc
-                </a>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 
-    <!-- Added search results summary -->
-    <?php if (!empty($_GET['search']) || !empty($_GET['status']) || !empty($_GET['vehicleType']) || !empty($_GET['seatType']) || !empty($_GET['minSeats']) || !empty($_GET['maxSeats'])): ?>
+    <!-- Search results summary -->
+    <?php if (!empty($_GET['search']) || !empty($_GET['vehicleType'])): ?>
         <div class="search-results-summary">
             <div class="results-info">
                 <i class="fas fa-info-circle"></i>
@@ -140,14 +96,8 @@
             <div class="active-filters">
                 <?php if (!empty($_GET['search'])): ?>
                     <span class="filter-tag">
-                        <i class="fas fa-search"></i> "<?php echo htmlspecialchars($_GET['search']); ?>"
+                        <i class="fas fa-search"></i> Biển số: "<?php echo htmlspecialchars($_GET['search']); ?>"
                         <a href="<?php echo BASE_URL; ?>/vehicles?<?php echo http_build_query(array_diff_key($_GET, ['search' => ''])); ?>" class="remove-filter">×</a>
-                    </span>
-                <?php endif; ?>
-                <?php if (!empty($_GET['status'])): ?>
-                    <span class="filter-tag">
-                        <i class="fas fa-flag"></i> <?php echo $_GET['status']; ?>
-                        <a href="<?php echo BASE_URL; ?>/vehicles?<?php echo http_build_query(array_diff_key($_GET, ['status' => ''])); ?>" class="remove-filter">×</a>
                     </span>
                 <?php endif; ?>
                 <?php if (!empty($_GET['vehicleType'])): ?>
@@ -161,11 +111,16 @@
     <?php endif; ?>
 
     <!-- Vehicles Table -->
-    <div class="table-container">
-        <table class="data-table">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Danh sách phương tiện</h3>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="data-table">
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>STT</th>
                     <th>Biển số</th>
                     <th>Loại phương tiện</th>
                     <th>Số chỗ</th>
@@ -187,9 +142,13 @@
                         </td>
                     </tr>
                 <?php else: ?>
+                    <?php $dem = 0; ?>
                     <?php foreach ($vehicles as $vehicle): ?>
+                        <?php $dem++; ?>
                         <tr>
-                            <td><?php echo $vehicle['maPhuongTien']; ?></td>
+                            <td>
+                                <?php echo $dem; ?>
+                            </td>
                             <td class="license-plate"><?php echo htmlspecialchars($vehicle['bienSo']); ?></td>
                             <!-- Updated to display vehicle type information from new table structure -->
                             <td><?php echo htmlspecialchars($vehicle['tenLoaiPhuongTien']); ?></td>
@@ -222,6 +181,8 @@
                 <?php endif; ?>
             </tbody>
         </table>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -232,31 +193,12 @@ function confirmDelete(vehicleId) {
     }
 }
 
-function toggleAdvancedSearch() {
-    const advancedSearch = document.getElementById('advancedSearch');
-    const toggleText = document.getElementById('advancedToggleText');
-    
-    if (advancedSearch.style.display === 'none') {
-        advancedSearch.style.display = 'block';
-        toggleText.textContent = 'Ẩn tìm kiếm nâng cao';
-    } else {
-        advancedSearch.style.display = 'none';
-        toggleText.textContent = 'Tìm kiếm nâng cao';
-    }
-}
-
-function exportResults() {
-    const params = new URLSearchParams(window.location.search);
-    params.set('export', 'csv');
-    window.location.href = '<?php echo BASE_URL; ?>/vehicles?' + params.toString();
-}
-
-document.getElementById('status').addEventListener('change', function() {
-    if (!document.getElementById('advancedSearch').style.display || document.getElementById('advancedSearch').style.display === 'none') {
-        document.getElementById('searchForm').submit();
-    }
+// Auto submit form when vehicle type changes
+document.getElementById('vehicleType').addEventListener('change', function() {
+    document.getElementById('searchForm').submit();
 });
 
+// Submit form when enter key is pressed in search input
 document.getElementById('search').addEventListener('keypress', function(e) {
     if (e.key === 'Enter') {
         e.preventDefault();

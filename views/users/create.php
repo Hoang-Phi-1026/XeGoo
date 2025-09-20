@@ -6,7 +6,7 @@
 <div class="page-container">
     <div class="page-header">
         <h1 class="page-title">
-            <i class="fas fa-user-plus"></i>Thêm người dùng mới
+        Thêm người dùng mới
         </h1>
         <div class="page-actions">
             <a href="<?= BASE_URL ?>/users" class="btn btn-secondary">
@@ -50,7 +50,6 @@
                     <input type="tel" class="form-control" id="soDienThoai" name="soDienThoai" 
                            value="<?= htmlspecialchars($_POST['soDienThoai'] ?? '') ?>" 
                            pattern="[0-9]{10,11}" required>
-                    <small class="form-text">Nhập 10-11 chữ số</small>
                 </div>
                 <div class="form-group">
                     <label for="eMail" class="form-label">
@@ -68,7 +67,6 @@
                     </label>
                     <input type="password" class="form-control" id="matKhau" name="matKhau" 
                            minlength="6" required>
-                    <small class="form-text">Tối thiểu 6 ký tự</small>
                 </div>
                 <div class="form-group">
                     <label for="gioiTinh" class="form-label">Giới tính</label>

@@ -3,8 +3,7 @@
 <div class="container">
     <div class="page-header">
         <div class="page-title">
-            <h1><i class="fas fa-bus"></i> Quản lý Chuyến Xe</h1>
-            <p>Danh sách tất cả chuyến xe trong hệ thống</p>
+            <h1>Quản lý Chuyến Xe</h1>
         </div>
         <div class="page-actions">
             <a href="<?php echo BASE_URL; ?>/schedules/generate-trips" class="btn btn-success">
@@ -30,31 +29,13 @@
                 <p>Tổng chuyến xe</p>
             </div>
         </div>
-        <div class="stat-card ready">
-            <div class="stat-icon">
-                <i class="fas fa-clock"></i>
-            </div>
-            <div class="stat-content">
-                <h3><?php echo $stats['ready']; ?></h3>
-                <p>Sẵn sàng</p>
-            </div>
-        </div>
-        <div class="stat-card active">
-            <div class="stat-icon">
-                <i class="fas fa-play-circle"></i>
-            </div>
-            <div class="stat-content">
-                <h3><?php echo $stats['active']; ?></h3>
-                <p>Đang hoạt động</p>
-            </div>
-        </div>
         <div class="stat-card completed">
             <div class="stat-icon">
                 <i class="fas fa-check-circle"></i>
             </div>
             <div class="stat-content">
                 <h3><?php echo $stats['completed']; ?></h3>
-                <p>Hoàn thành</p>
+                <p>Số chuyến xe đã hoàn thành</p>
             </div>
         </div>
         <div class="stat-card today">
@@ -63,135 +44,119 @@
             </div>
             <div class="stat-content">
                 <h3><?php echo $stats['today']; ?></h3>
-                <p>Hôm nay</p>
-            </div>
-        </div>
-        <div class="stat-card occupancy">
-            <div class="stat-icon">
-                <i class="fas fa-percentage"></i>
-            </div>
-            <div class="stat-content">
-                <h3><?php echo $stats['avg_occupancy']; ?>%</h3>
-                <p>Tỷ lệ lấp đầy TB</p>
+                <p>Số chuyến xe hôm nay</p>
             </div>
         </div>
     </div>
 
-    <!-- Search and Filters -->
-    <div class="filters-section">
-        <div class="search-header">
-            <h3><i class="fas fa-search"></i> Tìm kiếm và Lọc</h3>
-            <button type="button" class="btn btn-outline btn-sm" onclick="toggleAdvancedSearch()">
-                <i class="fas fa-cog"></i> <span id="advancedToggleText">Tìm kiếm nâng cao</span>
-            </button>
+    <!-- Search and Filter Form -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Tìm kiếm và lọc</h3>
         </div>
-        
-        <form method="GET" class="filters-form" id="searchForm">
-            <div class="basic-search">
-                <div class="search-row">
-                    <div class="filter-group flex-2">
-                        <label for="search">Tìm kiếm nhanh:</label>
-                        <div class="search-input-group">
-                            <input type="text" name="search" id="search" 
-                                   placeholder="Nhập tên lịch trình, ký hiệu tuyến, biển số xe..." 
-                                   value="<?php echo htmlspecialchars($_GET['search'] ?? ''); ?>">
-                            <button type="submit" class="search-btn">
+        <div class="card-body">
+            <form method="GET" class="filter-form" id="searchForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="from_date">Từ ngày:</label>
+                        <input type="date" class="form-control" name="from_date" id="from_date" 
+                               value="<?php echo htmlspecialchars($_GET['from_date'] ?? ''); ?>">
+                    </div>
+                    <div class="form-group">
+                        <label for="to_date">Đến ngày:</label>
+                        <input type="date" class="form-control" name="to_date" id="to_date" 
+                               value="<?php echo htmlspecialchars($_GET['to_date'] ?? ''); ?>">
+                    </div>
+                    <div class="form-group">
+                        <label for="route">Tuyến đường:</label>
+                        <select class="form-control" name="route" id="route">
+                            <option value="">Tất cả tuyến đường</option>
+                            <?php foreach ($routes as $route): ?>
+                                <option value="<?php echo $route['maTuyenDuong']; ?>" 
+                                        <?php echo (isset($_GET['route']) && $_GET['route'] == $route['maTuyenDuong']) ? 'selected' : ''; ?>>
+                                    <?php echo htmlspecialchars($route['kyHieuTuyen'] . ' - ' . $route['diemDi'] . ' → ' . $route['diemDen']); ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>&nbsp;</label>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">
                                 <i class="fas fa-search"></i>
+                                Tìm kiếm
                             </button>
+                            <a href="<?php echo BASE_URL; ?>/trips" class="btn btn-secondary">
+                                <i class="fas fa-refresh"></i>
+                                Đặt lại
+                            </a>
                         </div>
                     </div>
-                    <div class="filter-group">
-                        <label for="status">Trạng thái:</label>
-                        <select name="status" id="status">
-                            <option value="">Tất cả trạng thái</option>
-                            <?php foreach ($statusOptions as $key => $status): ?>
-                                <option value="<?php echo $key; ?>" 
-                                        <?php echo (isset($_GET['status']) && $_GET['status'] == $key) ? 'selected' : ''; ?>>
-                                    <?php echo $status; ?>
-                                </option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
                 </div>
-            </div>
-
-            <div class="advanced-search" id="advancedSearch" style="display: none;">
-                <div class="search-row">
-                    <div class="filter-group">
-                        <label for="schedule">Lịch trình:</label>
-                        <select name="schedule" id="schedule">
-                            <option value="">Tất cả lịch trình</option>
-                            <?php foreach ($schedules as $schedule): ?>
-                                <option value="<?php echo $schedule['maLichTrinh']; ?>" 
-                                        <?php echo (isset($_GET['schedule']) && $_GET['schedule'] == $schedule['maLichTrinh']) ? 'selected' : ''; ?>>
-                                    <?php echo $schedule['kyHieuTuyen'] . ' - ' . $schedule['tenLichTrinh']; ?>
-                                </option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <div class="filter-group">
-                        <label for="vehicle">Phương tiện:</label>
-                        <select name="vehicle" id="vehicle">
-                            <option value="">Tất cả xe</option>
-                            <?php foreach ($vehicles as $vehicle): ?>
-                                <option value="<?php echo $vehicle['maPhuongTien']; ?>" 
-                                        <?php echo (isset($_GET['vehicle']) && $_GET['vehicle'] == $vehicle['maPhuongTien']) ? 'selected' : ''; ?>>
-                                    <?php echo $vehicle['tenLoaiPhuongTien'] . ' - ' . $vehicle['bienSo']; ?>
-                                </option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                </div>
-            </div>
-
-            <div class="filter-actions">
-                <button type="submit" class="btn btn-primary">
-                    <i class="fas fa-search"></i> Tìm kiếm
-                </button>
-                <a href="<?php echo BASE_URL; ?>/trips" class="btn btn-outline">
-                    <i class="fas fa-times"></i> Xóa bộ lọc
-                </a>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 
-    <!-- Search Results Summary -->
-    <?php if (!empty($_GET['search']) || !empty($_GET['status']) || !empty($_GET['schedule']) || !empty($_GET['vehicle'])): ?>
+    <!-- Search results summary -->
+    <?php if (!empty($_GET['from_date']) || !empty($_GET['to_date']) || !empty($_GET['route'])): ?>
         <div class="search-results-summary">
             <div class="results-info">
                 <i class="fas fa-info-circle"></i>
                 <span>Tìm thấy <strong><?php echo count($trips); ?></strong> chuyến xe phù hợp với tiêu chí tìm kiếm</span>
             </div>
             <div class="active-filters">
-                <?php if (!empty($_GET['search'])): ?>
+                <?php if (!empty($_GET['from_date'])): ?>
                     <span class="filter-tag">
-                        <i class="fas fa-search"></i> "<?php echo htmlspecialchars($_GET['search']); ?>"
-                        <a href="<?php echo BASE_URL; ?>/trips?<?php echo http_build_query(array_diff_key($_GET, ['search' => ''])); ?>" class="remove-filter">×</a>
+                        <i class="fas fa-calendar"></i> Từ: <?php echo date('d/m/Y', strtotime($_GET['from_date'])); ?>
+                        <a href="<?php echo BASE_URL; ?>/trips?<?php echo http_build_query(array_diff_key($_GET, ['from_date' => ''])); ?>" class="remove-filter">×</a>
                     </span>
                 <?php endif; ?>
-                <?php if (!empty($_GET['status'])): ?>
+                <?php if (!empty($_GET['to_date'])): ?>
                     <span class="filter-tag">
-                        <i class="fas fa-flag"></i> <?php echo $_GET['status']; ?>
-                        <a href="<?php echo BASE_URL; ?>/trips?<?php echo http_build_query(array_diff_key($_GET, ['status' => ''])); ?>" class="remove-filter">×</a>
+                        <i class="fas fa-calendar"></i> Đến: <?php echo date('d/m/Y', strtotime($_GET['to_date'])); ?>
+                        <a href="<?php echo BASE_URL; ?>/trips?<?php echo http_build_query(array_diff_key($_GET, ['to_date' => ''])); ?>" class="remove-filter">×</a>
                     </span>
+                <?php endif; ?>
+                <?php if (!empty($_GET['route'])): ?>
+                    <?php 
+                    $selectedRoute = null;
+                    foreach ($routes as $route) {
+                        if ($route['maTuyenDuong'] == $_GET['route']) {
+                            $selectedRoute = $route;
+                            break;
+                        }
+                    }
+                    ?>
+                    <?php if ($selectedRoute): ?>
+                    <span class="filter-tag">
+                        <i class="fas fa-route"></i> <?php echo htmlspecialchars($selectedRoute['kyHieuTuyen'] . ' - ' . $selectedRoute['diemDi'] . ' → ' . $selectedRoute['diemDen']); ?>
+                        <a href="<?php echo BASE_URL; ?>/trips?<?php echo http_build_query(array_diff_key($_GET, ['route' => ''])); ?>" class="remove-filter">×</a>
+                    </span>
+                    <?php endif; ?>
                 <?php endif; ?>
             </div>
         </div>
     <?php endif; ?>
 
+    <!-- search -->
+
     <!-- Trips Table -->
-    <div class="table-container">
-        <table class="data-table">
+    <div class="card">
+        <div class="card-header">
+            <h3><i class="fas fa-bus"></i> Danh sách chuyến xe</h3>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="data-table">
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>STT</th>
                     <th>Lịch trình</th>
                     <th>Tuyến đường</th>
                     <th>Xe</th>
                     <th>Ngày khởi hành</th>
                     <th>Giờ</th>
                     <th>Chỗ ngồi</th>
-                    <th>Tỷ lệ lấp đầy</th>
                     <th>Giá vé</th>
                     <th>Trạng thái</th>
                     <th>Thao tác</th>
@@ -209,9 +174,12 @@
                         </td>
                     </tr>
                 <?php else: ?>
-                    <?php foreach ($trips as $trip): ?>
+                    <?php $dem = 0; foreach ($trips as $trip): ?>
+                        <?php $dem++; ?>
                         <tr>
-                            <td><?php echo $trip['maChuyenXe']; ?></td>
+                            <td>
+                                <?php echo $dem; ?>
+                            </td>
                             <td>
                                 <div class="schedule-info">
                                     <strong><?php echo htmlspecialchars($trip['tenLichTrinh']); ?></strong>
@@ -240,13 +208,6 @@
                                 <div class="seat-info">
                                     <strong><?php echo $trip['soChoDaDat']; ?>/<?php echo $trip['soChoTong']; ?></strong><br>
                                     <small>Trống: <?php echo $trip['soChoTrong']; ?></small>
-                                </div>
-                            </td>
-                            <td>
-                                <?php $occupancy = Trip::calculateOccupancy($trip['soChoDaDat'], $trip['soChoTong']); ?>
-                                <div class="occupancy-bar">
-                                    <div class="occupancy-fill" style="width: <?php echo $occupancy; ?>%"></div>
-                                    <span class="occupancy-text"><?php echo $occupancy; ?>%</span>
                                 </div>
                             </td>
                             <td>
@@ -279,6 +240,8 @@
                 <?php endif; ?>
             </tbody>
         </table>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -289,29 +252,36 @@ function confirmDelete(tripId) {
     }
 }
 
-function toggleAdvancedSearch() {
-    const advancedSearch = document.getElementById('advancedSearch');
-    const toggleText = document.getElementById('advancedToggleText');
-    
-    if (advancedSearch.style.display === 'none') {
-        advancedSearch.style.display = 'block';
-        toggleText.textContent = 'Ẩn tìm kiếm nâng cao';
-    } else {
-        advancedSearch.style.display = 'none';
-        toggleText.textContent = 'Tìm kiếm nâng cao';
-    }
-}
-
-document.getElementById('status').addEventListener('change', function() {
-    if (!document.getElementById('advancedSearch').style.display || document.getElementById('advancedSearch').style.display === 'none') {
+// Auto submit when date or route changes
+document.getElementById('from_date').addEventListener('change', function() {
+    // Auto submit if there's already a to_date or route selected
+    if (document.getElementById('to_date').value || document.getElementById('route').value) {
         document.getElementById('searchForm').submit();
     }
 });
 
-document.getElementById('search').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
-        e.preventDefault();
+document.getElementById('to_date').addEventListener('change', function() {
+    // Auto submit if there's already a from_date or route selected
+    if (document.getElementById('from_date').value || document.getElementById('route').value) {
         document.getElementById('searchForm').submit();
+    }
+});
+
+document.getElementById('route').addEventListener('change', function() {
+    if (this.value) {
+        document.getElementById('searchForm').submit();
+    }
+});
+
+// Validate date range
+document.getElementById('searchForm').addEventListener('submit', function(e) {
+    const fromDate = document.getElementById('from_date').value;
+    const toDate = document.getElementById('to_date').value;
+    
+    if (fromDate && toDate && fromDate > toDate) {
+        e.preventDefault();
+        alert('Ngày bắt đầu không thể lớn hơn ngày kết thúc!');
+        return false;
     }
 });
 </script>

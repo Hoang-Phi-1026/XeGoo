@@ -29,7 +29,7 @@
                                 <i class="icon-upload"></i>
                                 Chọn ảnh mới
                             </label>
-                            <input type="file" id="avatar" name="avatar" accept="image/*" onchange="previewImage(this)" required>
+                            <input type="file" id="avatar" name="avatar" accept="image/*" onchange="previewImage(this)" required hidden>
                         </div>
                         <button type="submit" class="btn btn-primary">Cập nhật ảnh</button>
                     </form>

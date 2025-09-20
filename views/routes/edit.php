@@ -3,8 +3,7 @@
 <div class="container">
     <div class="page-header">
         <div class="page-title">
-            <h1><i class="fas fa-edit"></i> Chỉnh sửa tuyến đường</h1>
-            <p>Cập nhật thông tin tuyến đường: <?php echo htmlspecialchars($route['kyHieuTuyen']); ?></p>
+            <h1></i> Chỉnh sửa tuyến đường</h1>
         </div>
         <div class="page-actions">
             <a href="<?php echo BASE_URL; ?>/routes/<?php echo $route['maTuyenDuong']; ?>" class="btn btn-outline">
@@ -28,7 +27,6 @@
                                placeholder="VD: SG-DL" 
                                value="<?php echo htmlspecialchars($_SESSION['form_data']['kyHieuTuyen'] ?? $route['kyHieuTuyen']); ?>" 
                                required>
-                        <small class="form-help">Ký hiệu ngắn gọn để nhận diện tuyến đường</small>
                     </div>
                     <div class="form-group">
                         <label for="trangThai">Trạng thái</label>

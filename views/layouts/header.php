@@ -90,7 +90,7 @@ if (session_status() === PHP_SESSION_NONE) {
                         case 4: // Khách Hàng
                             ?>
                             <li class="nav-item"><a href="<?php echo BASE_URL; ?>/" class="nav-link">Trang chủ</a></li>
-                            <li class="nav-item"><a href="<?php echo BASE_URL; ?>/booking" class="nav-link">Đặt vé</a></li>
+                            <li class="nav-item"><a href="<?php echo BASE_URL; ?>/search" class="nav-link">Đặt vé</a></li>
                             <li class="nav-item"><a href="<?php echo BASE_URL; ?>/my-tickets" class="nav-link">Vé của tôi</a></li>
                             <li class="nav-item"><a href="<?php echo BASE_URL; ?>/profile" class="nav-link">Hồ sơ</a></li>
                             <?php

@@ -22,20 +22,24 @@ class RouteController {
     public function index() {
         $this->checkAdminAccess();
         
-        // Get filter parameters
-        $status = $_GET['status'] ?? null;
-        $search = $_GET['search'] ?? '';
+        // Build search criteria from GET parameters
+        $criteria = [
+            'diemDi' => $_GET['diemDi'] ?? '',
+            'diemDen' => $_GET['diemDen'] ?? '',
+            'status' => $_GET['status'] ?? ''
+        ];
         
-        // Get routes
-        $routes = Route::getAll($status);
+        // Remove empty criteria
+        $criteria = array_filter($criteria, function($value) {
+            return !empty($value);
+        });
         
-        // Filter by search term if provided
-        if (!empty($search)) {
-            $routes = array_filter($routes, function($route) use ($search) {
-                return stripos($route['kyHieuTuyen'], $search) !== false ||
-                       stripos($route['diemDi'], $search) !== false ||
-                       stripos($route['diemDen'], $search) !== false;
-            });
+        // Get routes using search function
+        if (!empty($criteria)) {
+            $routes = Route::search($criteria);
+        } else {
+            // If no search criteria, get all routes
+            $routes = Route::getAll();
         }
         
         // Get statistics
@@ -43,6 +47,10 @@ class RouteController {
         
         // Get status options for filter
         $statusOptions = Route::getStatusOptions();
+        
+        // Get unique start and end points for dropdowns
+        $startPoints = Route::getUniqueStartPoints();
+        $endPoints = Route::getUniqueEndPoints();
         
         // Load view
         include __DIR__ . '/../views/routes/index.php';

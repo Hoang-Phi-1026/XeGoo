@@ -3,8 +3,7 @@
 <div class="container">
     <div class="page-header">
         <div class="page-title">
-            <h1><i class="fas fa-bus"></i> Chi tiết phương tiện</h1>
-            <p>Thông tin chi tiết của phương tiện <?php echo htmlspecialchars($vehicle['bienSo']); ?></p>
+            <h1>Chi tiết phương tiện</h1>
         </div>
         <div class="page-actions">
             <a href="<?php echo BASE_URL; ?>/vehicles" class="btn btn-outline">
@@ -21,9 +20,6 @@
             <div class="detail-header">
                 <div class="vehicle-info">
                     <h2><?php echo htmlspecialchars($vehicle['bienSo']); ?></h2>
-                    <span class="status-badge <?php echo $vehicle['trangThai'] == 'Đang hoạt động' ? 'active' : 'maintenance'; ?>">
-                        <?php echo $vehicle['trangThai']; ?>
-                    </span>
                 </div>
                 <div class="vehicle-icon">
                     <i class="fas fa-bus"></i>

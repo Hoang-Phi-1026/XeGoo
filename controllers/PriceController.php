@@ -426,7 +426,7 @@ class PriceController {
             fputcsv($output, [
                 $price['maGiaVe'],
                 $price['kyHieuTuyen'] . ' (' . $price['diemDi'] . ' - ' . $price['diemDen'] . ')',
-                $price['tenLoaiPhuongTien'], // Changed from vehicle info to vehicle type name
+                $price['tenLoaiPhuongTien'], 
                 $price['loaiChoNgoi'],
                 $price['tenLoaiVe'],
                 $price['giaVe'],

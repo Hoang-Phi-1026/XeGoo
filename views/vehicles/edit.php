@@ -3,8 +3,7 @@
 <div class="container">
     <div class="page-header">
         <div class="page-title">
-            <h1><i class="fas fa-edit"></i> Chỉnh sửa phương tiện</h1>
-            <p>Cập nhật thông tin phương tiện <?php echo htmlspecialchars($vehicle['bienSo']); ?></p>
+            <h1>Chỉnh sửa phương tiện</h1>
         </div>
         <div class="page-actions">
             <a href="<?php echo BASE_URL; ?>/vehicles/<?php echo $vehicle['maPhuongTien']; ?>" class="btn btn-outline">

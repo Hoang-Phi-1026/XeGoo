@@ -75,6 +75,9 @@ class SearchController {
                 
                 error_log("Search completed: " . count($searchResults['outbound']) . " outbound, " . count($searchResults['return']) . " return");
                 
+                // Save recent search after successful search
+                $this->saveRecentSearch($diemDi, $diemDen, $ngayDi, $isRoundTrip, $ngayVe, $soKhach);
+                
                 if (!empty(array_filter($filters))) {
                     $searchResults['outbound'] = TripSearch::filterTrips($searchResults['outbound'], $filters);
                     if ($isRoundTrip) {
@@ -141,6 +144,48 @@ class SearchController {
     }
     
     /**
+     * Save recent search to session
+     */
+    private function saveRecentSearch($from, $to, $departureDate, $isRoundTrip, $returnDate = null, $passengers = 1) {
+        $search = [
+            'from' => $from,
+            'to' => $to,
+            'departure_date' => $departureDate,
+            'return_date' => $returnDate,
+            'passengers' => $passengers,
+            'is_round_trip' => $isRoundTrip,
+            'search_time' => date('Y-m-d H:i:s')
+        ];
+        
+        // Initialize recent searches array if not exists
+        if (!isset($_SESSION['recent_searches'])) {
+            $_SESSION['recent_searches'] = [];
+        }
+        
+        // Check if this search already exists (same route and date)
+        $exists = false;
+        foreach ($_SESSION['recent_searches'] as $key => $recentSearch) {
+            if ($recentSearch['from'] === $from && 
+                $recentSearch['to'] === $to && 
+                $recentSearch['departure_date'] === $departureDate &&
+                $recentSearch['is_round_trip'] === $isRoundTrip) {
+                // Remove the existing one and add updated one at the top
+                unset($_SESSION['recent_searches'][$key]);
+                $exists = true;
+                break;
+            }
+        }
+        
+        // Add new search at the beginning
+        array_unshift($_SESSION['recent_searches'], $search);
+        
+        // Keep only the last 10 searches
+        $_SESSION['recent_searches'] = array_slice($_SESSION['recent_searches'], 0, 10);
+        
+        error_log("Recent search saved: " . json_encode($search));
+    }
+    
+    /**
      * API endpoint for AJAX search
      */
     public function api() {
@@ -181,6 +226,9 @@ class SearchController {
         
         try {
             $searchResults = TripSearch::searchTrips($diemDi, $diemDen, $ngayDi, $isRoundTrip ? $ngayVe : null, $soKhach);
+            
+            // Save recent search after successful API search
+            $this->saveRecentSearch($diemDi, $diemDen, $ngayDi, $isRoundTrip, $ngayVe, $soKhach);
             
             $response = [
                 'success' => true,
@@ -251,38 +299,7 @@ class SearchController {
             echo json_encode(['error' => 'Có lỗi xảy ra: ' . $e->getMessage()]);
         }
     }
-    
-    /**
-     * New method to handle round-trip booking selection
-     */
-    public function selectRoundTrip() {
-        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-            header('Location: ' . BASE_URL . '/search');
-            exit;
-        }
-        
-        $outboundTripId = $_POST['outbound_trip'] ?? '';
-        $returnTripId = $_POST['return_trip'] ?? '';
-        $passengers = (int)($_POST['passengers'] ?? 1);
-        
-        if (empty($outboundTripId) || empty($returnTripId)) {
-            $_SESSION['error'] = 'Vui lòng chọn cả chuyến đi và chuyến về';
-            header('Location: ' . BASE_URL . '/search');
-            exit;
-        }
-        
-        // Store round-trip selection in session
-        $_SESSION['round_trip_booking'] = [
-            'outbound_trip' => $outboundTripId,
-            'return_trip' => $returnTripId,
-            'passengers' => $passengers,
-            'booking_type' => 'round_trip',
-            'created_at' => time()
-        ];
-        
-        // Redirect to booking page
-        header('Location: ' . BASE_URL . '/booking/round-trip');
-        exit;
-    }
+
+
 }
 ?>

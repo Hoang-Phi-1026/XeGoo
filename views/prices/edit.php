@@ -7,7 +7,6 @@
 <div class="page-container">
     <div class="page-header">
         <h1 class="page-title">
-            <i class="fas fa-edit"></i>
             Chỉnh sửa giá vé
         </h1>
         <div class="page-actions">
@@ -31,29 +30,30 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="maTuyenDuong">Tuyến đường <span class="required">*</span></label>
-                        <select class="form-control" id="maTuyenDuong" name="maTuyenDuong" required>
-                            <option value="">Chọn tuyến đường</option>
-                            <?php foreach ($routes as $route): ?>
-                                <option value="<?= $route['maTuyenDuong'] ?>" 
-                                        <?= ($_SESSION['form_data']['maTuyenDuong'] ?? $price['maTuyenDuong']) == $route['maTuyenDuong'] ? 'selected' : '' ?>>
-                                    <?= htmlspecialchars($route['kyHieuTuyen']) ?> - <?= htmlspecialchars($route['diemDi']) ?> → <?= htmlspecialchars($route['diemDen']) ?>
-                                </option>
-                            <?php endforeach; ?>
+                        <select class="form-control" id="maTuyenDuong" name="maTuyenDuong" disabled>
+                            <option value="<?= $price['maTuyenDuong'] ?>">
+                                <?= htmlspecialchars($price['diemDi']) ?> → <?= htmlspecialchars($price['diemDen']) ?>
+                            </option>
                         </select>
+                    <input type="hidden" name="maTuyenDuong" value="<?= $price['maTuyenDuong'] ?>">
+
                     </div>
                     <div class="form-group">
                         <!-- Updated field name from loaiPhuongTien to maLoaiPhuongTien and using vehicleTypes array -->
                         <label for="maLoaiPhuongTien">Loại phương tiện <span class="required">*</span></label>
-                        <select class="form-control" id="maLoaiPhuongTien" name="maLoaiPhuongTien" required>
-                            <option value="">Chọn loại phương tiện</option>
+                        <select class="form-control" id="maLoaiPhuongTien" name="maLoaiPhuongTien" disabled>
                             <?php foreach ($vehicleTypes as $vehicleType): ?>
-                                <option value="<?= $vehicleType['maLoaiPhuongTien'] ?>" 
-                                        data-seat-type="<?= htmlspecialchars($vehicleType['loaiChoNgoiMacDinh']) ?>"
-                                        <?= ($_SESSION['form_data']['maLoaiPhuongTien'] ?? $price['maLoaiPhuongTien']) == $vehicleType['maLoaiPhuongTien'] ? 'selected' : '' ?>>
-                                    <?= htmlspecialchars($vehicleType['tenLoaiPhuongTien']) ?> - <?= htmlspecialchars($vehicleType['hangXe']) ?> (<?= $vehicleType['soChoMacDinh'] ?> chỗ)
+                                <option value="<?= $vehicleType['maLoaiPhuongTien'] ?>"
+                                    <?= ($price['maLoaiPhuongTien'] == $vehicleType['maLoaiPhuongTien']) ? 'selected' : '' ?>>
+                                    <?= htmlspecialchars($vehicleType['tenLoaiPhuongTien']) ?> 
+                                    - <?= htmlspecialchars($vehicleType['hangXe']) ?> 
+                                    (<?= $vehicleType['soChoMacDinh'] ?> chỗ)
                                 </option>
                             <?php endforeach; ?>
                         </select>
+                        <!-- Hidden input để form vẫn submit được -->
+                        <input type="hidden" name="maLoaiPhuongTien" value="<?= $price['maLoaiPhuongTien'] ?>">
+
                     </div>
                 </div>
 

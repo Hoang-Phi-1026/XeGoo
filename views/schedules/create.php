@@ -3,8 +3,7 @@
 <div class="container">
     <div class="page-header">
         <div class="page-title">
-            <h1><i class="fas fa-plus"></i> Thêm Lịch Trình Mới</h1>
-            <p>Tạo lịch trình mới cho tuyến đường</p>
+            <h1>Thêm Lịch Trình Mới</h1>
         </div>
         <div class="page-actions">
             <a href="<?php echo BASE_URL; ?>/schedules" class="btn btn-outline">

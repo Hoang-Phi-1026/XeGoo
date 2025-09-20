@@ -6,7 +6,6 @@
 <div class="page-container">
     <div class="page-header">
         <h1 class="page-title">
-            <i class="fas fa-users"></i>
             Quản lý người dùng
         </h1>
         <div class="page-actions">
@@ -53,17 +52,6 @@
                 </div>
                 <div class="stat-icon">
                     <i class="fas fa-user-lock"></i>
-                </div>
-            </div>
-        </div>
-        <div class="stat-card stat-info">
-            <div class="stat-content">
-                <div class="stat-info">
-                    <h3 class="stat-title">Khách hàng</h3>
-                    <div class="stat-number"><?= $stats['customer'] ?? 0 ?></div>
-                </div>
-                <div class="stat-icon">
-                    <i class="fas fa-user-friends"></i>
                 </div>
             </div>
         </div>
@@ -132,7 +120,7 @@
                 <table class="data-table">
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            <th>STT</th>
                             <th>Tên người dùng</th>
                             <th>Số điện thoại</th>
                             <th>Email</th>
@@ -151,9 +139,12 @@
                                 </td>
                             </tr>
                         <?php else: ?>
-                            <?php foreach ($users as $user): ?>
+                            <?php $dem = 0; foreach ($users as $user): ?>
+                                <?php $dem++; ?>
                                 <tr>
-                                    <td><?= $user['maNguoiDung'] ?? 'N/A' ?></td>
+                                    <td>
+                                        <?php echo $dem; ?>
+                                    </td>
                                     <td>
                                         <div class="user-info">
                                             <?php if (!empty($user['avt'])): ?>

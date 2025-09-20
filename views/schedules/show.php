@@ -3,8 +3,7 @@
 <div class="container">
     <div class="page-header">
         <div class="page-title">
-            <h1><i class="fas fa-calendar-alt"></i> Chi tiết Lịch Trình</h1>
-            <p><?php echo htmlspecialchars($schedule['tenLichTrinh']); ?></p>
+            <h1>Chi tiết Lịch Trình</h1>
         </div>
         <div class="page-actions">
             <a href="<?php echo BASE_URL; ?>/schedules" class="btn btn-outline">
@@ -22,10 +21,6 @@
             <div class="detail-section">
                 <h3><i class="fas fa-info-circle"></i> Thông tin cơ bản</h3>
                 <div class="detail-content">
-                    <div class="detail-item">
-                        <label>ID Lịch trình:</label>
-                        <span><?php echo $schedule['maLichTrinh']; ?></span>
-                    </div>
                     <div class="detail-item">
                         <label>Tên lịch trình:</label>
                         <span><?php echo htmlspecialchars($schedule['tenLichTrinh']); ?></span>

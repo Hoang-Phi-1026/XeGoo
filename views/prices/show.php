@@ -6,7 +6,6 @@
 <div class="page-container">
     <div class="page-header">
         <h1 class="page-title">
-            <i class="fas fa-ticket-alt"></i>
             Chi tiết giá vé
         </h1>
         <div class="page-actions">
@@ -23,17 +22,6 @@
 
     <!-- Enhanced hero section with route display -->
     <div class="card">
-        <div class="card-header">
-            <h3 class="card-title">
-                <i class="fas fa-route"></i>
-                Tuyến đường #<?= $price['maGiaVe'] ?>
-            </h3>
-            <div class="card-actions">
-                <span class="<?= $price['trangThai'] == 'Hoạt động' ? 'status-active' : 'status-inactive' ?>">
-                    <?= htmlspecialchars($price['trangThai']) ?>
-                </span>
-            </div>
-        </div>
         <div class="card-body">
             <div class="route-display">
                 <div class="route-point"><?= htmlspecialchars($price['diemDi']) ?></div>
@@ -67,7 +55,7 @@
                 <div class="detail-section">
                     <h4 class="section-title">
                         <i class="fas fa-bus"></i>
-                        Thông tin phương tiện
+                        Thông tin vé
                     </h4>
                     <div class="detail-row">
                         <label>Ký hiệu tuyến:</label>
@@ -157,10 +145,6 @@
                         <i class="fas fa-cog"></i>
                         Thông tin hệ thống
                     </h4>
-                    <div class="detail-row">
-                        <label>Mã giá vé:</label>
-                        <span class="detail-value">#<?= $price['maGiaVe'] ?></span>
-                    </div>
                     <div class="detail-row">
                         <label>Ngày tạo:</label>
                         <span class="detail-value"><?= date('d/m/Y H:i:s', strtotime($price['ngayTao'])) ?></span>

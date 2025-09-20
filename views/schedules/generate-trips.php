@@ -3,8 +3,7 @@
 <div class="container">
     <div class="page-header">
         <div class="page-title">
-            <h1><i class="fas fa-cogs"></i> Sinh Chuyến Xe</h1>
-            <p>Tạo các chuyến xe từ lịch trình đã có</p>
+            <h1>Sinh Chuyến Xe</h1>
         </div>
         <div class="page-actions">
             <a href="<?php echo BASE_URL; ?>/schedules" class="btn btn-outline">

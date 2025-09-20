@@ -6,7 +6,7 @@
 <div class="page-container">
     <div class="page-header">
         <h1 class="page-title">
-            <i class="fas fa-user"></i>Chi tiết người dùng
+            Chi tiết người dùng
         </h1>
         <div class="page-actions">
             <a href="<?= BASE_URL ?>/users" class="btn btn-secondary">

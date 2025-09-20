@@ -229,27 +229,6 @@ class Price {
         return $stats;
     }
     
-    /**
-     * Format price for display
-     */
-    public static function formatPrice($price) {
-        return number_format($price, 0, ',', '.') . ' VNĐ';
-    }
-    
-    /**
-     * Get prices by route and vehicle type (for trip generation)
-     */
-    public static function getPricesByRouteAndVehicleType($routeId, $vehicleTypeId, $seatType, $date) {
-        $sql = "SELECT g.*, l.tenLoaiVe 
-                FROM giave g 
-                JOIN loaive l ON g.maLoaiVe = l.maLoaiVe 
-                WHERE g.maTuyenDuong = ? AND g.maLoaiPhuongTien = ? AND g.loaiChoNgoi = ?
-                AND g.trangThai = 'Hoạt động'
-                AND ? BETWEEN g.ngayBatDau AND g.ngayKetThuc
-                ORDER BY FIELD(l.tenLoaiVe, 'Vé đặc biệt', 'Vé khuyến mãi', 'Vé thường')";
-        
-        return fetchAll($sql, [$routeId, $vehicleTypeId, $seatType, $date]);
-    }
     
     /**
      * Advanced search prices with multiple criteria

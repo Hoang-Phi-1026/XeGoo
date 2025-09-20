@@ -326,13 +326,13 @@ class ScheduleController {
     private function validateTripGeneration($scheduleId, $vehicleId) {
         $errors = [];
         
-        // 1. Kiểm tra xe có trạng thái khả dụng
+        // 1 Kiểm tra xe có trạng thái khả dụng
         $vehicleStatus = $this->checkVehicleStatus($vehicleId);
         if (!$vehicleStatus['available']) {
             $errors[] = "Xe không thể sinh chuyến: " . $vehicleStatus['reason'];
         }
         
-        // 2. Kiểm tra xung đột thời gian
+        // 2 Kiểm tra xung đột thời gian
         $timeConflicts = $this->checkTimeConflicts($scheduleId, $vehicleId);
         if (!empty($timeConflicts)) {
             foreach ($timeConflicts as $conflict) {
@@ -343,7 +343,7 @@ class ScheduleController {
             }
         }
         
-        // 3. Kiểm tra xe có kịp quay lại điểm xuất phát
+        // 3 Kiểm tra xe có kịp quay lại điểm xuất phát
         $returnTimeIssues = $this->checkVehicleReturnTime($scheduleId, $vehicleId);
         if (!empty($returnTimeIssues)) {
             foreach ($returnTimeIssues as $issue) {

@@ -3,8 +3,7 @@
 <div class="container">
     <div class="page-header">
         <div class="page-title">
-            <h1><i class="fas fa-chart-bar"></i> Thống kê Chuyến Xe</h1>
-            <p>Báo cáo và phân tích dữ liệu chuyến xe</p>
+            <h1>Thống kê Chuyến Xe</h1>
         </div>
         <div class="page-actions">
             <a href="<?php echo BASE_URL; ?>/trips" class="btn btn-outline">
@@ -16,7 +15,7 @@
     <!-- Date Range Filter -->
     <div class="filters-section">
         <div class="search-header">
-            <h3><i class="fas fa-calendar"></i> Chọn khoảng thời gian</h3>
+            <h3>Chọn khoảng thời gian</h3>
         </div>
         
         <form method="GET" class="filters-form">
@@ -119,7 +118,7 @@
             <table class="data-table">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>STT</th>
                         <th>Lịch trình</th>
                         <th>Tuyến đường</th>
                         <th>Ngày khởi hành</th>
@@ -139,9 +138,12 @@
                             </td>
                         </tr>
                     <?php else: ?>
-                        <?php foreach ($trips as $trip): ?>
+                        <?php $dem = 0; foreach ($trips as $trip): ?>
+                            <?php $dem++; ?>
                             <tr>
-                                <td><?php echo $trip['maChuyenXe']; ?></td>
+                                <td>
+                                    <?php echo $dem; ?>
+                                </td>
                                 <td><?php echo htmlspecialchars($trip['tenLichTrinh']); ?></td>
                                 <td>
                                     <strong><?php echo htmlspecialchars($trip['kyHieuTuyen']); ?></strong><br>

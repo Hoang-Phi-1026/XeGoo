@@ -26,9 +26,12 @@ class TripController {
         $vehicleFilter = $_GET['vehicle'] ?? null;
         $statusFilter = $_GET['status'] ?? null;
         $search = $_GET['search'] ?? '';
+        $fromDate = $_GET['from_date'] ?? '';
+        $toDate = $_GET['to_date'] ?? '';
+        $routeFilter = $_GET['route'] ?? '';
         
-        // Get trips
-        $trips = Trip::getAll($scheduleFilter, $vehicleFilter, $statusFilter, $search);
+        // Get trips with new filters
+        $trips = Trip::getAll($scheduleFilter, $vehicleFilter, $statusFilter, $search, $fromDate, $toDate, $routeFilter);
         
         // Get statistics
         $stats = Trip::getStats();
@@ -36,6 +39,7 @@ class TripController {
         // Get filter options
         $schedules = Trip::getSchedulesForFilter();
         $vehicles = Trip::getVehiclesForFilter();
+        $routes = Trip::getRoutesForFilter();
         $statusOptions = Trip::getStatusOptions();
         
         // Load view

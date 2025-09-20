@@ -9,7 +9,7 @@ class AdminController {
         }
     }
 
-    // Check if user is admin
+    // kiểm tra admin
     private function checkAdminAccess() {
         if (!isset($_SESSION['user_id']) || !isset($_SESSION['user_role']) || $_SESSION['user_role'] != 1) {
             $_SESSION['error'] = 'Bạn không có quyền truy cập chức năng này!';

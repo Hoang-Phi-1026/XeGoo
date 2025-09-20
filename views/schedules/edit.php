@@ -3,8 +3,7 @@
 <div class="container">
     <div class="page-header">
         <div class="page-title">
-            <h1><i class="fas fa-edit"></i> Chỉnh sửa Lịch Trình</h1>
-            <p><?php echo htmlspecialchars($schedule['tenLichTrinh']); ?></p>
+            <h1>Chỉnh sửa Lịch Trình</h1>
         </div>
         <div class="page-actions">
             <a href="<?php echo BASE_URL; ?>/schedules/<?php echo $schedule['maLichTrinh']; ?>" class="btn btn-outline">
@@ -22,15 +21,18 @@
                     
                     <div class="form-group">
                         <label for="maTuyenDuong">Tuyến đường <span class="required">*</span></label>
-                        <select name="maTuyenDuong" id="maTuyenDuong" required>
-                            <option value="">-- Chọn tuyến đường --</option>
+                        <select name="maTuyenDuong_display" id="maTuyenDuong" class="form-control" disabled>
                             <?php foreach ($routes as $route): ?>
                                 <option value="<?php echo $route['maTuyenDuong']; ?>" 
-                                        <?php echo ($schedule['maTuyenDuong'] == $route['maTuyenDuong']) ? 'selected' : ''; ?>>
-                                    <?php echo $route['kyHieuTuyen'] . ' - ' . $route['diemDi'] . ' → ' . $route['diemDen']; ?>
+                                    <?php echo ($schedule['maTuyenDuong'] == $route['maTuyenDuong']) ? 'selected' : ''; ?>>
+                                    <?php echo $route['diemDi'] . ' → ' . $route['diemDen']; ?>
                                 </option>
                             <?php endforeach; ?>
                         </select>
+
+                        <!-- Hidden input để form submit được giá trị -->
+                        <input type="hidden" name="maTuyenDuong" value="<?php echo $schedule['maTuyenDuong']; ?>">
+
                     </div>
 
                     <div class="form-group">

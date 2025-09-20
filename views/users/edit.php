@@ -3,7 +3,6 @@
 <div class="page-container">
     <div class="page-header">
         <h1 class="page-title">
-            <i class="fas fa-user-edit"></i>
             Chỉnh sửa người dùng
         </h1>
         <div class="page-actions">
@@ -73,7 +72,6 @@
                         <label for="matKhau">Mật khẩu mới</label>
                         <input type="password" class="form-control" id="matKhau" name="matKhau" 
                                placeholder="Để trống nếu không muốn thay đổi">
-                        <small class="form-text">Để trống nếu không muốn thay đổi mật khẩu</small>
                     </div>
                 </div>
 

@@ -6,14 +6,9 @@
 <div class="page-container">
     <div class="page-header">
         <h1 class="page-title">
-            <i class="fas fa-tags"></i>
             Quản lý giá vé
         </h1>
         <div class="page-actions">
-            <a href="<?= BASE_URL ?>/prices/export" class="btn btn-success">
-                <i class="fas fa-download"></i>
-                Xuất Excel
-            </a>
             <a href="<?= BASE_URL ?>/prices/create" class="btn btn-primary">
                 <i class="fas fa-plus"></i>
                 Thêm giá vé
@@ -78,11 +73,6 @@
             <form method="GET" class="filter-form">
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="search">Tìm kiếm:</label>
-                        <input type="text" class="form-control" id="search" name="search" 
-                               placeholder="Tuyến đường, loại phương tiện..." value="<?= htmlspecialchars($_GET['search'] ?? '') ?>">
-                    </div>
-                    <div class="form-group">
                         <label for="route">Tuyến đường:</label>
                         <select class="form-control" id="route" name="route">
                             <option value="">Tất cả tuyến</option>
@@ -90,21 +80,7 @@
                                 <?php foreach ($routes as $route): ?>
                                     <option value="<?= $route['maTuyenDuong'] ?>" 
                                             <?= ($_GET['route'] ?? '') == $route['maTuyenDuong'] ? 'selected' : '' ?>>
-                                        <?= htmlspecialchars($route['kyHieuTuyen']) ?> - <?= htmlspecialchars($route['diemDi']) ?> → <?= htmlspecialchars($route['diemDen']) ?>
-                                    </option>
-                                <?php endforeach; ?>
-                            <?php endif; ?>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="vehicle">Loại phương tiện:</label>
-                        <select class="form-control" id="vehicle" name="vehicle">
-                            <option value="">Tất cả loại phương tiện</option>
-                            <?php if (!empty($vehicleTypes)): ?>
-                                <?php foreach ($vehicleTypes as $vehicleType): ?>
-                                    <option value="<?= $vehicleType['maLoaiPhuongTien'] ?>" 
-                                            <?= ($_GET['vehicle'] ?? '') == $vehicleType['maLoaiPhuongTien'] ? 'selected' : '' ?>>
-                                        <?= htmlspecialchars($vehicleType['tenLoaiPhuongTien']) ?>
+                                            <?= htmlspecialchars($route['diemDi']) ?> → <?= htmlspecialchars($route['diemDen']) ?>
                                     </option>
                                 <?php endforeach; ?>
                             <?php endif; ?>
@@ -149,8 +125,8 @@
                 <table class="data-table">
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Tuyến đường</th>
+                            <th>STT</th>
+                            <th>Tuyến đường</th>    
                             <th>Loại phương tiện</th>
                             <th>Loại chỗ</th>
                             <th>Loại vé</th>
@@ -170,13 +146,15 @@
                                 </td>
                             </tr>
                         <?php else: ?>
-                            <?php foreach ($prices as $price): ?>
+                            <?php $dem = 0; foreach ($prices as $price): ?>
+                                <?php $dem++; ?>
                                 <tr>
-                                    <td><?= $price['maGiaVe'] ?? 'N/A' ?></td>
+                                    <td>
+                                        <?php echo $dem; ?>
+                                    </td>
                                     <td>
                                         <div class="route-info">
                                             <strong><?= htmlspecialchars($price['kyHieuTuyen'] ?? 'N/A') ?></strong>
-                                            <small><?= htmlspecialchars($price['diemDi'] ?? '') ?> → <?= htmlspecialchars($price['diemDen'] ?? '') ?></small>
                                         </div>
                                     </td>
                                     <td><?= htmlspecialchars($price['tenLoaiPhuongTien'] ?? 'N/A') ?></td>

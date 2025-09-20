@@ -110,30 +110,7 @@ class User {
         }
     }
 
-    public function updateProfile($id, $data) {
-        try {
-            $sql = "UPDATE nguoidung SET 
-                    tenNguoiDung = ?, 
-                    eMail = ?, 
-                    gioiTinh = ?, 
-                    diaChi = ?, 
-                    moTa = ? 
-                    WHERE maNguoiDung = ?";
-            
-            $stmt = $this->db->prepare($sql);
-            return $stmt->execute([
-                $data['tenNguoiDung'],
-                $data['eMail'],
-                $data['gioiTinh'],
-                $data['diaChi'],
-                $data['moTa'] ?? '',
-                $id
-            ]);
-        } catch (PDOException $e) {
-            error_log("Update profile error: " . $e->getMessage());
-            return false;
-        }
-    }
+
 
     public function getAllUsers($search = '', $role = '', $status = '') {
         try {

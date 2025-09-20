@@ -4,25 +4,10 @@ require_once __DIR__ . '/../layouts/header.php';
 ?>
 
 <div class="home-container">
-    <!-- Modern Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <i class="fas fa-bus"></i>
-                    <span class="badge-text">Nền tảng đặt vé #1 Việt Nam</span>
-                </div>
-                <h1 class="hero-title">
-                    Đặt vé xe liên tỉnh 
-                    <span class="text-primary">dễ dàng</span> 
-                    với XeGoo
-                </h1>
-                <p class="hero-subtitle">
-                    Hệ thống đặt vé xe khách trực tuyến hiện đại, an toàn và tiện lợi. 
-                    Kết nối bạn đến mọi miền đất nước với dịch vụ chất lượng cao.
-                </p>
-                
-                <!-- Updated search form to use unified CSS classes and structure -->
+    <div class="min-h-screen bg-gray-50">
+        <!-- Updated search form to use unified CSS classes and structure -->
+        <div class="bg-white shadow-sm border-b">
+            <div class="container mx-auto px-4 py-6">
                 <div class="search-form-container">
                     <form id="searchForm" action="<?php echo BASE_URL; ?>/search" method="GET" class="search-form">
                         <!-- Trip Type Selection -->
@@ -40,185 +25,81 @@ require_once __DIR__ . '/../layouts/header.php';
                             </div>
                         </div>
 
-                        <div class="form-grid">
-                            <div class="form-group">
+                        <div class="form-grid" style="display: flex; gap: 15px; align-items: end; flex-wrap: wrap;">
+                            <div class="form-group" style="flex: 1; min-width: 200px;">
                                 <label class="form-label">Điểm đi</label>
                                 <select name="from" class="form-select" required>
                                     <option value="">Chọn điểm đi</option>
                                 </select>
                             </div>
                             
-                            <div class="form-group">
+                            <div class="form-group" style="flex: 1; min-width: 200px;">
                                 <label class="form-label">Điểm đến</label>
                                 <select name="to" class="form-select" required>
                                     <option value="">Chọn điểm đến</option>
                                 </select>
                             </div>
                             
-                            <div class="form-group">
+                            <div class="form-group" style="flex: 0 0 150px;">
                                 <label class="form-label">Ngày đi</label>
                                 <input type="date" name="departure_date" class="form-input" 
                                        value="<?php echo date('Y-m-d'); ?>" 
                                        min="<?php echo date('Y-m-d'); ?>" required>
                             </div>
                             
-                            <div class="form-group return-date-group" style="display: none;">
+                            <div class="form-group return-date-group" style="flex: 0 0 150px; display: none;">
                                 <label class="form-label">Ngày về</label>
                                 <input type="date" name="return_date" class="form-input" 
                                        min="<?php echo date('Y-m-d', strtotime('+1 day')); ?>">
                             </div>
                         </div>
 
-                        <!-- Recent searches -->
-                        <div class="recent-searches">
-                            <label class="form-label">Tìm kiếm gần đây</label>
-                            <div class="recent-searches-grid">
-                                <div class="recent-search-item">
-                                    <div class="recent-search-route">TP. Hồ Chí Minh - Đà Lạt</div>
-                                    <div class="recent-search-date">18/09/2025</div>
-                                </div>
-                                <div class="recent-search-item">
-                                    <div class="recent-search-route">An Giang - Ba Rịa - Vũng Tàu</div>
-                                    <div class="recent-search-date">11/09/2025</div>
-                                </div>
-                                <div class="recent-search-item">
-                                    <div class="recent-search-route">TP. Hồ Chí Minh - Tuy Hòa</div>
-                                    <div class="recent-search-date">Đã đi: 07/09/2025</div>
-                                </div>
-                                <div class="recent-search-item">
-                                    <div class="recent-search-route">Tuy Hòa - TP. Hồ Chí Minh</div>
-                                    <div class="recent-search-date">Đã đi: 11/09/2025</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <input type="hidden" name="passengers" value="1">
-                        <input type="hidden" name="is_round_trip" value="0">
-                        
-                        <div class="text-center">
+                        <!-- Search button on separate row -->
+                        <div class="text-center" style="margin-top: 20px;">
                             <button type="submit" class="search-button">
                                 <i class="fas fa-search"></i>
                                 Tìm chuyến xe
                             </button>
                         </div>
-                    </form>
-                </div>
 
-                <!-- Updated hero actions to remove duplicate booking button -->
-                <div class="hero-actions">
-                    <?php if (!isset($_SESSION['user_id'])): ?>
-                        <a href="<?php echo BASE_URL; ?>/register" class="btn btn-secondary btn-lg">
-                            <i class="fas fa-user-plus"></i>
-                            Đăng ký ngay
-                        </a>
-                        <a href="<?php echo BASE_URL; ?>/login" class="btn btn-outline btn-lg">
-                            <i class="fas fa-sign-in-alt"></i>
-                            Đăng nhập
-                        </a>
-                    <?php else: ?>
-                        <a href="<?php echo BASE_URL; ?>/my-tickets" class="btn btn-secondary btn-lg">
-                            <i class="fas fa-list"></i>
-                            Vé của tôi
-                        </a>
-                        <a href="<?php echo BASE_URL; ?>/profile" class="btn btn-outline btn-lg">
-                            <i class="fas fa-user"></i>
-                            Tài khoản
-                        </a>
-                    <?php endif; ?>
-                </div>
+                    <input type="hidden" name="passengers" value="1">
+                    <input type="hidden" name="is_round_trip" value="0">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Actions Section -->
+    <section class="hero-actions-section">
+        <div class="container">
+            <div class="hero-actions">
+                <?php if (!isset($_SESSION['user_id'])): ?>
+                    <a href="<?php echo BASE_URL; ?>/register" class="btn btn-secondary btn-lg">
+                        <i class="fas fa-user-plus"></i>
+                        Đăng ký ngay
+                    </a>
+                    <a href="<?php echo BASE_URL; ?>/login" class="btn btn-outline btn-lg">
+                        <i class="fas fa-sign-in-alt"></i>
+                        Đăng nhập
+                    </a>
+                <?php else: ?>
+                    <a href="<?php echo BASE_URL; ?>/my-tickets" class="btn btn-secondary btn-lg">
+                        <i class="fas fa-list"></i>
+                        Vé của tôi
+                    </a>
+                    <a href="<?php echo BASE_URL; ?>/profile" class="btn btn-outline btn-lg">
+                        <i class="fas fa-user"></i>
+                        Tài khoản
+                    </a>
+                <?php endif; ?>
             </div>
         </div>
     </section>
+</div>
 
-    <!-- Features Section -->
-    <section class="features-section">
-        <div class="container">
-            <div class="section-header text-center">
-                <h2 class="section-title">Tại sao chọn XeGoo?</h2>
-                <p class="section-subtitle">
-                    Chúng tôi mang đến trải nghiệm đặt vé xe khách tốt nhất với những tính năng vượt trội
-                </p>
-            </div>
-            
-            <div class="features-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
-                <div class="feature-card card">
-                    <div class="card-body text-center">
-                        <div class="feature-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <h3 class="feature-title">Đặt vé 24/7</h3>
-                        <p class="feature-description">
-                            Hệ thống hoạt động 24/7, bạn có thể đặt vé bất cứ lúc nào, ở bất cứ đâu chỉ với vài thao tác đơn giản.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="feature-card card">
-                    <div class="card-body text-center">
-                        <div class="feature-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3 class="feature-title">An toàn & Bảo mật</h3>
-                        <p class="feature-description">
-                            Thông tin cá nhân và thanh toán được bảo mật tuyệt đối với công nghệ mã hóa hiện đại nhất.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="feature-card card">
-                    <div class="card-body text-center">
-                        <div class="feature-icon">
-                            <i class="fas fa-route"></i>
-                        </div>
-                        <h3 class="feature-title">Nhiều tuyến đường</h3>
-                        <p class="feature-description">
-                            Kết nối hàng trăm tuyến đường khắp cả nước với đa dạng nhà xe uy tín và chất lượng cao.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="feature-card card">
-                    <div class="card-body text-center">
-                        <div class="feature-icon">
-                            <i class="fas fa-headset"></i>
-                        </div>
-                        <h3 class="feature-title">Hỗ trợ 24/7</h3>
-                        <p class="feature-description">
-                            Đội ngũ chăm sóc khách hàng chuyên nghiệp sẵn sàng hỗ trợ bạn mọi lúc, mọi nơi.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="feature-card card">
-                    <div class="card-body text-center">
-                        <div class="feature-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h3 class="feature-title">Dễ sử dụng</h3>
-                        <p class="feature-description">
-                            Giao diện thân thiện, dễ sử dụng trên mọi thiết bị từ máy tính đến điện thoại di động.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="feature-card card">
-                    <div class="card-body text-center">
-                        <div class="feature-icon">
-                            <i class="fas fa-credit-card"></i>
-                        </div>
-                        <h3 class="feature-title">Thanh toán linh hoạt</h3>
-                        <p class="feature-description">
-                            Hỗ trợ nhiều hình thức thanh toán: thẻ ATM, ví điện tử, chuyển khoản ngân hàng.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats-section bg-primary-light">
-        <div class="container">
+<!-- Stats Section -->
+<section class="stats-section bg-primary-light">
+    <div class="container">
             <div class="stats-grid grid grid-cols-2 lg:grid-cols-4 gap-lg">
                 <div class="stat-item text-center">
                     <div class="stat-number">50K+</div>
@@ -302,7 +183,7 @@ require_once __DIR__ . '/../layouts/header.php';
                             Đăng ký miễn phí
                         </a>
                     <?php else: ?>
-                        <a href="<?php echo BASE_URL; ?>/booking" class="btn btn-lg">
+                        <a href="<?php echo BASE_URL; ?>/search" class="btn btn-lg">
                             <i class="fas fa-ticket-alt"></i>
                             Đặt vé ngay
                         </a>

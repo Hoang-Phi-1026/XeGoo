@@ -6,7 +6,7 @@ class Trip {
     /**
      * Get all trips with optional filtering and search
      */
-    public static function getAll($scheduleFilter = null, $vehicleFilter = null, $statusFilter = null, $search = null) {
+    public static function getAll($scheduleFilter = null, $vehicleFilter = null, $statusFilter = null, $search = null, $fromDate = null, $toDate = null, $routeFilter = null) {
         try {
             $sql = "SELECT c.*, l.tenLichTrinh, l.gioKhoiHanh as lichTrinhGioKhoiHanh,
                            t.kyHieuTuyen, t.diemDi, t.diemDen,
@@ -28,6 +28,21 @@ class Trip {
                 $params[] = '%' . $search . '%';
                 $params[] = '%' . $search . '%';
                 $params[] = '%' . $search . '%';
+            }
+            
+            if (!empty($fromDate)) {
+                $conditions[] = "c.ngayKhoiHanh >= ?";
+                $params[] = $fromDate;
+            }
+            
+            if (!empty($toDate)) {
+                $conditions[] = "c.ngayKhoiHanh <= ?";
+                $params[] = $toDate;
+            }
+            
+            if (!empty($routeFilter)) {
+                $conditions[] = "l.maTuyenDuong = ?";
+                $params[] = $routeFilter;
             }
             
             if ($scheduleFilter !== null && $scheduleFilter !== '') {
@@ -191,11 +206,17 @@ class Trip {
     }
     
     /**
-     * Format trip time for display
+     * Get routes for filter dropdown
      */
-    public static function formatTripTime($datetime) {
-        return date('d/m/Y H:i', strtotime($datetime));
+    public static function getRoutesForFilter() {
+        $sql = "SELECT DISTINCT t.maTuyenDuong, t.kyHieuTuyen, t.diemDi, t.diemDen
+                FROM chuyenxe c
+                JOIN lichtrinh l ON c.maLichTrinh = l.maLichTrinh
+                JOIN tuyenduong t ON l.maTuyenDuong = t.maTuyenDuong
+                ORDER BY t.kyHieuTuyen";
+        return fetchAll($sql);
     }
+
     
     /**
      * Get trip status badge class

@@ -7,7 +7,6 @@
 <div class="page-container">
     <div class="page-header">
         <h1 class="page-title">
-            <i class="fas fa-plus"></i>
             Thêm giá vé mới
         </h1>
         <div class="page-actions">

@@ -3,8 +3,7 @@
 <div class="container">
     <div class="page-header">
         <div class="page-title">
-            <h1><i class="fas fa-bus"></i> Chi tiết Chuyến Xe</h1>
-            <p>Chuyến xe #<?php echo $trip['maChuyenXe']; ?> - <?php echo htmlspecialchars($trip['tenLichTrinh']); ?></p>
+            <h1>Chi tiết Chuyến Xe</h1>
         </div>
         <div class="page-actions">
             <a href="<?php echo BASE_URL; ?>/trips" class="btn btn-outline">
@@ -25,7 +24,7 @@
                 <h3><i class="fas fa-info-circle"></i> Thông tin chuyến xe</h3>
                 <div class="detail-content">
                     <div class="detail-item">
-                        <label>ID Chuyến xe:</label>
+                        <label>Mã Chuyến xe:</label>
                         <span><?php echo $trip['maChuyenXe']; ?></span>
                     </div>
                     <div class="detail-item">
