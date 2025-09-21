@@ -349,7 +349,7 @@ class ScheduleController {
         $vehicle = fetch("SELECT maLoaiPhuongTien FROM phuongtien WHERE maPhuongTien = ?", [$vehicleId]);
         
         if ($schedule && $vehicle) {
-            // Chỉ kiểm tra có giá vé cho tuyến và loại xe, không cần kiểm tra ngày hay loại ghế cụ thể
+            // kiểm tra có giá vé cho tuyến và loại xe
             $sql = "SELECT COUNT(*) as count FROM giave 
                     WHERE maTuyenDuong = ? 
                       AND maLoaiPhuongTien = ? 
@@ -361,7 +361,7 @@ class ScheduleController {
             ]);
 
             if ($priceCount['count'] == 0) {
-                $errors[] = "Chưa có giá vé cho tuyến {$schedule['kyHieuTuyen']} và loại xe này!";
+                $errors[] = "Chưa có giá vé cho tuyến {$schedule['kyHieuTuyen']} của loại xe này!";
             }
         }
 
