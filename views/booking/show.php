@@ -322,7 +322,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const outboundContainer = document.getElementById('outboundPassengerForms');
         const returnContainer = document.getElementById('returnPassengerForms');
         outboundContainer.innerHTML = '';
-        returnContainer.innerHTML = '';
+        if (returnContainer) returnContainer.innerHTML = '';
 
         outboundSeats.forEach((seat, index) => {
             const form = document.createElement('div');
@@ -350,31 +350,33 @@ document.addEventListener('DOMContentLoaded', function() {
             outboundContainer.appendChild(form);
         });
 
-        returnSeats.forEach((seat, index) => {
-            const form = document.createElement('div');
-            form.className = 'passenger-form';
-            form.innerHTML = `
-                <div class="passenger-title">
-                    Hành khách ${index + 1} 
-                    <span class="seat-badge">Ghế ${seat} (về)</span>
-                </div>
-                <div class="passenger-fields">
-                    <div class="form-group">
-                        <label class="form-label">Họ và tên *</label>
-                        <input type="text" name="return_passengers[${index}][ho_ten]" class="form-input" required>
+        if (returnContainer) {
+            returnSeats.forEach((seat, index) => {
+                const form = document.createElement('div');
+                form.className = 'passenger-form';
+                form.innerHTML = `
+                    <div class="passenger-title">
+                        Hành khách ${index + 1} 
+                        <span class="seat-badge">Ghế ${seat} (về)</span>
                     </div>
-                    <div class="form-group">
-                        <label class="form-label">CCCD *</label>
-                        <input type="text" name="return_passengers[${index}][cccd]" class="form-input" required>
+                    <div class="passenger-fields">
+                        <div class="form-group">
+                            <label class="form-label">Họ và tên *</label>
+                            <input type="text" name="return_passengers[${index}][ho_ten]" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">CCCD *</label>
+                            <input type="text" name="return_passengers[${index}][cccd]" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Số điện thoại *</label>
+                            <input type="tel" name="return_passengers[${index}][so_dien_thoai]" class="form-input" required>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label class="form-label">Số điện thoại *</label>
-                        <input type="tel" name="return_passengers[${index}][so_dien_thoai]" class="form-input" required>
-                    </div>
-                </div>
-            `;
-            returnContainer.appendChild(form);
-        });
+                `;
+                returnContainer.appendChild(form);
+            });
+        }
     }
     
     function updatePriceSummary() {
