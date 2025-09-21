@@ -15,85 +15,99 @@
         </div>
     </div>
 
-    <div class="detail-container">
-        <div class="detail-grid">
-            <!-- Basic Information -->
-            <div class="detail-section">
-                <h3><i class="fas fa-info-circle"></i> Thông tin cơ bản</h3>
-                <div class="detail-content">
-                    <div class="detail-item">
-                        <label>Tên lịch trình:</label>
+    <div class="schedules-detail-container">
+        <div class="schedules-detail-grid">
+            <!-- Card: Basic Information -->
+            <div class="schedules-detail-card">
+                <div class="schedules-detail-card-header">
+                    <i class="fas fa-info-circle"></i>
+                    <span>Thông tin cơ bản</span>
+                </div>
+                <ul class="schedules-detail-list">
+                    <li class="schedules-detail-item">
+                        <span class="label">Tên lịch trình:</span>
                         <span><?php echo htmlspecialchars($schedule['tenLichTrinh']); ?></span>
-                    </div>
-                    <div class="detail-item">
-                        <label>Tuyến đường:</label>
+                    </li>
+                    <li class="schedules-detail-item">
+                        <span class="label">Tuyến đường:</span>
                         <span class="route-info">
                             <strong><?php echo htmlspecialchars($schedule['kyHieuTuyen']); ?></strong><br>
                             <?php echo htmlspecialchars($schedule['diemDi'] . ' → ' . $schedule['diemDen']); ?>
                         </span>
-                    </div>
-                    <div class="detail-item">
-                        <label>Trạng thái:</label>
-                        <span class="status-badge <?php echo strtolower($schedule['trangThai']); ?>">
+                    </li>
+                    <li class="schedules-detail-item">
+                        <span class="label">Trạng thái:</span>
+                        <span class="schedules-detail-badge <?php echo strtolower($schedule['trangThai']); ?>">
                             <?php echo $schedule['trangThai']; ?>
                         </span>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
 
-            <!-- Time Information -->
-            <div class="detail-section">
-                <h3><i class="fas fa-clock"></i> Thông tin thời gian</h3>
-                <div class="detail-content">
-                    <div class="detail-item">
-                        <label>Giờ khởi hành:</label>
-                        <span class="time-info"><?php echo date('H:i', strtotime($schedule['gioKhoiHanh'])); ?></span>
-                    </div>
-                    <div class="detail-item">
-                        <label>Giờ kết thúc:</label>
-                        <span class="time-info"><?php echo date('H:i', strtotime($schedule['gioKetThuc'])); ?></span>
-                    </div>
-                    <div class="detail-item">
-                        <label>Thời gian hoạt động:</label>
+            <!-- Card: Time Information -->
+            <div class="schedules-detail-card">
+                <div class="schedules-detail-card-header">
+                    <i class="fas fa-clock"></i>
+                    <span>Thông tin thời gian</span>
+                </div>
+                <ul class="schedules-detail-list">
+                    <li class="schedules-detail-item">
+                        <span class="label">Giờ khởi hành:</span>
+                        <span><?php echo date('H:i', strtotime($schedule['gioKhoiHanh'])); ?></span>
+                    </li>
+                    <li class="schedules-detail-item">
+                        <span class="label">Giờ kết thúc:</span>
+                        <span><?php echo date('H:i', strtotime($schedule['gioKetThuc'])); ?></span>
+                    </li>
+                    <li class="schedules-detail-item">
+                        <span class="label">Thời gian hoạt động:</span>
                         <span><?php echo date('d/m/Y', strtotime($schedule['ngayBatDau'])); ?> - <?php echo date('d/m/Y', strtotime($schedule['ngayKetThuc'])); ?></span>
-                    </div>
-                    <div class="detail-item">
-                        <label>Thứ trong tuần:</label>
-                        <span class="days-badge"><?php echo Schedule::formatDaysOfWeek($schedule['thuTrongTuan']); ?></span>
-                    </div>
-                </div>
+                    </li>
+                    <li class="schedules-detail-item">
+                        <span class="label">Thứ trong tuần:</span>
+                        <span class="schedules-detail-badge">
+                            <?php echo Schedule::formatDaysOfWeek($schedule['thuTrongTuan']); ?>
+                        </span>
+                    </li>
+                </ul>
             </div>
 
-            <!-- Description -->
+            <!-- Card: Description -->
             <?php if (!empty($schedule['moTa'])): ?>
-            <div class="detail-section full-width">
-                <h3><i class="fas fa-file-text"></i> Mô tả</h3>
-                <div class="detail-content">
-                    <p><?php echo nl2br(htmlspecialchars($schedule['moTa'])); ?></p>
+            <div class="schedules-detail-card full-width">
+                <div class="schedules-detail-card-header">
+                    <i class="fas fa-file-text"></i>
+                    <span>Mô tả</span>
+                </div>
+                <div class="schedules-detail-list">
+                    <div class="schedules-detail-item">
+                        <span><?php echo nl2br(htmlspecialchars($schedule['moTa'])); ?></span>
+                    </div>
                 </div>
             </div>
             <?php endif; ?>
 
-            <!-- System Information -->
-            <div class="detail-section full-width">
-                <h3><i class="fas fa-cog"></i> Thông tin hệ thống</h3>
-                <div class="detail-content">
-                    <div class="detail-row">
-                        <div class="detail-item">
-                            <label>Ngày tạo:</label>
-                            <span><?php echo date('d/m/Y H:i', strtotime($schedule['ngayTao'])); ?></span>
-                        </div>
-                        <div class="detail-item">
-                            <label>Cập nhật lần cuối:</label>
-                            <span><?php echo date('d/m/Y H:i', strtotime($schedule['ngayCapNhat'])); ?></span>
-                        </div>
-                    </div>
+            <!-- Card: System Information -->
+            <div class="schedules-detail-card full-width">
+                <div class="schedules-detail-card-header">
+                    <i class="fas fa-cog"></i>
+                    <span>Thông tin hệ thống</span>
                 </div>
+                <ul class="schedules-detail-list">
+                    <li class="schedules-detail-item">
+                        <span class="label">Ngày tạo:</span>
+                        <span><?php echo date('d/m/Y H:i', strtotime($schedule['ngayTao'])); ?></span>
+                    </li>
+                    <li class="schedules-detail-item">
+                        <span class="label">Cập nhật lần cuối:</span>
+                        <span><?php echo date('d/m/Y H:i', strtotime($schedule['ngayCapNhat'])); ?></span>
+                    </li>
+                </ul>
             </div>
         </div>
 
         <!-- Action Buttons -->
-        <div class="detail-actions">
+        <div class="schedules-detail-actions">
             <a href="<?php echo BASE_URL; ?>/schedules/<?php echo $schedule['maLichTrinh']; ?>/edit" class="btn btn-warning">
                 <i class="fas fa-edit"></i> Chỉnh sửa lịch trình
             </a>

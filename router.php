@@ -8,6 +8,9 @@ $routes = [
     '/search' => ['controller' => 'SearchController', 'action' => 'index'],
     '/search/cities' => ['controller' => 'SearchController', 'action' => 'cities'],
     '/search/trip-details/{id}' => ['controller' => 'SearchController', 'action' => 'tripDetails'],
+    '/booking/{id}' => ['controller' => 'BookingController', 'action' => 'show'],
+    '/booking/confirm' => ['controller' => 'BookingController', 'action' => 'confirm'],
+    '/booking/success/{id}' => ['controller' => 'BookingController', 'action' => 'success'],
     '/login' => ['controller' => 'AuthController', 'action' => 'showLogin'],
     '/register' => ['controller' => 'AuthController', 'action' => 'showRegister'],
     '/logout' => ['controller' => 'AuthController', 'action' => 'logout'],
@@ -71,6 +74,8 @@ $postRoutes = [
     '/login' => ['controller' => 'AuthController', 'action' => 'showLogin'],
     '/register' => ['controller' => 'AuthController', 'action' => 'showRegister'],
     '/search/api' => ['controller' => 'SearchController', 'action' => 'api'],
+    '/booking/process' => ['controller' => 'BookingController', 'action' => 'process'],
+    '/booking/complete' => ['controller' => 'BookingController', 'action' => 'complete'],
     '/profile/update' => ['controller' => 'ProfileController', 'action' => 'updateProfile'],
     '/profile/change-password' => ['controller' => 'ProfileController', 'action' => 'changePassword'],
     '/profile/upload-avatar' => ['controller' => 'ProfileController', 'action' => 'uploadAvatar'],
@@ -161,7 +166,13 @@ foreach ($currentRoutes as $route => $handler) {
         }
         
         // Call the controller action with parameters
-        call_user_func_array([$controller, $actionName], $params);
+        if (!empty($params)) {
+            // Extract parameter values in order they appear in the route
+            $paramValues = array_values($params);
+            call_user_func_array([$controller, $actionName], $paramValues);
+        } else {
+            $controller->$actionName();
+        }
         break;
     }
 }

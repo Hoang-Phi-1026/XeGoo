@@ -17,97 +17,109 @@
         </div>
     </div>
 
-    <div class="detail-container">
-        <div class="detail-grid">
-            <!-- Trip Information -->
-            <div class="detail-section">
-                <h3><i class="fas fa-info-circle"></i> Thông tin chuyến xe</h3>
-                <div class="detail-content">
-                    <div class="detail-item">
-                        <label>Mã Chuyến xe:</label>
+    <div class="trips-detail-container">
+        <div class="trips-detail-grid">
+            <!-- Card: Trip Information -->
+            <div class="trips-detail-card">
+                <div class="trips-detail-card-header">
+                    <i class="fas fa-info-circle"></i>
+                    <span>Thông tin chuyến xe</span>
+                </div>
+                <ul class="trips-detail-list">
+                    <li class="trips-detail-item">
+                        <span class="label">Mã Chuyến xe:</span>
                         <span><?php echo $trip['maChuyenXe']; ?></span>
-                    </div>
-                    <div class="detail-item">
-                        <label>Lịch trình:</label>
+                    </li>
+                    <li class="trips-detail-item">
+                        <span class="label">Lịch trình:</span>
                         <span><?php echo htmlspecialchars($trip['tenLichTrinh']); ?></span>
-                    </div>
-                    <div class="detail-item">
-                        <label>Tuyến đường:</label>
+                    </li>
+                    <li class="trips-detail-item">
+                        <span class="label">Tuyến đường:</span>
                         <span class="route-info">
                             <strong><?php echo htmlspecialchars($trip['kyHieuTuyen']); ?></strong><br>
                             <?php echo htmlspecialchars($trip['diemDi'] . ' → ' . $trip['diemDen']); ?><br>
                             <small>Khoảng cách: <?php echo $trip['khoangCach']; ?> km</small>
                         </span>
-                    </div>
-                    <div class="detail-item">
-                        <label>Trạng thái:</label>
-                        <span class="status-badge <?php echo Trip::getStatusBadgeClass($trip['trangThai']); ?>">
+                    </li>
+                    <li class="trips-detail-item">
+                        <span class="label">Trạng thái:</span>
+                        <span class="trips-detail-badge <?php echo Trip::getStatusBadgeClass($trip['trangThai']); ?>">
                             <?php echo $trip['trangThai']; ?>
                         </span>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
 
-            <!-- Vehicle Information -->
-            <div class="detail-section">
-                <h3><i class="fas fa-bus"></i> Thông tin phương tiện</h3>
-                <div class="detail-content">
-                    <div class="detail-item">
-                        <label>Biển số xe:</label>
-                        <span class="vehicle-plate"><?php echo htmlspecialchars($trip['bienSo']); ?></span>
-                    </div>
-                    <div class="detail-item">
-                        <label>Loại xe:</label>
+            <!-- Card: Vehicle Information -->
+            <div class="trips-detail-card">
+                <div class="trips-detail-card-header">
+                    <i class="fas fa-bus"></i>
+                    <span>Thông tin phương tiện</span>
+                </div>
+                <ul class="trips-detail-list">
+                    <li class="trips-detail-item">
+                        <span class="label">Biển số xe:</span>
+                        <span><?php echo htmlspecialchars($trip['bienSo']); ?></span>
+                    </li>
+                    <li class="trips-detail-item">
+                        <span class="label">Loại xe:</span>
                         <span><?php echo htmlspecialchars($trip['tenLoaiPhuongTien']); ?></span>
-                    </div>
-                    <div class="detail-item">
-                        <label>Số chỗ:</label>
+                    </li>
+                    <li class="trips-detail-item">
+                        <span class="label">Số chỗ:</span>
                         <span><?php echo $trip['soChoMacDinh']; ?> chỗ</span>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
 
-            <!-- Time Information -->
-            <div class="detail-section">
-                <h3><i class="fas fa-clock"></i> Thông tin thời gian</h3>
-                <div class="detail-content">
-                    <div class="detail-item">
-                        <label>Ngày khởi hành:</label>
-                        <span class="date-info"><?php echo date('d/m/Y', strtotime($trip['ngayKhoiHanh'])); ?></span>
-                    </div>
-                    <div class="detail-item">
-                        <label>Giờ khởi hành:</label>
-                        <span class="time-info"><?php echo date('H:i', strtotime($trip['thoiGianKhoiHanh'])); ?></span>
-                    </div>
-                    <div class="detail-item">
-                        <label>Giờ kết thúc dự kiến:</label>
-                        <span class="time-info"><?php echo date('H:i', strtotime($trip['thoiGianKetThuc'])); ?></span>
-                    </div>
-                    <div class="detail-item">
-                        <label>Thời gian di chuyển:</label>
+            <!-- Card: Time Information -->
+            <div class="trips-detail-card">
+                <div class="trips-detail-card-header">
+                    <i class="fas fa-clock"></i>
+                    <span>Thông tin thời gian</span>
+                </div>
+                <ul class="trips-detail-list">
+                    <li class="trips-detail-item">
+                        <span class="label">Ngày khởi hành:</span>
+                        <span><?php echo date('d/m/Y', strtotime($trip['ngayKhoiHanh'])); ?></span>
+                    </li>
+                    <li class="trips-detail-item">
+                        <span class="label">Giờ khởi hành:</span>
+                        <span><?php echo date('H:i', strtotime($trip['thoiGianKhoiHanh'])); ?></span>
+                    </li>
+                    <li class="trips-detail-item">
+                        <span class="label">Giờ kết thúc dự kiến:</span>
+                        <span><?php echo date('H:i', strtotime($trip['thoiGianKetThuc'])); ?></span>
+                    </li>
+                    <li class="trips-detail-item">
+                        <span class="label">Thời gian di chuyển:</span>
                         <span><?php echo $trip['thoiGianDiChuyen']; ?></span>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
 
-            <!-- Booking Information -->
-            <div class="detail-section">
-                <h3><i class="fas fa-users"></i> Thông tin đặt chỗ</h3>
-                <div class="detail-content">
-                    <div class="detail-item">
-                        <label>Tổng số chỗ:</label>
+            <!-- Card: Booking Information -->
+            <div class="trips-detail-card">
+                <div class="trips-detail-card-header">
+                    <i class="fas fa-users"></i>
+                    <span>Thông tin đặt chỗ</span>
+                </div>
+                <ul class="trips-detail-list">
+                    <li class="trips-detail-item">
+                        <span class="label">Tổng số chỗ:</span>
                         <span><?php echo $trip['soChoTong']; ?> chỗ</span>
-                    </div>
-                    <div class="detail-item">
-                        <label>Số chỗ đã đặt:</label>
-                        <span class="booked-seats"><?php echo $trip['soChoDaDat']; ?> chỗ</span>
-                    </div>
-                    <div class="detail-item">
-                        <label>Số chỗ trống:</label>
-                        <span class="available-seats"><?php echo $trip['soChoTrong']; ?> chỗ</span>
-                    </div>
-                    <div class="detail-item">
-                        <label>Tỷ lệ lấp đầy:</label>
+                    </li>
+                    <li class="trips-detail-item">
+                        <span class="label">Số chỗ đã đặt:</span>
+                        <span><?php echo $trip['soChoDaDat']; ?> chỗ</span>
+                    </li>
+                    <li class="trips-detail-item">
+                        <span class="label">Số chỗ trống:</span>
+                        <span><?php echo $trip['soChoTrong']; ?> chỗ</span>
+                    </li>
+                    <li class="trips-detail-item">
+                        <span class="label">Tỷ lệ lấp đầy:</span>
                         <div class="occupancy-display">
                             <?php $occupancy = Trip::calculateOccupancy($trip['soChoDaDat'], $trip['soChoTong']); ?>
                             <div class="occupancy-bar large">
@@ -115,44 +127,50 @@
                                 <span class="occupancy-text"><?php echo $occupancy; ?>%</span>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
 
-            <!-- Pricing Information -->
-            <div class="detail-section">
-                <h3><i class="fas fa-money-bill"></i> Thông tin giá vé</h3>
-                <div class="detail-content">
+            <!-- Card: Pricing Information -->
+            <div class="trips-detail-card">
+                <div class="trips-detail-card-header">
+                    <i class="fas fa-money-bill"></i>
+                    <span>Thông tin giá vé</span>
+                </div>
+                <ul class="trips-detail-list">
                     <?php if ($trip['giaVe']): ?>
-                        <div class="detail-item">
-                            <label>Giá vé:</label>
-                            <span class="price-info"><?php echo number_format($trip['giaVe'], 0, ',', '.'); ?> VNĐ</span>
-                        </div>
-                        <div class="detail-item">
-                            <label>Loại vé:</label>
+                        <li class="trips-detail-item">
+                            <span class="label">Giá vé:</span>
+                            <span><?php echo number_format($trip['giaVe'], 0, ',', '.'); ?> VNĐ</span>
+                        </li>
+                        <li class="trips-detail-item">
+                            <span class="label">Loại vé:</span>
                             <span><?php echo $trip['tenLoaiVe'] ?? 'Vé thường'; ?></span>
-                        </div>
-                        <div class="detail-item">
-                            <label>Loại chỗ ngồi:</label>
+                        </li>
+                        <li class="trips-detail-item">
+                            <span class="label">Loại chỗ ngồi:</span>
                             <span><?php echo $trip['loaiChoNgoi']; ?></span>
-                        </div>
-                        <div class="detail-item">
-                            <label>Doanh thu dự kiến:</label>
-                            <span class="revenue-info"><?php echo number_format($trip['giaVe'] * $trip['soChoDaDat'], 0, ',', '.'); ?> VNĐ</span>
-                        </div>
+                        </li>
+                        <li class="trips-detail-item">
+                            <span class="label">Doanh thu dự kiến:</span>
+                            <span><?php echo number_format($trip['giaVe'] * $trip['soChoDaDat'], 0, ',', '.'); ?> VNĐ</span>
+                        </li>
                     <?php else: ?>
-                        <div class="detail-item">
+                        <li class="trips-detail-item">
                             <span class="text-muted">Chưa có thông tin giá vé</span>
-                        </div>
+                        </li>
                     <?php endif; ?>
-                </div>
+                </ul>
             </div>
 
-            <!-- Pickup/Dropoff Points -->
+            <!-- Card: Pickup/Dropoff Points -->
             <?php if (!empty($points)): ?>
-            <div class="detail-section full-width">
-                <h3><i class="fas fa-map-marker-alt"></i> Điểm đón/trả khách</h3>
-                <div class="detail-content">
+            <div class="trips-detail-card full-width">
+                <div class="trips-detail-card-header">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Điểm đón/trả khách</span>
+                </div>
+                <div class="trips-detail-list">
                     <div class="points-grid">
                         <div class="pickup-points">
                             <h4>Điểm đón</h4>
@@ -185,26 +203,27 @@
             </div>
             <?php endif; ?>
 
-            <!-- System Information -->
-            <div class="detail-section full-width">
-                <h3><i class="fas fa-cog"></i> Thông tin hệ thống</h3>
-                <div class="detail-content">
-                    <div class="detail-row">
-                        <div class="detail-item">
-                            <label>Ngày tạo:</label>
-                            <span><?php echo date('d/m/Y H:i', strtotime($trip['ngayTao'])); ?></span>
-                        </div>
-                        <div class="detail-item">
-                            <label>Cập nhật lần cuối:</label>
-                            <span><?php echo date('d/m/Y H:i', strtotime($trip['ngayCapNhat'])); ?></span>
-                        </div>
-                    </div>
+            <!-- Card: System Information -->
+            <div class="trips-detail-card full-width">
+                <div class="trips-detail-card-header">
+                    <i class="fas fa-cog"></i>
+                    <span>Thông tin hệ thống</span>
                 </div>
+                <ul class="trips-detail-list">
+                    <li class="trips-detail-item">
+                        <span class="label">Ngày tạo:</span>
+                        <span><?php echo date('d/m/Y H:i', strtotime($trip['ngayTao'])); ?></span>
+                    </li>
+                    <li class="trips-detail-item">
+                        <span class="label">Cập nhật lần cuối:</span>
+                        <span><?php echo date('d/m/Y H:i', strtotime($trip['ngayCapNhat'])); ?></span>
+                    </li>
+                </ul>
             </div>
         </div>
 
         <!-- Action Buttons -->
-        <div class="detail-actions">
+        <div class="trips-detail-actions">
             <?php if (!in_array($trip['trangThai'], ['Hoàn thành'])): ?>
                 <button onclick="showStatusModal()" class="btn btn-warning">
                     <i class="fas fa-edit"></i> Cập nhật trạng thái

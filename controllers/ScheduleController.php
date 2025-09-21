@@ -267,13 +267,7 @@ class ScheduleController {
             query($sql, [$scheduleId, $vehicleId, $seatType]);
         
             // Lấy danh sách các chuyến xe mới tạo (cùng lịch trình + phương tiện)
-            $newTrips = fetchAll("
-                SELECT maChuyenXe 
-                FROM chuyenxe 
-                WHERE maLichTrinh = ? 
-                  AND maPhuongTien = ?
-                  AND ngayTao >= NOW() - INTERVAL 1 MINUTE
-            ", [$scheduleId, $vehicleId]);
+            $newTrips = fetchAll("SELECT maChuyenXe FROM chuyenxe WHERE maLichTrinh = ? AND maPhuongTien = ? AND ngayTao >= NOW() - INTERVAL 1 MINUTE", [$scheduleId, $vehicleId]);
         
             // Gọi procedure sinh ghế cho từng chuyến xe
             foreach ($newTrips as $trip) {
@@ -351,29 +345,23 @@ class ScheduleController {
             }
         }
 
-        // 4 Kiểm tra có giá vé hợp lệ hay chưa
-        $schedule = Schedule::getById($scheduleId);
-        if ($schedule) {
-            $sql = "SELECT COUNT(*) AS cnt
-                    FROM giave g
-                    JOIN phuongtien p ON p.maLoaiPhuongTien = g.maLoaiPhuongTien
-                    WHERE g.maTuyenDuong = ?
-                    AND g.loaiChoNgoi = ?
-                    AND p.maPhuongTien = ?
-                    AND g.ngayBatDau <= ?
-                    AND g.ngayKetThuc >= ?";
-            
-            $today = date('Y-m-d');
-            $row = fetch($sql, [
+        $schedule = fetch("SELECT l.*, t.kyHieuTuyen FROM lichtrinh l JOIN tuyenduong t ON l.maTuyenDuong = t.maTuyenDuong WHERE l.maLichTrinh = ?", [$scheduleId]);
+        $vehicle = fetch("SELECT maLoaiPhuongTien FROM phuongtien WHERE maPhuongTien = ?", [$vehicleId]);
+        
+        if ($schedule && $vehicle) {
+            // Chỉ kiểm tra có giá vé cho tuyến và loại xe, không cần kiểm tra ngày hay loại ghế cụ thể
+            $sql = "SELECT COUNT(*) as count FROM giave 
+                    WHERE maTuyenDuong = ? 
+                      AND maLoaiPhuongTien = ? 
+                      AND trangThai = 'Hoạt động'";
+
+            $priceCount = fetch($sql, [
                 $schedule['maTuyenDuong'],
-                $_POST['loaiChoNgoi'] ?? '',   // lấy loại chỗ ngồi từ form
-                $vehicleId,
-                $today,
-                $today
+                $vehicle['maLoaiPhuongTien']
             ]);
 
-            if ($row['cnt'] == 0) {
-                $errors[] = "Chưa có giá vé cho tuyến " . $schedule['kyHieuTuyen'];
+            if ($priceCount['count'] == 0) {
+                $errors[] = "Chưa có giá vé cho tuyến {$schedule['kyHieuTuyen']} và loại xe này!";
             }
         }
 
@@ -409,33 +397,16 @@ class ScheduleController {
      */
     private function checkTimeConflicts($scheduleId, $vehicleId) {
         // Lấy thông tin lịch trình mới
-        $newSchedule = fetch("
-            SELECT l.*, t.diemDi, t.diemDen 
-            FROM lichtrinh l 
-            JOIN tuyenduong t ON l.maTuyenDuong = t.maTuyenDuong 
-            WHERE l.maLichTrinh = ?
-        ", [$scheduleId]);
+        $newSchedule = fetch("SELECT l.*, t.diemDi, t.diemDen FROM lichtrinh l JOIN tuyenduong t ON l.maTuyenDuong = t.maTuyenDuong WHERE l.maLichTrinh = ?", [$scheduleId]);
         
         if (!$newSchedule) {
             return [];
         }
         
         // Kiểm tra các chuyến xe hiện có của xe này trong khoảng thời gian
-        $sql = "
-            SELECT c.*, l.tenLichTrinh, t.diemDi, t.diemDen
-            FROM chuyenxe c
-            JOIN lichtrinh l ON c.maLichTrinh = l.maLichTrinh
-            JOIN tuyenduong t ON l.maTuyenDuong = t.maTuyenDuong
-            WHERE c.maPhuongTien = ? 
-            AND c.ngayKhoiHanh BETWEEN ? AND ?
-            AND c.trangThai NOT IN ('Hủy', 'Hoàn thành')
-        ";
+        $sql = "SELECT c.*, l.tenLichTrinh, t.diemDi, t.diemDen FROM chuyenxe c JOIN lichtrinh l ON c.maLichTrinh = l.maLichTrinh JOIN tuyenduong t ON l.maTuyenDuong = t.maTuyenDuong WHERE c.maPhuongTien = ? AND c.ngayKhoiHanh BETWEEN ? AND ? AND c.trangThai NOT IN ('Hủy', 'Hoàn thành')";
         
-        $existingTrips = fetchAll($sql, [
-            $vehicleId, 
-            $newSchedule['ngayBatDau'], 
-            $newSchedule['ngayKetThuc']
-        ]);
+        $existingTrips = fetchAll($sql, [$vehicleId, $newSchedule['ngayBatDau'], $newSchedule['ngayKetThuc']]);
         
         $conflicts = [];
         
@@ -462,34 +433,16 @@ class ScheduleController {
         $issues = [];
         
         // Lấy thông tin lịch trình mới
-        $newSchedule = fetch("
-            SELECT l.*, t.diemDi, t.diemDen, t.thoiGianDiChuyen
-            FROM lichtrinh l 
-            JOIN tuyenduong t ON l.maTuyenDuong = t.maTuyenDuong 
-            WHERE l.maLichTrinh = ?
-        ", [$scheduleId]);
+        $newSchedule = fetch("SELECT l.*, t.diemDi, t.diemDen, t.thoiGianDiChuyen FROM lichtrinh l JOIN tuyenduong t ON l.maTuyenDuong = t.maTuyenDuong WHERE l.maLichTrinh = ?", [$scheduleId]);
         
         if (!$newSchedule) {
             return $issues;
         }
         
         // Lấy các chuyến xe hiện có của xe này
-        $sql = "
-            SELECT c.*, l.tenLichTrinh, t.diemDi, t.diemDen, t.thoiGianDiChuyen
-            FROM chuyenxe c
-            JOIN lichtrinh l ON c.maLichTrinh = l.maLichTrinh
-            JOIN tuyenduong t ON l.maTuyenDuong = t.maTuyenDuong
-            WHERE c.maPhuongTien = ? 
-            AND c.ngayKhoiHanh BETWEEN ? AND ?
-            AND c.trangThai NOT IN ('Hủy', 'Hoàn thành')
-            ORDER BY c.thoiGianKhoiHanh
-        ";
+        $sql = "SELECT c.*, l.tenLichTrinh, t.diemDi, t.diemDen, t.thoiGianDiChuyen FROM chuyenxe c JOIN lichtrinh l ON c.maLichTrinh = l.maLichTrinh JOIN tuyenduong t ON l.maTuyenDuong = t.maTuyenDuong WHERE c.maPhuongTien = ? AND c.ngayKhoiHanh BETWEEN ? AND ? AND c.trangThai NOT IN ('Hủy', 'Hoàn thành') ORDER BY c.thoiGianKhoiHanh";
         
-        $existingTrips = fetchAll($sql, [
-            $vehicleId, 
-            $newSchedule['ngayBatDau'], 
-            $newSchedule['ngayKetThuc']
-        ]);
+        $existingTrips = fetchAll($sql, [$vehicleId, $newSchedule['ngayBatDau'], $newSchedule['ngayKetThuc']]);
         
         // Tạo danh sách tất cả các chuyến (bao gồm cả chuyến mới sẽ được tạo)
         $allTrips = $existingTrips;
@@ -588,11 +541,7 @@ class ScheduleController {
      * Get available vehicles for trip generation
      */
     private function getAvailableVehicles() {
-        $sql = "SELECT p.maPhuongTien, p.bienSo, lpt.tenLoaiPhuongTien, lpt.soChoMacDinh, lpt.loaiChoNgoiMacDinh
-                FROM phuongtien p 
-                JOIN loaiphuongtien lpt ON p.maLoaiPhuongTien = lpt.maLoaiPhuongTien 
-                WHERE p.trangThai = 'Đang hoạt động'
-                ORDER BY lpt.tenLoaiPhuongTien, p.bienSo";
+        $sql = "SELECT p.maPhuongTien, p.bienSo, lpt.tenLoaiPhuongTien, lpt.soChoMacDinh, lpt.loaiChoNgoiMacDinh FROM phuongtien p JOIN loaiphuongtien lpt ON p.maLoaiPhuongTien = lpt.maLoaiPhuongTien WHERE p.trangThai = 'Đang hoạt động' ORDER BY lpt.tenLoaiPhuongTien, p.bienSo";
         return fetchAll($sql);
     }
 }

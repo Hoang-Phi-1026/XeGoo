@@ -136,10 +136,9 @@ class Trip {
     public static function getStatusOptions() {
         return [
             'Sẵn sàng' => 'Sẵn sàng',
-            'Đang bán vé' => 'Đang bán vé',
-            'Đã khởi hành' => 'Đã khởi hành',
+            'Khởi hành' => 'Khởi hành',
             'Hoàn thành' => 'Hoàn thành',
-            'Hủy' => 'Hủy',
+            'Bị hủy' => 'Bị hủy',
             'Delay' => 'Delay'
         ];
     }
