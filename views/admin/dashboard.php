@@ -4,6 +4,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 ?>
+<link rel="stylesheet" href="<?= BASE_URL ?>/public/css/admin-dashboard.css">
 <?php require_once __DIR__ . '/../layouts/header.php'; ?>
 <?php
 // Use stats from controller if available, otherwise set defaults
@@ -97,19 +98,13 @@ $totalSchedulesToday = isset($stats) ? $stats['schedules'] : 0;
     <main class="main-content">
         <!-- Page Header -->
         <header class="page-header">
+                <!-- LOGO IMAGE HERE -->
+            <div class="page-img">
+                <img src="<?php echo BASE_URL; ?>/public/uploads/images/logo-dark.png" alt="XeGoo Logo" class="logo-img" style="height:40px;margin-right:8px;">
+            </div>
             <div class="page-title">
                 <h1>Dashboard</h1>
                 <p>Chào mừng bạn đến với hệ thống quản lý XeGoo</p>
-            </div>
-            <div class="page-actions">
-                <button class="btn btn-primary">
-                    <i class="fas fa-plus"></i>
-                    Thêm mới
-                </button>
-                <button class="btn btn-secondary">
-                    <i class="fas fa-download"></i>
-                    Export
-                </button>
             </div>
         </header>
 
@@ -123,10 +118,6 @@ $totalSchedulesToday = isset($stats) ? $stats['schedules'] : 0;
                     <div class="stat-number"><?php echo $totalUsers; ?></div>
                     <div class="stat-label">Người dùng</div>
                 </div>
-                <div class="stat-trend up">
-                    <i class="fas fa-arrow-up"></i>
-                    +12%
-                </div>
             </div>
 
             <div class="stat-card success">
@@ -135,11 +126,7 @@ $totalSchedulesToday = isset($stats) ? $stats['schedules'] : 0;
                 </div>
                 <div class="stat-content">
                     <div class="stat-number"><?php echo $totalVehicles; ?></div>
-                    <div class="stat-label">Xe khách</div>
-                </div>
-                <div class="stat-trend up">
-                    <i class="fas fa-arrow-up"></i>
-                    +5%
+                    <div class="stat-label">Phương tiện</div>
                 </div>
             </div>
 
@@ -151,10 +138,6 @@ $totalSchedulesToday = isset($stats) ? $stats['schedules'] : 0;
                     <div class="stat-number"><?php echo $totalRoutes; ?></div>
                     <div class="stat-label">Tuyến đường</div>
                 </div>
-                <div class="stat-trend up">
-                    <i class="fas fa-arrow-up"></i>
-                    +8%
-                </div>
             </div>
 
             <div class="stat-card info">
@@ -164,10 +147,6 @@ $totalSchedulesToday = isset($stats) ? $stats['schedules'] : 0;
                 <div class="stat-content">
                     <div class="stat-number"><?php echo $totalTripsToday; ?></div>
                     <div class="stat-label">Chuyến hôm nay</div>
-                </div>
-                <div class="stat-trend down">
-                    <i class="fas fa-arrow-down"></i>
-                    -3%
                 </div>
             </div>
         </div>

@@ -144,58 +144,62 @@ class ScheduleController {
      * Handle edit schedule form submission
      */
     public function update($id) {
-        $this->checkAdminAccess();
-        
-        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-            header('Location: ' . BASE_URL . '/schedules/' . $id . '/edit');
-            exit;
-        }
-        
-        $schedule = Schedule::getById($id);
-        if (!$schedule) {
-            $_SESSION['error'] = 'Không tìm thấy lịch trình.';
-            header('Location: ' . BASE_URL . '/schedules');
-            exit;
-        }
-        
-        // Prepare data
-        $data = [
-            'maTuyenDuong' => $_POST['maTuyenDuong'] ?? '',
-            'tenLichTrinh' => trim($_POST['tenLichTrinh'] ?? ''),
-            'gioKhoiHanh' => $_POST['gioKhoiHanh'] ?? '',
-            'gioKetThuc' => $_POST['gioKetThuc'] ?? '',
-            'ngayBatDau' => $_POST['ngayBatDau'] ?? '',
-            'ngayKetThuc' => $_POST['ngayKetThuc'] ?? '',
-            'moTa' => trim($_POST['moTa'] ?? ''),
-            'trangThai' => $_POST['trangThai'] ?? 'Hoạt động'
-        ];
-        
-        // Process days of week
-        $selectedDays = $_POST['thuTrongTuan'] ?? [];
-        $data['thuTrongTuan'] = implode(',', $selectedDays);
-        
-        // Validate input
-        $errors = Schedule::validate($data);
-        
-        if (!empty($errors)) {
-            $_SESSION['error'] = implode('<br>', $errors);
-            $_SESSION['form_data'] = $_POST;
-            header('Location: ' . BASE_URL . '/schedules/' . $id . '/edit');
-            exit;
-        }
-        
-        // Update schedule
-        try {
-            Schedule::update($id, $data);
-            $_SESSION['success'] = 'Cập nhật lịch trình thành công.';
-            header('Location: ' . BASE_URL . '/schedules/' . $id);
-        } catch (Exception $e) {
-            $_SESSION['error'] = 'Có lỗi xảy ra khi cập nhật lịch trình: ' . $e->getMessage();
-            $_SESSION['form_data'] = $_POST;
-            header('Location: ' . BASE_URL . '/schedules/' . $id . '/edit');
-        }
+    $this->checkAdminAccess();
+
+    if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+        header('Location: ' . BASE_URL . '/schedules/' . $id . '/edit');
         exit;
     }
+
+    $schedule = Schedule::getById($id);
+    if (!$schedule) {
+        $_SESSION['error'] = 'Không tìm thấy lịch trình.';
+        header('Location: ' . BASE_URL . '/schedules');
+        exit;
+    }
+
+    // Prepare data
+    $data = [
+        'maTuyenDuong' => $_POST['maTuyenDuong'] ?? '',
+        'tenLichTrinh' => trim($_POST['tenLichTrinh'] ?? ''),
+        'gioKhoiHanh' => $_POST['gioKhoiHanh'] ?? '',
+        'gioKetThuc' => $_POST['gioKetThuc'] ?? '',
+        'ngayBatDau' => $_POST['ngayBatDau'] ?? '',
+        'ngayKetThuc' => $_POST['ngayKetThuc'] ?? '',
+        'moTa' => trim($_POST['moTa'] ?? ''),
+        'trangThai' => $_POST['trangThai'] ?? 'Hoạt động'
+    ];
+
+    // Process days of week
+    $selectedDays = $_POST['thuTrongTuan'] ?? [];
+    $data['thuTrongTuan'] = implode(',', $selectedDays);
+
+    // Validate input
+    $errors = Schedule::validate($data);
+
+    if (!empty($errors)) {
+        $_SESSION['error'] = implode('<br>', $errors);
+        $_SESSION['form_data'] = $_POST;
+        header('Location: ' . BASE_URL . '/schedules/' . $id . '/edit');
+        exit;
+    }
+
+    // Update schedule
+    try {
+        Schedule::update($id, $data);
+
+        // Gọi thủ tục cập nhật trạng thái chuyến xe không hợp lệ
+        query("CALL sp_sync_trang_thai_chuyen_xe_theo_lich_trinh(?)", [$id]);
+
+        $_SESSION['success'] = 'Cập nhật lịch trình thành công.';
+        header('Location: ' . BASE_URL . '/schedules/' . $id);
+    } catch (Exception $e) {
+        $_SESSION['error'] = 'Có lỗi xảy ra khi cập nhật lịch trình: ' . $e->getMessage();
+        $_SESSION['form_data'] = $_POST;
+        header('Location: ' . BASE_URL . '/schedules/' . $id . '/edit');
+    }
+    exit;
+}
     
     /**
      * Delete schedule (set to inactive)

@@ -1,77 +1,479 @@
-/* XeGoo Routes - Sử dụng màu hệ thống từ main.css */
+/* XeGoo Routes - Enhanced styling with system theme synchronization */
+
+/* Enhanced route-journey section with better visual hierarchy */
 .route-journey {
   display: flex;
   align-items: center;
-  margin: var(--space-lg) 0;
-  padding: var(--space-lg);
-  background: var(--bg-secondary);
-  border-radius: var(--radius-lg);
+  margin: var(--space-xl) 0;
+  padding: var(--space-xl);
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+  border-radius: var(--radius-xl);
   border: 1px solid var(--border-primary);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
 }
 
+.route-journey::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-light));
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.route-journey:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-primary);
+}
+
+/* Enhanced journey points with better visual indicators */
 .journey-point {
   display: flex;
   align-items: center;
   flex: 0 0 auto;
+  position: relative;
 }
 
 .journey-point.departure .point-icon {
-  background: var(--success);
+  background: linear-gradient(135deg, var(--success), #16a34a);
   color: var(--text-inverse);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
 }
 
 .journey-point.destination .point-icon {
-  background: var(--error);
+  background: linear-gradient(135deg, var(--error), #dc2626);
   color: var(--text-inverse);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
 }
 
 .point-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius-md);
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-lg);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 18px;
   font-weight: 600;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  position: relative;
 }
 
+.point-icon:hover {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Enhanced route-points-section and points-section with modern card design */
 .route-points-section,
 .points-section {
-  margin: var(--space-lg) 0;
-  padding: var(--space-lg);
-  background: var(--bg-tertiary);
-  border-radius: var(--radius-md);
+  margin: var(--space-xl) 0;
+  padding: var(--space-xl);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-xl);
   border: 1px solid var(--border-primary);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  position: relative;
 }
 
-.route-points-section h3,
-.points-section h4,
-.points-column h4 {
-  margin: 0 0 var(--space-md) 0;
+.route-points-section:hover,
+.points-section:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-primary);
+}
+
+/* Enhanced route-description with better typography and spacing */
+.route-description {
+  margin: var(--space-xl) 0;
+  padding: var(--space-xl);
+  background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-primary);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.route-description::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--accent-primary), var(--accent-light));
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.route-description h3 {
   color: var(--text-primary);
-  font-size: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: var(--space-lg);
   display: flex;
   align-items: center;
   gap: var(--space-sm);
 }
 
-.points-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-lg);
+.route-description p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: 1rem;
 }
 
-.point-item {
-  margin-bottom: var(--space-md);
-  padding: var(--space-md);
-  background: var(--bg-lighter);
+/* Enhanced route-details with improved visual hierarchy */
+.route-details {
+  margin: var(--space-xl) 0;
+  padding: var(--space-xl);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-primary);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+}
+
+.route-details:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.route-details h3,
+.route-points-section h3,
+.points-section h4,
+.points-column h4 {
+  margin: 0 0 var(--space-lg) 0;
+  color: var(--text-primary);
+  font-size: 1.125rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  position: relative;
+}
+
+.route-details h3::before,
+.route-points-section h3::before,
+.points-section h4::before {
+  content: "";
+  width: 4px;
+  height: 20px;
+  background: linear-gradient(180deg, var(--accent-primary), var(--accent-light));
   border-radius: var(--radius-sm);
+  margin-right: var(--space-sm);
+}
+
+/* Enhanced points-grid with better responsive design */
+.points-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-xl);
+  margin-top: var(--space-lg);
+}
+
+/* Enhanced point-item with modern card styling */
+.point-item {
+  margin-bottom: var(--space-lg);
+  padding: var(--space-lg);
+  background: linear-gradient(135deg, var(--bg-lighter) 0%, var(--bg-light) 100%);
+  border-radius: var(--radius-lg);
   border: 1px solid var(--border-secondary);
   color: var(--text-secondary);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.point-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-light));
+  transform: scaleX(0);
+  transition: transform var(--transition-normal);
+}
+
+.point-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-primary);
+}
+
+.point-item:hover::before {
+  transform: scaleX(1);
 }
 
 .point-item:last-child {
   margin-bottom: 0;
+}
+
+/* Enhanced point labels and content */
+.point-item .point-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 1rem;
+  margin-bottom: var(--space-sm);
+}
+
+.point-item .point-time {
+  color: var(--accent-primary);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.point-item .point-address {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  margin-top: var(--space-xs);
+}
+
+/* Enhanced journey line connector */
+.journey-line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-light));
+  margin: 0 var(--space-lg);
+  position: relative;
+  border-radius: var(--radius-sm);
+}
+
+.journey-line::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -6px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid var(--accent-light);
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+}
+
+/* Enhanced responsive design for mobile devices */
+@media (max-width: 768px) {
+  .route-journey {
+    flex-direction: column;
+    gap: var(--space-lg);
+    text-align: center;
+  }
+
+  .journey-line {
+    width: 2px;
+    height: 30px;
+    margin: var(--space-md) 0;
+  }
+
+  .journey-line::before {
+    top: 100%;
+    right: 50%;
+    transform: translateX(50%);
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 6px solid var(--accent-light);
+    border-bottom: none;
+  }
+
+  .points-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .route-points-section,
+  .points-section,
+  .route-description,
+  .route-details {
+    padding: var(--space-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .route-journey {
+    margin: var(--space-lg) 0;
+    padding: var(--space-lg);
+  }
+
+  .point-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .route-points-section h3,
+  .points-section h4 {
+    font-size: 1rem;
+  }
+}
+
+/* Dark mode specific enhancements */
+[data-theme="dark"] .route-journey {
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+  box-shadow: var(--shadow-md);
+}
+
+[data-theme="dark"] .point-item {
+  background: linear-gradient(135deg, var(--bg-lighter) 0%, var(--bg-light) 100%);
+}
+
+[data-theme="dark"] .route-description {
+  background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+}
+
+/* Route form sections - ensure they use theme backgrounds instead of white */
+.route-form-section,
+.pickup-dropoff-section,
+.route-info-section,
+.form-section {
+  background: var(--bg-secondary) !important;
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  transition: all var(--transition-normal);
+}
+
+.route-form-section:hover,
+.pickup-dropoff-section:hover,
+.route-info-section:hover,
+.form-section:hover {
+  border-color: var(--accent-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Fix any remaining white backgrounds in content areas */
+.content-area,
+.main-content,
+.form-content,
+.route-content {
+  background: var(--bg-primary) !important;
+  color: var(--text-primary);
+}
+
+/* Fix input and form elements to match theme */
+.route-form input,
+.route-form select,
+.route-form textarea {
+  background: var(--bg-lighter) !important;
+  border: 1px solid var(--border-secondary);
+  color: var(--text-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  transition: all var(--transition-normal);
+}
+
+.route-form input:focus,
+.route-form select:focus,
+.route-form textarea:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(var(--accent-primary-rgb), 0.1);
+  outline: none;
+}
+
+/* Fix button styling to match theme */
+.route-form .btn,
+.route-form button {
+  background: var(--accent-primary);
+  color: var(--text-inverse);
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  font-weight: 500;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+}
+
+.route-form .btn:hover,
+.route-form button:hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.route-form .btn-secondary {
+  background: var(--bg-lighter);
+  color: var(--text-primary);
+  border: 1px solid var(--border-primary);
+}
+
+.route-form .btn-secondary:hover {
+  background: var(--bg-light);
+  border-color: var(--accent-primary);
+}
+
+/* Fix card backgrounds in route sections */
+.route-card,
+.point-card,
+.info-card {
+  background: var(--bg-secondary) !important;
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-md);
+  transition: all var(--transition-normal);
+}
+
+.route-card:hover,
+.point-card:hover,
+.info-card:hover {
+  border-color: var(--accent-primary);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
+}
+
+/* Fix any white backgrounds in specific route sections */
+.pickup-section,
+.dropoff-section,
+.route-details-section {
+  background: var(--bg-secondary) !important;
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  margin: var(--space-md) 0;
+}
+
+/* Fix labels and text colors */
+.route-form label,
+.form-label {
+  color: var(--text-primary);
+  font-weight: 500;
+  margin-bottom: var(--space-sm);
+  display: block;
+}
+
+.route-form .help-text,
+.form-help {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  margin-top: var(--space-xs);
+}
+
+/* Fix any remaining white containers */
+.container,
+.form-container,
+.route-container {
+  background: transparent !important;
+}
+
+/* Ensure proper contrast for all text elements */
+.route-title,
+.section-title,
+.form-title {
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-bottom: var(--space-lg);
+}
+
+.route-subtitle,
+.section-subtitle {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-md);
 }

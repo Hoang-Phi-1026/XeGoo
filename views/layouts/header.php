@@ -38,8 +38,6 @@ if (session_status() === PHP_SESSION_NONE) {
         echo '<link rel="stylesheet" href="' . BASE_URL . '/public/css/register.css">';
     } elseif (strpos($current_url, '/profile') !== false) {
         echo '<link rel="stylesheet" href="' . BASE_URL . '/public/css/profile.css">';
-    } elseif (strpos($current_url, '/admin') !== false) {
-        echo '<link rel="stylesheet" href="' . BASE_URL . '/public/css/admin-dashboard.css">';
     } elseif (strpos($current_url, '/search') !== false) {
         // echo '<link rel="stylesheet" href="' . BASE_URL . '/public/css/search.css">';
     } else {
@@ -79,8 +77,9 @@ if (session_status() === PHP_SESSION_NONE) {
                             break;
                         case 2: // Nhân Viên Hỗ Trợ
                             ?>
-                            <li class="nav-item"><a href="<?php echo BASE_URL; ?>/support" class="nav-link">Hỗ trợ</a></li>
-                            <li class="nav-item"><a href="<?php echo BASE_URL; ?>/dashboard" class="nav-link">Dashboard</a></li>
+                            <li class="nav-item"><a href="<?php echo BASE_URL; ?>/" class="nav-link">Kiểm duyệt bình luận</a></li>
+                            <li class="nav-item"><a href="<?php echo BASE_URL; ?>/" class="nav-link">Giám sát hành khách</a></li>
+                            <li class="nav-item"><a href="<?php echo BASE_URL; ?>/support" class="nav-link">Hỗ trợ hành khách</a></li>
                             <?php
                             break;
                         case 3: // Tài Xế
@@ -92,8 +91,10 @@ if (session_status() === PHP_SESSION_NONE) {
                         case 4: // Khách Hàng
                             ?>
                             <li class="nav-item"><a href="<?php echo BASE_URL; ?>/" class="nav-link">Trang chủ</a></li>
+                            <li class="nav-item"><a href="<?php echo BASE_URL; ?>/about" class="nav-link">Giới thiệu</a></li>
                             <li class="nav-item"><a href="<?php echo BASE_URL; ?>/search" class="nav-link">Đặt vé</a></li>
                             <li class="nav-item"><a href="<?php echo BASE_URL; ?>/my-tickets" class="nav-link">Vé của tôi</a></li>
+                            <li class="nav-item"><a href="<?php echo BASE_URL; ?>/support" class="nav-link">Hỗ trợ</a></li>
                             <li class="nav-item"><a href="<?php echo BASE_URL; ?>/profile" class="nav-link">Hồ sơ</a></li>
                             <?php
                             break;
