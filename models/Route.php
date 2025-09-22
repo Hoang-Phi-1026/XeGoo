@@ -8,48 +8,44 @@ class Route {
      * Get all routes with optional filtering and search
      */
     public static function getAll($status = null, $search = null) {
-        try {
-            $sql = "SELECT * FROM tuyenduong";
-            $params = [];
-            $conditions = [];
-            
-            if (!empty($search)) {
-                $conditions[] = "(kyHieuTuyen LIKE ? OR diemDi LIKE ? OR diemDen LIKE ?)";
-                $params[] = '%' . $search . '%';
-                $params[] = '%' . $search . '%';
-                $params[] = '%' . $search . '%';
-            }
-            
-            if ($status !== null && $status !== '') {
-                $conditions[] = "trangThai = ?";
-                $params[] = $status;
-            }
-            
-            if (!empty($conditions)) {
-                $sql .= " WHERE " . implode(" AND ", $conditions);
-            }
-            
-            $sql .= " ORDER BY maTuyenDuong DESC";
-            
-            error_log("[Route Search] SQL: " . $sql);
-            error_log("[Route Search] Params: " . json_encode($params));
-            
-            // Test database connection
-            $conn = Database::getInstance();
-            if (!$conn) {
-                error_log("[Route Search] Database connection failed!");
-                return [];
-            }
-            
-            $result = fetchAll($sql, $params);
-            error_log("[Route Search] Results count: " . count($result));
-            
-            return $result;
-        } catch (Exception $e) {
-            error_log("[Route Search] Exception: " . $e->getMessage());
+    try {
+        $sql = "SELECT maTuyenDuong, kyHieuTuyen, diemDi, diemDen, thoiGianDiChuyen, khoangCach, trangThai 
+                FROM tuyenduong";
+        $params = [];
+        $conditions = [];
+        
+        if (!empty($search)) {
+            $conditions[] = "(kyHieuTuyen LIKE ? OR diemDi LIKE ? OR diemDen LIKE ?)";
+            $params[] = '%' . $search . '%';
+            $params[] = '%' . $search . '%';
+            $params[] = '%' . $search . '%';
+        }
+        
+        if ($status !== null && $status !== '') {
+            $conditions[] = "trangThai = ?";
+            $params[] = $status;
+        }
+        
+        if (!empty($conditions)) {
+            $sql .= " WHERE " . implode(" AND ", $conditions);
+        }
+        
+        $sql .= " ORDER BY maTuyenDuong DESC";
+        
+        $conn = Database::getInstance();
+        if (!$conn) {
+            error_log("[Route Search] Database connection failed!");
             return [];
         }
+        
+        $result = fetchAll($sql, $params);
+        return $result;
+    } catch (Exception $e) {
+        error_log("[Route Search] Exception: " . $e->getMessage());
+        return [];
     }
+}
+
     
     /**
      * Get route by ID

@@ -15,6 +15,9 @@ class BookingController {
             session_start();
         }
     }
+
+
+    
     
     /**
      * Show booking page for selected trip
@@ -289,6 +292,8 @@ class BookingController {
         
         include __DIR__ . '/../views/booking/success.php';
     }
+
+    
     
     /**
      * Get trip pickup/dropoff points

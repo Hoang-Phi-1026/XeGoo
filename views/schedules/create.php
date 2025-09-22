@@ -1,5 +1,4 @@
 <?php include __DIR__ . '/../layouts/header.php'; ?>
-
 <div class="container">
     <div class="page-header">
         <div class="page-title">
@@ -153,9 +152,10 @@ document.getElementById('maTuyenDuong').addEventListener('change', function() {
             tenLichTrinhField.value = `Lịch trình ${routeCode}`;
         }
     }
+    
+    calculateEndTime();
 });
 
-// Update schedule name when time changes
 document.getElementById('gioKhoiHanh').addEventListener('change', function() {
     const routeField = document.getElementById('maTuyenDuong');
     const tenLichTrinhField = document.getElementById('tenLichTrinh');
@@ -165,6 +165,8 @@ document.getElementById('gioKhoiHanh').addEventListener('change', function() {
         const routeCode = selectedOption.text.split(' - ')[0];
         tenLichTrinhField.value = `Lịch trình ${routeCode} ${this.value}`;
     }
+    
+    calculateEndTime();
 });
 
 // Set minimum date to today
@@ -175,8 +177,59 @@ document.getElementById('ngayKetThuc').min = new Date().toISOString().split('T')
 document.getElementById('ngayBatDau').addEventListener('change', function() {
     document.getElementById('ngayKetThuc').min = this.value;
 });
-</script>
 
+// Force 24-hour format for time inputs
+document.getElementById('gioKhoiHanh').setAttribute('step', '60'); 
+document.getElementById('gioKetThuc').setAttribute('step', '60');
+
+let routeData = {};
+<?php foreach ($routes as $route): ?>
+routeData[<?php echo $route['maTuyenDuong']; ?>] = {
+    duration: '<?php echo $route['thoiGianDiChuyen']; ?>' // ví dụ: 06:30:00
+};
+<?php endforeach; ?>
+
+function calculateEndTime() {
+    const routeSelect = document.getElementById('maTuyenDuong');
+    const departureInput = document.getElementById('gioKhoiHanh');
+    const endTimeInput = document.getElementById('gioKetThuc');
+
+    const routeId = routeSelect.value;
+    const departureTime = departureInput.value;
+
+    if (!routeId || !departureTime || !routeData[routeId]) {
+        return;
+    }
+
+    const duration = routeData[routeId].duration;
+
+    // Parse departure time (HH:MM)
+    const [depHour, depMin] = departureTime.split(':').map(Number);
+
+    // Parse duration (HH:MM:SS hoặc HH:MM)
+    const parts = duration.split(':').map(Number);
+    const durHour = parts[0] || 0;
+    const durMin = parts[1] || 0;
+    const durSec = parts[2] || 0;
+
+    // Tính tổng
+    let endHour = depHour + durHour;
+    let endMin = depMin + durMin + Math.floor(durSec / 60);
+
+    // xử lý tràn phút
+    if (endMin >= 60) {
+        endHour += Math.floor(endMin / 60);
+        endMin = endMin % 60;
+    }
+
+    // xử lý tràn giờ
+    endHour = endHour % 24;
+
+    // Format kết quả
+    const endTime = String(endHour).padStart(2, '0') + ':' + String(endMin).padStart(2, '0');
+    endTimeInput.value = endTime;
+}
+</script>
 <?php 
 // Clear form data after displaying
 unset($_SESSION['form_data']);

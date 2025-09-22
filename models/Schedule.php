@@ -110,7 +110,7 @@ class Schedule {
      * Get all routes for dropdown
      */
     public static function getAllRoutes() {
-        $sql = "SELECT maTuyenDuong, kyHieuTuyen, diemDi, diemDen FROM tuyenduong WHERE trangThai = 'Đang hoạt động' ORDER BY kyHieuTuyen";
+        $sql = "SELECT maTuyenDuong, kyHieuTuyen, diemDi, diemDen, thoiGianDiChuyen FROM tuyenduong WHERE trangThai = 'Đang hoạt động' ORDER BY kyHieuTuyen";
         return fetchAll($sql);
     }
     

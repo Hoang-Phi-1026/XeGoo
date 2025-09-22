@@ -1,4 +1,6 @@
 <?php include __DIR__ . '/../layouts/header.php'; ?>
+<?php include __DIR__ . '/../views/booking/show.php';?>
+
 <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/booking.css">
 
 <div class="booking-container">
@@ -91,21 +93,6 @@
                         </div>
                     <?php endif; ?>
                     
-                    <!-- Modern seat legend with better visual design -->
-                    <div class="seat-legend">
-                        <div class="legend-item">
-                            <div class="legend-seat available"></div>
-                            <span>Trống</span>
-                        </div>
-                        <div class="legend-item">
-                            <div class="legend-seat selected"></div>
-                            <span>Đã chọn</span>
-                        </div>
-                        <div class="legend-item">
-                            <div class="legend-seat occupied"></div>
-                            <span>Đã đặt</span>
-                        </div>
-                    </div>
                 </div>
                 
                 <!-- Step 2: Pickup/Dropoff Points -->
@@ -214,7 +201,7 @@
             
             <!-- Right Column - Price Summary -->
             <div class="price-summary">
-                <h3>Tổng tiền</h3>
+                <h3>Tạm Tính</h3>
                 <div class="price-item">
                     <span class="price-label">Chuyến đi:</span>
                     <span class="price-value" id="outboundPrice">0đ</span>
@@ -246,6 +233,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const outboundPrice = <?php echo $trip['giaVe']; ?>;
     const returnPrice = <?php echo $returnTrip ? $returnTrip['giaVe'] : 0; ?>;
     const isRoundTrip = <?php echo ($isRoundTrip && $returnTrip) ? 'true' : 'false'; ?>;
+    
+    const userData = {
+        name: '<?php echo isset($_SESSION['user_name']) ? addslashes($_SESSION['user_name']) : ''; ?>',
+        phone: '<?php echo isset($_SESSION['user_phone']) ? addslashes($_SESSION['user_phone']) : ''; ?>',
+        email: '<?php echo isset($_SESSION['user_email']) ? addslashes($_SESSION['user_email']) : ''; ?>'
+    };
+    const isLoggedIn = <?php echo isset($_SESSION['user_id']) ? 'true' : 'false'; ?>;
+    
+    console.log('[v0] User data:', userData);
+    console.log('[v0] Is logged in:', isLoggedIn);
     
     // Tab switching for round trip
     if (isRoundTrip) {
@@ -327,6 +324,14 @@ document.addEventListener('DOMContentLoaded', function() {
         outboundSeats.forEach((seat, index) => {
             const form = document.createElement('div');
             form.className = 'passenger-form';
+            const isFirstTicket = index === 0;
+            
+            const nameValue = (isLoggedIn && isFirstTicket && userData.name) ? userData.name : '';
+            const emailValue = (isLoggedIn && isFirstTicket && userData.email) ? userData.email : '';
+            const phoneValue = (isLoggedIn && isFirstTicket && userData.phone) ? userData.phone : '';
+            
+            console.log(`[v0] Passenger ${index + 1} - isFirst: ${isFirstTicket}, name: "${nameValue}", email: "${emailValue}", phone: "${phoneValue}"`);
+            
             form.innerHTML = `
                 <div class="passenger-title">
                     Hành khách ${index + 1} 
@@ -335,15 +340,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="passenger-fields">
                     <div class="form-group">
                         <label class="form-label">Họ và tên *</label>
-                        <input type="text" name="passengers[${index}][ho_ten]" class="form-input" required>
+                        <input type="text" name="passengers[${index}][ho_ten]" class="form-input" 
+                               value="${nameValue}" required>
                     </div>
                     <div class="form-group">
-                        <label class="form-label">CCCD *</label>
-                        <input type="text" name="passengers[${index}][cccd]" class="form-input" required>
+                        <label class="form-label">Email *</label>
+                        <input type="email" name="passengers[${index}][email]" class="form-input" 
+                               value="${emailValue}" required>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Số điện thoại *</label>
-                        <input type="tel" name="passengers[${index}][so_dien_thoai]" class="form-input" required>
+                        <input type="tel" name="passengers[${index}][so_dien_thoai]" class="form-input" 
+                               value="${phoneValue}" required>
                     </div>
                 </div>
             `;
@@ -354,6 +362,14 @@ document.addEventListener('DOMContentLoaded', function() {
             returnSeats.forEach((seat, index) => {
                 const form = document.createElement('div');
                 form.className = 'passenger-form';
+                const isFirstTicket = index === 0;
+                
+                const nameValue = (isLoggedIn && isFirstTicket && userData.name) ? userData.name : '';
+                const emailValue = (isLoggedIn && isFirstTicket && userData.email) ? userData.email : '';
+                const phoneValue = (isLoggedIn && isFirstTicket && userData.phone) ? userData.phone : '';
+                
+                console.log(`[v0] Return passenger ${index + 1} - isFirst: ${isFirstTicket}, name: "${nameValue}", email: "${emailValue}", phone: "${phoneValue}"`);
+                
                 form.innerHTML = `
                     <div class="passenger-title">
                         Hành khách ${index + 1} 
@@ -362,15 +378,18 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="passenger-fields">
                         <div class="form-group">
                             <label class="form-label">Họ và tên *</label>
-                            <input type="text" name="return_passengers[${index}][ho_ten]" class="form-input" required>
+                            <input type="text" name="return_passengers[${index}][ho_ten]" class="form-input" 
+                                   value="${nameValue}" required>
                         </div>
                         <div class="form-group">
-                            <label class="form-label">CCCD *</label>
-                            <input type="text" name="return_passengers[${index}][cccd]" class="form-input" required>
+                            <label class="form-label">Email *</label>
+                            <input type="email" name="return_passengers[${index}][email]" class="form-input" 
+                                   value="${emailValue}" required>
                         </div>
                         <div class="form-group">
                             <label class="form-label">Số điện thoại *</label>
-                            <input type="tel" name="return_passengers[${index}][so_dien_thoai]" class="form-input" required>
+                            <input type="tel" name="return_passengers[${index}][so_dien_thoai]" class="form-input" 
+                                   value="${phoneValue}" required>
                         </div>
                     </div>
                 `;
