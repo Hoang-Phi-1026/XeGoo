@@ -1,18 +1,45 @@
 <?php
 if (!defined('BASE_URL')) {
-    define('BASE_URL', 'http://localhost/xegoo');
+    // Auto-detect base URL if possible
+    $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
+    $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
+    $scriptName = $_SERVER['SCRIPT_NAME'] ?? '';
+    $basePath = dirname($scriptName);
+    
+    // Clean up base path
+    if ($basePath === '/' || $basePath === '\\') {
+        $basePath = '';
+    }
+    
+    $autoBaseUrl = $protocol . '://' . $host . $basePath;
+    
+    // Use auto-detected URL or fallback to localhost
+    define('BASE_URL', $autoBaseUrl !== 'http://localhost' ? $autoBaseUrl : 'http://localhost/xegoo');
 }
 
-// Turn off error display in production
-ini_set('display_errors', 0);
-ini_set('display_startup_errors', 0);
+// Enhanced error reporting for debugging
+if (isset($_GET['debug']) || isset($_SESSION['debug_mode'])) {
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+} else {
+    // Turn off error display in production
+    ini_set('display_errors', 0);
+    ini_set('display_startup_errors', 0);
+}
 
 // Log errors instead of displaying them
 ini_set('log_errors', 1);
-ini_set('error_log', __DIR__ . '/../logs/php_errors.log');
+$logDir = __DIR__ . '/../logs';
+if (!is_dir($logDir)) {
+    mkdir($logDir, 0755, true);
+}
+ini_set('error_log', $logDir . '/php_errors.log');
 
 // Set error reporting level
 error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
+
+error_log("[v0] Config loaded - BASE_URL: " . BASE_URL);
 
 if (!defined('DB_HOST')) {
     define('DB_HOST', 'localhost');

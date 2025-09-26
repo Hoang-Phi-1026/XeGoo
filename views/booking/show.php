@@ -1,10 +1,8 @@
 <?php include __DIR__ . '/../layouts/header.php'; ?>
-<?php include __DIR__ . '/../views/booking/show.php';?>
-
 <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/booking.css">
 
 <div class="booking-container">
-    <!-- Updated booking header to show both trips for round trip -->
+    <!-- Fixed booking header to show both trips for round trip -->
     <div class="booking-header">
         <h1><?php echo ($isRoundTrip && $returnTrip) ? 'Chi tiết vé khứ hồi' : 'Chi tiết chuyến xe'; ?></h1>
 
@@ -77,19 +75,27 @@
                         <h2 class="step-title">Chọn ghế ngồi</h2>
                     </div>
                     
-                    <!-- Added outbound trip seat map -->
-                    <div class="trip-seat-map" id="outbound-seats" <?php echo ($isRoundTrip && $returnTrip) ? '' : 'style="display: block;"'; ?>>
+                    <!-- Fixed seat map includes to pass seat statuses -->
+                    <div class="trip-seat-map" id="outbound-seats">
                         <h4>Chuyến đi: <?php echo htmlspecialchars($trip['diemDi'] . ' → ' . $trip['diemDen']); ?></h4>
-                        <?php $currentSeatLayout = $seatLayout; $currentBookedSeats = $bookedSeats; ?>
-                        <?php include __DIR__ . '/seat-map-partial.php'; ?>
+                        <?php 
+                        $currentSeatLayout = $seatLayout; 
+                        $currentBookedSeats = $bookedSeats;
+                        $currentTripType = 'outbound';
+                        include __DIR__ . '/seat-map-partial.php'; 
+                        ?>
                     </div>
                     
                     <!-- Added return trip seat map -->
                     <?php if ($isRoundTrip && $returnTrip): ?>
                         <div class="trip-seat-map" id="return-seats" style="display: none;">
                             <h4>Chuyến về: <?php echo htmlspecialchars($returnTrip['diemDi'] . ' → ' . $returnTrip['diemDen']); ?></h4>
-                            <?php $currentSeatLayout = $returnSeatLayout; $currentBookedSeats = $returnBookedSeats; ?>
-                            <?php include __DIR__ . '/seat-map-partial.php'; ?>
+                            <?php 
+                            $currentSeatLayout = $returnSeatLayout; 
+                            $currentBookedSeats = $returnBookedSeats;
+                            $currentTripType = 'return';
+                            include __DIR__ . '/seat-map-partial.php'; 
+                            ?>
                         </div>
                     <?php endif; ?>
                     
@@ -203,12 +209,12 @@
             <div class="price-summary">
                 <h3>Tạm Tính</h3>
                 <div class="price-item">
-                    <span class="price-label">Chuyến đi:</span>
+                    <span class="price-label">Chuyến đi: </span>
                     <span class="price-value" id="outboundPrice">0đ</span>
                 </div>
                 <?php if ($isRoundTrip && $returnTrip): ?>
                     <div class="price-item">
-                        <span class="price-label">Chuyến về:</span>
+                        <span class="price-label">Chuyến về: </span>
                         <span class="price-value" id="returnPrice">0đ</span>
                     </div>
                 <?php endif; ?>
@@ -225,9 +231,11 @@
     </form>
 </div>
 
-<!-- Updated JavaScript to handle round trip booking -->
+<!-- Updated JavaScript to handle round trip booking properly -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('[v0] Booking page loaded');
+    
     const outboundSeats = [];
     const returnSeats = [];
     const outboundPrice = <?php echo $trip['giaVe']; ?>;
@@ -243,49 +251,67 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('[v0] User data:', userData);
     console.log('[v0] Is logged in:', isLoggedIn);
+    console.log('[v0] Is round trip:', isRoundTrip);
     
     // Tab switching for round trip
     if (isRoundTrip) {
         document.querySelectorAll('.tab-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const tripType = this.dataset.trip;
+                console.log('[v0] Switching to tab:', tripType);
                 
                 // Update tab buttons
                 document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
                 
                 // Show/hide seat maps
-                document.getElementById('outbound-seats').style.display = tripType === 'outbound' ? 'block' : 'none';
-                document.getElementById('return-seats').style.display = tripType === 'return' ? 'block' : 'none';
+                const outboundSeats = document.getElementById('outbound-seats');
+                const returnSeats = document.getElementById('return-seats');
+                
+                if (outboundSeats) {
+                    outboundSeats.style.display = tripType === 'outbound' ? 'block' : 'none';
+                }
+                if (returnSeats) {
+                    returnSeats.style.display = tripType === 'return' ? 'block' : 'none';
+                }
             });
         });
     }
     
-    // Seat selection handling
-    document.querySelectorAll('.seat.available').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const seatNum = this.dataset.seat;
-            const isReturnSeat = this.closest('#return-seats') !== null;
-            const currentSeats = isReturnSeat ? returnSeats : outboundSeats;
-            
-            if (this.classList.contains('selected')) {
-                this.classList.remove('selected');
-                this.classList.add('available');
-                const index = currentSeats.indexOf(seatNum);
-                if (index > -1) {
-                    currentSeats.splice(index, 1);
+    // Seat selection handling - Fixed to work with both trip types
+    function attachSeatListeners() {
+        document.querySelectorAll('.seat.available').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const seatNum = this.dataset.seat;
+                const isReturnSeat = this.closest('#return-seats') !== null;
+                const currentSeats = isReturnSeat ? returnSeats : outboundSeats;
+                
+                console.log('[v0] Seat clicked:', seatNum, 'isReturn:', isReturnSeat);
+                
+                if (this.classList.contains('selected')) {
+                    this.classList.remove('selected');
+                    this.classList.add('available');
+                    const index = currentSeats.indexOf(seatNum);
+                    if (index > -1) {
+                        currentSeats.splice(index, 1);
+                    }
+                } else {
+                    this.classList.remove('available');
+                    this.classList.add('selected');
+                    currentSeats.push(seatNum);
                 }
-            } else {
-                this.classList.remove('available');
-                this.classList.add('selected');
-                currentSeats.push(seatNum);
-            }
-            
-            updateSelectedSeats();
-            updatePassengerForms();
-            updatePriceSummary();
+                
+                console.log('[v0] Current seats - outbound:', outboundSeats, 'return:', returnSeats);
+                
+                updateSelectedSeats();
+                updatePassengerForms();
+                updatePriceSummary();
+            });
         });
-    });
+    }
+    
+    // Initial attachment
+    attachSeatListeners();
     
     function updateSelectedSeats() {
         const display = document.getElementById('selectedSeatsDisplay');
@@ -294,11 +320,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         let displayText = '';
         if (outboundSeats.length > 0) {
-            displayText += `<strong>Chuyến đi:</strong> Ghế ${outboundSeats.sort((a, b) => a - b).join(', ')}`;
+            displayText += `<strong> Chuyến đi: </strong> Ghế ${outboundSeats.sort().join(', ')}`;
         }
         if (returnSeats.length > 0) {
             if (displayText) displayText += '<br>';
-            displayText += `<strong>Chuyến về:</strong> Ghế ${returnSeats.sort((a, b) => a - b).join(', ')}`;
+            displayText += `<strong> Chuyến về: </strong> Ghế ${returnSeats.sort().join(', ')}`;
         }
         
         if (!displayText) {
@@ -318,47 +344,47 @@ document.addEventListener('DOMContentLoaded', function() {
     function updatePassengerForms() {
         const outboundContainer = document.getElementById('outboundPassengerForms');
         const returnContainer = document.getElementById('returnPassengerForms');
-        outboundContainer.innerHTML = '';
-        if (returnContainer) returnContainer.innerHTML = '';
-
-        outboundSeats.forEach((seat, index) => {
-            const form = document.createElement('div');
-            form.className = 'passenger-form';
-            const isFirstTicket = index === 0;
-            
-            const nameValue = (isLoggedIn && isFirstTicket && userData.name) ? userData.name : '';
-            const emailValue = (isLoggedIn && isFirstTicket && userData.email) ? userData.email : '';
-            const phoneValue = (isLoggedIn && isFirstTicket && userData.phone) ? userData.phone : '';
-            
-            console.log(`[v0] Passenger ${index + 1} - isFirst: ${isFirstTicket}, name: "${nameValue}", email: "${emailValue}", phone: "${phoneValue}"`);
-            
-            form.innerHTML = `
-                <div class="passenger-title">
-                    Hành khách ${index + 1} 
-                    <span class="seat-badge">Ghế ${seat} (đi)</span>
-                </div>
-                <div class="passenger-fields">
-                    <div class="form-group">
-                        <label class="form-label">Họ và tên *</label>
-                        <input type="text" name="passengers[${index}][ho_ten]" class="form-input" 
-                               value="${nameValue}" required>
+        
+        if (outboundContainer) {
+            outboundContainer.innerHTML = '';
+            outboundSeats.forEach((seat, index) => {
+                const form = document.createElement('div');
+                form.className = 'passenger-form';
+                const isFirstTicket = index === 0;
+                
+                const nameValue = (isLoggedIn && isFirstTicket && userData.name) ? userData.name : '';
+                const emailValue = (isLoggedIn && isFirstTicket && userData.email) ? userData.email : '';
+                const phoneValue = (isLoggedIn && isFirstTicket && userData.phone) ? userData.phone : '';
+                
+                form.innerHTML = `
+                    <div class="passenger-title">
+                        Hành khách ${index + 1} 
+                        <span class="seat-badge"> Ghế ${seat} (đi)</span>
                     </div>
-                    <div class="form-group">
-                        <label class="form-label">Email *</label>
-                        <input type="email" name="passengers[${index}][email]" class="form-input" 
-                               value="${emailValue}" required>
+                    <div class="passenger-fields">
+                        <div class="form-group">
+                            <label class="form-label">Họ và tên *</label>
+                            <input type="text" name="passengers[${index}][ho_ten]" class="form-input" 
+                                   value="${nameValue}" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email *</label>
+                            <input type="email" name="passengers[${index}][email]" class="form-input" 
+                                   value="${emailValue}" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Số điện thoại *</label>
+                            <input type="tel" name="passengers[${index}][so_dien_thoai]" class="form-input" 
+                                   value="${phoneValue}" required>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label class="form-label">Số điện thoại *</label>
-                        <input type="tel" name="passengers[${index}][so_dien_thoai]" class="form-input" 
-                               value="${phoneValue}" required>
-                    </div>
-                </div>
-            `;
-            outboundContainer.appendChild(form);
-        });
+                `;
+                outboundContainer.appendChild(form);
+            });
+        }
 
         if (returnContainer) {
+            returnContainer.innerHTML = '';
             returnSeats.forEach((seat, index) => {
                 const form = document.createElement('div');
                 form.className = 'passenger-form';
@@ -368,12 +394,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 const emailValue = (isLoggedIn && isFirstTicket && userData.email) ? userData.email : '';
                 const phoneValue = (isLoggedIn && isFirstTicket && userData.phone) ? userData.phone : '';
                 
-                console.log(`[v0] Return passenger ${index + 1} - isFirst: ${isFirstTicket}, name: "${nameValue}", email: "${emailValue}", phone: "${phoneValue}"`);
-                
                 form.innerHTML = `
                     <div class="passenger-title">
                         Hành khách ${index + 1} 
-                        <span class="seat-badge">Ghế ${seat} (về)</span>
+                        <span class="seat-badge"> Ghế ${seat} (về)</span>
                     </div>
                     <div class="passenger-fields">
                         <div class="form-group">
@@ -416,6 +440,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Form validation
     document.getElementById('bookingForm').addEventListener('submit', function(e) {
+        console.log('[v0] Form submission started');
+        console.log('[v0] Outbound seats:', outboundSeats);
+        console.log('[v0] Return seats:', returnSeats);
+        
         const hasRequiredSeats = isRoundTrip ? (outboundSeats.length > 0 && returnSeats.length > 0) : outboundSeats.length > 0;
         
         if (!hasRequiredSeats) {
@@ -431,12 +459,50 @@ document.addEventListener('DOMContentLoaded', function() {
             
         for (const selectName of requiredSelects) {
             const select = document.querySelector(`select[name="${selectName}"]`);
-            if (!select.value) {
+            if (select && !select.value) {
                 e.preventDefault();
                 alert('Vui lòng chọn đầy đủ điểm đón và điểm trả.');
                 return;
             }
         }
+        
+        const passengerInputs = document.querySelectorAll('#outboundPassengerForms input[required]');
+        for (const input of passengerInputs) {
+            if (!input.value.trim()) {
+                e.preventDefault();
+                alert('Vui lòng điền đầy đủ thông tin hành khách.');
+                return;
+            }
+        }
+        
+        if (isRoundTrip) {
+            const returnPassengerInputs = document.querySelectorAll('#returnPassengerForms input[required]');
+            for (const input of returnPassengerInputs) {
+                if (!input.value.trim()) {
+                    e.preventDefault();
+                    alert('Vui lòng điền đầy đủ thông tin hành khách cho chuyến về.');
+                    return;
+                }
+            }
+        }
+        
+        const submitBtn = document.getElementById('submitBtn');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Đang xử lý...';
+        
+        console.log('[v0] Form validation passed, submitting...');
+        console.log('[v0] Form action:', this.action);
+        console.log('[v0] Form method:', this.method);
+        
+        // Log all form data
+        const formData = new FormData(this);
+        for (let [key, value] of formData.entries()) {
+            console.log('[v0] Form data -', key + ':', value);
+        }
+        
+        setTimeout(() => {
+            console.log('[v0] Submitting form now...');
+        }, 100);
     });
 });
 </script>
