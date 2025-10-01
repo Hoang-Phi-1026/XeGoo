@@ -18,6 +18,11 @@ $routes = [
     '/admin' => ['controller' => 'AdminController', 'action' => 'index'],
     '/profile' => ['controller' => 'ProfileController', 'action' => 'index'],
     '/about' => ['controller' => 'HomeController', 'action' => 'about'],
+    '/booking-guide' => ['controller' => 'HomeController', 'action' => 'bookingGuide'],
+    
+    '/my-tickets' => ['controller' => 'MyTicketsController', 'action' => 'index'],
+    '/my-tickets/history' => ['controller' => 'MyTicketsController', 'action' => 'history'],
+    '/my-tickets/detail/{id}' => ['controller' => 'MyTicketsController', 'action' => 'detail'],
     
     // Vehicle routes
     '/vehicles' => ['controller' => 'VehicleController', 'action' => 'index'],

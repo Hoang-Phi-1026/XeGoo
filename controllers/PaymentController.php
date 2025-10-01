@@ -45,6 +45,7 @@ class PaymentController {
 
             $promotions = [];
             $userPoints = 0;
+            $isLoggedIn = isset($_SESSION['user_id']);
             
             try {
                 $promotions = $this->getActivePromotions();
@@ -53,7 +54,7 @@ class PaymentController {
                 error_log("[v0] Error loading promotions: " . $e->getMessage());
             }
 
-            if (isset($_SESSION['user_id'])) {
+            if ($isLoggedIn) {
                 try {
                     $userPoints = $this->getUserPoints($_SESSION['user_id']);
                     error_log("[v0] User points: $userPoints");
@@ -67,7 +68,7 @@ class PaymentController {
             error_log("[v0] Pricing calculated - Original: " . $pricing['original_price'] . ", Final: " . $pricing['final_price']);
 
             $viewData = compact(
-                'bookingData', 'heldSeats', 'promotions', 'userPoints', 'pricing'
+                'bookingData', 'heldSeats', 'promotions', 'userPoints', 'pricing', 'isLoggedIn'
             );
             extract($viewData);
 
@@ -353,7 +354,7 @@ class PaymentController {
 
             query("START TRANSACTION");
 
-            $userId = $_SESSION['user_id'] ?? 1;
+            $userId = $_SESSION['user_id'] ?? null;
             $tripType = isset($bookingData['return']) ? 'KhuHoi' : 'MotChieu';
 
             $sql = "INSERT INTO datve (

@@ -294,11 +294,11 @@
             </div>
 
             <!-- Mã giảm giá -->
+            <?php if ($isLoggedIn): ?>
             <div class="info-card">
                 <h3 class="card-title">Mã giảm giá</h3>
                 <div class="promotion-section">
                     <?php if (!empty($promotions)): ?>
-                        <!-- Updated promotion selection logic - no auto-apply -->
                         <div class="promotion-list" id="promotionList">
                             <?php foreach ($promotions as $promotion): ?>
                                 <div class="promotion-item" data-promotion-id="<?php echo $promotion['maKhuyenMai']; ?>">
@@ -332,8 +332,10 @@
                     </div>
                 </div>
             </div>
+            <?php endif; ?>
 
             <!-- Điểm tích lũy -->
+            <?php if ($isLoggedIn): ?>
             <div class="info-card">
                 <h3 class="card-title">Điểm tích lũy</h3>
                 <div class="points-section">
@@ -375,6 +377,7 @@
                     <?php endif; ?>
                 </div>
             </div>
+            <?php endif; ?>
 
             <!-- Tổng kết giá -->
             <div class="info-card price-summary-card">

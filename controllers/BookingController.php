@@ -39,7 +39,11 @@ class BookingController {
                 return;
             }
             
+            $outboundHasDeparted = $this->checkIfTripHasDeparted($outboundTrip['thoiGianKhoiHanh']);
+            error_log("[v0] Outbound trip datetime: {$outboundTrip['thoiGianKhoiHanh']}, has departed: " . ($outboundHasDeparted ? 'yes' : 'no'));
+            
             $returnTrip = null;
+            $returnHasDeparted = false;
             if ($isRoundTrip && $returnTripId) {
                 $returnTrip = $this->getTripDetails($returnTripId);
                 if (!$returnTrip) {
@@ -47,6 +51,8 @@ class BookingController {
                     echo "<h1>Lỗi: Không tìm thấy chuyến về ID: $returnTripId</h1>";
                     return;
                 }
+                $returnHasDeparted = $this->checkIfTripHasDeparted($returnTrip['thoiGianKhoiHanh']);
+                error_log("[v0] Return trip datetime: {$returnTrip['thoiGianKhoiHanh']}, has departed: " . ($returnHasDeparted ? 'yes' : 'no'));
             }
             
             // Use outbound trip for main display (backward compatibility)
@@ -98,7 +104,8 @@ class BookingController {
                 'returnSeatLayout', 'returnBookedSeats', 'returnSeatStatuses',
                 'pickupPoints', 'dropoffPoints',
                 'returnPickupPoints', 'returnDropoffPoints',
-                'isRoundTrip', 'bookingType'
+                'isRoundTrip', 'bookingType',
+                'outboundHasDeparted', 'returnHasDeparted'
             );
             extract($viewData);
             
@@ -120,6 +127,33 @@ class BookingController {
             echo "<p><strong>File:</strong> " . $e->getFile() . " (Line: " . $e->getLine() . ")</p>";
             echo "<h3>Stack Trace:</h3>";
             echo "<pre>" . $e->getTraceAsString() . "</pre>";
+        }
+    }
+    
+    /**
+     * Check if a trip has departed based on datetime
+     * Accepts MySQL DATETIME format (YYYY-MM-DD HH:MM:SS)
+     */
+    private function checkIfTripHasDeparted($departureDateTime) {
+        try {
+            if (empty($departureDateTime)) {
+                error_log("[v0] Empty departure datetime provided");
+                return false;
+            }
+            
+            // Parse MySQL DATETIME format (YYYY-MM-DD HH:MM:SS)
+            $departureDate = new DateTime($departureDateTime);
+            $now = new DateTime();
+            
+            $hasDeparted = $departureDate < $now;
+            
+            error_log("[v0] Departure datetime: " . $departureDate->format('Y-m-d H:i:s') . ", Current time: " . $now->format('Y-m-d H:i:s') . ", Has departed: " . ($hasDeparted ? 'yes' : 'no'));
+            
+            return $hasDeparted;
+            
+        } catch (Exception $e) {
+            error_log("[v0] checkIfTripHasDeparted error: " . $e->getMessage());
+            return false;
         }
     }
     
@@ -172,6 +206,24 @@ class BookingController {
             
             if (empty($tripId)) {
                 $errors[] = 'Không tìm thấy thông tin chuyến xe.';
+            }
+            
+            if (!empty($tripId)) {
+                $trip = Trip::getById($tripId);
+                if ($trip) {
+                    if ($this->checkIfTripHasDeparted($trip['thoiGianKhoiHanh'])) {
+                        $errors[] = 'Chuyến xe đã khởi hành. Không thể đặt vé cho chuyến xe này.';
+                    }
+                }
+            }
+            
+            if ($isRoundTrip && !empty($returnTripId)) {
+                $returnTrip = Trip::getById($returnTripId);
+                if ($returnTrip) {
+                    if ($this->checkIfTripHasDeparted($returnTrip['thoiGianKhoiHanh'])) {
+                        $errors[] = 'Chuyến về đã khởi hành. Không thể đặt vé cho chuyến xe này.';
+                    }
+                }
             }
             
             if (empty($selectedSeats)) {
@@ -500,11 +552,12 @@ class BookingController {
      */
     public function success($bookingId) {
         try {
-            if (!isset($_SESSION['user_id'])) {
-                $_SESSION['error'] = 'Vui lòng đăng nhập để xem thông tin đặt vé!';
-                header('Location: ' . BASE_URL . '/login');
-                exit;
-            }
+            
+            // if (!isset($_SESSION['user_id'])) {
+            //     $_SESSION['error'] = 'Vui lòng đăng nhập để xem thông tin đặt vé!';
+            //     header('Location: ' . BASE_URL . '/login');
+            //     exit;
+            // }
             
             $booking = $this->getBookingById($bookingId);
             
@@ -552,7 +605,8 @@ class BookingController {
                            cd.giaVe as seatPrice, g.soGhe,
                            c.ngayKhoiHanh, c.thoiGianKhoiHanh, 
                            t.kyHieuTuyen, t.diemDi, t.diemDen,
-                           dd.tenDiem as diemDonTen, dt.tenDiem as diemTraTen,
+                           dd.tenDiem as diemDonTen, dd.diaChi as diemDonDiaChi,
+                           dt.tenDiem as diemTraTen, dt.diaChi as diemTraDiaChi,
                            p.bienSo
                     FROM datve d
                     INNER JOIN chitiet_datve cd ON d.maDatVe = cd.maDatVe
@@ -581,8 +635,8 @@ class BookingController {
         try {
             $sql = "SELECT d.*, c.ngayKhoiHanh, c.thoiGianKhoiHanh,
                            t.kyHieuTuyen, t.diemDi, t.diemDen,
-                           dd.tenDiem as diemDonTen, dt.tenDiem as diemTraTen,
-                           p.bienSo
+                           dd.tenDiem as diemDonTen, dd.diaChi as diemDonDiaChi,
+                           dt.tenDiem as diemTraTen, dt.diaChi as diemTraDiaChi
                     FROM datve d
                     INNER JOIN chuyenxe c ON d.maChuyenXe = c.maChuyenXe
                     INNER JOIN lichtrinh l ON c.maLichTrinh = l.maLichTrinh

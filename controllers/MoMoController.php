@@ -230,7 +230,7 @@ class MoMoController {
 
             query("START TRANSACTION");
 
-            $userId = $_SESSION['user_id'] ?? 1;
+            $userId = $_SESSION['user_id'] ?? null;
             $tripType = isset($bookingData['return']) ? 'KhuHoi' : 'MotChieu';
 
             // Create main booking record

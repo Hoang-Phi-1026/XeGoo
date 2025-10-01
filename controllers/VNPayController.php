@@ -16,8 +16,8 @@ class VNPayController {
             session_start();
         }
         
-        $this->tmnCode = 'NJJ0R8FS'; // Mã website tại VNPAY từ file tham khảo
-        $this->hashSecret = 'BYKJBHPPZKQMKBIBGGXIYKWYFAYSJXCW'; // Chuỗi bí mật từ file tham khảo
+        $this->tmnCode = 'O3RU0JR9'; 
+        $this->hashSecret = 'MWQMV1515QDCZFO19Y2N9PNWZVWEJYO2';
         $this->url = 'https://sandbox.vnpayment.vn/paymentv2/vpcpay.html';
         $this->returnUrl = BASE_URL . '/payment/vnpay/return';
         
@@ -390,7 +390,7 @@ class VNPayController {
 
             query("START TRANSACTION");
 
-            $userId = $_SESSION['user_id'] ?? 1;
+            $userId = $_SESSION['user_id'] ?? null;
             $tripType = isset($bookingData['return']) ? 'KhuHoi' : 'MotChieu';
             
             $sql = "INSERT INTO datve (
@@ -458,7 +458,7 @@ class VNPayController {
 
             query("START TRANSACTION");
 
-            $userId = $_SESSION['user_id'] ?? 1;
+            $userId = $_SESSION['user_id'] ?? null;
             $tripType = isset($bookingData['return']) ? 'KhuHoi' : 'MotChieu';
             
             $sql = "INSERT INTO datve (

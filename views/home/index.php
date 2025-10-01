@@ -21,7 +21,7 @@ require_once __DIR__ . '/../layouts/header.php';
                                 <span>Khứ hồi</span>
                             </label>
                             <div class="trip-type-guide">
-                                <a href="#" class="text-orange-500 text-sm hover:underline">Hướng dẫn mua vé</a>
+                                <a href="<?php echo BASE_URL; ?>/booking-guide" class="text-orange-500 text-sm hover:underline">Hướng dẫn mua vé</a>
                             </div>
                         </div>
 
@@ -97,6 +97,42 @@ require_once __DIR__ . '/../layouts/header.php';
     </section>
 </div>
 
+<!-- Updated promotional banner section to use system colors -->
+<!-- Promotional Banner Section -->
+<section class="promo-banner-section">
+    <div class="container">
+        <div class="promo-banner-grid">
+            <div class="promo-banner-large">
+                <img src="<?php echo BASE_URL; ?>/images/banner-main.jpg" alt="Khám phá Việt Nam cùng XeGoo" />
+                <div class="promo-banner-overlay">
+                    <h3 class="promo-banner-title">Khám phá Việt Nam cùng XeGoo</h3>
+                    <p class="promo-banner-text">Đặt vé ngay - Nhận ưu đãi hấp dẫn</p>
+                    <a href="<?php echo BASE_URL; ?>/search" class="promo-banner-btn">
+                        <i class="fas fa-ticket-alt"></i>
+                        Đặt vé ngay
+                    </a>
+                </div>
+            </div>
+            
+            <div class="promo-banner-small">
+                <img src="<?php echo BASE_URL; ?>/images/banner-comfort.jpg" alt="Xe sang - Tiện nghi" />
+                <div class="promo-banner-overlay">
+                    <h4 class="promo-banner-subtitle">Xe sang - Tiện nghi</h4>
+                    <p class="promo-banner-small-text">Ghế nằm cao cấp</p>
+                </div>
+            </div>
+            
+            <div class="promo-banner-small">
+                <img src="<?php echo BASE_URL; ?>/images/banner-happy.jpg" alt="An toàn - Tin cậy" />
+                <div class="promo-banner-overlay">
+                    <h4 class="promo-banner-subtitle">An toàn - Tin cậy</h4>
+                    <p class="promo-banner-small-text">Hàng nghìn khách hài lòng</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Stats Section -->
 <section class="stats-section bg-primary-light">
     <div class="container">
@@ -121,78 +157,173 @@ require_once __DIR__ . '/../layouts/header.php';
         </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section class="how-it-works-section">
-        <div class="container">
-            <div class="section-header text-center">
-                <h2 class="section-title">Cách thức hoạt động</h2>
-                <p class="section-subtitle">
-                    Đặt vé xe khách chỉ với 3 bước đơn giản
-                </p>
+<!-- Updated promotional cards section to use system colors -->
+<!-- Promotional Cards Section -->
+<section class="promo-cards-section">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2 class="section-title">Ưu đãi đặc biệt</h2>
+            <p class="section-subtitle">
+                Những chương trình khuyến mãi hấp dẫn dành cho bạn
+            </p>
+        </div>
+        
+        <div class="promo-cards-grid">
+            <div class="promo-card">
+                <div class="promo-card-image">
+                    <img src="<?php echo BASE_URL; ?>/images/promo-discount.jpg" alt="Giảm giá cho khách hàng mới" />
+                    <div class="promo-badge">Giảm 20%</div>
+                </div>
+                <div class="promo-card-content">
+                    <h3 class="promo-card-title">Giảm giá cho khách hàng mới</h3>
+                    <p class="promo-card-description">
+                        Đăng ký tài khoản mới và nhận ngay mã giảm giá 20% cho chuyến đi đầu tiên của bạn.
+                    </p>
+                    <a href="<?php echo BASE_URL; ?>/register" class="promo-card-link">
+                        Đăng ký ngay <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
             </div>
             
-            <div class="steps-grid grid grid-cols-1 md:grid-cols-3 gap-xl">
-                <div class="step-item text-center">
-                    <div class="step-number">1</div>
-                    <div class="step-icon">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <h3 class="step-title">Tìm kiếm chuyến xe</h3>
-                    <p class="step-description">
-                        Nhập điểm đi, điểm đến và ngày khởi hành để tìm kiếm các chuyến xe phù hợp.
-                    </p>
+            <div class="promo-card">
+                <div class="promo-card-image">
+                    <img src="<?php echo BASE_URL; ?>/images/promo-loyalty.jpg" alt="Chương trình khách hàng thân thiết" />
+                    <div class="promo-badge promo-badge-secondary">Tích điểm</div>
                 </div>
-                
-                <div class="step-item text-center">
-                    <div class="step-number">2</div>
-                    <div class="step-icon">
-                        <i class="fas fa-credit-card"></i>
-                    </div>
-                    <h3 class="step-title">Chọn vé và thanh toán</h3>
-                    <p class="step-description">
-                        Chọn chuyến xe ưng ý, chọn ghế và thanh toán an toàn qua nhiều hình thức.
+                <div class="promo-card-content">
+                    <h3 class="promo-card-title">Chương trình khách hàng thân thiết</h3>
+                    <p class="promo-card-description">
+                        Tích điểm mỗi chuyến đi và đổi quà tặng hấp dẫn. Càng đi nhiều, càng nhận nhiều ưu đãi.
                     </p>
+                    <a href="<?php echo BASE_URL; ?>/loyalty" class="promo-card-link">
+                        Tìm hiểu thêm <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
-                
-                <div class="step-item text-center">
-                    <div class="step-number">3</div>
-                    <div class="step-icon">
-                        <i class="fas fa-ticket-alt"></i>
-                    </div>
-                    <h3 class="step-title">Nhận vé và lên xe</h3>
-                    <p class="step-description">
-                        Nhận vé điện tử qua email/SMS và xuất trình khi lên xe. Thật đơn giản!
+            </div>
+            
+            <div class="promo-card">
+                <div class="promo-card-image">
+                    <img src="<?php echo BASE_URL; ?>/images/promo-weekend.jpg" alt="Ưu đãi cuối tuần" />
+                    <div class="promo-badge promo-badge-success">Cuối tuần</div>
+                </div>
+                <div class="promo-card-content">
+                    <h3 class="promo-card-title">Ưu đãi cuối tuần</h3>
+                    <p class="promo-card-description">
+                        Giảm giá đặc biệt cho các chuyến đi vào thứ 7 và chủ nhật. Đặt vé sớm để nhận ưu đãi tốt nhất.
                     </p>
+                    <a href="<?php echo BASE_URL; ?>/search" class="promo-card-link">
+                        Xem chuyến xe <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- CTA Section -->
-    <section class="cta-section bg-primary">
-        <div class="container">
-            <div class="cta-content text-center">
-                <h2 class="cta-title">Bắt đầu hành trình của bạn ngay hôm nay</h2>
-                <p class="cta-description">
-                    Tham gia cùng hàng nghìn khách hàng đã tin tưởng XeGoo cho những chuyến đi an toàn và tiện lợi.
+
+<section class="testimonials-section">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2 class="section-title">Khách hàng nói gì về chúng tôi</h2>
+            <p class="section-subtitle">
+                Những đánh giá chân thực từ khách hàng
+            </p>
+        </div>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                    "Dịch vụ tuyệt vời! Xe sạch sẽ, tài xế lịch sự và đúng giờ. Tôi sẽ tiếp tục sử dụng XeGoo cho những chuyến đi sau."
                 </p>
-                <div class="cta-actions">
-                    <?php if (!isset($_SESSION['user_id'])): ?>
-                        <a href="<?php echo BASE_URL; ?>/register" class="btn btn-lg">
-                            <i class="fas fa-user-plus"></i>
-                            Đăng ký miễn phí
-                        </a>
-                    <?php else: ?>
-                        <a href="<?php echo BASE_URL; ?>/search" class="btn btn-lg">
-                            <i class="fas fa-ticket-alt"></i>
-                            Đặt vé ngay
-                        </a>
-                    <?php endif; ?>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="author-info">
+                        <div class="author-name">Nguyễn Văn A</div>
+                        <div class="author-location">Hà Nội</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                    "Đặt vé rất dễ dàng, thanh toán nhanh chóng. Giá cả hợp lý và có nhiều ưu đãi. Rất hài lòng với trải nghiệm này!"
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="author-info">
+                        <div class="author-name">Trần Thị B</div>
+                        <div class="author-location">TP. Hồ Chí Minh</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                    "Chương trình tích điểm rất hấp dẫn. Tôi đã đổi được nhiều quà tặng từ những chuyến đi của mình. Cảm ơn XeGoo!"
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="author-info">
+                        <div class="author-name">Lê Văn C</div>
+                        <div class="author-location">Đà Nẵng</div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-</div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section bg-primary">
+    <div class="container">
+        <div class="cta-content text-center">
+            <h2 class="cta-title">Bắt đầu hành trình của bạn ngay hôm nay</h2>
+            <p class="cta-description">
+                Tham gia cùng hàng nghìn khách hàng đã tin tưởng XeGoo cho những chuyến đi an toàn và tiện lợi.
+            </p>
+            <div class="cta-actions">
+                <?php if (!isset($_SESSION['user_id'])): ?>
+                    <a href="<?php echo BASE_URL; ?>/register" class="btn btn-lg">
+                        <i class="fas fa-user-plus"></i>
+                        Đăng ký miễn phí
+                    </a>
+                <?php else: ?>
+                    <a href="<?php echo BASE_URL; ?>/search" class="btn btn-lg">
+                        <i class="fas fa-ticket-alt"></i>
+                        Đặt vé ngay
+                    </a>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+</section>
 
 <script>
 // Add interactivity to the homepage
@@ -211,10 +342,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
     
-    // Observe all feature cards and stat items
-    document.querySelectorAll('.feature-card, .stat-item, .step-item').forEach(el => {
-        observer.observe(el);
-    });
+    // Observe all feature cards, stat items, and testimonial cards
+document.querySelectorAll('.feature-card, .stat-item, .promo-card, .promo-banner-large, .promo-banner-small, .testimonial-card').forEach(el => {
+    observer.observe(el);
+});
     
     // Load cities for dropdowns
     loadCities();
@@ -242,7 +373,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Date validation
     const departureDateInput = document.querySelector('input[name="departure_date"]');
-    const returnDateInput = document.querySelector('input[name="return_date"]');
     
     departureDateInput.addEventListener('change', function() {
         const departureDate = new Date(this.value);
@@ -268,7 +398,8 @@ async function loadCities() {
         
         const fromSelect = document.querySelector('select[name="from"]');
         const toSelect = document.querySelector('select[name="to"]');
-        
+        fromSelect.innerHTML = '<option value="">Chọn điểm đi</option>';
+        toSelect.innerHTML = '<option value="">Chọn điểm đến</option>';
         cities.forEach(city => {
             const option1 = new Option(city.name, city.id);
             const option2 = new Option(city.name, city.id);

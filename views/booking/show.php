@@ -2,7 +2,6 @@
 <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/booking.css">
 
 <div class="booking-container">
-    <!-- Fixed booking header to show both trips for round trip -->
     <div class="booking-header">
         <h1><?php echo ($isRoundTrip && $returnTrip) ? 'Chi tiết vé khứ hồi' : 'Chi tiết chuyến xe'; ?></h1>
 
@@ -48,6 +47,19 @@
         <a href="<?php echo BASE_URL; ?>/search" class="back-button">← Quay lại trang tìm kiếm</a>
     </div>
 
+    <?php if ($outboundHasDeparted || ($isRoundTrip && $returnHasDeparted)): ?>
+        <div class="alert alert-warning" style="background-color: #fff3cd; border: 1px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 8px; color: #856404;">
+            <strong>⚠️ Cảnh báo:</strong>
+            <?php if ($outboundHasDeparted && $returnHasDeparted): ?>
+                Cả chuyến đi và chuyến về đã khởi hành. Không thể đặt vé cho các chuyến xe này.
+            <?php elseif ($outboundHasDeparted): ?>
+                Chuyến đi đã khởi hành vào <?php echo date('d/m/Y H:i', strtotime($trip['thoiGianKhoiHanh'])); ?>. Không thể đặt vé cho chuyến xe này.
+            <?php elseif ($returnHasDeparted): ?>
+                Chuyến về đã khởi hành vào <?php echo date('d/m/Y H:i', strtotime($returnTrip['thoiGianKhoiHanh'])); ?>. Không thể đặt vé cho chuyến xe này.
+            <?php endif; ?>
+        </div>
+    <?php endif; ?>
+
     <form method="POST" action="<?php echo BASE_URL; ?>/booking/process" id="bookingForm">
         <input type="hidden" name="trip_id" value="<?php echo $trip['maChuyenXe']; ?>">
         <?php if ($isRoundTrip && $returnTrip): ?>
@@ -56,7 +68,6 @@
         <?php endif; ?>
         <input type="hidden" name="booking_type" value="<?php echo $bookingType; ?>">
         
-        <!-- Added tabs for round trip seat selection -->
         <?php if ($isRoundTrip && $returnTrip): ?>
             <div class="trip-tabs">
                 <button type="button" class="tab-btn active" data-trip="outbound">Chọn ghế chuyến đi</button>
@@ -64,18 +75,14 @@
             </div>
         <?php endif; ?>
         
-        <!-- New responsive grid layout with modern card design -->
         <div class="booking-content">
-            <!-- Left Column - Booking Steps -->
             <div class="booking-steps">
-                <!-- Step 1: Seat Selection -->
                 <div class="step-card">
                     <div class="step-header">
                         <div class="step-number">1</div>
                         <h2 class="step-title">Chọn ghế ngồi</h2>
                     </div>
                     
-                    <!-- Fixed seat map includes to pass seat statuses -->
                     <div class="trip-seat-map" id="outbound-seats">
                         <h4>Chuyến đi: <?php echo htmlspecialchars($trip['diemDi'] . ' → ' . $trip['diemDen']); ?></h4>
                         <?php 
@@ -86,7 +93,6 @@
                         ?>
                     </div>
                     
-                    <!-- Added return trip seat map -->
                     <?php if ($isRoundTrip && $returnTrip): ?>
                         <div class="trip-seat-map" id="return-seats" style="display: none;">
                             <h4>Chuyến về: <?php echo htmlspecialchars($returnTrip['diemDi'] . ' → ' . $returnTrip['diemDen']); ?></h4>
@@ -100,15 +106,13 @@
                     <?php endif; ?>
                     
                 </div>
-                
-                <!-- Step 2: Pickup/Dropoff Points -->
+                 
                 <div class="step-card">
                     <div class="step-header">
                         <div class="step-number">2</div>
                         <h2 class="step-title">Điểm đón/trả</h2>
                     </div>
                     
-                    <!-- Updated logic to separate pickup/dropoff points and passenger information -->
                     <div class="points-section">
                         <div class="points-card">
                             <h4>Điểm đón/trả - Chuyến đi</h4>
@@ -170,7 +174,6 @@
                     </div>
                 </div>
                 
-                <!-- Step 3: Passenger Information -->
                 <div class="step-card">
                     <div class="step-header">
                         <div class="step-number">3</div>
@@ -185,7 +188,6 @@
                         <div class="passenger-card">
                             <h4>Thông tin hành khách - Chuyến đi</h4>
                             <div id="outboundPassengerForms">
-                                <!-- Outbound passenger forms will be dynamically added here -->
                             </div>
                         </div>
 
@@ -193,7 +195,6 @@
                             <div class="passenger-card">
                                 <h4>Thông tin hành khách - Chuyến về</h4>
                                 <div id="returnPassengerForms">
-                                    <!-- Return passenger forms will be dynamically added here -->
                                 </div>
                             </div>
                         <?php endif; ?>
@@ -205,7 +206,6 @@
                 </div>
             </div>
             
-            <!-- Right Column - Price Summary -->
             <div class="price-summary">
                 <h3>Tạm Tính</h3>
                 <div class="price-item">
@@ -223,15 +223,21 @@
                     <span class="price-value total-price" id="totalPrice">0đ</span>
                 </div>
                 
-                <button type="submit" class="btn-success" id="submitBtn" disabled>
-                    Thanh toán
+                <button type="submit" class="btn-success" id="submitBtn" 
+                    <?php echo ($outboundHasDeparted || ($isRoundTrip && $returnHasDeparted)) ? 'disabled style="opacity: 0.5; cursor: not-allowed;"' : 'disabled'; ?>>
+                    <?php echo ($outboundHasDeparted || ($isRoundTrip && $returnHasDeparted)) ? 'Xe đã khởi hành' : 'Thanh toán'; ?>
                 </button>
+                
+                <?php if ($outboundHasDeparted || ($isRoundTrip && $returnHasDeparted)): ?>
+                    <p style="color: #dc3545; font-size: 14px; margin-top: 10px; text-align: center;">
+                        Không thể đặt vé cho chuyến xe đã khởi hành
+                    </p>
+                <?php endif; ?>
             </div>
         </div>
     </form>
 </div>
 
-<!-- Updated JavaScript to handle round trip booking properly -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     console.log('[v0] Booking page loaded');
@@ -241,6 +247,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const outboundPrice = <?php echo $trip['giaVe']; ?>;
     const returnPrice = <?php echo $returnTrip ? $returnTrip['giaVe'] : 0; ?>;
     const isRoundTrip = <?php echo ($isRoundTrip && $returnTrip) ? 'true' : 'false'; ?>;
+    const outboundHasDeparted = <?php echo $outboundHasDeparted ? 'true' : 'false'; ?>;
+    const returnHasDeparted = <?php echo ($isRoundTrip && $returnHasDeparted) ? 'true' : 'false'; ?>;
+    const tripHasDeparted = outboundHasDeparted || returnHasDeparted;
     
     const userData = {
         name: '<?php echo isset($_SESSION['user_name']) ? addslashes($_SESSION['user_name']) : ''; ?>',
@@ -252,6 +261,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('[v0] User data:', userData);
     console.log('[v0] Is logged in:', isLoggedIn);
     console.log('[v0] Is round trip:', isRoundTrip);
+    console.log('[v0] Trip has departed:', tripHasDeparted);
     
     // Tab switching for round trip
     if (isRoundTrip) {
@@ -282,6 +292,11 @@ document.addEventListener('DOMContentLoaded', function() {
     function attachSeatListeners() {
         document.querySelectorAll('.seat.available').forEach(btn => {
             btn.addEventListener('click', function() {
+                if (tripHasDeparted) {
+                    alert('Không thể chọn ghế cho chuyến xe đã qua ngày khởi hành.');
+                    return;
+                }
+                
                 const seatNum = this.dataset.seat;
                 const isReturnSeat = this.closest('#return-seats') !== null;
                 const currentSeats = isReturnSeat ? returnSeats : outboundSeats;
@@ -435,11 +450,17 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const submitBtn = document.getElementById('submitBtn');
         const hasRequiredSeats = isRoundTrip ? (outboundSeats.length > 0 && returnSeats.length > 0) : outboundSeats.length > 0;
-        submitBtn.disabled = !hasRequiredSeats;
+        submitBtn.disabled = !hasRequiredSeats || tripHasDeparted;
     }
     
     // Form validation
     document.getElementById('bookingForm').addEventListener('submit', function(e) {
+        if (tripHasDeparted) {
+            e.preventDefault();
+            alert('Không thể đặt vé cho chuyến xe đã khởi hành.');
+            return;
+        }
+        
         console.log('[v0] Form submission started');
         console.log('[v0] Outbound seats:', outboundSeats);
         console.log('[v0] Return seats:', returnSeats);
