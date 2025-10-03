@@ -4,6 +4,7 @@ ini_set('display_errors', 1);
 
 require_once __DIR__ . '/../config/config.php';
 require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../lib/QRCodeGenerator.php';
 
 class MyTicketsController {
     
@@ -102,7 +103,19 @@ class MyTicketsController {
                 exit;
             }
             
-            $viewData = compact('bookingDetails', 'bookingId');
+            $tripGroups = $this->groupTicketsByTrip($bookingDetails);
+            
+            foreach ($tripGroups as &$tripGroup) {
+                foreach ($tripGroup['tickets'] as &$ticket) {
+                    $ticket['qrCode'] = QRCodeGenerator::generateTicketQR($ticket);
+                }
+                unset($ticket); // Unset reference to prevent bugs
+            }
+            unset($tripGroup); // Unset reference to prevent bugs
+            
+            $bookingInfo = $bookingDetails[0];
+            
+            $viewData = compact('tripGroups', 'bookingInfo', 'bookingId');
             extract($viewData);
             
             include __DIR__ . '/../views/my-tickets/detail.php';
@@ -187,9 +200,10 @@ class MyTicketsController {
     private function getBookingDetails($bookingId, $userId) {
         try {
             $sql = "SELECT d.*, 
+                           cd.maChiTiet, cd.maChuyenXe, cd.maGhe,
                            cd.hoTenHanhKhach, cd.emailHanhKhach, cd.soDienThoaiHanhKhach,
                            cd.giaVe as seatPrice, g.soGhe,
-                           c.ngayKhoiHanh, c.thoiGianKhoiHanh, 
+                           c.ngayKhoiHanh, c.thoiGianKhoiHanh, c.maPhuongTien,
                            t.kyHieuTuyen, t.diemDi, t.diemDen,
                            dd.tenDiem as diemDonTen, dd.diaChi as diemDonDiaChi,
                            dt.tenDiem as diemTraTen, dt.diaChi as diemTraDiaChi,
@@ -258,6 +272,41 @@ class MyTicketsController {
         }
         
         return $grouped;
+    }
+    
+    /**
+     * Group tickets by trip (for round-trip bookings)
+     */
+    private function groupTicketsByTrip($tickets) {
+        $tripGroups = [];
+        
+        foreach ($tickets as $ticket) {
+            $tripId = $ticket['maChuyenXe'];
+            
+            if (!isset($tripGroups[$tripId])) {
+                $tripGroups[$tripId] = [
+                    'trip_info' => [
+                        'maChuyenXe' => $ticket['maChuyenXe'],
+                        'kyHieuTuyen' => $ticket['kyHieuTuyen'],
+                        'diemDi' => $ticket['diemDi'],
+                        'diemDen' => $ticket['diemDen'],
+                        'ngayKhoiHanh' => $ticket['ngayKhoiHanh'],
+                        'thoiGianKhoiHanh' => $ticket['thoiGianKhoiHanh'],
+                        'bienSo' => $ticket['bienSo']
+                    ],
+                    'tickets' => []
+                ];
+            }
+            
+            $tripGroups[$tripId]['tickets'][] = $ticket;
+        }
+        
+        // Sort trips by departure time
+        usort($tripGroups, function($a, $b) {
+            return strtotime($a['trip_info']['thoiGianKhoiHanh']) - strtotime($b['trip_info']['thoiGianKhoiHanh']);
+        });
+        
+        return $tripGroups;
     }
 }
 ?>

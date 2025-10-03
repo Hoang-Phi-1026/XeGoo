@@ -293,10 +293,37 @@
 }
 
 .detail-section {
+  max-width: none !important;
+  min-width: 0 !important;
+  width: 100% !important;
   background: var(--bg-secondary);
   border-radius: var(--radius-lg);
   padding: var(--space-xl);
   box-shadow: var(--shadow-md);
+}
+
+/* Add visual distinction for trip sections */
+.trip-section {
+  position: relative;
+  border-left: 4px solid var(--accent-primary);
+}
+
+.trip-section.trip-outbound {
+  border-left-color: #3b82f6;
+}
+
+.trip-section.trip-return {
+  border-left-color: #10b981;
+}
+
+.trip-section.trip-outbound .section-title {
+  color: #3b82f6;
+  border-bottom-color: #3b82f6;
+}
+
+.trip-section.trip-return .section-title {
+  color: #10b981;
+  border-bottom-color: #10b981;
 }
 
 .section-title {
@@ -312,6 +339,36 @@
 }
 
 .section-title i {
+  color: var(--accent-primary);
+}
+
+/* Add trip info card styling */
+.trip-info-card {
+  background: var(--bg-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  border: 2px solid var(--border-color);
+}
+
+/* Add passengers section styling */
+.passengers-section {
+  margin-top: var(--space-lg);
+}
+
+.passengers-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.passengers-title i {
   color: var(--accent-primary);
 }
 
@@ -386,7 +443,8 @@
   border-bottom: 1px solid var(--border-color);
 }
 
-.passenger-header h3 {
+.passenger-header h3,
+.passenger-header h4 {
   font-size: 1.125rem;
   font-weight: 700;
   color: var(--text-primary);
@@ -462,6 +520,85 @@
   padding: var(--space-lg);
 }
 
+/* QR Code Container Styles */
+.qr-code-container {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-lg);
+  border-top: 2px dashed var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.qr-code-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.qr-code-header i {
+  color: var(--accent-primary);
+  font-size: 1.25rem;
+}
+
+.qr-code-wrapper {
+  background: white;
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.qr-code-image {
+  width: 200px;
+  height: 200px;
+  display: block;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+.qr-code-note {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin: 0;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-sm);
+}
+
+.qr-code-note i {
+  color: var(--accent-primary);
+  flex-shrink: 0;
+}
+
+/* Print styles for QR codes */
+@media print {
+  .qr-code-container {
+    page-break-inside: avoid;
+  }
+
+  .qr-code-wrapper {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+
+  .qr-code-image {
+    width: 150px;
+    height: 150px;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .tickets-grid {
@@ -528,5 +665,18 @@
 
   .ticket-price {
     font-size: 1.125rem;
+  }
+
+  .qr-code-image {
+    width: 160px;
+    height: 160px;
+  }
+
+  .qr-code-header {
+    font-size: 0.9375rem;
+  }
+
+  .qr-code-note {
+    font-size: 0.8125rem;
   }
 }

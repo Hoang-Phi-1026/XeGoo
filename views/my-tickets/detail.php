@@ -11,43 +11,8 @@
         </a>
     </div>
 
-    <?php if (!empty($bookingDetails)): ?>
-        <?php $firstTicket = $bookingDetails[0]; ?>
-        
+    <?php if (!empty($tripGroups)): ?>
         <div class="detail-container">
-            <!-- Trip Information -->
-            <div class="detail-section">
-                <h2 class="section-title">
-                    <i class="fas fa-route"></i> Thông Tin Chuyến Đi
-                </h2>
-                <div class="detail-grid">
-                    <div class="detail-item">
-                        <span class="detail-label">Tuyến đường:</span>
-                        <span class="detail-value"><?php echo htmlspecialchars($firstTicket['kyHieuTuyen']); ?></span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Điểm đi:</span>
-                        <span class="detail-value"><?php echo htmlspecialchars($firstTicket['diemDi']); ?></span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Điểm đến:</span>
-                        <span class="detail-value"><?php echo htmlspecialchars($firstTicket['diemDen']); ?></span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Ngày khởi hành:</span>
-                        <span class="detail-value"><?php echo date('d/m/Y', strtotime($firstTicket['thoiGianKhoiHanh'])); ?></span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Giờ khởi hành:</span>
-                        <span class="detail-value"><?php echo date('H:i', strtotime($firstTicket['thoiGianKhoiHanh'])); ?></span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">Biển số xe:</span>
-                        <span class="detail-value"><?php echo htmlspecialchars($firstTicket['bienSo']); ?></span>
-                    </div>
-                </div>
-            </div>
-
             <!-- Booking Information -->
             <div class="detail-section">
                 <h2 class="section-title">
@@ -56,79 +21,139 @@
                 <div class="detail-grid">
                     <div class="detail-item">
                         <span class="detail-label">Mã đặt vé:</span>
-                        <span class="detail-value"><?php echo htmlspecialchars($firstTicket['maDatVe']); ?></span>
+                        <span class="detail-value"><?php echo htmlspecialchars($bookingInfo['maDatVe']); ?></span>
                     </div>
                     <div class="detail-item">
                         <span class="detail-label">Ngày đặt:</span>
-                        <span class="detail-value"><?php echo date('d/m/Y H:i', strtotime($firstTicket['ngayDat'])); ?></span>
+                        <span class="detail-value"><?php echo date('d/m/Y H:i', strtotime($bookingInfo['ngayDat'])); ?></span>
                     </div>
                     <div class="detail-item">
                         <span class="detail-label">Loại vé:</span>
-                        <span class="detail-value"><?php echo $firstTicket['loaiDatVe'] === 'KhuHoi' ? 'Khứ hồi' : 'Một chiều'; ?></span>
+                        <span class="detail-value"><?php echo $bookingInfo['loaiDatVe'] === 'KhuHoi' ? 'Khứ hồi' : 'Một chiều'; ?></span>
                     </div>
                     <div class="detail-item">
                         <span class="detail-label">Trạng thái:</span>
-                        <span class="detail-value status-badge <?php echo $firstTicket['trangThai'] === 'DaThanhToan' ? 'status-paid' : 'status-cancelled'; ?>">
-                            <?php echo $firstTicket['trangThai'] === 'DaThanhToan' ? 'Đã thanh toán' : 'Đã hủy'; ?>
+                        <span class="detail-value status-badge <?php echo $bookingInfo['trangThai'] === 'DaThanhToan' ? 'status-paid' : 'status-cancelled'; ?>">
+                            <?php echo $bookingInfo['trangThai'] === 'DaThanhToan' ? 'Đã thanh toán' : 'Đã hủy'; ?>
                         </span>
                     </div>
                     <div class="detail-item">
                         <span class="detail-label">Phương thức thanh toán:</span>
-                        <span class="detail-value"><?php echo htmlspecialchars($firstTicket['phuongThucThanhToan']); ?></span>
+                        <span class="detail-value"><?php echo htmlspecialchars($bookingInfo['phuongThucThanhToan']); ?></span>
                     </div>
                     <div class="detail-item">
-                        <span class="detail-label">Số lượng vé:</span>
-                        <span class="detail-value"><?php echo count($bookingDetails); ?> vé</span>
+                        <span class="detail-label">Số lượng chuyến:</span>
+                        <span class="detail-value"><?php echo count($tripGroups); ?> chuyến</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Passengers Information -->
-            <div class="detail-section">
-                <h2 class="section-title">
-                    <i class="fas fa-users"></i> Thông Tin Hành Khách
-                </h2>
-                <div class="passengers-list">
-                    <?php foreach ($bookingDetails as $index => $ticket): ?>
-                        <div class="passenger-card">
-                            <div class="passenger-header">
-                                <h3>Hành khách <?php echo $index + 1; ?></h3>
-                                <span class="seat-badge">Ghế <?php echo htmlspecialchars($ticket['soGhe']); ?></span>
+            <!-- Trip Details -->
+            <?php foreach ($tripGroups as $index => $tripGroup): ?>
+                <?php $tripInfo = $tripGroup['trip_info']; ?>
+                <?php $tripLabel = count($tripGroups) > 1 ? ($index === 0 ? 'Chuyến Đi' : 'Chuyến Về') : 'Thông Tin Chuyến'; ?>
+                
+                <div class="detail-section trip-section <?php echo $index === 0 ? 'trip-outbound' : 'trip-return'; ?>">
+                    <h2 class="section-title">
+                        <i class="fas fa-<?php echo $index === 0 ? 'plane-departure' : 'plane-arrival'; ?>"></i> 
+                        <?php echo $tripLabel; ?>
+                    </h2>
+                    
+                    <!-- Trip Information -->
+                    <div class="trip-info-card">
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <span class="detail-label">Tuyến đường:</span>
+                                <span class="detail-value"><?php echo htmlspecialchars($tripInfo['kyHieuTuyen']); ?></span>
                             </div>
-                            <div class="passenger-info">
-                                <div class="passenger-item">
-                                    <i class="fas fa-user"></i>
-                                    <span><?php echo htmlspecialchars($ticket['hoTenHanhKhach']); ?></span>
-                                </div>
-                                <?php if (!empty($ticket['emailHanhKhach'])): ?>
-                                    <div class="passenger-item">
-                                        <i class="fas fa-envelope"></i>
-                                        <span><?php echo htmlspecialchars($ticket['emailHanhKhach']); ?></span>
-                                    </div>
-                                <?php endif; ?>
-                                <?php if (!empty($ticket['soDienThoaiHanhKhach'])): ?>
-                                    <div class="passenger-item">
-                                        <i class="fas fa-phone"></i>
-                                        <span><?php echo htmlspecialchars($ticket['soDienThoaiHanhKhach']); ?></span>
-                                    </div>
-                                <?php endif; ?>
-                                <div class="passenger-item">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <span>Điểm đón: <?php echo htmlspecialchars($ticket['diemDonTen']); ?></span>
-                                </div>
-                                <div class="passenger-item">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <span>Điểm trả: <?php echo htmlspecialchars($ticket['diemTraTen']); ?></span>
-                                </div>
-                                <div class="passenger-item price-item">
-                                    <i class="fas fa-money-bill-wave"></i>
-                                    <span>Giá vé: <?php echo number_format($ticket['seatPrice']); ?>đ</span>
-                                </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Biển số xe:</span>
+                                <span class="detail-value"><?php echo htmlspecialchars($tripInfo['bienSo']); ?></span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Điểm đi:</span>
+                                <span class="detail-value"><?php echo htmlspecialchars($tripInfo['diemDi']); ?></span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Điểm đến:</span>
+                                <span class="detail-value"><?php echo htmlspecialchars($tripInfo['diemDen']); ?></span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Ngày khởi hành:</span>
+                                <span class="detail-value"><?php echo date('d/m/Y', strtotime($tripInfo['thoiGianKhoiHanh'])); ?></span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Giờ khởi hành:</span>
+                                <span class="detail-value"><?php echo date('H:i', strtotime($tripInfo['thoiGianKhoiHanh'])); ?></span>
                             </div>
                         </div>
-                    <?php endforeach; ?>
+                    </div>
+
+                    <!-- Passengers for this trip -->
+                    <div class="passengers-section">
+                        <h3 class="passengers-title">
+                            <i class="fas fa-users"></i> 
+                            Hành khách (<?php echo count($tripGroup['tickets']); ?> người)
+                        </h3>
+                        <div class="passengers-list">
+                            <?php foreach ($tripGroup['tickets'] as $passengerIndex => $ticket): ?>
+                                <div class="passenger-card">
+                                    <div class="passenger-header">
+                                        <h4>Hành khách <?php echo $passengerIndex + 1; ?></h4>
+                                        <span class="seat-badge">Ghế <?php echo htmlspecialchars($ticket['soGhe']); ?></span>
+                                    </div>
+                                    <div class="passenger-info">
+                                        <div class="passenger-item">
+                                            <i class="fas fa-user"></i>
+                                            <span><?php echo htmlspecialchars($ticket['hoTenHanhKhach']); ?></span>
+                                        </div>
+                                        <?php if (!empty($ticket['emailHanhKhach'])): ?>
+                                            <div class="passenger-item">
+                                                <i class="fas fa-envelope"></i>
+                                                <span><?php echo htmlspecialchars($ticket['emailHanhKhach']); ?></span>
+                                            </div>
+                                        <?php endif; ?>
+                                        <?php if (!empty($ticket['soDienThoaiHanhKhach'])): ?>
+                                            <div class="passenger-item">
+                                                <i class="fas fa-phone"></i>
+                                                <span><?php echo htmlspecialchars($ticket['soDienThoaiHanhKhach']); ?></span>
+                                            </div>
+                                        <?php endif; ?>
+                                        <div class="passenger-item">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>Điểm đón: <?php echo htmlspecialchars($ticket['diemDonTen']); ?></span>
+                                        </div>
+                                        <div class="passenger-item">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>Điểm trả: <?php echo htmlspecialchars($ticket['diemTraTen']); ?></span>
+                                        </div>
+                                        <div class="passenger-item price-item">
+                                            <i class="fas fa-money-bill-wave"></i>
+                                            <span>Giá vé: <?php echo number_format($ticket['seatPrice']); ?>đ</span>
+                                        </div>
+                                    </div>
+
+                                    <?php if (!empty($ticket['qrCode'])): ?>
+                                        <div class="qr-code-container">
+                                            <div class="qr-code-header">
+                                                <i class="fas fa-qrcode"></i>
+                                                <span>Mã vé: <?php echo htmlspecialchars($ticket['maChiTiet']); ?></span>
+                                            </div>
+                                            <div class="qr-code-wrapper">
+                                                <img src="<?php echo $ticket['qrCode']; ?>" alt="QR Code vé" class="qr-code-image">
+                                            </div>
+                                            <p class="qr-code-note">
+                                                <i class="fas fa-info-circle"></i>
+                                                Vui lòng xuất trình mã QR này khi lên xe
+                                            </p>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            <?php endforeach; ?>
 
             <!-- Payment Summary -->
             <div class="detail-section payment-summary">
@@ -138,17 +163,17 @@
                 <div class="payment-details">
                     <div class="payment-row">
                         <span>Tổng tiền gốc:</span>
-                        <span><?php echo number_format($firstTicket['tongTien']); ?>đ</span>
+                        <span><?php echo number_format($bookingInfo['tongTien']); ?>đ</span>
                     </div>
-                    <?php if ($firstTicket['giamGia'] > 0): ?>
+                    <?php if ($bookingInfo['giamGia'] > 0): ?>
                         <div class="payment-row discount">
                             <span>Giảm giá:</span>
-                            <span>-<?php echo number_format($firstTicket['giamGia']); ?>đ</span>
+                            <span>-<?php echo number_format($bookingInfo['giamGia']); ?>đ</span>
                         </div>
                     <?php endif; ?>
                     <div class="payment-row total">
                         <span>Tổng thanh toán:</span>
-                        <span><?php echo number_format($firstTicket['tongTienSauGiam']); ?>đ</span>
+                        <span><?php echo number_format($bookingInfo['tongTienSauGiam']); ?>đ</span>
                     </div>
                 </div>
             </div>

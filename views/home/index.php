@@ -103,7 +103,7 @@ require_once __DIR__ . '/../layouts/header.php';
     <div class="container">
         <div class="promo-banner-grid">
             <div class="promo-banner-large">
-                <img src="<?php echo BASE_URL; ?>/images/banner-main.jpg" alt="Khám phá Việt Nam cùng XeGoo" />
+                <img src="<?php echo BASE_URL; ?>/public/uploads/images/banner-main.png" alt="Khám phá Việt Nam cùng XeGoo" />
                 <div class="promo-banner-overlay">
                     <h3 class="promo-banner-title">Khám phá Việt Nam cùng XeGoo</h3>
                     <p class="promo-banner-text">Đặt vé ngay - Nhận ưu đãi hấp dẫn</p>
@@ -115,7 +115,7 @@ require_once __DIR__ . '/../layouts/header.php';
             </div>
             
             <div class="promo-banner-small">
-                <img src="<?php echo BASE_URL; ?>/images/banner-comfort.jpg" alt="Xe sang - Tiện nghi" />
+                <img src="<?php echo BASE_URL; ?>/public/uploads/images/banner-comfort.png" alt="Xe sang - Tiện nghi" />
                 <div class="promo-banner-overlay">
                     <h4 class="promo-banner-subtitle">Xe sang - Tiện nghi</h4>
                     <p class="promo-banner-small-text">Ghế nằm cao cấp</p>
@@ -123,7 +123,23 @@ require_once __DIR__ . '/../layouts/header.php';
             </div>
             
             <div class="promo-banner-small">
-                <img src="<?php echo BASE_URL; ?>/images/banner-happy.jpg" alt="An toàn - Tin cậy" />
+                <img src="<?php echo BASE_URL; ?>/public/uploads/images/banner-happy.png" alt="An toàn - Tin cậy" />
+                <div class="promo-banner-overlay">
+                    <h4 class="promo-banner-subtitle">An toàn - Tin cậy</h4>
+                    <p class="promo-banner-small-text">Hàng nghìn khách hài lòng</p>
+                </div>
+            </div>
+
+            <div class="promo-banner-small">
+                <img src="<?php echo BASE_URL; ?>/public/uploads/images/banner-happy-2.png" alt="An toàn - Tin cậy" />
+                <div class="promo-banner-overlay">
+                    <h4 class="promo-banner-subtitle">An toàn - Tin cậy</h4>
+                    <p class="promo-banner-small-text">Hàng nghìn khách hài lòng</p>
+                </div>
+            </div>
+
+            <div class="promo-banner-small">
+                <img src="<?php echo BASE_URL; ?>/public/uploads/images/banner-happy-3.png" alt="An toàn - Tin cậy" />
                 <div class="promo-banner-overlay">
                     <h4 class="promo-banner-subtitle">An toàn - Tin cậy</h4>
                     <p class="promo-banner-small-text">Hàng nghìn khách hài lòng</p>
@@ -171,13 +187,13 @@ require_once __DIR__ . '/../layouts/header.php';
         <div class="promo-cards-grid">
             <div class="promo-card">
                 <div class="promo-card-image">
-                    <img src="<?php echo BASE_URL; ?>/images/promo-discount.jpg" alt="Giảm giá cho khách hàng mới" />
+                    <img src="<?php echo BASE_URL; ?>/public/uploads/images/promo-discount.jpg" alt="Giảm giá cho khách hàng mới" />
                     <div class="promo-badge">Giảm 20%</div>
                 </div>
                 <div class="promo-card-content">
                     <h3 class="promo-card-title">Giảm giá cho khách hàng mới</h3>
                     <p class="promo-card-description">
-                        Đăng ký tài khoản mới và nhận ngay mã giảm giá 20% cho chuyến đi đầu tiên của bạn.
+                        Đăng ký tài khoản mới và nhận ngay mã giảm giá 30% cho chuyến đi đầu tiên của bạn.
                     </p>
                     <a href="<?php echo BASE_URL; ?>/register" class="promo-card-link">
                         Đăng ký ngay <i class="fas fa-arrow-right"></i>
@@ -187,7 +203,7 @@ require_once __DIR__ . '/../layouts/header.php';
             
             <div class="promo-card">
                 <div class="promo-card-image">
-                    <img src="<?php echo BASE_URL; ?>/images/promo-loyalty.jpg" alt="Chương trình khách hàng thân thiết" />
+                    <img src="<?php echo BASE_URL; ?>/public/uploads/images/promo-loyalty.jpg" alt="Chương trình khách hàng thân thiết" />
                     <div class="promo-badge promo-badge-secondary">Tích điểm</div>
                 </div>
                 <div class="promo-card-content">
@@ -203,7 +219,7 @@ require_once __DIR__ . '/../layouts/header.php';
             
             <div class="promo-card">
                 <div class="promo-card-image">
-                    <img src="<?php echo BASE_URL; ?>/images/promo-weekend.jpg" alt="Ưu đãi cuối tuần" />
+                    <img src="<?php echo BASE_URL; ?>/public/uploads/images/promo-weekend.jpg" alt="Ưu đãi cuối tuần" />
                     <div class="promo-badge promo-badge-success">Cuối tuần</div>
                 </div>
                 <div class="promo-card-content">
