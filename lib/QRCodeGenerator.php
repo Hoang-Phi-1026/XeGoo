@@ -36,7 +36,8 @@ class QRCodeGenerator {
             $tempFile = tempnam(sys_get_temp_dir(), 'qr_');
             
             // Generate QR code with error correction level H (high)
-            QRcode::png($qrData, $tempFile, QR_ECLEVEL_H, 6, 2);
+            QRcode::png($qrData, $tempFile, QR_ECLEVEL_L, 3, 1);
+
             
             // Read the generated image
             $imageData = file_get_contents($tempFile);
@@ -82,7 +83,8 @@ class QRCodeGenerator {
                 'bienSo' => $ticketData['bienSo'] ?? '',
             ], JSON_UNESCAPED_UNICODE);
             
-            QRcode::png($qrData, $outputPath, QR_ECLEVEL_H, 6, 2);
+            QRcode::png($qrData, $tempFile, QR_ECLEVEL_L, 3, 1);
+
             
             return true;
             

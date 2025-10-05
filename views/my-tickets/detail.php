@@ -5,7 +5,7 @@
 <div class="my-tickets-container">
     <div class="page-header">
         <h1 class="page-title">Chi Tiết Vé</h1>
-        <p class="page-subtitle">Mã đặt vé: <?php echo htmlspecialchars($bookingId); ?></p>
+        <p class="page-subtitle">Mã đặt vé: XG-<?php echo htmlspecialchars($bookingId); ?></p>
         <a href="<?php echo BASE_URL; ?>/my-tickets" class="btn-back">
             <i class="fas fa-arrow-left"></i> Quay Lại
         </a>
@@ -21,7 +21,7 @@
                 <div class="detail-grid">
                     <div class="detail-item">
                         <span class="detail-label">Mã đặt vé:</span>
-                        <span class="detail-value"><?php echo htmlspecialchars($bookingInfo['maDatVe']); ?></span>
+                        <span class="detail-value">XG-<?php echo htmlspecialchars($bookingInfo['maDatVe']); ?></span>
                     </div>
                     <div class="detail-item">
                         <span class="detail-label">Ngày đặt:</span>
