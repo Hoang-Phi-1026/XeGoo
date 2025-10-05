@@ -8,9 +8,11 @@ class Schedule {
      */
     public static function getAll($routeFilter = null, $search = null) {
         try {
-            $sql = "SELECT l.*, t.kyHieuTuyen, t.diemDi, t.diemDen 
+            $sql = "SELECT l.*, t.kyHieuTuyen, t.diemDi, t.diemDen,
+                           nd.tenNguoiDung as tenTaiXe, nd.soDienThoai as sdtTaiXe
                     FROM lichtrinh l 
-                    JOIN tuyenduong t ON l.maTuyenDuong = t.maTuyenDuong";
+                    JOIN tuyenduong t ON l.maTuyenDuong = t.maTuyenDuong
+                    LEFT JOIN nguoidung nd ON l.maTaiXe = nd.maNguoiDung";
             $params = [];
             $conditions = [];
             
@@ -44,9 +46,11 @@ class Schedule {
      * Get schedule by ID
      */
     public static function getById($id) {
-        $sql = "SELECT l.*, t.kyHieuTuyen, t.diemDi, t.diemDen 
+        $sql = "SELECT l.*, t.kyHieuTuyen, t.diemDi, t.diemDen,
+                       nd.tenNguoiDung as tenTaiXe, nd.soDienThoai as sdtTaiXe
                 FROM lichtrinh l 
                 JOIN tuyenduong t ON l.maTuyenDuong = t.maTuyenDuong 
+                LEFT JOIN nguoidung nd ON l.maTaiXe = nd.maNguoiDung
                 WHERE l.maLichTrinh = ?";
         return fetch($sql, [$id]);
     }
@@ -55,11 +59,12 @@ class Schedule {
      * Create new schedule
      */
     public static function create($data) {
-        $sql = "INSERT INTO lichtrinh (maTuyenDuong, tenLichTrinh, gioKhoiHanh, gioKetThuc, thuTrongTuan, ngayBatDau, ngayKetThuc, moTa, trangThai) 
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO lichtrinh (maTuyenDuong, maTaiXe, tenLichTrinh, gioKhoiHanh, gioKetThuc, thuTrongTuan, ngayBatDau, ngayKetThuc, moTa, trangThai) 
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         
         $params = [
             $data['maTuyenDuong'],
+            $data['maTaiXe'] ?? null,
             $data['tenLichTrinh'],
             $data['gioKhoiHanh'],
             $data['gioKetThuc'],
@@ -79,11 +84,12 @@ class Schedule {
      */
     public static function update($id, $data) {
         $sql = "UPDATE lichtrinh 
-                SET maTuyenDuong = ?, tenLichTrinh = ?, gioKhoiHanh = ?, gioKetThuc = ?, thuTrongTuan = ?, ngayBatDau = ?, ngayKetThuc = ?, moTa = ?, trangThai = ?
+                SET maTuyenDuong = ?, maTaiXe = ?, tenLichTrinh = ?, gioKhoiHanh = ?, gioKetThuc = ?, thuTrongTuan = ?, ngayBatDau = ?, ngayKetThuc = ?, moTa = ?, trangThai = ?
                 WHERE maLichTrinh = ?";
         
         $params = [
             $data['maTuyenDuong'],
+            $data['maTaiXe'] ?? null,
             $data['tenLichTrinh'],
             $data['gioKhoiHanh'],
             $data['gioKetThuc'],
@@ -180,10 +186,12 @@ class Schedule {
      * Get schedules for trip generation dropdown
      */
     public static function getSchedulesForGeneration() {
-        $sql = "SELECT l.maLichTrinh, l.tenLichTrinh, l.gioKhoiHanh, l.ngayBatDau, l.ngayKetThuc, l.thuTrongTuan,
-                       t.kyHieuTuyen, t.diemDi, t.diemDen
+        $sql = "SELECT l.maLichTrinh, l.tenLichTrinh, l.gioKhoiHanh, l.ngayBatDau, l.ngayKetThuc, l.thuTrongTuan, l.maTaiXe,
+                       t.kyHieuTuyen, t.diemDi, t.diemDen,
+                       nd.tenNguoiDung as tenTaiXe
                 FROM lichtrinh l 
                 JOIN tuyenduong t ON l.maTuyenDuong = t.maTuyenDuong 
+                LEFT JOIN nguoidung nd ON l.maTaiXe = nd.maNguoiDung
                 WHERE l.trangThai = 'Hoạt động' AND l.ngayKetThuc >= CURDATE()
                 ORDER BY t.kyHieuTuyen, l.gioKhoiHanh";
         return fetchAll($sql);
@@ -236,6 +244,62 @@ class Schedule {
         }
         
         return $errors;
+    }
+    
+    /**
+     * Check if driver has conflicting schedules
+     * @param int $driverId - Driver ID to check
+     * @param string $startDate - Schedule start date
+     * @param string $endDate - Schedule end date
+     * @param string $startTime - Schedule start time
+     * @param string $endTime - Schedule end time
+     * @param string $daysOfWeek - Comma-separated days (2,3,4,5,6,7,CN)
+     * @param int|null $excludeScheduleId - Schedule ID to exclude from check (for editing)
+     * @return array - Array of conflicting schedules
+     */
+    public static function checkDriverConflicts($driverId, $startDate, $endDate, $startTime, $endTime, $daysOfWeek, $excludeScheduleId = null) {
+        if (empty($driverId)) {
+            return [];
+        }
+        
+        $sql = "SELECT l.*, t.kyHieuTuyen, t.diemDi, t.diemDen
+                FROM lichtrinh l
+                JOIN tuyenduong t ON l.maTuyenDuong = t.maTuyenDuong
+                WHERE l.maTaiXe = ?
+                  AND l.trangThai IN ('Hoạt động', 'Tạm dừng')
+                  AND (
+                    (l.ngayBatDau BETWEEN ? AND ?)
+                    OR (l.ngayKetThuc BETWEEN ? AND ?)
+                    OR (l.ngayBatDau <= ? AND l.ngayKetThuc >= ?)
+                  )";
+        
+        $params = [$driverId, $startDate, $endDate, $startDate, $endDate, $startDate, $endDate];
+        
+        if ($excludeScheduleId) {
+            $sql .= " AND l.maLichTrinh != ?";
+            $params[] = $excludeScheduleId;
+        }
+        
+        $existingSchedules = fetchAll($sql, $params);
+        
+        $conflicts = [];
+        $newDays = explode(',', $daysOfWeek);
+        
+        foreach ($existingSchedules as $schedule) {
+            $existingDays = explode(',', $schedule['thuTrongTuan']);
+            
+            // Check if there's any day overlap
+            $dayOverlap = array_intersect($newDays, $existingDays);
+            
+            if (!empty($dayOverlap)) {
+                // Check if there's time overlap
+                if (($startTime < $schedule['gioKetThuc']) && ($endTime > $schedule['gioKhoiHanh'])) {
+                    $conflicts[] = $schedule;
+                }
+            }
+        }
+        
+        return $conflicts;
     }
 }
 ?>

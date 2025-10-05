@@ -69,7 +69,6 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>&nbsp;</label>
                         <div class="form-actions">
                             <button type="submit" class="btn btn-primary">
                                 <i class="fas fa-search"></i>

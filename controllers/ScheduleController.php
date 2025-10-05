@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../models/Schedule.php';
+require_once __DIR__ . '/../models/User.php';
 require_once __DIR__ . '/../config/config.php';
 
 class ScheduleController {
@@ -66,6 +67,7 @@ class ScheduleController {
         
         $routes = Schedule::getAllRoutes();
         $statusOptions = Schedule::getStatusOptions();
+        $drivers = User::getDrivers();
         
         include __DIR__ . '/../views/schedules/create.php';
     }
@@ -84,6 +86,7 @@ class ScheduleController {
         // Prepare data
         $data = [
             'maTuyenDuong' => $_POST['maTuyenDuong'] ?? '',
+            'maTaiXe' => $_POST['maTaiXe'] ?? '', // Make driver required - no longer allow null
             'tenLichTrinh' => trim($_POST['tenLichTrinh'] ?? ''),
             'gioKhoiHanh' => $_POST['gioKhoiHanh'] ?? '',
             'gioKetThuc' => $_POST['gioKetThuc'] ?? '',
@@ -99,6 +102,32 @@ class ScheduleController {
         
         // Validate input
         $errors = Schedule::validate($data);
+        
+        if (empty($data['maTaiXe'])) {
+            $errors[] = 'Vui lòng chọn tài xế cho lịch trình này.';
+        }
+        
+        if (!empty($data['maTaiXe'])) {
+            $driverConflicts = Schedule::checkDriverConflicts(
+                $data['maTaiXe'],
+                $data['ngayBatDau'],
+                $data['ngayKetThuc'],
+                $data['gioKhoiHanh'],
+                $data['gioKetThuc'],
+                $data['thuTrongTuan']
+            );
+            
+            if (!empty($driverConflicts)) {
+                foreach ($driverConflicts as $conflict) {
+                    $errors[] = "Tài xế đã được phân công cho lịch trình: " . $conflict['tenLichTrinh'] . 
+                               " (" . $conflict['kyHieuTuyen'] . ") từ " . 
+                               date('d/m/Y', strtotime($conflict['ngayBatDau'])) . " đến " . 
+                               date('d/m/Y', strtotime($conflict['ngayKetThuc'])) . 
+                               ", giờ: " . date('H:i', strtotime($conflict['gioKhoiHanh'])) . " - " . 
+                               date('H:i', strtotime($conflict['gioKetThuc']));
+                }
+            }
+        }
         
         if (!empty($errors)) {
             $_SESSION['error'] = implode('<br>', $errors);
@@ -136,6 +165,7 @@ class ScheduleController {
         
         $routes = Schedule::getAllRoutes();
         $statusOptions = Schedule::getStatusOptions();
+        $drivers = User::getDrivers();
         
         include __DIR__ . '/../views/schedules/edit.php';
     }
@@ -144,62 +174,90 @@ class ScheduleController {
      * Handle edit schedule form submission
      */
     public function update($id) {
-    $this->checkAdminAccess();
+        $this->checkAdminAccess();
 
-    if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-        header('Location: ' . BASE_URL . '/schedules/' . $id . '/edit');
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            header('Location: ' . BASE_URL . '/schedules/' . $id . '/edit');
+            exit;
+        }
+
+        $schedule = Schedule::getById($id);
+        if (!$schedule) {
+            $_SESSION['error'] = 'Không tìm thấy lịch trình.';
+            header('Location: ' . BASE_URL . '/schedules');
+            exit;
+        }
+
+        // Prepare data
+        $data = [
+            'maTuyenDuong' => $_POST['maTuyenDuong'] ?? '',
+            'maTaiXe' => $_POST['maTaiXe'] ?? '', // Make driver required - no longer allow null
+            'tenLichTrinh' => trim($_POST['tenLichTrinh'] ?? ''),
+            'gioKhoiHanh' => $_POST['gioKhoiHanh'] ?? '',
+            'gioKetThuc' => $_POST['gioKetThuc'] ?? '',
+            'ngayBatDau' => $_POST['ngayBatDau'] ?? '',
+            'ngayKetThuc' => $_POST['ngayKetThuc'] ?? '',
+            'moTa' => trim($_POST['moTa'] ?? ''),
+            'trangThai' => $_POST['trangThai'] ?? 'Hoạt động'
+        ];
+
+        // Process days of week
+        $selectedDays = $_POST['thuTrongTuan'] ?? [];
+        $data['thuTrongTuan'] = implode(',', $selectedDays);
+
+        // Validate input
+        $errors = Schedule::validate($data);
+
+        if (empty($data['maTaiXe'])) {
+            $errors[] = 'Vui lòng chọn tài xế cho lịch trình này.';
+        }
+
+        if (!empty($data['maTaiXe'])) {
+            $driverConflicts = Schedule::checkDriverConflicts(
+                $data['maTaiXe'],
+                $data['ngayBatDau'],
+                $data['ngayKetThuc'],
+                $data['gioKhoiHanh'],
+                $data['gioKetThuc'],
+                $data['thuTrongTuan'],
+                $id // Exclude current schedule from conflict check
+            );
+            
+            if (!empty($driverConflicts)) {
+                foreach ($driverConflicts as $conflict) {
+                    $errors[] = "Tài xế đã được phân công cho lịch trình: " . $conflict['tenLichTrinh'] . 
+                               " (" . $conflict['kyHieuTuyen'] . ") từ " . 
+                               date('d/m/Y', strtotime($conflict['ngayBatDau'])) . " đến " . 
+                               date('d/m/Y', strtotime($conflict['ngayKetThuc'])) . 
+                               ", giờ: " . date('H:i', strtotime($conflict['gioKhoiHanh'])) . " - " . 
+                               date('H:i', strtotime($conflict['gioKetThuc']));
+                }
+            }
+        }
+
+        if (!empty($errors)) {
+            $_SESSION['error'] = implode('<br>', $errors);
+            $_SESSION['form_data'] = $_POST;
+            header('Location: ' . BASE_URL . '/schedules/' . $id . '/edit');
+            exit;
+        }
+
+        // Update schedule
+        try {
+            Schedule::update($id, $data);
+
+            // Gọi thủ tục cập nhật trạng thái chuyến xe không hợp lệ
+            query("CALL sp_sync_trang_thai_chuyen_xe_theo_lich_trinh(?)", [$id]);
+
+            $_SESSION['success'] = 'Cập nhật lịch trình thành công.';
+            header('Location: ' . BASE_URL . '/schedules/' . $id);
+        } catch (Exception $e) {
+            $_SESSION['error'] = 'Có lỗi xảy ra khi cập nhật lịch trình: ' . $e->getMessage();
+            $_SESSION['form_data'] = $_POST;
+            header('Location: ' . BASE_URL . '/schedules/' . $id . '/edit');
+        }
         exit;
     }
-
-    $schedule = Schedule::getById($id);
-    if (!$schedule) {
-        $_SESSION['error'] = 'Không tìm thấy lịch trình.';
-        header('Location: ' . BASE_URL . '/schedules');
-        exit;
-    }
-
-    // Prepare data
-    $data = [
-        'maTuyenDuong' => $_POST['maTuyenDuong'] ?? '',
-        'tenLichTrinh' => trim($_POST['tenLichTrinh'] ?? ''),
-        'gioKhoiHanh' => $_POST['gioKhoiHanh'] ?? '',
-        'gioKetThuc' => $_POST['gioKetThuc'] ?? '',
-        'ngayBatDau' => $_POST['ngayBatDau'] ?? '',
-        'ngayKetThuc' => $_POST['ngayKetThuc'] ?? '',
-        'moTa' => trim($_POST['moTa'] ?? ''),
-        'trangThai' => $_POST['trangThai'] ?? 'Hoạt động'
-    ];
-
-    // Process days of week
-    $selectedDays = $_POST['thuTrongTuan'] ?? [];
-    $data['thuTrongTuan'] = implode(',', $selectedDays);
-
-    // Validate input
-    $errors = Schedule::validate($data);
-
-    if (!empty($errors)) {
-        $_SESSION['error'] = implode('<br>', $errors);
-        $_SESSION['form_data'] = $_POST;
-        header('Location: ' . BASE_URL . '/schedules/' . $id . '/edit');
-        exit;
-    }
-
-    // Update schedule
-    try {
-        Schedule::update($id, $data);
-
-        // Gọi thủ tục cập nhật trạng thái chuyến xe không hợp lệ
-        query("CALL sp_sync_trang_thai_chuyen_xe_theo_lich_trinh(?)", [$id]);
-
-        $_SESSION['success'] = 'Cập nhật lịch trình thành công.';
-        header('Location: ' . BASE_URL . '/schedules/' . $id);
-    } catch (Exception $e) {
-        $_SESSION['error'] = 'Có lỗi xảy ra khi cập nhật lịch trình: ' . $e->getMessage();
-        $_SESSION['form_data'] = $_POST;
-        header('Location: ' . BASE_URL . '/schedules/' . $id . '/edit');
-    }
-    exit;
-}
     
     /**
      * Delete schedule (set to inactive)
@@ -233,6 +291,7 @@ class ScheduleController {
         
         $schedules = Schedule::getSchedulesForGeneration();
         $vehicles = $this->getAvailableVehicles();
+        $drivers = User::getDrivers();
         
         include __DIR__ . '/../views/schedules/generate-trips.php';
     }
@@ -251,6 +310,7 @@ class ScheduleController {
         $scheduleId = $_POST['maLichTrinh'] ?? '';
         $vehicleId = $_POST['maPhuongTien'] ?? '';
         $seatType = $_POST['loaiChoNgoi'] ?? '';
+        $driverId = !empty($_POST['maTaiXe']) ? $_POST['maTaiXe'] : null;
         
         if (empty($scheduleId) || empty($vehicleId) || empty($seatType)) {
             $_SESSION['error'] = 'Vui lòng điền đầy đủ thông tin.';
@@ -266,6 +326,11 @@ class ScheduleController {
         }
         
         try {
+            $schedule = Schedule::getById($scheduleId);
+            if (!$driverId && !empty($schedule['maTaiXe'])) {
+                $driverId = $schedule['maTaiXe'];
+            }
+            
             // Call stored procedure to generate trips
             $sql = "CALL sp_generate_chuyenxe(?, ?, ?)";
             query($sql, [$scheduleId, $vehicleId, $seatType]);
@@ -273,12 +338,18 @@ class ScheduleController {
             // Lấy danh sách các chuyến xe mới tạo (cùng lịch trình + phương tiện)
             $newTrips = fetchAll("SELECT maChuyenXe FROM chuyenxe WHERE maLichTrinh = ? AND maPhuongTien = ? AND ngayTao >= NOW() - INTERVAL 1 MINUTE", [$scheduleId, $vehicleId]);
         
+            if ($driverId) {
+                foreach ($newTrips as $trip) {
+                    query("UPDATE chuyenxe SET maTaiXe = ? WHERE maChuyenXe = ?", [$driverId, $trip['maChuyenXe']]);
+                }
+            }
+            
             // Gọi procedure sinh ghế cho từng chuyến xe
             foreach ($newTrips as $trip) {
                 query("CALL sp_generate_chuyenxe_ghe(?)", [$trip['maChuyenXe']]);
             }
         
-            $_SESSION['success'] = 'Sinh chuyến xe thành công! Các chuyến đã có danh sách ghế.';
+            $_SESSION['success'] = 'Sinh chuyến xe thành công! Các chuyến đã có danh sách ghế' . ($driverId ? ' và tài xế được phân công.' : '.');
             header('Location: ' . BASE_URL . '/trips');
         } catch (Exception $e) {
             $_SESSION['error'] = 'Có lỗi xảy ra khi sinh chuyến xe: ' . $e->getMessage();

@@ -101,6 +101,31 @@
                     </div>
                 </div>
 
+                <div class="info-card">
+                    <div class="card-header">
+                        <i class="fas fa-user-tie"></i>
+                        <h3>Thông tin tài xế</h3>
+                    </div>
+                    <div class="card-content">
+                        <?php if (!empty($schedule['tenTaiXe'])): ?>
+                            <div class="driver-info">
+                                <div class="driver-item">
+                                    <span class="driver-label">Tên tài xế</span>
+                                    <span class="driver-value"><?php echo htmlspecialchars($schedule['tenTaiXe']); ?></span>
+                                </div>
+                                <div class="driver-item">
+                                    <span class="driver-label">Số điện thoại</span>
+                                    <span class="driver-value"><?php echo htmlspecialchars($schedule['sdtTaiXe']); ?></span>
+                                </div>
+                            </div>
+                        <?php else: ?>
+                            <div class="no-driver">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <span>Chưa phân công tài xế</span>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
                 <!-- System Information -->
                 <div class="info-card">
                     <div class="card-header">
@@ -164,5 +189,48 @@ function confirmDelete(scheduleId) {
     }
 }
 </script>
+<style>
+/* Add styles for driver information */
+.driver-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
 
+.driver-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.driver-item:last-child {
+    border-bottom: none;
+}
+
+.driver-label {
+    font-weight: 500;
+    color: #666;
+}
+
+.driver-value {
+    font-weight: 600;
+    color: #333;
+}
+
+.no-driver {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+    background: #fff3cd;
+    border-radius: 6px;
+    color: #856404;
+}
+
+.no-driver i {
+    font-size: 18px;
+}
+</style>
 <?php include __DIR__ . '/../layouts/footer.php'; ?>

@@ -21,7 +21,7 @@
                     <div class="form-group">
                         <label for="maTuyenDuong">Tuyến đường <span class="required">*</span></label>
                         <select name="maTuyenDuong" id="maTuyenDuong" required>
-                            <option value="">-- Chọn tuyến đường --</option>
+                            <option value=""> Chọn tuyến đường </option>
                             <?php foreach ($routes as $route): ?>
                                 <option value="<?php echo $route['maTuyenDuong']; ?>" 
                                         <?php echo (isset($_SESSION['form_data']['maTuyenDuong']) && $_SESSION['form_data']['maTuyenDuong'] == $route['maTuyenDuong']) ? 'selected' : ''; ?>>
@@ -49,6 +49,25 @@
                             <input type="time" name="gioKetThuc" id="gioKetThuc" 
                                    value="<?php echo $_SESSION['form_data']['gioKetThuc'] ?? ''; ?>" required>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Driver Assignment -->
+                <div class="form-section">
+                    <h3><i class="fas fa-user-tie"></i> Phân công tài xế</h3>
+                    <p class="form-help">Vui lòng phân công tài xế cho lịch trình này</p>
+                    
+                    <div class="form-group">
+                        <label for="maTaiXe">Tài xế <span class="required">*</span></label>
+                        <select name="maTaiXe" id="maTaiXe" required>
+                            <option value=""> Chọn tài xế </option>
+                            <?php foreach ($drivers as $driver): ?>
+                                <option value="<?php echo $driver['maNguoiDung']; ?>"
+                                        <?php echo (isset($_SESSION['form_data']['maTaiXe']) && $_SESSION['form_data']['maTaiXe'] == $driver['maNguoiDung']) ? 'selected' : ''; ?>>
+                                    <?php echo htmlspecialchars($driver['tenNguoiDung']) . ' - ' . $driver['soDienThoai']; ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
                 </div>
 

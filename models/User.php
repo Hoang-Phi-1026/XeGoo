@@ -110,7 +110,36 @@ class User {
         }
     }
 
+    public static function getDrivers() {
+        try {
+            $sql = "SELECT maNguoiDung, tenNguoiDung, soDienThoai, eMail, diaChi 
+                    FROM nguoidung 
+                    WHERE maVaiTro = 3 AND maTrangThai = 0 
+                    ORDER BY tenNguoiDung";
+            $db = Database::getInstance();
+            $stmt = $db->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+            error_log("Get drivers error: " . $e->getMessage());
+            return [];
+        }
+    }
 
+    public static function getDriverById($id) {
+        try {
+            $sql = "SELECT maNguoiDung, tenNguoiDung, soDienThoai, eMail, diaChi 
+                    FROM nguoidung 
+                    WHERE maNguoiDung = ? AND maVaiTro = 3";
+            $db = Database::getInstance();
+            $stmt = $db->prepare($sql);
+            $stmt->execute([$id]);
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+            error_log("Get driver by ID error: " . $e->getMessage());
+            return null;
+        }
+    }
 
     public function getAllUsers($search = '', $role = '', $status = '') {
         try {

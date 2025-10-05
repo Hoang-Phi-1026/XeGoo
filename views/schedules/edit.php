@@ -102,8 +102,32 @@
                         <?php endforeach; ?>
                     </div>
                 </div>
-
+                
+                <div class="form-section">
+                    <h3><i class="fas fa-user-tie"></i> Phân công tài xế</h3>
+                    <p class="form-help">Vui lòng phân công tài xế cho lịch trình này</p>
+                    
+                    <div class="form-group">
+                        <label for="maTaiXe">Tài xế <span class="required">*</span></label>
+                        <select name="maTaiXe" id="maTaiXe" class="form-control" required>
+                            <option value=""> Chọn tài xế </option>
+                            <?php foreach ($drivers as $driver): ?>
+                                <option value="<?php echo $driver['maNguoiDung']; ?>"
+                                        <?php echo ($schedule['maTaiXe'] == $driver['maNguoiDung']) ? 'selected' : ''; ?>>
+                                    <?php echo htmlspecialchars($driver['tenNguoiDung']); ?> 
+                                    - <?php echo htmlspecialchars($driver['soDienThoai']); ?>
+                                    <?php if (!empty($driver['email'])): ?>
+                                        (<?php echo htmlspecialchars($driver['email']); ?>)
+                                    <?php endif; ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                        <small class="form-text">Hệ thống sẽ kiểm tra xung đột lịch trình của tài xế khi lưu</small>
+                    </div>
+                </div>
+                
                 <!-- Additional Information -->
+                
                 <div class="form-section">
                     <h3><i class="fas fa-cog"></i> Thông tin bổ sung</h3>
                     

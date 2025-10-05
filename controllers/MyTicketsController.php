@@ -168,6 +168,7 @@ class MyTicketsController {
     private function getBookingHistory($userId) {
         try {
             $sql = "SELECT d.*, 
+                           cd.maChiTiet, cd.maChuyenXe, cd.maGhe,
                            cd.hoTenHanhKhach, cd.emailHanhKhach, cd.soDienThoaiHanhKhach,
                            cd.giaVe as seatPrice, g.soGhe,
                            c.ngayKhoiHanh, c.thoiGianKhoiHanh, 
@@ -207,7 +208,9 @@ class MyTicketsController {
                            t.kyHieuTuyen, t.diemDi, t.diemDen,
                            dd.tenDiem as diemDonTen, dd.diaChi as diemDonDiaChi,
                            dt.tenDiem as diemTraTen, dt.diaChi as diemTraDiaChi,
-                           p.bienSo
+                           p.bienSo, 
+                           lp.tenLoaiPhuongTien, lp.soChoMacDinh,
+                           tx.tenNguoiDung as tenTaiXe, tx.soDienThoai as soDienThoaiTaiXe
                     FROM datve d
                     INNER JOIN chitiet_datve cd ON d.maDatVe = cd.maDatVe
                     INNER JOIN chuyenxe c ON cd.maChuyenXe = c.maChuyenXe
@@ -215,8 +218,10 @@ class MyTicketsController {
                     INNER JOIN lichtrinh l ON c.maLichTrinh = l.maLichTrinh
                     INNER JOIN tuyenduong t ON l.maTuyenDuong = t.maTuyenDuong
                     INNER JOIN phuongtien p ON c.maPhuongTien = p.maPhuongTien
+                    INNER JOIN loaiphuongtien lp ON p.maLoaiPhuongTien = lp.maLoaiPhuongTien
                     LEFT JOIN tuyenduong_diemdontra dd ON cd.maDiemDon = dd.maDiem
                     LEFT JOIN tuyenduong_diemdontra dt ON cd.maDiemTra = dt.maDiem
+                    LEFT JOIN nguoidung tx ON c.maTaiXe = tx.maNguoiDung
                     WHERE d.maDatVe = ? AND d.maNguoiDung = ?
                     ORDER BY g.soGhe ASC";
             
@@ -292,7 +297,11 @@ class MyTicketsController {
                         'diemDen' => $ticket['diemDen'],
                         'ngayKhoiHanh' => $ticket['ngayKhoiHanh'],
                         'thoiGianKhoiHanh' => $ticket['thoiGianKhoiHanh'],
-                        'bienSo' => $ticket['bienSo']
+                        'bienSo' => $ticket['bienSo'],
+                        'tenLoaiPhuongTien' => $ticket['tenLoaiPhuongTien'],
+                        'soChoMacDinh' => $ticket['soChoMacDinh'],
+                        'tenTaiXe' => $ticket['tenTaiXe'],
+                        'soDienThoaiTaiXe' => $ticket['soDienThoaiTaiXe']
                     ],
                     'tickets' => []
                 ];

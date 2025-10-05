@@ -18,6 +18,7 @@
                 <h3><i class="fas fa-info-circle"></i> Hướng dẫn sinh chuyến xe</h3>
                 <ul>
                     <li>Chọn lịch trình có trạng thái "Hoạt động" và còn hiệu lực</li>
+                    <li>Tài xế đã được phân công trong lịch trình sẽ tự động áp dụng</li>
                     <li>Chọn xe cụ thể để thực hiện lịch trình</li>
                     <li>Hệ thống sẽ tự động tạo các chuyến xe theo ngày và giờ đã định</li>
                     <li>Các điểm đón/trả sẽ được sao chép từ tuyến đường</li>
@@ -27,7 +28,6 @@
 
         <form method="POST" action="<?php echo BASE_URL; ?>/schedules/process-generate-trips" class="generation-form">
             <div class="form-steps">
-                <!-- Step 1: Select Schedule -->
                 <div class="form-step">
                     <div class="step-header">
                         <span class="step-number">1</span>
@@ -43,7 +43,10 @@
                                         data-route="<?php echo htmlspecialchars($schedule['kyHieuTuyen']); ?>"
                                         data-time="<?php echo date('H:i', strtotime($schedule['gioKhoiHanh'])); ?>"
                                         data-period="<?php echo date('d/m/Y', strtotime($schedule['ngayBatDau'])) . ' → ' . date('d/m/Y', strtotime($schedule['ngayKetThuc'])); ?>"
-                                        data-days="<?php echo Schedule::formatDaysOfWeek($schedule['thuTrongTuan']); ?>">
+                                        data-days="<?php echo Schedule::formatDaysOfWeek($schedule['thuTrongTuan']); ?>"
+                                        data-driver="<?php echo htmlspecialchars($schedule['tenTaiXe'] ?? 'Chưa phân công'); ?>"
+                                        data-driver-phone="<?php echo htmlspecialchars($schedule['soDienThoai'] ?? ''); ?>"
+                                        data-driver-id="<?php echo $schedule['maTaiXe'] ?? ''; ?>">
                                     <?php echo $schedule['kyHieuTuyen'] . ' - ' . date('H:i', strtotime($schedule['gioKhoiHanh'])) . ' (' . date('d/m/Y', strtotime($schedule['ngayBatDau'])) . ' → ' . date('d/m/Y', strtotime($schedule['ngayKetThuc'])) . ', ' . Schedule::formatDaysOfWeek($schedule['thuTrongTuan']) . ')'; ?>
                                 </option>
                             <?php endforeach; ?>
@@ -72,10 +75,39 @@
                     </div>
                 </div>
 
-                <!-- Step 2: Select Vehicle -->
                 <div class="form-step">
                     <div class="step-header">
                         <span class="step-number">2</span>
+                        <h3>Thông tin tài xế được phân công</h3>
+                    </div>
+                    
+                    <div id="driverInfoSection" class="driver-info-section" style="display: none;">
+                        <div class="driver-card">
+                            <div class="driver-icon">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="driver-details">
+                                <div class="driver-name">
+                                    <label>Tên tài xế:</label>
+                                    <span id="driverNameDisplay"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" name="maTaiXe" id="maTaiXeHidden">
+                        <p class="driver-note">
+                            <i class="fas fa-info-circle"></i> 
+                            Tài xế này đã được phân công trong lịch trình và sẽ tự động áp dụng cho các chuyến xe được sinh ra.
+                        </p>
+                    </div>
+
+                    <div id="noDriverWarning" class="no-driver-warning" style="display: none;">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <p>Lịch trình này chưa có tài xế được phân công. Vui lòng quay lại chỉnh sửa lịch trình để phân công tài xế trước khi sinh chuyến xe.</p>
+                    </div>
+                </div>
+                <div class="form-step">
+                    <div class="step-header">
+                        <span class="step-number">3</span>
                         <h3>Chọn xe cụ thể</h3>
                     </div>
                     
@@ -111,25 +143,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Step 3: Seat Type -->
-                <div class="form-step">
-                    <div class="step-header">
-                        <span class="step-number">3</span>
-                        <h3>Xác nhận loại chỗ ngồi</h3>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="loaiChoNgoi">Loại chỗ ngồi <span class="required">*</span></label>
-                        <select name="loaiChoNgoi" id="loaiChoNgoi" required>
-                            <option value="">-- Chọn loại chỗ ngồi --</option>
-                            <option value="Ghế ngồi">Ghế ngồi</option>
-                            <option value="Ghế VIP">Ghế VIP</option>
-                            <option value="Giường đơn">Giường đơn</option>
-                            <option value="Giường đôi">Giường đôi</option>
-                        </select>
-                    </div>
-                </div>
             </div>
 
             <div class="form-actions">
@@ -145,22 +158,41 @@
 </div>
 
 <script>
-// Handle schedule selection
 document.getElementById('maLichTrinh').addEventListener('change', function() {
     const selectedOption = this.options[this.selectedIndex];
     const scheduleInfo = document.getElementById('scheduleInfo');
+    const driverInfoSection = document.getElementById('driverInfoSection');
+    const noDriverWarning = document.getElementById('noDriverWarning');
     
     if (this.value) {
+        // Show schedule basic info
         document.getElementById('routeInfo').textContent = selectedOption.dataset.route;
         document.getElementById('timeInfo').textContent = selectedOption.dataset.time;
         document.getElementById('periodInfo').textContent = selectedOption.dataset.period;
         document.getElementById('daysInfo').textContent = selectedOption.dataset.days;
         scheduleInfo.style.display = 'block';
         
+        // Show driver info in step 2
+        const driverId = selectedOption.dataset.driverId;
+        const driverName = selectedOption.dataset.driver;
+        
+        if (driverId && driverName !== 'Chưa phân công') {
+            document.getElementById('driverNameDisplay').textContent = driverName;
+            document.getElementById('maTaiXeHidden').value = driverId;
+            driverInfoSection.style.display = 'block';
+            noDriverWarning.style.display = 'none';
+        } else {
+            driverInfoSection.style.display = 'none';
+            noDriverWarning.style.display = 'block';
+            document.getElementById('maTaiXeHidden').value = '';
+        }
+        
         // Validate when both schedule and vehicle are selected
         validateTripGeneration();
     } else {
         scheduleInfo.style.display = 'none';
+        driverInfoSection.style.display = 'none';
+        noDriverWarning.style.display = 'none';
     }
 });
 
@@ -168,15 +200,11 @@ document.getElementById('maLichTrinh').addEventListener('change', function() {
 document.getElementById('maPhuongTien').addEventListener('change', function() {
     const selectedOption = this.options[this.selectedIndex];
     const vehicleInfo = document.getElementById('vehicleInfo');
-    const seatTypeSelect = document.getElementById('loaiChoNgoi');
     
     if (this.value) {
         document.getElementById('vehicleType').textContent = selectedOption.dataset.type;
         document.getElementById('seatCount').textContent = selectedOption.dataset.seats + ' chỗ';
         document.getElementById('seatType').textContent = selectedOption.dataset.seatType;
-        
-        // Auto-select seat type based on vehicle
-        seatTypeSelect.value = selectedOption.dataset.seatType;
         
         vehicleInfo.style.display = 'block';
         
@@ -184,7 +212,6 @@ document.getElementById('maPhuongTien').addEventListener('change', function() {
         validateTripGeneration();
     } else {
         vehicleInfo.style.display = 'none';
-        seatTypeSelect.value = '';
         clearValidationMessages();
     }
 });
@@ -313,11 +340,17 @@ function getValidationContainer() {
 document.querySelector('.generation-form').addEventListener('submit', function(e) {
     const schedule = document.getElementById('maLichTrinh').value;
     const vehicle = document.getElementById('maPhuongTien').value;
-    const seatType = document.getElementById('loaiChoNgoi').value;
+    const driverId = document.getElementById('maTaiXeHidden').value;
     
-    if (!schedule || !vehicle || !seatType) {
+    if (!schedule || !vehicle) {
         e.preventDefault();
         alert('Vui lòng điền đầy đủ thông tin trước khi sinh chuyến xe.');
+        return;
+    }
+    
+    if (!driverId) {
+        e.preventDefault();
+        alert('Lịch trình chưa có tài xế được phân công. Vui lòng chỉnh sửa lịch trình để phân công tài xế trước.');
         return;
     }
     
@@ -404,6 +437,97 @@ document.querySelector('.generation-form').addEventListener('submit', function(e
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+/* Updated driver info section styling to match schedule info box */
+.driver-info-section {
+    margin-top: 15px;
+}
+
+.driver-card label {
+  margin: 0;             /* bỏ margin mặc định */
+  padding: 0;            /* gọn luôn */
+  font-weight: 600;      /* cho nổi lên nếu muốn */
+  display: inline;       /* để label và span nằm cùng hàng */
+}
+
+
+.driver-card {
+  display: flex;
+  align-items: center; /* căn giữa theo chiều dọc */
+  justify-content: flex-start; /* căn trái theo chiều ngang */
+  gap: 20px;
+  background: #fef5e7;
+  border: 2px solid #e74c3c;
+  border-radius: 10px;
+}
+
+
+.driver-icon {
+    font-size: 48px;
+    color: #e74c3c;
+}
+
+.driver-details {
+    flex: 1;
+}
+
+.driver-name,
+.driver-phone {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.driver-name label,
+.driver-phone label {
+    font-weight: 600;
+    color: #495057;
+    min-width: 120px;
+}
+
+.driver-name span,
+.driver-phone span {
+    color: #212529;
+    font-size: 16px;
+}
+
+.driver-note {
+    margin-top: 15px;
+    padding: 12px;
+    background: #fef5e7;
+    border-left: 4px solid #e74c3c;
+    border-radius: 4px;
+    color: #721c24;
+    font-size: 14px;
+}
+
+.driver-note i {
+    margin-right: 8px;
+    color: #e74c3c;
+}
+
+.no-driver-warning {
+    background: #fff3cd;
+    border: 2px solid #ffc107;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #856404;
+}
+
+.no-driver-warning i {
+    font-size: 32px;
+    color: #ffc107;
+}
+
+.no-driver-warning p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.5;
 }
 </style>
 

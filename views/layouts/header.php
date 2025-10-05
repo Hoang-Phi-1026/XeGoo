@@ -84,8 +84,10 @@ if (session_status() === PHP_SESSION_NONE) {
                             break;
                         case 3: // Tài Xế
                             ?>
-                            <li class="nav-item"><a href="<?php echo BASE_URL; ?>/driver" class="nav-link">Tài xế</a></li>
-                            <li class="nav-item"><a href="<?php echo BASE_URL; ?>/dashboard" class="nav-link">Dashboard</a></li>
+                            <li class="nav-item"><a href="<?php echo BASE_URL; ?>/" class="nav-link">Xem lịch trình chạy</a></li>
+                            <li class="nav-item"><a href="<?php echo BASE_URL; ?>/" class="nav-link">Báo cáo chuyến đi</a></li>
+                            <li class="nav-item"><a href="<?php echo BASE_URL; ?>/" class="nav-link">Hỗ trợ / Báo sự cố</a></li>
+                            <li class="nav-item"><a href="<?php echo BASE_URL; ?>/profile" class="nav-link">Hồ sơ</a></li>
                             <?php
                             break;
                         case 4: // Khách Hàng

@@ -67,8 +67,16 @@
                                 <span class="detail-value"><?php echo htmlspecialchars($tripInfo['kyHieuTuyen']); ?></span>
                             </div>
                             <div class="detail-item">
+                                <span class="detail-label">Loại xe:</span>
+                                <span class="detail-value"><?php echo htmlspecialchars($tripInfo['tenLoaiPhuongTien']); ?></span>
+                            </div>
+                            <div class="detail-item">
                                 <span class="detail-label">Biển số xe:</span>
                                 <span class="detail-value"><?php echo htmlspecialchars($tripInfo['bienSo']); ?></span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Số chỗ:</span>
+                                <span class="detail-value"><?php echo htmlspecialchars($tripInfo['soChoMacDinh']); ?> chỗ</span>
                             </div>
                             <div class="detail-item">
                                 <span class="detail-label">Điểm đi:</span>
@@ -86,6 +94,18 @@
                                 <span class="detail-label">Giờ khởi hành:</span>
                                 <span class="detail-value"><?php echo date('H:i', strtotime($tripInfo['thoiGianKhoiHanh'])); ?></span>
                             </div>
+                            <?php if (!empty($tripInfo['tenTaiXe'])): ?>
+                                <div class="detail-item">
+                                    <span class="detail-label">Tài xế:</span>
+                                    <span class="detail-value"><?php echo htmlspecialchars($tripInfo['tenTaiXe']); ?></span>
+                                </div>
+                                <?php if (!empty($tripInfo['soDienThoaiTaiXe'])): ?>
+                                    <div class="detail-item">
+                                        <span class="detail-label">SĐT tài xế:</span>
+                                        <span class="detail-value"><?php echo htmlspecialchars($tripInfo['soDienThoaiTaiXe']); ?></span>
+                                    </div>
+                                <?php endif; ?>
+                            <?php endif; ?>
                         </div>
                     </div>
 
