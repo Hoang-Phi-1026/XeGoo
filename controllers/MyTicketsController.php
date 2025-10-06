@@ -129,6 +129,111 @@ class MyTicketsController {
     }
     
     /**
+     * Cancel a ticket booking
+     */
+    public function cancel($bookingId) {
+        header('Content-Type: application/json');
+        
+        try {
+            // Check if user is logged in
+            if (!isset($_SESSION['user_id'])) {
+                echo json_encode(['success' => false, 'message' => 'Vui lòng đăng nhập để hủy vé']);
+                return;
+            }
+            
+            $userId = $_SESSION['user_id'];
+            
+            // Get booking details
+            $bookingDetails = $this->getBookingDetails($bookingId, $userId);
+            
+            if (!$bookingDetails) {
+                echo json_encode(['success' => false, 'message' => 'Không tìm thấy thông tin vé hoặc bạn không có quyền hủy vé này']);
+                return;
+            }
+            
+            $bookingInfo = $bookingDetails[0];
+            
+            // Check if booking is already cancelled
+            if ($bookingInfo['trangThai'] === 'DaHuy') {
+                echo json_encode(['success' => false, 'message' => 'Vé này đã được hủy trước đó']);
+                return;
+            }
+            
+            // Check if booking is paid
+            if ($bookingInfo['trangThai'] !== 'DaThanhToan') {
+                echo json_encode(['success' => false, 'message' => 'Chỉ có thể hủy vé đã thanh toán']);
+                return;
+            }
+            
+            // Check cancellation time (must be >36 hours before departure)
+            $earliestDeparture = null;
+            foreach ($bookingDetails as $detail) {
+                $departureTime = strtotime($detail['thoiGianKhoiHanh']);
+                if ($earliestDeparture === null || $departureTime < $earliestDeparture) {
+                    $earliestDeparture = $departureTime;
+                }
+            }
+            
+            $hoursUntilDeparture = ($earliestDeparture - time()) / 3600;
+            
+            if ($hoursUntilDeparture < 0) {
+                echo json_encode(['success' => false, 'message' => 'Không thể hủy vé đã qua ngày khởi hành']);
+                return;
+            }
+            
+            if ($hoursUntilDeparture < 36) {
+                echo json_encode(['success' => false, 'message' => 'Chỉ có thể hủy vé trước 36 giờ so với giờ khởi hành']);
+                return;
+            }
+            
+            // Start transaction
+            query("START TRANSACTION");
+            
+            // Update booking status to cancelled
+            $sql = "UPDATE datve SET trangThai = 'DaHuy', ngayCapNhat = NOW() WHERE maDatVe = ?";
+            query($sql, [$bookingId]);
+            
+            // Update ticket details status to cancelled
+            $sql = "UPDATE chitiet_datve SET trangThai = 'DaHuy' WHERE maDatVe = ?";
+            query($sql, [$bookingId]);
+            
+            // Release seats for all trips in this booking
+            $this->releaseSeatsForBooking($bookingDetails);
+            
+            // Process refund as loyalty points (20% of ticket price)
+            $refundAmount = $bookingInfo['tongTienSauGiam'] * 0.2;
+            $refundPoints = floor($refundAmount / 100); // 1 point = 100đ
+            
+            if ($refundPoints > 0) {
+                $sql = "INSERT INTO diem_tichluy (maNguoiDung, nguon, diem, maDatVe, ghiChu, ngayTao)
+                        VALUES (?, 'HuyVe', ?, ?, 'Hoàn 20% từ hủy vé', NOW())";
+                query($sql, [$userId, $refundPoints, $bookingId]);
+                
+                // Update user total points
+                $this->updateUserTotalPoints($userId);
+            }
+            
+            query("COMMIT");
+            
+            $message = "Hủy vé thành công!";
+            if ($refundPoints > 0) {
+                $message .= " Bạn nhận được " . number_format($refundPoints) . " điểm tích lũy (tương đương " . number_format($refundAmount) . "đ).";
+            }
+            
+            echo json_encode([
+                'success' => true, 
+                'message' => $message,
+                'refund_points' => $refundPoints
+            ]);
+            
+        } catch (Exception $e) {
+            query("ROLLBACK");
+            error_log("MyTicketsController cancel error: " . $e->getMessage());
+            echo json_encode(['success' => false, 'message' => 'Có lỗi xảy ra khi hủy vé: ' . $e->getMessage()]);
+        }
+    }
+    
+    /**
      * Get active tickets for user (paid and future departure)
      */
     private function getActiveTickets($userId) {
@@ -316,6 +421,61 @@ class MyTicketsController {
         });
         
         return $tripGroups;
+    }
+    
+    /**
+     * Release seats for all trips in a booking
+     */
+    private function releaseSeatsForBooking($bookingDetails) {
+        try {
+            // Group by trip
+            $tripSeats = [];
+            foreach ($bookingDetails as $detail) {
+                $tripId = $detail['maChuyenXe'];
+                $seatId = $detail['maGhe'];
+                
+                if (!isset($tripSeats[$tripId])) {
+                    $tripSeats[$tripId] = [];
+                }
+                $tripSeats[$tripId][] = $seatId;
+            }
+            
+            // Release seats for each trip
+            foreach ($tripSeats as $tripId => $seatIds) {
+                foreach ($seatIds as $seatId) {
+                    $sql = "UPDATE chuyenxe_ghe 
+                            SET trangThai = 'Trống', ngayCapNhat = NOW() 
+                            WHERE maChuyenXe = ? AND maGhe = ?";
+                    query($sql, [$tripId, $seatId]);
+                }
+            }
+            
+            return true;
+            
+        } catch (Exception $e) {
+            error_log("releaseSeatsForBooking error: " . $e->getMessage());
+            throw $e;
+        }
+    }
+    
+    /**
+     * Update user total loyalty points
+     */
+    private function updateUserTotalPoints($userId) {
+        try {
+            $sql = "SELECT COALESCE(SUM(diem), 0) as total_points 
+                    FROM diem_tichluy 
+                    WHERE maNguoiDung = ?";
+            
+            $result = fetch($sql, [$userId]);
+            $totalPoints = max(0, (int)$result['total_points']);
+            
+            $sql = "UPDATE nguoidung SET diemTichLuy = ? WHERE maNguoiDung = ?";
+            query($sql, [$totalPoints, $userId]);
+            
+        } catch (Exception $e) {
+            error_log("updateUserTotalPoints error: " . $e->getMessage());
+        }
     }
 }
 ?>

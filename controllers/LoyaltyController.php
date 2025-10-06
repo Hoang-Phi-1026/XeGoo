@@ -6,17 +6,49 @@ require_once __DIR__ . '/../config/config.php';
 require_once __DIR__ . '/../config/database.php';
 
 class LoyaltyController {
+    private $db;
     
     public function __construct() {
         if (session_status() == PHP_SESSION_NONE) {
             session_start();
         }
+        $this->db = Database::getInstance();
     }
 
     /**
-     * Lấy điểm tích lũy của người dùng
+     * Hiển thị trang điểm tích lũy
      */
-    public function getUserPoints() {
+    public function index() {
+        if (!isset($_SESSION['user_id'])) {
+            header('Location: ' . BASE_URL . '/login');
+            exit;
+        }
+
+        $userId = $_SESSION['user_id'];
+        
+        // Get total points
+        $totalPoints = $this->calculateUserPoints($userId);
+        
+        // Get earned points (positive transactions)
+        $stmt = $this->db->prepare("SELECT COALESCE(SUM(diem), 0) as earned FROM diem_tichluy WHERE maNguoiDung = ? AND diem > 0");
+        $stmt->execute([$userId]);
+        $earnedPoints = (int)$stmt->fetch(PDO::FETCH_ASSOC)['earned'];
+        
+        // Get used points (negative transactions)
+        $stmt = $this->db->prepare("SELECT COALESCE(ABS(SUM(diem)), 0) as used FROM diem_tichluy WHERE maNguoiDung = ? AND diem < 0");
+        $stmt->execute([$userId]);
+        $usedPoints = (int)$stmt->fetch(PDO::FETCH_ASSOC)['used'];
+        
+        // Get full transaction history
+        $history = $this->getPointsHistory($userId, 100);
+        
+        include 'views/loyalty/index.php';
+    }
+
+    /**
+     * Lấy điểm tích lũy của người dùng (API endpoint)
+     */
+    public function getPoints() {
         header('Content-Type: application/json');
         
         try {
@@ -27,16 +59,16 @@ class LoyaltyController {
 
             $userId = $_SESSION['user_id'];
             $points = $this->calculateUserPoints($userId);
-            $history = $this->getPointsHistory($userId, 10); // Lấy 10 giao dịch gần nhất
+            $history = $this->getPointsHistory($userId, 10);
 
             echo json_encode([
                 'success' => true,
-                'total_points' => $points,
+                'points' => $points,
                 'history' => $history
             ]);
 
         } catch (Exception $e) {
-            error_log("LoyaltyController getUserPoints error: " . $e->getMessage());
+            error_log("LoyaltyController getPoints error: " . $e->getMessage());
             echo json_encode(['success' => false, 'message' => 'Có lỗi xảy ra khi lấy thông tin điểm tích lũy']);
         }
     }
@@ -210,15 +242,19 @@ class LoyaltyController {
     /**
      * Lấy lịch sử điểm tích lũy
      */
-    private function getPointsHistory($userId, $limit = 10) {
+    private function getPointsHistory($userId, $limit = 100) {
         try {
-            $sql = "SELECT nguon, diem, ghiChu, ngayTao
+            $sql = "SELECT nguon, diem, maDatVe, ghiChu, ngayTao
                     FROM diem_tichluy 
-                    WHERE maNguoiDung = ?
+                    WHERE maNguoiDung = ? 
                     ORDER BY ngayTao DESC
-                    LIMIT ?";
+                    LIMIT " . (int)$limit;
             
-            return fetchAll($sql, [$userId, $limit]);
+            $result = fetchAll($sql, [$userId]);
+            
+            error_log("[v0] getPointsHistory for user $userId: " . count($result) . " records found");
+            
+            return $result;
 
         } catch (Exception $e) {
             error_log("getPointsHistory error: " . $e->getMessage());

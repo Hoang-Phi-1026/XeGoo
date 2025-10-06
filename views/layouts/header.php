@@ -63,6 +63,8 @@ if (session_status() === PHP_SESSION_NONE) {
                 <?php if (!isset($_SESSION['user_id'])): ?>
                     <li class="nav-item"><a href="<?php echo BASE_URL; ?>/" class="nav-link">Trang chủ</a></li>
                     <li class="nav-item"><a href="<?php echo BASE_URL; ?>/about" class="nav-link">Giới thiệu</a></li>
+                    <li class="nav-item"><a href="<?php echo BASE_URL; ?>/search" class="nav-link">Đặt vé</a></li>
+                    <li class="nav-item"><a href="<?php echo BASE_URL; ?>/" class="nav-link">Tra cứu vé</a></li>
                 <?php else: ?>
                     <?php
                     $vai_tro = $_SESSION['user_role'] ?? 4;
@@ -87,7 +89,6 @@ if (session_status() === PHP_SESSION_NONE) {
                             <li class="nav-item"><a href="<?php echo BASE_URL; ?>/" class="nav-link">Xem lịch trình chạy</a></li>
                             <li class="nav-item"><a href="<?php echo BASE_URL; ?>/" class="nav-link">Báo cáo chuyến đi</a></li>
                             <li class="nav-item"><a href="<?php echo BASE_URL; ?>/" class="nav-link">Hỗ trợ / Báo sự cố</a></li>
-                            <li class="nav-item"><a href="<?php echo BASE_URL; ?>/profile" class="nav-link">Hồ sơ</a></li>
                             <?php
                             break;
                         case 4: // Khách Hàng
@@ -97,7 +98,6 @@ if (session_status() === PHP_SESSION_NONE) {
                             <li class="nav-item"><a href="<?php echo BASE_URL; ?>/search" class="nav-link">Đặt vé</a></li>
                             <li class="nav-item"><a href="<?php echo BASE_URL; ?>/my-tickets" class="nav-link">Vé của tôi</a></li>
                             <li class="nav-item"><a href="<?php echo BASE_URL; ?>/support" class="nav-link">Hỗ trợ</a></li>
-                            <li class="nav-item"><a href="<?php echo BASE_URL; ?>/profile" class="nav-link">Hồ sơ</a></li>
                             <?php
                             break;
                     }
@@ -107,10 +107,12 @@ if (session_status() === PHP_SESSION_NONE) {
 
             <div class="user-menu">
                 <?php if (isset($_SESSION['user_id'])): ?>
+                    <a href="<?php echo BASE_URL; ?>/profile" class="nav-link">
                     <div class="user-info">
                         <div class="user-avatar"><?php echo strtoupper(substr($_SESSION['user_name'] ?? 'U', 0, 1)); ?></div>
                         <span>Xin chào, <?php echo htmlspecialchars($_SESSION['user_name'] ?? 'Người dùng'); ?></span>
                     </div>
+                    </a>
                     <a href="<?php echo BASE_URL; ?>/logout" class="btn-secondary">Đăng xuất</a>
                 <?php else: ?>
                     <a href="<?php echo BASE_URL; ?>/login" class="btn-primary">Đăng nhập</a>

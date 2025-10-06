@@ -17,6 +17,7 @@ $routes = [
     '/dashboard' => ['controller' => 'DashboardController', 'action' => 'index'],
     '/admin' => ['controller' => 'AdminController', 'action' => 'index'],
     '/profile' => ['controller' => 'ProfileController', 'action' => 'index'],
+    '/loyalty' => ['controller' => 'LoyaltyController', 'action' => 'index'],
     '/about' => ['controller' => 'HomeController', 'action' => 'about'],
     '/booking-guide' => ['controller' => 'HomeController', 'action' => 'bookingGuide'],
     
@@ -160,6 +161,8 @@ $postRoutes = [
     '/payment/momo/create' => ['controller' => 'MoMoController', 'action' => 'createPayment'],
     '/payment/momo/notify' => ['controller' => 'MoMoController', 'action' => 'handleNotify'],
     '/payment/vnpay/create' => ['controller' => 'VNPayController', 'action' => 'createPayment'],
+    
+    '/my-tickets/cancel/{id}' => ['controller' => 'MyTicketsController', 'action' => 'cancel'],
 ];
 
 // Get current URL path and remove base directory

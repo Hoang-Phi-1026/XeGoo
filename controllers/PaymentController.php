@@ -313,9 +313,6 @@ class PaymentController {
         try {
             error_log("[v0] PaymentController::cancel() called");
             
-            if (isset($_SESSION['final_booking_data'])) {
-                $this->createCancelledBooking();
-            }
             
             if (isset($_SESSION['held_seats'])) {
                 error_log("[v0] Found held seats, releasing them");
@@ -341,66 +338,7 @@ class PaymentController {
         }
     }
 
-    /**
-     * Tạo đơn đặt vé bị hủy - NEW METHOD
-     */
-    private function createCancelledBooking() {
-        try {
-            error_log("[v0] Creating cancelled booking record");
-            
-            $bookingData = $_SESSION['final_booking_data'];
-            $pricing = $this->calculatePricing($bookingData);
-            $paymentMethod = $_SESSION['selected_payment_method'] ?? 'MoMo';
-
-            query("START TRANSACTION");
-
-            $userId = $_SESSION['user_id'] ?? null;
-            $tripType = isset($bookingData['return']) ? 'KhuHoi' : 'MotChieu';
-
-            $sql = "INSERT INTO datve (
-                        maNguoiDung, soLuongVe, tongTien, giamGia, tongTienSauGiam, 
-                        phuongThucThanhToan, loaiDatVe, trangThai, ngayDat
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?, 'DaHuy', NOW())";
-        
-            $totalTickets = 0;
-            if ($bookingData['outbound']) {
-                $totalTickets += count($bookingData['outbound']['passengers']);
-            }
-            if (isset($bookingData['return'])) {
-                $totalTickets += count($bookingData['return']['passengers']);
-            }
-        
-            query($sql, [
-                $userId,
-                $totalTickets,
-                $pricing['original_price'],
-                $pricing['discount'], // Store the actual discount amount
-                $pricing['final_price'],
-                $paymentMethod,
-                $tripType
-            ]);
-
-            $bookingId = lastInsertId();
-            error_log("[v0] Created cancelled booking with ID: $bookingId");
-
-            // Create booking details with cancelled status
-            if ($bookingData['outbound']) {
-                $this->createBookingDetailFixed($bookingId, $bookingData['outbound'], 'DaHuy');
-            }
-
-            if (isset($bookingData['return'])) {
-                $this->createBookingDetailFixed($bookingId, $bookingData['return'], 'DaHuy');
-            }
-
-            query("COMMIT");
-            error_log("[v0] Successfully created cancelled booking");
-
-        } catch (Exception $e) {
-            query("ROLLBACK");
-            error_log("[v0] Error creating cancelled booking: " . $e->getMessage());
-            // Don't throw - cancellation should still proceed
-        }
-    }
+    
 
     /**
      * Giải phóng ghế trực tiếp - NEW SIMPLE METHOD

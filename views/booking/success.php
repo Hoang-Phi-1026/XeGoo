@@ -191,7 +191,7 @@
 
     <div class="action-buttons">
         <a href="<?php echo BASE_URL; ?>/search" class="btn btn-primary">Đặt vé mới</a>
-        <a href="<?php echo BASE_URL; ?>/dashboard" class="btn btn-secondary">Xem lịch sử đặt vé</a>
+        <a href="<?php echo BASE_URL; ?>/my-tickets/history" class="btn btn-secondary">Xem lịch sử đặt vé</a>
         <button onclick="window.print()" class="btn btn-outline">In vé</button>
     </div>
 

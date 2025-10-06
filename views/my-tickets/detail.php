@@ -46,6 +46,46 @@
                         <span class="detail-value"><?php echo count($tripGroups); ?> chuyến</span>
                     </div>
                 </div>
+                
+                <?php 
+                $canCancel = false;
+                $cancelMessage = '';
+                
+                if ($bookingInfo['trangThai'] === 'DaThanhToan') {
+                    // Get earliest departure time
+                    $earliestDeparture = null;
+                    foreach ($tripGroups as $tripGroup) {
+                        $departureTime = strtotime($tripGroup['trip_info']['thoiGianKhoiHanh']);
+                        if ($earliestDeparture === null || $departureTime < $earliestDeparture) {
+                            $earliestDeparture = $departureTime;
+                        }
+                    }
+                    
+                    $hoursUntilDeparture = ($earliestDeparture - time()) / 3600;
+                    
+                    if ($hoursUntilDeparture < 0) {
+                        $cancelMessage = 'Không thể hủy vé đã qua ngày khởi hành';
+                    } elseif ($hoursUntilDeparture < 36) {
+                        $cancelMessage = 'Chỉ có thể hủy vé trước 36 giờ so với giờ khởi hành';
+                    } else {
+                        $canCancel = true;
+                    }
+                }
+                ?>
+                
+                <?php if ($canCancel): ?>
+                    <div class="cancel-ticket-section">
+                        <button type="button" class="btn-cancel-ticket" onclick="showCancelModal()">
+                            <i class="fas fa-times-circle"></i> Hủy Vé
+                        </button>
+                    </div>
+                <?php elseif (!empty($cancelMessage) && $bookingInfo['trangThai'] === 'DaThanhToan'): ?>
+                    <div class="cancel-ticket-section">
+                        <p class="cancel-message-info">
+                            <i class="fas fa-info-circle"></i> <?php echo $cancelMessage; ?>
+                        </p>
+                    </div>
+                <?php endif; ?>
             </div>
 
             <!-- Trip Details -->
@@ -154,17 +194,29 @@
                                     </div>
 
                                     <?php if (!empty($ticket['qrCode'])): ?>
-                                        <div class="qr-code-container">
+                                        <div class="qr-code-container <?php echo $bookingInfo['trangThai'] === 'DaHuy' ? 'qr-disabled' : ''; ?>">
                                             <div class="qr-code-header">
                                                 <i class="fas fa-qrcode"></i>
                                                 <span>Mã vé: <?php echo htmlspecialchars($ticket['maChiTiet']); ?></span>
                                             </div>
                                             <div class="qr-code-wrapper">
                                                 <img src="<?php echo $ticket['qrCode']; ?>" alt="QR Code vé" class="qr-code-image">
+                                                <?php if ($bookingInfo['trangThai'] === 'DaHuy'): ?>
+                                                    <div class="qr-disabled-overlay">
+                                                        <div class="qr-disabled-icon">
+                                                            <i class="fas fa-times"></i>
+                                                        </div>
+                                                        <span class="qr-disabled-text">Vé đã bị hủy</span>
+                                                    </div>
+                                                <?php endif; ?>
                                             </div>
                                             <p class="qr-code-note">
                                                 <i class="fas fa-info-circle"></i>
-                                                Vui lòng xuất trình mã QR này khi lên xe
+                                                <?php if ($bookingInfo['trangThai'] === 'DaHuy'): ?>
+                                                    Vé này đã bị hủy và không còn hiệu lực
+                                                <?php else: ?>
+                                                    Vui lòng xuất trình mã QR này khi lên xe
+                                                <?php endif; ?>
                                             </p>
                                         </div>
                                     <?php endif; ?>
@@ -200,5 +252,112 @@
         </div>
     <?php endif; ?>
 </div>
+
+<?php // Add cancellation modal ?>
+<div id="cancelModal" class="cancel-modal" style="display: none;">
+    <div class="cancel-modal-content">
+        <div class="cancel-modal-header">
+            <h3><i class="fas fa-exclamation-triangle"></i> Xác Nhận Hủy Vé</h3>
+            <button type="button" class="cancel-modal-close" onclick="closeCancelModal()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="cancel-modal-body">
+            <p class="cancel-confirm-text">Bạn có chắc chắn muốn hủy vé này?</p>
+            
+            <div class="cancel-policy-box">
+                <h4><i class="fas fa-info-circle"></i> Chính Sách Hoàn Tiền</h4>
+                <ul class="cancel-policy-list">
+                    <li><strong>Phí hoàn:</strong> 20% giá vé sẽ được quy đổi thành điểm tích lũy</li>
+                    <li><strong>Điều kiện:</strong> Chỉ hoàn điểm cho khách hàng có tài khoản</li>
+                    <li><strong>Thời gian:</strong> Chỉ được hủy trước 36 giờ so với giờ khởi hành</li>
+                    <li><strong>Vé đã sử dụng:</strong> Không thể hủy vé đã quét QR, đã lên xe hoặc qua ngày khởi hành</li>
+                </ul>
+                
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <div class="refund-calculation">
+                        <p><strong>Tổng tiền vé:</strong> <?php echo number_format($bookingInfo['tongTienSauGiam']); ?>đ</p>
+                        <p><strong>Hoàn lại (20%):</strong> <?php echo number_format($bookingInfo['tongTienSauGiam'] * 0.2); ?>đ</p>
+                        <p><strong>Điểm tích lũy nhận được:</strong> <?php echo floor($bookingInfo['tongTienSauGiam'] * 0.2 / 100); ?> điểm</p>
+                        <p class="refund-note"><em>(1 điểm = 100đ)</em></p>
+                    </div>
+                <?php else: ?>
+                    <div class="refund-warning">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <p>Bạn chưa đăng nhập. Vé sẽ bị hủy nhưng không được hoàn tiền.</p>
+                    </div>
+                <?php endif; ?>
+                
+                <p class="terms-link">
+                    <a href="<?php echo BASE_URL; ?>/booking-guide#cancellation-policy" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Xem thêm về điều khoản hủy vé
+                    </a>
+                </p>
+            </div>
+        </div>
+        
+        <div class="cancel-modal-footer">
+            <button type="button" class="btn-cancel-action" onclick="closeCancelModal()">
+                <i class="fas fa-arrow-left"></i> Quay Lại
+            </button>
+            <button type="button" class="btn-confirm-cancel" onclick="confirmCancelTicket()">
+                <i class="fas fa-check"></i> Xác Nhận Hủy Vé
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+function showCancelModal() {
+    document.getElementById('cancelModal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeCancelModal() {
+    document.getElementById('cancelModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+function confirmCancelTicket() {
+    const bookingId = <?php echo $bookingId; ?>;
+    const confirmBtn = document.querySelector('.btn-confirm-cancel');
+    
+    // Disable button to prevent double clicks
+    confirmBtn.disabled = true;
+    confirmBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Đang xử lý...';
+    
+    fetch('<?php echo BASE_URL; ?>/my-tickets/cancel/' + bookingId, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert(data.message);
+            window.location.reload();
+        } else {
+            alert('Lỗi: ' + data.message);
+            confirmBtn.disabled = false;
+            confirmBtn.innerHTML = '<i class="fas fa-check"></i> Xác Nhận Hủy Vé';
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Có lỗi xảy ra khi hủy vé. Vui lòng thử lại.');
+        confirmBtn.disabled = false;
+        confirmBtn.innerHTML = '<i class="fas fa-check"></i> Xác Nhận Hủy Vé';
+    });
+}
+
+// Close modal when clicking outside
+document.getElementById('cancelModal')?.addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeCancelModal();
+    }
+});
+</script>
 
 <?php include __DIR__ . '/../layouts/footer.php'; ?>

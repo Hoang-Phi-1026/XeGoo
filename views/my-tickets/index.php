@@ -5,7 +5,7 @@
 <div class="my-tickets-container">
     <div class="page-header">
         <h1 class="page-title">Vé Của Tôi</h1>
-        <p class="page-subtitle">Danh sách vé còn hiệu lực của bạn</p>
+        <p class="page-subtitle">Danh sách vé chờ khởi hành</p>
         <a href="<?php echo BASE_URL; ?>/my-tickets/history" class="btn-history">
             <i class="fas fa-history"></i> Xem Lịch Sử Đặt Vé
         </a>
@@ -15,7 +15,7 @@
         <div class="empty-state">
             <i class="fas fa-ticket-alt"></i>
             <h2>Chưa có vé nào</h2>
-            <p>Bạn chưa có vé nào còn hiệu lực. Hãy đặt vé ngay!</p>
+            <p>Bạn chưa có vé nào chờ khởi hành. Hãy đặt vé ngay!</p>
             <a href="<?php echo BASE_URL; ?>/search" class="btn-primary">
                 <i class="fas fa-search"></i> Tìm Chuyến Xe
             </a>
@@ -23,37 +23,45 @@
     <?php else: ?>
         <div class="tickets-grid">
             <?php foreach ($groupedTickets as $bookingId => $booking): ?>
-                <div class="ticket-card">
-                    <div class="ticket-header">
-                        <div class="route-info">
-                            <span class="city-name"><?php echo htmlspecialchars($booking['booking_info']['diemDi']); ?></span>
-                            <i class="fas fa-arrow-right"></i>
-                            <span class="city-name"><?php echo htmlspecialchars($booking['booking_info']['diemDen']); ?></span>
+                <div class="ticket-card-modern">
+                    <div class="ticket-image">
+                        <img src="<?php echo BASE_URL; ?>/public/images/bus-placeholder.jpg" alt="Bus" onerror="this.src='https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=400&h=250&fit=crop'">
+                        <div class="ticket-status-overlay status-active">
+                            <i class="fas fa-check-circle"></i> Chờ khởi hành
                         </div>
-                        <span class="ticket-status status-active">Còn hiệu lực</span>
                     </div>
-
-                    <div class="ticket-body">
-                        <div class="ticket-main-info">
-                            <div class="info-group">
-                                <div class="info-item-compact">
-                                    <i class="fas fa-calendar-alt"></i>
-                                    <span class="info-value"><?php echo date('d/m/Y', strtotime($booking['booking_info']['thoiGianKhoiHanh'])); ?></span>
+                    
+                    <div class="ticket-content">
+                        <div class="ticket-route">
+                            <div class="route-cities">
+                                <span class="city-from"><?php echo htmlspecialchars($booking['booking_info']['diemDi']); ?></span>
+                                <div class="route-arrow">
+                                    <i class="fas fa-arrow-right"></i>
                                 </div>
-                                <div class="info-item-compact">
+                                <span class="city-to"><?php echo htmlspecialchars($booking['booking_info']['diemDen']); ?></span>
+                            </div>
+                        </div>
+
+                        <div class="ticket-details">
+                            <div class="detail-row">
+                                <div class="detail-col">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span><?php echo date('d/m/Y', strtotime($booking['booking_info']['thoiGianKhoiHanh'])); ?></span>
+                                </div>
+                                <div class="detail-col">
                                     <i class="fas fa-clock"></i>
-                                    <span class="info-value"><?php echo date('H:i', strtotime($booking['booking_info']['thoiGianKhoiHanh'])); ?></span>
+                                    <span><?php echo date('H:i', strtotime($booking['booking_info']['thoiGianKhoiHanh'])); ?></span>
                                 </div>
                             </div>
                             
-                            <div class="info-group">
-                                <div class="info-item-compact">
+                            <div class="detail-row">
+                                <div class="detail-col">
                                     <i class="fas fa-bus"></i>
-                                    <span class="info-value"><?php echo htmlspecialchars($booking['booking_info']['bienSo']); ?></span>
+                                    <span><?php echo htmlspecialchars($booking['booking_info']['bienSo']); ?></span>
                                 </div>
-                                <div class="info-item-compact">
+                                <div class="detail-col">
                                     <i class="fas fa-chair"></i>
-                                    <span class="info-value">
+                                    <span>
                                         <?php 
                                         $seats = array_column($booking['tickets'], 'soGhe');
                                         echo implode(', ', $seats);
@@ -63,21 +71,20 @@
                             </div>
                         </div>
 
-                        <div class="ticket-footer-info">
-                            <div class="booking-code">
-                                <i class="fas fa-ticket-alt"></i>
-                                <span><?php echo htmlspecialchars($booking['booking_info']['maDatVe']); ?></span>
+                        <div class="ticket-footer-modern">
+                            <div class="booking-info">
+                                <span class="booking-code">
+                                    <i class="fas fa-ticket-alt"></i>
+                                    <?php echo htmlspecialchars($booking['booking_info']['maDatVe']); ?>
+                                </span>
+                                <span class="ticket-price-modern">
+                                    <?php echo number_format($booking['booking_info']['tongTienSauGiam']); ?>đ
+                                </span>
                             </div>
-                            <div class="ticket-price">
-                                <?php echo number_format($booking['booking_info']['tongTienSauGiam']); ?>đ
-                            </div>
+                            <a href="<?php echo BASE_URL; ?>/my-tickets/detail/<?php echo $bookingId; ?>" class="btn-view-detail">
+                                Xem Chi Tiết <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
-                    </div>
-
-                    <div class="ticket-footer">
-                        <a href="<?php echo BASE_URL; ?>/my-tickets/detail/<?php echo $bookingId; ?>" class="btn-detail">
-                            <i class="fas fa-info-circle"></i> Xem Chi Tiết
-                        </a>
                     </div>
                 </div>
             <?php endforeach; ?>

@@ -10,6 +10,26 @@
             <i class="fas fa-arrow-left"></i> Quay Lại Vé Của Tôi
         </a>
     </div>
+    <div class="filter-section">
+        <div class="filter-header">
+            <i class="fas fa-filter"></i>
+            <span>Lọc theo trạng thái</span>
+        </div>
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-status="all">
+                <i class="fas fa-list"></i> Tất cả
+            </button>
+            <button class="filter-btn" data-status="active">
+                <i class="fas fa-check-circle"></i> Chờ khởi hành
+            </button>
+            <button class="filter-btn" data-status="completed">
+                <i class="fas fa-check-double"></i> Đã hoàn thành
+            </button>
+            <button class="filter-btn" data-status="cancelled">
+                <i class="fas fa-times-circle"></i> Đã hủy
+            </button>
+        </div>
+    </div>
 
     <?php if (empty($groupedHistory)): ?>
         <div class="empty-state">
@@ -27,46 +47,49 @@
                 $isPast = strtotime($booking['booking_info']['thoiGianKhoiHanh']) < time();
                 $isCancelled = $booking['booking_info']['trangThai'] === 'DaHuy';
                 $statusClass = $isCancelled ? 'status-cancelled' : ($isPast ? 'status-completed' : 'status-active');
-                $statusText = $isCancelled ? 'Đã hủy' : ($isPast ? 'Đã hoàn thành' : 'Còn hiệu lực');
+                $statusText = $isCancelled ? 'Đã hủy' : ($isPast ? 'Đã hoàn thành' : 'Chờ khỏi hành');
+                $statusIcon = $isCancelled ? 'times-circle' : ($isPast ? 'check-double' : 'check-circle');
+                $dataStatus = $isCancelled ? 'cancelled' : ($isPast ? 'completed' : 'active');
                 ?>
-                <div class="ticket-card <?php echo $isCancelled ? 'cancelled' : ''; ?>">
-                    <div class="ticket-header">
-                        <div class="route-info">
-                            <span class="city-name"><?php echo htmlspecialchars($booking['booking_info']['diemDi']); ?></span>
-                            <i class="fas fa-arrow-right"></i>
-                            <span class="city-name"><?php echo htmlspecialchars($booking['booking_info']['diemDen']); ?></span>
+                <div class="ticket-card-modern <?php echo $isCancelled ? 'cancelled-ticket' : ''; ?>" data-status="<?php echo $dataStatus; ?>">
+                    <div class="ticket-image">
+                        <img src="<?php echo BASE_URL; ?>/public/images/bus-placeholder.jpg" alt="Bus" onerror="this.src='https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=400&h=250&fit=crop'">
+                        <div class="ticket-status-overlay <?php echo $statusClass; ?>">
+                            <i class="fas fa-<?php echo $statusIcon; ?>"></i> <?php echo $statusText; ?>
                         </div>
-                        <span class="ticket-status <?php echo $statusClass; ?>"><?php echo $statusText; ?></span>
                     </div>
+                    
+                    <div class="ticket-content">
+                        <div class="ticket-route">
+                            <div class="route-cities">
+                                <span class="city-from"><?php echo htmlspecialchars($booking['booking_info']['diemDi']); ?></span>
+                                <div class="route-arrow">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                                <span class="city-to"><?php echo htmlspecialchars($booking['booking_info']['diemDen']); ?></span>
+                            </div>
+                        </div>
 
-                    <div class="ticket-body">
-                        <div class="ticket-main-info">
-                            <div class="info-group">
-                                <div class="info-item-compact">
+                        <div class="ticket-details">
+                            <div class="detail-row">
+                                <div class="detail-col">
                                     <i class="fas fa-calendar-alt"></i>
-                                    <span class="info-value"><?php echo date('d/m/Y', strtotime($booking['booking_info']['thoiGianKhoiHanh'])); ?></span>
+                                    <span><?php echo date('d/m/Y', strtotime($booking['booking_info']['thoiGianKhoiHanh'])); ?></span>
                                 </div>
-                                <div class="info-item-compact">
+                                <div class="detail-col">
                                     <i class="fas fa-clock"></i>
-                                    <span class="info-value"><?php echo date('H:i', strtotime($booking['booking_info']['thoiGianKhoiHanh'])); ?></span>
+                                    <span><?php echo date('H:i', strtotime($booking['booking_info']['thoiGianKhoiHanh'])); ?></span>
                                 </div>
                             </div>
                             
-                            <div class="info-group">
-                                <div class="info-item-compact">
+                            <div class="detail-row">
+                                <div class="detail-col">
                                     <i class="fas fa-calendar-check"></i>
-                                    <span class="info-value"><?php echo date('d/m/Y H:i', strtotime($booking['booking_info']['ngayDat'])); ?></span>
+                                    <span><?php echo date('d/m/Y', strtotime($booking['booking_info']['ngayDat'])); ?></span>
                                 </div>
-                                <div class="info-item-compact">
-                                    <i class="fas fa-credit-card"></i>
-                                    <span class="info-value"><?php echo htmlspecialchars($booking['booking_info']['phuongThucThanhToan']); ?></span>
-                                </div>
-                            </div>
-                            
-                            <div class="info-group">
-                                <div class="info-item-compact">
+                                <div class="detail-col">
                                     <i class="fas fa-chair"></i>
-                                    <span class="info-value">
+                                    <span>
                                         <?php 
                                         $seats = array_column($booking['tickets'], 'soGhe');
                                         echo implode(', ', $seats);
@@ -76,26 +99,75 @@
                             </div>
                         </div>
 
-                        <div class="ticket-footer-info">
-                            <div class="booking-code">
-                                <i class="fas fa-ticket-alt"></i>
-                                <span>Mã: <?php echo htmlspecialchars($booking['booking_info']['maDatVe']); ?></span>
+                        <div class="ticket-footer-modern">
+                            <div class="booking-info">
+                                <span class="booking-code">
+                                    <i class="fas fa-ticket-alt"></i>
+                                    <?php echo htmlspecialchars($booking['booking_info']['maDatVe']); ?>
+                                </span>
+                                <span class="ticket-price-modern">
+                                    <?php echo number_format($booking['booking_info']['tongTienSauGiam']); ?>đ
+                                </span>
                             </div>
-                            <div class="ticket-price">
-                                <?php echo number_format($booking['booking_info']['tongTienSauGiam']); ?>đ
-                            </div>
+                            <a href="<?php echo BASE_URL; ?>/my-tickets/detail/<?php echo $bookingId; ?>" class="btn-view-detail">
+                                Xem Chi Tiết <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
-                    </div>
-
-                    <div class="ticket-footer">
-                        <a href="<?php echo BASE_URL; ?>/my-tickets/detail/<?php echo $bookingId; ?>" class="btn-detail">
-                            <i class="fas fa-info-circle"></i> Xem Chi Tiết
-                        </a>
                     </div>
                 </div>
             <?php endforeach; ?>
         </div>
+        
+        <div class="no-results" style="display: none;">
+            <i class="fas fa-search"></i>
+            <p>Không tìm thấy vé nào với trạng thái này</p>
+        </div>
     <?php endif; ?>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const ticketCards = document.querySelectorAll('.ticket-card-modern');
+    const noResults = document.querySelector('.no-results');
+    const ticketsGrid = document.querySelector('.tickets-grid');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            const filterStatus = this.getAttribute('data-status');
+            let visibleCount = 0;
+            
+            // Filter tickets
+            ticketCards.forEach(card => {
+                if (filterStatus === 'all') {
+                    card.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    const cardStatus = card.getAttribute('data-status');
+                    if (cardStatus === filterStatus) {
+                        card.style.display = 'block';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            });
+            
+            // Show/hide no results message
+            if (visibleCount === 0) {
+                ticketsGrid.style.display = 'none';
+                noResults.style.display = 'flex';
+            } else {
+                ticketsGrid.style.display = 'grid';
+                noResults.style.display = 'none';
+            }
+        });
+    });
+});
+</script>
 
 <?php include __DIR__ . '/../layouts/footer.php'; ?>
