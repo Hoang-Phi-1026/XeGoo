@@ -265,6 +265,177 @@
   }
 }
 
+/* Email Verification Styles */
+.verification-icon {
+  font-size: 60px;
+  text-align: center;
+  margin-bottom: var(--space-lg);
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.login-box {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-xl);
+  padding: var(--space-3xl);
+  width: 100%;
+  max-width: 500px;
+  border: 3px solid var(--accent-primary);
+  position: relative;
+  animation: slideUp 0.6s ease-out;
+}
+
+.login-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.login-header h2 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  margin-bottom: var(--space-md);
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.subtitle strong {
+  color: var(--accent-primary);
+  font-weight: 700;
+}
+
+.code-input {
+  width: 100%;
+  padding: var(--space-lg);
+  font-size: 24px;
+  text-align: center;
+  letter-spacing: 10px;
+  border: 2px solid var(--accent-primary);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-mono), monospace;
+  font-weight: 700;
+  transition: all var(--transition-fast);
+}
+
+.code-input:focus {
+  outline: none;
+  border-color: var(--accent-secondary);
+  background-color: var(--bg-secondary);
+  box-shadow: 0 0 0 4px rgba(11, 29, 51, 0.1);
+  transform: translateY(-2px);
+}
+
+[data-theme="dark"] .code-input:focus {
+  box-shadow: 0 0 0 4px rgba(247, 232, 186, 0.1);
+}
+
+.code-input::placeholder {
+  color: var(--text-muted);
+  letter-spacing: 10px;
+}
+
+.countdown {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-top: var(--space-md);
+  font-weight: 600;
+}
+
+.countdown #timer {
+  color: var(--accent-primary);
+  font-weight: 700;
+  font-family: var(--font-mono), monospace;
+}
+
+.resend-section {
+  text-align: center;
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 2px solid var(--accent-primary);
+}
+
+.resend-section p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: var(--accent-primary);
+  cursor: pointer;
+  font-weight: 700;
+  text-decoration: underline;
+  font-size: 14px;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  font-family: var(--font-primary);
+}
+
+.link-button:hover {
+  color: var(--accent-secondary);
+  background: var(--bg-primary);
+}
+
+.link-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.back-link {
+  text-align: center;
+  margin-top: var(--space-md);
+}
+
+.back-link a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+  display: inline-block;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+}
+
+.back-link a:hover {
+  color: var(--accent-secondary);
+  background: var(--bg-primary);
+  text-decoration: underline;
+}
+
 /* Responsive design */
 @media (max-width: 480px) {
   .container {
@@ -278,6 +449,23 @@
   .login-title {
     font-size: 1.875rem;
   }
+
+  .login-box {
+    padding: var(--space-2xl) var(--space-lg);
+  }
+
+  .verification-icon {
+    font-size: 48px;
+  }
+
+  .login-header h2 {
+    font-size: 1.75rem;
+  }
+
+  .code-input {
+    font-size: 20px;
+    letter-spacing: 8px;
+  }
 }
 
 @media (max-width: 360px) {
@@ -287,5 +475,22 @@
 
   .login-title {
     font-size: 1.625rem;
+  }
+
+  .login-box {
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  .verification-icon {
+    font-size: 40px;
+  }
+
+  .login-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .code-input {
+    font-size: 18px;
+    letter-spacing: 6px;
   }
 }

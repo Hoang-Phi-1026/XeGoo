@@ -1,14 +1,18 @@
 <?php
 require_once __DIR__ . '/../models/User.php';
+require_once __DIR__ . '/../lib/EmailService.php';
+require_once __DIR__ . '/../models/VerificationCode.php';
 
 class AuthController {
     private $userModel;
+    private $verificationModel;
 
     public function __construct() {
         if (session_status() == PHP_SESSION_NONE) {
             session_start();
         }
         $this->userModel = new User();
+        $this->verificationModel = new VerificationCode();
     }
 
     public function showLogin() {
@@ -94,19 +98,206 @@ class AuthController {
             return;
         }
 
-        // Attempt registration
-        $result = $this->userModel->register($data);
+        error_log("[v0] Starting registration process for email: " . $data['eMail']);
+
+        $verificationCode = VerificationCode::generateCode();
+        
+        error_log("[v0] Generated verification code: " . $verificationCode);
+        
+        // Store code in database
+        $storeResult = $this->verificationModel->storeCode($data['eMail'], $verificationCode);
+        
+        if (!$storeResult) {
+            error_log("[v0] Failed to store verification code in database");
+            $_SESSION['error'] = 'Có lỗi xảy ra khi tạo mã xác nhận. Vui lòng kiểm tra xem bảng verification_codes đã được tạo chưa!';
+            $_SESSION['form_data'] = $data;
+            return;
+        }
+        
+        error_log("[v0] Verification code stored successfully, sending email...");
+        
+        // Send verification email
+        $emailService = new EmailService();
+        $emailResult = $emailService->sendVerificationEmail(
+            $data['eMail'],
+            $data['tenNguoiDung'],
+            $verificationCode
+        );
+        
+        if (!$emailResult['success']) {
+            error_log("[v0] Failed to send verification email: " . $emailResult['message']);
+            $_SESSION['error'] = 'Không thể gửi email xác nhận. Vui lòng thử lại!';
+            $_SESSION['form_data'] = $data;
+            return;
+        }
+        
+        error_log("[v0] Verification email sent successfully");
+        
+        $_SESSION['pending_registration'] = $data;
+        $_SESSION['show_verification_modal'] = true;
+        $_SESSION['success'] = 'Mã xác nhận đã được gửi đến email của bạn. Vui lòng kiểm tra email!';
+        
+        return;
+    }
+
+    public function verifyEmail() {
+        header('Content-Type: application/json');
+        
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            echo json_encode(['success' => false, 'message' => 'Method not allowed']);
+            exit();
+        }
+        
+        $input = json_decode(file_get_contents('php://input'), true);
+        $code = trim($input['code'] ?? '');
+        
+        error_log("[v0] Verify email endpoint called with code: " . $code);
+        
+        if (empty($code)) {
+            echo json_encode(['success' => false, 'message' => 'Vui lòng nhập mã xác nhận!']);
+            exit();
+        }
+        
+        if (!isset($_SESSION['pending_registration'])) {
+            error_log("[v0] No pending registration found in session");
+            echo json_encode(['success' => false, 'message' => 'Phiên đăng ký đã hết hạn. Vui lòng đăng ký lại!']);
+            exit();
+        }
+        
+        $registrationData = $_SESSION['pending_registration'];
+        
+        error_log("[v0] Verifying code for email: " . $registrationData['eMail']);
+        
+        // Verify code
+        if (!$this->verificationModel->verifyCode($registrationData['eMail'], $code)) {
+            error_log("[v0] Code verification failed");
+            echo json_encode(['success' => false, 'message' => 'Mã xác nhận không đúng hoặc đã hết hạn!']);
+            exit();
+        }
+        
+        error_log("[v0] Code verified, proceeding with user registration");
+        
+        // Code is valid, proceed with registration
+        $result = $this->userModel->register($registrationData);
         
         if ($result['success']) {
-            $_SESSION['success'] = 'Đăng ký thành công! Vui lòng đăng nhập.';
-            unset($_SESSION['form_data']); // Clear form data
+            error_log("[v0] User registration completed successfully");
+            // Clear session data
+            unset($_SESSION['pending_registration']);
+            unset($_SESSION['form_data']);
+            unset($_SESSION['show_verification_modal']);
             
-            // Redirect to login page
+            echo json_encode([
+                'success' => true, 
+                'message' => 'Đăng ký thành công! Đang chuyển hướng...',
+                'redirect' => BASE_URL . '/login'
+            ]);
+        } else {
+            error_log("[v0] User registration failed: " . $result['message']);
+            echo json_encode(['success' => false, 'message' => $result['message']]);
+        }
+        exit();
+    }
+
+    public function resendCode() {
+        header('Content-Type: application/json');
+        
+        error_log("[v0] Resend code endpoint called");
+        
+        if (!isset($_SESSION['pending_registration'])) {
+            error_log("[v0] No pending registration found in session");
+            echo json_encode(['success' => false, 'message' => 'Không tìm thấy thông tin đăng ký']);
+            exit();
+        }
+        
+        $registrationData = $_SESSION['pending_registration'];
+        $verificationCode = VerificationCode::generateCode();
+        
+        error_log("[v0] Generated new verification code: " . $verificationCode . " for email: " . $registrationData['eMail']);
+        
+        // Store new code
+        if (!$this->verificationModel->storeCode($registrationData['eMail'], $verificationCode)) {
+            error_log("[v0] Failed to store new verification code");
+            echo json_encode(['success' => false, 'message' => 'Có lỗi xảy ra. Vui lòng thử lại!']);
+            exit();
+        }
+        
+        error_log("[v0] New code stored, sending email...");
+        
+        // Send email
+        $emailService = new EmailService();
+        $emailResult = $emailService->sendVerificationEmail(
+            $registrationData['eMail'],
+            $registrationData['tenNguoiDung'],
+            $verificationCode
+        );
+        
+        if ($emailResult['success']) {
+            error_log("[v0] Resend email sent successfully");
+        } else {
+            error_log("[v0] Failed to send resend email: " . $emailResult['message']);
+        }
+        
+        echo json_encode($emailResult);
+        exit();
+    }
+
+    public function resendVerificationCode() {
+        // Keep this method for backward compatibility
+        $this->resendCode();
+    }
+
+    public function showVerifyEmail() {
+        if (!isset($_SESSION['pending_registration'])) {
+            $_SESSION['error'] = 'Không tìm thấy thông tin đăng ký. Vui lòng đăng ký lại!';
+            header('Location: ' . BASE_URL . '/register');
+            exit();
+        }
+        
+        // Process verification if POST request
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->processVerification();
+        }
+        
+        // Show verification form
+        require_once __DIR__ . '/../views/auth/verify-email.php';
+    }
+
+    private function processVerification() {
+        $code = trim($_POST['verification_code'] ?? '');
+        
+        if (empty($code)) {
+            $_SESSION['error'] = 'Vui lòng nhập mã xác nhận!';
+            return;
+        }
+        
+        if (!isset($_SESSION['pending_registration'])) {
+            $_SESSION['error'] = 'Phiên đăng ký đã hết hạn. Vui lòng đăng ký lại!';
+            header('Location: ' . BASE_URL . '/register');
+            exit();
+        }
+        
+        $registrationData = $_SESSION['pending_registration'];
+        
+        // Verify code
+        if (!$this->verificationModel->verifyCode($registrationData['eMail'], $code)) {
+            $_SESSION['error'] = 'Mã xác nhận không đúng hoặc đã hết hạn!';
+            return;
+        }
+        
+        // Code is valid, proceed with registration
+        $result = $this->userModel->register($registrationData);
+        
+        if ($result['success']) {
+            // Clear session data
+            unset($_SESSION['pending_registration']);
+            unset($_SESSION['form_data']);
+            
+            $_SESSION['success'] = 'Đăng ký thành công! Vui lòng đăng nhập.';
             header('Location: ' . BASE_URL . '/login');
             exit();
         } else {
             $_SESSION['error'] = $result['message'];
-            $_SESSION['form_data'] = $data;
         }
     }
 
@@ -185,4 +376,3 @@ class AuthController {
         }
     }
 }
-?>

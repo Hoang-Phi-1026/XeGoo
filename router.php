@@ -13,6 +13,7 @@ $routes = [
     '/booking/success/{id}' => ['controller' => 'BookingController', 'action' => 'success'],
     '/login' => ['controller' => 'AuthController', 'action' => 'showLogin'],
     '/register' => ['controller' => 'AuthController', 'action' => 'showRegister'],
+    '/verify-email' => ['controller' => 'AuthController', 'action' => 'showVerifyEmail'],
     '/logout' => ['controller' => 'AuthController', 'action' => 'logout'],
     '/dashboard' => ['controller' => 'DashboardController', 'action' => 'index'],
     '/admin' => ['controller' => 'AdminController', 'action' => 'index'],
@@ -107,6 +108,10 @@ $routes = [
 $postRoutes = [
     '/login' => ['controller' => 'AuthController', 'action' => 'showLogin'],
     '/register' => ['controller' => 'AuthController', 'action' => 'showRegister'],
+    '/verify-email' => ['controller' => 'AuthController', 'action' => 'showVerifyEmail'],
+    '/resend-verification' => ['controller' => 'AuthController', 'action' => 'resendVerificationCode'],
+    '/auth/verify-email' => ['controller' => 'AuthController', 'action' => 'verifyEmail'],
+    '/auth/resend-code' => ['controller' => 'AuthController', 'action' => 'resendCode'],
     '/search/api' => ['controller' => 'SearchController', 'action' => 'api'],
     '/booking/process' => ['controller' => 'BookingController', 'action' => 'process'],
     '/booking/complete' => ['controller' => 'BookingController', 'action' => 'complete'],

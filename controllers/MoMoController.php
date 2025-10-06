@@ -4,6 +4,8 @@ ini_set('display_errors', 1);
 
 require_once __DIR__ . '/../config/config.php';
 require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../models/Booking.php';
+require_once __DIR__ . '/../lib/EmailService.php';
 
 class MoMoController {
     
@@ -251,7 +253,7 @@ class MoMoController {
                 $userId,
                 $totalTickets,
                 $pricing['original_price'],
-                $pricing['discount'], // Added discount amount
+                $pricing['discount'],
                 $pricing['final_price'],
                 $tripType
             ]);
@@ -272,6 +274,37 @@ class MoMoController {
             $this->processLoyaltyPoints($bookingId, $pricing);
 
             query("COMMIT");
+
+            error_log("[v0] MoMo - Starting email sending process for booking ID: $bookingId");
+            
+            try {
+                $bookingDetail = Booking::getTicketDetailsForEmail($bookingId);
+                error_log("[v0] MoMo - Booking details retrieved: " . ($bookingDetail ? 'YES' : 'NO'));
+                
+                if ($bookingDetail) {
+                    error_log("[v0] MoMo - Email in booking details: " . ($bookingDetail['emailNguoiDung'] ?? 'EMPTY'));
+                    error_log("[v0] MoMo - Number of tickets: " . (isset($bookingDetail['tickets']) ? count($bookingDetail['tickets']) : 0));
+                }
+
+                if ($bookingDetail && !empty($bookingDetail['emailNguoiDung'])) {
+                    error_log("[v0] MoMo - Creating EmailService instance");
+                    $emailService = new EmailService();
+                    
+                    error_log("[v0] MoMo - Calling sendTicketEmail");
+                    $result = $emailService->sendTicketEmail(
+                        $bookingDetail['emailNguoiDung'],
+                        $bookingDetail,
+                        $bookingDetail['tickets']
+                    );
+                    error_log("[v0] MoMo - Ticket email send result: " . json_encode($result));
+                } else {
+                    error_log("[v0] MoMo - Cannot send email - Reason: " . 
+                        (!$bookingDetail ? 'Booking details not found' : 'Email address is empty'));
+                }
+            } catch (Exception $emailError) {
+                error_log("[v0] MoMo - Email sending exception: " . $emailError->getMessage());
+                error_log("[v0] MoMo - Email error trace: " . $emailError->getTraceAsString());
+            }
 
             // Xóa session
             $this->clearBookingSession();

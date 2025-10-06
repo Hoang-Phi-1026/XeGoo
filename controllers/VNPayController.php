@@ -4,6 +4,8 @@ ini_set('display_errors', 1);
 
 require_once __DIR__ . '/../config/config.php';
 require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../models/Booking.php';
+require_once __DIR__ . '/../lib/EmailService.php';
 
 class VNPayController {
     private $tmnCode;
@@ -382,12 +384,25 @@ class VNPayController {
      * Tạo đơn đặt vé thành công
      */
     private function createSuccessfulBooking($txnRef, $amount, $transactionNo, $bankCode, $payDate) {
+        error_log("[v0] ========== createSuccessfulBooking START ==========");
+        error_log("[v0] createSuccessfulBooking - ENTRY POINT - Booking ID will be created");
+        error_log("[v0] Parameters: txnRef=$txnRef, amount=$amount, transactionNo=$transactionNo, bankCode=$bankCode, payDate=$payDate");
+        
         try {
             error_log("[v0] Creating successful booking");
             
+            if (!isset($_SESSION['final_booking_data'])) {
+                error_log("[v0] CRITICAL: final_booking_data not in session!");
+                throw new Exception('Session data missing');
+            }
+            
             $bookingData = $_SESSION['final_booking_data'];
+            error_log("[v0] Booking data retrieved from session: " . json_encode($bookingData));
+            
             $pricing = $this->calculatePricing($bookingData);
+            error_log("[v0] Pricing calculated: " . json_encode($pricing));
 
+            error_log("[v0] Starting database transaction");
             query("START TRANSACTION");
 
             $userId = $_SESSION['user_id'] ?? null;
@@ -412,20 +427,22 @@ class VNPayController {
                 $note .= ", PayDate: $payDate";
             }
             
+            error_log("[v0] About to insert booking record");
             query($sql, [
                 $userId,
                 $totalTickets,
                 $pricing['original_price'],
-                $pricing['discount'], // Store the actual discount amount
+                $pricing['discount'],
                 $pricing['final_price'],
                 $tripType,
                 $note
             ]);
             
             $bookingId = lastInsertId();
-            error_log("[v0] Created booking with ID: $bookingId");
+            error_log("[v0] *** BOOKING CREATED WITH ID: $bookingId ***");
 
-            // Tạo chi tiết đặt vé
+            // Create booking details
+            error_log("[v0] Creating booking details");
             if ($bookingData['outbound']) {
                 $this->createBookingDetail($bookingId, $bookingData['outbound'], 'DaThanhToan');
             }
@@ -434,14 +451,58 @@ class VNPayController {
                 $this->createBookingDetail($bookingId, $bookingData['return'], 'DaThanhToan');
             }
 
+            error_log("[v0] Committing transaction");
             query("COMMIT");
-            error_log("[v0] Successfully created booking");
+            error_log("[v0] Transaction committed successfully");
+            
+            error_log("[v0] ========== EMAIL SENDING PROCESS START ==========");
+            error_log("[v0] VNPay - Starting email sending process for booking ID: $bookingId");
+            
+            try {
+                error_log("[v0] VNPay - About to call Booking::getTicketDetailsForEmail");
+                $ticketData = Booking::getTicketDetailsForEmail($bookingId);
+                error_log("[v0] VNPay - getTicketDetailsForEmail returned: " . ($ticketData ? 'DATA' : 'NULL'));
+                
+                if ($ticketData) {
+                    error_log("[v0] VNPay - Ticket data structure: " . json_encode(array_keys($ticketData)));
+                    error_log("[v0] VNPay - User email: '" . ($ticketData['emailNguoiDung'] ?? 'EMPTY') . "'");
+                    error_log("[v0] VNPay - Passenger emails: " . json_encode($ticketData['passengerEmails'] ?? []));
+                    error_log("[v0] VNPay - Number of tickets: " . (isset($ticketData['tickets']) ? count($ticketData['tickets']) : 0));
+                    
+                    error_log("[v0] VNPay - Creating EmailService instance");
+                    $emailService = new EmailService();
+                    error_log("[v0] VNPay - EmailService created successfully");
+                    
+                    error_log("[v0] VNPay - Calling sendTicketEmail with ticketData");
+                    $result = $emailService->sendTicketEmail($ticketData);
+                    error_log("[v0] VNPay - sendTicketEmail completed");
+                    error_log("[v0] VNPay - Ticket email send result: " . json_encode($result));
+                    
+                    if ($result['success']) {
+                        error_log("[v0] VNPay - ✓ EMAIL SENT SUCCESSFULLY!");
+                    } else {
+                        error_log("[v0] VNPay - ✗ EMAIL FAILED: " . $result['message']);
+                    }
+                } else {
+                    error_log("[v0] VNPay - ✗ Cannot send email - Ticket data not found");
+                }
+            } catch (Exception $emailError) {
+                error_log("[v0] VNPay - ✗ EMAIL EXCEPTION: " . $emailError->getMessage());
+                error_log("[v0] Email error file: " . $emailError->getFile() . " line " . $emailError->getLine());
+                error_log("[v0] Email error trace: " . $emailError->getTraceAsString());
+            }
+            
+            error_log("[v0] ========== EMAIL SENDING PROCESS END ==========");
+            error_log("[v0] ========== createSuccessfulBooking END - Returning ID: $bookingId ==========");
             
             return $bookingId;
             
         } catch (Exception $e) {
+            error_log("[v0] ✗ EXCEPTION in createSuccessfulBooking: " . $e->getMessage());
+            error_log("[v0] Exception file: " . $e->getFile() . " line " . $e->getLine());
+            error_log("[v0] Exception trace: " . $e->getTraceAsString());
             query("ROLLBACK");
-            error_log("[v0] Error creating successful booking: " . $e->getMessage());
+            error_log("[v0] Transaction rolled back");
             throw $e;
         }
     }

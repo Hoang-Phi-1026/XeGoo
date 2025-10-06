@@ -93,5 +93,37 @@ class QRCodeGenerator {
             return false;
         }
     }
+
+    public static function generateBase64($data) {
+        try {
+            // Encode data chắc chắn là string
+            if (!is_string($data)) {
+                $data = json_encode($data, JSON_UNESCAPED_UNICODE);
+            }
+
+            // Tạo file tạm thời an toàn
+            $tempFile = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'qr_' . uniqid() . '.png';
+
+            // Sinh QR
+            QRcode::png($data, $tempFile, QR_ECLEVEL_L, 4, 1);
+
+            // Đọc file vào base64
+            $imageData = @file_get_contents($tempFile);
+            if (!$imageData) {
+                throw new Exception('Không đọc được file QR code.');
+            }
+
+            // Xóa file sau khi dùng
+            @unlink($tempFile);
+
+            // Trả về base64 image
+            return 'data:image/png;base64,' . base64_encode($imageData);
+
+        } catch (Exception $e) {
+            error_log("Lỗi QRCodeGenerator::generateBase64: " . $e->getMessage());
+            return null;
+        }
+    }
+
 }
 ?>
