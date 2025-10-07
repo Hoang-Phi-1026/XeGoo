@@ -1,391 +1,1190 @@
-[07-Oct-2025 11:00:49 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:00:49 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:00:49 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:00:49 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:00:49 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:00:49 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:00:49 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:00:49 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:00:49 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:00:49 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::search
-[07-Oct-2025 11:00:49 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:00:49 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:03:45 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:03:45 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:03:45 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:03:45 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:03:45 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:03:45 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:03:45 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:03:45 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:03:45 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:03:45 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::index
-[07-Oct-2025 11:03:45 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:03:45 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:03:45 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[07-Oct-2025 11:03:45 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:03:45 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:03:59 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:03:59 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:03:59 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:03:59 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:03:59 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:03:59 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:03:59 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:03:59 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:03:59 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:03:59 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::search
-[07-Oct-2025 11:03:59 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:03:59 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:04:37 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:04:37 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:04:37 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:04:37 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:04:37 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:04:37 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:04:37 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:04:37 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:04:37 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:04:37 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::index
-[07-Oct-2025 11:04:37 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:04:37 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:04:37 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[07-Oct-2025 11:04:37 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:04:37 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:05:25 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:05:25 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:05:25 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:05:25 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:05:25 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:05:25 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:05:25 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:05:25 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:05:25 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:05:25 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::index
-[07-Oct-2025 11:05:25 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:05:25 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:05:25 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[07-Oct-2025 11:05:25 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:05:25 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:05:35 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:05:35 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:05:35 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:05:35 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:05:35 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:05:35 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:05:35 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:05:35 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:05:35 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:05:35 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::search
-[07-Oct-2025 11:05:35 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:05:35 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:07:09 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:07:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:07:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:07:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:07:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:07:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:07:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:07:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:07:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:07:09 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::index
-[07-Oct-2025 11:07:09 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:07:09 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:07:09 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[07-Oct-2025 11:07:09 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:07:09 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:07:14 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:07:14 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:07:14 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:07:14 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:07:14 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:07:14 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:07:14 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:07:14 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:07:14 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:07:14 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::search
-[07-Oct-2025 11:07:14 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:07:14 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:08:29 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:08:29 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:08:29 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:08:29 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:08:29 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:08:29 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:08:29 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:08:29 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:08:29 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:08:29 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::search
-[07-Oct-2025 11:08:29 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:08:29 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:08:37 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:08:37 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:08:37 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:08:37 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:08:37 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:08:37 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:08:37 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:08:37 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:08:37 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:08:37 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::search
-[07-Oct-2025 11:08:37 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:08:37 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:08:46 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:08:46 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:08:46 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:08:46 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:08:46 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:08:46 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:08:46 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:08:46 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:08:46 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:08:46 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::search
-[07-Oct-2025 11:08:46 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:08:46 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:08:49 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:08:49 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:08:49 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:08:49 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:08:49 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:08:49 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:08:49 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:08:49 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:08:49 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:08:49 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::search
-[07-Oct-2025 11:08:49 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:08:49 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:08:52 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:08:52 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[07-Oct-2025 11:08:52 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:08:52 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:08:52 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:08:52 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[07-Oct-2025 11:08:52 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:08:52 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:09:26 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:09:26 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:09:26 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:09:26 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:09:26 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:09:26 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:09:26 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:09:26 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:09:26 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:09:26 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::index
-[07-Oct-2025 11:09:26 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:09:26 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:09:26 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[07-Oct-2025 11:09:26 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:09:26 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:09:40 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:09:40 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:09:40 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:09:40 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:09:40 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:09:40 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:09:40 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:09:40 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:09:40 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:09:40 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::search
-[07-Oct-2025 11:09:40 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:09:40 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::search
-[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] [v0] TicketLookup - Search started
-[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] [v0] TicketLookup - Ticket code: 131, Contact: honghuemui@gmail.com
-[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] [v0] TicketLookup - Executing SQL query
-[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] [v0] TicketLookup - Query executed, result: found
-[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] [v0] TicketLookup - Ticket found: yes
-[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] [v0] TicketLookup - Response prepared successfully
-[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:14:23 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:14:23 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:14:23 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:14:23 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:14:23 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:14:23 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:14:23 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:14:23 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:14:23 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:14:23 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::index
-[07-Oct-2025 11:14:23 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:14:23 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:14:23 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[07-Oct-2025 11:14:23 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:14:23 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::search
-[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] [v0] TicketLookup - Search started
-[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] [v0] TicketLookup - Ticket code: 131, Contact: honghuemui@gmail.com
-[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] [v0] TicketLookup - Executing SQL query
-[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] [v0] TicketLookup - Query executed, result: found
-[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] [v0] TicketLookup - Ticket found: yes
-[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] [v0] TicketLookup - Response prepared successfully
-[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:14:46 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:14:46 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[07-Oct-2025 11:14:46 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:14:46 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:14:46 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:14:46 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[07-Oct-2025 11:14:46 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:14:46 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:14:57 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:14:57 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:14:57 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:14:57 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:14:57 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:14:57 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:14:57 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:14:57 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:14:57 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:14:57 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::index
-[07-Oct-2025 11:14:57 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:14:57 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:14:57 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[07-Oct-2025 11:14:57 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:14:57 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::search
-[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] [v0] TicketLookup - Search started
-[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] [v0] TicketLookup - Ticket code: 131, Contact: honghuemui@gmail.com
-[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] [v0] TicketLookup - Executing SQL query
-[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] [v0] TicketLookup - Query executed, result: found
-[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] [v0] TicketLookup - Ticket found: yes
-[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] [v0] TicketLookup - Response prepared successfully
-[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:15:16 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:15:16 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:15:16 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:15:16 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:15:16 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:15:16 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:15:16 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:15:16 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:15:16 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:15:16 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::search
-[07-Oct-2025 11:15:16 Asia/Ho_Chi_Minh] [v0] TicketLookup - Search started
-[07-Oct-2025 11:15:16 Asia/Ho_Chi_Minh] [v0] TicketLookup - Ticket code: 1344, Contact: honghuemui@gmail.com
-[07-Oct-2025 11:15:16 Asia/Ho_Chi_Minh] [v0] TicketLookup - Executing SQL query
-[07-Oct-2025 11:15:16 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:15:16 Asia/Ho_Chi_Minh] [v0] TicketLookup - Query executed, result: not found
-[07-Oct-2025 11:15:16 Asia/Ho_Chi_Minh] [v0] TicketLookup - Ticket found: no
-[07-Oct-2025 11:15:16 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:15:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:15:30 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[07-Oct-2025 11:15:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:15:30 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:15:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:15:32 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[07-Oct-2025 11:15:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:15:32 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:16:42 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:16:42 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[07-Oct-2025 11:16:42 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:16:42 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:17:00 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:17:00 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[07-Oct-2025 11:17:00 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:17:00 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:17:54 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:17:54 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[07-Oct-2025 11:17:54 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:17:54 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:18:15 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:18:15 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[07-Oct-2025 11:18:15 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:18:15 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:18:20 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:18:20 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:18:20 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:18:20 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:18:20 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:18:20 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:18:20 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:18:20 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:18:20 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:18:20 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::index
-[07-Oct-2025 11:18:20 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:18:20 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:18:20 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[07-Oct-2025 11:18:20 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:18:20 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::index
-[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] === Database Debug ===
-[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] Active routes: 2
-[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] Route: TP. Hồ Chí Minh -> Đà Lạt (SG-DL)
-[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] Route: Đà Lạt -> TP. Hồ Chí Minh (DL-SG)
-[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] Active trips: 77
-[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] Sample trip: TP. Hồ Chí Minh -> Đà Lạt on 2025-10-08
-[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] Sample trip: TP. Hồ Chí Minh -> Đà Lạt on 2025-10-09
-[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] Sample trip: TP. Hồ Chí Minh -> Đà Lạt on 2025-10-10
-[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] === SearchController ===
-[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] Search params: from='', to='', date='', passengers=1
-[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] Form data loaded: 2 cities, 2 popular routes
-[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:23:38 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:23:38 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:23:38 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:23:38 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:23:38 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:23:38 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:23:38 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:23:38 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:23:38 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:23:38 Asia/Ho_Chi_Minh] [v0] Router - About to call MyTicketsController::index
-[07-Oct-2025 11:23:38 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:23:39 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:23:39 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:23:39 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:23:39 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[07-Oct-2025 11:23:39 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:23:39 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:23:40 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:23:40 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:23:40 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:23:40 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:23:40 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
-[07-Oct-2025 11:23:40 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:23:40 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:23:40 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:23:40 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
-[07-Oct-2025 11:23:40 Asia/Ho_Chi_Minh] [v0] Router - About to call MyTicketsController::detail
-[07-Oct-2025 11:23:40 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:23:40 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[07-Oct-2025 11:23:40 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[07-Oct-2025 11:23:40 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[07-Oct-2025 11:23:40 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[07-Oct-2025 11:23:40 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 23:31:15 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 23:31:15 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[07-Oct-2025 23:31:15 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 23:31:15 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 23:31:15 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[07-Oct-2025 23:31:15 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 23:31:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 23:31:18 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::processGenerateTrips
+[07-Oct-2025 23:31:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 23:31:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 23:31:18 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::generateTrips
+[07-Oct-2025 23:31:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 23:31:18 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 23:31:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 23:31:18 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[07-Oct-2025 23:31:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 23:31:18 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 23:32:46 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 23:32:46 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[07-Oct-2025 23:32:46 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 23:32:46 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 23:32:46 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[07-Oct-2025 23:32:46 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 23:32:49 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 23:32:49 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::processGenerateTrips
+[07-Oct-2025 23:32:49 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 23:32:49 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 23:32:49 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::generateTrips
+[07-Oct-2025 23:32:49 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 23:32:49 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 23:32:49 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 23:32:49 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[07-Oct-2025 23:32:49 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 23:32:49 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 23:44:12 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 23:44:12 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::generateTrips
+[07-Oct-2025 23:44:12 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 23:44:12 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 23:44:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 23:44:13 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[07-Oct-2025 23:44:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 23:44:13 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 23:44:20 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 23:44:20 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[07-Oct-2025 23:44:20 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 23:44:20 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 23:44:20 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[07-Oct-2025 23:44:20 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 23:44:22 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 23:44:22 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::processGenerateTrips
+[07-Oct-2025 23:44:22 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 23:44:22 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 23:44:22 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::generateTrips
+[07-Oct-2025 23:44:22 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 23:44:22 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 23:44:22 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 23:44:22 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[07-Oct-2025 23:44:22 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 23:44:22 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 23:44:40 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 23:44:40 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[07-Oct-2025 23:44:40 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 23:44:40 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 23:44:40 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[07-Oct-2025 23:44:40 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 23:44:43 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 23:44:43 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::processGenerateTrips
+[07-Oct-2025 23:44:43 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 23:44:43 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 23:44:43 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::generateTrips
+[07-Oct-2025 23:44:43 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 23:44:43 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 23:44:43 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 23:44:43 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[07-Oct-2025 23:44:43 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 23:44:43 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 23:48:03 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 23:48:03 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::generateTrips
+[07-Oct-2025 23:48:03 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 23:48:03 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 23:48:04 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 23:48:04 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[07-Oct-2025 23:48:04 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 23:48:04 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 23:48:10 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 23:48:10 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[07-Oct-2025 23:48:10 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 23:48:10 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 23:48:10 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[07-Oct-2025 23:48:10 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 23:48:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 23:48:13 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::processGenerateTrips
+[07-Oct-2025 23:48:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 23:48:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 23:48:13 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::generateTrips
+[07-Oct-2025 23:48:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 23:48:13 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 23:48:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 23:48:13 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[07-Oct-2025 23:48:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 23:48:13 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 23:50:40 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 23:50:40 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[07-Oct-2025 23:50:40 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 23:50:40 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 23:50:40 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[07-Oct-2025 23:50:40 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 23:50:43 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 23:50:43 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::processGenerateTrips
+[07-Oct-2025 23:50:43 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 23:50:43 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 23:50:43 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::generateTrips
+[07-Oct-2025 23:50:43 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 23:50:43 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 23:50:43 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 23:50:43 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[07-Oct-2025 23:50:43 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 23:50:43 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:03:44 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:03:44 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::generateTrips
+[08-Oct-2025 00:03:44 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:03:44 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:03:45 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:03:45 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[08-Oct-2025 00:03:45 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:03:45 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:03:53 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:03:53 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[08-Oct-2025 00:03:53 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:03:53 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:03:53 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[08-Oct-2025 00:03:53 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:03:56 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:03:56 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::processGenerateTrips
+[08-Oct-2025 00:03:56 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:03:56 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:03:56 Asia/Ho_Chi_Minh] [v0] Router - About to call TripController::index
+[08-Oct-2025 00:03:56 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:03:56 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:03:56 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:03:56 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[08-Oct-2025 00:03:56 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:03:56 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:04:05 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:04:05 Asia/Ho_Chi_Minh] [v0] Router - About to call TripController::index
+[08-Oct-2025 00:04:05 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:04:05 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:04:05 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:04:06 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[08-Oct-2025 00:04:06 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:04:06 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:04:12 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:04:12 Asia/Ho_Chi_Minh] [v0] Router - About to call TripController::show
+[08-Oct-2025 00:04:12 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:04:12 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:04:12 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:04:12 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[08-Oct-2025 00:04:12 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:04:12 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:04:28 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:04:28 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[08-Oct-2025 00:04:28 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:04:28 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:04:28 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:04:28 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[08-Oct-2025 00:04:28 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:04:28 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:04:36 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:04:36 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::index
+[08-Oct-2025 00:04:36 Asia/Ho_Chi_Minh] === SearchController ===
+[08-Oct-2025 00:04:36 Asia/Ho_Chi_Minh] Search params: from='TP. Hồ Chí Minh', to='Vũng Tàu', date='2025-10-08', passengers=1
+[08-Oct-2025 00:04:36 Asia/Ho_Chi_Minh] Performing search...
+[08-Oct-2025 00:04:36 Asia/Ho_Chi_Minh] === TripSearch Debug ===
+[08-Oct-2025 00:04:36 Asia/Ho_Chi_Minh] Outbound search: 'TP. Hồ Chí Minh' -> 'Vũng Tàu' on '2025-10-08'
+[08-Oct-2025 00:04:36 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:04:36 Asia/Ho_Chi_Minh] Found 1 outbound trips
+[08-Oct-2025 00:04:36 Asia/Ho_Chi_Minh] Search completed: 1 outbound, 0 return
+[08-Oct-2025 00:04:36 Asia/Ho_Chi_Minh] Recent search saved: {"from":"TP. H\u1ed3 Ch\u00ed Minh","to":"V\u0169ng T\u00e0u","departure_date":"2025-10-08","return_date":"","passengers":1,"is_round_trip":false,"search_time":"2025-10-08 00:04:36"}
+[08-Oct-2025 00:04:36 Asia/Ho_Chi_Minh] Form data loaded: 3 cities, 3 popular routes
+[08-Oct-2025 00:04:37 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:04:37 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:04:37 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[08-Oct-2025 00:04:37 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:04:37 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:04:39 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:04:39 Asia/Ho_Chi_Minh] [v0] Router - About to call BookingController::show
+[08-Oct-2025 00:04:39 Asia/Ho_Chi_Minh] [v0] BookingController show called with tripId: 885
+[08-Oct-2025 00:04:39 Asia/Ho_Chi_Minh] [v0] Return trip ID: , Is round trip: no
+[08-Oct-2025 00:04:39 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:04:39 Asia/Ho_Chi_Minh] [v0] getTripDetails for trip 885 - loaiChoNgoiMacDinh: Ghế ngồi
+[08-Oct-2025 00:04:39 Asia/Ho_Chi_Minh] [v0] Full trip details: {"maChuyenXe":885,"maLichTrinh":15,"maPhuongTien":24,"maTaiXe":3,"maGiaVe":46,"ngayKhoiHanh":"2025-10-08","thoiGianKhoiHanh":"2025-10-08 07:00:00","thoiGianKetThuc":"2025-10-08 08:28:00","soChoTong":16,"soChoDaDat":0,"soChoTrong":16,"trangThai":"S\u1eb5n s\u00e0ng","ngayTao":"2025-10-08 00:03:56","ngayCapNhat":"2025-10-08 00:03:56","tenLichTrinh":"L\u1ecbch tr\u00ecnh SG-VT 07:00","gioKhoiHanh":"07:00:00","gioKetThuc":"08:28:00","maTuyenDuong":15,"kyHieuTuyen":"SG-VT","diemDi":"TP. H\u1ed3 Ch\u00ed Minh","diemDen":"V\u0169ng T\u00e0u","thoiGianDiChuyen":"01:28:00","bienSo":"51E-863633","maLoaiPhuongTien":2,"tenLoaiPhuongTien":"Xe 16 Ch\u1ed7","soChoMacDinh":16,"soTang":1,"soHang":4,"soCotTrai":2,"soCotGiua":0,"soCotPhai":2,"loaiChoNgoiMacDinh":"Gh\u1ebf ng\u1ed3i","giaVe":"150000.00","tenLoaiVe":"V\u00e9 th\u01b0\u1eddng"}
+[08-Oct-2025 00:04:39 Asia/Ho_Chi_Minh] [v0] Departure datetime: 2025-10-08 07:00:00, Current time: 2025-10-08 00:04:39, Has departed: no
+[08-Oct-2025 00:04:39 Asia/Ho_Chi_Minh] [v0] Outbound trip datetime: 2025-10-08 07:00:00, has departed: no
+[08-Oct-2025 00:04:39 Asia/Ho_Chi_Minh] [v0] Found 1 Đón points for route 15
+[08-Oct-2025 00:04:39 Asia/Ho_Chi_Minh] [v0] Found 1 Trả points for route 15
+[08-Oct-2025 00:04:39 Asia/Ho_Chi_Minh] [v0] Route ID: 15, Pickup points: 1, Dropoff points: 1
+[08-Oct-2025 00:04:39 Asia/Ho_Chi_Minh] [v0] Found 16 actual seats for vehicle 24
+[08-Oct-2025 00:04:39 Asia/Ho_Chi_Minh] [v0] Seat layout created with 16 actual seats: {"total_seats":16,"seat_type":"Gh\u1ebf ng\u1ed3i","left_columns":2,"right_columns":2,"middle_columns":0,"floors":1,"rows_per_floor":4,"vehicle_type":"Xe 16 Ch\u1ed7","default_seat_type":"Gh\u1ebf ng\u1ed3i","actual_seats":[{"maGhe":535,"soGhe":"A01"},{"maGhe":536,"soGhe":"A02"},{"maGhe":537,"soGhe":"A03"},{"maGhe":538,"soGhe":"A04"},{"maGhe":539,"soGhe":"A05"},{"maGhe":540,"soGhe":"A06"},{"maGhe":541,"soGhe":"A07"},{"maGhe":542,"soGhe":"A08"},{"maGhe":543,"soGhe":"A09"},{"maGhe":544,"soGhe":"A10"},{"maGhe":545,"soGhe":"A11"},{"maGhe":546,"soGhe":"A12"},{"maGhe":547,"soGhe":"A13"},{"maGhe":548,"soGhe":"A14"},{"maGhe":549,"soGhe":"A15"},{"maGhe":550,"soGhe":"A16"}]}
+[08-Oct-2025 00:04:39 Asia/Ho_Chi_Minh] [v0] Found 0 booked/held seats for trip 885: []
+[08-Oct-2025 00:04:39 Asia/Ho_Chi_Minh] [v0] Found 0 seat statuses for trip 885: []
+[08-Oct-2025 00:04:39 Asia/Ho_Chi_Minh] [v0] Seat layout: {"total_seats":16,"seat_type":"Gh\u1ebf ng\u1ed3i","left_columns":2,"right_columns":2,"middle_columns":0,"floors":1,"rows_per_floor":4,"vehicle_type":"Xe 16 Ch\u1ed7","default_seat_type":"Gh\u1ebf ng\u1ed3i","actual_seats":[{"maGhe":535,"soGhe":"A01"},{"maGhe":536,"soGhe":"A02"},{"maGhe":537,"soGhe":"A03"},{"maGhe":538,"soGhe":"A04"},{"maGhe":539,"soGhe":"A05"},{"maGhe":540,"soGhe":"A06"},{"maGhe":541,"soGhe":"A07"},{"maGhe":542,"soGhe":"A08"},{"maGhe":543,"soGhe":"A09"},{"maGhe":544,"soGhe":"A10"},{"maGhe":545,"soGhe":"A11"},{"maGhe":546,"soGhe":"A12"},{"maGhe":547,"soGhe":"A13"},{"maGhe":548,"soGhe":"A14"},{"maGhe":549,"soGhe":"A15"},{"maGhe":550,"soGhe":"A16"}]}
+[08-Oct-2025 00:04:39 Asia/Ho_Chi_Minh] [v0] Booked seats: []
+[08-Oct-2025 00:04:40 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:04:40 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:04:40 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[08-Oct-2025 00:04:40 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:04:40 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Router - About to call BookingController::process
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] BookingController::process() started
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] POST data: {"trip_id":"885","booking_type":"single","pickup_point":"25","dropoff_point":"26","passengers":[{"ho_ten":"Amin Phi","email":"phiphamvohoang@gmail.com","so_dien_thoai":"0847272231"},{"ho_ten":"fd","email":"2hdgg@gmail.com","so_dien_thoai":"321313"}],"selected_seats":"[\"A03\",\"A04\"]"}
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Cleared old promotion and points session data
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Trip ID: 885, Selected seats: "[\"A03\",\"A04\"]"
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Is round trip: no
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Return trip ID: none
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Departure datetime: 2025-10-08 07:00:00, Current time: 2025-10-08 00:05:01, Has departed: no
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Outbound total price: 300000
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] holdSeatsForTrip called with tripId: 885, seats: ["A03","A04"]
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Found vehicle ID: 24 for trip: 885
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Found 2 seats in database for 2 requested seats
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Checking seat A03 (ID: 537) - status: Trống
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Checking seat A04 (ID: 538) - status: Trống
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Updated seat A03 (ID: 537) to 'Đang giữ' - result: success
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Updated seat A04 (ID: 538) to 'Đang giữ' - result: success
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Successfully held all seats for trip 885
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Stored booking data in session
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Successfully created booking session and held seats, redirecting to payment
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Session data - final_booking_data exists: yes
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Session data - held_seats exists: yes
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Router - About to call PaymentController::show
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] PaymentController::show() started
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Session data - final_booking_data exists: yes
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Session data - held_seats exists: yes
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Booking data loaded successfully
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Total price: 300000
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Found 3 active promotions
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] User points: 3150
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Pricing calculated - Original: 300000, Final: 300000
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] About to include payment view
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\XeGoo\views\payment\show.php on line 50
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Payment page - seat type derived from vehicle type: Ghế ngồi
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Payment page - final seat type value: Ghế ngồi
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Payment page - trip details keys: ["maChuyenXe","maLichTrinh","maPhuongTien","maTaiXe","maGiaVe","ngayKhoiHanh","thoiGianKhoiHanh","thoiGianKetThuc","soChoTong","soChoDaDat","soChoTrong","trangThai","ngayTao","ngayCapNhat","tenLichTrinh","lichTrinhGioKhoiHanh","thuTrongTuan","kyHieuTuyen","diemDi","diemDen","khoangCach","thoiGianDiChuyen","bienSo","tenLoaiPhuongTien","soChoMacDinh","giaVe","loaiChoNgoi","tenLoaiVe"]
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Payment view included successfully
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:05:01 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:05:04 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:05:04 Asia/Ho_Chi_Minh] [v0] Router - About to call PaymentController::process
+[08-Oct-2025 00:05:05 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:05:05 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:05:05 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:05:05 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:05:05 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:05:05 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:05:05 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:05:05 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:05:05 Asia/Ho_Chi_Minh] [v0] VNPayController initialized with return URL: http://localhost/xegoo/payment/vnpay/return
+[08-Oct-2025 00:05:05 Asia/Ho_Chi_Minh] [v0] VNPayController::createPayment() started
+[08-Oct-2025 00:05:05 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:05:05 Asia/Ho_Chi_Minh] [v0] VNPay payment URL created successfully
+[08-Oct-2025 00:05:05 Asia/Ho_Chi_Minh] [v0] Transaction reference: 1759856705
+[08-Oct-2025 00:05:05 Asia/Ho_Chi_Minh] [v0] Amount: 30000000
+[08-Oct-2025 00:05:05 Asia/Ho_Chi_Minh] [v0] Hash data: vnp_Amount=30000000&vnp_BankCode=NCB&vnp_Bill_Mobile=0847272231&vnp_Command=pay&vnp_CreateDate=20251008000505&vnp_CurrCode=VND&vnp_ExpireDate=20251008002005&vnp_IpAddr=%3A%3A1&vnp_Locale=vn&vnp_OrderInfo=Thanh+to%C3%A1n+%C4%91%C6%A1n+h%C3%A0ng+%C4%91%E1%BA%B7t+t%E1%BA%A1i+web&vnp_OrderType=billpayment&vnp_ReturnUrl=http%3A%2F%2Flocalhost%2Fxegoo%2Fpayment%2Fvnpay%2Freturn&vnp_TmnCode=O3RU0JR9&vnp_TxnRef=1759856705&vnp_Version=2.1.0
+[08-Oct-2025 00:05:05 Asia/Ho_Chi_Minh] [v0] Secure hash: c87a64d6bb7b4f971a65da87877ee8dfa21ed98cb08dbb76a1942a7d3f7053bc0d6b70e85545ad9edc16a511e31f82fc13e8962c90de3271f0a7306f7f29ce60
+[08-Oct-2025 00:05:05 Asia/Ho_Chi_Minh] [v0] Final URL: https://sandbox.vnpayment.vn/paymentv2/vpcpay.html?vnp_Amount=30000000&vnp_BankCode=NCB&vnp_Bill_Mobile=0847272231&vnp_Command=pay&vnp_CreateDate=20251008000505&vnp_CurrCode=VND&vnp_ExpireDate=20251008002005&vnp_IpAddr=%3A%3A1&vnp_Locale=vn&vnp_OrderInfo=Thanh+to%C3%A1n+%C4%91%C6%A1n+h%C3%A0ng+%C4%91%E1%BA%B7t+t%E1%BA%A1i+web&vnp_OrderType=billpayment&vnp_ReturnUrl=http%3A%2F%2Flocalhost%2Fxegoo%2Fpayment%2Fvnpay%2Freturn&vnp_TmnCode=O3RU0JR9&vnp_TxnRef=1759856705&vnp_Version=2.1.0&vnp_SecureHash=c87a64d6bb7b4f971a65da87877ee8dfa21ed98cb08dbb76a1942a7d3f7053bc0d6b70e85545ad9edc16a511e31f82fc13e8962c90de3271f0a7306f7f29ce60
+[08-Oct-2025 00:05:41 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:05:41 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:05:41 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:05:41 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:05:41 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:05:41 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:05:41 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:05:41 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:05:41 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:05:41 Asia/Ho_Chi_Minh] [v0] VNPayController initialized with return URL: http://localhost/xegoo/payment/vnpay/return
+[08-Oct-2025 00:05:41 Asia/Ho_Chi_Minh] [v0] Router - About to call VNPayController::handleReturn
+[08-Oct-2025 00:05:41 Asia/Ho_Chi_Minh] [v0] VNPayController::handleReturn() started
+[08-Oct-2025 00:05:41 Asia/Ho_Chi_Minh] [v0] GET parameters: {"vnp_Amount":"30000000","vnp_BankCode":"NCB","vnp_BankTranNo":"VNP15194319","vnp_CardType":"ATM","vnp_OrderInfo":"Thanh to\u00e1n \u0111\u01a1n h\u00e0ng \u0111\u1eb7t t\u1ea1i web","vnp_PayDate":"20251008000713","vnp_ResponseCode":"00","vnp_TmnCode":"O3RU0JR9","vnp_TransactionNo":"15194319","vnp_TransactionStatus":"00","vnp_TxnRef":"1759856705","vnp_SecureHash":"10d4e207e527e3d166ff754d52e189adff9a0f6b9d3f6a6bd1e25997c65c89ea1e2c87c4b67c22f2e257973469b770526239979577db6c50074f83915d0aacf1"}
+[08-Oct-2025 00:05:41 Asia/Ho_Chi_Minh] [v0] Calculated hash: 10d4e207e527e3d166ff754d52e189adff9a0f6b9d3f6a6bd1e25997c65c89ea1e2c87c4b67c22f2e257973469b770526239979577db6c50074f83915d0aacf1
+[08-Oct-2025 00:05:41 Asia/Ho_Chi_Minh] [v0] VNPay hash: 10d4e207e527e3d166ff754d52e189adff9a0f6b9d3f6a6bd1e25997c65c89ea1e2c87c4b67c22f2e257973469b770526239979577db6c50074f83915d0aacf1
+[08-Oct-2025 00:05:41 Asia/Ho_Chi_Minh] [v0] Hash data: vnp_Amount=30000000&vnp_BankCode=NCB&vnp_BankTranNo=VNP15194319&vnp_CardType=ATM&vnp_OrderInfo=Thanh+to%C3%A1n+%C4%91%C6%A1n+h%C3%A0ng+%C4%91%E1%BA%B7t+t%E1%BA%A1i+web&vnp_PayDate=20251008000713&vnp_ResponseCode=00&vnp_TmnCode=O3RU0JR9&vnp_TransactionNo=15194319&vnp_TransactionStatus=00&vnp_TxnRef=1759856705
+[08-Oct-2025 00:05:41 Asia/Ho_Chi_Minh] [v0] Hash verification successful
+[08-Oct-2025 00:05:41 Asia/Ho_Chi_Minh] [v0] Response code: 00
+[08-Oct-2025 00:05:41 Asia/Ho_Chi_Minh] [v0] Transaction status: 00
+[08-Oct-2025 00:05:41 Asia/Ho_Chi_Minh] [v0] Transaction ref: 1759856705
+[08-Oct-2025 00:05:41 Asia/Ho_Chi_Minh] [v0] Payment successful
+[08-Oct-2025 00:05:41 Asia/Ho_Chi_Minh] [v0] ========== createSuccessfulBooking START ==========
+[08-Oct-2025 00:05:41 Asia/Ho_Chi_Minh] [v0] createSuccessfulBooking - ENTRY POINT - Booking ID will be created
+[08-Oct-2025 00:05:41 Asia/Ho_Chi_Minh] [v0] Parameters: txnRef=1759856705, amount=300000, transactionNo=15194319, bankCode=NCB, payDate=20251008000713
+[08-Oct-2025 00:05:41 Asia/Ho_Chi_Minh] [v0] Creating successful booking
+[08-Oct-2025 00:05:41 Asia/Ho_Chi_Minh] [v0] Booking data retrieved from session: {"outbound":{"trip_id":"885","trip_details":{"maChuyenXe":885,"maLichTrinh":15,"maPhuongTien":24,"maTaiXe":3,"maGiaVe":46,"ngayKhoiHanh":"2025-10-08","thoiGianKhoiHanh":"2025-10-08 07:00:00","thoiGianKetThuc":"2025-10-08 08:28:00","soChoTong":16,"soChoDaDat":0,"soChoTrong":16,"trangThai":"S\u1eb5n s\u00e0ng","ngayTao":"2025-10-08 00:03:56","ngayCapNhat":"2025-10-08 00:03:56","tenLichTrinh":"L\u1ecbch tr\u00ecnh SG-VT 07:00","lichTrinhGioKhoiHanh":"07:00:00","thuTrongTuan":"2,3,4,5,6,7,CN","kyHieuTuyen":"SG-VT","diemDi":"TP. H\u1ed3 Ch\u00ed Minh","diemDen":"V\u0169ng T\u00e0u","khoangCach":88,"thoiGianDiChuyen":"01:28:00","bienSo":"51E-863633","tenLoaiPhuongTien":"Xe 16 Ch\u1ed7","soChoMacDinh":16,"giaVe":"150000.00","loaiChoNgoi":"Gh\u1ebf ng\u1ed3i","tenLoaiVe":"V\u00e9 th\u01b0\u1eddng"},"selected_seats":["A03","A04"],"pickup_point":"25","dropoff_point":"26","passengers":[{"ho_ten":"Amin Phi","email":"phiphamvohoang@gmail.com","so_dien_thoai":"0847272231"},{"ho_ten":"fd","email":"2hdgg@gmail.com","so_dien_thoai":"321313"}],"total_price":300000},"return":null,"total_price":300000,"booking_type":"one_way"}
+[08-Oct-2025 00:05:41 Asia/Ho_Chi_Minh] [v0] Pricing calculated: {"original_price":300000,"discount":0,"final_price":300000,"earned_points":300}
+[08-Oct-2025 00:05:41 Asia/Ho_Chi_Minh] [v0] Starting database transaction
+[08-Oct-2025 00:05:42 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:05:42 Asia/Ho_Chi_Minh] [v0] About to insert booking record
+[08-Oct-2025 00:05:42 Asia/Ho_Chi_Minh] [v0] *** BOOKING CREATED WITH ID: 93 ***
+[08-Oct-2025 00:05:42 Asia/Ho_Chi_Minh] [v0] Creating booking details
+[08-Oct-2025 00:05:42 Asia/Ho_Chi_Minh] [v0] Committing transaction
+[08-Oct-2025 00:05:42 Asia/Ho_Chi_Minh] [v0] Transaction committed successfully
+[08-Oct-2025 00:05:42 Asia/Ho_Chi_Minh] [v0] ========== EMAIL SENDING PROCESS START ==========
+[08-Oct-2025 00:05:42 Asia/Ho_Chi_Minh] [v0] VNPay - Starting email sending process for booking ID: 93
+[08-Oct-2025 00:05:42 Asia/Ho_Chi_Minh] [v0] VNPay - About to call Booking::getTicketDetailsForEmail
+[08-Oct-2025 00:05:42 Asia/Ho_Chi_Minh] [v0] Booking::getTicketDetailsForEmail() - Bắt đầu lấy thông tin đặt vé ID: 93
+[08-Oct-2025 00:05:42 Asia/Ho_Chi_Minh] [v0] ✅ Đã lấy dữ liệu vé thành công cho booking ID: 93 - Tổng vé: 2
+[08-Oct-2025 00:05:42 Asia/Ho_Chi_Minh] [v0] VNPay - getTicketDetailsForEmail returned: DATA
+[08-Oct-2025 00:05:42 Asia/Ho_Chi_Minh] [v0] VNPay - Ticket data structure: ["maDatVe","ngayDat","tongTienSauGiam","phuongThucThanhToan","emailNguoiDung","passengerEmails","tickets"]
+[08-Oct-2025 00:05:42 Asia/Ho_Chi_Minh] [v0] VNPay - User email: 'phiphamvohoang@gmail.com'
+[08-Oct-2025 00:05:42 Asia/Ho_Chi_Minh] [v0] VNPay - Passenger emails: ["phiphamvohoang@gmail.com","2hdgg@gmail.com"]
+[08-Oct-2025 00:05:42 Asia/Ho_Chi_Minh] [v0] VNPay - Number of tickets: 2
+[08-Oct-2025 00:05:42 Asia/Ho_Chi_Minh] [v0] VNPay - Creating EmailService instance
+[08-Oct-2025 00:05:42 Asia/Ho_Chi_Minh] [v0] VNPay - EmailService created successfully
+[08-Oct-2025 00:05:42 Asia/Ho_Chi_Minh] [v0] VNPay - Calling sendTicketEmail with ticketData
+[08-Oct-2025 00:05:42 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 3: Connection: opening to smtp.gmail.com:587, timeout=300, options=array()
+[08-Oct-2025 00:05:42 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 3: Connection: opened
+[08-Oct-2025 00:05:42 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 2: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP d9443c01a7336-28e8d11085fsm173324415ad.14 - gsmtp
+
+[08-Oct-2025 00:05:42 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: EHLO localhost
+
+[08-Oct-2025 00:05:42 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 2: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [171.226.154.74]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+[08-Oct-2025 00:05:42 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: STARTTLS
+
+[08-Oct-2025 00:05:42 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 2: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+[08-Oct-2025 00:05:43 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: EHLO localhost
+
+[08-Oct-2025 00:05:43 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 2: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [171.226.154.74]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+[08-Oct-2025 00:05:43 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: AUTH LOGIN
+
+[08-Oct-2025 00:05:43 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 2: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[08-Oct-2025 00:05:43 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: [credentials hidden]
+[08-Oct-2025 00:05:43 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 2: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[08-Oct-2025 00:05:43 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: [credentials hidden]
+[08-Oct-2025 00:05:44 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 2: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+[08-Oct-2025 00:05:44 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: MAIL FROM:<xegoosys@gmail.com>
+
+[08-Oct-2025 00:05:44 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 2: SERVER -> CLIENT: 250 2.1.0 OK d9443c01a7336-28e8d11085fsm173324415ad.14 - gsmtp
+
+[08-Oct-2025 00:05:44 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: RCPT TO:<phiphamvohoang@gmail.com>
+
+[08-Oct-2025 00:05:44 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 2: SERVER -> CLIENT: 250 2.1.5 OK d9443c01a7336-28e8d11085fsm173324415ad.14 - gsmtp
+
+[08-Oct-2025 00:05:44 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: DATA
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 2: SERVER -> CLIENT: 354 Go ahead d9443c01a7336-28e8d11085fsm173324415ad.14 - gsmtp
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Date: Wed, 8 Oct 2025 00:05:42 +0700
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: To: phiphamvohoang@gmail.com
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: From: =?UTF-8?Q?H=E1=BB=87_th=E1=BB=91ng_XeGoo?= <xegoosys@gmail.com>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Subject: =?UTF-8?B?WMOhYyBuaOG6rW4gxJHhurd0IHbDqSAtIFhlZ29vIC0gTcOjIMSR4bq3dCB2?=
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:  =?UTF-8?B?w6k6IDkz?=
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Message-ID: <LDDNkz9gnkITnDHH9FU4xlFQnhImjjllYJ0EpVGsu4@localhost>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: X-Mailer: PHPMailer 6.11.1 (https://github.com/PHPMailer/PHPMailer)
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: MIME-Version: 1.0
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:  boundary="b1=_LDDNkz9gnkITnDHH9FU4xlFQnhImjjllYJ0EpVGsu4"
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: --b1=_LDDNkz9gnkITnDHH9FU4xlFQnhImjjllYJ0EpVGsu4
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: HỆ THỐNG XEGOO - XÁC NHẬN ĐẶT VÉ
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Cảm ơn bạn đã đặt vé tại Xegoo!
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: THÔNG TIN ĐẶT VÉ CỦA BẠN
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Mã đặt vé: XG-93
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Ngày đặt: 08/10/2025 00:05
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Tổng tiền: 300.000 VNĐ
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Phương thức thanh toán: VNPay
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: CHI TIẾT VÉ
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Vé #1 - Ghế A03
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Hành khách: Amin Phi
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Tuyến: TP. Hồ Chí Minh → Vũng Tàu
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Ngày khởi hành: 08/10/2025
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Giờ khởi hành: 07:00
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Điểm đón: Bến Xe Chợ Lớn
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Điểm trả: Bến Xe Vũng Tàu
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Biển số xe: 51E-863633
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Tài xế: Lê Văn C
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: SĐT tài xế: 0847272233
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Giá vé: 150.000 VNĐ
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Vé #2 - Ghế A04
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Hành khách: fd
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Tuyến: TP. Hồ Chí Minh → Vũng Tàu
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Ngày khởi hành: 08/10/2025
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Giờ khởi hành: 07:00
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Điểm đón: Bến Xe Chợ Lớn
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Điểm trả: Bến Xe Vũng Tàu
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Biển số xe: 51E-863633
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Tài xế: Lê Văn C
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: SĐT tài xế: 0847272233
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Giá vé: 150.000 VNĐ
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: LƯU Ý QUAN TRỌNG:
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: - Vui lòng có mặt tại điểm đón trước giờ khởi hành 15 phút
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: - Mang theo CMND/CCCD để đối chiếu thông tin
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: - Xuất trình mã QR hoặc mã đặt vé khi lên xe
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: - Liên hệ tài xế hoặc hotline 1900-xxxx nếu cần hỗ trợ
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Chúc bạn có một chuyến đi an toàn và vui vẻ!
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Trân trọng,
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Đội ngũ Xegoo
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: --b1=_LDDNkz9gnkITnDHH9FU4xlFQnhImjjllYJ0EpVGsu4
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Content-Type: multipart/related;
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:  boundary="b2=_LDDNkz9gnkITnDHH9FU4xlFQnhImjjllYJ0EpVGsu4";
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:  type="text/html"
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: --b2=_LDDNkz9gnkITnDHH9FU4xlFQnhImjjllYJ0EpVGsu4
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:         <!DOCTYPE html>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:         <html>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:         <head>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:             <meta charset="UTF-8">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:             <style>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; background: #f5f5f5; }
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 .container { max-width: 650px; margin: 0 auto; padding: 20px; }
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 .header { background: linear-gradient(135deg, #f4481f 0%, #ff6b35 100%); color: white; padding: 35px; text-align: center; border-radius: 12px 12px 0 0; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 .header h2 { margin: 0 0 10px 0; font-size: 28px; }
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 .header p { margin: 0; font-size: 16px; opacity: 0.95; }
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 .content { padding: 30px; background: white; border-radius: 0 0 12px 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 .section-title { font-size: 20px; font-weight: bold; color: #f4481f; margin: 25px 0 15px 0; padding-bottom: 10px; border-bottom: 2px solid #f4481f; }
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 .ticket { margin: 20px 0; padding: 20px; background: #fffef0; border: 2px solid #f4481f; border-radius: 10px; }
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 .ticket h4 { margin: 0 0 15px 0; color: #f4481f; font-size: 18px; }
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 .info-row { margin: 10px 0; display: flex; }
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 .info-label { font-weight: bold; min-width: 140px; color: #555; }
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 .info-value { color: #333; flex: 1; }
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 .qr-code { text-align: center; margin: 20px 0; padding: 20px; background: white; border-radius: 8px; }
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 .qr-code img { max-width: 200px; height: auto; border: 3px solid #f4481f; border-radius: 8px; padding: 10px; }
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 .qr-code p { margin: 10px 0 0 0; font-size: 13px; color: #666; }
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 .warning { background: #fff3cd; padding: 20px; border-radius: 8px; margin: 25px 0; border-left: 4px solid #ffc107; }
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 .warning strong { color: #856404; display: block; margin-bottom: 10px; font-size: 16px; }
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 .warning ul { margin: 10px 0 0 0; padding-left: 20px; }
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 .warning li { margin: 8px 0; color: #856404; }
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 .driver-info { background: #e8f5e9; padding: 15px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #4caf50; }
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 .driver-info .info-row { margin: 8px 0; }
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 .footer { text-align: center; font-size: 12px; color: #666; margin-top: 20px; padding-top: 20px; border-top: 1px solid #ddd; }
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 .highlight { color: #f4481f; font-weight: bold; }
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:             </style>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:         </head>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:         <body>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:             <div class="container">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 <div class="header">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     <h2>🚌 Xegoo</h2>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     <p>Xác nhận đặt vé - Mã đặt vé: 93</p>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 </div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 <div class="content">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     <p style="font-size: 16px; margin-bottom: 20px;">Cảm ơn bạn đã đặt vé tại Xegoo!</p>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     <div class="section-title">📋 Thông tin đặt vé</div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     <div class="info-row">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         <span class="info-label">Mã đặt vé:</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         <span class="info-value highlight">XG-93</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     </div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     <div class="info-row">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         <span class="info-label">Ngày đặt:</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         <span class="info-value">08/10/2025 00:05</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     </div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     <div class="info-row">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         <span class="info-label">Tổng tiền:</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         <span class="info-value highlight">300.000 VNĐ</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     </div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     <div class="info-row">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         <span class="info-label">Phương thức:</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         <span class="info-value">VNPay</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     </div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     <div class="section-title">🎫 Chi tiết vé</div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     <div class="ticket">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         <h4>Vé #1 - Ghế A03</h4>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         <div class="info-row">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <span class="info-label">👤 Hành khách:</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <span class="info-value">Amin Phi</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         </div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         <div class="info-row">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <span class="info-label">📍 Tuyến:</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <span class="info-value">TP. Hồ Chí Minh → Vũng Tàu</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         </div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         <div class="info-row">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <span class="info-label">📅 Ngày khởi hành:</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <span class="info-value">08/10/2025</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         </div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         <div class="info-row">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <span class="info-label">🕐 Giờ khởi hành:</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <span class="info-value highlight">07:00</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         </div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         <div class="info-row">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <span class="info-label">📍 Điểm đón:</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <span class="info-value">Bến Xe Chợ Lớn</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         </div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         <div class="info-row">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <span class="info-label">📍 Điểm trả:</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <span class="info-value">Bến Xe Vũng Tàu</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         </div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         <div class="info-row">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <span class="info-label">🚌 Biển số xe:</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <span class="info-value">51E-863633</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         </div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         <div class="driver-info">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <strong style="color: #2e7d32; margin-bottom: 8px; display: block;">👨‍✈️ Thông tin tài xế</strong>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <div class="info-row">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                                 <span class="info-label">Tên tài xế:</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                                 <span class="info-value">Lê Văn C</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             </div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <div class="info-row">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                                 <span class="info-label">📞 SĐT tài xế:</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                                 <span class="info-value">0847272233</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             </div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         </div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         <div class="info-row">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <span class="info-label">💰 Giá vé:</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <span class="info-value highlight">150.000 VNĐ</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         </div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         <div class="qr-code">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <p style="font-weight: bold; color: #f4481f; margin-bottom: 15px; font-size: 16px;">📱 Mã QR vé của bạn</p>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <img src="cid:qr_0_68e54866101a8" alt="QR Code">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <p>Vui lòng xuất trình mã QR này khi lên xe</p>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         </div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     </div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     <div class="ticket">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         <h4>Vé #2 - Ghế A04</h4>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         <div class="info-row">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <span class="info-label">👤 Hành khách:</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <span class="info-value">fd</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         </div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         <div class="info-row">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <span class="info-label">📍 Tuyến:</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <span class="info-value">TP. Hồ Chí Minh → Vũng Tàu</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         </div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         <div class="info-row">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <span class="info-label">📅 Ngày khởi hành:</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <span class="info-value">08/10/2025</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         </div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         <div class="info-row">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <span class="info-label">🕐 Giờ khởi hành:</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <span class="info-value highlight">07:00</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         </div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         <div class="info-row">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <span class="info-label">📍 Điểm đón:</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <span class="info-value">Bến Xe Chợ Lớn</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         </div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         <div class="info-row">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <span class="info-label">📍 Điểm trả:</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <span class="info-value">Bến Xe Vũng Tàu</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         </div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         <div class="info-row">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <span class="info-label">🚌 Biển số xe:</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <span class="info-value">51E-863633</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         </div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         <div class="driver-info">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <strong style="color: #2e7d32; margin-bottom: 8px; display: block;">👨‍✈️ Thông tin tài xế</strong>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <div class="info-row">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                                 <span class="info-label">Tên tài xế:</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                                 <span class="info-value">Lê Văn C</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             </div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <div class="info-row">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                                 <span class="info-label">📞 SĐT tài xế:</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                                 <span class="info-value">0847272233</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             </div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         </div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         <div class="info-row">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <span class="info-label">💰 Giá vé:</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <span class="info-value highlight">150.000 VNĐ</span>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         </div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         <div class="qr-code">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <p style="font-weight: bold; color: #f4481f; margin-bottom: 15px; font-size: 16px;">📱 Mã QR vé của bạn</p>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <img src="cid:qr_1_68e54866175fe" alt="QR Code">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <p>Vui lòng xuất trình mã QR này khi lên xe</p>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         </div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     </div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     <div class="warning">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         <strong>⚠️ Lưu ý quan trọng:</strong>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         <ul>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <li>Vui lòng có mặt tại điểm đón trước giờ khởi hành <strong>15 phút</strong></li>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <li>Mang theo CMND/CCCD để đối chiếu thông tin</li>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <li>Xuất trình mã QR hoặc mã đặt vé khi lên xe</li>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                             <li>Liên hệ tài xế hoặc hotline <strong>1900-xxxx</strong> nếu cần hỗ trợ</li>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         </ul>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     </div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     <p style="font-size: 16px; margin-top: 25px;">Chúc bạn có một chuyến đi an toàn và vui vẻ! 🎉</p>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     <p style="margin-top: 15px;">Trân trọng,<br><strong style="color: #f4481f;">Đội ngũ Xegoo</strong></p>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 </div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 <div class="footer">
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     <p>Email này được gửi tự động, vui lòng không trả lời.</p>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     <p>&copy; 2025 Xegoo. All rights reserved.</p>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 </div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:             </div>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:         </body>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:         </html>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: --b2=_LDDNkz9gnkITnDHH9FU4xlFQnhImjjllYJ0EpVGsu4
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Content-Type: image/png; name=qr_code_0.png
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Content-Transfer-Encoding: base64
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Content-ID: <qr_0_68e54866101a8>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Content-Disposition: inline; filename=qr_code_0.png
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: iVBORw0KGgoAAAANSUhEUgAAAW4AAAFuAQMAAACbbGDMAAAABlBMVEX///8AAABVwtN+AAAACXBI
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: WXMAAA7EAAAOxAGVKw4bAAAD40lEQVR4nO1bwQ3jMAwT4AEyUlb3SBnAgM4iKTe9xwH3Zo2gSF02
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: D0GiJFqJ+K3f+t915V4LN+vKkXNk3eydpV9nPlGgnGbw+lhxL33e+x/rmvvrePaFnYd/tYNvC+29
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: xC97mwYjfO+ULfdNmdkTzptyMdqVxtuGxGUNT2wH4k+hdjHspi28LFfRVjbbfwo5WtLROi6/YtUD
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: DsK+5r+vv/jdAt6rUlaKouhxGwXOjm+gDbz27krvDx0q6F877Eax1L65FZeG8B1nyOrkJzI0yGnb
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 78YlunKDl/Gu/GR7/Hv/KWoTGR41UbrBsYZ4mkVQkLlZLJ86+niZD3wxmT+sAW90FbMgD42aRVSg
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: bS/49iOE1yK2fkmUPGwjlPDpZV5wOVSgXiZDMxZB4QhN0FIZ2wsODzp8HKx3ymxlVzzgPNcNPhl8
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: A/FHW3brUAamD8L7zODIXWLo55PZYDwWPmxAO5X5wJHexcdlUeW0ZvNAV8oe1AzOjQgGGTJYoFQE
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: RfUN/M4NjjIHPI0Mz4QPLQfdOYIyPOHrdAzBprNjLlUERT/VDI7uCiUP4QxBdudSufi8ywwOyzGZ
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: s8eiuw05XXy4HMsMTpVCNXKmmnUYeB5GP528Cxy+w4MXGkqfVTIzBFkhNsAJTq+KoIqTbCxWE3lQ
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 9+Lhnhc8lswWR65oIVBaVznX6TZ84KDq1REGtTjVd7LpPFGIZQRHSRhsqpC4Uvpx5fZU7zXfnbwL
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: HHMB1G+G2qybocbyR+e9bUsn+MzeXl0YLsldSRcji7fK7ASnQsyzKUhcIeNRGY2uDcMLHjr9JhDn
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: VPfZ5wnDkIBhBr84edRaV691nU+JgnZwDh9RIdZkFqn6Vm/xyN26ZHaCk4E0tsbyOXszWR6+SmYf
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: eLDoW1TWNR0Qq1UKpn1edvCQ8Mm+KklCZKNXwRif2tADfp3CR6eXh5Mgl97Zx1bLDR7tQdxGvZxK
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: YugqSFefCtsGjrpvcOxI1kIDeqmxYAO6Wne3gi8d/lfYLY0DiKohVNz9sOkF71p4SAftswV4GacD
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: qPHEZQeXpsUWnNOy9XsREpuJpAyWZnD1lxS3BAymNehboWzvCH8ZEpHHsUfKxjyeYqthBy/6CU2o
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: sczJweFQNhDfUydGcKyjSSzFYi4dgwOiRzrCJd70uNb6jOd3V/FlSA84xQkpfGVCpvRzdRPGhG8F
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: L/OwLs7TN7zedElWixpN8oJnV8Sj3yzMVHmI5DYRhe1ibnCkenJP9tsJ0e8r0IrpCdeMcPCio9Gj
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: TmHYooURPPgeGDI5iepE2+hXFg65O8FJPPlWRvN1cJdKbrdacx/4b/3W/60/nL/GPtadFtoAAAAA
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: SUVORK5CYII=
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: --b2=_LDDNkz9gnkITnDHH9FU4xlFQnhImjjllYJ0EpVGsu4
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Content-Type: image/png; name=qr_code_1.png
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Content-Transfer-Encoding: base64
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Content-ID: <qr_1_68e54866175fe>
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Content-Disposition: inline; filename=qr_code_1.png
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: iVBORw0KGgoAAAANSUhEUgAAAW4AAAFuAQMAAACbbGDMAAAABlBMVEX///8AAABVwtN+AAAACXBI
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: WXMAAA7EAAAOxAGVKw4bAAAD0klEQVR4nO1by43lMAwTkAJSklt3SSnAgNYiKSc7hwX2zDGCN/nQ
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: PggWJVGeiN/xO/533LnHisgnrge/Ode934x9RYz6vN/XmGbw+lllo7Hv901N2jPqMS+stN+sRlrB
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: +TGfUa/34zPwWEbdj9uouMllCsdeq/2VEYIHTHhpGV/4th89jw7H7/Q5W3g5n74UG12cDRRX4hV2
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: cKDKyf51/eB3C7jG9rChaKbINva2KhaHUePHcIDfeyvxS3lY76/aa8loj+t6/OBg5aCH7anlcwhr
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: WVPrtwhbj17wmxG+gpii/X5dlqv0h4uBqochPCuwl/8hmilTZqivNWhIhHo3OOqGoPEq/YG3wZy1
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: xVBYBB/d4LwYrw4PRYi/WXu9kc8LjgeWnsEaIult6+TRuDGDM5IPTCrCFlEpmuXL7EoMjeCwH2op
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: ChV3diiD8ZrR/eAyUsUuZEDB6vx+AxrLrI+c4wGXWqM4JsImheuXi4XujeCF6qKhNlfX4pP+xywA
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: y0w3OL5MKjdkaCREg/bT1aHMCN5VFFM/GLWSnWPdWkP2Djc4c5+ry03OgIQjW3asm27wRWKWxDVA
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: S4FkeWYrGdcb+Yzg7Cf0bhp0tUt54uhUeoq7feBwLOoTJ0FmepjSLSa9cLnBX+FTKc9ibYGXTBVX
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: VxtucKDm8bx8xEmv0CWBxw3ehN0+B1sefhrdvpsSunzgjFHcXOrUBQX1CCaJQ75I5dgLnmIgxasB
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: htYbVhgQ16cbnNpnytWCRafIG0a92BJvcveBRx8HQKYslYvqzlIq1LqFFRwvKFowO2aSqC2Wn7aM
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: GxwjvwUWXC3/6gDna3cneBcTTAlrf60+sUUVML8SqRFcosViXvxpO0Da+VD1bQeX8doLO1OOLq2G
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: CnfuMCc4XG2SmZp+WJFLM/4UHE5wlOYARmsVqrTUbVA9mrSjE3xSE6XOJ7NBseB3EfY9lxsc2c11
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: zkcwSXze08SB+Lb67IkTfJCbqWyFzlmPDvVa41OA2sCrNFePJVMJslC4ubq3aQfv47HHz0jYK5T1
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: rI51dvAjiHZ7KtSTiauNd+xqBpcCetQ+FKCw4nOaMPHuSCO48prs8B76VcrDsP/JCWzg9D+MRX7S
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: IdlgXb7Okm8fxgjO2xPYyUk0c5zDoWkG76jeMwbP2qzPQT+1I7iuEbz+UvajVpF9GJ+LLe2v054y
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: gnctPnjfedBIOeK8xE/TEX7PPjExGNKJlX9CCUtPePejos9NUPPDMnGUHjd46L835F4n5QnSdjev
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: IsIMrvB+SvPUeerBAjT7dEl3Jmzgv+N3/N/4A86gMYjar3xNAAAAAElFTkSuQmCC
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: --b2=_LDDNkz9gnkITnDHH9FU4xlFQnhImjjllYJ0EpVGsu4--
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: --b1=_LDDNkz9gnkITnDHH9FU4xlFQnhImjjllYJ0EpVGsu4--
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 
+
+[08-Oct-2025 00:05:45 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: .
+
+[08-Oct-2025 00:05:46 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 2: SERVER -> CLIENT: 250 2.0.0 OK  1759856746 d9443c01a7336-28e8d11085fsm173324415ad.14 - gsmtp
+
+[08-Oct-2025 00:05:46 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: QUIT
+
+[08-Oct-2025 00:05:46 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 2: SERVER -> CLIENT: 221 2.0.0 closing connection d9443c01a7336-28e8d11085fsm173324415ad.14 - gsmtp
+
+[08-Oct-2025 00:05:46 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 3: Connection: closed
+[08-Oct-2025 00:05:46 Asia/Ho_Chi_Minh] [v0] Ticket email sent successfully to: phiphamvohoang@gmail.com
+[08-Oct-2025 00:05:46 Asia/Ho_Chi_Minh] [v0] VNPay - sendTicketEmail completed
+[08-Oct-2025 00:05:46 Asia/Ho_Chi_Minh] [v0] VNPay - Ticket email send result: {"success":true,"message":"Email x\u00e1c nh\u1eadn v\u00e9 \u0111\u00e3 \u0111\u01b0\u1ee3c g\u1eedi th\u00e0nh c\u00f4ng!"}
+[08-Oct-2025 00:05:46 Asia/Ho_Chi_Minh] [v0] VNPay - ✓ EMAIL SENT SUCCESSFULLY!
+[08-Oct-2025 00:05:46 Asia/Ho_Chi_Minh] [v0] ========== EMAIL SENDING PROCESS END ==========
+[08-Oct-2025 00:05:46 Asia/Ho_Chi_Minh] [v0] ========== createSuccessfulBooking END - Returning ID: 93 ==========
+[08-Oct-2025 00:05:46 Asia/Ho_Chi_Minh] [v0] Updating seat count for trip 885 by 2
+[08-Oct-2025 00:05:46 Asia/Ho_Chi_Minh] [v0] Trip 885 seat count updated - Total: 16, Booked: 2, Available: 14
+[08-Oct-2025 00:05:46 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:05:46 Asia/Ho_Chi_Minh] [v0] Router - About to call BookingController::success
+[08-Oct-2025 00:05:46 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:05:46 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:05:47 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:05:47 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[08-Oct-2025 00:05:47 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:05:47 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:05:54 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:05:54 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:05:54 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:05:54 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:05:54 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:05:54 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:05:54 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:05:54 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:05:54 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:05:54 Asia/Ho_Chi_Minh] [v0] Router - About to call MyTicketsController::history
+[08-Oct-2025 00:05:54 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:05:55 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:05:55 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:05:55 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:05:55 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:05:55 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[08-Oct-2025 00:05:55 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:05:55 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:05:58 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:05:58 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:05:58 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:05:58 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:05:58 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:05:58 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:05:58 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:05:58 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:05:58 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:05:58 Asia/Ho_Chi_Minh] [v0] Router - About to call MyTicketsController::detail
+[08-Oct-2025 00:05:58 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:05:58 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:05:58 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:05:58 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[08-Oct-2025 00:05:58 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:05:58 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:07:03 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:07:03 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:07:03 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:07:03 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:07:03 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:07:03 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:07:03 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:07:03 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:07:03 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:07:03 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::index
+[08-Oct-2025 00:07:03 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:07:03 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:07:03 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[08-Oct-2025 00:07:03 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:07:03 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:07:11 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:07:11 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:07:11 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:07:11 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:07:11 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:07:11 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:07:11 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:07:11 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:07:11 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:07:11 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::search
+[08-Oct-2025 00:07:11 Asia/Ho_Chi_Minh] [v0] TicketLookup - Search started
+[08-Oct-2025 00:07:11 Asia/Ho_Chi_Minh] [v0] TicketLookup - Ticket code: 135, Contact:  2hdgg@gmail.com
+[08-Oct-2025 00:07:11 Asia/Ho_Chi_Minh] [v0] TicketLookup - Executing SQL query
+[08-Oct-2025 00:07:11 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:07:11 Asia/Ho_Chi_Minh] [v0] TicketLookup - Query executed, result: not found
+[08-Oct-2025 00:07:11 Asia/Ho_Chi_Minh] [v0] TicketLookup - Ticket found: no
+[08-Oct-2025 00:07:11 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:07:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:07:18 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:07:18 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:07:18 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:07:18 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:07:18 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:07:18 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:07:18 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:07:18 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:07:18 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::search
+[08-Oct-2025 00:07:18 Asia/Ho_Chi_Minh] [v0] TicketLookup - Search started
+[08-Oct-2025 00:07:18 Asia/Ho_Chi_Minh] [v0] TicketLookup - Ticket code: 153, Contact:  2hdgg@gmail.com
+[08-Oct-2025 00:07:18 Asia/Ho_Chi_Minh] [v0] TicketLookup - Executing SQL query
+[08-Oct-2025 00:07:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:07:18 Asia/Ho_Chi_Minh] [v0] TicketLookup - Query executed, result: not found
+[08-Oct-2025 00:07:18 Asia/Ho_Chi_Minh] [v0] TicketLookup - Ticket found: no
+[08-Oct-2025 00:07:18 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:07:21 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:07:21 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:07:21 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:07:21 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:07:21 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:07:21 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:07:21 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:07:21 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:07:21 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:07:21 Asia/Ho_Chi_Minh] [v0] Router - About to call MyTicketsController::detail
+[08-Oct-2025 00:07:21 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:07:21 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:07:21 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:07:21 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[08-Oct-2025 00:07:21 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:07:21 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:07:39 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:07:39 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:07:39 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:07:39 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:07:39 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:07:39 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:07:39 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:07:39 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:07:39 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:07:39 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::index
+[08-Oct-2025 00:07:39 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:07:39 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:07:39 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[08-Oct-2025 00:07:39 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:07:39 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:07:46 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:07:46 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:07:46 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:07:46 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:07:46 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:07:46 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:07:46 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:07:46 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:07:46 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:07:46 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::search
+[08-Oct-2025 00:07:46 Asia/Ho_Chi_Minh] [v0] TicketLookup - Search started
+[08-Oct-2025 00:07:46 Asia/Ho_Chi_Minh] [v0] TicketLookup - Ticket code: 136, Contact:  2hdgg@gmail.com
+[08-Oct-2025 00:07:46 Asia/Ho_Chi_Minh] [v0] TicketLookup - Executing SQL query
+[08-Oct-2025 00:07:46 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:07:46 Asia/Ho_Chi_Minh] [v0] TicketLookup - Query executed, result: not found
+[08-Oct-2025 00:07:46 Asia/Ho_Chi_Minh] [v0] TicketLookup - Ticket found: no
+[08-Oct-2025 00:07:46 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:07:55 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:07:55 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:07:55 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:07:55 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:07:55 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[08-Oct-2025 00:07:55 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:07:55 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:07:55 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:07:55 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[08-Oct-2025 00:07:55 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::search
+[08-Oct-2025 00:07:55 Asia/Ho_Chi_Minh] [v0] TicketLookup - Search started
+[08-Oct-2025 00:07:55 Asia/Ho_Chi_Minh] [v0] TicketLookup - Ticket code: 136, Contact: 2hdgg@gmail.com
+[08-Oct-2025 00:07:55 Asia/Ho_Chi_Minh] [v0] TicketLookup - Executing SQL query
+[08-Oct-2025 00:07:55 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:07:55 Asia/Ho_Chi_Minh] [v0] TicketLookup - Query executed, result: found
+[08-Oct-2025 00:07:55 Asia/Ho_Chi_Minh] [v0] TicketLookup - Ticket found: yes
+[08-Oct-2025 00:07:55 Asia/Ho_Chi_Minh] [v0] TicketLookup - Response prepared successfully
+[08-Oct-2025 00:07:55 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:08:10 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:08:10 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[08-Oct-2025 00:08:10 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:08:10 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:08:10 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:08:10 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[08-Oct-2025 00:08:10 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:08:10 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:08:17 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:08:17 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:08:17 Asia/Ho_Chi_Minh] [v0] Router - About to call ProfileController::index
+[08-Oct-2025 00:08:17 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[08-Oct-2025 00:08:17 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[08-Oct-2025 00:08:17 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[08-Oct-2025 00:08:17 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[08-Oct-2025 00:08:17 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully

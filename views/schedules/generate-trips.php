@@ -94,6 +94,7 @@
                             </div>
                         </div>
                         <input type="hidden" name="maTaiXe" id="maTaiXeHidden">
+                        <input type="hidden" name="loaiChoNgoi" id="loaiChoNgoiHidden">
                         <p class="driver-note">
                             <i class="fas fa-info-circle"></i> 
                             Tài xế này đã được phân công trong lịch trình và sẽ tự động áp dụng cho các chuyến xe được sinh ra.
@@ -205,6 +206,28 @@ document.getElementById('maPhuongTien').addEventListener('change', function() {
         document.getElementById('vehicleType').textContent = selectedOption.dataset.type;
         document.getElementById('seatCount').textContent = selectedOption.dataset.seats + ' chỗ';
         document.getElementById('seatType').textContent = selectedOption.dataset.seatType;
+        document.getElementById('loaiChoNgoiHidden').value = selectedOption.dataset.seatType;
+
+        vehicleInfo.style.display = 'block';
+        
+        // Validate when both schedule and vehicle are selected
+        validateTripGeneration();
+    } else {
+        vehicleInfo.style.display = 'none';
+        clearValidationMessages();
+    }
+});
+
+document.getElementById('maPhuongTien').addEventListener('change', function() {
+    const selectedOption = this.options[this.selectedIndex];
+    const vehicleInfo = document.getElementById('vehicleInfo');
+    
+    if (this.value) {
+        document.getElementById('vehicleType').textContent = selectedOption.dataset.type;
+        document.getElementById('seatCount').textContent = selectedOption.dataset.seats + ' chỗ';
+        document.getElementById('seatType').textContent = selectedOption.dataset.seatType;
+
+        document.getElementById('loaiChoNgoiHidden').value = selectedOption.dataset.seatType;
         
         vehicleInfo.style.display = 'block';
         
@@ -215,6 +238,7 @@ document.getElementById('maPhuongTien').addEventListener('change', function() {
         clearValidationMessages();
     }
 });
+
 
 function validateTripGeneration() {
     const scheduleId = document.getElementById('maLichTrinh').value;

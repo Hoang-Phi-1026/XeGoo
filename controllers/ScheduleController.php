@@ -311,6 +311,7 @@ class ScheduleController {
         $vehicleId = $_POST['maPhuongTien'] ?? '';
         $seatType = $_POST['loaiChoNgoi'] ?? '';
         $driverId = !empty($_POST['maTaiXe']) ? $_POST['maTaiXe'] : null;
+
         
         if (empty($scheduleId) || empty($vehicleId) || empty($seatType)) {
             $_SESSION['error'] = 'Vui lòng điền đầy đủ thông tin.';
