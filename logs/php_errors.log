@@ -1,0 +1,391 @@
+[07-Oct-2025 11:00:49 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:00:49 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:00:49 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:00:49 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:00:49 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:00:49 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:00:49 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:00:49 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:00:49 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:00:49 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::search
+[07-Oct-2025 11:00:49 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:00:49 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:03:45 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:03:45 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:03:45 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:03:45 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:03:45 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:03:45 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:03:45 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:03:45 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:03:45 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:03:45 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::index
+[07-Oct-2025 11:03:45 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:03:45 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:03:45 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[07-Oct-2025 11:03:45 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:03:45 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:03:59 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:03:59 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:03:59 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:03:59 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:03:59 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:03:59 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:03:59 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:03:59 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:03:59 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:03:59 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::search
+[07-Oct-2025 11:03:59 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:03:59 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:04:37 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:04:37 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:04:37 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:04:37 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:04:37 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:04:37 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:04:37 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:04:37 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:04:37 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:04:37 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::index
+[07-Oct-2025 11:04:37 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:04:37 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:04:37 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[07-Oct-2025 11:04:37 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:04:37 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:05:25 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:05:25 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:05:25 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:05:25 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:05:25 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:05:25 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:05:25 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:05:25 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:05:25 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:05:25 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::index
+[07-Oct-2025 11:05:25 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:05:25 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:05:25 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[07-Oct-2025 11:05:25 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:05:25 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:05:35 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:05:35 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:05:35 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:05:35 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:05:35 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:05:35 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:05:35 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:05:35 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:05:35 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:05:35 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::search
+[07-Oct-2025 11:05:35 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:05:35 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:07:09 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:07:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:07:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:07:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:07:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:07:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:07:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:07:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:07:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:07:09 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::index
+[07-Oct-2025 11:07:09 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:07:09 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:07:09 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[07-Oct-2025 11:07:09 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:07:09 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:07:14 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:07:14 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:07:14 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:07:14 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:07:14 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:07:14 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:07:14 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:07:14 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:07:14 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:07:14 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::search
+[07-Oct-2025 11:07:14 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:07:14 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:08:29 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:08:29 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:08:29 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:08:29 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:08:29 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:08:29 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:08:29 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:08:29 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:08:29 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:08:29 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::search
+[07-Oct-2025 11:08:29 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:08:29 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:08:37 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:08:37 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:08:37 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:08:37 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:08:37 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:08:37 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:08:37 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:08:37 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:08:37 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:08:37 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::search
+[07-Oct-2025 11:08:37 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:08:37 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:08:46 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:08:46 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:08:46 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:08:46 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:08:46 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:08:46 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:08:46 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:08:46 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:08:46 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:08:46 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::search
+[07-Oct-2025 11:08:46 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:08:46 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:08:49 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:08:49 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:08:49 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:08:49 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:08:49 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:08:49 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:08:49 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:08:49 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:08:49 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:08:49 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::search
+[07-Oct-2025 11:08:49 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:08:49 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:08:52 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:08:52 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[07-Oct-2025 11:08:52 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:08:52 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:08:52 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:08:52 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[07-Oct-2025 11:08:52 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:08:52 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:09:26 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:09:26 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:09:26 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:09:26 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:09:26 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:09:26 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:09:26 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:09:26 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:09:26 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:09:26 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::index
+[07-Oct-2025 11:09:26 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:09:26 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:09:26 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[07-Oct-2025 11:09:26 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:09:26 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:09:40 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:09:40 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:09:40 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:09:40 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:09:40 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:09:40 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:09:40 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:09:40 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:09:40 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:09:40 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::search
+[07-Oct-2025 11:09:40 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:09:40 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::search
+[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] [v0] TicketLookup - Search started
+[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] [v0] TicketLookup - Ticket code: 131, Contact: honghuemui@gmail.com
+[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] [v0] TicketLookup - Executing SQL query
+[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] [v0] TicketLookup - Query executed, result: found
+[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] [v0] TicketLookup - Ticket found: yes
+[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] [v0] TicketLookup - Response prepared successfully
+[07-Oct-2025 11:14:17 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:14:23 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:14:23 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:14:23 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:14:23 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:14:23 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:14:23 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:14:23 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:14:23 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:14:23 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:14:23 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::index
+[07-Oct-2025 11:14:23 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:14:23 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:14:23 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[07-Oct-2025 11:14:23 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:14:23 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::search
+[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] [v0] TicketLookup - Search started
+[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] [v0] TicketLookup - Ticket code: 131, Contact: honghuemui@gmail.com
+[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] [v0] TicketLookup - Executing SQL query
+[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] [v0] TicketLookup - Query executed, result: found
+[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] [v0] TicketLookup - Ticket found: yes
+[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] [v0] TicketLookup - Response prepared successfully
+[07-Oct-2025 11:14:27 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:14:46 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:14:46 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[07-Oct-2025 11:14:46 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:14:46 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:14:46 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:14:46 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[07-Oct-2025 11:14:46 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:14:46 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:14:57 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:14:57 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:14:57 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:14:57 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:14:57 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:14:57 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:14:57 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:14:57 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:14:57 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:14:57 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::index
+[07-Oct-2025 11:14:57 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:14:57 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:14:57 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[07-Oct-2025 11:14:57 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:14:57 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::search
+[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] [v0] TicketLookup - Search started
+[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] [v0] TicketLookup - Ticket code: 131, Contact: honghuemui@gmail.com
+[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] [v0] TicketLookup - Executing SQL query
+[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] [v0] TicketLookup - Query executed, result: found
+[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] [v0] TicketLookup - Ticket found: yes
+[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] [v0] TicketLookup - Response prepared successfully
+[07-Oct-2025 11:15:09 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:15:16 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:15:16 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:15:16 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:15:16 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:15:16 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:15:16 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:15:16 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:15:16 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:15:16 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:15:16 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::search
+[07-Oct-2025 11:15:16 Asia/Ho_Chi_Minh] [v0] TicketLookup - Search started
+[07-Oct-2025 11:15:16 Asia/Ho_Chi_Minh] [v0] TicketLookup - Ticket code: 1344, Contact: honghuemui@gmail.com
+[07-Oct-2025 11:15:16 Asia/Ho_Chi_Minh] [v0] TicketLookup - Executing SQL query
+[07-Oct-2025 11:15:16 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:15:16 Asia/Ho_Chi_Minh] [v0] TicketLookup - Query executed, result: not found
+[07-Oct-2025 11:15:16 Asia/Ho_Chi_Minh] [v0] TicketLookup - Ticket found: no
+[07-Oct-2025 11:15:16 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:15:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:15:30 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[07-Oct-2025 11:15:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:15:30 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:15:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:15:32 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[07-Oct-2025 11:15:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:15:32 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:16:42 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:16:42 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[07-Oct-2025 11:16:42 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:16:42 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:17:00 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:17:00 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[07-Oct-2025 11:17:00 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:17:00 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:17:54 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:17:54 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[07-Oct-2025 11:17:54 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:17:54 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:18:15 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:18:15 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[07-Oct-2025 11:18:15 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:18:15 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:18:20 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:18:20 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:18:20 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:18:20 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:18:20 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:18:20 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:18:20 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:18:20 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:18:20 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:18:20 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::index
+[07-Oct-2025 11:18:20 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:18:20 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:18:20 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[07-Oct-2025 11:18:20 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:18:20 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::index
+[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] === Database Debug ===
+[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] Active routes: 2
+[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] Route: TP. Hồ Chí Minh -> Đà Lạt (SG-DL)
+[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] Route: Đà Lạt -> TP. Hồ Chí Minh (DL-SG)
+[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] Active trips: 77
+[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] Sample trip: TP. Hồ Chí Minh -> Đà Lạt on 2025-10-08
+[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] Sample trip: TP. Hồ Chí Minh -> Đà Lạt on 2025-10-09
+[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] Sample trip: TP. Hồ Chí Minh -> Đà Lạt on 2025-10-10
+[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] === SearchController ===
+[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] Search params: from='', to='', date='', passengers=1
+[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] Form data loaded: 2 cities, 2 popular routes
+[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:23:37 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:23:38 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:23:38 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:23:38 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:23:38 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:23:38 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:23:38 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:23:38 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:23:38 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:23:38 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:23:38 Asia/Ho_Chi_Minh] [v0] Router - About to call MyTicketsController::index
+[07-Oct-2025 11:23:38 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:23:39 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:23:39 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:23:39 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:23:39 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[07-Oct-2025 11:23:39 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:23:39 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:23:40 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:23:40 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:23:40 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:23:40 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:23:40 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 958
+[07-Oct-2025 11:23:40 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:23:40 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:23:40 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:23:40 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\xegoo\lib\phpqrcode\phpqrcode.php on line 3552
+[07-Oct-2025 11:23:40 Asia/Ho_Chi_Minh] [v0] Router - About to call MyTicketsController::detail
+[07-Oct-2025 11:23:40 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:23:40 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[07-Oct-2025 11:23:40 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[07-Oct-2025 11:23:40 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[07-Oct-2025 11:23:40 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[07-Oct-2025 11:23:40 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully

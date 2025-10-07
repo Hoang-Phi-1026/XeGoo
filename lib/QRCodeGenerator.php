@@ -83,7 +83,7 @@ class QRCodeGenerator {
                 'bienSo' => $ticketData['bienSo'] ?? '',
             ], JSON_UNESCAPED_UNICODE);
             
-            QRcode::png($qrData, $tempFile, QR_ECLEVEL_L, 3, 1);
+            QRcode::png($qrData, $outputPath, QR_ECLEVEL_L, 3, 1);
 
             
             return true;
@@ -121,6 +121,35 @@ class QRCodeGenerator {
 
         } catch (Exception $e) {
             error_log("Lỗi QRCodeGenerator::generateBase64: " . $e->getMessage());
+            return null;
+        }
+    }
+
+    public static function generateQRFile($ticketData, $bookingId) {
+        try {
+            // Create QR data with ticket information
+            $qrData = json_encode([
+                'maDatVe' => $bookingId,
+                'maChiTiet' => $ticketData['maChiTiet'] ?? '',
+                'soGhe' => $ticketData['soGhe'] ?? '',
+                'hoTenHanhKhach' => $ticketData['hoTenHanhKhach'] ?? '',
+                'diemDi' => $ticketData['diemDi'] ?? '',
+                'diemDen' => $ticketData['diemDen'] ?? '',
+                'ngayKhoiHanh' => date('Y-m-d', strtotime($ticketData['thoiGianKhoiHanh'] ?? '')),
+                'thoiGianKhoiHanh' => date('H:i', strtotime($ticketData['thoiGianKhoiHanh'] ?? '')),
+                'bienSo' => $ticketData['bienSo'] ?? '',
+            ], JSON_UNESCAPED_UNICODE);
+            
+            // Create temp file path
+            $tempFile = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'qr_ticket_' . ($ticketData['maChiTiet'] ?? uniqid()) . '.png';
+            
+            // Generate QR code with higher quality for email
+            QRcode::png($qrData, $tempFile, QR_ECLEVEL_M, 6, 2);
+            
+            return $tempFile;
+            
+        } catch (Exception $e) {
+            error_log("Lỗi QRCodeGenerator::generateQRFile: " . $e->getMessage());
             return null;
         }
     }

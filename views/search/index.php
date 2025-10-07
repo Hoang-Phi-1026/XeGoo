@@ -17,7 +17,7 @@
                             <span>Khứ hồi</span>
                         </label>
                         <div class="trip-type-guide">
-                            <a href="#">Hướng dẫn mua vé</a>
+                            <a href="<?php echo BASE_URL; ?>/booking-guide" class="text-orange-500 text-sm hover:underline">Hướng dẫn mua vé</a>
                         </div>
                     </div>
 

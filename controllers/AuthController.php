@@ -48,17 +48,17 @@ class AuthController {
     }
 
     private function processLogin() {
-        $sodienthoai = trim($_POST['sodienthoai'] ?? '');
+        $identifier = trim($_POST['identifier'] ?? ''); // Can be email or phone
         $password = trim($_POST['password'] ?? '');
 
         // Validate input
-        if (empty($sodienthoai) || empty($password)) {
+        if (empty($identifier) || empty($password)) {
             $_SESSION['error'] = 'Vui lòng nhập đầy đủ thông tin!';
             return;
         }
 
-        // Attempt login
-        $user = $this->userModel->login($sodienthoai, $password);
+        // Attempt login with email or phone
+        $user = $this->userModel->loginWithIdentifier($identifier, $password);
         
         if ($user) {
             // Login successful
@@ -73,8 +73,137 @@ class AuthController {
             $this->redirectBasedOnRole();
             exit();
         } else {
-            $_SESSION['error'] = 'Số điện thoại hoặc mật khẩu không chính xác!';
+            $_SESSION['error'] = 'Email/Số điện thoại hoặc mật khẩu không chính xác!';
         }
+    }
+
+    public function showForgotPassword() {
+        // If already logged in, redirect
+        if (isset($_SESSION['user_id'])) {
+            $this->redirectBasedOnRole();
+            exit();
+        }
+        
+        require_once __DIR__ . '/../views/auth/forgot-password.php';
+    }
+
+    public function sendResetCode() {
+        header('Content-Type: application/json');
+        
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            echo json_encode(['success' => false, 'message' => 'Method not allowed']);
+            exit();
+        }
+        
+        $input = json_decode(file_get_contents('php://input'), true);
+        $email = trim($input['email'] ?? '');
+        
+        if (empty($email)) {
+            echo json_encode(['success' => false, 'message' => 'Vui lòng nhập email!']);
+            exit();
+        }
+        
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            echo json_encode(['success' => false, 'message' => 'Email không hợp lệ!']);
+            exit();
+        }
+        
+        // Check if email exists
+        $user = $this->userModel->getUserByEmail($email);
+        if (!$user) {
+            echo json_encode(['success' => false, 'message' => 'Email không tồn tại trong hệ thống!']);
+            exit();
+        }
+        
+        // Generate verification code
+        $verificationCode = VerificationCode::generateCode();
+        
+        // Store code in database
+        if (!$this->verificationModel->storeCode($email, $verificationCode)) {
+            echo json_encode(['success' => false, 'message' => 'Có lỗi xảy ra. Vui lòng thử lại!']);
+            exit();
+        }
+        
+        // Send verification email
+        $emailService = new EmailService();
+        $emailResult = $emailService->sendPasswordResetEmail($email, $user['tenNguoiDung'], $verificationCode);
+        
+        if ($emailResult['success']) {
+            $_SESSION['reset_email'] = $email;
+            echo json_encode(['success' => true, 'message' => 'Mã xác nhận đã được gửi đến email của bạn!']);
+        } else {
+            echo json_encode(['success' => false, 'message' => 'Không thể gửi email. Vui lòng thử lại!']);
+        }
+        exit();
+    }
+
+    public function verifyResetCode() {
+        header('Content-Type: application/json');
+        
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            echo json_encode(['success' => false, 'message' => 'Method not allowed']);
+            exit();
+        }
+        
+        $input = json_decode(file_get_contents('php://input'), true);
+        $code = trim($input['code'] ?? '');
+        
+        if (empty($code)) {
+            echo json_encode(['success' => false, 'message' => 'Vui lòng nhập mã xác nhận!']);
+            exit();
+        }
+        
+        if (!isset($_SESSION['reset_email'])) {
+            echo json_encode(['success' => false, 'message' => 'Phiên làm việc đã hết hạn. Vui lòng thử lại!']);
+            exit();
+        }
+        
+        $email = $_SESSION['reset_email'];
+        
+        // Verify code
+        if (!$this->verificationModel->verifyCode($email, $code)) {
+            echo json_encode(['success' => false, 'message' => 'Mã xác nhận không đúng hoặc đã hết hạn!']);
+            exit();
+        }
+        
+        // Generate new random password
+        $newPassword = $this->generateRandomPassword();
+        
+        // Update password in database
+        $result = $this->userModel->updatePasswordByEmail($email, $newPassword);
+        
+        if (!$result['success']) {
+            echo json_encode(['success' => false, 'message' => 'Có lỗi xảy ra khi đặt lại mật khẩu!']);
+            exit();
+        }
+        
+        // Get user info
+        $user = $this->userModel->getUserByEmail($email);
+        
+        // Send new password via email
+        $emailService = new EmailService();
+        $emailResult = $emailService->sendNewPasswordEmail($email, $user['tenNguoiDung'], $newPassword);
+        
+        if ($emailResult['success']) {
+            unset($_SESSION['reset_email']);
+            echo json_encode([
+                'success' => true, 
+                'message' => 'Mật khẩu mới đã được gửi đến email của bạn!',
+                'redirect' => BASE_URL . '/login'
+            ]);
+        } else {
+            echo json_encode(['success' => false, 'message' => 'Không thể gửi mật khẩu mới. Vui lòng liên hệ hỗ trợ!']);
+        }
+        exit();
+    }
+
+    private function generateRandomPassword($length = 8) {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $password = '';
+        for ($i = 0; $i < $length; $i++) {
+            $password .= $characters[rand(0, strlen($characters) - 1)];
+        }
+        return $password;
     }
 
     private function processRegister() {

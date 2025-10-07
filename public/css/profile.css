@@ -1,29 +1,17 @@
 /* Modern Profile Page Design - Clean and Beautiful */
-
-:root {
-  --profile-primary: #0b1d33;
-  --profile-secondary: #1a365d;
-  --profile-accent: #3b82f6;
-  --profile-gold: #fbbf24;
-  --profile-success: #10b981;
-  --profile-danger: #ef4444;
-}
+/* Removed custom color variables to use system colors from main.css */
 
 /* Profile wrapper with full-width cover */
 .profile-wrapper {
   min-height: calc(100vh - 80px);
-  background: #f8fafc;
+  background: var(--bg-primary);
 }
 
+/* Updated cover gradient to use system accent colors */
 /* Modern cover section with gradient */
 .profile-cover {
   position: relative;
-  background: linear-gradient(
-    135deg,
-    var(--profile-primary) 0%,
-    var(--profile-secondary) 50%,
-    var(--profile-accent) 100%
-  );
+  background: linear-gradient(135deg, #d63e1f 0%, #c23518 100%);
   padding: 3rem 0 8rem;
   overflow: hidden;
 }
@@ -31,9 +19,32 @@
 .cover-gradient {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(251, 191, 36, 0.2) 0%, transparent 50%);
+  background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.1) 0%, transparent 50%),
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(255, 255, 255, 0.02) 10px,
+      rgba(255, 255, 255, 0.02) 20px
+    );
   pointer-events: none;
+}
+
+[data-theme="dark"] .profile-cover {
+  background: linear-gradient(135deg, #7a1f8a 0%, #5e1869 100%);
+}
+
+[data-theme="dark"] .cover-gradient {
+  background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.15) 0%, transparent 50%),
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(255, 255, 255, 0.02) 10px,
+      rgba(255, 255, 255, 0.02) 20px
+    );
 }
 
 /* Hero section with avatar and info */
@@ -76,13 +87,14 @@
   transform: scale(1.05);
 }
 
+/* Updated avatar edit button to use system accent color */
 .avatar-edit-btn {
   position: absolute;
   bottom: 5px;
   right: 5px;
   width: 40px;
   height: 40px;
-  background: var(--profile-accent);
+  background: var(--accent-primary);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -95,7 +107,7 @@
 }
 
 .avatar-edit-btn:hover {
-  background: var(--profile-secondary);
+  background: var(--accent-hover);
   transform: scale(1.1);
 }
 
@@ -145,8 +157,9 @@
   font-size: 0.7rem;
 }
 
+/* Updated badge colors to use system status colors */
 .badge-success {
-  background: rgba(16, 185, 129, 0.9);
+  background: rgba(34, 197, 94, 0.9);
   color: white;
 }
 
@@ -161,12 +174,13 @@
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+/* Updated loyalty card to use system colors */
 /* Loyalty quick view card */
 .loyalty-quick-view {
-  background: white;
+  background: var(--bg-lighter);
   border-radius: 16px;
   padding: 1.5rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-xl);
   min-width: 280px;
   display: flex;
   flex-direction: column;
@@ -179,10 +193,11 @@
   gap: 1rem;
 }
 
+/* Updated points icon to use system accent gradient */
 .points-icon {
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, var(--profile-gold), #f59e0b);
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -200,30 +215,32 @@
 
 .points-label {
   font-size: 0.875rem;
-  color: #64748b;
+  color: var(--text-muted);
   font-weight: 600;
 }
 
+/* Updated points value to use system text color */
 .points-value {
   font-size: 1.75rem;
   font-weight: 700;
-  color: var(--profile-primary);
+  color: var(--text-primary);
   line-height: 1;
 }
 
 .points-money {
   font-size: 0.875rem;
-  color: #64748b;
+  color: var(--text-muted);
   font-weight: 600;
 }
 
+/* Updated loyalty button to use system accent color */
 .btn-view-loyalty {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   padding: 0.75rem 1.25rem;
-  background: var(--profile-accent);
+  background: var(--accent-primary);
   color: white;
   border-radius: 8px;
   text-decoration: none;
@@ -232,9 +249,9 @@
 }
 
 .btn-view-loyalty:hover {
-  background: var(--profile-secondary);
+  background: var(--accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  box-shadow: var(--shadow-colored);
 }
 
 /* Main container with elevated card */
@@ -246,17 +263,18 @@
   z-index: 2;
 }
 
+/* Updated profile main card to use system background */
 .profile-main {
-  background: white;
+  background: var(--bg-secondary);
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-lg);
   overflow: hidden;
 }
 
 /* Section styling with clean headers */
 .profile-section {
   padding: 2.5rem;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid var(--border-primary);
 }
 
 .profile-section:last-child {
@@ -267,10 +285,11 @@
   margin-bottom: 2rem;
 }
 
+/* Updated section header to use system text colors */
 .section-header h2 {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--profile-primary);
+  color: var(--text-primary);
   margin: 0 0 0.5rem;
   display: flex;
   align-items: center;
@@ -278,11 +297,11 @@
 }
 
 .section-header h2 i {
-  color: var(--profile-accent);
+  color: var(--accent-primary);
 }
 
 .section-header p {
-  color: #64748b;
+  color: var(--text-muted);
   margin: 0;
   font-size: 0.95rem;
 }
@@ -304,9 +323,10 @@
   grid-column: 1 / -1;
 }
 
+/* Updated form label to use system text color */
 .form-field label {
   font-weight: 600;
-  color: var(--profile-primary);
+  color: var(--text-primary);
   font-size: 0.95rem;
 }
 
@@ -320,46 +340,59 @@
 .input-with-icon i {
   position: absolute;
   left: 1rem;
-  color: #94a3b8;
+  color: var(--text-muted);
   font-size: 1rem;
   pointer-events: none;
 }
 
+/* Updated inputs to use system colors and borders */
 .input-with-icon input,
 .input-with-icon select {
   width: 100%;
   padding: 0.875rem 1rem 0.875rem 3rem;
-  border: 2px solid #e2e8f0;
+  border: 2px solid var(--border-secondary);
   border-radius: 10px;
   font-size: 1rem;
   transition: all 0.3s ease;
-  background: white;
-  color: var(--profile-primary);
+  background: var(--bg-lighter);
+  color: var(--text-primary);
 }
 
 .input-with-icon input:focus,
 .input-with-icon select:focus {
   outline: none;
-  border-color: var(--profile-accent);
-  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 4px rgba(244, 72, 31, 0.1);
 }
 
+[data-theme="dark"] .input-with-icon input:focus,
+[data-theme="dark"] .input-with-icon select:focus {
+  box-shadow: 0 0 0 4px rgba(159, 44, 174, 0.15);
+}
+
+/* Updated textarea to use system colors */
 .form-field textarea {
   width: 100%;
   padding: 0.875rem 1rem;
-  border: 2px solid #e2e8f0;
+  border: 2px solid var(--border-secondary);
   border-radius: 10px;
   font-size: 1rem;
   transition: all 0.3s ease;
   resize: vertical;
   min-height: 100px;
   font-family: inherit;
+  background: var(--bg-lighter);
+  color: var(--text-primary);
 }
 
 .form-field textarea:focus {
   outline: none;
-  border-color: var(--profile-accent);
-  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 4px rgba(244, 72, 31, 0.1);
+}
+
+[data-theme="dark"] .form-field textarea:focus {
+  box-shadow: 0 0 0 4px rgba(159, 44, 174, 0.15);
 }
 
 /* Modern button styling */
@@ -384,31 +417,34 @@
   text-decoration: none;
 }
 
+/* Updated primary button to use system accent color */
 .btn-primary {
-  background: var(--profile-accent);
+  background: var(--accent-primary);
   color: white;
 }
 
 .btn-primary:hover {
-  background: var(--profile-secondary);
+  background: var(--accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
+  box-shadow: var(--shadow-colored);
 }
 
+/* Updated secondary button to use system warning color */
 .btn-secondary {
-  background: var(--profile-gold);
+  background: var(--warning);
   color: white;
 }
 
 .btn-secondary:hover {
-  background: #f59e0b;
+  background: #d97706;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(251, 191, 36, 0.3);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.3);
 }
 
+/* Updated account info section to use system background */
 /* Account info list */
 .account-info {
-  background: #f8fafc;
+  background: var(--bg-tertiary);
 }
 
 .info-list {
@@ -417,14 +453,15 @@
   gap: 1rem;
 }
 
+/* Updated info rows to use system colors */
 .info-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1.5rem;
-  background: white;
+  background: var(--bg-lighter);
   border-radius: 10px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--border-primary);
 }
 
 .info-label {
@@ -432,18 +469,18 @@
   align-items: center;
   gap: 0.75rem;
   font-weight: 600;
-  color: #64748b;
+  color: var(--text-muted);
   font-size: 0.95rem;
 }
 
 .info-label i {
-  color: var(--profile-accent);
+  color: var(--accent-primary);
   font-size: 1.1rem;
 }
 
 .info-value {
   font-weight: 700;
-  color: var(--profile-primary);
+  color: var(--text-primary);
   font-size: 1rem;
 }
 

@@ -14,6 +14,7 @@ $routes = [
     '/login' => ['controller' => 'AuthController', 'action' => 'showLogin'],
     '/register' => ['controller' => 'AuthController', 'action' => 'showRegister'],
     '/verify-email' => ['controller' => 'AuthController', 'action' => 'showVerifyEmail'],
+    '/forgot-password' => ['controller' => 'AuthController', 'action' => 'showForgotPassword'],
     '/logout' => ['controller' => 'AuthController', 'action' => 'logout'],
     '/dashboard' => ['controller' => 'DashboardController', 'action' => 'index'],
     '/admin' => ['controller' => 'AdminController', 'action' => 'index'],
@@ -25,6 +26,8 @@ $routes = [
     '/my-tickets' => ['controller' => 'MyTicketsController', 'action' => 'index'],
     '/my-tickets/history' => ['controller' => 'MyTicketsController', 'action' => 'history'],
     '/my-tickets/detail/{id}' => ['controller' => 'MyTicketsController', 'action' => 'detail'],
+    
+    '/ticket-lookup' => ['controller' => 'TicketLookupController', 'action' => 'index'],
     
     // Vehicle routes
     '/vehicles' => ['controller' => 'VehicleController', 'action' => 'index'],
@@ -112,6 +115,8 @@ $postRoutes = [
     '/resend-verification' => ['controller' => 'AuthController', 'action' => 'resendVerificationCode'],
     '/auth/verify-email' => ['controller' => 'AuthController', 'action' => 'verifyEmail'],
     '/auth/resend-code' => ['controller' => 'AuthController', 'action' => 'resendCode'],
+    '/forgot-password/send-code' => ['controller' => 'AuthController', 'action' => 'sendResetCode'],
+    '/forgot-password/verify-code' => ['controller' => 'AuthController', 'action' => 'verifyResetCode'],
     '/search/api' => ['controller' => 'SearchController', 'action' => 'api'],
     '/booking/process' => ['controller' => 'BookingController', 'action' => 'process'],
     '/booking/complete' => ['controller' => 'BookingController', 'action' => 'complete'],
@@ -166,6 +171,8 @@ $postRoutes = [
     '/payment/momo/create' => ['controller' => 'MoMoController', 'action' => 'createPayment'],
     '/payment/momo/notify' => ['controller' => 'MoMoController', 'action' => 'handleNotify'],
     '/payment/vnpay/create' => ['controller' => 'VNPayController', 'action' => 'createPayment'],
+    
+    '/ticket-lookup/search' => ['controller' => 'TicketLookupController', 'action' => 'search'],
     
     '/my-tickets/cancel/{id}' => ['controller' => 'MyTicketsController', 'action' => 'cancel'],
 ];

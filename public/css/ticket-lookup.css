@@ -1,0 +1,723 @@
+/* Ticket Lookup Page Styles */
+
+.ticket-lookup-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  min-height: calc(100vh - 200px);
+}
+
+/* Header Section */
+.lookup-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.header-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(244, 72, 31, 0.3);
+}
+
+.header-icon i {
+  font-size: 2.5rem;
+  color: white;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Lookup Form */
+.lookup-form-wrapper {
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+.lookup-form {
+  background: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.form-group label i {
+  color: var(--accent-color);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: var(--input-bg);
+  color: var(--text-color);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 4px rgba(244, 72, 31, 0.1);
+}
+
+.form-hint {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.btn-search {
+  width: 100%;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.btn-search:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(244, 72, 31, 0.3);
+}
+
+.btn-search:active {
+  transform: translateY(0);
+}
+
+.btn-search:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Lookup Tips */
+.lookup-tips {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid var(--accent-color);
+}
+
+.lookup-tips h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.lookup-tips h3 i {
+  color: var(--accent-color);
+}
+
+.lookup-tips ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lookup-tips li {
+  padding: 0.5rem 0;
+  color: var(--text-secondary);
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.lookup-tips li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+/* Modern ticket card design inspired by boarding passes */
+.ticket-result {
+  max-width: 800px;
+  margin: 3rem auto;
+  animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.result-header h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-color);
+  font-size: 1.8rem;
+}
+
+.result-header h2 i {
+  color: #10b981;
+}
+
+.btn-close-result {
+  background: var(--card-bg);
+  border: 2px solid var(--border-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text-color);
+}
+
+.btn-close-result:hover {
+  background: var(--accent-color);
+  color: white;
+  border-color: var(--accent-color);
+  transform: rotate(90deg);
+}
+
+/* Ticket card with boarding pass aesthetic */
+.ticket-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+  position: relative;
+}
+
+/* Ticket Header */
+.ticket-header {
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ticket-code-badge {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.badge-label {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.badge-code {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  font-family: "Courier New", monospace;
+}
+
+.ticket-status {
+  padding: 0.5rem 1.25rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  background: white;
+  color: var(--accent-color);
+}
+
+.ticket-status.status-cancelled {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* Ticket Body */
+.ticket-body {
+  padding: 2rem;
+}
+
+/* Modern route display with timeline design */
+.route-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  background: var(--bg-color);
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  border: 2px solid var(--border-color);
+}
+
+.route-point {
+  flex: 1;
+  text-align: center;
+}
+
+.route-time {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+  font-family: "Courier New", monospace;
+}
+
+.route-city {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 0.25rem;
+}
+
+.route-date,
+.route-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.route-connector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  flex: 0 0 auto;
+}
+
+.connector-line {
+  width: 40px;
+  height: 2px;
+  background: var(--border-color);
+  position: relative;
+}
+
+.connector-line::after {
+  content: "";
+  position: absolute;
+  right: -4px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid var(--border-color);
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+}
+
+.connector-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1rem;
+}
+
+/* Trip info grid with icon cards */
+.trip-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.info-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--bg-color);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.info-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(244, 72, 31, 0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-color);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.info-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.info-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Enhanced passenger section */
+.passenger-section {
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-color);
+  margin-bottom: 1.25rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.section-title i {
+  color: var(--accent-color);
+  font-size: 1.25rem;
+}
+
+.passenger-details {
+  background: var(--bg-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+}
+
+.passenger-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.passenger-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-color);
+  font-size: 0.95rem;
+}
+
+.passenger-item i {
+  color: var(--accent-color);
+  width: 20px;
+  text-align: center;
+}
+
+.location-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.location-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.location-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.location-icon.pickup {
+  background: #10b981;
+}
+
+.location-icon.dropoff {
+  background: #f59e0b;
+}
+
+.location-info {
+  flex: 1;
+}
+
+.location-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.location-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-color);
+  line-height: 1.4;
+}
+
+/* Centered QR code section */
+.qr-section {
+  text-align: center;
+  padding: 2rem 0;
+  border-top: 2px dashed var(--border-color);
+}
+
+.qr-container {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.qr-code-box {
+  padding: 1.5rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 3px solid var(--accent-color);
+}
+
+.qr-code-box img {
+  display: block;
+  width: 200px;
+  height: 200px;
+}
+
+.qr-instructions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.qr-instructions i {
+  color: var(--accent-color);
+}
+
+/* Decorative ticket footer */
+.ticket-footer {
+  background: var(--bg-color);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  position: relative;
+  border-top: 2px dashed var(--border-color);
+}
+
+.footer-pattern {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: radial-gradient(circle at 10px 10px, transparent 10px, var(--card-bg) 10px) 0 0,
+    radial-gradient(circle at 10px 10px, transparent 10px, var(--card-bg) 10px) 20px 0;
+  background-size: 40px 20px;
+  background-repeat: repeat-x;
+}
+
+.footer-text {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+/* Error Message */
+.error-message {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fee2e2;
+  border: 2px solid #ef4444;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+}
+
+.error-message i {
+  font-size: 1.5rem;
+  color: #dc2626;
+}
+
+.error-message p {
+  margin: 0;
+  color: #991b1b;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ticket-lookup-container {
+    padding: 1rem;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .lookup-form {
+    padding: 1.5rem;
+  }
+
+  .ticket-body {
+    padding: 1.5rem;
+  }
+
+  .ticket-header {
+    padding: 1.25rem 1.5rem;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .route-display {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .route-connector {
+    transform: rotate(90deg);
+  }
+
+  .trip-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .passenger-row {
+    grid-template-columns: 1fr;
+  }
+
+  .location-row {
+    grid-template-columns: 1fr;
+  }
+
+  .qr-code-box img {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+/* Dark Mode Adjustments */
+@media (prefers-color-scheme: dark) {
+  .header-icon {
+    box-shadow: 0 4px 20px rgba(159, 44, 174, 0.3);
+  }
+
+  .qr-code-box {
+    background: white;
+  }
+
+  .error-message {
+    background: rgba(254, 226, 226, 0.1);
+    border-color: #ef4444;
+  }
+
+  .error-message p {
+    color: #fca5a5;
+  }
+
+  .ticket-status {
+    background: rgba(255, 255, 255, 0.95);
+  }
+
+  .ticket-status.status-cancelled {
+    background: rgba(239, 68, 68, 0.2);
+    color: #fca5a5;
+  }
+
+  .info-icon {
+    background: rgba(159, 44, 174, 0.15);
+  }
+}

@@ -27,8 +27,8 @@ require_once __DIR__ . '/../layouts/header.php';
 
         <form method="POST" action="<?php echo BASE_URL; ?>/login" class="login-form">
             <div class="form-group">
-                <label for="sodienthoai">Nhập Số Điện Thoại</label>
-                <input type="text" id="sodienthoai" name="sodienthoai" required>
+                <label for="identifier">Email hoặc Số Điện Thoại</label>
+                <input type="text" id="identifier" name="identifier" placeholder="Nhập email hoặc số điện thoại" required>
             </div>
             
             <div class="form-group">

@@ -5,6 +5,7 @@ ini_set('display_errors', 1);
 require_once __DIR__ . '/../config/config.php';
 require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../lib/QRCodeGenerator.php';
+require_once __DIR__ . '/../lib/EmailService.php';
 
 class MyTicketsController {
     
@@ -211,6 +212,28 @@ class MyTicketsController {
                 
                 // Update user total points
                 $this->updateUserTotalPoints($userId);
+            }
+            
+            $emailService = new EmailService();
+            
+            // Get user email
+            $userSql = "SELECT email FROM nguoidung WHERE maNguoiDung = ?";
+            $userInfo = fetch($userSql, [$userId]);
+            
+            // Prepare booking data for email
+            $emailBookingData = [
+                'maDatVe' => $bookingInfo['maDatVe'],
+                'ngayDat' => $bookingInfo['ngayDat'],
+                'tongTienSauGiam' => $bookingInfo['tongTienSauGiam'],
+                'phuongThucThanhToan' => $bookingInfo['phuongThucThanhToan'],
+                'emailNguoiDung' => $userInfo['email'] ?? ''
+            ];
+            
+            // Send cancellation email
+            $emailResult = $emailService->sendCancellationEmail($emailBookingData, $bookingDetails, $refundPoints);
+            
+            if (!$emailResult['success']) {
+                error_log("[v0] Failed to send cancellation email: " . $emailResult['message']);
             }
             
             query("COMMIT");

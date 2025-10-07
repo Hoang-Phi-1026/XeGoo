@@ -40,7 +40,7 @@ class Booking {
                 return null;
             }
 
-            // === LẤY CHI TIẾT VÉ (CÓ GIÁ VÉ) ===
+            // === LẤY CHI TIẾT VÉ (CÓ GIÁ VÉ VÀ THÔNG TIN TÀI XẾ) ===
             $ticketsSql = "
                 SELECT 
                     dv.maDatVe,
@@ -74,7 +74,10 @@ class Booking {
 
                     p.bienSo,
                     lp.tenLoaiPhuongTien,
-                    lp.soChoMacDinh
+                    lp.soChoMacDinh,
+                    
+                    tx.tenNguoiDung AS tenTaiXe,
+                    tx.soDienThoai AS soDienThoaiTaiXe
                 FROM datve dv
                 INNER JOIN chitiet_datve cd ON dv.maDatVe = cd.maDatVe
                 INNER JOIN ghe g ON cd.maGhe = g.maGhe
@@ -85,6 +88,7 @@ class Booking {
                 INNER JOIN loaiphuongtien lp ON p.maLoaiPhuongTien = lp.maLoaiPhuongTien
                 LEFT JOIN tuyenduong_diemdontra dd ON cd.maDiemDon = dd.maDiem
                 LEFT JOIN tuyenduong_diemdontra dt ON cd.maDiemTra = dt.maDiem
+                LEFT JOIN nguoidung tx ON c.maTaiXe = tx.maNguoiDung
                 WHERE dv.maDatVe = ?
                 ORDER BY c.thoiGianKhoiHanh ASC
             ";

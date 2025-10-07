@@ -8,6 +8,40 @@ class User {
         $this->db = Database::getInstance();
     }
 
+    public function loginWithIdentifier($identifier, $password) {
+        try {
+            // Check if identifier is email or phone
+            $isEmail = filter_var($identifier, FILTER_VALIDATE_EMAIL);
+            
+            if ($isEmail) {
+                $sql = "SELECT nd.*, vt.tenVaiTro, tt.tenTrangThai 
+                        FROM nguoidung nd 
+                        LEFT JOIN vaitro vt ON nd.maVaiTro = vt.maVaiTro 
+                        LEFT JOIN trangthaitaikhoan tt ON nd.maTrangThai = tt.maTrangThai 
+                        WHERE nd.eMail = ? AND nd.maTrangThai = 0";
+            } else {
+                $sql = "SELECT nd.*, vt.tenVaiTro, tt.tenTrangThai 
+                        FROM nguoidung nd 
+                        LEFT JOIN vaitro vt ON nd.maVaiTro = vt.maVaiTro 
+                        LEFT JOIN trangthaitaikhoan tt ON nd.maTrangThai = tt.maTrangThai 
+                        WHERE nd.soDienThoai = ? AND nd.maTrangThai = 0";
+            }
+            
+            $stmt = $this->db->prepare($sql);
+            $stmt->execute([$identifier]);
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($user && $password === $user['matKhau']) {
+                return $user;
+            }
+            
+            return false;
+        } catch (PDOException $e) {
+            error_log("Login error: " . $e->getMessage());
+            return false;
+        }
+    }
+
     public function login($sodienthoai, $password) {
         try {
             $sql = "SELECT nd.*, vt.tenVaiTro, tt.tenTrangThai 
@@ -28,6 +62,49 @@ class User {
         } catch (PDOException $e) {
             error_log("Login error: " . $e->getMessage());
             return false;
+        }
+    }
+
+    public function getUserByEmail($email) {
+        try {
+            $sql = "SELECT nd.*, vt.tenVaiTro, tt.tenTrangThai 
+                    FROM nguoidung nd 
+                    LEFT JOIN vaitro vt ON nd.maVaiTro = vt.maVaiTro 
+                    LEFT JOIN trangthaitaikhoan tt ON nd.maTrangThai = tt.maTrangThai 
+                    WHERE nd.eMail = ?";
+            
+            $stmt = $this->db->prepare($sql);
+            $stmt->execute([$email]);
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            error_log("Get user by email error: " . $e->getMessage());
+            return false;
+        }
+    }
+
+    public function updatePasswordByEmail($email, $newPassword) {
+        try {
+            $sql = "UPDATE nguoidung SET matKhau = ? WHERE eMail = ?";
+            $stmt = $this->db->prepare($sql);
+            $result = $stmt->execute([$newPassword, $email]);
+            
+            if ($result) {
+                return [
+                    'success' => true,
+                    'message' => 'Cập nhật mật khẩu thành công!'
+                ];
+            } else {
+                return [
+                    'success' => false,
+                    'message' => 'Có lỗi xảy ra khi cập nhật mật khẩu!'
+                ];
+            }
+        } catch (PDOException $e) {
+            error_log("Update password error: " . $e->getMessage());
+            return [
+                'success' => false,
+                'message' => 'Có lỗi xảy ra khi cập nhật mật khẩu!'
+            ];
         }
     }
 
