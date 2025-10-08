@@ -11,6 +11,7 @@
         </div>
     </div>
 
+
     <div class="form-container">
         <form method="POST" action="<?php echo BASE_URL; ?>/schedules/store" class="schedule-form">
             <div class="form-grid">
@@ -66,10 +67,12 @@
                                         <?php echo (isset($_SESSION['form_data']['maTaiXe']) && $_SESSION['form_data']['maTaiXe'] == $driver['maNguoiDung']) ? 'selected' : ''; ?>>
                                     <?php echo htmlspecialchars($driver['tenNguoiDung']) . ' - ' . $driver['soDienThoai']; ?>
                                 </option>
+        
                             <?php endforeach; ?>
                         </select>
                     </div>
                 </div>
+
 
                 <!-- Schedule Period -->
                 <div class="form-section">
