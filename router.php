@@ -105,6 +105,11 @@ $routes = [
     // API routes for promotions and loyalty
     '/api/promotions/active' => ['controller' => 'PromotionController', 'action' => 'getActive'],
     '/api/loyalty/points' => ['controller' => 'LoyaltyController', 'action' => 'getPoints'],
+    
+    // Driver routes for schedule and report features
+    '/driver/schedule' => ['controller' => 'DriverScheduleController', 'action' => 'index'],
+    '/driver/report' => ['controller' => 'DriverReportController', 'action' => 'index'],
+    '/driver/report/attendance/{id}' => ['controller' => 'DriverReportController', 'action' => 'attendance'],
 ];
 
 // Define POST routes
@@ -175,6 +180,9 @@ $postRoutes = [
     '/ticket-lookup/search' => ['controller' => 'TicketLookupController', 'action' => 'search'],
     
     '/my-tickets/cancel/{id}' => ['controller' => 'MyTicketsController', 'action' => 'cancel'],
+    
+    // Driver POST route for confirming departure
+    '/driver/report/confirm-departure' => ['controller' => 'DriverReportController', 'action' => 'confirmDeparture'],
 ];
 
 // Get current URL path and remove base directory
