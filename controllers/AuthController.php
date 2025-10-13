@@ -2,6 +2,7 @@
 require_once __DIR__ . '/../models/User.php';
 require_once __DIR__ . '/../lib/EmailService.php';
 require_once __DIR__ . '/../models/VerificationCode.php';
+require_once __DIR__ . '/../config/config.php';
 
 class AuthController {
     private $userModel;
@@ -50,12 +51,24 @@ class AuthController {
     private function processLogin() {
         $identifier = trim($_POST['identifier'] ?? ''); // Can be email or phone
         $password = trim($_POST['password'] ?? '');
+        $recaptchaResponse = $_POST['g-recaptcha-response'] ?? '';
+
 
         // Validate input
         if (empty($identifier) || empty($password)) {
             $_SESSION['error'] = 'Vui lòng nhập đầy đủ thông tin!';
             return;
         }
+
+        if (empty($recaptchaResponse)) {
+        $_SESSION['error'] = 'Vui lòng xác nhận bạn không phải là robot!';
+        return;
+    }
+
+    if (!$this->verifyRecaptcha($recaptchaResponse)) {
+        $_SESSION['error'] = 'Xác thực reCAPTCHA thất bại. Vui lòng thử lại!';
+        return;
+    }
 
         // Attempt login with email or phone
         $user = $this->userModel->loginWithIdentifier($identifier, $password);
@@ -207,6 +220,18 @@ class AuthController {
     }
 
     private function processRegister() {
+        $recaptchaResponse = $_POST['g-recaptcha-response'] ?? '';
+        
+        if (empty($recaptchaResponse)) {
+        $_SESSION['error'] = 'Vui lòng xác nhận bạn không phải là robot!';
+        return;
+    }
+
+    if (!$this->verifyRecaptcha($recaptchaResponse)) {
+        $_SESSION['error'] = 'Xác thực reCAPTCHA thất bại. Vui lòng thử lại!';
+        return;
+    }
+
         $data = [
             'tenNguoiDung' => trim($_POST['tenNguoiDung'] ?? ''),
             'soDienThoai' => trim($_POST['soDienThoai'] ?? ''),
@@ -475,10 +500,10 @@ class AuthController {
                 header('Location: ' . BASE_URL . '/admin');
                 break;
             case 2: // Support staff - redirect to dashboard
-                header('Location: ' . BASE_URL . '/dashboard');
+                header('Location: ' . BASE_URL . '/');
                 break;
             case 3: // Driver - redirect to dashboard
-                header('Location: ' . BASE_URL . '/dashboard');
+                header('Location: ' . BASE_URL . '/');
                 break;
             case 4: // Customer - redirect to home
             default:
@@ -504,4 +529,62 @@ class AuthController {
             exit();
         }
     }
+
+    private function verifyRecaptcha($response) {
+    if (empty($response)) {
+        error_log("[v0] reCAPTCHA response is empty");
+        return false;
+    }
+
+    $secretKey = RECAPTCHA_SECRET_KEY;
+    $verifyUrl = 'https://www.google.com/recaptcha/api/siteverify';
+    $data = [
+        'secret' => $secretKey,
+        'response' => $response,
+        'remoteip' => $_SERVER['REMOTE_ADDR'] ?? ''
+    ];
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $verifyUrl);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 10); // 10 giây timeout
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true); // Xác thực SSL
+
+    try {
+        $result = curl_exec($ch);
+        if ($result === false) {
+            error_log("[v0] reCAPTCHA verification failed: " . curl_error($ch));
+            curl_close($ch);
+            return false;
+        }
+
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        if ($httpCode != 200) {
+            error_log("[v0] reCAPTCHA HTTP error: " . $httpCode);
+            curl_close($ch);
+            return false;
+        }
+
+        $resultJson = json_decode($result, true);
+        curl_close($ch);
+
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            error_log("[v0] reCAPTCHA JSON decode error: " . json_last_error_msg());
+            return false;
+        }
+
+        if (isset($resultJson['success']) && $resultJson['success']) {
+            return true;
+        }
+
+        error_log("[v0] reCAPTCHA verification failed: " . json_encode($resultJson));
+        return false;
+    } catch (Exception $e) {
+        error_log("[v0] reCAPTCHA verification error: " . $e->getMessage());
+        if ($ch) curl_close($ch);
+        return false;
+    }
+}
 }

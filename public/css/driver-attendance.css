@@ -26,7 +26,7 @@
   align-items: center;
   gap: var(--space-sm);
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .back-btn:hover {
@@ -44,11 +44,11 @@
 
 /* Compact trip summary with better visual hierarchy */
 .trip-summary {
-  background: linear-gradient(135deg, #ff6b00 0%, #ff8533 100%);
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-light) 100%);
   border-radius: var(--radius-lg);
   padding: var(--space-xl);
   margin-bottom: var(--space-xl);
-  box-shadow: 0 4px 12px rgba(255, 107, 0, 0.15);
+  box-shadow: var(--shadow-lg);
   color: white;
 }
 
@@ -64,7 +64,7 @@
 
 .summary-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: var(--space-md);
 }
 
@@ -87,12 +87,11 @@
 .summary-item .value {
   font-weight: 700;
   color: white;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .summary-item .value.highlight {
-  font-size: 1.4rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 1.3rem;
 }
 
 /* Compact passengers section */
@@ -162,7 +161,7 @@
 .bus-layout {
   background: #fafafa;
   border-radius: var(--radius-lg);
-  padding: var(--space-lg);
+  padding: var(--space-xl);
   margin-bottom: var(--space-lg);
   border: 2px solid #e5e7eb;
 }
@@ -221,10 +220,11 @@
   background: white;
   border: 2px solid #e5e7eb;
   border-radius: var(--radius-md);
-  padding: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
   transition: all 0.2s ease;
   position: relative;
-  min-height: 70px;
+  min-height: 65px;
+  min-width: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -243,19 +243,19 @@
 .seat-card.present {
   background: #f0fdf4;
   border-color: #22c55e;
-  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.1);
 }
 
 .seat-card.absent {
   background: #fef2f2;
   border-color: #ef4444;
-  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.1);
 }
 
 .seat-card.occupied {
   background: #fff7ed;
-  border-color: #ff6b00;
-  box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 2px rgba(244, 72, 31, 0.1);
 }
 
 .seat-number {
@@ -270,10 +270,6 @@
   letter-spacing: 0.5px;
 }
 
-.seat-card.empty .seat-number {
-  background: #9ca3af;
-}
-
 .seat-card.present .seat-number {
   background: #22c55e;
 }
@@ -283,7 +279,7 @@
 }
 
 .seat-card.occupied .seat-number {
-  background: #ff6b00;
+  background: var(--accent-primary);
 }
 
 .passenger-name {
@@ -507,14 +503,14 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-sm);
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-md);
 }
 
 .btn-confirm:hover {
   background: #16a34a;
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(34, 197, 94, 0.4);
+  box-shadow: var(--shadow-lg);
 }
 
 .btn-confirm:active {
@@ -540,6 +536,59 @@
   opacity: 0.5;
 }
 
+/* New layout structure matching booking page */
+.floors-container {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.floor-section {
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+}
+
+.floor-title {
+  text-align: center;
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: var(--space-md);
+  padding: var(--space-sm);
+  background: white;
+  border-radius: var(--radius-sm);
+  border: 1px solid #e5e7eb;
+}
+
+.floor-content {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  border: 1px solid #e5e7eb;
+}
+
+.seats-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.seat-row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+}
+
+.seat-column-left,
+.seat-column-right {
+  display: flex;
+  gap: 12px;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .attendance-container {
@@ -550,9 +599,29 @@
     font-size: 1.5rem;
   }
 
-  .deck-layout {
-    grid-template-columns: 1fr;
-    gap: var(--space-md);
+  /* Updated responsive layout for floors */
+  .floors-container {
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .floor-section {
+    max-width: 100%;
+  }
+
+  .seat-row {
+    gap: var(--space-lg);
+  }
+
+  .seat-column-left,
+  .seat-column-right {
+    gap: var(--space-sm);
+  }
+
+  .seat-card {
+    min-width: 70px;
+    min-height: 60px;
+    padding: var(--space-xs) var(--space-sm);
   }
 
   .summary-grid {

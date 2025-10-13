@@ -35,6 +35,10 @@ require_once __DIR__ . '/../layouts/header.php';
                 <label for="password">Nhập Mật khẩu</label>
                 <input type="password" id="password" name="password" required>
             </div>
+
+            <div class="form-group">
+                <div class="g-recaptcha" data-sitekey="<?php echo RECAPTCHA_SITE_KEY; ?>"></div>
+            </div>
             
             <div class="form-actions">
                 <button type="submit" class="btn-login">Đăng nhập</button>
@@ -47,6 +51,9 @@ require_once __DIR__ . '/../layouts/header.php';
         </form>
     </div>
 </div>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 
 <?php
 // Include footer

@@ -161,7 +161,7 @@
   transition: all var(--transition-fast);
   box-shadow: var(--shadow-sm);
   position: relative;
-  overflow: hidden;
+  overflow: visible; /* allow pseudo elements and focus rings to show */
 }
 
 .btn-login::before {
@@ -434,6 +434,28 @@
   color: var(--accent-secondary);
   background: var(--bg-primary);
   text-decoration: underline;
+}
+
+/* reCAPTCHA Styling */
+.g-recaptcha {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: var(--space-md) 0;
+  transform: none; /* avoid scaling that may hide native checkbox */
+  min-height: 74px; /* ensure enough height for widget */
+}
+
+@media (max-width: 480px) {
+  .g-recaptcha {
+    min-height: 68px;
+  }
+}
+
+@media (max-width: 360px) {
+  .g-recaptcha {
+    min-height: 62px;
+  }
 }
 
 /* Responsive design */

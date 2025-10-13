@@ -89,6 +89,11 @@ require_once __DIR__ . '/../layouts/header.php';
                 <label for="terms">Tôi đồng ý với <a href="<?php echo BASE_URL; ?>/terms" target="_blank">Điều khoản dịch vụ</a> và <a href="<?php echo BASE_URL; ?>/privacy" target="_blank">Chính sách bảo mật</a></label>
             </div>
             
+            <!-- Added reCAPTCHA widget -->
+            <div class="form-group">
+                <div class="g-recaptcha" data-sitekey="<?php echo RECAPTCHA_SITE_KEY; ?>"></div>
+            </div>
+            
             <div class="form-actions">
                 <button type="submit" class="btn-register">Đăng ký</button>
             </div>
@@ -273,6 +278,8 @@ require_once __DIR__ . '/../layouts/header.php';
     border: 1px solid #cfc;
 }
 </style>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {

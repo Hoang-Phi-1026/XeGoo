@@ -187,10 +187,11 @@ $postRoutes = [
 
 // Get current URL path and remove base directory
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-$basePath = '/xegoo';
-if (strpos($path, $basePath) === 0) {
-    $path = substr($path, strlen($basePath));
+$baseUrlPath = parse_url(BASE_URL, PHP_URL_PATH) ?? '';
+if (strpos($path, $baseUrlPath) === 0) {
+    $path = substr($path, strlen($baseUrlPath));
 }
+
 if ($path === '' || $path === '/') {
     $path = '/';
 }

@@ -199,7 +199,7 @@
                 <div class="passengers-list">
                     <?php foreach ($passengers as $passenger): ?>
                         <div class="passenger-detail-card">
-                            <div class="seat-indicator">
+                            <div class="seat-indicator"> 
                                 <?php echo htmlspecialchars($passenger['soGhe']); ?>
                             </div>
                             <div class="passenger-details-content">
@@ -270,7 +270,7 @@
                 </div>
                 
                 <div class="form-actions">
-                    <button type="submit" class="btn-confirm">
+                    <button type="button" class="btn-confirm" id="confirmDepartureBtn">
                         <i class="fas fa-check-circle"></i>
                         Xác Nhận Khởi Hành Chuyến Đi
                     </button>
@@ -279,7 +279,44 @@
         </div>
     </form>
 </div>
-
+<!-- Added confirmation modal for departure -->
+<div id="confirmModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <i class="fas fa-exclamation-triangle"></i>
+            <h3>Xác Nhận Khởi Hành</h3>
+        </div>
+        <div class="modal-body">
+            <p>Bạn có chắc chắn muốn xác nhận khởi hành chuyến đi này không?</p>
+            <p class="modal-warning">
+                <i class="fas fa-info-circle"></i>
+                Sau khi xác nhận, trạng thái chuyến xe sẽ được cập nhật thành "Khởi hành" và không thể thay đổi.
+            </p>
+            <div class="modal-summary">
+                <div class="summary-row">
+                    <span>Tổng số hành khách:</span>
+                    <strong><?php echo count($passengers); ?> người</strong>
+                </div>
+                <div class="summary-row">
+                    <span>Đã lên xe:</span>
+                    <strong id="presentCount">0</strong>
+                </div>
+                <div class="summary-row">
+                    <span>Vắng mặt:</span>
+                    <strong id="absentCount">0</strong>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn-cancel" id="cancelBtn">
+                <i class="fas fa-times"></i> Hủy
+            </button>
+            <button type="button" class="btn-confirm-modal" id="confirmBtn">
+                <i class="fas fa-check"></i> Xác Nhận Khởi Hành
+            </button>
+        </div>
+    </div>
+</div>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     console.log('[v0] Initializing attendance page');
@@ -362,6 +399,46 @@ function restoreFormData() {
 document.querySelector('.attendance-form').addEventListener('submit', function() {
     localStorage.removeItem('attendance_draft_<?php echo $tripId; ?>');
     console.log('[v0] Form submitted, cleared saved data');
+});
+const modal = document.getElementById('confirmModal');
+const confirmDepartureBtn = document.getElementById('confirmDepartureBtn');
+const cancelBtn = document.getElementById('cancelBtn');
+const confirmBtn = document.getElementById('confirmBtn');
+const attendanceForm = document.querySelector('.attendance-form');
+
+confirmDepartureBtn.addEventListener('click', function() {
+    // Calculate attendance statistics
+    const presentRadios = document.querySelectorAll('.attendance-radio[value="Đã lên xe"]:checked');
+    const absentRadios = document.querySelectorAll('.attendance-radio[value="Vắng mặt"]:checked');
+    
+    document.getElementById('presentCount').textContent = presentRadios.length + ' người';
+    document.getElementById('absentCount').textContent = absentRadios.length + ' người';
+    
+    // Show modal
+    modal.style.display = 'flex';
+});
+
+cancelBtn.addEventListener('click', function() {
+    modal.style.display = 'none';
+});
+
+confirmBtn.addEventListener('click', function() {
+    // Submit the form
+    attendanceForm.submit();
+});
+
+// Close modal when clicking outside
+window.addEventListener('click', function(event) {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && modal.style.display === 'flex') {
+        modal.style.display = 'none';
+    }
 });
 </script>
 

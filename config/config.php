@@ -1,4 +1,5 @@
 <?php
+ini_set('display_errors', 1);
 if (!defined('BASE_URL')) {
     // Auto-detect base URL if possible
     $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
@@ -52,6 +53,13 @@ if (!defined('DB_USER')) {
 }
 if (!defined('DB_PASS')) {
     define('DB_PASS', '');
+}
+
+if (!defined('RECAPTCHA_SITE_KEY')) {
+    define('RECAPTCHA_SITE_KEY', '6LeRdugrAAAAAPQM0iFjiYo5fvnsuxBZVAd05W8P');
+}
+if (!defined('RECAPTCHA_SECRET_KEY')) {
+    define('RECAPTCHA_SECRET_KEY', '6LeRdugrAAAAAPRrTUxosxFZ97Dlq1KtnboxILL0');
 }
 
 date_default_timezone_set('Asia/Ho_Chi_Minh');

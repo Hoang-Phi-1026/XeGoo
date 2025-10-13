@@ -1,0 +1,1542 @@
+[13-Oct-2025 15:46:19 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 15:46:19 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 15:46:19 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 15:46:19 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 15:46:19 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 15:46:19 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 15:54:54 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 15:54:54 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 15:54:55 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 15:54:55 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 15:54:55 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 15:54:55 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 15:55:19 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 15:55:19 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 15:55:19 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 15:55:19 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 15:55:19 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 15:55:19 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:00:28 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:00:28 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:00:28 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:00:28 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:00:28 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:00:28 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:01:00 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:01:00 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:01:00 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:01:00 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:01:00 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:01:00 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:04:02 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:04:02 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:04:02 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:04:02 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:04:02 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:04:02 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:04:09 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:04:09 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:04:09 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:04:09 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:04:09 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:04:09 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:04:09 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:04:09 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:04:09 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:04:09 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:06:07 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:06:07 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:06:07 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:06:07 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:06:07 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:06:07 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:06:07 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:06:07 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:06:07 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:06:07 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:06:10 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:06:10 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:06:10 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:06:10 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:06:10 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:06:10 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:11:48 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:11:48 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:11:49 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:11:49 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:11:49 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:11:49 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:13:34 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:13:34 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:13:34 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:13:34 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:13:34 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:13:34 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:13:57 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:13:57 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:13:57 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:13:57 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:13:57 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:13:57 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:14:17 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:14:17 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:14:17 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:14:17 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:14:17 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:14:17 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:20:34 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:20:34 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:20:35 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:20:35 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:20:35 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:20:35 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:21:39 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:21:39 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:21:39 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:21:39 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:21:56 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:21:56 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:21:56 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:21:56 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:21:56 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:21:56 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:22:35 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:22:35 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:22:35 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[13-Oct-2025 16:22:35 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:22:35 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:22:35 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:22:35 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:22:35 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:23:11 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:23:11 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:23:11 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[13-Oct-2025 16:23:11 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:23:11 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:23:11 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:23:11 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:23:11 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:23:11 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:23:12 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:23:12 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:23:12 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:23:12 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:23:29 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:23:29 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:23:29 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[13-Oct-2025 16:23:29 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:23:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:23:30 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:23:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:23:30 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:23:38 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:23:38 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:23:38 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[13-Oct-2025 16:23:38 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:23:38 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:23:38 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:23:38 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:23:38 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:23:48 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:23:48 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:23:48 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[13-Oct-2025 16:23:49 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:23:49 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:23:49 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:23:49 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:23:49 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:23:49 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:23:49 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:23:49 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:23:49 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:23:49 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:23:51 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:23:51 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:23:51 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::logout
+[13-Oct-2025 16:23:51 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:23:51 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:23:51 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[13-Oct-2025 16:23:51 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:23:51 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:23:51 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:23:51 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:23:51 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:23:59 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:24:00 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:24:00 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[13-Oct-2025 16:24:00 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:24:00 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:24:00 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:24:00 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:24:00 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:24:16 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:24:16 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:24:16 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showRegister
+[13-Oct-2025 16:24:16 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:24:16 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:24:16 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:24:16 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:24:16 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:24:47 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:24:47 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:24:47 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showRegister
+[13-Oct-2025 16:24:48 Asia/Ho_Chi_Minh] [v0] Starting registration process for email: phip4393@gmail.com
+[13-Oct-2025 16:24:48 Asia/Ho_Chi_Minh] [v0] Generated verification code: 223003
+[13-Oct-2025 16:24:48 Asia/Ho_Chi_Minh] [v0] Attempting to store verification code for email: phip4393@gmail.com
+[13-Oct-2025 16:24:48 Asia/Ho_Chi_Minh] [v0] Generated code: 223003
+[13-Oct-2025 16:24:48 Asia/Ho_Chi_Minh] [v0] Deleted existing codes for email: phip4393@gmail.com
+[13-Oct-2025 16:24:48 Asia/Ho_Chi_Minh] [v0] Executing SQL: INSERT INTO verification_codes (email, code, expires_at, created_at) 
+                    VALUES (?, ?, DATE_ADD(NOW(), INTERVAL 10 MINUTE), NOW())
+[13-Oct-2025 16:24:48 Asia/Ho_Chi_Minh] [v0] Verification code stored successfully
+[13-Oct-2025 16:24:48 Asia/Ho_Chi_Minh] [v0] Verification code stored successfully, sending email...
+[13-Oct-2025 16:24:48 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 3: Connection: opening to smtp.gmail.com:587, timeout=300, options=array (
+  'ssl' => 
+  array (
+    'verify_peer' => false,
+    'verify_peer_name' => false,
+    'allow_self_signed' => true,
+  ),
+)
+[13-Oct-2025 16:24:48 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 3: Connection: opened
+[13-Oct-2025 16:24:48 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 2: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 98e67ed59e1d1-33b626bb49esm11269607a91.12 - gsmtp
+
+[13-Oct-2025 16:24:48 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: EHLO localhost
+
+[13-Oct-2025 16:24:49 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 2: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2001:ee0:4f03:8c10:34eb:ba82:51d5:8c49]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+[13-Oct-2025 16:24:49 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: STARTTLS
+
+[13-Oct-2025 16:24:49 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 2: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+[13-Oct-2025 16:24:49 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: EHLO localhost
+
+[13-Oct-2025 16:24:49 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 2: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2001:ee0:4f03:8c10:34eb:ba82:51d5:8c49]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+[13-Oct-2025 16:24:49 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: AUTH LOGIN
+
+[13-Oct-2025 16:24:49 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 2: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[13-Oct-2025 16:24:49 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: [credentials hidden]
+[13-Oct-2025 16:24:50 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 2: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[13-Oct-2025 16:24:50 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: [credentials hidden]
+[13-Oct-2025 16:24:50 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 2: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+[13-Oct-2025 16:24:50 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: MAIL FROM:<xegoo.notifications@gmail.com>
+
+[13-Oct-2025 16:24:50 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 2: SERVER -> CLIENT: 250 2.1.0 OK 98e67ed59e1d1-33b626bb49esm11269607a91.12 - gsmtp
+
+[13-Oct-2025 16:24:50 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: RCPT TO:<phip4393@gmail.com>
+
+[13-Oct-2025 16:24:50 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 2: SERVER -> CLIENT: 250 2.1.5 OK 98e67ed59e1d1-33b626bb49esm11269607a91.12 - gsmtp
+
+[13-Oct-2025 16:24:50 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: DATA
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 2: SERVER -> CLIENT: 354 Go ahead 98e67ed59e1d1-33b626bb49esm11269607a91.12 - gsmtp
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Date: Mon, 13 Oct 2025 16:24:48 +0700
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: To: yoyo <phip4393@gmail.com>
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: From: =?UTF-8?Q?H=E1=BB=87_th=E1=BB=91ng_XeGoo?= <xegoo.notifications@gmail.com>
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Subject: =?UTF-8?B?TcOjIHjDoWMgbmjhuq1uIMSRxINuZyBrw70gdMOgaSBraG/huqNuIC0gWGVn?=
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:  =?UTF-8?B?b28=?=
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Message-ID: <LrU28yfVLdzqXOoYSh8i1a1b65WZJ6r6D2zuTTYVQ@localhost>
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: X-Mailer: PHPMailer 6.11.1 (https://github.com/PHPMailer/PHPMailer)
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: MIME-Version: 1.0
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:  boundary="b1=_LrU28yfVLdzqXOoYSh8i1a1b65WZJ6r6D2zuTTYVQ"
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: --b1=_LrU28yfVLdzqXOoYSh8i1a1b65WZJ6r6D2zuTTYVQ
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Xin chào yoyo,
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Cảm ơn bạn đã đăng ký tài khoản tại Xegoo.
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Mã xác nhận của bạn là: 223003
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Mã này có hiệu lực trong 10 phút.
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Nếu bạn không yêu cầu mã này, vui lòng bỏ qua email này.
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Trân trọng,
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Đội ngũ Xegoo
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: --b1=_LrU28yfVLdzqXOoYSh8i1a1b65WZJ6r6D2zuTTYVQ
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:         <!DOCTYPE html>
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:         <html>
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:         <head>
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:             <meta charset="UTF-8">
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:             <style>
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 body { 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     line-height: 1.6; 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     color: #1a1a1a; 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     background: #f8f9fa;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     margin: 0;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     padding: 0;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 }
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 .container { 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     max-width: 600px; 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     margin: 40px auto; 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     background: #ffffff;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     border-radius: 12px;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     overflow: hidden;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 }
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 .header { 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     background: linear-gradient(135deg, #f4481f 0%, #ff6b35 100%); 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     color: white; 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     padding: 40px 30px; 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     text-align: center;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 }
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 .header h1 { 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     margin: 0 0 8px 0; 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     font-size: 32px; 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     font-weight: 700;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     letter-spacing: -0.5px;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 }
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 .header p { 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     margin: 0; 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     font-size: 15px; 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     opacity: 0.95;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 }
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 .content { 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     padding: 40px 30px;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 }
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 .content p {
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     margin: 0 0 16px 0;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     color: #4a5568;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     font-size: 15px;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 }
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 .code-box { 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     background: #f7fafc;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     border: 2px solid #e2e8f0;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     border-radius: 8px;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     padding: 24px;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     text-align: center;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     margin: 28px 0;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 }
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 .code-box p {
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     margin: 0 0 12px 0;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     font-size: 13px;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     color: #718096;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     font-weight: 600;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     text-transform: uppercase;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     letter-spacing: 0.5px;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 }
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 .code { 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     font-size: 36px; 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     font-weight: 700; 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     color: #f4481f;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     letter-spacing: 8px;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     font-family: "Courier New", monospace;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 }
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 .info-box {
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     background: #fffbeb;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     border-left: 4px solid #f59e0b;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     padding: 16px 20px;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     border-radius: 4px;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     margin: 24px 0;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 }
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 .info-box p {
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     margin: 0;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     font-size: 14px;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     color: #92400e;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 }
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 .footer { 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     text-align: center; 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     padding: 24px 30px;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     background: #f7fafc;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     border-top: 1px solid #e2e8f0;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 }
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 .footer p {
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     margin: 4px 0;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     font-size: 13px; 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     color: #718096;
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 }
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:             </style>
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:         </head>
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:         <body>
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:             <div class="container">
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 <div class="header">
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     <h1>XeGoo</h1>
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     <p>Xác thực tài khoản của bạn</p>
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 </div>
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 <div class="content">
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     <p>Xin chào <strong>yoyo</strong>,</p>
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     <p>Cảm ơn bạn đã đăng ký tài khoản tại XeGoo. Để hoàn tất quá trình đăng ký, vui lòng sử dụng mã xác thực bên dưới:</p>
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     <div class="code-box">
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         <p>Mã xác thực của bạn</p>
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         <div class="code">223003</div>
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     </div>
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     <div class="info-box">
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                         <p><strong>Lưu ý:</strong> Mã này có hiệu lực trong 10 phút. Nếu bạn không yêu cầu mã này, vui lòng bỏ qua email.</p>
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     </div>
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 </div>
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 <div class="footer">
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     <p>Email này được gửi tự động, vui lòng không trả lời.</p>
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                     <p>&copy; 2025 XeGoo. All rights reserved.</p>
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:                 </div>
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:             </div>
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:         </body>
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER:         </html>
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: --b1=_LrU28yfVLdzqXOoYSh8i1a1b65WZJ6r6D2zuTTYVQ--
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: 
+
+[13-Oct-2025 16:24:51 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: .
+
+[13-Oct-2025 16:24:52 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 2: SERVER -> CLIENT: 250 2.0.0 OK  1760347491 98e67ed59e1d1-33b626bb49esm11269607a91.12 - gsmtp
+
+[13-Oct-2025 16:24:52 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 1: CLIENT -> SERVER: QUIT
+
+[13-Oct-2025 16:24:52 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 2: SERVER -> CLIENT: 221 2.0.0 closing connection 98e67ed59e1d1-33b626bb49esm11269607a91.12 - gsmtp
+
+[13-Oct-2025 16:24:52 Asia/Ho_Chi_Minh] [PHPMailer Debug] Level 3: Connection: closed
+[13-Oct-2025 16:24:52 Asia/Ho_Chi_Minh] [v0] Verification email sent successfully
+[13-Oct-2025 16:24:52 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:24:52 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:24:52 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:24:52 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:24:52 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:26:43 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:26:43 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:26:43 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::verifyEmail
+[13-Oct-2025 16:26:43 Asia/Ho_Chi_Minh] [v0] Verify email endpoint called with code: 223003
+[13-Oct-2025 16:26:43 Asia/Ho_Chi_Minh] [v0] Verifying code for email: phip4393@gmail.com
+[13-Oct-2025 16:26:43 Asia/Ho_Chi_Minh] [v0] Verifying code for email: phip4393@gmail.com, code: 223003
+[13-Oct-2025 16:26:43 Asia/Ho_Chi_Minh] [v0] Code verified successfully
+[13-Oct-2025 16:26:43 Asia/Ho_Chi_Minh] [v0] Code marked as used: 24
+[13-Oct-2025 16:26:43 Asia/Ho_Chi_Minh] [v0] Code verified, proceeding with user registration
+[13-Oct-2025 16:26:43 Asia/Ho_Chi_Minh] [v0] User registration completed successfully
+[13-Oct-2025 16:26:44 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:26:44 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:26:44 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[13-Oct-2025 16:26:44 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:26:45 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:26:45 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:26:45 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:26:45 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:27:12 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:27:12 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:27:12 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[13-Oct-2025 16:27:12 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:27:12 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:27:12 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:27:12 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:27:12 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:27:21 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:27:21 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:27:21 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[13-Oct-2025 16:27:22 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:27:22 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:27:22 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:27:22 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:27:22 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:27:22 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:27:22 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:27:22 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:27:22 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:27:22 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:28:17 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:28:17 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:28:17 Asia/Ho_Chi_Minh] [v0] Router - About to call ProfileController::index
+[13-Oct-2025 16:28:17 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:28:17 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:28:17 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:28:17 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:28:17 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:28:17 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:28:21 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:28:21 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::index
+[13-Oct-2025 16:28:21 Asia/Ho_Chi_Minh] === Database Debug ===
+[13-Oct-2025 16:28:21 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:28:21 Asia/Ho_Chi_Minh] Active routes: 3
+[13-Oct-2025 16:28:21 Asia/Ho_Chi_Minh] Route: TP. Hồ Chí Minh -> Đà Lạt (SG-DL)
+[13-Oct-2025 16:28:21 Asia/Ho_Chi_Minh] Route: Đà Lạt -> TP. Hồ Chí Minh (DL-SG)
+[13-Oct-2025 16:28:21 Asia/Ho_Chi_Minh] Route: TP. Hồ Chí Minh -> Vũng Tàu (SG-VT)
+[13-Oct-2025 16:28:21 Asia/Ho_Chi_Minh] Active trips: 63
+[13-Oct-2025 16:28:21 Asia/Ho_Chi_Minh] Sample trip: TP. Hồ Chí Minh -> Đà Lạt on 2025-10-14
+[13-Oct-2025 16:28:21 Asia/Ho_Chi_Minh] Sample trip: TP. Hồ Chí Minh -> Đà Lạt on 2025-10-15
+[13-Oct-2025 16:28:21 Asia/Ho_Chi_Minh] Sample trip: TP. Hồ Chí Minh -> Đà Lạt on 2025-10-16
+[13-Oct-2025 16:28:21 Asia/Ho_Chi_Minh] === SearchController ===
+[13-Oct-2025 16:28:21 Asia/Ho_Chi_Minh] Search params: from='', to='', date='', passengers=1
+[13-Oct-2025 16:28:21 Asia/Ho_Chi_Minh] Form data loaded: 3 cities, 3 popular routes
+[13-Oct-2025 16:28:21 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:28:22 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:28:22 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:28:22 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:28:22 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:28:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:28:32 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::index
+[13-Oct-2025 16:28:32 Asia/Ho_Chi_Minh] === SearchController ===
+[13-Oct-2025 16:28:32 Asia/Ho_Chi_Minh] Search params: from='TP. Hồ Chí Minh', to='Đà Lạt', date='2025-10-13', passengers=1
+[13-Oct-2025 16:28:32 Asia/Ho_Chi_Minh] Performing search...
+[13-Oct-2025 16:28:32 Asia/Ho_Chi_Minh] === TripSearch Debug ===
+[13-Oct-2025 16:28:32 Asia/Ho_Chi_Minh] Outbound search: 'TP. Hồ Chí Minh' -> 'Đà Lạt' on '2025-10-13'
+[13-Oct-2025 16:28:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:28:32 Asia/Ho_Chi_Minh] Found 1 outbound trips
+[13-Oct-2025 16:28:32 Asia/Ho_Chi_Minh] Return search: 'Đà Lạt' -> 'TP. Hồ Chí Minh' on '2025-10-14' (swapped)
+[13-Oct-2025 16:28:32 Asia/Ho_Chi_Minh] Found 3 return trips
+[13-Oct-2025 16:28:32 Asia/Ho_Chi_Minh] Search completed: 1 outbound, 3 return
+[13-Oct-2025 16:28:32 Asia/Ho_Chi_Minh] Recent search saved: {"from":"TP. H\u1ed3 Ch\u00ed Minh","to":"\u0110\u00e0 L\u1ea1t","departure_date":"2025-10-13","return_date":"2025-10-14","passengers":1,"is_round_trip":true,"search_time":"2025-10-13 16:28:32"}
+[13-Oct-2025 16:28:32 Asia/Ho_Chi_Minh] Form data loaded: 3 cities, 3 popular routes
+[13-Oct-2025 16:28:32 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:28:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:28:32 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:28:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:28:32 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:29:01 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:29:01 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:29:01 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::logout
+[13-Oct-2025 16:29:01 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:29:01 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:29:01 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[13-Oct-2025 16:29:01 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:29:01 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:29:01 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:29:01 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:29:01 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:29:11 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:29:11 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:29:11 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[13-Oct-2025 16:29:12 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:29:12 Asia/Ho_Chi_Minh] [v0] Router - About to call AdminController::index
+[13-Oct-2025 16:29:12 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:29:12 Asia/Ho_Chi_Minh] [AdminController] Dashboard stats: {"vehicles":6,"routes":3,"schedules":5,"trips":83,"users":12,"prices":5}
+[13-Oct-2025 16:29:12 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:29:12 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:29:12 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:29:12 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:29:12 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:29:14 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:29:14 Asia/Ho_Chi_Minh] [v0] Router - About to call PriceController::index
+[13-Oct-2025 16:29:14 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:29:14 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:29:14 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:29:14 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:29:14 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:29:14 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:29:16 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:29:16 Asia/Ho_Chi_Minh] [v0] Router - About to call AdminController::index
+[13-Oct-2025 16:29:16 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:29:16 Asia/Ho_Chi_Minh] [AdminController] Dashboard stats: {"vehicles":6,"routes":3,"schedules":5,"trips":83,"users":12,"prices":5}
+[13-Oct-2025 16:29:16 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:29:16 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:29:16 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:29:16 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:29:16 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:29:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:29:18 Asia/Ho_Chi_Minh] [v0] Router - About to call TripController::index
+[13-Oct-2025 16:29:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:29:18 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:29:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:29:18 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:29:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:29:18 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:30:47 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:30:47 Asia/Ho_Chi_Minh] [v0] Router - About to call AdminController::index
+[13-Oct-2025 16:30:47 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:30:47 Asia/Ho_Chi_Minh] [AdminController] Dashboard stats: {"vehicles":6,"routes":3,"schedules":5,"trips":83,"users":12,"prices":5}
+[13-Oct-2025 16:30:47 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:30:47 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:30:47 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:30:47 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:30:47 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:30:48 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:30:48 Asia/Ho_Chi_Minh] [v0] Router - About to call TripController::index
+[13-Oct-2025 16:30:48 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:30:49 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:30:49 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:30:49 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:30:49 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:30:49 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:31:01 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:31:01 Asia/Ho_Chi_Minh] [v0] Router - About to call TripController::index
+[13-Oct-2025 16:31:01 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:31:01 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:31:01 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:31:01 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:31:01 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:31:01 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:31:10 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:31:10 Asia/Ho_Chi_Minh] [v0] Router - About to call TripController::index
+[13-Oct-2025 16:31:10 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:31:10 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:31:10 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:31:10 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:31:10 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:31:10 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:31:14 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:31:14 Asia/Ho_Chi_Minh] [v0] Router - About to call TripController::index
+[13-Oct-2025 16:31:14 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:31:14 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 16:31:14 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 16:31:14 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 16:31:14 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 16:31:14 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 19:44:29 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 19:44:29 Asia/Ho_Chi_Minh] [v0] Router - About to call TripController::index
+[13-Oct-2025 19:44:29 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 19:44:29 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 19:44:29 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 19:44:29 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 19:44:29 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 19:44:29 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 19:52:07 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 19:52:07 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 19:52:07 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::logout
+[13-Oct-2025 19:52:07 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 19:52:07 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 19:52:07 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[13-Oct-2025 19:52:07 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 19:52:07 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 19:52:07 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 19:52:07 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 19:52:07 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 19:52:26 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 19:52:26 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 19:52:26 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[13-Oct-2025 19:52:27 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 19:52:27 Asia/Ho_Chi_Minh] [v0] Router - About to call AdminController::index
+[13-Oct-2025 19:52:27 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 19:52:27 Asia/Ho_Chi_Minh] [AdminController] Dashboard stats: {"vehicles":6,"routes":3,"schedules":5,"trips":82,"users":12,"prices":5}
+[13-Oct-2025 19:52:27 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 19:52:27 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 19:52:27 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 19:52:27 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 19:52:27 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 19:52:29 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 19:52:29 Asia/Ho_Chi_Minh] [v0] Router - About to call TripController::index
+[13-Oct-2025 19:52:29 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 19:52:29 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 19:52:29 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 19:52:29 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 19:52:29 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 19:52:29 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 19:56:33 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 19:56:33 Asia/Ho_Chi_Minh] [v0] Router - About to call TripController::index
+[13-Oct-2025 19:56:33 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 19:56:33 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 19:56:33 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 19:56:33 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 19:56:33 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 19:56:33 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 19:56:46 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 19:56:46 Asia/Ho_Chi_Minh] [v0] Router - About to call TripController::show
+[13-Oct-2025 19:56:46 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 19:56:46 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 19:56:46 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 19:56:46 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 19:56:46 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 19:56:46 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 19:56:51 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 19:56:51 Asia/Ho_Chi_Minh] [v0] Router - About to call TripController::index
+[13-Oct-2025 19:56:51 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 19:56:51 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 19:56:51 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 19:56:51 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 19:56:51 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 19:56:51 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:10:15 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:10:15 Asia/Ho_Chi_Minh] [v0] Router - About to call TripController::index
+[13-Oct-2025 20:10:15 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:10:15 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:10:15 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:10:15 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:10:15 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:10:15 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:10:17 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:10:17 Asia/Ho_Chi_Minh] [v0] Router - About to call TripController::index
+[13-Oct-2025 20:10:17 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:10:17 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:10:17 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:10:17 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:10:17 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:10:17 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:10:27 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:10:27 Asia/Ho_Chi_Minh] [v0] Router - About to call TripController::index
+[13-Oct-2025 20:10:27 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:10:27 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:10:27 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:10:27 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:10:27 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:10:27 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:17:08 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:17:08 Asia/Ho_Chi_Minh] [v0] Router - About to call TripController::index
+[13-Oct-2025 20:17:08 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:17:08 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:17:09 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:17:09 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:17:09 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:17:09 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:17:19 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:17:19 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:17:19 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[13-Oct-2025 20:17:19 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:17:19 Asia/Ho_Chi_Minh] [v0] Router - About to call AdminController::index
+[13-Oct-2025 20:17:19 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:17:19 Asia/Ho_Chi_Minh] [AdminController] Dashboard stats: {"vehicles":6,"routes":3,"schedules":5,"trips":82,"users":12,"prices":5}
+[13-Oct-2025 20:17:19 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:17:23 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:17:23 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:17:23 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[13-Oct-2025 20:17:23 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:17:23 Asia/Ho_Chi_Minh] [v0] Router - About to call AdminController::index
+[13-Oct-2025 20:17:23 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:17:23 Asia/Ho_Chi_Minh] [AdminController] Dashboard stats: {"vehicles":6,"routes":3,"schedules":5,"trips":82,"users":12,"prices":5}
+[13-Oct-2025 20:17:23 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:17:23 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:17:23 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:17:23 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:17:23 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:17:26 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:17:26 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:17:26 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:17:26 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:17:26 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:17:26 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:17:26 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:17:26 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:17:26 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:17:26 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:17:34 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:17:34 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::index
+[13-Oct-2025 20:17:34 Asia/Ho_Chi_Minh] === SearchController ===
+[13-Oct-2025 20:17:34 Asia/Ho_Chi_Minh] Search params: from='TP. Hồ Chí Minh', to='Đà Lạt', date='2025-10-14', passengers=1
+[13-Oct-2025 20:17:34 Asia/Ho_Chi_Minh] Performing search...
+[13-Oct-2025 20:17:34 Asia/Ho_Chi_Minh] === TripSearch Debug ===
+[13-Oct-2025 20:17:34 Asia/Ho_Chi_Minh] Outbound search: 'TP. Hồ Chí Minh' -> 'Đà Lạt' on '2025-10-14'
+[13-Oct-2025 20:17:34 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:17:34 Asia/Ho_Chi_Minh] Found 2 outbound trips
+[13-Oct-2025 20:17:34 Asia/Ho_Chi_Minh] Search completed: 2 outbound, 0 return
+[13-Oct-2025 20:17:34 Asia/Ho_Chi_Minh] Recent search saved: {"from":"TP. H\u1ed3 Ch\u00ed Minh","to":"\u0110\u00e0 L\u1ea1t","departure_date":"2025-10-14","return_date":"","passengers":1,"is_round_trip":false,"search_time":"2025-10-13 20:17:34"}
+[13-Oct-2025 20:17:34 Asia/Ho_Chi_Minh] Form data loaded: 3 cities, 3 popular routes
+[13-Oct-2025 20:17:34 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:17:34 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:17:34 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:17:34 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:17:34 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:17:35 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:17:35 Asia/Ho_Chi_Minh] [v0] Router - About to call BookingController::show
+[13-Oct-2025 20:17:35 Asia/Ho_Chi_Minh] [v0] BookingController show called with tripId: 776
+[13-Oct-2025 20:17:35 Asia/Ho_Chi_Minh] [v0] Return trip ID: , Is round trip: no
+[13-Oct-2025 20:17:36 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:17:36 Asia/Ho_Chi_Minh] [v0] getTripDetails for trip 776 - loaiChoNgoiMacDinh: Giường đôi
+[13-Oct-2025 20:17:36 Asia/Ho_Chi_Minh] [v0] Full trip details: {"maChuyenXe":776,"maLichTrinh":9,"maPhuongTien":21,"maTaiXe":null,"maGiaVe":42,"ngayKhoiHanh":"2025-10-14","thoiGianKhoiHanh":"2025-10-14 08:30:00","thoiGianKetThuc":"2025-10-14 15:00:00","soChoTong":20,"soChoDaDat":0,"soChoTrong":20,"trangThai":"S\u1eb5n s\u00e0ng","ngayTao":"2025-09-23 14:39:52","ngayCapNhat":"2025-09-23 14:39:52","tenLichTrinh":"L\u1ecbch tr\u00ecnh SG-DL 08:30","gioKhoiHanh":"08:30:00","gioKetThuc":"15:00:00","maTuyenDuong":13,"kyHieuTuyen":"SG-DL","diemDi":"TP. H\u1ed3 Ch\u00ed Minh","diemDen":"\u0110\u00e0 L\u1ea1t","thoiGianDiChuyen":"06:30:00","bienSo":"50H-488766","maLoaiPhuongTien":5,"tenLoaiPhuongTien":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","soChoMacDinh":20,"soTang":2,"soHang":10,"soCotTrai":1,"soCotGiua":0,"soCotPhai":1,"loaiChoNgoiMacDinh":"Gi\u01b0\u1eddng \u0111\u00f4i","giaVe":"650000.00","tenLoaiVe":"V\u00e9 th\u01b0\u1eddng"}
+[13-Oct-2025 20:17:36 Asia/Ho_Chi_Minh] [v0] Departure datetime: 2025-10-14 08:30:00, Current time: 2025-10-13 20:17:36, Has departed: no
+[13-Oct-2025 20:17:36 Asia/Ho_Chi_Minh] [v0] Outbound trip datetime: 2025-10-14 08:30:00, has departed: no
+[13-Oct-2025 20:17:36 Asia/Ho_Chi_Minh] [v0] Found 2 Đón points for route 13
+[13-Oct-2025 20:17:36 Asia/Ho_Chi_Minh] [v0] Found 1 Trả points for route 13
+[13-Oct-2025 20:17:36 Asia/Ho_Chi_Minh] [v0] Route ID: 13, Pickup points: 2, Dropoff points: 1
+[13-Oct-2025 20:17:36 Asia/Ho_Chi_Minh] [v0] Found 20 actual seats for vehicle 21
+[13-Oct-2025 20:17:36 Asia/Ho_Chi_Minh] [v0] Seat layout created with 20 actual seats: {"total_seats":20,"seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","left_columns":1,"right_columns":1,"middle_columns":0,"floors":2,"rows_per_floor":10,"vehicle_type":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","default_seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","actual_seats":[{"maGhe":461,"soGhe":"A01"},{"maGhe":462,"soGhe":"A02"},{"maGhe":463,"soGhe":"A03"},{"maGhe":464,"soGhe":"A04"},{"maGhe":465,"soGhe":"A05"},{"maGhe":466,"soGhe":"A06"},{"maGhe":467,"soGhe":"A07"},{"maGhe":468,"soGhe":"A08"},{"maGhe":469,"soGhe":"A09"},{"maGhe":470,"soGhe":"A10"},{"maGhe":471,"soGhe":"A11"},{"maGhe":472,"soGhe":"A12"},{"maGhe":473,"soGhe":"A13"},{"maGhe":474,"soGhe":"A14"},{"maGhe":475,"soGhe":"A15"},{"maGhe":476,"soGhe":"A16"},{"maGhe":477,"soGhe":"A17"},{"maGhe":478,"soGhe":"A18"},{"maGhe":479,"soGhe":"A19"},{"maGhe":480,"soGhe":"A20"}]}
+[13-Oct-2025 20:17:36 Asia/Ho_Chi_Minh] [v0] Found 0 booked/held seats for trip 776: []
+[13-Oct-2025 20:17:36 Asia/Ho_Chi_Minh] [v0] Found 0 seat statuses for trip 776: []
+[13-Oct-2025 20:17:36 Asia/Ho_Chi_Minh] [v0] Seat layout: {"total_seats":20,"seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","left_columns":1,"right_columns":1,"middle_columns":0,"floors":2,"rows_per_floor":10,"vehicle_type":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","default_seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","actual_seats":[{"maGhe":461,"soGhe":"A01"},{"maGhe":462,"soGhe":"A02"},{"maGhe":463,"soGhe":"A03"},{"maGhe":464,"soGhe":"A04"},{"maGhe":465,"soGhe":"A05"},{"maGhe":466,"soGhe":"A06"},{"maGhe":467,"soGhe":"A07"},{"maGhe":468,"soGhe":"A08"},{"maGhe":469,"soGhe":"A09"},{"maGhe":470,"soGhe":"A10"},{"maGhe":471,"soGhe":"A11"},{"maGhe":472,"soGhe":"A12"},{"maGhe":473,"soGhe":"A13"},{"maGhe":474,"soGhe":"A14"},{"maGhe":475,"soGhe":"A15"},{"maGhe":476,"soGhe":"A16"},{"maGhe":477,"soGhe":"A17"},{"maGhe":478,"soGhe":"A18"},{"maGhe":479,"soGhe":"A19"},{"maGhe":480,"soGhe":"A20"}]}
+[13-Oct-2025 20:17:36 Asia/Ho_Chi_Minh] [v0] Booked seats: []
+[13-Oct-2025 20:17:36 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:17:36 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:17:36 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:17:36 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:17:36 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] Router - About to call BookingController::process
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] BookingController::process() started
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] POST data: {"trip_id":"776","booking_type":"single","pickup_point":"18","dropoff_point":"20","passengers":[{"ho_ten":"Amin Phi","email":"phiphamvohoang@gmail.com","so_dien_thoai":"0847272231"}],"selected_seats":"[\"A12\"]"}
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] Cleared old promotion and points session data
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] Trip ID: 776, Selected seats: "[\"A12\"]"
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] Is round trip: no
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] Return trip ID: none
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] Departure datetime: 2025-10-14 08:30:00, Current time: 2025-10-13 20:17:44, Has departed: no
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] Outbound total price: 650000
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] holdSeatsForTrip called with tripId: 776, seats: ["A12"]
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] Found vehicle ID: 21 for trip: 776
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] Found 1 seats in database for 1 requested seats
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] Checking seat A12 (ID: 472) - status: Trống
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] Updated seat A12 (ID: 472) to 'Đang giữ' - result: success
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] Successfully held all seats for trip 776
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] Stored booking data in session
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] Successfully created booking session and held seats, redirecting to payment
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] Session data - final_booking_data exists: yes
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] Session data - held_seats exists: yes
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] Router - About to call PaymentController::show
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] PaymentController::show() started
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] Session data - final_booking_data exists: yes
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] Session data - held_seats exists: yes
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] Booking data loaded successfully
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] Total price: 650000
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] Found 3 active promotions
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] User points: 3450
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] Pricing calculated - Original: 650000, Final: 650000
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] About to include payment view
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\XeGoo\views\payment\show.php on line 50
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] Payment page - seat type derived from vehicle type: Giường đôi
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] Payment page - final seat type value: Giường đôi
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] Payment page - trip details keys: ["maChuyenXe","maLichTrinh","maPhuongTien","maTaiXe","maGiaVe","ngayKhoiHanh","thoiGianKhoiHanh","thoiGianKetThuc","soChoTong","soChoDaDat","soChoTrong","trangThai","ngayTao","ngayCapNhat","tenLichTrinh","lichTrinhGioKhoiHanh","thuTrongTuan","kyHieuTuyen","diemDi","diemDen","khoangCach","thoiGianDiChuyen","bienSo","tenLoaiPhuongTien","soChoMacDinh","giaVe","loaiChoNgoi","tenLoaiVe"]
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] Payment view included successfully
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:17:44 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:17:59 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:17:59 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:17:59 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[13-Oct-2025 20:17:59 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:17:59 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:18:00 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:18:00 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:18:00 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:18:00 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:18:00 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:18:00 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:18:00 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:18:00 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:18:03 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:18:03 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:18:03 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:18:03 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:18:03 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:18:03 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:18:03 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:18:03 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:18:03 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:18:03 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:18:14 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:18:14 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::index
+[13-Oct-2025 20:18:14 Asia/Ho_Chi_Minh] === SearchController ===
+[13-Oct-2025 20:18:14 Asia/Ho_Chi_Minh] Search params: from='TP. Hồ Chí Minh', to='Đà Lạt', date='2025-10-14', passengers=1
+[13-Oct-2025 20:18:14 Asia/Ho_Chi_Minh] Performing search...
+[13-Oct-2025 20:18:14 Asia/Ho_Chi_Minh] === TripSearch Debug ===
+[13-Oct-2025 20:18:14 Asia/Ho_Chi_Minh] Outbound search: 'TP. Hồ Chí Minh' -> 'Đà Lạt' on '2025-10-14'
+[13-Oct-2025 20:18:14 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:18:14 Asia/Ho_Chi_Minh] Found 2 outbound trips
+[13-Oct-2025 20:18:14 Asia/Ho_Chi_Minh] Search completed: 2 outbound, 0 return
+[13-Oct-2025 20:18:14 Asia/Ho_Chi_Minh] Recent search saved: {"from":"TP. H\u1ed3 Ch\u00ed Minh","to":"\u0110\u00e0 L\u1ea1t","departure_date":"2025-10-14","return_date":"","passengers":1,"is_round_trip":false,"search_time":"2025-10-13 20:18:14"}
+[13-Oct-2025 20:18:14 Asia/Ho_Chi_Minh] Form data loaded: 3 cities, 3 popular routes
+[13-Oct-2025 20:18:14 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:18:14 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:18:14 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:18:14 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:18:14 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:18:16 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:18:16 Asia/Ho_Chi_Minh] [v0] Router - About to call BookingController::show
+[13-Oct-2025 20:18:16 Asia/Ho_Chi_Minh] [v0] BookingController show called with tripId: 776
+[13-Oct-2025 20:18:16 Asia/Ho_Chi_Minh] [v0] Return trip ID: , Is round trip: no
+[13-Oct-2025 20:18:16 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:18:16 Asia/Ho_Chi_Minh] [v0] getTripDetails for trip 776 - loaiChoNgoiMacDinh: Giường đôi
+[13-Oct-2025 20:18:16 Asia/Ho_Chi_Minh] [v0] Full trip details: {"maChuyenXe":776,"maLichTrinh":9,"maPhuongTien":21,"maTaiXe":null,"maGiaVe":42,"ngayKhoiHanh":"2025-10-14","thoiGianKhoiHanh":"2025-10-14 08:30:00","thoiGianKetThuc":"2025-10-14 15:00:00","soChoTong":20,"soChoDaDat":0,"soChoTrong":20,"trangThai":"S\u1eb5n s\u00e0ng","ngayTao":"2025-09-23 14:39:52","ngayCapNhat":"2025-09-23 14:39:52","tenLichTrinh":"L\u1ecbch tr\u00ecnh SG-DL 08:30","gioKhoiHanh":"08:30:00","gioKetThuc":"15:00:00","maTuyenDuong":13,"kyHieuTuyen":"SG-DL","diemDi":"TP. H\u1ed3 Ch\u00ed Minh","diemDen":"\u0110\u00e0 L\u1ea1t","thoiGianDiChuyen":"06:30:00","bienSo":"50H-488766","maLoaiPhuongTien":5,"tenLoaiPhuongTien":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","soChoMacDinh":20,"soTang":2,"soHang":10,"soCotTrai":1,"soCotGiua":0,"soCotPhai":1,"loaiChoNgoiMacDinh":"Gi\u01b0\u1eddng \u0111\u00f4i","giaVe":"650000.00","tenLoaiVe":"V\u00e9 th\u01b0\u1eddng"}
+[13-Oct-2025 20:18:16 Asia/Ho_Chi_Minh] [v0] Departure datetime: 2025-10-14 08:30:00, Current time: 2025-10-13 20:18:16, Has departed: no
+[13-Oct-2025 20:18:16 Asia/Ho_Chi_Minh] [v0] Outbound trip datetime: 2025-10-14 08:30:00, has departed: no
+[13-Oct-2025 20:18:16 Asia/Ho_Chi_Minh] [v0] Found 2 Đón points for route 13
+[13-Oct-2025 20:18:16 Asia/Ho_Chi_Minh] [v0] Found 1 Trả points for route 13
+[13-Oct-2025 20:18:16 Asia/Ho_Chi_Minh] [v0] Route ID: 13, Pickup points: 2, Dropoff points: 1
+[13-Oct-2025 20:18:16 Asia/Ho_Chi_Minh] [v0] Found 20 actual seats for vehicle 21
+[13-Oct-2025 20:18:16 Asia/Ho_Chi_Minh] [v0] Seat layout created with 20 actual seats: {"total_seats":20,"seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","left_columns":1,"right_columns":1,"middle_columns":0,"floors":2,"rows_per_floor":10,"vehicle_type":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","default_seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","actual_seats":[{"maGhe":461,"soGhe":"A01"},{"maGhe":462,"soGhe":"A02"},{"maGhe":463,"soGhe":"A03"},{"maGhe":464,"soGhe":"A04"},{"maGhe":465,"soGhe":"A05"},{"maGhe":466,"soGhe":"A06"},{"maGhe":467,"soGhe":"A07"},{"maGhe":468,"soGhe":"A08"},{"maGhe":469,"soGhe":"A09"},{"maGhe":470,"soGhe":"A10"},{"maGhe":471,"soGhe":"A11"},{"maGhe":472,"soGhe":"A12"},{"maGhe":473,"soGhe":"A13"},{"maGhe":474,"soGhe":"A14"},{"maGhe":475,"soGhe":"A15"},{"maGhe":476,"soGhe":"A16"},{"maGhe":477,"soGhe":"A17"},{"maGhe":478,"soGhe":"A18"},{"maGhe":479,"soGhe":"A19"},{"maGhe":480,"soGhe":"A20"}]}
+[13-Oct-2025 20:18:16 Asia/Ho_Chi_Minh] [v0] Found 1 booked/held seats for trip 776: ["A12"]
+[13-Oct-2025 20:18:16 Asia/Ho_Chi_Minh] [v0] Found 1 seat statuses for trip 776: {"A12":"\u0110ang gi\u1eef"}
+[13-Oct-2025 20:18:16 Asia/Ho_Chi_Minh] [v0] Seat layout: {"total_seats":20,"seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","left_columns":1,"right_columns":1,"middle_columns":0,"floors":2,"rows_per_floor":10,"vehicle_type":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","default_seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","actual_seats":[{"maGhe":461,"soGhe":"A01"},{"maGhe":462,"soGhe":"A02"},{"maGhe":463,"soGhe":"A03"},{"maGhe":464,"soGhe":"A04"},{"maGhe":465,"soGhe":"A05"},{"maGhe":466,"soGhe":"A06"},{"maGhe":467,"soGhe":"A07"},{"maGhe":468,"soGhe":"A08"},{"maGhe":469,"soGhe":"A09"},{"maGhe":470,"soGhe":"A10"},{"maGhe":471,"soGhe":"A11"},{"maGhe":472,"soGhe":"A12"},{"maGhe":473,"soGhe":"A13"},{"maGhe":474,"soGhe":"A14"},{"maGhe":475,"soGhe":"A15"},{"maGhe":476,"soGhe":"A16"},{"maGhe":477,"soGhe":"A17"},{"maGhe":478,"soGhe":"A18"},{"maGhe":479,"soGhe":"A19"},{"maGhe":480,"soGhe":"A20"}]}
+[13-Oct-2025 20:18:16 Asia/Ho_Chi_Minh] [v0] Booked seats: ["A12"]
+[13-Oct-2025 20:18:16 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:18:16 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:18:16 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:18:16 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:18:16 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:18:26 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:18:26 Asia/Ho_Chi_Minh] [v0] Router - About to call TripController::index
+[13-Oct-2025 20:18:26 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:18:26 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:18:26 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:18:26 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:18:26 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:18:26 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:19:53 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:19:53 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:19:53 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:19:53 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:19:53 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:19:53 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:19:53 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:19:53 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:19:53 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:19:53 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:19:53 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:19:53 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:19:58 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:19:58 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:19:58 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:19:58 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:19:58 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:19:58 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:22:56 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:22:56 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:22:56 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:22:56 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:22:56 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:22:56 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:22:56 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:22:56 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:22:56 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:22:56 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:22:56 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:22:56 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:22:58 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:22:58 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:22:58 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:22:58 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:22:58 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:22:58 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:23:17 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:23:17 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:23:17 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:23:17 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:23:17 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:23:17 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:23:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:23:18 Asia/Ho_Chi_Minh] [v0] Router - About to call BookingController::show
+[13-Oct-2025 20:23:18 Asia/Ho_Chi_Minh] [v0] BookingController show called with tripId: 776
+[13-Oct-2025 20:23:18 Asia/Ho_Chi_Minh] [v0] Return trip ID: , Is round trip: no
+[13-Oct-2025 20:23:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:23:18 Asia/Ho_Chi_Minh] [v0] getTripDetails for trip 776 - loaiChoNgoiMacDinh: Giường đôi
+[13-Oct-2025 20:23:18 Asia/Ho_Chi_Minh] [v0] Full trip details: {"maChuyenXe":776,"maLichTrinh":9,"maPhuongTien":21,"maTaiXe":null,"maGiaVe":42,"ngayKhoiHanh":"2025-10-14","thoiGianKhoiHanh":"2025-10-14 08:30:00","thoiGianKetThuc":"2025-10-14 15:00:00","soChoTong":20,"soChoDaDat":0,"soChoTrong":20,"trangThai":"S\u1eb5n s\u00e0ng","ngayTao":"2025-09-23 14:39:52","ngayCapNhat":"2025-09-23 14:39:52","tenLichTrinh":"L\u1ecbch tr\u00ecnh SG-DL 08:30","gioKhoiHanh":"08:30:00","gioKetThuc":"15:00:00","maTuyenDuong":13,"kyHieuTuyen":"SG-DL","diemDi":"TP. H\u1ed3 Ch\u00ed Minh","diemDen":"\u0110\u00e0 L\u1ea1t","thoiGianDiChuyen":"06:30:00","bienSo":"50H-488766","maLoaiPhuongTien":5,"tenLoaiPhuongTien":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","soChoMacDinh":20,"soTang":2,"soHang":10,"soCotTrai":1,"soCotGiua":0,"soCotPhai":1,"loaiChoNgoiMacDinh":"Gi\u01b0\u1eddng \u0111\u00f4i","giaVe":"650000.00","tenLoaiVe":"V\u00e9 th\u01b0\u1eddng"}
+[13-Oct-2025 20:23:18 Asia/Ho_Chi_Minh] [v0] Departure datetime: 2025-10-14 08:30:00, Current time: 2025-10-13 20:23:18, Has departed: no
+[13-Oct-2025 20:23:18 Asia/Ho_Chi_Minh] [v0] Outbound trip datetime: 2025-10-14 08:30:00, has departed: no
+[13-Oct-2025 20:23:18 Asia/Ho_Chi_Minh] [v0] Found 2 Đón points for route 13
+[13-Oct-2025 20:23:18 Asia/Ho_Chi_Minh] [v0] Found 1 Trả points for route 13
+[13-Oct-2025 20:23:18 Asia/Ho_Chi_Minh] [v0] Route ID: 13, Pickup points: 2, Dropoff points: 1
+[13-Oct-2025 20:23:18 Asia/Ho_Chi_Minh] [v0] Found 20 actual seats for vehicle 21
+[13-Oct-2025 20:23:18 Asia/Ho_Chi_Minh] [v0] Seat layout created with 20 actual seats: {"total_seats":20,"seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","left_columns":1,"right_columns":1,"middle_columns":0,"floors":2,"rows_per_floor":10,"vehicle_type":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","default_seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","actual_seats":[{"maGhe":461,"soGhe":"A01"},{"maGhe":462,"soGhe":"A02"},{"maGhe":463,"soGhe":"A03"},{"maGhe":464,"soGhe":"A04"},{"maGhe":465,"soGhe":"A05"},{"maGhe":466,"soGhe":"A06"},{"maGhe":467,"soGhe":"A07"},{"maGhe":468,"soGhe":"A08"},{"maGhe":469,"soGhe":"A09"},{"maGhe":470,"soGhe":"A10"},{"maGhe":471,"soGhe":"A11"},{"maGhe":472,"soGhe":"A12"},{"maGhe":473,"soGhe":"A13"},{"maGhe":474,"soGhe":"A14"},{"maGhe":475,"soGhe":"A15"},{"maGhe":476,"soGhe":"A16"},{"maGhe":477,"soGhe":"A17"},{"maGhe":478,"soGhe":"A18"},{"maGhe":479,"soGhe":"A19"},{"maGhe":480,"soGhe":"A20"}]}
+[13-Oct-2025 20:23:18 Asia/Ho_Chi_Minh] [v0] Found 1 booked/held seats for trip 776: ["A12"]
+[13-Oct-2025 20:23:18 Asia/Ho_Chi_Minh] [v0] Found 1 seat statuses for trip 776: {"A12":"\u0110ang gi\u1eef"}
+[13-Oct-2025 20:23:18 Asia/Ho_Chi_Minh] [v0] Seat layout: {"total_seats":20,"seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","left_columns":1,"right_columns":1,"middle_columns":0,"floors":2,"rows_per_floor":10,"vehicle_type":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","default_seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","actual_seats":[{"maGhe":461,"soGhe":"A01"},{"maGhe":462,"soGhe":"A02"},{"maGhe":463,"soGhe":"A03"},{"maGhe":464,"soGhe":"A04"},{"maGhe":465,"soGhe":"A05"},{"maGhe":466,"soGhe":"A06"},{"maGhe":467,"soGhe":"A07"},{"maGhe":468,"soGhe":"A08"},{"maGhe":469,"soGhe":"A09"},{"maGhe":470,"soGhe":"A10"},{"maGhe":471,"soGhe":"A11"},{"maGhe":472,"soGhe":"A12"},{"maGhe":473,"soGhe":"A13"},{"maGhe":474,"soGhe":"A14"},{"maGhe":475,"soGhe":"A15"},{"maGhe":476,"soGhe":"A16"},{"maGhe":477,"soGhe":"A17"},{"maGhe":478,"soGhe":"A18"},{"maGhe":479,"soGhe":"A19"},{"maGhe":480,"soGhe":"A20"}]}
+[13-Oct-2025 20:23:18 Asia/Ho_Chi_Minh] [v0] Booked seats: ["A12"]
+[13-Oct-2025 20:23:18 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:23:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:23:18 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:23:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:23:18 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:23:21 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:23:21 Asia/Ho_Chi_Minh] [v0] Router - About to call BookingController::show
+[13-Oct-2025 20:23:21 Asia/Ho_Chi_Minh] [v0] BookingController show called with tripId: 776
+[13-Oct-2025 20:23:21 Asia/Ho_Chi_Minh] [v0] Return trip ID: , Is round trip: no
+[13-Oct-2025 20:23:21 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:23:21 Asia/Ho_Chi_Minh] [v0] getTripDetails for trip 776 - loaiChoNgoiMacDinh: Giường đôi
+[13-Oct-2025 20:23:21 Asia/Ho_Chi_Minh] [v0] Full trip details: {"maChuyenXe":776,"maLichTrinh":9,"maPhuongTien":21,"maTaiXe":null,"maGiaVe":42,"ngayKhoiHanh":"2025-10-14","thoiGianKhoiHanh":"2025-10-14 08:30:00","thoiGianKetThuc":"2025-10-14 15:00:00","soChoTong":20,"soChoDaDat":0,"soChoTrong":20,"trangThai":"S\u1eb5n s\u00e0ng","ngayTao":"2025-09-23 14:39:52","ngayCapNhat":"2025-09-23 14:39:52","tenLichTrinh":"L\u1ecbch tr\u00ecnh SG-DL 08:30","gioKhoiHanh":"08:30:00","gioKetThuc":"15:00:00","maTuyenDuong":13,"kyHieuTuyen":"SG-DL","diemDi":"TP. H\u1ed3 Ch\u00ed Minh","diemDen":"\u0110\u00e0 L\u1ea1t","thoiGianDiChuyen":"06:30:00","bienSo":"50H-488766","maLoaiPhuongTien":5,"tenLoaiPhuongTien":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","soChoMacDinh":20,"soTang":2,"soHang":10,"soCotTrai":1,"soCotGiua":0,"soCotPhai":1,"loaiChoNgoiMacDinh":"Gi\u01b0\u1eddng \u0111\u00f4i","giaVe":"650000.00","tenLoaiVe":"V\u00e9 th\u01b0\u1eddng"}
+[13-Oct-2025 20:23:21 Asia/Ho_Chi_Minh] [v0] Departure datetime: 2025-10-14 08:30:00, Current time: 2025-10-13 20:23:21, Has departed: no
+[13-Oct-2025 20:23:21 Asia/Ho_Chi_Minh] [v0] Outbound trip datetime: 2025-10-14 08:30:00, has departed: no
+[13-Oct-2025 20:23:21 Asia/Ho_Chi_Minh] [v0] Found 2 Đón points for route 13
+[13-Oct-2025 20:23:21 Asia/Ho_Chi_Minh] [v0] Found 1 Trả points for route 13
+[13-Oct-2025 20:23:21 Asia/Ho_Chi_Minh] [v0] Route ID: 13, Pickup points: 2, Dropoff points: 1
+[13-Oct-2025 20:23:21 Asia/Ho_Chi_Minh] [v0] Found 20 actual seats for vehicle 21
+[13-Oct-2025 20:23:21 Asia/Ho_Chi_Minh] [v0] Seat layout created with 20 actual seats: {"total_seats":20,"seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","left_columns":1,"right_columns":1,"middle_columns":0,"floors":2,"rows_per_floor":10,"vehicle_type":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","default_seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","actual_seats":[{"maGhe":461,"soGhe":"A01"},{"maGhe":462,"soGhe":"A02"},{"maGhe":463,"soGhe":"A03"},{"maGhe":464,"soGhe":"A04"},{"maGhe":465,"soGhe":"A05"},{"maGhe":466,"soGhe":"A06"},{"maGhe":467,"soGhe":"A07"},{"maGhe":468,"soGhe":"A08"},{"maGhe":469,"soGhe":"A09"},{"maGhe":470,"soGhe":"A10"},{"maGhe":471,"soGhe":"A11"},{"maGhe":472,"soGhe":"A12"},{"maGhe":473,"soGhe":"A13"},{"maGhe":474,"soGhe":"A14"},{"maGhe":475,"soGhe":"A15"},{"maGhe":476,"soGhe":"A16"},{"maGhe":477,"soGhe":"A17"},{"maGhe":478,"soGhe":"A18"},{"maGhe":479,"soGhe":"A19"},{"maGhe":480,"soGhe":"A20"}]}
+[13-Oct-2025 20:23:21 Asia/Ho_Chi_Minh] [v0] Found 1 booked/held seats for trip 776: ["A12"]
+[13-Oct-2025 20:23:21 Asia/Ho_Chi_Minh] [v0] Found 1 seat statuses for trip 776: {"A12":"\u0110ang gi\u1eef"}
+[13-Oct-2025 20:23:21 Asia/Ho_Chi_Minh] [v0] Seat layout: {"total_seats":20,"seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","left_columns":1,"right_columns":1,"middle_columns":0,"floors":2,"rows_per_floor":10,"vehicle_type":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","default_seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","actual_seats":[{"maGhe":461,"soGhe":"A01"},{"maGhe":462,"soGhe":"A02"},{"maGhe":463,"soGhe":"A03"},{"maGhe":464,"soGhe":"A04"},{"maGhe":465,"soGhe":"A05"},{"maGhe":466,"soGhe":"A06"},{"maGhe":467,"soGhe":"A07"},{"maGhe":468,"soGhe":"A08"},{"maGhe":469,"soGhe":"A09"},{"maGhe":470,"soGhe":"A10"},{"maGhe":471,"soGhe":"A11"},{"maGhe":472,"soGhe":"A12"},{"maGhe":473,"soGhe":"A13"},{"maGhe":474,"soGhe":"A14"},{"maGhe":475,"soGhe":"A15"},{"maGhe":476,"soGhe":"A16"},{"maGhe":477,"soGhe":"A17"},{"maGhe":478,"soGhe":"A18"},{"maGhe":479,"soGhe":"A19"},{"maGhe":480,"soGhe":"A20"}]}
+[13-Oct-2025 20:23:21 Asia/Ho_Chi_Minh] [v0] Booked seats: ["A12"]
+[13-Oct-2025 20:23:21 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:23:21 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:23:21 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:23:21 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:23:21 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:23:43 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:23:43 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:23:43 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:23:43 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:23:43 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:23:43 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:23:43 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:23:43 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:23:43 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:23:43 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:23:45 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:23:45 Asia/Ho_Chi_Minh] [v0] Router - About to call AdminController::index
+[13-Oct-2025 20:23:45 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:23:45 Asia/Ho_Chi_Minh] [AdminController] Dashboard stats: {"vehicles":6,"routes":3,"schedules":5,"trips":79,"users":12,"prices":5}
+[13-Oct-2025 20:23:45 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:23:45 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:23:45 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:23:45 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:23:45 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:23:46 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:23:46 Asia/Ho_Chi_Minh] [v0] Router - About to call TripController::index
+[13-Oct-2025 20:23:46 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:23:46 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:23:46 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:23:46 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:23:46 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:23:46 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:23:47 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:23:47 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::generateTrips
+[13-Oct-2025 20:23:48 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:23:48 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:23:48 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:23:48 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:23:48 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:23:48 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:23:53 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:23:53 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[13-Oct-2025 20:23:53 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:23:53 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:23:53 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[13-Oct-2025 20:23:53 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:23:56 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:23:56 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[13-Oct-2025 20:23:56 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:23:56 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:23:56 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[13-Oct-2025 20:23:56 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:23:59 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:23:59 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[13-Oct-2025 20:23:59 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:23:59 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:23:59 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[13-Oct-2025 20:23:59 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:24:01 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:24:01 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[13-Oct-2025 20:24:01 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:24:01 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:24:01 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[13-Oct-2025 20:24:01 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:24:03 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:24:03 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[13-Oct-2025 20:24:03 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:24:03 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:24:03 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[13-Oct-2025 20:24:03 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:24:04 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:24:04 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[13-Oct-2025 20:24:04 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:24:04 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:24:04 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[13-Oct-2025 20:24:04 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:24:06 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:24:06 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[13-Oct-2025 20:24:06 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:24:06 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:24:06 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[13-Oct-2025 20:24:06 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:24:14 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:24:14 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[13-Oct-2025 20:24:14 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:24:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:24:18 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[13-Oct-2025 20:24:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:24:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:24:18 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[13-Oct-2025 20:24:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:24:20 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:24:20 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[13-Oct-2025 20:24:20 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:24:20 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:24:20 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[13-Oct-2025 20:24:20 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:24:21 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:24:21 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[13-Oct-2025 20:24:21 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:24:21 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:24:21 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[13-Oct-2025 20:24:21 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:24:25 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:24:25 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[13-Oct-2025 20:24:25 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:24:25 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:24:25 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[13-Oct-2025 20:24:25 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:24:27 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:24:27 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[13-Oct-2025 20:24:27 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:24:27 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:24:27 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[13-Oct-2025 20:24:27 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:24:28 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:24:28 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[13-Oct-2025 20:24:28 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:24:28 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:24:28 Asia/Ho_Chi_Minh] [v0] Router - About to call ScheduleController::validateTrips
+[13-Oct-2025 20:24:29 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:24:39 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:24:39 Asia/Ho_Chi_Minh] [v0] Router - About to call BookingController::show
+[13-Oct-2025 20:24:39 Asia/Ho_Chi_Minh] [v0] BookingController show called with tripId: 776
+[13-Oct-2025 20:24:39 Asia/Ho_Chi_Minh] [v0] Return trip ID: , Is round trip: no
+[13-Oct-2025 20:24:39 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:24:39 Asia/Ho_Chi_Minh] [v0] getTripDetails for trip 776 - loaiChoNgoiMacDinh: Giường đôi
+[13-Oct-2025 20:24:39 Asia/Ho_Chi_Minh] [v0] Full trip details: {"maChuyenXe":776,"maLichTrinh":9,"maPhuongTien":21,"maTaiXe":null,"maGiaVe":42,"ngayKhoiHanh":"2025-10-14","thoiGianKhoiHanh":"2025-10-14 08:30:00","thoiGianKetThuc":"2025-10-14 15:00:00","soChoTong":20,"soChoDaDat":0,"soChoTrong":20,"trangThai":"S\u1eb5n s\u00e0ng","ngayTao":"2025-09-23 14:39:52","ngayCapNhat":"2025-09-23 14:39:52","tenLichTrinh":"L\u1ecbch tr\u00ecnh SG-DL 08:30","gioKhoiHanh":"08:30:00","gioKetThuc":"15:00:00","maTuyenDuong":13,"kyHieuTuyen":"SG-DL","diemDi":"TP. H\u1ed3 Ch\u00ed Minh","diemDen":"\u0110\u00e0 L\u1ea1t","thoiGianDiChuyen":"06:30:00","bienSo":"50H-488766","maLoaiPhuongTien":5,"tenLoaiPhuongTien":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","soChoMacDinh":20,"soTang":2,"soHang":10,"soCotTrai":1,"soCotGiua":0,"soCotPhai":1,"loaiChoNgoiMacDinh":"Gi\u01b0\u1eddng \u0111\u00f4i","giaVe":"650000.00","tenLoaiVe":"V\u00e9 th\u01b0\u1eddng"}
+[13-Oct-2025 20:24:39 Asia/Ho_Chi_Minh] [v0] Departure datetime: 2025-10-14 08:30:00, Current time: 2025-10-13 20:24:39, Has departed: no
+[13-Oct-2025 20:24:39 Asia/Ho_Chi_Minh] [v0] Outbound trip datetime: 2025-10-14 08:30:00, has departed: no
+[13-Oct-2025 20:24:39 Asia/Ho_Chi_Minh] [v0] Found 2 Đón points for route 13
+[13-Oct-2025 20:24:39 Asia/Ho_Chi_Minh] [v0] Found 1 Trả points for route 13
+[13-Oct-2025 20:24:39 Asia/Ho_Chi_Minh] [v0] Route ID: 13, Pickup points: 2, Dropoff points: 1
+[13-Oct-2025 20:24:39 Asia/Ho_Chi_Minh] [v0] Found 20 actual seats for vehicle 21
+[13-Oct-2025 20:24:39 Asia/Ho_Chi_Minh] [v0] Seat layout created with 20 actual seats: {"total_seats":20,"seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","left_columns":1,"right_columns":1,"middle_columns":0,"floors":2,"rows_per_floor":10,"vehicle_type":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","default_seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","actual_seats":[{"maGhe":461,"soGhe":"A01"},{"maGhe":462,"soGhe":"A02"},{"maGhe":463,"soGhe":"A03"},{"maGhe":464,"soGhe":"A04"},{"maGhe":465,"soGhe":"A05"},{"maGhe":466,"soGhe":"A06"},{"maGhe":467,"soGhe":"A07"},{"maGhe":468,"soGhe":"A08"},{"maGhe":469,"soGhe":"A09"},{"maGhe":470,"soGhe":"A10"},{"maGhe":471,"soGhe":"A11"},{"maGhe":472,"soGhe":"A12"},{"maGhe":473,"soGhe":"A13"},{"maGhe":474,"soGhe":"A14"},{"maGhe":475,"soGhe":"A15"},{"maGhe":476,"soGhe":"A16"},{"maGhe":477,"soGhe":"A17"},{"maGhe":478,"soGhe":"A18"},{"maGhe":479,"soGhe":"A19"},{"maGhe":480,"soGhe":"A20"}]}
+[13-Oct-2025 20:24:39 Asia/Ho_Chi_Minh] [v0] Found 1 booked/held seats for trip 776: ["A12"]
+[13-Oct-2025 20:24:39 Asia/Ho_Chi_Minh] [v0] Found 1 seat statuses for trip 776: {"A12":"\u0110ang gi\u1eef"}
+[13-Oct-2025 20:24:39 Asia/Ho_Chi_Minh] [v0] Seat layout: {"total_seats":20,"seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","left_columns":1,"right_columns":1,"middle_columns":0,"floors":2,"rows_per_floor":10,"vehicle_type":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","default_seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","actual_seats":[{"maGhe":461,"soGhe":"A01"},{"maGhe":462,"soGhe":"A02"},{"maGhe":463,"soGhe":"A03"},{"maGhe":464,"soGhe":"A04"},{"maGhe":465,"soGhe":"A05"},{"maGhe":466,"soGhe":"A06"},{"maGhe":467,"soGhe":"A07"},{"maGhe":468,"soGhe":"A08"},{"maGhe":469,"soGhe":"A09"},{"maGhe":470,"soGhe":"A10"},{"maGhe":471,"soGhe":"A11"},{"maGhe":472,"soGhe":"A12"},{"maGhe":473,"soGhe":"A13"},{"maGhe":474,"soGhe":"A14"},{"maGhe":475,"soGhe":"A15"},{"maGhe":476,"soGhe":"A16"},{"maGhe":477,"soGhe":"A17"},{"maGhe":478,"soGhe":"A18"},{"maGhe":479,"soGhe":"A19"},{"maGhe":480,"soGhe":"A20"}]}
+[13-Oct-2025 20:24:39 Asia/Ho_Chi_Minh] [v0] Booked seats: ["A12"]
+[13-Oct-2025 20:24:39 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:24:39 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:24:39 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:24:39 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:24:39 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:24:47 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:24:47 Asia/Ho_Chi_Minh] [v0] Router - About to call PaymentController::show
+[13-Oct-2025 20:24:47 Asia/Ho_Chi_Minh] [v0] PaymentController::show() started
+[13-Oct-2025 20:24:47 Asia/Ho_Chi_Minh] [v0] Session data - final_booking_data exists: yes
+[13-Oct-2025 20:24:47 Asia/Ho_Chi_Minh] [v0] Session data - held_seats exists: yes
+[13-Oct-2025 20:24:47 Asia/Ho_Chi_Minh] [v0] Booking data loaded successfully
+[13-Oct-2025 20:24:47 Asia/Ho_Chi_Minh] [v0] Total price: 650000
+[13-Oct-2025 20:24:47 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:24:47 Asia/Ho_Chi_Minh] [v0] Found 3 active promotions
+[13-Oct-2025 20:24:47 Asia/Ho_Chi_Minh] [v0] User points: 3450
+[13-Oct-2025 20:24:47 Asia/Ho_Chi_Minh] [v0] Pricing calculated - Original: 650000, Final: 650000
+[13-Oct-2025 20:24:47 Asia/Ho_Chi_Minh] [v0] About to include payment view
+[13-Oct-2025 20:24:47 Asia/Ho_Chi_Minh] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\XeGoo\views\payment\show.php on line 50
+[13-Oct-2025 20:24:47 Asia/Ho_Chi_Minh] [v0] Payment page - seat type derived from vehicle type: Giường đôi
+[13-Oct-2025 20:24:47 Asia/Ho_Chi_Minh] [v0] Payment page - final seat type value: Giường đôi
+[13-Oct-2025 20:24:47 Asia/Ho_Chi_Minh] [v0] Payment page - trip details keys: ["maChuyenXe","maLichTrinh","maPhuongTien","maTaiXe","maGiaVe","ngayKhoiHanh","thoiGianKhoiHanh","thoiGianKetThuc","soChoTong","soChoDaDat","soChoTrong","trangThai","ngayTao","ngayCapNhat","tenLichTrinh","lichTrinhGioKhoiHanh","thuTrongTuan","kyHieuTuyen","diemDi","diemDen","khoangCach","thoiGianDiChuyen","bienSo","tenLoaiPhuongTien","soChoMacDinh","giaVe","loaiChoNgoi","tenLoaiVe"]
+[13-Oct-2025 20:24:47 Asia/Ho_Chi_Minh] [v0] Payment view included successfully
+[13-Oct-2025 20:24:47 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:24:47 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:24:47 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:24:47 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:24:47 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:24:47 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:24:47 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:27:21 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:27:21 Asia/Ho_Chi_Minh] [v0] Router - About to call PaymentController::show
+[13-Oct-2025 20:27:21 Asia/Ho_Chi_Minh] [v0] PaymentController::show() started
+[13-Oct-2025 20:27:21 Asia/Ho_Chi_Minh] [v0] Session data - final_booking_data exists: yes
+[13-Oct-2025 20:27:21 Asia/Ho_Chi_Minh] [v0] Session data - held_seats exists: yes
+[13-Oct-2025 20:27:21 Asia/Ho_Chi_Minh] [v0] Booking data loaded successfully
+[13-Oct-2025 20:27:21 Asia/Ho_Chi_Minh] [v0] Total price: 650000
+[13-Oct-2025 20:27:21 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:27:21 Asia/Ho_Chi_Minh] [v0] Found 3 active promotions
+[13-Oct-2025 20:27:21 Asia/Ho_Chi_Minh] [v0] User points: 3450
+[13-Oct-2025 20:27:21 Asia/Ho_Chi_Minh] [v0] Pricing calculated - Original: 650000, Final: 650000
+[13-Oct-2025 20:27:21 Asia/Ho_Chi_Minh] [v0] About to include payment view
+[13-Oct-2025 20:27:21 Asia/Ho_Chi_Minh] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\xampp\htdocs\XeGoo\views\payment\show.php on line 50
+[13-Oct-2025 20:27:21 Asia/Ho_Chi_Minh] [v0] Payment page - seat type derived from vehicle type: Giường đôi
+[13-Oct-2025 20:27:21 Asia/Ho_Chi_Minh] [v0] Payment page - final seat type value: Giường đôi
+[13-Oct-2025 20:27:21 Asia/Ho_Chi_Minh] [v0] Payment page - trip details keys: ["maChuyenXe","maLichTrinh","maPhuongTien","maTaiXe","maGiaVe","ngayKhoiHanh","thoiGianKhoiHanh","thoiGianKetThuc","soChoTong","soChoDaDat","soChoTrong","trangThai","ngayTao","ngayCapNhat","tenLichTrinh","lichTrinhGioKhoiHanh","thuTrongTuan","kyHieuTuyen","diemDi","diemDen","khoangCach","thoiGianDiChuyen","bienSo","tenLoaiPhuongTien","soChoMacDinh","giaVe","loaiChoNgoi","tenLoaiVe"]
+[13-Oct-2025 20:27:21 Asia/Ho_Chi_Minh] [v0] Payment view included successfully
+[13-Oct-2025 20:27:21 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:27:21 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:27:21 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:27:21 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:27:21 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:27:21 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:27:21 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:27:44 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:27:44 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::index
+[13-Oct-2025 20:27:44 Asia/Ho_Chi_Minh] === Database Debug ===
+[13-Oct-2025 20:27:44 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:27:44 Asia/Ho_Chi_Minh] Active routes: 3
+[13-Oct-2025 20:27:44 Asia/Ho_Chi_Minh] Route: TP. Hồ Chí Minh -> Đà Lạt (SG-DL)
+[13-Oct-2025 20:27:44 Asia/Ho_Chi_Minh] Route: Đà Lạt -> TP. Hồ Chí Minh (DL-SG)
+[13-Oct-2025 20:27:44 Asia/Ho_Chi_Minh] Route: TP. Hồ Chí Minh -> Vũng Tàu (SG-VT)
+[13-Oct-2025 20:27:44 Asia/Ho_Chi_Minh] Active trips: 59
+[13-Oct-2025 20:27:44 Asia/Ho_Chi_Minh] Sample trip: TP. Hồ Chí Minh -> Đà Lạt on 2025-10-14
+[13-Oct-2025 20:27:44 Asia/Ho_Chi_Minh] Sample trip: TP. Hồ Chí Minh -> Đà Lạt on 2025-10-15
+[13-Oct-2025 20:27:44 Asia/Ho_Chi_Minh] Sample trip: TP. Hồ Chí Minh -> Đà Lạt on 2025-10-16
+[13-Oct-2025 20:27:44 Asia/Ho_Chi_Minh] === SearchController ===
+[13-Oct-2025 20:27:44 Asia/Ho_Chi_Minh] Search params: from='', to='', date='', passengers=1
+[13-Oct-2025 20:27:44 Asia/Ho_Chi_Minh] Form data loaded: 3 cities, 3 popular routes
+[13-Oct-2025 20:27:44 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:27:44 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:27:44 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:27:44 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:27:44 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:28:00 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:28:00 Asia/Ho_Chi_Minh] [v0] Router - About to call BookingController::show
+[13-Oct-2025 20:28:00 Asia/Ho_Chi_Minh] [v0] BookingController show called with tripId: 776
+[13-Oct-2025 20:28:00 Asia/Ho_Chi_Minh] [v0] Return trip ID: , Is round trip: no
+[13-Oct-2025 20:28:00 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:28:00 Asia/Ho_Chi_Minh] [v0] getTripDetails for trip 776 - loaiChoNgoiMacDinh: Giường đôi
+[13-Oct-2025 20:28:00 Asia/Ho_Chi_Minh] [v0] Full trip details: {"maChuyenXe":776,"maLichTrinh":9,"maPhuongTien":21,"maTaiXe":null,"maGiaVe":42,"ngayKhoiHanh":"2025-10-14","thoiGianKhoiHanh":"2025-10-14 08:30:00","thoiGianKetThuc":"2025-10-14 15:00:00","soChoTong":20,"soChoDaDat":0,"soChoTrong":20,"trangThai":"S\u1eb5n s\u00e0ng","ngayTao":"2025-09-23 14:39:52","ngayCapNhat":"2025-09-23 14:39:52","tenLichTrinh":"L\u1ecbch tr\u00ecnh SG-DL 08:30","gioKhoiHanh":"08:30:00","gioKetThuc":"15:00:00","maTuyenDuong":13,"kyHieuTuyen":"SG-DL","diemDi":"TP. H\u1ed3 Ch\u00ed Minh","diemDen":"\u0110\u00e0 L\u1ea1t","thoiGianDiChuyen":"06:30:00","bienSo":"50H-488766","maLoaiPhuongTien":5,"tenLoaiPhuongTien":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","soChoMacDinh":20,"soTang":2,"soHang":10,"soCotTrai":1,"soCotGiua":0,"soCotPhai":1,"loaiChoNgoiMacDinh":"Gi\u01b0\u1eddng \u0111\u00f4i","giaVe":"650000.00","tenLoaiVe":"V\u00e9 th\u01b0\u1eddng"}
+[13-Oct-2025 20:28:00 Asia/Ho_Chi_Minh] [v0] Departure datetime: 2025-10-14 08:30:00, Current time: 2025-10-13 20:28:00, Has departed: no
+[13-Oct-2025 20:28:00 Asia/Ho_Chi_Minh] [v0] Outbound trip datetime: 2025-10-14 08:30:00, has departed: no
+[13-Oct-2025 20:28:00 Asia/Ho_Chi_Minh] [v0] Found 2 Đón points for route 13
+[13-Oct-2025 20:28:00 Asia/Ho_Chi_Minh] [v0] Found 1 Trả points for route 13
+[13-Oct-2025 20:28:00 Asia/Ho_Chi_Minh] [v0] Route ID: 13, Pickup points: 2, Dropoff points: 1
+[13-Oct-2025 20:28:00 Asia/Ho_Chi_Minh] [v0] Found 20 actual seats for vehicle 21
+[13-Oct-2025 20:28:00 Asia/Ho_Chi_Minh] [v0] Seat layout created with 20 actual seats: {"total_seats":20,"seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","left_columns":1,"right_columns":1,"middle_columns":0,"floors":2,"rows_per_floor":10,"vehicle_type":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","default_seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","actual_seats":[{"maGhe":461,"soGhe":"A01"},{"maGhe":462,"soGhe":"A02"},{"maGhe":463,"soGhe":"A03"},{"maGhe":464,"soGhe":"A04"},{"maGhe":465,"soGhe":"A05"},{"maGhe":466,"soGhe":"A06"},{"maGhe":467,"soGhe":"A07"},{"maGhe":468,"soGhe":"A08"},{"maGhe":469,"soGhe":"A09"},{"maGhe":470,"soGhe":"A10"},{"maGhe":471,"soGhe":"A11"},{"maGhe":472,"soGhe":"A12"},{"maGhe":473,"soGhe":"A13"},{"maGhe":474,"soGhe":"A14"},{"maGhe":475,"soGhe":"A15"},{"maGhe":476,"soGhe":"A16"},{"maGhe":477,"soGhe":"A17"},{"maGhe":478,"soGhe":"A18"},{"maGhe":479,"soGhe":"A19"},{"maGhe":480,"soGhe":"A20"}]}
+[13-Oct-2025 20:28:00 Asia/Ho_Chi_Minh] [v0] Found 1 booked/held seats for trip 776: ["A12"]
+[13-Oct-2025 20:28:00 Asia/Ho_Chi_Minh] [v0] Found 1 seat statuses for trip 776: {"A12":"\u0110ang gi\u1eef"}
+[13-Oct-2025 20:28:00 Asia/Ho_Chi_Minh] [v0] Seat layout: {"total_seats":20,"seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","left_columns":1,"right_columns":1,"middle_columns":0,"floors":2,"rows_per_floor":10,"vehicle_type":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","default_seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","actual_seats":[{"maGhe":461,"soGhe":"A01"},{"maGhe":462,"soGhe":"A02"},{"maGhe":463,"soGhe":"A03"},{"maGhe":464,"soGhe":"A04"},{"maGhe":465,"soGhe":"A05"},{"maGhe":466,"soGhe":"A06"},{"maGhe":467,"soGhe":"A07"},{"maGhe":468,"soGhe":"A08"},{"maGhe":469,"soGhe":"A09"},{"maGhe":470,"soGhe":"A10"},{"maGhe":471,"soGhe":"A11"},{"maGhe":472,"soGhe":"A12"},{"maGhe":473,"soGhe":"A13"},{"maGhe":474,"soGhe":"A14"},{"maGhe":475,"soGhe":"A15"},{"maGhe":476,"soGhe":"A16"},{"maGhe":477,"soGhe":"A17"},{"maGhe":478,"soGhe":"A18"},{"maGhe":479,"soGhe":"A19"},{"maGhe":480,"soGhe":"A20"}]}
+[13-Oct-2025 20:28:00 Asia/Ho_Chi_Minh] [v0] Booked seats: ["A12"]
+[13-Oct-2025 20:28:00 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:28:00 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:28:00 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:28:00 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:28:00 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:28:03 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:28:03 Asia/Ho_Chi_Minh] [v0] Router - About to call BookingController::show
+[13-Oct-2025 20:28:03 Asia/Ho_Chi_Minh] [v0] BookingController show called with tripId: 776
+[13-Oct-2025 20:28:03 Asia/Ho_Chi_Minh] [v0] Return trip ID: , Is round trip: no
+[13-Oct-2025 20:28:03 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:28:03 Asia/Ho_Chi_Minh] [v0] getTripDetails for trip 776 - loaiChoNgoiMacDinh: Giường đôi
+[13-Oct-2025 20:28:03 Asia/Ho_Chi_Minh] [v0] Full trip details: {"maChuyenXe":776,"maLichTrinh":9,"maPhuongTien":21,"maTaiXe":null,"maGiaVe":42,"ngayKhoiHanh":"2025-10-14","thoiGianKhoiHanh":"2025-10-14 08:30:00","thoiGianKetThuc":"2025-10-14 15:00:00","soChoTong":20,"soChoDaDat":0,"soChoTrong":20,"trangThai":"S\u1eb5n s\u00e0ng","ngayTao":"2025-09-23 14:39:52","ngayCapNhat":"2025-09-23 14:39:52","tenLichTrinh":"L\u1ecbch tr\u00ecnh SG-DL 08:30","gioKhoiHanh":"08:30:00","gioKetThuc":"15:00:00","maTuyenDuong":13,"kyHieuTuyen":"SG-DL","diemDi":"TP. H\u1ed3 Ch\u00ed Minh","diemDen":"\u0110\u00e0 L\u1ea1t","thoiGianDiChuyen":"06:30:00","bienSo":"50H-488766","maLoaiPhuongTien":5,"tenLoaiPhuongTien":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","soChoMacDinh":20,"soTang":2,"soHang":10,"soCotTrai":1,"soCotGiua":0,"soCotPhai":1,"loaiChoNgoiMacDinh":"Gi\u01b0\u1eddng \u0111\u00f4i","giaVe":"650000.00","tenLoaiVe":"V\u00e9 th\u01b0\u1eddng"}
+[13-Oct-2025 20:28:03 Asia/Ho_Chi_Minh] [v0] Departure datetime: 2025-10-14 08:30:00, Current time: 2025-10-13 20:28:03, Has departed: no
+[13-Oct-2025 20:28:03 Asia/Ho_Chi_Minh] [v0] Outbound trip datetime: 2025-10-14 08:30:00, has departed: no
+[13-Oct-2025 20:28:03 Asia/Ho_Chi_Minh] [v0] Found 2 Đón points for route 13
+[13-Oct-2025 20:28:03 Asia/Ho_Chi_Minh] [v0] Found 1 Trả points for route 13
+[13-Oct-2025 20:28:03 Asia/Ho_Chi_Minh] [v0] Route ID: 13, Pickup points: 2, Dropoff points: 1
+[13-Oct-2025 20:28:03 Asia/Ho_Chi_Minh] [v0] Found 20 actual seats for vehicle 21
+[13-Oct-2025 20:28:03 Asia/Ho_Chi_Minh] [v0] Seat layout created with 20 actual seats: {"total_seats":20,"seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","left_columns":1,"right_columns":1,"middle_columns":0,"floors":2,"rows_per_floor":10,"vehicle_type":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","default_seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","actual_seats":[{"maGhe":461,"soGhe":"A01"},{"maGhe":462,"soGhe":"A02"},{"maGhe":463,"soGhe":"A03"},{"maGhe":464,"soGhe":"A04"},{"maGhe":465,"soGhe":"A05"},{"maGhe":466,"soGhe":"A06"},{"maGhe":467,"soGhe":"A07"},{"maGhe":468,"soGhe":"A08"},{"maGhe":469,"soGhe":"A09"},{"maGhe":470,"soGhe":"A10"},{"maGhe":471,"soGhe":"A11"},{"maGhe":472,"soGhe":"A12"},{"maGhe":473,"soGhe":"A13"},{"maGhe":474,"soGhe":"A14"},{"maGhe":475,"soGhe":"A15"},{"maGhe":476,"soGhe":"A16"},{"maGhe":477,"soGhe":"A17"},{"maGhe":478,"soGhe":"A18"},{"maGhe":479,"soGhe":"A19"},{"maGhe":480,"soGhe":"A20"}]}
+[13-Oct-2025 20:28:03 Asia/Ho_Chi_Minh] [v0] Found 1 booked/held seats for trip 776: ["A12"]
+[13-Oct-2025 20:28:03 Asia/Ho_Chi_Minh] [v0] Found 1 seat statuses for trip 776: {"A12":"\u0110ang gi\u1eef"}
+[13-Oct-2025 20:28:03 Asia/Ho_Chi_Minh] [v0] Seat layout: {"total_seats":20,"seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","left_columns":1,"right_columns":1,"middle_columns":0,"floors":2,"rows_per_floor":10,"vehicle_type":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","default_seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","actual_seats":[{"maGhe":461,"soGhe":"A01"},{"maGhe":462,"soGhe":"A02"},{"maGhe":463,"soGhe":"A03"},{"maGhe":464,"soGhe":"A04"},{"maGhe":465,"soGhe":"A05"},{"maGhe":466,"soGhe":"A06"},{"maGhe":467,"soGhe":"A07"},{"maGhe":468,"soGhe":"A08"},{"maGhe":469,"soGhe":"A09"},{"maGhe":470,"soGhe":"A10"},{"maGhe":471,"soGhe":"A11"},{"maGhe":472,"soGhe":"A12"},{"maGhe":473,"soGhe":"A13"},{"maGhe":474,"soGhe":"A14"},{"maGhe":475,"soGhe":"A15"},{"maGhe":476,"soGhe":"A16"},{"maGhe":477,"soGhe":"A17"},{"maGhe":478,"soGhe":"A18"},{"maGhe":479,"soGhe":"A19"},{"maGhe":480,"soGhe":"A20"}]}
+[13-Oct-2025 20:28:03 Asia/Ho_Chi_Minh] [v0] Booked seats: ["A12"]
+[13-Oct-2025 20:28:03 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:28:03 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:28:03 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:28:03 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:28:03 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:28:11 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:28:11 Asia/Ho_Chi_Minh] [v0] Router - About to call BookingController::show
+[13-Oct-2025 20:28:11 Asia/Ho_Chi_Minh] [v0] BookingController show called with tripId: 776
+[13-Oct-2025 20:28:11 Asia/Ho_Chi_Minh] [v0] Return trip ID: , Is round trip: no
+[13-Oct-2025 20:28:11 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:28:11 Asia/Ho_Chi_Minh] [v0] getTripDetails for trip 776 - loaiChoNgoiMacDinh: Giường đôi
+[13-Oct-2025 20:28:11 Asia/Ho_Chi_Minh] [v0] Full trip details: {"maChuyenXe":776,"maLichTrinh":9,"maPhuongTien":21,"maTaiXe":null,"maGiaVe":42,"ngayKhoiHanh":"2025-10-14","thoiGianKhoiHanh":"2025-10-14 08:30:00","thoiGianKetThuc":"2025-10-14 15:00:00","soChoTong":20,"soChoDaDat":0,"soChoTrong":20,"trangThai":"S\u1eb5n s\u00e0ng","ngayTao":"2025-09-23 14:39:52","ngayCapNhat":"2025-09-23 14:39:52","tenLichTrinh":"L\u1ecbch tr\u00ecnh SG-DL 08:30","gioKhoiHanh":"08:30:00","gioKetThuc":"15:00:00","maTuyenDuong":13,"kyHieuTuyen":"SG-DL","diemDi":"TP. H\u1ed3 Ch\u00ed Minh","diemDen":"\u0110\u00e0 L\u1ea1t","thoiGianDiChuyen":"06:30:00","bienSo":"50H-488766","maLoaiPhuongTien":5,"tenLoaiPhuongTien":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","soChoMacDinh":20,"soTang":2,"soHang":10,"soCotTrai":1,"soCotGiua":0,"soCotPhai":1,"loaiChoNgoiMacDinh":"Gi\u01b0\u1eddng \u0111\u00f4i","giaVe":"650000.00","tenLoaiVe":"V\u00e9 th\u01b0\u1eddng"}
+[13-Oct-2025 20:28:11 Asia/Ho_Chi_Minh] [v0] Departure datetime: 2025-10-14 08:30:00, Current time: 2025-10-13 20:28:11, Has departed: no
+[13-Oct-2025 20:28:11 Asia/Ho_Chi_Minh] [v0] Outbound trip datetime: 2025-10-14 08:30:00, has departed: no
+[13-Oct-2025 20:28:11 Asia/Ho_Chi_Minh] [v0] Found 2 Đón points for route 13
+[13-Oct-2025 20:28:11 Asia/Ho_Chi_Minh] [v0] Found 1 Trả points for route 13
+[13-Oct-2025 20:28:11 Asia/Ho_Chi_Minh] [v0] Route ID: 13, Pickup points: 2, Dropoff points: 1
+[13-Oct-2025 20:28:11 Asia/Ho_Chi_Minh] [v0] Found 20 actual seats for vehicle 21
+[13-Oct-2025 20:28:11 Asia/Ho_Chi_Minh] [v0] Seat layout created with 20 actual seats: {"total_seats":20,"seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","left_columns":1,"right_columns":1,"middle_columns":0,"floors":2,"rows_per_floor":10,"vehicle_type":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","default_seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","actual_seats":[{"maGhe":461,"soGhe":"A01"},{"maGhe":462,"soGhe":"A02"},{"maGhe":463,"soGhe":"A03"},{"maGhe":464,"soGhe":"A04"},{"maGhe":465,"soGhe":"A05"},{"maGhe":466,"soGhe":"A06"},{"maGhe":467,"soGhe":"A07"},{"maGhe":468,"soGhe":"A08"},{"maGhe":469,"soGhe":"A09"},{"maGhe":470,"soGhe":"A10"},{"maGhe":471,"soGhe":"A11"},{"maGhe":472,"soGhe":"A12"},{"maGhe":473,"soGhe":"A13"},{"maGhe":474,"soGhe":"A14"},{"maGhe":475,"soGhe":"A15"},{"maGhe":476,"soGhe":"A16"},{"maGhe":477,"soGhe":"A17"},{"maGhe":478,"soGhe":"A18"},{"maGhe":479,"soGhe":"A19"},{"maGhe":480,"soGhe":"A20"}]}
+[13-Oct-2025 20:28:11 Asia/Ho_Chi_Minh] [v0] Found 1 booked/held seats for trip 776: ["A12"]
+[13-Oct-2025 20:28:11 Asia/Ho_Chi_Minh] [v0] Found 1 seat statuses for trip 776: {"A12":"\u0110ang gi\u1eef"}
+[13-Oct-2025 20:28:11 Asia/Ho_Chi_Minh] [v0] Seat layout: {"total_seats":20,"seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","left_columns":1,"right_columns":1,"middle_columns":0,"floors":2,"rows_per_floor":10,"vehicle_type":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","default_seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","actual_seats":[{"maGhe":461,"soGhe":"A01"},{"maGhe":462,"soGhe":"A02"},{"maGhe":463,"soGhe":"A03"},{"maGhe":464,"soGhe":"A04"},{"maGhe":465,"soGhe":"A05"},{"maGhe":466,"soGhe":"A06"},{"maGhe":467,"soGhe":"A07"},{"maGhe":468,"soGhe":"A08"},{"maGhe":469,"soGhe":"A09"},{"maGhe":470,"soGhe":"A10"},{"maGhe":471,"soGhe":"A11"},{"maGhe":472,"soGhe":"A12"},{"maGhe":473,"soGhe":"A13"},{"maGhe":474,"soGhe":"A14"},{"maGhe":475,"soGhe":"A15"},{"maGhe":476,"soGhe":"A16"},{"maGhe":477,"soGhe":"A17"},{"maGhe":478,"soGhe":"A18"},{"maGhe":479,"soGhe":"A19"},{"maGhe":480,"soGhe":"A20"}]}
+[13-Oct-2025 20:28:11 Asia/Ho_Chi_Minh] [v0] Booked seats: ["A12"]
+[13-Oct-2025 20:28:11 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:28:11 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:28:11 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:28:11 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:28:11 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:28:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:28:18 Asia/Ho_Chi_Minh] [v0] Router - About to call BookingController::show
+[13-Oct-2025 20:28:18 Asia/Ho_Chi_Minh] [v0] BookingController show called with tripId: 776
+[13-Oct-2025 20:28:18 Asia/Ho_Chi_Minh] [v0] Return trip ID: , Is round trip: no
+[13-Oct-2025 20:28:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:28:18 Asia/Ho_Chi_Minh] [v0] getTripDetails for trip 776 - loaiChoNgoiMacDinh: Giường đôi
+[13-Oct-2025 20:28:18 Asia/Ho_Chi_Minh] [v0] Full trip details: {"maChuyenXe":776,"maLichTrinh":9,"maPhuongTien":21,"maTaiXe":null,"maGiaVe":42,"ngayKhoiHanh":"2025-10-14","thoiGianKhoiHanh":"2025-10-14 08:30:00","thoiGianKetThuc":"2025-10-14 15:00:00","soChoTong":20,"soChoDaDat":0,"soChoTrong":20,"trangThai":"S\u1eb5n s\u00e0ng","ngayTao":"2025-09-23 14:39:52","ngayCapNhat":"2025-09-23 14:39:52","tenLichTrinh":"L\u1ecbch tr\u00ecnh SG-DL 08:30","gioKhoiHanh":"08:30:00","gioKetThuc":"15:00:00","maTuyenDuong":13,"kyHieuTuyen":"SG-DL","diemDi":"TP. H\u1ed3 Ch\u00ed Minh","diemDen":"\u0110\u00e0 L\u1ea1t","thoiGianDiChuyen":"06:30:00","bienSo":"50H-488766","maLoaiPhuongTien":5,"tenLoaiPhuongTien":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","soChoMacDinh":20,"soTang":2,"soHang":10,"soCotTrai":1,"soCotGiua":0,"soCotPhai":1,"loaiChoNgoiMacDinh":"Gi\u01b0\u1eddng \u0111\u00f4i","giaVe":"650000.00","tenLoaiVe":"V\u00e9 th\u01b0\u1eddng"}
+[13-Oct-2025 20:28:18 Asia/Ho_Chi_Minh] [v0] Departure datetime: 2025-10-14 08:30:00, Current time: 2025-10-13 20:28:18, Has departed: no
+[13-Oct-2025 20:28:18 Asia/Ho_Chi_Minh] [v0] Outbound trip datetime: 2025-10-14 08:30:00, has departed: no
+[13-Oct-2025 20:28:18 Asia/Ho_Chi_Minh] [v0] Found 2 Đón points for route 13
+[13-Oct-2025 20:28:18 Asia/Ho_Chi_Minh] [v0] Found 1 Trả points for route 13
+[13-Oct-2025 20:28:18 Asia/Ho_Chi_Minh] [v0] Route ID: 13, Pickup points: 2, Dropoff points: 1
+[13-Oct-2025 20:28:18 Asia/Ho_Chi_Minh] [v0] Found 20 actual seats for vehicle 21
+[13-Oct-2025 20:28:18 Asia/Ho_Chi_Minh] [v0] Seat layout created with 20 actual seats: {"total_seats":20,"seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","left_columns":1,"right_columns":1,"middle_columns":0,"floors":2,"rows_per_floor":10,"vehicle_type":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","default_seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","actual_seats":[{"maGhe":461,"soGhe":"A01"},{"maGhe":462,"soGhe":"A02"},{"maGhe":463,"soGhe":"A03"},{"maGhe":464,"soGhe":"A04"},{"maGhe":465,"soGhe":"A05"},{"maGhe":466,"soGhe":"A06"},{"maGhe":467,"soGhe":"A07"},{"maGhe":468,"soGhe":"A08"},{"maGhe":469,"soGhe":"A09"},{"maGhe":470,"soGhe":"A10"},{"maGhe":471,"soGhe":"A11"},{"maGhe":472,"soGhe":"A12"},{"maGhe":473,"soGhe":"A13"},{"maGhe":474,"soGhe":"A14"},{"maGhe":475,"soGhe":"A15"},{"maGhe":476,"soGhe":"A16"},{"maGhe":477,"soGhe":"A17"},{"maGhe":478,"soGhe":"A18"},{"maGhe":479,"soGhe":"A19"},{"maGhe":480,"soGhe":"A20"}]}
+[13-Oct-2025 20:28:18 Asia/Ho_Chi_Minh] [v0] Found 1 booked/held seats for trip 776: ["A12"]
+[13-Oct-2025 20:28:18 Asia/Ho_Chi_Minh] [v0] Found 1 seat statuses for trip 776: {"A12":"\u0110ang gi\u1eef"}
+[13-Oct-2025 20:28:18 Asia/Ho_Chi_Minh] [v0] Seat layout: {"total_seats":20,"seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","left_columns":1,"right_columns":1,"middle_columns":0,"floors":2,"rows_per_floor":10,"vehicle_type":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","default_seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","actual_seats":[{"maGhe":461,"soGhe":"A01"},{"maGhe":462,"soGhe":"A02"},{"maGhe":463,"soGhe":"A03"},{"maGhe":464,"soGhe":"A04"},{"maGhe":465,"soGhe":"A05"},{"maGhe":466,"soGhe":"A06"},{"maGhe":467,"soGhe":"A07"},{"maGhe":468,"soGhe":"A08"},{"maGhe":469,"soGhe":"A09"},{"maGhe":470,"soGhe":"A10"},{"maGhe":471,"soGhe":"A11"},{"maGhe":472,"soGhe":"A12"},{"maGhe":473,"soGhe":"A13"},{"maGhe":474,"soGhe":"A14"},{"maGhe":475,"soGhe":"A15"},{"maGhe":476,"soGhe":"A16"},{"maGhe":477,"soGhe":"A17"},{"maGhe":478,"soGhe":"A18"},{"maGhe":479,"soGhe":"A19"},{"maGhe":480,"soGhe":"A20"}]}
+[13-Oct-2025 20:28:18 Asia/Ho_Chi_Minh] [v0] Booked seats: ["A12"]
+[13-Oct-2025 20:28:18 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:28:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:28:18 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:28:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:28:18 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:28:26 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:28:26 Asia/Ho_Chi_Minh] [v0] Router - About to call BookingController::show
+[13-Oct-2025 20:28:26 Asia/Ho_Chi_Minh] [v0] BookingController show called with tripId: 776
+[13-Oct-2025 20:28:26 Asia/Ho_Chi_Minh] [v0] Return trip ID: , Is round trip: no
+[13-Oct-2025 20:28:26 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:28:26 Asia/Ho_Chi_Minh] [v0] getTripDetails for trip 776 - loaiChoNgoiMacDinh: Giường đôi
+[13-Oct-2025 20:28:26 Asia/Ho_Chi_Minh] [v0] Full trip details: {"maChuyenXe":776,"maLichTrinh":9,"maPhuongTien":21,"maTaiXe":null,"maGiaVe":42,"ngayKhoiHanh":"2025-10-14","thoiGianKhoiHanh":"2025-10-14 08:30:00","thoiGianKetThuc":"2025-10-14 15:00:00","soChoTong":20,"soChoDaDat":0,"soChoTrong":20,"trangThai":"S\u1eb5n s\u00e0ng","ngayTao":"2025-09-23 14:39:52","ngayCapNhat":"2025-09-23 14:39:52","tenLichTrinh":"L\u1ecbch tr\u00ecnh SG-DL 08:30","gioKhoiHanh":"08:30:00","gioKetThuc":"15:00:00","maTuyenDuong":13,"kyHieuTuyen":"SG-DL","diemDi":"TP. H\u1ed3 Ch\u00ed Minh","diemDen":"\u0110\u00e0 L\u1ea1t","thoiGianDiChuyen":"06:30:00","bienSo":"50H-488766","maLoaiPhuongTien":5,"tenLoaiPhuongTien":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","soChoMacDinh":20,"soTang":2,"soHang":10,"soCotTrai":1,"soCotGiua":0,"soCotPhai":1,"loaiChoNgoiMacDinh":"Gi\u01b0\u1eddng \u0111\u00f4i","giaVe":"650000.00","tenLoaiVe":"V\u00e9 th\u01b0\u1eddng"}
+[13-Oct-2025 20:28:26 Asia/Ho_Chi_Minh] [v0] Departure datetime: 2025-10-14 08:30:00, Current time: 2025-10-13 20:28:26, Has departed: no
+[13-Oct-2025 20:28:26 Asia/Ho_Chi_Minh] [v0] Outbound trip datetime: 2025-10-14 08:30:00, has departed: no
+[13-Oct-2025 20:28:26 Asia/Ho_Chi_Minh] [v0] Found 2 Đón points for route 13
+[13-Oct-2025 20:28:26 Asia/Ho_Chi_Minh] [v0] Found 1 Trả points for route 13
+[13-Oct-2025 20:28:26 Asia/Ho_Chi_Minh] [v0] Route ID: 13, Pickup points: 2, Dropoff points: 1
+[13-Oct-2025 20:28:26 Asia/Ho_Chi_Minh] [v0] Found 20 actual seats for vehicle 21
+[13-Oct-2025 20:28:26 Asia/Ho_Chi_Minh] [v0] Seat layout created with 20 actual seats: {"total_seats":20,"seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","left_columns":1,"right_columns":1,"middle_columns":0,"floors":2,"rows_per_floor":10,"vehicle_type":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","default_seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","actual_seats":[{"maGhe":461,"soGhe":"A01"},{"maGhe":462,"soGhe":"A02"},{"maGhe":463,"soGhe":"A03"},{"maGhe":464,"soGhe":"A04"},{"maGhe":465,"soGhe":"A05"},{"maGhe":466,"soGhe":"A06"},{"maGhe":467,"soGhe":"A07"},{"maGhe":468,"soGhe":"A08"},{"maGhe":469,"soGhe":"A09"},{"maGhe":470,"soGhe":"A10"},{"maGhe":471,"soGhe":"A11"},{"maGhe":472,"soGhe":"A12"},{"maGhe":473,"soGhe":"A13"},{"maGhe":474,"soGhe":"A14"},{"maGhe":475,"soGhe":"A15"},{"maGhe":476,"soGhe":"A16"},{"maGhe":477,"soGhe":"A17"},{"maGhe":478,"soGhe":"A18"},{"maGhe":479,"soGhe":"A19"},{"maGhe":480,"soGhe":"A20"}]}
+[13-Oct-2025 20:28:26 Asia/Ho_Chi_Minh] [v0] Found 1 booked/held seats for trip 776: ["A12"]
+[13-Oct-2025 20:28:26 Asia/Ho_Chi_Minh] [v0] Found 1 seat statuses for trip 776: {"A12":"\u0110ang gi\u1eef"}
+[13-Oct-2025 20:28:26 Asia/Ho_Chi_Minh] [v0] Seat layout: {"total_seats":20,"seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","left_columns":1,"right_columns":1,"middle_columns":0,"floors":2,"rows_per_floor":10,"vehicle_type":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","default_seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","actual_seats":[{"maGhe":461,"soGhe":"A01"},{"maGhe":462,"soGhe":"A02"},{"maGhe":463,"soGhe":"A03"},{"maGhe":464,"soGhe":"A04"},{"maGhe":465,"soGhe":"A05"},{"maGhe":466,"soGhe":"A06"},{"maGhe":467,"soGhe":"A07"},{"maGhe":468,"soGhe":"A08"},{"maGhe":469,"soGhe":"A09"},{"maGhe":470,"soGhe":"A10"},{"maGhe":471,"soGhe":"A11"},{"maGhe":472,"soGhe":"A12"},{"maGhe":473,"soGhe":"A13"},{"maGhe":474,"soGhe":"A14"},{"maGhe":475,"soGhe":"A15"},{"maGhe":476,"soGhe":"A16"},{"maGhe":477,"soGhe":"A17"},{"maGhe":478,"soGhe":"A18"},{"maGhe":479,"soGhe":"A19"},{"maGhe":480,"soGhe":"A20"}]}
+[13-Oct-2025 20:28:26 Asia/Ho_Chi_Minh] [v0] Booked seats: ["A12"]
+[13-Oct-2025 20:28:26 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:28:26 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:28:26 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:28:26 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:28:26 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:28:41 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:28:41 Asia/Ho_Chi_Minh] [v0] Router - About to call BookingController::show
+[13-Oct-2025 20:28:41 Asia/Ho_Chi_Minh] [v0] BookingController show called with tripId: 776
+[13-Oct-2025 20:28:41 Asia/Ho_Chi_Minh] [v0] Return trip ID: , Is round trip: no
+[13-Oct-2025 20:28:41 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:28:41 Asia/Ho_Chi_Minh] [v0] getTripDetails for trip 776 - loaiChoNgoiMacDinh: Giường đôi
+[13-Oct-2025 20:28:41 Asia/Ho_Chi_Minh] [v0] Full trip details: {"maChuyenXe":776,"maLichTrinh":9,"maPhuongTien":21,"maTaiXe":null,"maGiaVe":42,"ngayKhoiHanh":"2025-10-14","thoiGianKhoiHanh":"2025-10-14 08:30:00","thoiGianKetThuc":"2025-10-14 15:00:00","soChoTong":20,"soChoDaDat":0,"soChoTrong":20,"trangThai":"S\u1eb5n s\u00e0ng","ngayTao":"2025-09-23 14:39:52","ngayCapNhat":"2025-09-23 14:39:52","tenLichTrinh":"L\u1ecbch tr\u00ecnh SG-DL 08:30","gioKhoiHanh":"08:30:00","gioKetThuc":"15:00:00","maTuyenDuong":13,"kyHieuTuyen":"SG-DL","diemDi":"TP. H\u1ed3 Ch\u00ed Minh","diemDen":"\u0110\u00e0 L\u1ea1t","thoiGianDiChuyen":"06:30:00","bienSo":"50H-488766","maLoaiPhuongTien":5,"tenLoaiPhuongTien":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","soChoMacDinh":20,"soTang":2,"soHang":10,"soCotTrai":1,"soCotGiua":0,"soCotPhai":1,"loaiChoNgoiMacDinh":"Gi\u01b0\u1eddng \u0111\u00f4i","giaVe":"650000.00","tenLoaiVe":"V\u00e9 th\u01b0\u1eddng"}
+[13-Oct-2025 20:28:41 Asia/Ho_Chi_Minh] [v0] Departure datetime: 2025-10-14 08:30:00, Current time: 2025-10-13 20:28:41, Has departed: no
+[13-Oct-2025 20:28:41 Asia/Ho_Chi_Minh] [v0] Outbound trip datetime: 2025-10-14 08:30:00, has departed: no
+[13-Oct-2025 20:28:41 Asia/Ho_Chi_Minh] [v0] Found 2 Đón points for route 13
+[13-Oct-2025 20:28:41 Asia/Ho_Chi_Minh] [v0] Found 1 Trả points for route 13
+[13-Oct-2025 20:28:41 Asia/Ho_Chi_Minh] [v0] Route ID: 13, Pickup points: 2, Dropoff points: 1
+[13-Oct-2025 20:28:41 Asia/Ho_Chi_Minh] [v0] Found 20 actual seats for vehicle 21
+[13-Oct-2025 20:28:41 Asia/Ho_Chi_Minh] [v0] Seat layout created with 20 actual seats: {"total_seats":20,"seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","left_columns":1,"right_columns":1,"middle_columns":0,"floors":2,"rows_per_floor":10,"vehicle_type":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","default_seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","actual_seats":[{"maGhe":461,"soGhe":"A01"},{"maGhe":462,"soGhe":"A02"},{"maGhe":463,"soGhe":"A03"},{"maGhe":464,"soGhe":"A04"},{"maGhe":465,"soGhe":"A05"},{"maGhe":466,"soGhe":"A06"},{"maGhe":467,"soGhe":"A07"},{"maGhe":468,"soGhe":"A08"},{"maGhe":469,"soGhe":"A09"},{"maGhe":470,"soGhe":"A10"},{"maGhe":471,"soGhe":"A11"},{"maGhe":472,"soGhe":"A12"},{"maGhe":473,"soGhe":"A13"},{"maGhe":474,"soGhe":"A14"},{"maGhe":475,"soGhe":"A15"},{"maGhe":476,"soGhe":"A16"},{"maGhe":477,"soGhe":"A17"},{"maGhe":478,"soGhe":"A18"},{"maGhe":479,"soGhe":"A19"},{"maGhe":480,"soGhe":"A20"}]}
+[13-Oct-2025 20:28:41 Asia/Ho_Chi_Minh] [v0] Found 1 booked/held seats for trip 776: ["A12"]
+[13-Oct-2025 20:28:41 Asia/Ho_Chi_Minh] [v0] Found 1 seat statuses for trip 776: {"A12":"\u0110ang gi\u1eef"}
+[13-Oct-2025 20:28:41 Asia/Ho_Chi_Minh] [v0] Seat layout: {"total_seats":20,"seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","left_columns":1,"right_columns":1,"middle_columns":0,"floors":2,"rows_per_floor":10,"vehicle_type":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","default_seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","actual_seats":[{"maGhe":461,"soGhe":"A01"},{"maGhe":462,"soGhe":"A02"},{"maGhe":463,"soGhe":"A03"},{"maGhe":464,"soGhe":"A04"},{"maGhe":465,"soGhe":"A05"},{"maGhe":466,"soGhe":"A06"},{"maGhe":467,"soGhe":"A07"},{"maGhe":468,"soGhe":"A08"},{"maGhe":469,"soGhe":"A09"},{"maGhe":470,"soGhe":"A10"},{"maGhe":471,"soGhe":"A11"},{"maGhe":472,"soGhe":"A12"},{"maGhe":473,"soGhe":"A13"},{"maGhe":474,"soGhe":"A14"},{"maGhe":475,"soGhe":"A15"},{"maGhe":476,"soGhe":"A16"},{"maGhe":477,"soGhe":"A17"},{"maGhe":478,"soGhe":"A18"},{"maGhe":479,"soGhe":"A19"},{"maGhe":480,"soGhe":"A20"}]}
+[13-Oct-2025 20:28:41 Asia/Ho_Chi_Minh] [v0] Booked seats: ["A12"]
+[13-Oct-2025 20:28:41 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:28:41 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:28:41 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:28:41 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:28:41 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:28:51 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:28:51 Asia/Ho_Chi_Minh] [v0] Router - About to call BookingController::show
+[13-Oct-2025 20:28:51 Asia/Ho_Chi_Minh] [v0] BookingController show called with tripId: 776
+[13-Oct-2025 20:28:51 Asia/Ho_Chi_Minh] [v0] Return trip ID: , Is round trip: no
+[13-Oct-2025 20:28:51 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:28:51 Asia/Ho_Chi_Minh] [v0] getTripDetails for trip 776 - loaiChoNgoiMacDinh: Giường đôi
+[13-Oct-2025 20:28:51 Asia/Ho_Chi_Minh] [v0] Full trip details: {"maChuyenXe":776,"maLichTrinh":9,"maPhuongTien":21,"maTaiXe":null,"maGiaVe":42,"ngayKhoiHanh":"2025-10-14","thoiGianKhoiHanh":"2025-10-14 08:30:00","thoiGianKetThuc":"2025-10-14 15:00:00","soChoTong":20,"soChoDaDat":0,"soChoTrong":20,"trangThai":"S\u1eb5n s\u00e0ng","ngayTao":"2025-09-23 14:39:52","ngayCapNhat":"2025-09-23 14:39:52","tenLichTrinh":"L\u1ecbch tr\u00ecnh SG-DL 08:30","gioKhoiHanh":"08:30:00","gioKetThuc":"15:00:00","maTuyenDuong":13,"kyHieuTuyen":"SG-DL","diemDi":"TP. H\u1ed3 Ch\u00ed Minh","diemDen":"\u0110\u00e0 L\u1ea1t","thoiGianDiChuyen":"06:30:00","bienSo":"50H-488766","maLoaiPhuongTien":5,"tenLoaiPhuongTien":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","soChoMacDinh":20,"soTang":2,"soHang":10,"soCotTrai":1,"soCotGiua":0,"soCotPhai":1,"loaiChoNgoiMacDinh":"Gi\u01b0\u1eddng \u0111\u00f4i","giaVe":"650000.00","tenLoaiVe":"V\u00e9 th\u01b0\u1eddng"}
+[13-Oct-2025 20:28:51 Asia/Ho_Chi_Minh] [v0] Departure datetime: 2025-10-14 08:30:00, Current time: 2025-10-13 20:28:51, Has departed: no
+[13-Oct-2025 20:28:51 Asia/Ho_Chi_Minh] [v0] Outbound trip datetime: 2025-10-14 08:30:00, has departed: no
+[13-Oct-2025 20:28:51 Asia/Ho_Chi_Minh] [v0] Found 2 Đón points for route 13
+[13-Oct-2025 20:28:51 Asia/Ho_Chi_Minh] [v0] Found 1 Trả points for route 13
+[13-Oct-2025 20:28:51 Asia/Ho_Chi_Minh] [v0] Route ID: 13, Pickup points: 2, Dropoff points: 1
+[13-Oct-2025 20:28:51 Asia/Ho_Chi_Minh] [v0] Found 20 actual seats for vehicle 21
+[13-Oct-2025 20:28:51 Asia/Ho_Chi_Minh] [v0] Seat layout created with 20 actual seats: {"total_seats":20,"seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","left_columns":1,"right_columns":1,"middle_columns":0,"floors":2,"rows_per_floor":10,"vehicle_type":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","default_seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","actual_seats":[{"maGhe":461,"soGhe":"A01"},{"maGhe":462,"soGhe":"A02"},{"maGhe":463,"soGhe":"A03"},{"maGhe":464,"soGhe":"A04"},{"maGhe":465,"soGhe":"A05"},{"maGhe":466,"soGhe":"A06"},{"maGhe":467,"soGhe":"A07"},{"maGhe":468,"soGhe":"A08"},{"maGhe":469,"soGhe":"A09"},{"maGhe":470,"soGhe":"A10"},{"maGhe":471,"soGhe":"A11"},{"maGhe":472,"soGhe":"A12"},{"maGhe":473,"soGhe":"A13"},{"maGhe":474,"soGhe":"A14"},{"maGhe":475,"soGhe":"A15"},{"maGhe":476,"soGhe":"A16"},{"maGhe":477,"soGhe":"A17"},{"maGhe":478,"soGhe":"A18"},{"maGhe":479,"soGhe":"A19"},{"maGhe":480,"soGhe":"A20"}]}
+[13-Oct-2025 20:28:51 Asia/Ho_Chi_Minh] [v0] Found 1 booked/held seats for trip 776: ["A12"]
+[13-Oct-2025 20:28:51 Asia/Ho_Chi_Minh] [v0] Found 1 seat statuses for trip 776: {"A12":"\u0110ang gi\u1eef"}
+[13-Oct-2025 20:28:51 Asia/Ho_Chi_Minh] [v0] Seat layout: {"total_seats":20,"seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","left_columns":1,"right_columns":1,"middle_columns":0,"floors":2,"rows_per_floor":10,"vehicle_type":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","default_seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","actual_seats":[{"maGhe":461,"soGhe":"A01"},{"maGhe":462,"soGhe":"A02"},{"maGhe":463,"soGhe":"A03"},{"maGhe":464,"soGhe":"A04"},{"maGhe":465,"soGhe":"A05"},{"maGhe":466,"soGhe":"A06"},{"maGhe":467,"soGhe":"A07"},{"maGhe":468,"soGhe":"A08"},{"maGhe":469,"soGhe":"A09"},{"maGhe":470,"soGhe":"A10"},{"maGhe":471,"soGhe":"A11"},{"maGhe":472,"soGhe":"A12"},{"maGhe":473,"soGhe":"A13"},{"maGhe":474,"soGhe":"A14"},{"maGhe":475,"soGhe":"A15"},{"maGhe":476,"soGhe":"A16"},{"maGhe":477,"soGhe":"A17"},{"maGhe":478,"soGhe":"A18"},{"maGhe":479,"soGhe":"A19"},{"maGhe":480,"soGhe":"A20"}]}
+[13-Oct-2025 20:28:51 Asia/Ho_Chi_Minh] [v0] Booked seats: ["A12"]
+[13-Oct-2025 20:28:51 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:28:51 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:28:51 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:28:51 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:28:51 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:28:59 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:28:59 Asia/Ho_Chi_Minh] [v0] Router - About to call BookingController::show
+[13-Oct-2025 20:28:59 Asia/Ho_Chi_Minh] [v0] BookingController show called with tripId: 776
+[13-Oct-2025 20:28:59 Asia/Ho_Chi_Minh] [v0] Return trip ID: , Is round trip: no
+[13-Oct-2025 20:28:59 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:28:59 Asia/Ho_Chi_Minh] [v0] getTripDetails for trip 776 - loaiChoNgoiMacDinh: Giường đôi
+[13-Oct-2025 20:28:59 Asia/Ho_Chi_Minh] [v0] Full trip details: {"maChuyenXe":776,"maLichTrinh":9,"maPhuongTien":21,"maTaiXe":null,"maGiaVe":42,"ngayKhoiHanh":"2025-10-14","thoiGianKhoiHanh":"2025-10-14 08:30:00","thoiGianKetThuc":"2025-10-14 15:00:00","soChoTong":20,"soChoDaDat":0,"soChoTrong":20,"trangThai":"S\u1eb5n s\u00e0ng","ngayTao":"2025-09-23 14:39:52","ngayCapNhat":"2025-09-23 14:39:52","tenLichTrinh":"L\u1ecbch tr\u00ecnh SG-DL 08:30","gioKhoiHanh":"08:30:00","gioKetThuc":"15:00:00","maTuyenDuong":13,"kyHieuTuyen":"SG-DL","diemDi":"TP. H\u1ed3 Ch\u00ed Minh","diemDen":"\u0110\u00e0 L\u1ea1t","thoiGianDiChuyen":"06:30:00","bienSo":"50H-488766","maLoaiPhuongTien":5,"tenLoaiPhuongTien":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","soChoMacDinh":20,"soTang":2,"soHang":10,"soCotTrai":1,"soCotGiua":0,"soCotPhai":1,"loaiChoNgoiMacDinh":"Gi\u01b0\u1eddng \u0111\u00f4i","giaVe":"650000.00","tenLoaiVe":"V\u00e9 th\u01b0\u1eddng"}
+[13-Oct-2025 20:28:59 Asia/Ho_Chi_Minh] [v0] Departure datetime: 2025-10-14 08:30:00, Current time: 2025-10-13 20:28:59, Has departed: no
+[13-Oct-2025 20:28:59 Asia/Ho_Chi_Minh] [v0] Outbound trip datetime: 2025-10-14 08:30:00, has departed: no
+[13-Oct-2025 20:28:59 Asia/Ho_Chi_Minh] [v0] Found 2 Đón points for route 13
+[13-Oct-2025 20:28:59 Asia/Ho_Chi_Minh] [v0] Found 1 Trả points for route 13
+[13-Oct-2025 20:28:59 Asia/Ho_Chi_Minh] [v0] Route ID: 13, Pickup points: 2, Dropoff points: 1
+[13-Oct-2025 20:28:59 Asia/Ho_Chi_Minh] [v0] Found 20 actual seats for vehicle 21
+[13-Oct-2025 20:28:59 Asia/Ho_Chi_Minh] [v0] Seat layout created with 20 actual seats: {"total_seats":20,"seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","left_columns":1,"right_columns":1,"middle_columns":0,"floors":2,"rows_per_floor":10,"vehicle_type":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","default_seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","actual_seats":[{"maGhe":461,"soGhe":"A01"},{"maGhe":462,"soGhe":"A02"},{"maGhe":463,"soGhe":"A03"},{"maGhe":464,"soGhe":"A04"},{"maGhe":465,"soGhe":"A05"},{"maGhe":466,"soGhe":"A06"},{"maGhe":467,"soGhe":"A07"},{"maGhe":468,"soGhe":"A08"},{"maGhe":469,"soGhe":"A09"},{"maGhe":470,"soGhe":"A10"},{"maGhe":471,"soGhe":"A11"},{"maGhe":472,"soGhe":"A12"},{"maGhe":473,"soGhe":"A13"},{"maGhe":474,"soGhe":"A14"},{"maGhe":475,"soGhe":"A15"},{"maGhe":476,"soGhe":"A16"},{"maGhe":477,"soGhe":"A17"},{"maGhe":478,"soGhe":"A18"},{"maGhe":479,"soGhe":"A19"},{"maGhe":480,"soGhe":"A20"}]}
+[13-Oct-2025 20:28:59 Asia/Ho_Chi_Minh] [v0] Found 1 booked/held seats for trip 776: ["A12"]
+[13-Oct-2025 20:28:59 Asia/Ho_Chi_Minh] [v0] Found 1 seat statuses for trip 776: {"A12":"\u0110ang gi\u1eef"}
+[13-Oct-2025 20:28:59 Asia/Ho_Chi_Minh] [v0] Seat layout: {"total_seats":20,"seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","left_columns":1,"right_columns":1,"middle_columns":0,"floors":2,"rows_per_floor":10,"vehicle_type":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","default_seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","actual_seats":[{"maGhe":461,"soGhe":"A01"},{"maGhe":462,"soGhe":"A02"},{"maGhe":463,"soGhe":"A03"},{"maGhe":464,"soGhe":"A04"},{"maGhe":465,"soGhe":"A05"},{"maGhe":466,"soGhe":"A06"},{"maGhe":467,"soGhe":"A07"},{"maGhe":468,"soGhe":"A08"},{"maGhe":469,"soGhe":"A09"},{"maGhe":470,"soGhe":"A10"},{"maGhe":471,"soGhe":"A11"},{"maGhe":472,"soGhe":"A12"},{"maGhe":473,"soGhe":"A13"},{"maGhe":474,"soGhe":"A14"},{"maGhe":475,"soGhe":"A15"},{"maGhe":476,"soGhe":"A16"},{"maGhe":477,"soGhe":"A17"},{"maGhe":478,"soGhe":"A18"},{"maGhe":479,"soGhe":"A19"},{"maGhe":480,"soGhe":"A20"}]}
+[13-Oct-2025 20:28:59 Asia/Ho_Chi_Minh] [v0] Booked seats: ["A12"]
+[13-Oct-2025 20:28:59 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:28:59 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:28:59 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:28:59 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:28:59 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:29:24 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:29:24 Asia/Ho_Chi_Minh] [v0] Router - About to call BookingController::show
+[13-Oct-2025 20:29:24 Asia/Ho_Chi_Minh] [v0] BookingController show called with tripId: 776
+[13-Oct-2025 20:29:24 Asia/Ho_Chi_Minh] [v0] Return trip ID: , Is round trip: no
+[13-Oct-2025 20:29:24 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:29:24 Asia/Ho_Chi_Minh] [v0] getTripDetails for trip 776 - loaiChoNgoiMacDinh: Giường đôi
+[13-Oct-2025 20:29:24 Asia/Ho_Chi_Minh] [v0] Full trip details: {"maChuyenXe":776,"maLichTrinh":9,"maPhuongTien":21,"maTaiXe":null,"maGiaVe":42,"ngayKhoiHanh":"2025-10-14","thoiGianKhoiHanh":"2025-10-14 08:30:00","thoiGianKetThuc":"2025-10-14 15:00:00","soChoTong":20,"soChoDaDat":0,"soChoTrong":20,"trangThai":"S\u1eb5n s\u00e0ng","ngayTao":"2025-09-23 14:39:52","ngayCapNhat":"2025-09-23 14:39:52","tenLichTrinh":"L\u1ecbch tr\u00ecnh SG-DL 08:30","gioKhoiHanh":"08:30:00","gioKetThuc":"15:00:00","maTuyenDuong":13,"kyHieuTuyen":"SG-DL","diemDi":"TP. H\u1ed3 Ch\u00ed Minh","diemDen":"\u0110\u00e0 L\u1ea1t","thoiGianDiChuyen":"06:30:00","bienSo":"50H-488766","maLoaiPhuongTien":5,"tenLoaiPhuongTien":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","soChoMacDinh":20,"soTang":2,"soHang":10,"soCotTrai":1,"soCotGiua":0,"soCotPhai":1,"loaiChoNgoiMacDinh":"Gi\u01b0\u1eddng \u0111\u00f4i","giaVe":"650000.00","tenLoaiVe":"V\u00e9 th\u01b0\u1eddng"}
+[13-Oct-2025 20:29:24 Asia/Ho_Chi_Minh] [v0] Departure datetime: 2025-10-14 08:30:00, Current time: 2025-10-13 20:29:24, Has departed: no
+[13-Oct-2025 20:29:24 Asia/Ho_Chi_Minh] [v0] Outbound trip datetime: 2025-10-14 08:30:00, has departed: no
+[13-Oct-2025 20:29:24 Asia/Ho_Chi_Minh] [v0] Found 2 Đón points for route 13
+[13-Oct-2025 20:29:24 Asia/Ho_Chi_Minh] [v0] Found 1 Trả points for route 13
+[13-Oct-2025 20:29:24 Asia/Ho_Chi_Minh] [v0] Route ID: 13, Pickup points: 2, Dropoff points: 1
+[13-Oct-2025 20:29:24 Asia/Ho_Chi_Minh] [v0] Found 20 actual seats for vehicle 21
+[13-Oct-2025 20:29:24 Asia/Ho_Chi_Minh] [v0] Seat layout created with 20 actual seats: {"total_seats":20,"seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","left_columns":1,"right_columns":1,"middle_columns":0,"floors":2,"rows_per_floor":10,"vehicle_type":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","default_seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","actual_seats":[{"maGhe":461,"soGhe":"A01"},{"maGhe":462,"soGhe":"A02"},{"maGhe":463,"soGhe":"A03"},{"maGhe":464,"soGhe":"A04"},{"maGhe":465,"soGhe":"A05"},{"maGhe":466,"soGhe":"A06"},{"maGhe":467,"soGhe":"A07"},{"maGhe":468,"soGhe":"A08"},{"maGhe":469,"soGhe":"A09"},{"maGhe":470,"soGhe":"A10"},{"maGhe":471,"soGhe":"A11"},{"maGhe":472,"soGhe":"A12"},{"maGhe":473,"soGhe":"A13"},{"maGhe":474,"soGhe":"A14"},{"maGhe":475,"soGhe":"A15"},{"maGhe":476,"soGhe":"A16"},{"maGhe":477,"soGhe":"A17"},{"maGhe":478,"soGhe":"A18"},{"maGhe":479,"soGhe":"A19"},{"maGhe":480,"soGhe":"A20"}]}
+[13-Oct-2025 20:29:24 Asia/Ho_Chi_Minh] [v0] Found 0 booked/held seats for trip 776: []
+[13-Oct-2025 20:29:24 Asia/Ho_Chi_Minh] [v0] Found 0 seat statuses for trip 776: []
+[13-Oct-2025 20:29:24 Asia/Ho_Chi_Minh] [v0] Seat layout: {"total_seats":20,"seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","left_columns":1,"right_columns":1,"middle_columns":0,"floors":2,"rows_per_floor":10,"vehicle_type":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","default_seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","actual_seats":[{"maGhe":461,"soGhe":"A01"},{"maGhe":462,"soGhe":"A02"},{"maGhe":463,"soGhe":"A03"},{"maGhe":464,"soGhe":"A04"},{"maGhe":465,"soGhe":"A05"},{"maGhe":466,"soGhe":"A06"},{"maGhe":467,"soGhe":"A07"},{"maGhe":468,"soGhe":"A08"},{"maGhe":469,"soGhe":"A09"},{"maGhe":470,"soGhe":"A10"},{"maGhe":471,"soGhe":"A11"},{"maGhe":472,"soGhe":"A12"},{"maGhe":473,"soGhe":"A13"},{"maGhe":474,"soGhe":"A14"},{"maGhe":475,"soGhe":"A15"},{"maGhe":476,"soGhe":"A16"},{"maGhe":477,"soGhe":"A17"},{"maGhe":478,"soGhe":"A18"},{"maGhe":479,"soGhe":"A19"},{"maGhe":480,"soGhe":"A20"}]}
+[13-Oct-2025 20:29:24 Asia/Ho_Chi_Minh] [v0] Booked seats: []
+[13-Oct-2025 20:29:24 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[13-Oct-2025 20:29:24 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[13-Oct-2025 20:29:24 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[13-Oct-2025 20:29:24 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[13-Oct-2025 20:29:24 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully

@@ -73,6 +73,8 @@
         </div>
     </div>
 
+    <div class="title-schedule-today">Các chuyến xe trong ngày</div>
+
     <div class="day-trips-section">
         <h3>Lịch trình ngày <?php echo date('d/m/Y', strtotime($selectedDate)); ?></h3>
         
