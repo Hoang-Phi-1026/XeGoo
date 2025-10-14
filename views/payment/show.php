@@ -9,7 +9,7 @@
             <div class="timer-icon">⏰</div>
             <div class="timer-text">
                 <span>Thời gian giữ ghế còn lại:</span>
-                <span id="countdown" class="countdown-timer">10:00</span>
+                <span id="countdown" class="countdown-timer">5:00</span>
             </div>
         </div>
         <a href="<?php echo BASE_URL; ?>/search" class="back-button">← Quay lại tìm kiếm</a>

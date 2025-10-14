@@ -17,6 +17,7 @@ class PaymentController {
      * Hiển thị trang thanh toán
      */
     public function show() {
+        
         try {
             error_log("[v0] PaymentController::show() started");
             error_log("[v0] Session data - final_booking_data exists: " . (isset($_SESSION['final_booking_data']) ? 'yes' : 'no'));
@@ -30,11 +31,17 @@ class PaymentController {
             }
 
             if (!isset($_SESSION['held_seats'])) {
-                error_log("[v0] No held_seats in session, creating default");
                 $_SESSION['held_seats'] = [
-                    'expires_at' => time() + (10 * 60), // 10 minutes from now
+                    'expires_at' => time() + (5 * 60),
                     'hold_time' => time()
                 ];
+            } else {
+                // Force lại expires_at về tối đa 5 phút kể từ hiện tại nếu lớn hơn
+                $now = time();
+                if ($_SESSION['held_seats']['expires_at'] - $now > 5*60) {
+                    $_SESSION['held_seats']['expires_at'] = $now + 5*60;
+                    $_SESSION['held_seats']['hold_time'] = $now;
+                }
             }
 
             $bookingData = $_SESSION['final_booking_data'];
