@@ -439,7 +439,6 @@
 /* reCAPTCHA Styling */
 .g-recaptcha {
   display: flex;
-  justify-content: center;
   align-items: center;
   margin: var(--space-md) 0;
   transform: none; /* avoid scaling that may hide native checkbox */

@@ -223,6 +223,11 @@
                     <span class="price-value total-price" id="totalPrice">0đ</span>
                 </div>
                 
+                <div class="recaptcha-container">
+                    <p class="recaptcha-label">Xác thực reCAPTCHA:</p>
+                    <div class="g-recaptcha" data-sitekey="<?php echo RECAPTCHA_SITE_KEY; ?>" data-callback="onRecaptchaSuccess" data-expired-callback="onRecaptchaExpired"></div>
+                </div>
+                
                 <button type="submit" class="btn-success" id="submitBtn" 
                     <?php echo ($outboundHasDeparted || ($isRoundTrip && $returnHasDeparted)) ? 'disabled style="opacity: 0.5; cursor: not-allowed;"' : 'disabled'; ?>>
                     <?php echo ($outboundHasDeparted || ($isRoundTrip && $returnHasDeparted)) ? 'Xe đã khởi hành' : 'Thanh toán'; ?>
@@ -238,30 +243,116 @@
     </form>
 </div>
 
+<!-- Fixed modal overlay positioning and display issues -->
+<div id="ticketLimitModal" class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Thông báo</h2>
+            <button type="button" class="modal-close" id="closeModalBtn">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="modal-icon">⚠️</div>
+            <p id="modalMessage">Bạn chỉ được đặt tối đa 5 vé cho 1 lần. Nếu bạn muốn đặt vé cho một nhóm lớn, vui lòng <a href="<?php echo BASE_URL; ?>/group-rental" class="modal-link">truy cập tại đây</a>.</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="modal-btn-ok" id="modalOkBtn">OK</button>
+        </div>
+    </div>
+</div>
+
 <script>
+let recaptchaVerified = false;
+let outboundSeats = [];
+let returnSeats = [];
+let outboundPrice = 0;
+let returnPrice = 0;
+let isRoundTrip = false;
+let outboundHasDeparted = false;
+let returnHasDeparted = false;
+let tripHasDeparted = false;
+let isLoggedIn = false;
+let userData = {};
+const MAX_TICKETS_PER_BOOKING = 5;
+
+function onRecaptchaSuccess(token) {
+    console.log('[v0] reCAPTCHA verified');
+    recaptchaVerified = true;
+    updateSubmitButtonState();
+}
+
+function onRecaptchaExpired() {
+    console.log('[v0] reCAPTCHA expired');
+    recaptchaVerified = false;
+    updateSubmitButtonState();
+}
+
+function showTicketLimitModal(message) {
+    const modal = document.getElementById('ticketLimitModal');
+    const messageEl = document.getElementById('modalMessage');
+    messageEl.innerHTML = message;
+    modal.classList.add('show');
+    window.scrollTo(0, 0);
+}
+
+function hideTicketLimitModal() {
+    const modal = document.getElementById('ticketLimitModal');
+    modal.classList.remove('show');
+}
+
+function updateSubmitButtonState() {
+    const submitBtn = document.getElementById('submitBtn');
+    const hasRequiredSeats = isRoundTrip ? (outboundSeats.length > 0 && returnSeats.length > 0) : outboundSeats.length > 0;
+    const canSubmit = hasRequiredSeats && recaptchaVerified && !tripHasDeparted;
+    
+    console.log('[v0] updateSubmitButtonState - hasRequiredSeats:', hasRequiredSeats, 'recaptchaVerified:', recaptchaVerified, 'tripHasDeparted:', tripHasDeparted);
+    
+    submitBtn.disabled = !canSubmit;
+    
+    if (!recaptchaVerified && hasRequiredSeats && !tripHasDeparted) {
+        submitBtn.style.opacity = '0.6';
+        submitBtn.title = 'Vui lòng xác thực reCAPTCHA';
+    } else if (canSubmit) {
+        submitBtn.style.opacity = '1';
+        submitBtn.title = '';
+    }
+}
+
+document.getElementById('closeModalBtn').addEventListener('click', hideTicketLimitModal);
+document.getElementById('modalOkBtn').addEventListener('click', hideTicketLimitModal);
+document.getElementById('ticketLimitModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        hideTicketLimitModal();
+    }
+});
+
 document.addEventListener('DOMContentLoaded', function() {
     console.log('[v0] Booking page loaded');
     
-    const outboundSeats = [];
-    const returnSeats = [];
-    const outboundPrice = <?php echo $trip['giaVe']; ?>;
-    const returnPrice = <?php echo $returnTrip ? $returnTrip['giaVe'] : 0; ?>;
-    const isRoundTrip = <?php echo ($isRoundTrip && $returnTrip) ? 'true' : 'false'; ?>;
-    const outboundHasDeparted = <?php echo $outboundHasDeparted ? 'true' : 'false'; ?>;
-    const returnHasDeparted = <?php echo ($isRoundTrip && $returnHasDeparted) ? 'true' : 'false'; ?>;
-    const tripHasDeparted = outboundHasDeparted || returnHasDeparted;
+    outboundPrice = <?php echo $trip['giaVe']; ?>;
+    returnPrice = <?php echo $returnTrip ? $returnTrip['giaVe'] : 0; ?>;
+    isRoundTrip = <?php echo ($isRoundTrip && $returnTrip) ? 'true' : 'false'; ?>;
+    outboundHasDeparted = <?php echo $outboundHasDeparted ? 'true' : 'false'; ?>;
+    returnHasDeparted = <?php echo ($isRoundTrip && $returnHasDeparted) ? 'true' : 'false'; ?>;
+    tripHasDeparted = outboundHasDeparted || returnHasDeparted;
     
-    const userData = {
+    userData = {
         name: '<?php echo isset($_SESSION['user_name']) ? addslashes($_SESSION['user_name']) : ''; ?>',
         phone: '<?php echo isset($_SESSION['user_phone']) ? addslashes($_SESSION['user_phone']) : ''; ?>',
         email: '<?php echo isset($_SESSION['user_email']) ? addslashes($_SESSION['user_email']) : ''; ?>'
     };
-    const isLoggedIn = <?php echo isset($_SESSION['user_id']) ? 'true' : 'false'; ?>;
+    isLoggedIn = <?php echo isset($_SESSION['user_id']) ? 'true' : 'false'; ?>;
     
     console.log('[v0] User data:', userData);
     console.log('[v0] Is logged in:', isLoggedIn);
     console.log('[v0] Is round trip:', isRoundTrip);
     console.log('[v0] Trip has departed:', tripHasDeparted);
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const errorMessage = urlParams.get('error');
+    if (errorMessage) {
+        console.log('[v0] Error from backend:', errorMessage);
+        showTicketLimitModal(decodeURIComponent(errorMessage));
+    }
     
     // Tab switching for round trip
     if (isRoundTrip) {
@@ -275,17 +366,38 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.classList.add('active');
                 
                 // Show/hide seat maps
-                const outboundSeats = document.getElementById('outbound-seats');
-                const returnSeats = document.getElementById('return-seats');
+                const outboundSeatsEl = document.getElementById('outbound-seats');
+                const returnSeatsEl = document.getElementById('return-seats');
                 
-                if (outboundSeats) {
-                    outboundSeats.style.display = tripType === 'outbound' ? 'block' : 'none';
+                if (outboundSeatsEl) {
+                    outboundSeatsEl.style.display = tripType === 'outbound' ? 'block' : 'none';
                 }
-                if (returnSeats) {
-                    returnSeats.style.display = tripType === 'return' ? 'block' : 'none';
+                if (returnSeatsEl) {
+                    returnSeatsEl.style.display = tripType === 'return' ? 'block' : 'none';
                 }
             });
         });
+    }
+    
+    function checkTicketLimit() {
+        const outboundTickets = outboundSeats.length;
+        const returnTickets = returnSeats.length;
+        
+        if (outboundTickets > MAX_TICKETS_PER_BOOKING) {
+            return {
+                valid: false,
+                message: `Chuyến đi: Chỉ được đặt tối đa ${MAX_TICKETS_PER_BOOKING} vé 1 lần. Bạn đã chọn ${outboundTickets} vé. Nếu bạn muốn đặt vé cho một nhóm lớn, vui lòng <a href="<?php echo BASE_URL; ?>/group-rental" class="modal-link">truy cập tại đây</a>.`
+            };
+        }
+        
+        if (isRoundTrip && returnTickets > MAX_TICKETS_PER_BOOKING) {
+            return {
+                valid: false,
+                message: `Chuyến về: Chỉ được đặt tối đa ${MAX_TICKETS_PER_BOOKING} vé 1 lần. Bạn đã chọn ${returnTickets} vé. Nếu bạn muốn đặt vé cho một nhóm lớn, vui lòng <a href="<?php echo BASE_URL; ?>/group-rental" class="modal-link">truy cập tại đây</a>.`
+            };
+        }
+        
+        return { valid: true };
     }
     
     // Seat selection handling - Fixed to work with both trip types
@@ -302,6 +414,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 const currentSeats = isReturnSeat ? returnSeats : outboundSeats;
                 
                 console.log('[v0] Seat clicked:', seatNum, 'isReturn:', isReturnSeat);
+                
+                if (!this.classList.contains('selected')) {
+                    if (currentSeats.length >= MAX_TICKETS_PER_BOOKING) {
+                        const tripName = isReturnSeat ? 'chuyến về' : 'chuyến đi';
+                        showTicketLimitModal(`${tripName.charAt(0).toUpperCase() + tripName.slice(1)}: Chỉ được đặt tối đa ${MAX_TICKETS_PER_BOOKING} vé 1 lần. Nếu bạn muốn đặt vé cho một nhóm lớn, vui lòng <a href="<?php echo BASE_URL; ?>/group-rental" class="modal-link">truy cập tại đây</a>.`);
+                        return;
+                    }
+                }
                 
                 if (this.classList.contains('selected')) {
                     this.classList.remove('selected');
@@ -448,12 +568,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         document.getElementById('totalPrice').textContent = new Intl.NumberFormat('vi-VN').format(grandTotal) + 'đ';
         
-        const submitBtn = document.getElementById('submitBtn');
-        const hasRequiredSeats = isRoundTrip ? (outboundSeats.length > 0 && returnSeats.length > 0) : outboundSeats.length > 0;
-        submitBtn.disabled = !hasRequiredSeats || tripHasDeparted;
+        updateSubmitButtonState();
     }
     
-    // Form validation
     document.getElementById('bookingForm').addEventListener('submit', function(e) {
         if (tripHasDeparted) {
             e.preventDefault();
@@ -470,6 +587,19 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!hasRequiredSeats) {
             e.preventDefault();
             alert(isRoundTrip ? 'Vui lòng chọn ghế cho cả chuyến đi và chuyến về.' : 'Vui lòng chọn ít nhất một ghế.');
+            return;
+        }
+        
+        const ticketCheck = checkTicketLimit();
+        if (!ticketCheck.valid) {
+            e.preventDefault();
+            showTicketLimitModal(ticketCheck.message);
+            return;
+        }
+        
+        if (!recaptchaVerified) {
+            e.preventDefault();
+            alert('Vui lòng xác thực reCAPTCHA trước khi thanh toán.');
             return;
         }
         
@@ -521,11 +651,19 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('[v0] Form data -', key + ':', value);
         }
         
-        setTimeout(() => {
-            console.log('[v0] Submitting form now...');
-        }, 100);
+        const submissionTimeout = setTimeout(() => {
+            console.log('[v0] Form submission timeout - re-enabling button');
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Thanh toán';
+            alert('Yêu cầu xử lý lâu. Vui lòng thử lại.');
+        }, 30000); // 30 second timeout
+        
+        // Store timeout ID for potential cancellation
+        this.submissionTimeout = submissionTimeout;
     });
 });
 </script>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <?php include __DIR__ . '/../layouts/footer.php'; ?>

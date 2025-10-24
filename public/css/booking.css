@@ -776,3 +776,192 @@
 .selection-note i {
   color: #2563eb;
 }
+
+/* Added modal styles for ticket limit notification */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-overlay.show {
+  display: flex !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 90%;
+  animation: slideUp 0.3s ease;
+  overflow: hidden;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  border-bottom: 2px solid #f1f5f9;
+  background: linear-gradient(135deg, #ff5722, #ff7043);
+  color: white;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.modal-close:hover {
+  transform: scale(1.2);
+}
+
+.modal-body {
+  padding: 30px 24px;
+  text-align: center;
+}
+
+.modal-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.modal-body p {
+  margin: 0;
+  font-size: 1rem;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.modal-link {
+  color: #ff5722;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.modal-link:hover {
+  color: #e64a19;
+  text-decoration: underline;
+}
+
+.modal-footer {
+  padding: 16px 24px;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.modal-btn-ok {
+  padding: 10px 24px;
+  background: linear-gradient(135deg, #ff5722, #ff7043);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+}
+
+.modal-btn-ok:hover {
+  background: linear-gradient(135deg, #e64a19, #ff5722);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 87, 34, 0.3);
+}
+
+/* Added reCAPTCHA container styles inside price-summary */
+.recaptcha-container {
+  margin: 20px 0;
+  padding: 16px;
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.recaptcha-label {
+  margin: 0;
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+.g-recaptcha {
+  transform: scale(0.9);
+  transform-origin: 0 0;
+  margin: -8px 0;
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+  }
+
+  .modal-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .modal-body {
+    padding: 20px 16px;
+  }
+
+  .modal-icon {
+    font-size: 36px;
+  }
+
+  .g-recaptcha {
+    transform: scale(0.75);
+    transform-origin: 0 0;
+  }
+}

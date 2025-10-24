@@ -11,6 +11,10 @@ $routes = [
     '/booking/{id}' => ['controller' => 'BookingController', 'action' => 'show'],
     '/booking/confirm' => ['controller' => 'BookingController', 'action' => 'confirm'],
     '/booking/success/{id}' => ['controller' => 'BookingController', 'action' => 'success'],
+    
+    '/group-rental' => ['controller' => 'GroupRentalController', 'action' => 'index'],
+    '/group-rental/success/{id}' => ['controller' => 'GroupRentalController', 'action' => 'success'],
+    
     '/login' => ['controller' => 'AuthController', 'action' => 'showLogin'],
     '/register' => ['controller' => 'AuthController', 'action' => 'showRegister'],
     '/verify-email' => ['controller' => 'AuthController', 'action' => 'showVerifyEmail'],
@@ -110,6 +114,12 @@ $routes = [
     '/driver/schedule' => ['controller' => 'DriverScheduleController', 'action' => 'index'],
     '/driver/report' => ['controller' => 'DriverReportController', 'action' => 'index'],
     '/driver/report/attendance/{id}' => ['controller' => 'DriverReportController', 'action' => 'attendance'],
+    
+    '/staff/monitoring' => ['controller' => 'StaffMonitoringController', 'action' => 'index'],
+    '/staff/monitoring/{id}' => ['controller' => 'StaffMonitoringController', 'action' => 'detail'],
+    '/staff/monitoring/date-range' => ['controller' => 'StaffMonitoringController', 'action' => 'getByDateRange'],
+    '/staff/rental-support' => ['controller' => 'StaffRentalSupportController', 'action' => 'index'],
+    '/staff/rental-support/{id}' => ['controller' => 'StaffRentalSupportController', 'action' => 'detail'],
 ];
 
 // Define POST routes
@@ -125,6 +135,9 @@ $postRoutes = [
     '/search/api' => ['controller' => 'SearchController', 'action' => 'api'],
     '/booking/process' => ['controller' => 'BookingController', 'action' => 'process'],
     '/booking/complete' => ['controller' => 'BookingController', 'action' => 'complete'],
+    
+    '/group-rental/submit' => ['controller' => 'GroupRentalController', 'action' => 'submit'],
+    
     '/profile/update' => ['controller' => 'ProfileController', 'action' => 'updateProfile'],
     '/profile/change-password' => ['controller' => 'ProfileController', 'action' => 'changePassword'],
     '/profile/upload-avatar' => ['controller' => 'ProfileController', 'action' => 'uploadAvatar'],
@@ -183,6 +196,13 @@ $postRoutes = [
     
     // Driver POST route for confirming departure
     '/driver/report/confirm-departure' => ['controller' => 'DriverReportController', 'action' => 'confirmDeparture'],
+    '/driver/report/complete-trip' => ['controller' => 'DriverReportController', 'action' => 'completeTrip'],
+    
+    '/staff/monitoring/date-range' => ['controller' => 'StaffMonitoringController', 'action' => 'getByDateRange'],
+    '/staff/monitoring/confirm-departure' => ['controller' => 'StaffMonitoringController', 'action' => 'confirmDeparture'],
+    '/staff/monitoring/{id}' => ['controller' => 'StaffMonitoringController', 'action' => 'detail'],
+    '/staff/monitoring' => ['controller' => 'StaffMonitoringController', 'action' => 'index'],
+    '/staff/rental-support/update-status' => ['controller' => 'StaffRentalSupportController', 'action' => 'updateStatus'],
 ];
 
 // Get current URL path and remove base directory
@@ -314,4 +334,3 @@ if (!$routeFound) {
         </html>";
     }
 }
-?>

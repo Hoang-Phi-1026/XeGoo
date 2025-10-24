@@ -168,62 +168,26 @@ require_once __DIR__ . '/../layouts/header.php';
                     <div class="service-icon">
                         <i class="fas fa-car"></i>
                     </div>
-                    <h3 class="service-title">Thuê xe theo ngày</h3>
+                    <h3 class="service-title">Thuê xe trọn gói</h3>
                     <p class="service-description">
-                        Thuê xe 4-7 chỗ theo ngày với tài xế chuyên nghiệp. Linh hoạt lịch trình, phù hợp cho du lịch gia đình, công tác hoặc sự kiện.
+                        Thuê xe với tài xế chuyên nghiệp. Linh hoạt lịch trình, phù hợp cho du lịch gia đình, công tác hoặc sự kiện.
                     </p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Xe 4-7 chỗ đời mới</li>
+                        <li><i class="fas fa-check"></i> Nhiều loại xe đa dạng</li>
                         <li><i class="fas fa-check"></i> Tài xế kinh nghiệm</li>
                         <li><i class="fas fa-check"></i> Linh hoạt lịch trình</li>
                         <li><i class="fas fa-check"></i> Giá cả cạnh tranh</li>
                     </ul>
-                    <a href="<?php echo BASE_URL; ?>/search" class="service-link">
+                    <a href="<?php echo BASE_URL; ?>/group-rental" class="service-link">
                         Tìm hiểu thêm <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-shuttle-van"></i>
-                    </div>
-                    <h3 class="service-title">Thuê xe 16-29 chỗ</h3>
-                    <p class="service-description">
-                        Dịch vụ thuê xe du lịch 16-29 chỗ cho đoàn, công ty. Xe đời mới, trang bị đầy đủ tiện nghi, phù hợp cho các chuyến đi dài ngày.
-                    </p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Xe 16-29 chỗ</li>
-                        <li><i class="fas fa-check"></i> Trang bị hiện đại</li>
-                        <li><i class="fas fa-check"></i> Phù hợp đoàn thể</li>
-                        <li><i class="fas fa-check"></i> Hỗ trợ lịch trình</li>
-                    </ul>
-                    <a href="<?php echo BASE_URL; ?>/search" class="service-link">
-                        Tìm hiểu thêm <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
+                
 
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-bus"></i>
-                    </div>
-                    <h3 class="service-title">Thuê xe 45 chỗ</h3>
-                    <p class="service-description">
-                        Xe khách 45 chỗ cao cấp cho các chuyến đi đông người. Phù hợp cho tour du lịch, sự kiện công ty, đưa đón nhân viên.
-                    </p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Xe 45 chỗ cao cấp</li>
-                        <li><i class="fas fa-check"></i> Điều hòa 2 chiều</li>
-                        <li><i class="fas fa-check"></i> Ghế ngồi êm ái</li>
-                        <li><i class="fas fa-check"></i> Giá ưu đãi đoàn</li>
-                    </ul>
-                    <a href="<?php echo BASE_URL; ?>/search" class="service-link">
-                        Tìm hiểu thêm <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-truck"></i>
                     </div>
                     <h3 class="service-title">Vận chuyển hàng hóa</h3>
                     <p class="service-description">
@@ -240,24 +204,6 @@ require_once __DIR__ . '/../layouts/header.php';
                     </a>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3 class="service-title">Hỗ trợ 24/7</h3>
-                    <p class="service-description">
-                        Đội ngũ chăm sóc khách hàng chuyên nghiệp, sẵn sàng hỗ trợ bạn mọi lúc, mọi nơi. Giải đáp thắc mắc và xử lý vấn đề nhanh chóng.
-                    </p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Hỗ trợ 24/7</li>
-                        <li><i class="fas fa-check"></i> Đa kênh liên hệ</li>
-                        <li><i class="fas fa-check"></i> Phản hồi nhanh chóng</li>
-                        <li><i class="fas fa-check"></i> Tư vấn tận tình</li>
-                    </ul>
-                    <a href="<?php echo BASE_URL; ?>/search" class="service-link">
-                        Liên hệ ngay <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
             </div>
         </div>
     </section>

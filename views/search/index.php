@@ -60,7 +60,9 @@
 
                     <input type="hidden" name="passengers" value="<?php echo $soKhach; ?>">
                     <input type="hidden" name="is_round_trip" value="<?php echo $isRoundTrip ? '1' : '0'; ?>">
+                    
                 </form>
+                
             </div>
             
             <!-- Recent searches moved outside main search form -->

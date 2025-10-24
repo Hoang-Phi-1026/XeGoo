@@ -170,6 +170,24 @@ class BookingController {
             error_log("[v0] BookingController::process() started");
             error_log("[v0] POST data: " . json_encode($_POST));
             
+            $recaptchaResponse = $_POST['g-recaptcha-response'] ?? '';
+            
+            if (empty($recaptchaResponse)) {
+                error_log("[v0] reCAPTCHA response is empty");
+                $_SESSION['error'] = 'Vui lòng xác thực reCAPTCHA.';
+                header('Location: ' . BASE_URL . '/search');
+                exit;
+            }
+            
+            if (!$this->verifyRecaptcha($recaptchaResponse)) {
+                error_log("[v0] reCAPTCHA verification failed");
+                $_SESSION['error'] = 'Xác thực reCAPTCHA thất bại. Vui lòng thử lại!';
+                header('Location: ' . BASE_URL . '/search');
+                exit;
+            }
+            
+            error_log("[v0] reCAPTCHA verification passed");
+            
             unset($_SESSION['applied_promotion']);
             unset($_SESSION['used_points']);
             error_log("[v0] Cleared old promotion and points session data");
@@ -187,6 +205,8 @@ class BookingController {
                 $selectedSeats = json_decode($selectedSeats, true) ?? [];
             }
             
+            $outboundTickets = count($selectedSeats);
+            
             // Handle return trip data for round trip
             $returnTripId = $_POST['return_trip_id'] ?? null;
             $returnSelectedSeats = $_POST['return_selected_seats'] ?? [];
@@ -198,11 +218,24 @@ class BookingController {
             if (is_string($returnSelectedSeats)) {
                 $returnSelectedSeats = json_decode($returnSelectedSeats, true) ?? [];
             }
+            
+            $returnTickets = count($returnSelectedSeats);
 
             error_log("[v0] Is round trip: " . ($isRoundTrip ? 'yes' : 'no'));
             error_log("[v0] Return trip ID: " . ($returnTripId ?? 'none'));
+            error_log("[v0] Outbound tickets: $outboundTickets, Return tickets: $returnTickets");
 
             $errors = [];
+            
+            if ($outboundTickets > 5) {
+                $errors[] = "Chuyến đi: Chỉ được đặt tối đa 5 vé 1 lần. Bạn đã chọn $outboundTickets vé. Nếu bạn muốn đặt vé cho một nhóm lớn, vui lòng liên hệ với chúng tôi.";
+                error_log("[v0] Outbound ticket limit exceeded: $outboundTickets > 5");
+            }
+            
+            if ($isRoundTrip && $returnTickets > 5) {
+                $errors[] = "Chuyến về: Chỉ được đặt tối đa 5 vé 1 lần. Bạn đã chọn $returnTickets vé. Nếu bạn muốn đặt vé cho một nhóm lớn, vui lòng liên hệ với chúng tôi.";
+                error_log("[v0] Return ticket limit exceeded: $returnTickets > 5");
+            }
             
             if (empty($tripId)) {
                 $errors[] = 'Không tìm thấy thông tin chuyến xe.';
@@ -345,6 +378,64 @@ class BookingController {
         }
     }
     
+    private function verifyRecaptcha($response) {
+        if (empty($response)) {
+            error_log("[v0] reCAPTCHA response is empty");
+            return false;
+        }
+
+        $secretKey = RECAPTCHA_SECRET_KEY;
+        $verifyUrl = 'https://www.google.com/recaptcha/api/siteverify';
+        $data = [
+            'secret' => $secretKey,
+            'response' => $response,
+            'remoteip' => $_SERVER['REMOTE_ADDR'] ?? ''
+        ];
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $verifyUrl);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+
+        try {
+            $result = curl_exec($ch);
+            if ($result === false) {
+                error_log("[v0] reCAPTCHA verification failed: " . curl_error($ch));
+                curl_close($ch);
+                return false;
+            }
+
+            $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            if ($httpCode != 200) {
+                error_log("[v0] reCAPTCHA HTTP error: " . $httpCode);
+                curl_close($ch);
+                return false;
+            }
+
+            $resultJson = json_decode($result, true);
+            curl_close($ch);
+
+            if (json_last_error() !== JSON_ERROR_NONE) {
+                error_log("[v0] reCAPTCHA JSON decode error: " . json_last_error_msg());
+                return false;
+            }
+
+            if (isset($resultJson['success']) && $resultJson['success']) {
+                return true;
+            }
+
+            error_log("[v0] reCAPTCHA verification failed: " . json_encode($resultJson));
+            return false;
+        } catch (Exception $e) {
+            error_log("[v0] reCAPTCHA verification error: " . $e->getMessage());
+            if ($ch) curl_close($ch);
+            return false;
+        }
+    }
+    
     /**
      * New method to hold seats when going to payment - Enhanced with error handling
      */
@@ -457,8 +548,10 @@ class BookingController {
             // Check if any seat is already booked or held
             foreach ($seats as $seat) {
                 error_log("[v0] Checking seat {$seat['soGhe']} (ID: {$seat['maGhe']}) - status: {$seat['trangThai']}");
+
                 if ($seat['trangThai'] !== 'Trống') {
                     error_log("[v0] Seat {$seat['soGhe']} is not available - status: {$seat['trangThai']}");
+
                     return ['success' => false, 'message' => "Ghế {$seat['soGhe']} đã được đặt hoặc đang được giữ"];
                 }
             }
@@ -945,7 +1038,6 @@ class BookingController {
         query($sql, [$bookedSeats, $bookedSeats, $tripId]);
     }
  
-    
     private function getBookingDetailsWithAddresses($bookingId) {
         try {
             $sql = "SELECT d.*, 
@@ -1033,4 +1125,3 @@ class BookingController {
         return $result;
     }
 }
-?>

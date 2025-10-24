@@ -272,7 +272,7 @@
                 <div class="form-actions">
                     <button type="button" class="btn-confirm" id="confirmDepartureBtn">
                         <i class="fas fa-check-circle"></i>
-                        Xác Nhận Khởi Hành Chuyến Đi
+                        Xác nhận báo cáo
                     </button>
                 </div>
             <?php endif; ?>
@@ -284,13 +284,13 @@
     <div class="modal-content">
         <div class="modal-header">
             <i class="fas fa-exclamation-triangle"></i>
-            <h3>Xác Nhận Khởi Hành</h3>
+            <h3>Xác Nhận Báo Cáo</h3>
         </div>
         <div class="modal-body">
-            <p>Bạn có chắc chắn muốn xác nhận khởi hành chuyến đi này không?</p>
+            <p>Bạn có chắc chắn muốn xác nhận báo cáo chuyến đi này không?</p>
             <p class="modal-warning">
                 <i class="fas fa-info-circle"></i>
-                Sau khi xác nhận, trạng thái chuyến xe sẽ được cập nhật thành "Khởi hành" và không thể thay đổi.
+                Sau khi xác nhận, báo cáo sẽ được lưu với trạng thái "Chờ khởi hành".
             </p>
             <div class="modal-summary">
                 <div class="summary-row">
@@ -312,7 +312,7 @@
                 <i class="fas fa-times"></i> Hủy
             </button>
             <button type="button" class="btn-confirm-modal" id="confirmBtn">
-                <i class="fas fa-check"></i> Xác Nhận Khởi Hành
+                <i class="fas fa-check"></i> Xác Nhận Báo Cáo
             </button>
         </div>
     </div>

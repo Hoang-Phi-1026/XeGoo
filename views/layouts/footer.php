@@ -23,9 +23,10 @@
                 <div class="footer-section">
                     <h3>Dịch vụ</h3>
                     <ul class="footer-links">
-                        <li><a href="<?php echo BASE_URL; ?>/booking"><i class="fas fa-bus"></i> Đặt vé xe</a></li>
+                        <li><a href="<?php echo BASE_URL; ?>/search"><i class="fas fa-bus"></i> Đặt vé xe</a></li>
+                        <li><a href="<?php echo BASE_URL; ?>/group-rental"><i class="fas fa-car"></i> Thuê xe</a></li>
+                        <li><a href="<?php echo BASE_URL; ?>/ticket-lookup"><i class="fas fa-ticket-alt"></i> Tra cứu vé</a></li>
                         <li><a href="<?php echo BASE_URL; ?>/routes"><i class="fas fa-route"></i> Tuyến đường</a></li>
-                        <li><a href="<?php echo BASE_URL; ?>/schedule"><i class="fas fa-clock"></i> Lịch trình</a></li>
                         <li><a href="<?php echo BASE_URL; ?>/promotions"><i class="fas fa-gift"></i> Khuyến mãi</a></li>
                     </ul>
                 </div>

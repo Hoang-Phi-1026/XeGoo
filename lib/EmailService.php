@@ -397,6 +397,46 @@ class EmailService {
         }
     }
     /**
+     * Send group rental confirmation email
+     * 
+     * @param string $toEmail Recipient email address
+     * @param string $toName Recipient name
+     * @param array $rentalData Group rental request data
+     * @return array Result with success status and message
+     */
+    public function sendGroupRentalConfirmationEmail($toEmail, $toName, $rentalData) {
+        try {
+            $this->mailer->clearAddresses();
+            $this->mailer->addAddress($toEmail, $toName);
+            
+            $this->mailer->isHTML(true);
+            $this->mailer->Subject = 'Xác nhận yêu cầu thuê xe trọn gói - XeGoo - Mã yêu cầu: ' . $rentalData['maThuXe'];
+            
+            $htmlBody = $this->getGroupRentalEmailTemplate($toName, $rentalData);
+            $this->mailer->Body = $htmlBody;
+            
+            // Plain text version
+            $this->mailer->AltBody = $this->getGroupRentalEmailPlainText($toName, $rentalData);
+            
+            $this->mailer->send();
+            
+            error_log("[v0] Group rental confirmation email sent successfully to: " . $toEmail);
+            
+            return [
+                'success' => true,
+                'message' => 'Email xác nhận đã được gửi thành công!'
+            ];
+            
+        } catch (Exception $e) {
+            error_log("[v0] Send group rental confirmation email error: " . $this->mailer->ErrorInfo);
+            return [
+                'success' => false,
+                'message' => 'Không thể gửi email xác nhận: ' . $this->mailer->ErrorInfo
+            ];
+        }
+    }
+    
+    /**
      * Get HTML template for verification email
      */
     private function getVerificationEmailTemplate($toName, $verificationCode) {
@@ -1501,6 +1541,395 @@ class EmailService {
         </body>
         </html>';
     }
+    
+    /**
+     * Get HTML template for group rental confirmation email
+     */
+    private function getGroupRentalEmailTemplate($toName, $rentalData) {
+        $maThuXe = htmlspecialchars($rentalData['maThuXe'] ?? 'N/A');
+        $hoTenNguoiThue = htmlspecialchars($rentalData['hoTenNguoiThue'] ?? '');
+        $soDienThoai = htmlspecialchars($rentalData['soDienThoaiNguoiThue'] ?? '');
+        $diemDi = htmlspecialchars($rentalData['diemDi'] ?? '');
+        $diemDen = htmlspecialchars($rentalData['diemDen'] ?? '');
+        $loaiHanhTrinh = htmlspecialchars($rentalData['loaiHanhTrinh'] ?? 'Một chiều');
+        $ngayDi = date('d/m/Y', strtotime($rentalData['ngayDi'] ?? date('Y-m-d')));
+        $gioDi = htmlspecialchars($rentalData['gioDi'] ?? '');
+        $diemDonDi = htmlspecialchars($rentalData['diemDonDi'] ?? '');
+        $soLuongNguoi = (int)($rentalData['soLuongNguoi'] ?? 0);
+        $tenLoaiPhuongTien = htmlspecialchars($rentalData['tenLoaiPhuongTien'] ?? 'Chưa xác định');
+        $ghiChu = htmlspecialchars($rentalData['ghiChu'] ?? '');
+        $ngayTao = date('d/m/Y H:i', strtotime($rentalData['ngayTao'] ?? date('Y-m-d H:i:s')));
+        
+        $html = '
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <style>
+                body { 
+                    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+                    line-height: 1.6; 
+                    color: #1a1a1a; 
+                    background: #f8f9fa;
+                    margin: 0;
+                    padding: 0;
+                }
+                .container { 
+                    max-width: 650px; 
+                    margin: 40px auto; 
+                    background: #ffffff;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+                }
+                .header { 
+                    background: linear-gradient(135deg, #f4481f 0%, #ff6b35 100%); 
+                    color: white; 
+                    padding: 40px 30px; 
+                    text-align: center;
+                }
+                .header h1 { 
+                    margin: 0 0 8px 0; 
+                    font-size: 32px; 
+                    font-weight: 700;
+                    letter-spacing: -0.5px;
+                }
+                .header p { 
+                    margin: 0; 
+                    font-size: 15px; 
+                    opacity: 0.95;
+                }
+                .content { 
+                    padding: 40px 30px;
+                }
+                .success-message {
+                    background: #d1fae5;
+                    border-left: 4px solid #10b981;
+                    padding: 20px;
+                    border-radius: 4px;
+                    margin-bottom: 32px;
+                }
+                .success-message p {
+                    margin: 0;
+                    color: #065f46;
+                    font-size: 15px;
+                    font-weight: 500;
+                }
+                .section-title { 
+                    font-size: 18px; 
+                    font-weight: 700; 
+                    color: #1a1a1a; 
+                    margin: 32px 0 16px 0; 
+                    padding-bottom: 8px; 
+                    border-bottom: 2px solid #e2e8f0;
+                }
+                .info-box { 
+                    background: #f7fafc;
+                    border-radius: 8px;
+                    padding: 20px;
+                    margin: 20px 0;
+                }
+                .info-row { 
+                    display: flex;
+                    padding: 12px 0;
+                    border-bottom: 1px solid #e2e8f0;
+                }
+                .info-row:last-child {
+                    border-bottom: none;
+                }
+                .info-label { 
+                    font-weight: 600; 
+                    min-width: 160px; 
+                    color: #4a5568;
+                    font-size: 14px;
+                }
+                .info-value { 
+                    color: #1a1a1a; 
+                    flex: 1;
+                    font-size: 14px;
+                }
+                .highlight { 
+                    color: #f4481f; 
+                    font-weight: 700;
+                }
+                .trip-card {
+                    background: #eff6ff;
+                    border: 2px solid #bfdbfe;
+                    border-radius: 12px;
+                    padding: 24px;
+                    margin: 20px 0;
+                }
+                .trip-card .info-row {
+                    border-bottom: 1px solid #dbeafe;
+                }
+                .trip-card .info-row:last-child {
+                    border-bottom: none;
+                }
+                .route-highlight {
+                    background: #fef3c7;
+                    border-radius: 8px;
+                    padding: 16px;
+                    margin: 16px 0;
+                    border-left: 4px solid #f59e0b;
+                }
+                .route-highlight .route-text {
+                    font-size: 18px;
+                    font-weight: 700;
+                    color: #92400e;
+                    margin: 0;
+                }
+                .route-highlight .route-detail {
+                    font-size: 14px;
+                    color: #b45309;
+                    margin: 8px 0 0 0;
+                }
+                .next-steps {
+                    background: #fef3f2;
+                    border-left: 4px solid #f4481f;
+                    padding: 20px;
+                    border-radius: 4px;
+                    margin: 24px 0;
+                }
+                .next-steps strong {
+                    display: block;
+                    margin-bottom: 12px;
+                    color: #7f1d1d;
+                    font-size: 16px;
+                    font-weight: 700;
+                }
+                .next-steps ol {
+                    margin: 0;
+                    padding-left: 20px;
+                }
+                .next-steps li {
+                    margin: 8px 0;
+                    color: #7f1d1d;
+                    font-size: 14px;
+                }
+                .contact-box {
+                    background: #ecfdf5;
+                    border-radius: 8px;
+                    padding: 20px;
+                    margin: 24px 0;
+                }
+                .contact-box strong {
+                    display: block;
+                    margin-bottom: 12px;
+                    color: #065f46;
+                    font-size: 15px;
+                    font-weight: 700;
+                }
+                .contact-box p {
+                    margin: 8px 0;
+                    color: #047857;
+                    font-size: 14px;
+                }
+                .footer { 
+                    text-align: center; 
+                    padding: 24px 30px;
+                    background: #f7fafc;
+                    border-top: 1px solid #e2e8f0;
+                }
+                .footer p {
+                    margin: 4px 0;
+                    font-size: 13px; 
+                    color: #718096;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <div class="header">
+                    <h1>XeGoo</h1>
+                    <p>Xác nhận yêu cầu thuê xe trọn gói</p>
+                </div>
+                <div class="content">
+                    <div class="success-message">
+                        <p>✓ Yêu cầu thuê xe của bạn đã được gửi thành công! Chúng tôi sẽ liên hệ với bạn sớm nhất.</p>
+                    </div>
+                    
+                    <div class="section-title">Thông tin yêu cầu</div>
+                    <div class="info-box">
+                        <div class="info-row">
+                            <span class="info-label">Mã yêu cầu</span>
+                            <span class="info-value highlight">XG-' . $maThuXe . '</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Ngày gửi</span>
+                            <span class="info-value">' . $ngayTao . '</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Trạng thái</span>
+                            <span class="info-value"><strong style="color: #f59e0b;">Chờ duyệt</strong></span>
+                        </div>
+                    </div>
+                    
+                    <div class="section-title">Thông tin liên hệ</div>
+                    <div class="info-box">
+                        <div class="info-row">
+                            <span class="info-label">Người thuê xe</span>
+                            <span class="info-value"><strong>' . $hoTenNguoiThue . '</strong></span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Số điện thoại</span>
+                            <span class="info-value">' . $soDienThoai . '</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Email</span>
+                            <span class="info-value">' . htmlspecialchars($rentalData['emailNguoiThue'] ?? '') . '</span>
+                        </div>
+                    </div>
+                    
+                    <div class="section-title">Chi tiết chuyến đi</div>
+                    <div class="trip-card">
+                        <div class="route-highlight">
+                            <p class="route-text">' . $diemDi . ' → ' . $diemDen . '</p>
+                            <p class="route-detail">Loại hành trình: ' . $loaiHanhTrinh . '</p>
+                        </div>
+                        
+                        <div class="info-row">
+                            <span class="info-label">Ngày đi</span>
+                            <span class="info-value highlight">' . $ngayDi . '</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Giờ đi</span>
+                            <span class="info-value highlight">' . $gioDi . '</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Điểm đón</span>
+                            <span class="info-value">' . $diemDonDi . '</span>
+                        </div>';
+        
+        // Add return trip info if round trip
+        if ($loaiHanhTrinh === 'Khứ hồi' && !empty($rentalData['ngayVe'])) {
+            $ngayVe = date('d/m/Y', strtotime($rentalData['ngayVe']));
+            $gioVe = htmlspecialchars($rentalData['gioVe'] ?? '');
+            $diemDonVe = htmlspecialchars($rentalData['diemDonVe'] ?? '');
+            
+            $html .= '
+                        <div class="info-row" style="margin-top: 16px; padding-top: 16px; border-top: 2px dashed #bfdbfe;">
+                            <span class="info-label">Ngày về</span>
+                            <span class="info-value highlight">' . $ngayVe . '</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Giờ về</span>
+                            <span class="info-value highlight">' . $gioVe . '</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Điểm đón về</span>
+                            <span class="info-value">' . $diemDonVe . '</span>
+                        </div>';
+        }
+        
+        $html .= '
+                        <div class="info-row" style="margin-top: 16px; padding-top: 16px; border-top: 2px dashed #bfdbfe;">
+                            <span class="info-label">Số lượng người</span>
+                            <span class="info-value highlight">' . $soLuongNguoi . ' người</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Loại xe</span>
+                            <span class="info-value"><strong>' . $tenLoaiPhuongTien . '</strong></span>
+                        </div>';
+        
+        if (!empty($ghiChu)) {
+            $html .= '
+                        <div class="info-row">
+                            <span class="info-label">Ghi chú</span>
+                            <span class="info-value">' . $ghiChu . '</span>
+                        </div>';
+        }
+        
+        $html .= '
+                    </div>
+                    
+                    <div class="next-steps">
+                        <strong>Các bước tiếp theo</strong>
+                        <ol>
+                            <li>Chúng tôi sẽ xem xét yêu cầu của bạn trong vòng <strong>24 giờ</strong></li>
+                            <li>Nhân viên XeGoo sẽ liên hệ với bạn qua <strong>điện thoại hoặc email</strong> để xác nhận và cung cấp báo giá</li>
+                            <li>Bạn sẽ nhận được chi tiết giá cả, điều khoản và các tùy chọn thanh toán</li>
+                            <li>Sau khi đồng ý, chúng tôi sẽ xác nhận lịch trình và chuẩn bị xe cho bạn</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="contact-box">
+                        <strong>Cần hỗ trợ ngay?</strong>
+                        <p><strong>Hotline:</strong> 1900-xxxx (Hỗ trợ 24/7)</p>
+                        <p><strong>Email:</strong> support@xegoo.com</p>
+                        <p><strong>Mã yêu cầu của bạn:</strong> XG-' . $maThuXe . ' (Vui lòng cung cấp mã này khi liên hệ)</p>
+                    </div>
+                    
+                    <p style="font-size: 15px; margin-top: 32px; color: #4a5568;">Cảm ơn bạn đã chọn XeGoo! Chúng tôi cam kết cung cấp dịch vụ thuê xe chất lượng cao với giá cả cạnh tranh.</p>
+                    <p style="margin-top: 16px; color: #1a1a1a;">Trân trọng,<br><strong style="color: #f4481f;">Đội ngũ XeGoo</strong></p>
+                </div>
+                
+                <div class="footer">
+                    <p>Email này được gửi tự động, vui lòng không trả lời.</p>
+                    <p>&copy; 2025 XeGoo. All rights reserved.</p>
+                </div>
+            </div>
+        </body>
+        </html>';
+        
+        return $html;
+    }
+    
+    /**
+     * Get plain text version of group rental confirmation email
+     */
+    private function getGroupRentalEmailPlainText($toName, $rentalData) {
+        $text = "HỆ THỐNG XEGOO - XÁC NHẬN YÊU CẦU THUÊ XE TRỌN GÓI\n\n";
+        $text .= "Xin chào " . $toName . ",\n\n";
+        $text .= "Yêu cầu thuê xe của bạn đã được gửi thành công!\n\n";
+        
+        $text .= "THÔNG TIN YÊU CẦU\n";
+        $text .= "Mã yêu cầu: XG-" . $rentalData['maThuXe'] . "\n";
+        $text .= "Ngày gửi: " . date('d/m/Y H:i', strtotime($rentalData['ngayTao'] ?? date('Y-m-d H:i:s'))) . "\n";
+        $text .= "Trạng thái: Chờ duyệt\n\n";
+        
+        $text .= "THÔNG TIN LIÊN HỆ\n";
+        $text .= "Người thuê xe: " . $rentalData['hoTenNguoiThue'] . "\n";
+        $text .= "Số điện thoại: " . $rentalData['soDienThoaiNguoiThue'] . "\n";
+        $text .= "Email: " . $rentalData['emailNguoiThue'] . "\n\n";
+        
+        $text .= "CHI TIẾT CHUYẾN ĐI\n";
+        $text .= "Tuyến đường: " . $rentalData['diemDi'] . " → " . $rentalData['diemDen'] . "\n";
+        $text .= "Loại hành trình: " . $rentalData['loaiHanhTrinh'] . "\n";
+        $text .= "Ngày đi: " . date('d/m/Y', strtotime($rentalData['ngayDi'])) . "\n";
+        $text .= "Giờ đi: " . $rentalData['gioDi'] . "\n";
+        $text .= "Điểm đón: " . $rentalData['diemDonDi'] . "\n";
+        
+        if ($rentalData['loaiHanhTrinh'] === 'Khứ hồi' && !empty($rentalData['ngayVe'])) {
+            $text .= "Ngày về: " . date('d/m/Y', strtotime($rentalData['ngayVe'])) . "\n";
+            $text .= "Giờ về: " . $rentalData['gioVe'] . "\n";
+            $text .= "Điểm đón về: " . $rentalData['diemDonVe'] . "\n";
+        }
+        
+        $text .= "Số lượng người: " . $rentalData['soLuongNguoi'] . " người\n";
+        $text .= "Loại xe: " . $rentalData['tenLoaiPhuongTien'] . "\n";
+        
+        if (!empty($rentalData['ghiChu'])) {
+            $text .= "Ghi chú: " . $rentalData['ghiChu'] . "\n";
+        }
+        
+        $text .= "\nCÁC BƯỚC TIẾP THEO\n";
+        $text .= "1. Chúng tôi sẽ xem xét yêu cầu của bạn trong vòng 24 giờ\n";
+        $text .= "2. Nhân viên XeGoo sẽ liên hệ với bạn qua điện thoại hoặc email để xác nhận và cung cấp báo giá\n";
+        $text .= "3. Bạn sẽ nhận được chi tiết giá cả, điều khoản và các tùy chọn thanh toán\n";
+        $text .= "4. Sau khi đồng ý, chúng tôi sẽ xác nhận lịch trình và chuẩn bị xe cho bạn\n\n";
+        
+        $text .= "CẦN HỖ TRỢ NGAY?\n";
+        $text .= "Hotline: 1900-xxxx (Hỗ trợ 24/7)\n";
+        $text .= "Email: support@xegoo.com\n";
+        $text .= "Mã yêu cầu: XG-" . $rentalData['maThuXe'] . "\n\n";
+        
+        $text .= "Cảm ơn bạn đã chọn XeGoo!\n\n";
+        $text .= "Trân trọng,\nĐội ngũ Xegoo";
+        
+        return $text;
+    }
+    
     /**
      * Get plain text version of ticket email
      */
@@ -1588,4 +2017,3 @@ class EmailService {
         return $text;
     }
 }
-?>

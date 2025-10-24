@@ -4,30 +4,57 @@ require_once __DIR__ . '/../config/database.php';
 class DriverReport {
     
     /**
-     * Get upcoming trips for driver
+     * Get today's trips for driver (all statuses)
      */
-    public static function getUpcomingTrips($driverId) {
+    public static function getTodayTrips($driverId) {
         try {
             $sql = "SELECT c.maChuyenXe, c.ngayKhoiHanh, c.thoiGianKhoiHanh, c.thoiGianKetThuc, 
-                           c.trangThai, c.soChoTong, c.soChoDaDat,
-                           t.kyHieuTuyen, t.diemDi, t.diemDen,
-                           p.bienSo
+                           c.trangThai, c.soChoTong, c.soChoDaDat, c.maPhuongTien, c.maLichTrinh,
+                           c.maTaiXe
                     FROM chuyenxe c
-                    INNER JOIN lichtrinh l ON c.maLichTrinh = l.maLichTrinh
-                    INNER JOIN tuyenduong t ON l.maTuyenDuong = t.maTuyenDuong
-                    INNER JOIN phuongtien p ON c.maPhuongTien = p.maPhuongTien
                     WHERE c.maTaiXe = ? 
-                    AND c.thoiGianKhoiHanh >= NOW()
-                    AND c.trangThai IN ('Sẵn sàng', 'Delay')
-                    ORDER BY c.thoiGianKhoiHanh ASC
-                    LIMIT 10";
+                    AND DATE(c.ngayKhoiHanh) = CURDATE()
+                    AND c.trangThai IN ('Sẵn sàng', 'Khởi hành', 'Hoàn thành', 'Delay')
+                    ORDER BY c.thoiGianKhoiHanh ASC";
             
-            return fetchAll($sql, [$driverId]);
+            $trips = fetchAll($sql, [$driverId]);
+            error_log("[getTodayTrips] Found " . count($trips) . " trips for driver $driverId");
+            
+            foreach ($trips as &$trip) {
+                // Get route info
+                $routeSql = "SELECT t.kyHieuTuyen, t.diemDi, t.diemDen
+                            FROM tuyenduong t
+                            INNER JOIN lichtrinh l ON l.maTuyenDuong = t.maTuyenDuong
+                            WHERE l.maLichTrinh = ?";
+                $routeInfo = fetch($routeSql, [$trip['maLichTrinh']]);
+                if ($routeInfo) {
+                    $trip['kyHieuTuyen'] = $routeInfo['kyHieuTuyen'];
+                    $trip['diemDi'] = $routeInfo['diemDi'];
+                    $trip['diemDen'] = $routeInfo['diemDen'];
+                }
+                
+                // Get vehicle info
+                $vehicleSql = "SELECT bienSo FROM phuongtien WHERE maPhuongTien = ?";
+                $vehicleInfo = fetch($vehicleSql, [$trip['maPhuongTien']]);
+                if ($vehicleInfo) {
+                    $trip['bienSo'] = $vehicleInfo['bienSo'];
+                }
+            }
+            
+            return $trips;
             
         } catch (Exception $e) {
-            error_log("DriverReport::getUpcomingTrips error: " . $e->getMessage());
+            error_log("[getTodayTrips] ERROR: " . $e->getMessage());
+            error_log("[getTodayTrips] Stack trace: " . $e->getTraceAsString());
             return [];
         }
+    }
+
+    /**
+     * Get upcoming trips for driver (backward compatibility)
+     */
+    public static function getUpcomingTrips($driverId) {
+        return self::getTodayTrips($driverId);
     }
     
     /**
@@ -138,6 +165,22 @@ class DriverReport {
             
             query("START TRANSACTION");
             
+            $deleteOldReportsSql = "SELECT maBaoCao FROM baocao_chuyendi 
+                                   WHERE maChuyenXe = ? AND trangThai = 'Chờ khởi hành'";
+            $oldReports = fetchAll($deleteOldReportsSql, [$tripId]);
+            
+            foreach ($oldReports as $oldReport) {
+                // Delete passenger records for old reports
+                $deletePassengersSql = "DELETE FROM baocao_hanhkhach WHERE maBaoCao = ?";
+                query($deletePassengersSql, [$oldReport['maBaoCao']]);
+                
+                // Delete old report
+                $deleteReportSql = "DELETE FROM baocao_chuyendi WHERE maBaoCao = ?";
+                query($deleteReportSql, [$oldReport['maBaoCao']]);
+                
+                error_log("[v0] Deleted old report: " . $oldReport['maBaoCao']);
+            }
+            
             $totalPassengers = count($attendanceData);
             $presentCount = 0;
             $absentCount = 0;
@@ -155,7 +198,7 @@ class DriverReport {
             $reportSql = "INSERT INTO baocao_chuyendi 
                          (maChuyenXe, maTaiXe, xacNhanKhoiHanh, thoiGianXacNhan, 
                           tongSoHanhKhach, soHanhKhachCoMat, soHanhKhachVang, ghiChu, trangThai)
-                         VALUES (?, ?, 1, NOW(), ?, ?, ?, ?, 'Đang di chuyển')";
+                         VALUES (?, ?, 1, NOW(), ?, ?, ?, ?, 'Chờ khởi hành')";
             
             query($reportSql, [$tripId, $driverId, $totalPassengers, $presentCount, $absentCount, $tripNotes]);
             
@@ -208,6 +251,33 @@ class DriverReport {
     }
     
     /**
+     * Complete a trip (update status to Hoàn thành)
+     */
+    public static function completeTrip($tripId, $driverId) {
+        try {
+            // Verify trip belongs to driver
+            $trip = self::getTripDetails($tripId, $driverId);
+            if (!$trip) {
+                return ['success' => false, 'message' => 'Không tìm thấy chuyến đi'];
+            }
+
+            // Only allow completing trips with status "Khởi hành"
+            if ($trip['trangThai'] !== 'Khởi hành') {
+                return ['success' => false, 'message' => 'Chỉ có thể kết thúc chuyến xe đang khởi hành'];
+            }
+
+            $sql = "UPDATE chuyenxe SET trangThai = 'Hoàn thành', thoiGianKetThuc = NOW() WHERE maChuyenXe = ?";
+            query($sql, [$tripId]);
+
+            return ['success' => true, 'message' => 'Đã kết thúc chuyến xe thành công'];
+
+        } catch (Exception $e) {
+            error_log("DriverReport::completeTrip error: " . $e->getMessage());
+            return ['success' => false, 'message' => $e->getMessage()];
+        }
+    }
+    
+    /**
      * Get all seats for a specific vehicle
      */
     public static function getVehicleSeats($vehicleId) {
@@ -220,4 +290,3 @@ class DriverReport {
         }
     }
 }
-?>
