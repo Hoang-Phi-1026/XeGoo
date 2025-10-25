@@ -34,7 +34,19 @@
                     <div class="detail-item">
                         <span class="detail-label">Trạng thái:</span>
                         <span class="detail-value status-badge <?php echo $bookingInfo['trangThai'] === 'DaThanhToan' ? 'status-paid' : 'status-cancelled'; ?>">
-                            <?php echo $bookingInfo['trangThai'] === 'DaThanhToan' ? 'Đã thanh toán' : 'Đã hủy'; ?>
+                            <?php 
+                            $actualStatus = $bookingInfo['trangThaiThucTe'] ?? $bookingInfo['trangThai'];
+                            
+                            if ($actualStatus === 'DaHuy') {
+                                echo 'Đã hủy';
+                            } elseif ($actualStatus === 'HetHieuLuc') {
+                                echo 'Hết hiệu lực';
+                            } elseif ($actualStatus === 'DaHoanThanh') {
+                                echo 'Đã hoàn thành';
+                            } else {
+                                echo $bookingInfo['trangThai'] === 'DaThanhToan' ? 'Đã thanh toán' : 'Đã hủy';
+                            }
+                            ?>
                         </span>
                     </div>
                     <div class="detail-item">
@@ -115,8 +127,8 @@
                                 <span class="detail-value"><?php echo htmlspecialchars($tripInfo['bienSo']); ?></span>
                             </div>
                             <div class="detail-item">
-                                <span class="detail-label">Số chỗ:</span>
-                                <span class="detail-value"><?php echo htmlspecialchars($tripInfo['soChoMacDinh']); ?> chỗ</span>
+                                <span class="detail-label">Loại chỗ ngồi:</span>
+                                <span class="detail-value"><?php echo htmlspecialchars($tripInfo['loaiChoNgoiMacDinh'] ?? $tripInfo['soChoMacDinh']); ?></span>
                             </div>
                             <div class="detail-item">
                                 <span class="detail-label">Điểm đi:</span>
@@ -224,6 +236,101 @@
                             <?php endforeach; ?>
                         </div>
                     </div>
+
+                    <!-- Trip Rating Section - Only show for completed trips -->
+                    <?php 
+                    $tripStatus = $tripInfo['trangThaiChuyenXe'] ?? null;
+                    $isCompleted = ($tripStatus === 'Hoàn thành') && ($bookingInfo['trangThaiThucTe'] === 'DaHoanThanh');
+                    ?>
+                    
+                    <?php if ($isCompleted && isset($_SESSION['user_id'])): ?>
+                        <div class="rating-section">
+                            <div class="rating-header">
+                                <div class="rating-title-group">
+                                    <h3 class="rating-title">
+                                        <i class="fas fa-star"></i> Đánh Giá Chuyến Đi
+                                    </h3>
+                                    <p class="rating-subtitle">Chia sẻ trải nghiệm của bạn để giúp chúng tôi cải thiện dịch vụ</p>
+                                </div>
+                                
+                                <div class="rating-info-box">
+                                    <?php if (!empty($tripInfo['tenTaiXe'])): ?>
+                                        <div class="rating-info-item">
+                                            <i class="fas fa-user-tie"></i>
+                                            <div class="rating-info-content">
+                                                <span class="rating-info-label">Tài xế</span>
+                                                <span class="rating-info-value"><?php echo htmlspecialchars($tripInfo['tenTaiXe']); ?></span>
+                                            </div>
+                                        </div>
+                                    <?php endif; ?>
+                                    <div class="rating-info-item">
+                                        <i class="fas fa-bus"></i>
+                                        <div class="rating-info-content">
+                                            <span class="rating-info-label">Loại xe</span>
+                                            <span class="rating-info-value"><?php echo htmlspecialchars($tripInfo['tenLoaiPhuongTien']); ?></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <form id="ratingForm-<?php echo $tripInfo['maChuyenXe']; ?>" class="rating-form" data-trip-id="<?php echo $tripInfo['maChuyenXe']; ?>">
+                                <input type="hidden" name="tripId" value="<?php echo $tripInfo['maChuyenXe']; ?>">
+                                <input type="hidden" name="bookingId" value="<?php echo $bookingId; ?>">
+                                <input type="hidden" name="maTaiXe" value="<?php echo $tripInfo['maTaiXe'] ?? ''; ?>">
+                                
+                                <!-- Service Rating -->
+                                <div class="rating-group">
+                                    <label class="rating-label">Chất lượng dịch vụ</label>
+                                    <div class="star-rating" data-field="serviceRating">
+                                        <?php for ($i = 5; $i >= 1; $i--): ?>
+                                            <input type="radio" id="service-<?php echo $tripInfo['maChuyenXe']; ?>-<?php echo $i; ?>" name="serviceRating" value="<?php echo $i; ?>" class="star-input">
+                                            <label for="service-<?php echo $tripInfo['maChuyenXe']; ?>-<?php echo $i; ?>" class="star-label">
+                                                <i class="fas fa-star"></i>
+                                            </label>
+                                        <?php endfor; ?>
+                                    </div>
+                                </div>
+                                
+                                <!-- Driver Rating -->
+                                <div class="rating-group">
+                                    <label class="rating-label">Tài xế</label>
+                                    <div class="star-rating" data-field="driverRating">
+                                        <?php for ($i = 5; $i >= 1; $i--): ?>
+                                            <input type="radio" id="driver-<?php echo $tripInfo['maChuyenXe']; ?>-<?php echo $i; ?>" name="driverRating" value="<?php echo $i; ?>" class="star-input">
+                                            <label for="driver-<?php echo $tripInfo['maChuyenXe']; ?>-<?php echo $i; ?>" class="star-label">
+                                                <i class="fas fa-star"></i>
+                                            </label>
+                                        <?php endfor; ?>
+                                    </div>
+                                </div>
+                                
+                                <!-- Vehicle Rating -->
+                                <div class="rating-group">
+                                    <label class="rating-label">Phương tiện</label>
+                                    <div class="star-rating" data-field="vehicleRating">
+                                        <?php for ($i = 5; $i >= 1; $i--): ?>
+                                            <input type="radio" id="vehicle-<?php echo $tripInfo['maChuyenXe']; ?>-<?php echo $i; ?>" name="vehicleRating" value="<?php echo $i; ?>" class="star-input">
+                                            <label for="vehicle-<?php echo $tripInfo['maChuyenXe']; ?>-<?php echo $i; ?>" class="star-label">
+                                                <i class="fas fa-star"></i>
+                                            </label>
+                                        <?php endfor; ?>
+                                    </div>
+                                </div>
+                                
+                                <!-- Comment -->
+                                <div class="rating-group">
+                                    <label for="comment-<?php echo $tripInfo['maChuyenXe']; ?>" class="rating-label">Bình luận (tùy chọn)</label>
+                                    <textarea id="comment-<?php echo $tripInfo['maChuyenXe']; ?>" name="comment" class="rating-textarea" placeholder="Chia sẻ ý kiến của bạn về chuyến đi..." maxlength="500"></textarea>
+                                    <div class="char-count"><span id="charCount-<?php echo $tripInfo['maChuyenXe']; ?>">0</span>/500</div>
+                                </div>
+                                
+                                <button type="submit" class="btn-submit-rating">
+                                    <i class="fas fa-paper-plane"></i> Gửi Đánh Giá
+                                </button>
+                            </form>
+                            <div id="ratingMessage-<?php echo $tripInfo['maChuyenXe']; ?>" class="rating-message" style="display: none;"></div>
+                        </div>
+                    <?php endif; ?>
                 </div>
             <?php endforeach; ?>
 
@@ -253,7 +360,7 @@
     <?php endif; ?>
 </div>
 
-<?php // Add cancellation modal ?>
+<!-- Cancel Modal -->
 <div id="cancelModal" class="cancel-modal" style="display: none;">
     <div class="cancel-modal-content">
         <div class="cancel-modal-header">
@@ -323,7 +430,6 @@ function confirmCancelTicket() {
     const bookingId = <?php echo $bookingId; ?>;
     const confirmBtn = document.querySelector('.btn-confirm-cancel');
     
-    // Disable button to prevent double clicks
     confirmBtn.disabled = true;
     confirmBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Đang xử lý...';
     
@@ -352,12 +458,95 @@ function confirmCancelTicket() {
     });
 }
 
-// Close modal when clicking outside
 document.getElementById('cancelModal')?.addEventListener('click', function(e) {
     if (e.target === this) {
         closeCancelModal();
     }
 });
+
+document.querySelectorAll('.rating-form').forEach(form => {
+    const tripId = form.getAttribute('data-trip-id');
+    const charCountEl = document.getElementById('charCount-' + tripId);
+    const commentEl = document.getElementById('comment-' + tripId);
+    const messageEl = document.getElementById('ratingMessage-' + tripId);
+    
+    // Character counter
+    if (commentEl) {
+        commentEl.addEventListener('input', function() {
+            charCountEl.textContent = this.value.length;
+        });
+    }
+    
+    // Form submission
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const serviceRating = form.querySelector('input[name="serviceRating"]:checked')?.value;
+        const driverRating = form.querySelector('input[name="driverRating"]:checked')?.value;
+        const vehicleRating = form.querySelector('input[name="vehicleRating"]:checked')?.value;
+        const comment = form.querySelector('textarea[name="comment"]').value;
+        const bookingId = form.querySelector('input[name="bookingId"]').value;
+        
+        if (!serviceRating || !driverRating || !vehicleRating) {
+            showMessage(messageEl, 'Vui lòng đánh giá cả 3 tiêu chí', 'error');
+            return;
+        }
+        
+        const submitBtn = form.querySelector('.btn-submit-rating');
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Đang gửi...';
+        
+        try {
+            const response = await fetch('<?php echo BASE_URL; ?>/my-tickets/saveRating', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    tripId: tripId,
+                    bookingId: bookingId,
+                    serviceRating: serviceRating,
+                    driverRating: driverRating,
+                    vehicleRating: vehicleRating,
+                    comment: comment
+                })
+            });
+            
+            const data = await response.json();
+            
+            if (data.success) {
+                showMessage(messageEl, data.message, 'success');
+                form.style.display = 'none';
+                setTimeout(() => {
+                    form.reset();
+                    form.style.display = 'flex';
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Gửi Đánh Giá';
+                }, 3000);
+            } else {
+                showMessage(messageEl, data.message, 'error');
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Gửi Đánh Giá';
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            showMessage(messageEl, 'Có lỗi xảy ra. Vui lòng thử lại.', 'error');
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Gửi Đánh Giá';
+        }
+    });
+});
+
+function showMessage(element, message, type) {
+    element.innerHTML = `<div class="rating-${type}"><i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i> ${message}</div>`;
+    element.style.display = 'block';
+    
+    if (type === 'success') {
+        setTimeout(() => {
+            element.style.display = 'none';
+        }, 4000);
+    }
+}
 </script>
 
 <?php include __DIR__ . '/../layouts/footer.php'; ?>

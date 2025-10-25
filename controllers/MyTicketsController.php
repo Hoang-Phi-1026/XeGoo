@@ -115,6 +115,7 @@ class MyTicketsController {
             unset($tripGroup); // Unset reference to prevent bugs
             
             $bookingInfo = $bookingDetails[0];
+            $bookingInfo['trangThaiThucTe'] = $this->determineBookingActualStatus($bookingDetails);
             
             $viewData = compact('tripGroups', 'bookingInfo', 'bookingId');
             extract($viewData);
@@ -257,6 +258,107 @@ class MyTicketsController {
     }
     
     /**
+     * Save trip rating
+     */
+    public function saveRating() {
+        header('Content-Type: application/json');
+        
+        try {
+            // Check if user is logged in
+            if (!isset($_SESSION['user_id'])) {
+                echo json_encode(['success' => false, 'message' => 'Vui lòng đăng nhập để đánh giá']);
+                return;
+            }
+            
+            $userId = $_SESSION['user_id'];
+            
+            // Get POST data
+            $data = json_decode(file_get_contents('php://input'), true);
+            
+            if (!$data) {
+                echo json_encode(['success' => false, 'message' => 'Dữ liệu không hợp lệ']);
+                return;
+            }
+            
+            $tripId = $data['tripId'] ?? null;
+            $bookingId = $data['bookingId'] ?? null;
+            
+            if (!$tripId || !$bookingId) {
+                echo json_encode(['success' => false, 'message' => 'Thiếu thông tin chuyến xe hoặc đặt vé']);
+                return;
+            }
+            
+            // Verify user owns this booking
+            $bookingDetails = $this->getBookingDetails($bookingId, $userId);
+            if (!$bookingDetails) {
+                echo json_encode(['success' => false, 'message' => 'Bạn không có quyền đánh giá chuyến xe này']);
+                return;
+            }
+            
+            // Verify trip belongs to this booking and get the ticket detail
+            $tripBelongsToBooking = false;
+            $ticketDetail = null;
+            $driverInfo = null;
+            
+            foreach ($bookingDetails as $detail) {
+                if ($detail['maChuyenXe'] == $tripId) {
+                    $tripBelongsToBooking = true;
+                    $ticketDetail = $detail;
+                    $driverInfo = [
+                        'tenTaiXe' => $detail['tenTaiXe'] ?? null,
+                        'maTaiXe' => $detail['maTaiXe'] ?? null
+                    ];
+                    break;
+                }
+            }
+            
+            if (!$tripBelongsToBooking) {
+                echo json_encode(['success' => false, 'message' => 'Chuyến xe không thuộc đặt vé này']);
+                return;
+            }
+            
+            $ratingData = [
+                'diemDichVu' => isset($data['serviceRating']) ? (int)$data['serviceRating'] : null,
+                'diemTaiXe' => isset($data['driverRating']) ? (int)$data['driverRating'] : null,
+                'diemPhuongTien' => isset($data['vehicleRating']) ? (int)$data['vehicleRating'] : null,
+                'ghichu' => isset($data['comment']) ? trim($data['comment']) : null,
+                'maChiTiet' => $ticketDetail['maChiTiet'] ?? null,
+                'maTaiXe' => $driverInfo['maTaiXe'] ?? null
+            ];
+            
+            // Validate ratings
+            if ($ratingData['diemDichVu'] && ($ratingData['diemDichVu'] < 1 || $ratingData['diemDichVu'] > 5)) {
+                echo json_encode(['success' => false, 'message' => 'Điểm dịch vụ phải từ 1 đến 5']);
+                return;
+            }
+            
+            if ($ratingData['diemTaiXe'] && ($ratingData['diemTaiXe'] < 1 || $ratingData['diemTaiXe'] > 5)) {
+                echo json_encode(['success' => false, 'message' => 'Điểm tài xế phải từ 1 đến 5']);
+                return;
+            }
+            
+            if ($ratingData['diemPhuongTien'] && ($ratingData['diemPhuongTien'] < 1 || $ratingData['diemPhuongTien'] > 5)) {
+                echo json_encode(['success' => false, 'message' => 'Điểm phương tiện phải từ 1 đến 5']);
+                return;
+            }
+            
+            // Save rating
+            require_once __DIR__ . '/../models/TripRating.php';
+            $ratingId = TripRating::saveRating($tripId, $userId, $ratingData);
+            
+            echo json_encode([
+                'success' => true,
+                'message' => 'Cảm ơn bạn đã đánh giá chuyến đi!',
+                'ratingId' => $ratingId
+            ]);
+            
+        } catch (Exception $e) {
+            error_log("MyTicketsController saveRating error: " . $e->getMessage());
+            echo json_encode(['success' => false, 'message' => 'Có lỗi xảy ra khi lưu đánh giá: ' . $e->getMessage()]);
+        }
+    }
+    
+    /**
      * Get active tickets for user (paid and future departure)
      */
     private function getActiveTickets($userId) {
@@ -299,7 +401,7 @@ class MyTicketsController {
                            cd.maChiTiet, cd.maChuyenXe, cd.maGhe,
                            cd.hoTenHanhKhach, cd.emailHanhKhach, cd.soDienThoaiHanhKhach,
                            cd.giaVe as seatPrice, g.soGhe,
-                           c.ngayKhoiHanh, c.thoiGianKhoiHanh, 
+                           c.ngayKhoiHanh, c.thoiGianKhoiHanh, c.trangThai as trangThaiChuyenXe,
                            t.kyHieuTuyen, t.diemDi, t.diemDen,
                            dd.tenDiem as diemDonTen, dd.diaChi as diemDonDiaChi,
                            dt.tenDiem as diemTraTen, dt.diaChi as diemTraDiaChi,
@@ -332,7 +434,7 @@ class MyTicketsController {
                            cd.maChiTiet, cd.maChuyenXe, cd.maGhe,
                            cd.hoTenHanhKhach, cd.emailHanhKhach, cd.soDienThoaiHanhKhach,
                            cd.giaVe as seatPrice, g.soGhe,
-                           c.ngayKhoiHanh, c.thoiGianKhoiHanh, c.maPhuongTien,
+                           c.ngayKhoiHanh, c.thoiGianKhoiHanh, c.maPhuongTien, c.trangThai as trangThaiChuyenXe, c.maTaiXe,
                            t.kyHieuTuyen, t.diemDi, t.diemDen,
                            dd.tenDiem as diemDonTen, dd.diaChi as diemDonDiaChi,
                            dt.tenDiem as diemTraTen, dt.diaChi as diemTraDiaChi,
@@ -370,6 +472,8 @@ class MyTicketsController {
             $bookingId = $ticket['maDatVe'];
             
             if (!isset($grouped[$bookingId])) {
+                $ticketStatus = $this->determineTicketStatus($ticket);
+                
                 $grouped[$bookingId] = [
                     'booking_info' => [
                         'maDatVe' => $ticket['maDatVe'],
@@ -380,6 +484,7 @@ class MyTicketsController {
                         'phuongThucThanhToan' => $ticket['phuongThucThanhToan'],
                         'loaiDatVe' => $ticket['loaiDatVe'],
                         'trangThai' => $ticket['trangThai'],
+                        'trangThaiThucTe' => $ticketStatus,
                         'kyHieuTuyen' => $ticket['kyHieuTuyen'],
                         'diemDi' => $ticket['diemDi'],
                         'diemDen' => $ticket['diemDen'],
@@ -408,6 +513,29 @@ class MyTicketsController {
     }
     
     /**
+     * Determine ticket status based on trip status and booking status
+     */
+    private function determineTicketStatus($ticket) {
+        // If booking was cancelled by customer, keep it as "Đã hủy"
+        if ($ticket['trangThai'] === 'DaHuy') {
+            return 'DaHuy';
+        }
+        
+        // If trip was cancelled, ticket becomes "Hết hiệu lực"
+        if (isset($ticket['trangThaiChuyenXe']) && $ticket['trangThaiChuyenXe'] === 'Bị hủy') {
+            return 'HetHieuLuc';
+        }
+        
+        // If trip is completed, ticket becomes "Đã hoàn thành"
+        if (isset($ticket['trangThaiChuyenXe']) && $ticket['trangThaiChuyenXe'] === 'Hoàn thành') {
+            return 'DaHoanThanh';
+        }
+        
+        // Otherwise keep original status
+        return $ticket['trangThai'];
+    }
+    
+    /**
      * Group tickets by trip (for round-trip bookings)
      */
     private function groupTicketsByTrip($tickets) {
@@ -429,7 +557,8 @@ class MyTicketsController {
                         'tenLoaiPhuongTien' => $ticket['tenLoaiPhuongTien'],
                         'soChoMacDinh' => $ticket['soChoMacDinh'],
                         'tenTaiXe' => $ticket['tenTaiXe'],
-                        'soDienThoaiTaiXe' => $ticket['soDienThoaiTaiXe']
+                        'soDienThoaiTaiXe' => $ticket['soDienThoaiTaiXe'],
+                        'trangThaiChuyenXe' => $ticket['trangThaiChuyenXe']
                     ],
                     'tickets' => []
                 ];
@@ -444,6 +573,39 @@ class MyTicketsController {
         });
         
         return $tripGroups;
+    }
+    
+    /**
+     * Determine actual booking status based on all trip statuses
+     */
+    private function determineBookingActualStatus($bookingDetails) {
+        // If booking was cancelled by customer, keep it as "Đã hủy"
+        if (!empty($bookingDetails[0]['trangThai']) && $bookingDetails[0]['trangThai'] === 'DaHuy') {
+            return 'DaHuy';
+        }
+        
+        // Check if any trip was cancelled - if so, booking becomes "Hết hiệu lực"
+        foreach ($bookingDetails as $detail) {
+            if (isset($detail['trangThaiChuyenXe']) && $detail['trangThaiChuyenXe'] === 'Bị hủy') {
+                return 'HetHieuLuc';
+            }
+        }
+        
+        // Check if all trips are completed
+        $allCompleted = true;
+        foreach ($bookingDetails as $detail) {
+            if (!isset($detail['trangThaiChuyenXe']) || $detail['trangThaiChuyenXe'] !== 'Hoàn thành') {
+                $allCompleted = false;
+                break;
+            }
+        }
+        
+        if ($allCompleted) {
+            return 'DaHoanThanh';
+        }
+        
+        // Otherwise keep original status
+        return $bookingDetails[0]['trangThai'] ?? 'DangGiu';
     }
     
     /**
@@ -501,4 +663,3 @@ class MyTicketsController {
         }
     }
 }
-?>

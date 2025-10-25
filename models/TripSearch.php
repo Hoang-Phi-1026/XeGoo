@@ -5,12 +5,16 @@ class TripSearch {
     
     /**
      * Search trips based on departure, destination, and date
-     * Fixed round-trip logic: return trip swaps departure and destination
+     * Updated query to properly aggregate ratings:
+     * - Driver rating: average of ALL ratings for that driver (across all trips)
+     * - Vehicle rating: average of ALL ratings for THIS SPECIFIC VEHICLE (across all trips)
+     * - Service rating: average of service ratings for THIS SPECIFIC VEHICLE (across all trips)
      */
     public static function searchTrips($diemDi, $diemDen, $ngayDi, $ngayVe = null, $soKhach = 1) {
         try {
             $sql = "SELECT 
                         c.maChuyenXe,
+                        c.maTaiXe,
                         c.ngayKhoiHanh,
                         c.thoiGianKhoiHanh,
                         c.thoiGianKetThuc,
@@ -45,7 +49,19 @@ class TripSearch {
                         g.trangThai as giaVeTrangThai,
                         
                         lv.maLoaiVe,
-                        lv.tenLoaiVe
+                        lv.tenLoaiVe,
+                        
+                        -- Vehicle rating from THIS SPECIFIC VEHICLE (maPhuongTien)
+                        COALESCE(dr_vehicle.avgVehicle, NULL) as avgVehicle,
+                        
+                        -- Service rating from THIS SPECIFIC VEHICLE (maPhuongTien)
+                        COALESCE(dr_service.avgService, NULL) as avgService,
+                        
+                        -- Driver rating from ALL trips of this driver
+                        COALESCE(dr_driver.avgDriver, NULL) as avgDriver,
+                        
+                        -- Count total ratings for THIS trip
+                        COALESCE(dr_service.totalRatings, 0) as totalRatings
                         
                     FROM chuyenxe c
                     INNER JOIN lichtrinh l ON c.maLichTrinh = l.maLichTrinh
@@ -54,6 +70,38 @@ class TripSearch {
                     INNER JOIN loaiphuongtien lpt ON p.maLoaiPhuongTien = lpt.maLoaiPhuongTien
                     INNER JOIN giave g ON c.maGiaVe = g.maGiaVe
                     LEFT JOIN loaive lv ON g.maLoaiVe = lv.maLoaiVe
+                    
+                    -- Vehicle ratings from THIS SPECIFIC VEHICLE (maPhuongTien)
+                    LEFT JOIN (
+                        SELECT p2.maPhuongTien,
+                               ROUND(AVG(dg.diemPhuongTien), 1) as avgVehicle
+                        FROM phuongtien p2
+                        INNER JOIN chuyenxe c2 ON p2.maPhuongTien = c2.maPhuongTien
+                        INNER JOIN danhgia_chuyendi dg ON c2.maChuyenXe = dg.maChuyenXe
+                        WHERE dg.diemPhuongTien IS NOT NULL
+                        GROUP BY p2.maPhuongTien
+                    ) dr_vehicle ON dr_vehicle.maPhuongTien = p.maPhuongTien
+                    
+                    -- Service ratings from THIS SPECIFIC VEHICLE (maPhuongTien)
+                    LEFT JOIN (
+                        SELECT p3.maPhuongTien,
+                               ROUND(AVG(dg.diemDichVu), 1) as avgService,
+                               COUNT(*) as totalRatings
+                        FROM phuongtien p3
+                        INNER JOIN chuyenxe c3 ON p3.maPhuongTien = c3.maPhuongTien
+                        INNER JOIN danhgia_chuyendi dg ON c3.maChuyenXe = dg.maChuyenXe
+                        WHERE dg.diemDichVu IS NOT NULL
+                        GROUP BY p3.maPhuongTien
+                    ) dr_service ON dr_service.maPhuongTien = p.maPhuongTien
+                    
+                    -- Driver ratings from ALL trips of this driver
+                    LEFT JOIN (
+                        SELECT maTaiXe,
+                               ROUND(AVG(diemTaiXe), 1) as avgDriver
+                        FROM danhgia_chuyendi
+                        WHERE maTaiXe IS NOT NULL AND diemTaiXe IS NOT NULL
+                        GROUP BY maTaiXe
+                    ) dr_driver ON dr_driver.maTaiXe = c.maTaiXe AND c.maTaiXe IS NOT NULL
                     
                     WHERE c.ngayKhoiHanh = ?
                       AND c.soChoTrong >= ?
@@ -93,6 +141,14 @@ class TripSearch {
             $outboundTrips = fetchAll($sql, $outboundParams);
             error_log("Found " . count($outboundTrips) . " outbound trips");
             
+            if (!empty($outboundTrips)) {
+                $firstTrip = $outboundTrips[0];
+                error_log("[v0] First trip ratings - avgDriver: " . ($firstTrip['avgDriver'] ?? 'NULL') . 
+                          ", avgVehicle (by vehicle): " . ($firstTrip['avgVehicle'] ?? 'NULL') . 
+                          ", avgService (by vehicle): " . ($firstTrip['avgService'] ?? 'NULL') . 
+                          ", totalRatings: " . ($firstTrip['totalRatings'] ?? 'NULL'));
+            }
+            
             $result = [
                 'outbound' => $outboundTrips,
                 'return' => []
@@ -102,12 +158,12 @@ class TripSearch {
                 error_log("Return search: '$diemDen' -> '$diemDi' on '$ngayVe' (swapped)");
                 
                 $returnParams = [
-                    $ngayVe,                    // Return date
-                    $soKhach,                   // Available seats
-                    $diemDen, $diemDi,         // SWAPPED: destination becomes departure
-                    $diemDenNormalized, $diemDiNormalized,  // SWAPPED normalized
-                    '%' . $diemDen . '%', '%' . $diemDi . '%',  // SWAPPED partial
-                    '%' . $diemDenAlias . '%', '%' . $diemDiAlias . '%'  // SWAPPED alias
+                    $ngayVe,
+                    $soKhach,
+                    $diemDen, $diemDi,
+                    $diemDenNormalized, $diemDiNormalized,
+                    '%' . $diemDen . '%', '%' . $diemDi . '%',
+                    '%' . $diemDenAlias . '%', '%' . $diemDiAlias . '%'
                 ];
                 
                 $result['return'] = fetchAll($sql, $returnParams);
@@ -367,6 +423,7 @@ class TripSearch {
     
     /**
      * Format trip data for display
+     * Ensure rating fields are properly converted to float and handle NULL values
      */
     public static function formatTripForDisplay($trip) {
         return [
@@ -384,7 +441,20 @@ class TripSearch {
             'total_seats' => $trip['soChoTong'],
             'vehicle_number' => $trip['bienSo'],
             'route_code' => $trip['kyHieuTuyen'],
-            'schedule_name' => $trip['tenLichTrinh']
+            'schedule_name' => $trip['tenLichTrinh'],
+            
+            'avgService' => !empty($trip['avgService']) ? (float)$trip['avgService'] : null,
+            'avgDriver' => !empty($trip['avgDriver']) ? (float)$trip['avgDriver'] : null,
+            'avgVehicle' => !empty($trip['avgVehicle']) ? (float)$trip['avgVehicle'] : null,
+            'totalRatings' => !empty($trip['totalRatings']) ? (int)$trip['totalRatings'] : 0,
+            
+            // Keep raw database values for debugging
+            'thoiGianKhoiHanh' => $trip['thoiGianKhoiHanh'],
+            'thoiGianKetThuc' => $trip['thoiGianKetThuc'],
+            'giaVe' => $trip['giaVe'],
+            'soChoTrong' => $trip['soChoTrong'],
+            'soChoTong' => $trip['soChoTong'],
+            'kyHieuTuyen' => $trip['kyHieuTuyen']
         ];
     }
     
@@ -450,4 +520,3 @@ class TripSearch {
         }
     }
 }
-?>

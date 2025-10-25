@@ -28,6 +28,9 @@
             <button class="filter-btn" data-status="cancelled">
                 <i class="fas fa-times-circle"></i> Đã hủy
             </button>
+            <button class="filter-btn" data-status="invalid">
+                <i class="fas fa-ban"></i> Hết hiệu lực
+            </button>
         </div>
     </div>
 
@@ -44,14 +47,31 @@
         <div class="tickets-grid">
             <?php foreach ($groupedHistory as $bookingId => $booking): ?>
                 <?php
-                $isPast = strtotime($booking['booking_info']['thoiGianKhoiHanh']) < time();
-                $isCancelled = $booking['booking_info']['trangThai'] === 'DaHuy';
-                $statusClass = $isCancelled ? 'status-cancelled' : ($isPast ? 'status-completed' : 'status-active');
-                $statusText = $isCancelled ? 'Đã hủy' : ($isPast ? 'Đã hoàn thành' : 'Chờ khỏi hành');
-                $statusIcon = $isCancelled ? 'times-circle' : ($isPast ? 'check-double' : 'check-circle');
-                $dataStatus = $isCancelled ? 'cancelled' : ($isPast ? 'completed' : 'active');
+                $actualStatus = $booking['booking_info']['trangThaiThucTe'];
+                
+                if ($actualStatus === 'DaHuy') {
+                    $statusClass = 'status-cancelled';
+                    $statusText = 'Đã hủy';
+                    $statusIcon = 'times-circle';
+                    $dataStatus = 'cancelled';
+                } elseif ($actualStatus === 'HetHieuLuc') {
+                    $statusClass = 'status-invalid';
+                    $statusText = 'Hết hiệu lực';
+                    $statusIcon = 'ban';
+                    $dataStatus = 'invalid';
+                } elseif ($actualStatus === 'DaHoanThanh') {
+                    $statusClass = 'status-completed';
+                    $statusText = 'Đã hoàn thành';
+                    $statusIcon = 'check-double';
+                    $dataStatus = 'completed';
+                } else {
+                    $statusClass = 'status-active';
+                    $statusText = 'Chờ khởi hành';
+                    $statusIcon = 'check-circle';
+                    $dataStatus = 'active';
+                }
                 ?>
-                <div class="ticket-card-modern <?php echo $isCancelled ? 'cancelled-ticket' : ''; ?>" data-status="<?php echo $dataStatus; ?>">
+                <div class="ticket-card-modern <?php echo $actualStatus === 'DaHuy' || $actualStatus === 'HetHieuLuc' ? 'cancelled-ticket' : ''; ?>" data-status="<?php echo $dataStatus; ?>">
                     <div class="ticket-image">
                         <img src="<?php echo BASE_URL; ?>/public/images/bus-placeholder.jpg" alt="Bus" onerror="this.src='https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=400&h=250&fit=crop'">
                         <div class="ticket-status-overlay <?php echo $statusClass; ?>">

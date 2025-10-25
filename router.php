@@ -193,6 +193,7 @@ $postRoutes = [
     '/ticket-lookup/search' => ['controller' => 'TicketLookupController', 'action' => 'search'],
     
     '/my-tickets/cancel/{id}' => ['controller' => 'MyTicketsController', 'action' => 'cancel'],
+    '/my-tickets/saveRating' => ['controller' => 'MyTicketsController', 'action' => 'saveRating'],
     
     // Driver POST route for confirming departure
     '/driver/report/confirm-departure' => ['controller' => 'DriverReportController', 'action' => 'confirmDeparture'],
