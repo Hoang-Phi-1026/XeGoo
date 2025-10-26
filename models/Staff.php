@@ -258,4 +258,94 @@ class Staff {
             return ['success' => false, 'message' => $e->getMessage()];
         }
     }
+    
+    /**
+     * Get today's trip statistics
+     * Returns: total scheduled trips, departed trips, and pending reports
+     */
+    public static function getTodayTripStats() {
+        try {
+            $sql = "SELECT 
+                        COUNT(DISTINCT cx.maChuyenXe) as totalTripsToday,
+                        SUM(CASE WHEN cx.trangThai = 'Khởi hành' THEN 1 ELSE 0 END) as departedTrips,
+                        SUM(CASE WHEN cx.trangThai = 'Hoàn thành' THEN 1 ELSE 0 END) as completedTrips
+                    FROM chuyenxe cx
+                    WHERE DATE(cx.ngayKhoiHanh) = CURDATE()";
+            
+            error_log("[v0] getTodayTripStats Query executed");
+            $result = fetch($sql);
+            error_log("[v0] getTodayTripStats Result: " . json_encode($result));
+            
+            return $result ?: ['totalTripsToday' => 0, 'departedTrips' => 0, 'completedTrips' => 0];
+            
+        } catch (Exception $e) {
+            error_log("Staff::getTodayTripStats error: " . $e->getMessage());
+            return ['totalTripsToday' => 0, 'departedTrips' => 0, 'completedTrips' => 0];
+        }
+    }
+    
+    /**
+     * Get approved departing trips for today
+     */
+    public static function getApprovedDepartingTrips() {
+        try {
+            $sql = "SELECT bc.maBaoCao, bc.maChuyenXe, bc.maTaiXe, bc.tongSoHanhKhach, 
+                           bc.soHanhKhachCoMat, bc.soHanhKhachVang, bc.trangThai,
+                           bc.ngayTao, bc.ngayCapNhat,
+                           cx.ngayKhoiHanh, cx.thoiGianKhoiHanh, cx.thoiGianKetThuc,
+                           td.kyHieuTuyen, td.diemDi, td.diemDen,
+                           tx.tenNguoiDung as tenTaiXe, tx.soDienThoai as sdtTaiXe
+                    FROM baocao_chuyendi bc
+                    INNER JOIN chuyenxe cx ON bc.maChuyenXe = cx.maChuyenXe
+                    INNER JOIN lichtrinh lt ON cx.maLichTrinh = lt.maLichTrinh
+                    INNER JOIN tuyenduong td ON lt.maTuyenDuong = td.maTuyenDuong
+                    INNER JOIN nguoidung tx ON bc.maTaiXe = tx.maNguoiDung
+                    WHERE DATE(cx.ngayKhoiHanh) = CURDATE()
+                    AND bc.trangThai IN ('Đang di chuyển', 'Hoàn thành')
+                    AND bc.xacNhanKhoiHanh = 1
+                    ORDER BY cx.thoiGianKhoiHanh DESC";
+            
+            error_log("[v0] getApprovedDepartingTrips Query executed");
+            $result = fetchAll($sql);
+            error_log("[v0] getApprovedDepartingTrips Result count: " . count($result));
+            
+            return $result;
+            
+        } catch (Exception $e) {
+            error_log("Staff::getApprovedDepartingTrips error: " . $e->getMessage());
+            return [];
+        }
+    }
+    
+    /**
+     * Get completed trips for today
+     */
+    public static function getCompletedTrips() {
+        try {
+            $sql = "SELECT bc.maBaoCao, bc.maChuyenXe, bc.maTaiXe, bc.tongSoHanhKhach, 
+                           bc.soHanhKhachCoMat, bc.soHanhKhachVang, bc.trangThai,
+                           bc.ngayTao, bc.ngayCapNhat,
+                           cx.ngayKhoiHanh, cx.thoiGianKhoiHanh, cx.thoiGianKetThuc,
+                           td.kyHieuTuyen, td.diemDi, td.diemDen,
+                           tx.tenNguoiDung as tenTaiXe, tx.soDienThoai as sdtTaiXe
+                    FROM baocao_chuyendi bc
+                    INNER JOIN chuyenxe cx ON bc.maChuyenXe = cx.maChuyenXe
+                    INNER JOIN lichtrinh lt ON cx.maLichTrinh = lt.maLichTrinh
+                    INNER JOIN tuyenduong td ON lt.maTuyenDuong = td.maTuyenDuong
+                    INNER JOIN nguoidung tx ON bc.maTaiXe = tx.maNguoiDung
+                    WHERE DATE(cx.ngayKhoiHanh) = CURDATE()
+                    AND cx.trangThai = 'Hoàn thành'
+                    ORDER BY cx.thoiGianKetThuc DESC";
+            
+            error_log("[v0] getCompletedTrips Query executed");
+            $result = fetchAll($sql);
+            error_log("[v0] getCompletedTrips Result count: " . count($result));
+            
+            return $result;
+            
+        } catch (Exception $e) {
+            error_log("Staff::getCompletedTrips error: " . $e->getMessage());
+            return [];
+        }
+    }
 }

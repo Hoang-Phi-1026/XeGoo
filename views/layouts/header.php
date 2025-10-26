@@ -82,10 +82,10 @@ require_once __DIR__ . '/../../config/config.php';
                             break;
                         case 2: // Nhân Viên Hỗ Trợ
                             ?>
-                            <li class="nav-item"><a href="<?php echo BASE_URL; ?>/" class="nav-link">Kiểm duyệt bình luận</a></li>
+                            <li class="nav-item"><a href="<?php echo BASE_URL; ?>/" class="nav-link">Kiểm duyệt bài đăng</a></li>
                             <li class="nav-item"><a href="<?php echo BASE_URL; ?>/staff/monitoring" class="nav-link">Giám sát chuyến xe</a></li>
                             <li class="nav-item"><a href="<?php echo BASE_URL; ?>/staff/rental-support" class="nav-link">Hỗ trợ thuê xe</a></li>
-                            <li class="nav-item"><a href="<?php echo BASE_URL; ?>/support" class="nav-link">Hỗ trợ hành khách</a></li>
+                            <li class="nav-item"><a href="<?php echo BASE_URL; ?>/staff/support" class="nav-link">Hỗ trợ hành khách</a></li>
                             <?php
                             break;
                         case 3: // Tài Xế
@@ -93,7 +93,7 @@ require_once __DIR__ . '/../../config/config.php';
                             <!-- Updated driver navigation links -->
                             <li class="nav-item"><a href="<?php echo BASE_URL; ?>/driver/schedule" class="nav-link">Xem lịch trình chạy</a></li>
                             <li class="nav-item"><a href="<?php echo BASE_URL; ?>/driver/report" class="nav-link">Báo cáo chuyến đi</a></li>
-                            <li class="nav-item"><a href="<?php echo BASE_URL; ?>/" class="nav-link">Hỗ trợ / Báo sự cố</a></li>
+                            <li class="nav-item"><a href="<?php echo BASE_URL; ?>/support" class="nav-link">Hỗ trợ / Báo sự cố</a></li>
                             <?php
                             break;
                         case 4: // Khách Hàng

@@ -120,6 +120,16 @@ $routes = [
     '/staff/monitoring/date-range' => ['controller' => 'StaffMonitoringController', 'action' => 'getByDateRange'],
     '/staff/rental-support' => ['controller' => 'StaffRentalSupportController', 'action' => 'index'],
     '/staff/rental-support/{id}' => ['controller' => 'StaffRentalSupportController', 'action' => 'detail'],
+    
+    '/support' => ['controller' => 'ChatController', 'action' => 'index'],
+    '/staff/support' => ['controller' => 'ChatController', 'action' => 'staffDashboard'],
+    '/api/chat/sessions' => ['controller' => 'ChatController', 'action' => 'getSessions'],
+    '/api/chat/messages/{sessionId}' => ['controller' => 'ChatController', 'action' => 'getMessages'],
+    '/api/chat/pending-count' => ['controller' => 'ChatController', 'action' => 'getPendingCount'],
+    '/api/chat/get-pending-sessions' => ['controller' => 'ChatController', 'action' => 'getPendingSessions'],
+    '/api/chat/get-messages' => ['controller' => 'ChatController', 'action' => 'getMessagesApi'],
+    '/api/chat/assign-staff' => ['controller' => 'ChatController', 'action' => 'assignStaff'],
+    '/api/chat/send-message' => ['controller' => 'ChatController', 'action' => 'sendMessageApi'],
 ];
 
 // Define POST routes
@@ -204,6 +214,15 @@ $postRoutes = [
     '/staff/monitoring/{id}' => ['controller' => 'StaffMonitoringController', 'action' => 'detail'],
     '/staff/monitoring' => ['controller' => 'StaffMonitoringController', 'action' => 'index'],
     '/staff/rental-support/update-status' => ['controller' => 'StaffRentalSupportController', 'action' => 'updateStatus'],
+    
+    '/api/chat/send' => ['controller' => 'ChatController', 'action' => 'sendMessage'],
+    '/api/chat/create-session' => ['controller' => 'ChatController', 'action' => 'createSession'],
+    '/api/chat/close-session' => ['controller' => 'ChatController', 'action' => 'closeSession'],
+    '/api/chat/mark-read' => ['controller' => 'ChatController', 'action' => 'markAsRead'],
+    '/api/chat/get-pending-sessions' => ['controller' => 'ChatController', 'action' => 'getPendingSessions'],
+    '/api/chat/get-messages' => ['controller' => 'ChatController', 'action' => 'getMessagesApi'],
+    '/api/chat/assign-staff' => ['controller' => 'ChatController', 'action' => 'assignStaff'],
+    '/api/chat/send-message' => ['controller' => 'ChatController', 'action' => 'sendMessageApi'],
 ];
 
 // Get current URL path and remove base directory

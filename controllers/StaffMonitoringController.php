@@ -24,9 +24,14 @@ class StaffMonitoringController {
         $this->checkStaffAccess();
         
         $reports = Staff::getTodayReports();
+        $tripStats = Staff::getTodayTripStats();
+        $approvedTrips = Staff::getApprovedDepartingTrips();
+        $completedTrips = Staff::getCompletedTrips();
         
         error_log("[v0] Staff reports count: " . count($reports));
-        error_log("[v0] Staff reports data: " . json_encode($reports));
+        error_log("[v0] Trip stats: " . json_encode($tripStats));
+        error_log("[v0] Approved trips count: " . count($approvedTrips));
+        error_log("[v0] Completed trips count: " . count($completedTrips));
         
         require_once __DIR__ . '/../views/staff/monitoring-list.php';
     }
@@ -95,4 +100,3 @@ class StaffMonitoringController {
         exit();
     }
 }
-?>
