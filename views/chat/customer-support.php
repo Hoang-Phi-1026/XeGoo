@@ -3,6 +3,22 @@ if (!isset($_SESSION['user_id'])) {
     header('Location: ' . BASE_URL . '/login');
     exit();
 }
+
+require_once __DIR__ . '/../../models/Chat.php';
+$chatModel = new Chat();
+$maNguoiDung = $_SESSION['user_id'];
+$vaiTro = $_SESSION['user_role'];
+
+// Get or create session
+$session = $chatModel->createOrGetSession($maNguoiDung, $vaiTro);
+$maPhien = $session ? $session['maPhien'] : null;
+$sessionStatus = $session ? $session['trangThai'] : null;
+
+// Get existing messages if session exists and is active
+$existingMessages = [];
+if ($maPhien && in_array($sessionStatus, ['Chờ', 'Đang chat'])) {
+    $existingMessages = $chatModel->getMessages($maPhien);
+}
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -17,15 +33,18 @@ if (!isset($_SESSION['user_id'])) {
 <body>
     <?php require_once __DIR__ . '/../layouts/header.php'; ?>
 
-    <!-- Redesigned customer support chat layout - removed left sidebar, full-width layout with modern header -->
+    <!-- Redesigned customer support with improved layout structure -->
     <div class="chat-wrapper customer-chat-wrapper">
         <div class="chat-container customer-chat-container">
-            <!-- Main Chat Area - Full Width -->
+            <!-- Main Chat Area -->
             <main class="chat-main customer-chat-main">
-                <!-- Chat Header with End Session Button -->
+                <!-- Chat Header -->
                 <header class="chat-header customer-header">
                     <div class="header-content">
-                        <h2 class="header-title">Hỗ trợ Khách Hàng</h2>
+                        <h2 class="header-title">
+                            <i class="fas fa-headset"></i>
+                            Hỗ trợ Khách Hàng
+                        </h2>
                         <p class="header-subtitle">Chúng tôi sẵn sàng giúp bạn 24/7</p>
                     </div>
                     <div class="header-actions">
@@ -35,20 +54,93 @@ if (!isset($_SESSION['user_id'])) {
                         </div>
                         <button id="closeSessionBtn" class="btn-end-session" title="Kết thúc phiên chat">
                             <i class="fas fa-sign-out-alt"></i>
-                            <span>Kết thúc</span>
                         </button>
                     </div>
                 </header>
 
                 <!-- Messages Container -->
                 <div class="messages-container" id="chatMessages">
-                    <div class="welcome-message">
-                        <div class="welcome-icon">
-                            <i class="fas fa-comments"></i>
+                    <!-- Load existing messages if session is active, otherwise show welcome -->
+                    <?php if (!empty($existingMessages)): ?>
+                        <?php foreach ($existingMessages as $msg): ?>
+                            <?php
+                                $isCurrentUser = $msg['nguoiGui'] == $maNguoiDung;
+                                $messageClass = $isCurrentUser ? 'message-sent' : 'message-received';
+                                $senderName = $msg['tenNguoiDung'] ?: ($msg['tenNhanVien'] ?: 'Nhân viên hỗ trợ');
+                                $senderRole = $msg['vaiTroNguoiGui'] ?: 'Nhân viên';
+                                $roleClass = '';
+                                switch($senderRole) {
+                                    case 'Tài xế': $roleClass = 'driver'; break;
+                                    case 'Nhân viên': $roleClass = 'staff'; break;
+                                    case 'Khách hàng': $roleClass = 'customer'; break;
+                                    case 'Quản trị viên': $roleClass = 'admin'; break;
+                                    default: $roleClass = 'customer';
+                                }
+                            ?>
+                            <div class="message-wrapper <?php echo $messageClass; ?>">
+                                <div class="message-avatar">
+                                    <?php if ($msg['avt'] && trim($msg['avt']) !== ''): ?>
+                                        <img src="<?php echo BASE_URL . '/' . $msg['avt']; ?>" alt="<?php echo htmlspecialchars($senderName); ?>" class="avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                        <div class="avatar-circle <?php echo $roleClass; ?>" style="display: none;"><?php echo strtoupper(substr($senderName, 0, 1)); ?></div>
+                                    <?php else: ?>
+                                        <div class="avatar-circle <?php echo $roleClass; ?>"><?php echo strtoupper(substr($senderName, 0, 1)); ?></div>
+                                    <?php endif; ?>
+                                </div>
+                                <div class="message-content">
+                                    <div class="message-header">
+                                        <span class="message-sender"><?php echo htmlspecialchars($senderName); ?></span>
+                                        <span class="role-badge <?php echo $roleClass; ?>"><?php echo htmlspecialchars($senderRole); ?></span>
+                                        <span class="message-time"><?php echo date('H:i', strtotime($msg['ngayTao'])); ?></span>
+                                    </div>
+                                    <div class="message-bubble">
+                                        <div class="message-text"><?php echo htmlspecialchars($msg['noiDung']); ?></div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <!-- Welcome message shown only if no active session -->
+                        <div class="welcome-message">
+                            <div class="welcome-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <h3>Xin chào!</h3>
+                            <p class="welcome-description">
+                                Chào mừng bạn đến với dịch vụ hỗ trợ khách hàng XeGoo. Đội ngũ nhân viên hỗ trợ của chúng tôi luôn sẵn sàng giúp bạn giải quyết mọi vấn đề liên quan đến dịch vụ đặt xe.
+                            </p>
+                            
+                            <!-- Added suggested quick-reply messages section -->
+                            <div class="suggested-messages">
+                                <p class="suggested-title">Bạn cần giúp đỡ về vấn đề gì?</p>
+                                <div class="suggested-buttons">
+                                    <button class="suggested-btn" onclick="sendSuggestedMessage('Tìm kiếm chuyến xe')">
+                                        <i class="fas fa-search"></i>
+                                        <span>Tìm kiếm chuyến xe</span>
+                                    </button>
+                                    <button class="suggested-btn" onclick="sendSuggestedMessage('Thanh toán & hoàn tiền')">
+                                        <i class="fas fa-wallet"></i>
+                                        <span>Thanh toán & hoàn tiền</span>
+                                    </button>
+                                    <button class="suggested-btn" onclick="sendSuggestedMessage('Vấn đề với tài xế')">
+                                        <i class="fas fa-car"></i>
+                                        <span>Vấn đề với tài xế</span>
+                                    </button>
+                                    <button class="suggested-btn" onclick="sendSuggestedMessage('Báo cáo sự cố')">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                        <span>Báo cáo sự cố</span>
+                                    </button>
+                                    <button class="suggested-btn" onclick="sendSuggestedMessage('Hỏi về tính năng ứng dụng')">
+                                        <i class="fas fa-question-circle"></i>
+                                        <span>Hỏi về tính năng ứng dụng</span>
+                                    </button>
+                                    <button class="suggested-btn" onclick="sendSuggestedMessage('Khác')">
+                                        <i class="fas fa-ellipsis-h"></i>
+                                        <span>Khác</span>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <h3>Xin chào!</h3>
-                        <p>Hãy gửi tin nhắn đầu tiên để bắt đầu cuộc trò chuyện với nhân viên hỗ trợ</p>
-                    </div>
+                    <?php endif; ?>
                 </div>
 
                 <!-- Input Area -->
@@ -73,9 +165,9 @@ if (!isset($_SESSION['user_id'])) {
     <script>
         const baseUrl = '<?php echo BASE_URL; ?>';
         const currentUserId = <?php echo $_SESSION['user_id']; ?>;
-        let maPhien = null;
-        let lastMessageId = 0;
-        let sessionCreated = false;
+        let maPhien = <?php echo $maPhien ? $maPhien : 'null'; ?>;
+        let lastMessageId = <?php echo !empty($existingMessages) ? max(array_column($existingMessages, 'maTinNhan')) : 0; ?>;
+        let sessionCreated = <?php echo $maPhien ? 'true' : 'false'; ?>;
 
         document.getElementById('sendBtn').addEventListener('click', sendMessage);
         document.getElementById('messageInput').addEventListener('keypress', function(e) {
@@ -84,6 +176,21 @@ if (!isset($_SESSION['user_id'])) {
             }
         });
         document.getElementById('closeSessionBtn').addEventListener('click', closeSession);
+
+        function getRoleBadgeClass(vaiTro) {
+            switch(vaiTro) {
+                case 'Tài xế': return 'driver';
+                case 'Nhân viên': return 'staff';
+                case 'Khách hàng': return 'customer';
+                case 'Quản trị viên': return 'admin';
+                default: return 'customer';
+            }
+        }
+
+        function sendSuggestedMessage(message) {
+            document.getElementById('messageInput').value = message;
+            sendMessage();
+        }
 
         function sendMessage() {
             const noiDung = document.getElementById('messageInput').value.trim();
@@ -173,13 +280,20 @@ if (!isset($_SESSION['user_id'])) {
             const messageClass = isCurrentUser ? 'message-sent' : 'message-received';
             const senderName = msg.tenNguoiDung || msg.tenNhanVien || 'Nhân viên hỗ trợ';
             const senderRole = msg.vaiTroNguoiGui || 'Nhân viên';
-            const senderAvatar = senderName.charAt(0).toUpperCase();
-            const roleClass = senderRole === 'Tài xế' ? 'driver' : senderRole === 'Nhân viên' ? 'staff' : 'customer';
+            const roleClass = getRoleBadgeClass(senderRole);
+            
+            let avatarHtml = '';
+            if (msg.avt && msg.avt.trim() !== '') {
+                avatarHtml = `<img src="${baseUrl}/${msg.avt}" alt="${senderName}" class="avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                             <div class="avatar-circle ${roleClass}" style="display: none;">${senderName.charAt(0).toUpperCase()}</div>`;
+            } else {
+                avatarHtml = `<div class="avatar-circle ${roleClass}">${senderName.charAt(0).toUpperCase()}</div>`;
+            }
             
             const messageHtml = `
                 <div class="message-wrapper ${messageClass}">
                     <div class="message-avatar">
-                        <div class="avatar-circle ${roleClass}">${senderAvatar}</div>
+                        ${avatarHtml}
                     </div>
                     <div class="message-content">
                         <div class="message-header">
@@ -230,6 +344,10 @@ if (!isset($_SESSION['user_id'])) {
                     window.location.href = baseUrl + '/';
                 }
             }
+        }
+
+        if (sessionCreated && maPhien) {
+            loadMessages();
         }
 
         setInterval(loadMessages, 2000);

@@ -17,13 +17,16 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] != 2) {
 <body>
     <?php require_once __DIR__ . '/../layouts/header.php'; ?>
 
-    <!-- Complete redesign of staff support chat layout with modern two-column structure -->
+    <!-- Redesigned staff support with modern two-column layout -->
     <div class="chat-wrapper staff-chat-wrapper">
         <div class="chat-container staff-chat-container">
             <!-- Left Sidebar - Conversations List -->
             <aside class="conversations-sidebar">
                 <div class="sidebar-header">
-                    <h3 class="sidebar-title">Tin Nhắn</h3>
+                    <h3 class="sidebar-title">
+                        <i class="fas fa-comments"></i>
+                        Tin Nhắn
+                    </h3>
                     <span class="pending-badge" id="pendingCount">0</span>
                 </div>
 
@@ -62,11 +65,17 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] != 2) {
                     <header class="chat-header staff-header">
                         <div class="header-info">
                             <div class="customer-avatar">
+                                <!-- Updated to use actual avatar or initials -->
+                                <img id="customerAvatarImg" src="/placeholder.svg" alt="Avatar" class="avatar-img" style="display: none;">
                                 <div class="avatar-circle" id="customerAvatar">U</div>
                             </div>
                             <div class="header-text">
                                 <h2 class="header-title" id="chatTitle">Khách hàng</h2>
-                                <p class="header-subtitle" id="chatSubtitle">0123456789</p>
+                                <div class="header-subtitle-group">
+                                    <p class="header-subtitle" id="chatSubtitle">0123456789</p>
+                                    <!-- Added role badge in header -->
+                                    <span class="role-badge" id="headerRoleBadge">Khách hàng</span>
+                                </div>
                             </div>
                         </div>
                         <div class="header-actions">
@@ -115,6 +124,40 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] != 2) {
         document.getElementById('closeSessionBtn').addEventListener('click', closeSession);
         document.getElementById('searchInput').addEventListener('input', filterSessions);
 
+        function getAvatarHtml(user, size = 'medium') {
+            const sizeClass = size === 'small' ? 'avatar-sm' : size === 'large' ? 'avatar-lg' : '';
+            
+            if (user.avt && user.avt.trim() !== '') {
+                // User has an avatar image
+                const avatarPath = baseUrl + '/' + user.avt;
+                return `<img src="${avatarPath}" alt="${user.tenNguoiDung}" class="avatar-img ${sizeClass}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="avatar-circle ${sizeClass}" style="display: none;">${user.tenNguoiDung.charAt(0).toUpperCase()}</div>`;
+            } else {
+                // No avatar, show initials
+                return `<div class="avatar-circle ${sizeClass}">${user.tenNguoiDung.charAt(0).toUpperCase()}</div>`;
+            }
+        }
+
+        function getRoleBadgeClass(maVaiTro) {
+            switch(parseInt(maVaiTro)) {
+                case 1: return 'admin';
+                case 2: return 'staff';
+                case 3: return 'driver';
+                case 4: return 'customer';
+                default: return 'customer';
+            }
+        }
+
+        function getRoleName(maVaiTro) {
+            switch(parseInt(maVaiTro)) {
+                case 1: return 'Quản trị viên';
+                case 2: return 'Nhân viên';
+                case 3: return 'Tài xế';
+                case 4: return 'Khách hàng';
+                default: return 'Khách hàng';
+            }
+        }
+
         function loadSessions() {
             fetch(baseUrl + '/api/chat/get-pending-sessions')
                 .then(response => response.json())
@@ -140,15 +183,13 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] != 2) {
 
             sessionsList.innerHTML = '';
             sessions.forEach(session => {
-                const roleMap = {1: 'Quản trị viên', 2: 'Nhân viên', 3: 'Tài xế', 4: 'Khách hàng'};
-                const userRole = roleMap[session.maVaiTro] || 'Khách hàng';
-                const isDriver = session.maVaiTro == 3;
-                const avatar = session.tenNguoiDung ? session.tenNguoiDung.charAt(0).toUpperCase() : 'U';
+                const userRole = getRoleName(session.maVaiTro);
+                const roleClass = getRoleBadgeClass(session.maVaiTro);
                 
                 const sessionHtml = `
                     <div class="conversation-item" data-session-id="${session.maPhien}">
                         <div class="conversation-avatar">
-                            <div class="avatar-circle ${isDriver ? 'driver' : ''}">${avatar}</div>
+                            ${getAvatarHtml(session, 'small')}
                             ${session.unreadCount > 0 ? `<span class="unread-badge">${session.unreadCount}</span>` : ''}
                         </div>
                         <div class="conversation-info">
@@ -157,7 +198,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] != 2) {
                                 <span class="conversation-time">${new Date(session.ngayCapNhat).toLocaleTimeString('vi-VN', {hour: '2-digit', minute: '2-digit'})}</span>
                             </div>
                             <div class="conversation-meta">
-                                <span class="role-badge ${isDriver ? 'driver' : ''}">${userRole}</span>
+                                <span class="role-badge ${roleClass}">${userRole}</span>
                                 <span class="phone-text">${session.soDienThoai || 'N/A'}</span>
                             </div>
                         </div>
@@ -198,7 +239,23 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] != 2) {
                         const session = allSessions.find(s => s.maPhien == maPhien);
                         document.getElementById('chatTitle').textContent = session.tenNguoiDung || 'Ẩn danh';
                         document.getElementById('chatSubtitle').textContent = session.soDienThoai || 'N/A';
-                        document.getElementById('customerAvatar').textContent = session.tenNguoiDung ? session.tenNguoiDung.charAt(0).toUpperCase() : 'U';
+                        
+                        const avatarImg = document.getElementById('customerAvatarImg');
+                        const avatarCircle = document.getElementById('customerAvatar');
+                        
+                        if (session.avt && session.avt.trim() !== '') {
+                            avatarImg.src = baseUrl + '/' + session.avt;
+                            avatarImg.style.display = 'block';
+                            avatarCircle.style.display = 'none';
+                        } else {
+                            avatarImg.style.display = 'none';
+                            avatarCircle.style.display = 'flex';
+                            avatarCircle.textContent = session.tenNguoiDung ? session.tenNguoiDung.charAt(0).toUpperCase() : 'U';
+                        }
+                        
+                        const roleName = getRoleName(session.maVaiTro);
+                        document.getElementById('headerRoleBadge').textContent = roleName;
+                        document.getElementById('headerRoleBadge').className = 'role-badge ' + getRoleBadgeClass(session.maVaiTro);
                         
                         displayMessages(data.messages);
                         document.getElementById('emptyState').style.display = 'none';
@@ -230,13 +287,20 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] != 2) {
             const messageClass = isCurrentUser ? 'message-sent' : 'message-received';
             const senderName = msg.tenNguoiDung || msg.tenNhanVien || 'Ẩn danh';
             const senderRole = msg.vaiTroNguoiGui || 'Khách hàng';
-            const senderAvatar = senderName.charAt(0).toUpperCase();
-            const roleClass = senderRole === 'Tài xế' ? 'driver' : senderRole === 'Nhân viên' ? 'staff' : 'customer';
+            const roleClass = getRoleBadgeClass(msg.vaiTroNguoiGui);
+            
+            let avatarHtml = '';
+            if (msg.avt && msg.avt.trim() !== '') {
+                avatarHtml = `<img src="${baseUrl}/${msg.avt}" alt="${senderName}" class="avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                             <div class="avatar-circle ${roleClass}" style="display: none;">${senderName.charAt(0).toUpperCase()}</div>`;
+            } else {
+                avatarHtml = `<div class="avatar-circle ${roleClass}">${senderName.charAt(0).toUpperCase()}</div>`;
+            }
             
             const messageHtml = `
                 <div class="message-wrapper ${messageClass}">
                     <div class="message-avatar">
-                        <div class="avatar-circle ${roleClass}">${senderAvatar}</div>
+                        ${avatarHtml}
                     </div>
                     <div class="message-content">
                         <div class="message-header">

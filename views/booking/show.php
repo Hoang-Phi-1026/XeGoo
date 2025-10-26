@@ -252,7 +252,7 @@
         </div>
         <div class="modal-body">
             <div class="modal-icon">⚠️</div>
-            <p id="modalMessage">Bạn chỉ được đặt tối đa 5 vé cho 1 lần. Nếu bạn muốn đặt vé cho một nhóm lớn, vui lòng <a href="<?php echo BASE_URL; ?>/group-rental" class="modal-link">truy cập tại đây</a>.</p>
+            <p id="modalMessage">Bạn chỉ được đặt tối đa 5 vé cho 1 lần. Nếu bạn muốn đặt vé cho một nhóm lớn, vui lòng <a href="<?php echo BASE_URL; ?>/group-rental" class="modal-link" >truy cập tại đây</a>.</p>
         </div>
         <div class="modal-footer">
             <button type="button" class="modal-btn-ok" id="modalOkBtn">OK</button>
@@ -291,6 +291,16 @@ function showTicketLimitModal(message) {
     const messageEl = document.getElementById('modalMessage');
     messageEl.innerHTML = message;
     modal.classList.add('show');
+
+    // event mở tab mới khi click vào link
+    const modalLink = modal.querySelector('.modal-link');
+    if (modalLink) {
+        modalLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.open(this.href, '_blank');
+        });
+    }
+
     window.scrollTo(0, 0);
 }
 

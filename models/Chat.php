@@ -72,13 +72,31 @@ class Chat {
         }
     }
 
+    // Get user avatar and role information
+    public function getUserAvatarAndRole($maNguoiDung, $vaiTro) {
+        try {
+            $sql = "SELECT nd.maNguoiDung, nd.tenNguoiDung, nd.avt, nd.maVaiTro, vt.tenVaiTro
+                    FROM nguoidung nd
+                    LEFT JOIN vaitro vt ON nd.maVaiTro = vt.maVaiTro
+                    WHERE nd.maNguoiDung = ?";
+            
+            $stmt = $this->db->prepare($sql);
+            $stmt->execute([$maNguoiDung]);
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            error_log("Get user avatar error: " . $e->getMessage());
+            return null;
+        }
+    }
+
     // Get all pending sessions for staff
     public function getPendingSessions() {
         try {
-            $sql = "SELECT cp.*, nd.tenNguoiDung, nd.soDienThoai, nd.eMail,
+            $sql = "SELECT cp.*, nd.tenNguoiDung, nd.soDienThoai, nd.eMail, nd.avt, nd.maVaiTro, vt.tenVaiTro,
                     (SELECT COUNT(*) FROM chat_tinnhan WHERE maPhien = cp.maPhien AND daDoc = 0) as unreadCount
                     FROM chat_phien cp
                     LEFT JOIN nguoidung nd ON cp.maNguoiDung = nd.maNguoiDung
+                    LEFT JOIN vaitro vt ON nd.maVaiTro = vt.maVaiTro
                     WHERE cp.trangThai IN ('Chờ', 'Đang chat')
                     ORDER BY cp.ngayCapNhat DESC";
             
@@ -146,18 +164,20 @@ class Chat {
             $tableExists = $tableCheckStmt->rowCount() > 0;
             
             if ($tableExists) {
-                $sql = "SELECT ct.*, nd.tenNguoiDung, nv.tenNhanVien
+                $sql = "SELECT ct.*, nd.tenNguoiDung, nd.avt, nv.tenNhanVien, vt.tenVaiTro
                         FROM chat_tinnhan ct
                         LEFT JOIN nguoidung nd ON ct.nguoiGui = nd.maNguoiDung AND ct.vaiTroNguoiGui IN ('Khách hàng', 'Tài xế')
                         LEFT JOIN nhanvien nv ON ct.nguoiGui = nv.maNhanVien AND ct.vaiTroNguoiGui = 'Nhân viên'
+                        LEFT JOIN vaitro vt ON nd.maVaiTro = vt.maVaiTro
                         WHERE ct.maPhien = ?
                         ORDER BY ct.ngayTao ASC
                         LIMIT " . $limit . " OFFSET " . $offset;
             } else {
                 // Fallback query without nhanvien table
-                $sql = "SELECT ct.*, nd.tenNguoiDung, NULL as tenNhanVien
+                $sql = "SELECT ct.*, nd.tenNguoiDung, nd.avt, NULL as tenNhanVien, vt.tenVaiTro
                         FROM chat_tinnhan ct
                         LEFT JOIN nguoidung nd ON ct.nguoiGui = nd.maNguoiDung
+                        LEFT JOIN vaitro vt ON nd.maVaiTro = vt.maVaiTro
                         WHERE ct.maPhien = ?
                         ORDER BY ct.ngayTao ASC
                         LIMIT " . $limit . " OFFSET " . $offset;
