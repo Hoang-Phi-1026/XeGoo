@@ -67,7 +67,7 @@
                     <i class="fas fa-edit"></i> Chỉnh sửa thông tin
                 </a>
                 <?php if ($vehicle['trangThai'] == 'Đang hoạt động'): ?>
-                    <button onclick="confirmDelete(<?php echo $vehicle['maPhuongTien']; ?>)" class="btn btn-danger">
+                    <button onclick="confirmDelete(<?php echo $vehicle['maPhuongTien']; ?>)" class="btn btn-danger" id="maintenanceBtn">
                         <i class="fas fa-tools"></i> Chuyển sang bảo trì
                     </button>
                 <?php endif; ?>
@@ -78,7 +78,7 @@
 
 <script>
 function confirmDelete(vehicleId) {
-    if (confirm('Bạn có chắc chắn muốn chuyển phương tiện này sang trạng thái bảo trì?')) {
+    if (confirm('Bạn có chắc chắn muốn chuyển phương tiện này sang trạng thái bảo trì?\n\nLưu ý: Nếu phương tiện có chuyến xe với khách hàng đã mua vé, hệ thống sẽ không cho phép thực hiện hành động này.')) {
         window.location.href = '<?php echo BASE_URL; ?>/vehicles/' + vehicleId + '/delete';
     }
 }

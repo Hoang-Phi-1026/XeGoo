@@ -633,6 +633,12 @@ class MyTicketsController {
                             WHERE maChuyenXe = ? AND maGhe = ?";
                     query($sql, [$tripId, $seatId]);
                 }
+                
+                $seatCount = count($seatIds);
+                $sql = "UPDATE chuyenxe 
+                        SET soChoDaDat = GREATEST(0, soChoDaDat - ?), ngayCapNhat = NOW() 
+                        WHERE maChuyenXe = ?";
+                query($sql, [$seatCount, $tripId]);
             }
             
             return true;

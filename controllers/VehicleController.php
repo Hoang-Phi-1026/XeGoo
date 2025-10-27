@@ -203,6 +203,12 @@ class VehicleController {
         // Status
         $data['trangThai'] = $_POST['trangThai'] ?? 'Đang hoạt động';
         
+        if ($data['trangThai'] === 'Bảo trì' && $vehicle['trangThai'] !== 'Bảo trì') {
+            if (Vehicle::hasTripsWithBookings($id)) {
+                $errors[] = 'Không thể chuyển phương tiện sang trạng thái bảo trì vì phương tiện này có các chuyến xe đã có khách hàng mua vé.';
+            }
+        }
+        
         if (!empty($errors)) {
             $_SESSION['error'] = implode('<br>', $errors);
             $_SESSION['form_data'] = $_POST;
@@ -233,6 +239,12 @@ class VehicleController {
         if (!$vehicle) {
             $_SESSION['error'] = 'Không tìm thấy phương tiện.';
             header('Location: ' . BASE_URL . '/vehicles');
+            exit;
+        }
+        
+        if (Vehicle::hasTripsWithBookings($id)) {
+            $_SESSION['error'] = 'Không thể chuyển phương tiện sang trạng thái bảo trì vì phương tiện này có các chuyến xe đã có khách hàng mua vé.';
+            header('Location: ' . BASE_URL . '/vehicles/' . $id);
             exit;
         }
         

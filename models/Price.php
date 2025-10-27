@@ -127,6 +127,18 @@ class Price {
     }
     
     /**
+     * Count active prices for a specific route and vehicle combination
+     */
+    public static function countActivePricesForRouteVehicle($routeId, $vehicleTypeId) {
+        $sql = "SELECT COUNT(*) as count FROM giave 
+                WHERE maTuyenDuong = ? 
+                AND maLoaiPhuongTien = ? 
+                AND trangThai = 'Hoạt động'";
+        $result = fetch($sql, [$routeId, $vehicleTypeId]);
+        return $result['count'];
+    }
+    
+    /**
      * Check if price configuration exists (for validation)
      */
     public static function priceExists($routeId, $vehicleTypeId, $seatType, $ticketType, $startDate, $endDate, $excludeId = null) {
@@ -312,4 +324,3 @@ class Price {
         }
     }
 }
-?>

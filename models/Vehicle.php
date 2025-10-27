@@ -69,6 +69,48 @@ class Vehicle {
     }
     
     /**
+     * Check if vehicle has upcoming trips with existing bookings
+     * Returns true ONLY if vehicle has trips that are:
+     * - Status: "Sẵn sàng" (ready) specifically
+     * - Departure time >= current date (today or future)
+     * - Have PAID booking details (chi_tiet_datve with status 'DaThanhToan')
+     * 
+     * This prevents maintenance for vehicles with future ready trips that have customer bookings,
+     * but allows maintenance if the ready trips have no bookings yet.
+     */
+    public static function hasTripsWithBookings($vehicleId) {
+        try {
+            // Only prevent maintenance if:
+            // 1. Vehicle has a trip in "Sẵn sàng" (ready) status
+            // 2. Trip departure is today or in the future (ngayKhoiHanh >= CURDATE())
+            // 3. Trip has at least one PAID booking detail (trangThai = 'DaThanhToan')
+            $sql = "SELECT COUNT(DISTINCT cx.maChuyenXe) as count 
+                    FROM chuyenxe cx
+                    WHERE cx.maPhuongTien = ?
+                    AND cx.trangThai  IN ('Sẵn sàng','Khởi hành')
+                    AND cx.ngayKhoiHanh >= CURDATE()
+                    AND EXISTS (
+                        SELECT 1 FROM chitiet_datve cd 
+                        WHERE cd.maChuyenXe = cx.maChuyenXe
+                        AND cd.trangThai = 'DaThanhToan'
+                    )";
+            
+            error_log("[Vehicle] Checking bookings for vehicle: " . $vehicleId);
+            error_log("[Vehicle] SQL Query: " . $sql);
+            error_log("[Vehicle] Current date: " . date('Y-m-d H:i:s'));
+            
+            $result = fetch($sql, [$vehicleId]);
+            
+            error_log("[Vehicle] Booking count result: " . json_encode($result));
+            
+            return $result['count'] > 0;
+        } catch (Exception $e) {
+            error_log("[Vehicle] hasTripsWithBookings error: " . $e->getMessage());
+            return false;
+        }
+    }
+    
+    /**
      * Create new vehicle
      */
     public static function create($data) {
@@ -280,4 +322,3 @@ class Vehicle {
         }
     }
 }
-?>

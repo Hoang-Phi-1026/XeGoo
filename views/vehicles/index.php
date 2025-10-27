@@ -187,7 +187,7 @@
 
 <script>
 function confirmDelete(vehicleId) {
-    if (confirm('Bạn có chắc chắn muốn chuyển phương tiện này sang trạng thái bảo trì?')) {
+    if (confirm('Bạn có chắc chắn muốn chuyển phương tiện này sang trạng thái bảo trì?\n\nLưu ý: Nếu phương tiện có chuyến xe với khách hàng đã mua vé, hệ thống sẽ không cho phép thực hiện hành động này.')) {
         window.location.href = '<?php echo BASE_URL; ?>/vehicles/' + vehicleId + '/delete';
     }
 }

@@ -376,6 +376,17 @@ class PriceController {
             exit;
         }
 
+        $activePriceCount = Price::countActivePricesForRouteVehicle(
+            $price['maTuyenDuong'],
+            $price['maLoaiPhuongTien']
+        );
+        
+        if ($activePriceCount <= 1) {
+            $_SESSION['error'] = 'Không thể vô hiệu hóa giá vé này vì đó là giá vé duy nhất cho tuyến đường và phương tiện này. Phải có ít nhất 1 giá vé còn tồn tại.';
+            header('Location: ' . BASE_URL . '/prices');
+            exit;
+        }
+
         try {
             Price::delete($id);
             $this->syncChuyenXeGiaVe(); // gọi SP đồng bộ sau khi xóa giá vé
@@ -431,7 +442,7 @@ class PriceController {
         $prices = Price::getAll();
 
         header('Content-Type: text/csv; charset=utf-8');
-        header('Content-Disposition: attachment; filename="danh_sach_gia_ve_' . date('Y-m-d') . '.csv"');
+        header('Content-Disposition: attachment; filename="danh_sach_gia_ve_' . date('Y-m-d') . '.csv"' );
 
         $output = fopen('php://output', 'w');
 
@@ -474,4 +485,3 @@ class PriceController {
         exit;
     }
 }
-?>

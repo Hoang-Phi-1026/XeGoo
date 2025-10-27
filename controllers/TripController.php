@@ -124,6 +124,12 @@ class TripController {
             exit;
         }
         
+        if (Trip::hasActiveBookings($id)) {
+            $_SESSION['error'] = 'Không thể xóa chuyến này vì đã có vé được đặt.';
+            header('Location: ' . BASE_URL . '/trips/' . $id);
+            exit;
+        }
+        
         try {
             Trip::delete($id);
             $_SESSION['success'] = 'Xóa chuyến xe thành công.';
@@ -244,4 +250,3 @@ class TripController {
         include __DIR__ . '/../views/trips/statistics.php';
     }
 }
-?>

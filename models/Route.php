@@ -158,6 +158,20 @@ class Route {
     }
     
     /**
+     * Check if route has active/ready trips in the future
+     * Fixed query to use correct relationship: tuyenduong -> lichtrinh -> chuyenxe
+     */
+    public static function hasActiveFutureTrips($routeId) {
+        $sql = "SELECT COUNT(*) as count FROM chuyenxe cx
+                INNER JOIN lichtrinh lt ON cx.maLichTrinh = lt.maLichTrinh
+                WHERE lt.maTuyenDuong = ? 
+                AND cx.trangThai = 'Sẵn sàng' 
+                AND cx.thoiGianKhoiHanh > NOW()";
+        $result = fetch($sql, [$routeId]);
+        return $result['count'] > 0;
+    }
+    
+    /**
      * Delete route and its pickup/drop-off points
      */
     public static function deleteWithPoints($id) {
@@ -353,4 +367,3 @@ class Route {
         return array_column($results, 'diemDen');
     }
 }
-?>

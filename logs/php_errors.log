@@ -1,9 +1,0 @@
-[26-Oct-2025 16:23:38 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[26-Oct-2025 16:23:38 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[26-Oct-2025 16:23:38 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
-[26-Oct-2025 16:23:40 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[26-Oct-2025 16:23:40 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[26-Oct-2025 16:23:40 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
-[26-Oct-2025 16:23:42 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[26-Oct-2025 16:23:42 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[26-Oct-2025 16:23:42 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi

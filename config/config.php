@@ -40,6 +40,7 @@ ini_set('error_log', $logDir . '/php_errors.log');
 // Set error reporting level
 error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
 
+
 error_log("[v0] Config loaded - BASE_URL: " . BASE_URL);
 
 if (!defined('DB_HOST')) {

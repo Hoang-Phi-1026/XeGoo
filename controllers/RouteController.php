@@ -306,6 +306,12 @@ class RouteController {
         // Status
         $data['trangThai'] = $_POST['trangThai'] ?? 'Đang hoạt động';
         
+        if ($data['trangThai'] === 'Ngừng khai thác' && $route['trangThai'] !== 'Ngừng khai thác') {
+            if (Route::hasActiveFutureTrips($id)) {
+                $errors[] = 'Không thể ngừng khai thác tuyến đường vì vẫn còn chuyến xe ở trạng thái "Sẵn sàng" trong tương lai. Vui lòng hủy hoặc hoàn thành các chuyến xe trước.';
+            }
+        }
+        
         $points = [];
         
         // Process pickup points
@@ -377,6 +383,12 @@ class RouteController {
             exit;
         }
         
+        if (Route::hasActiveFutureTrips($id)) {
+            $_SESSION['error'] = 'Không thể ngừng khai thác tuyến đường vì vẫn còn chuyến xe ở trạng thái "Sẵn sàng" trong tương lai. Vui lòng hủy hoặc hoàn thành các chuyến xe trước.';
+            header('Location: ' . BASE_URL . '/routes');
+            exit;
+        }
+        
         try {
             Route::deleteWithPoints($id);
             $_SESSION['success'] = 'Đã chuyển tuyến đường sang trạng thái ngừng khai thác.';
@@ -388,4 +400,3 @@ class RouteController {
         exit;
     }
 }
-?>

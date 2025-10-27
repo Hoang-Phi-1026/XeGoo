@@ -40,7 +40,7 @@
 
                 <div class="form-group">
                     <label for="trangThai">Trạng thái</label>
-                    <select name="trangThai" id="trangThai">
+                    <select name="trangThai" id="trangThai" onchange="validateStatusChange()">
                         <?php foreach ($statusOptions as $key => $value): ?>
                             <option value="<?php echo $key; ?>"
                                     <?php echo (isset($_SESSION['form_data']['trangThai']) ? 
@@ -50,6 +50,10 @@
                             </option>
                         <?php endforeach; ?>
                     </select>
+                    <small class="form-text text-muted" id="statusWarning" style="display: none;">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Lưu ý: Nếu phương tiện này có chuyến xe với khách hàng đã mua vé, bạn sẽ không thể chuyển sang trạng thái bảo trì.
+                    </small>
                 </div>
             </div>
 
@@ -64,6 +68,23 @@
         </form>
     </div>
 </div>
+
+<script>
+function validateStatusChange() {
+    const statusSelect = document.getElementById('trangThai');
+    const warningMsg = document.getElementById('statusWarning');
+    
+    if (statusSelect.value === 'Bảo trì') {
+        warningMsg.style.display = 'block';
+    } else {
+        warningMsg.style.display = 'none';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    validateStatusChange();
+});
+</script>
 
 <?php 
 // Clear form data after displaying

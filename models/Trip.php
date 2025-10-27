@@ -113,6 +113,21 @@ class Trip {
     }
     
     /**
+     * Check if trip has active bookings
+     */
+    public static function hasActiveBookings($tripId) {
+        try {
+            $sql = "SELECT COUNT(*) as count FROM chitiet_datve 
+                    WHERE maChuyenXe = ? AND trangThai = 'DaThanhToan'";
+            $result = fetch($sql, [$tripId]);
+            return $result['count'] > 0;
+        } catch (Exception $e) {
+            error_log("Trip hasActiveBookings error: " . $e->getMessage());
+            return false;
+        }
+    }
+    
+    /**
      * Delete trip
      */
     public static function delete($id) {
@@ -271,4 +286,3 @@ class Trip {
         return fetchAll($sql, $params);
     }
 }
-?>

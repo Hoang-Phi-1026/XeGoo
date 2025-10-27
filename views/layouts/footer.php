@@ -34,8 +34,8 @@
                 <div class="footer-section">
                     <h3>Hỗ trợ</h3>
                     <ul class="footer-links">
-                        <li><a href="<?php echo BASE_URL; ?>/faq"><i class="fas fa-question-circle"></i> Câu hỏi thường gặp</a></li>
-                        <li><a href="<?php echo BASE_URL; ?>/help"><i class="fas fa-life-ring"></i> Trung tâm trợ giúp</a></li>
+                        <li><a href="<?php echo BASE_URL; ?>/support"><i class="fas fa-life-ring"></i> Trung tâm trợ giúp</a></li>
+                         <li><a href="<?php echo BASE_URL; ?>/faq"><i class="fas fa-question-circle"></i> Câu hỏi thường gặp</a></li>
                         <li><a href="<?php echo BASE_URL; ?>/refund"><i class="fas fa-undo"></i> Chính sách hoàn vé</a></li>
                         <li><a href="<?php echo BASE_URL; ?>/terms"><i class="fas fa-file-contract"></i> Điều khoản sử dụng</a></li>
                     </ul>
