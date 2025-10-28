@@ -1,0 +1,1570 @@
+[27-Oct-2025 18:27:01 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:27:01 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:27:01 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::logout
+[27-Oct-2025 18:27:01 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:27:01 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:27:01 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[27-Oct-2025 18:27:01 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:27:01 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:27:01 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:27:01 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:27:01 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:27:04 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:27:04 Asia/Ho_Chi_Minh] [v0] Router - About to call GroupRentalController::index
+[27-Oct-2025 18:27:04 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:27:04 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:27:07 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:27:07 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:27:07 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[27-Oct-2025 18:27:07 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:27:07 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:27:07 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:27:07 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:27:07 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:27:09 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:27:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[27-Oct-2025 18:27:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[27-Oct-2025 18:27:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[27-Oct-2025 18:27:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[27-Oct-2025 18:27:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[27-Oct-2025 18:27:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[27-Oct-2025 18:27:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[27-Oct-2025 18:27:09 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[27-Oct-2025 18:27:09 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::index
+[27-Oct-2025 18:27:09 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:27:09 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:27:09 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:27:09 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:27:09 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:27:37 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:27:37 Asia/Ho_Chi_Minh] [v0] Router - About to call GroupRentalController::index
+[27-Oct-2025 18:27:37 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:27:37 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:27:58 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:27:58 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[27-Oct-2025 18:27:58 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[27-Oct-2025 18:27:58 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[27-Oct-2025 18:27:58 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[27-Oct-2025 18:27:58 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[27-Oct-2025 18:27:58 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[27-Oct-2025 18:27:58 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[27-Oct-2025 18:27:58 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[27-Oct-2025 18:27:58 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::index
+[27-Oct-2025 18:27:58 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:27:58 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:27:58 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:27:58 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:27:58 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:28:01 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:28:01 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::index
+[27-Oct-2025 18:28:01 Asia/Ho_Chi_Minh] === Database Debug ===
+[27-Oct-2025 18:28:01 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:28:01 Asia/Ho_Chi_Minh] Active routes: 3
+[27-Oct-2025 18:28:01 Asia/Ho_Chi_Minh] Route: TP. Hồ Chí Minh -> Đà Lạt (SG-DL)
+[27-Oct-2025 18:28:01 Asia/Ho_Chi_Minh] Route: Đà Lạt -> TP. Hồ Chí Minh (DL-SG)
+[27-Oct-2025 18:28:01 Asia/Ho_Chi_Minh] Route: TP. Hồ Chí Minh -> Vũng Tàu (SG-VT)
+[27-Oct-2025 18:28:01 Asia/Ho_Chi_Minh] Active trips: 6
+[27-Oct-2025 18:28:01 Asia/Ho_Chi_Minh] Sample trip: Đà Lạt -> TP. Hồ Chí Minh on 2025-10-29
+[27-Oct-2025 18:28:01 Asia/Ho_Chi_Minh] Sample trip: Đà Lạt -> TP. Hồ Chí Minh on 2025-10-30
+[27-Oct-2025 18:28:01 Asia/Ho_Chi_Minh] Sample trip: Đà Lạt -> TP. Hồ Chí Minh on 2025-10-31
+[27-Oct-2025 18:28:01 Asia/Ho_Chi_Minh] === SearchController ===
+[27-Oct-2025 18:28:01 Asia/Ho_Chi_Minh] Search params: from='', to='', date='', passengers=1
+[27-Oct-2025 18:28:01 Asia/Ho_Chi_Minh] Form data loaded: 3 cities, 1 popular routes
+[27-Oct-2025 18:28:01 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:28:01 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:28:01 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:28:01 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:28:01 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:28:04 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:28:04 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[27-Oct-2025 18:28:04 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[27-Oct-2025 18:28:04 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[27-Oct-2025 18:28:04 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[27-Oct-2025 18:28:04 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[27-Oct-2025 18:28:04 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[27-Oct-2025 18:28:04 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[27-Oct-2025 18:28:04 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[27-Oct-2025 18:28:04 Asia/Ho_Chi_Minh] [v0] Router - About to call TicketLookupController::index
+[27-Oct-2025 18:28:04 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:28:04 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:28:04 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:28:04 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:28:04 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:28:05 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:28:05 Asia/Ho_Chi_Minh] [v0] Router - About to call RouteController::index
+[27-Oct-2025 18:28:05 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:28:05 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:28:05 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:28:05 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:28:05 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:28:05 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:28:05 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:28:05 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:28:05 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:28:05 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:28:27 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:28:27 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:28:27 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[27-Oct-2025 18:28:27 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:28:27 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:28:27 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:28:27 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:28:27 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:28:43 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:28:43 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:28:43 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[27-Oct-2025 18:28:43 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:28:44 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:28:44 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:28:44 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:28:44 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:28:48 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:28:48 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:28:48 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[27-Oct-2025 18:28:49 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:28:49 Asia/Ho_Chi_Minh] [v0] Router - About to call AdminController::index
+[27-Oct-2025 18:28:49 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:28:49 Asia/Ho_Chi_Minh] [AdminController] Dashboard stats: {"vehicles":6,"routes":3,"schedules":2,"trips":6,"users":12,"prices":6}
+[27-Oct-2025 18:28:49 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:28:49 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:28:49 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:28:49 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:28:49 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:28:54 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:28:54 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[27-Oct-2025 18:28:54 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[27-Oct-2025 18:28:54 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[27-Oct-2025 18:28:54 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[27-Oct-2025 18:28:54 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[27-Oct-2025 18:28:54 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[27-Oct-2025 18:28:54 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[27-Oct-2025 18:28:54 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[27-Oct-2025 18:28:54 Asia/Ho_Chi_Minh] [v0] Router - About to call MyTicketsController::index
+[27-Oct-2025 18:28:54 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:28:54 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:28:54 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:28:54 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:28:54 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:28:54 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:28:54 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:28:57 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:28:57 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[27-Oct-2025 18:28:57 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[27-Oct-2025 18:28:57 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[27-Oct-2025 18:28:57 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[27-Oct-2025 18:28:57 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[27-Oct-2025 18:28:57 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[27-Oct-2025 18:28:57 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[27-Oct-2025 18:28:57 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[27-Oct-2025 18:28:57 Asia/Ho_Chi_Minh] [v0] Router - About to call MyTicketsController::history
+[27-Oct-2025 18:28:57 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:28:57 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:28:57 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:28:57 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:28:57 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:28:57 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:28:57 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:28:57 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:29:00 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:29:00 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[27-Oct-2025 18:29:00 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[27-Oct-2025 18:29:00 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[27-Oct-2025 18:29:00 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
+[27-Oct-2025 18:29:00 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[27-Oct-2025 18:29:00 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[27-Oct-2025 18:29:00 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[27-Oct-2025 18:29:00 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
+[27-Oct-2025 18:29:00 Asia/Ho_Chi_Minh] [v0] Router - About to call MyTicketsController::detail
+[27-Oct-2025 18:29:00 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:29:00 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:29:00 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:29:00 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:29:00 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:29:00 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:30:10 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:30:10 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:30:10 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:30:10 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:30:10 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:30:10 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:30:10 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:30:10 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:30:10 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:30:10 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:30:14 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:30:14 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::index
+[27-Oct-2025 18:30:14 Asia/Ho_Chi_Minh] === SearchController ===
+[27-Oct-2025 18:30:14 Asia/Ho_Chi_Minh] Search params: from='TP. Hồ Chí Minh', to='Đà Lạt', date='2025-10-30', passengers=1
+[27-Oct-2025 18:30:14 Asia/Ho_Chi_Minh] Performing search...
+[27-Oct-2025 18:30:14 Asia/Ho_Chi_Minh] === TripSearch Debug ===
+[27-Oct-2025 18:30:14 Asia/Ho_Chi_Minh] Outbound search: 'TP. Hồ Chí Minh' -> 'Đà Lạt' on '2025-10-30'
+[27-Oct-2025 18:30:14 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:30:14 Asia/Ho_Chi_Minh] Found 0 outbound trips
+[27-Oct-2025 18:30:14 Asia/Ho_Chi_Minh] Search completed: 0 outbound, 0 return
+[27-Oct-2025 18:30:14 Asia/Ho_Chi_Minh] Recent search saved: {"from":"TP. H\u1ed3 Ch\u00ed Minh","to":"\u0110\u00e0 L\u1ea1t","departure_date":"2025-10-30","return_date":"","passengers":1,"is_round_trip":false,"search_time":"2025-10-27 18:30:14"}
+[27-Oct-2025 18:30:14 Asia/Ho_Chi_Minh] Form data loaded: 3 cities, 1 popular routes
+[27-Oct-2025 18:30:14 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:30:15 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:30:15 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:30:15 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:30:15 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:30:20 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:30:20 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::index
+[27-Oct-2025 18:30:20 Asia/Ho_Chi_Minh] === SearchController ===
+[27-Oct-2025 18:30:20 Asia/Ho_Chi_Minh] Search params: from='Đà Lạt', to='TP. Hồ Chí Minh', date='2025-10-30', passengers=1
+[27-Oct-2025 18:30:20 Asia/Ho_Chi_Minh] Performing search...
+[27-Oct-2025 18:30:20 Asia/Ho_Chi_Minh] === TripSearch Debug ===
+[27-Oct-2025 18:30:20 Asia/Ho_Chi_Minh] Outbound search: 'Đà Lạt' -> 'TP. Hồ Chí Minh' on '2025-10-30'
+[27-Oct-2025 18:30:20 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:30:20 Asia/Ho_Chi_Minh] Found 1 outbound trips
+[27-Oct-2025 18:30:20 Asia/Ho_Chi_Minh] [v0] First trip ratings - avgDriver: 4.7, avgVehicle (by vehicle): NULL, avgService (by vehicle): NULL, totalRatings: 0
+[27-Oct-2025 18:30:20 Asia/Ho_Chi_Minh] Search completed: 1 outbound, 0 return
+[27-Oct-2025 18:30:20 Asia/Ho_Chi_Minh] Recent search saved: {"from":"\u0110\u00e0 L\u1ea1t","to":"TP. H\u1ed3 Ch\u00ed Minh","departure_date":"2025-10-30","return_date":"","passengers":1,"is_round_trip":false,"search_time":"2025-10-27 18:30:20"}
+[27-Oct-2025 18:30:20 Asia/Ho_Chi_Minh] Form data loaded: 3 cities, 1 popular routes
+[27-Oct-2025 18:30:20 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:30:20 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:30:20 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:30:20 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:30:20 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:31:52 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:31:52 Asia/Ho_Chi_Minh] [v0] Router - About to call BookingController::show
+[27-Oct-2025 18:31:52 Asia/Ho_Chi_Minh] [v0] BookingController show called with tripId: 879
+[27-Oct-2025 18:31:52 Asia/Ho_Chi_Minh] [v0] Return trip ID: , Is round trip: no
+[27-Oct-2025 18:31:52 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:31:52 Asia/Ho_Chi_Minh] [v0] getTripDetails for trip 879 - loaiChoNgoiMacDinh: Giường đôi
+[27-Oct-2025 18:31:52 Asia/Ho_Chi_Minh] [v0] Full trip details: {"maChuyenXe":879,"maLichTrinh":12,"maPhuongTien":23,"maTaiXe":3,"maGiaVe":49,"ngayKhoiHanh":"2025-10-30","thoiGianKhoiHanh":"2025-10-30 14:23:00","thoiGianKetThuc":"2025-10-30 20:53:00","soChoTong":20,"soChoDaDat":1,"soChoTrong":19,"trangThai":"S\u1eb5n s\u00e0ng","ngayTao":"2025-10-05 22:24:38","ngayCapNhat":"2025-10-27 18:24:42","tenLichTrinh":"L\u1ecbch tr\u00ecnh DL-SG 14:23","gioKhoiHanh":"14:23:00","gioKetThuc":"20:53:00","maTuyenDuong":14,"kyHieuTuyen":"DL-SG","diemDi":"\u0110\u00e0 L\u1ea1t","diemDen":"TP. H\u1ed3 Ch\u00ed Minh","thoiGianDiChuyen":"06:30:00","bienSo":"50H-837777","maLoaiPhuongTien":5,"tenLoaiPhuongTien":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","soChoMacDinh":20,"soTang":2,"soHang":10,"soCotTrai":1,"soCotGiua":0,"soCotPhai":1,"loaiChoNgoiMacDinh":"Gi\u01b0\u1eddng \u0111\u00f4i","giaVe":"1000000.00","tenLoaiVe":"V\u00e9 \u0111\u1eb7c bi\u1ec7t"}
+[27-Oct-2025 18:31:52 Asia/Ho_Chi_Minh] [v0] Departure datetime: 2025-10-30 14:23:00, Current time: 2025-10-27 18:31:52, Has departed: no
+[27-Oct-2025 18:31:52 Asia/Ho_Chi_Minh] [v0] Outbound trip datetime: 2025-10-30 14:23:00, has departed: no
+[27-Oct-2025 18:31:52 Asia/Ho_Chi_Minh] [v0] Found 1 Đón points for route 14
+[27-Oct-2025 18:31:52 Asia/Ho_Chi_Minh] [v0] Found 1 Trả points for route 14
+[27-Oct-2025 18:31:52 Asia/Ho_Chi_Minh] [v0] Route ID: 14, Pickup points: 1, Dropoff points: 1
+[27-Oct-2025 18:31:52 Asia/Ho_Chi_Minh] [v0] Found 20 actual seats for vehicle 23
+[27-Oct-2025 18:31:52 Asia/Ho_Chi_Minh] [v0] Seat layout created with 20 actual seats: {"total_seats":20,"seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","left_columns":1,"right_columns":1,"middle_columns":0,"floors":2,"rows_per_floor":10,"vehicle_type":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","default_seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","actual_seats":[{"maGhe":515,"soGhe":"A01"},{"maGhe":516,"soGhe":"A02"},{"maGhe":517,"soGhe":"A03"},{"maGhe":518,"soGhe":"A04"},{"maGhe":519,"soGhe":"A05"},{"maGhe":520,"soGhe":"A06"},{"maGhe":521,"soGhe":"A07"},{"maGhe":522,"soGhe":"A08"},{"maGhe":523,"soGhe":"A09"},{"maGhe":524,"soGhe":"A10"},{"maGhe":525,"soGhe":"A11"},{"maGhe":526,"soGhe":"A12"},{"maGhe":527,"soGhe":"A13"},{"maGhe":528,"soGhe":"A14"},{"maGhe":529,"soGhe":"A15"},{"maGhe":530,"soGhe":"A16"},{"maGhe":531,"soGhe":"A17"},{"maGhe":532,"soGhe":"A18"},{"maGhe":533,"soGhe":"A19"},{"maGhe":534,"soGhe":"A20"}]}
+[27-Oct-2025 18:31:52 Asia/Ho_Chi_Minh] [v0] Found 1 booked/held seats for trip 879: ["A20"]
+[27-Oct-2025 18:31:52 Asia/Ho_Chi_Minh] [v0] Found 1 seat statuses for trip 879: {"A20":"\u0110\u00e3 \u0111\u1eb7t"}
+[27-Oct-2025 18:31:52 Asia/Ho_Chi_Minh] [v0] Seat layout: {"total_seats":20,"seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","left_columns":1,"right_columns":1,"middle_columns":0,"floors":2,"rows_per_floor":10,"vehicle_type":"Xe Gi\u01b0\u1eddng n\u1eb1m \u0111\u00f4i","default_seat_type":"Gi\u01b0\u1eddng \u0111\u00f4i","actual_seats":[{"maGhe":515,"soGhe":"A01"},{"maGhe":516,"soGhe":"A02"},{"maGhe":517,"soGhe":"A03"},{"maGhe":518,"soGhe":"A04"},{"maGhe":519,"soGhe":"A05"},{"maGhe":520,"soGhe":"A06"},{"maGhe":521,"soGhe":"A07"},{"maGhe":522,"soGhe":"A08"},{"maGhe":523,"soGhe":"A09"},{"maGhe":524,"soGhe":"A10"},{"maGhe":525,"soGhe":"A11"},{"maGhe":526,"soGhe":"A12"},{"maGhe":527,"soGhe":"A13"},{"maGhe":528,"soGhe":"A14"},{"maGhe":529,"soGhe":"A15"},{"maGhe":530,"soGhe":"A16"},{"maGhe":531,"soGhe":"A17"},{"maGhe":532,"soGhe":"A18"},{"maGhe":533,"soGhe":"A19"},{"maGhe":534,"soGhe":"A20"}]}
+[27-Oct-2025 18:31:52 Asia/Ho_Chi_Minh] [v0] Booked seats: ["A20"]
+[27-Oct-2025 18:31:52 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:31:52 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:31:52 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:31:52 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:31:52 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:38:14 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:38:14 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:38:15 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:38:15 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:38:15 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:38:15 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:38:15 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:38:15 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:38:15 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:38:15 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:56:35 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:56:35 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::index
+[27-Oct-2025 18:56:35 Asia/Ho_Chi_Minh] === Database Debug ===
+[27-Oct-2025 18:56:35 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:56:35 Asia/Ho_Chi_Minh] Active routes: 3
+[27-Oct-2025 18:56:35 Asia/Ho_Chi_Minh] Route: TP. Hồ Chí Minh -> Đà Lạt (SG-DL)
+[27-Oct-2025 18:56:35 Asia/Ho_Chi_Minh] Route: Đà Lạt -> TP. Hồ Chí Minh (DL-SG)
+[27-Oct-2025 18:56:35 Asia/Ho_Chi_Minh] Route: TP. Hồ Chí Minh -> Vũng Tàu (SG-VT)
+[27-Oct-2025 18:56:35 Asia/Ho_Chi_Minh] Active trips: 6
+[27-Oct-2025 18:56:35 Asia/Ho_Chi_Minh] Sample trip: Đà Lạt -> TP. Hồ Chí Minh on 2025-10-29
+[27-Oct-2025 18:56:35 Asia/Ho_Chi_Minh] Sample trip: Đà Lạt -> TP. Hồ Chí Minh on 2025-10-30
+[27-Oct-2025 18:56:35 Asia/Ho_Chi_Minh] Sample trip: Đà Lạt -> TP. Hồ Chí Minh on 2025-10-31
+[27-Oct-2025 18:56:35 Asia/Ho_Chi_Minh] === SearchController ===
+[27-Oct-2025 18:56:35 Asia/Ho_Chi_Minh] Search params: from='', to='', date='', passengers=1
+[27-Oct-2025 18:56:35 Asia/Ho_Chi_Minh] Form data loaded: 3 cities, 1 popular routes
+[27-Oct-2025 18:56:35 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:56:36 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:56:36 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:56:36 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:56:36 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:56:37 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:56:37 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:56:38 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:56:38 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:56:38 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:56:38 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:56:38 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:56:38 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:56:38 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:56:38 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:56:39 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:56:39 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:56:39 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showRegister
+[27-Oct-2025 18:56:39 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:56:39 Asia/Ho_Chi_Minh] [v0] Router - About to call AdminController::index
+[27-Oct-2025 18:56:39 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:56:39 Asia/Ho_Chi_Minh] [AdminController] Dashboard stats: {"vehicles":6,"routes":3,"schedules":2,"trips":6,"users":12,"prices":6}
+[27-Oct-2025 18:56:39 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:56:39 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:56:39 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:56:39 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:56:39 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:56:42 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:56:42 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:56:42 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:56:42 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:56:42 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:56:42 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:56:42 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:56:42 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:56:42 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:56:42 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:56:47 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:56:47 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:56:47 Asia/Ho_Chi_Minh] [v0] Router - About to call LoyaltyController::index
+[27-Oct-2025 18:56:47 Asia/Ho_Chi_Minh] [v0] getPointsHistory for user 5: 23 records found
+[27-Oct-2025 18:56:47 Asia/Ho_Chi_Minh] [v0] History count in view: 23
+[27-Oct-2025 18:56:47 Asia/Ho_Chi_Minh] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\XeGoo\views\loyalty\index.php on line 135
+[27-Oct-2025 18:56:47 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:56:48 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:56:48 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:56:48 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:56:48 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:56:53 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:56:53 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:56:53 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:56:53 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:56:53 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:56:53 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:56:53 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:56:53 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:56:53 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:56:53 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:56:57 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:56:58 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:56:58 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:56:58 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:56:58 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:56:59 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:56:59 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:56:59 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::logout
+[27-Oct-2025 18:56:59 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:56:59 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:56:59 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[27-Oct-2025 18:56:59 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:56:59 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:56:59 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:56:59 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:56:59 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:57:00 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:57:00 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:57:00 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:57:00 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:57:00 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:57:00 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:57:00 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:57:00 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:57:00 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:57:00 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:57:05 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:57:05 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:57:05 Asia/Ho_Chi_Minh] [v0] Router - About to call LoyaltyController::index
+[27-Oct-2025 18:57:05 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:57:05 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:57:05 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[27-Oct-2025 18:57:05 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:57:05 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:57:05 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:57:05 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:57:05 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:57:09 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:57:09 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:57:09 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showRegister
+[27-Oct-2025 18:57:09 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:57:10 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:57:10 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:57:10 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:57:10 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:57:43 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:57:43 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:57:43 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::index
+[27-Oct-2025 18:57:43 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:57:43 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:57:43 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[27-Oct-2025 18:57:43 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:57:44 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:57:44 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:57:44 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:57:44 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:57:52 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:57:52 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:57:52 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::index
+[27-Oct-2025 18:57:52 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:57:52 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:57:52 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[27-Oct-2025 18:57:52 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:57:52 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:57:52 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:57:52 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:57:52 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:58:04 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:04 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:04 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[27-Oct-2025 18:58:05 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:05 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:58:05 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:05 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:58:05 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:05 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:58:05 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:05 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:58:05 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:05 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:58:06 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:06 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:06 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::staffDashboard
+[27-Oct-2025 18:58:06 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:58:06 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:06 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:06 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:58:06 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:06 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 18:58:06 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:06 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 18:58:09 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:09 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:09 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:58:11 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:11 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:11 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:58:11 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:11 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:11 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::assignStaff
+[27-Oct-2025 18:58:12 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:12 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:12 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:58:12 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:12 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:12 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:58:14 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:14 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:14 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:58:15 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:15 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:15 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:58:16 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:16 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:16 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:58:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:18 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:58:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:18 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:58:20 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:20 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:20 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:58:21 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:21 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:21 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:58:22 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:22 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:22 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:58:24 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:24 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:24 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:58:24 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:24 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:24 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:58:26 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:26 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:26 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:58:27 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:27 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:27 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:58:28 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:28 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:28 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:58:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:30 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:58:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:30 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:58:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:58:33 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:33 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:33 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:58:34 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:34 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:34 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:58:36 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:36 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:36 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:58:36 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:36 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:36 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:58:38 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:38 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:38 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:58:39 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:39 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:39 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:58:40 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:40 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:40 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:58:42 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:42 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:42 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:58:42 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:42 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:42 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:58:44 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:44 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:44 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:58:45 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:45 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:45 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:58:46 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:46 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:46 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:58:48 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:48 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:48 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:58:48 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:48 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:48 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:58:50 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:50 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:50 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:58:51 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:51 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:51 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:58:52 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:52 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:52 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:58:54 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:54 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:54 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:58:54 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:54 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:54 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:58:56 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:56 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:56 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:58:57 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:57 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:57 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:58:58 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:58:58 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:58:58 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:59:00 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:00 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:00 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:59:00 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:00 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:00 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:59:02 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:02 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:02 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:59:03 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:03 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:03 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:59:04 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:04 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:04 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:59:06 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:06 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:06 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:59:06 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:06 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:06 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:59:08 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:08 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:08 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:59:09 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:09 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:09 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:59:10 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:10 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:10 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:59:11 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:11 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:11 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::sendMessageApi
+[27-Oct-2025 18:59:12 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:12 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:12 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:59:12 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:12 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:12 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:59:14 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:14 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:14 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:59:15 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:15 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:15 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:59:16 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:16 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:16 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:59:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:18 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:59:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:18 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:59:20 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:20 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:20 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:59:21 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:21 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:21 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:59:22 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:22 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:22 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:59:24 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:24 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:24 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:59:24 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:24 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:24 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:59:26 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:26 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:26 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:59:27 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:27 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:27 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:59:28 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:28 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:28 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:59:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:30 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:59:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:30 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:59:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:59:33 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:33 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:33 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:59:34 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:34 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:34 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:59:36 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:36 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:36 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:59:36 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:36 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:36 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:59:38 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:38 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:38 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:59:39 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:39 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:39 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:59:40 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:40 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:40 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:59:42 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:42 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:42 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:59:42 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:42 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:42 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:59:44 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:44 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:44 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:59:45 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:45 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:45 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:59:46 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:46 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:46 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:59:48 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:48 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:48 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:59:48 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:48 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:48 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:59:50 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:50 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:50 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:59:51 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:51 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:51 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:59:52 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:52 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:52 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:59:54 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:54 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:54 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:59:54 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:54 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:54 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:59:56 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:56 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:56 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 18:59:57 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:57 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:57 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 18:59:58 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 18:59:58 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 18:59:58 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:00:00 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:00 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:00 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:00:00 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:00 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:00 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:00:02 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:02 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:02 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:00:03 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:03 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:03 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:00:04 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:04 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:04 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:00:06 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:06 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:06 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:00:06 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:06 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:06 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:00:08 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:08 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:08 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:00:09 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:09 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:09 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:00:10 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:10 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:10 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:00:12 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:12 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:12 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:00:12 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:12 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:12 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:00:14 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:14 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:14 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:00:15 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:15 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:15 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:00:16 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:16 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:16 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:00:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:18 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:00:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:18 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:00:20 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:20 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:20 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:00:21 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:21 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:21 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:00:22 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:22 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:22 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:00:24 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:24 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:24 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:00:24 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:24 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:24 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:00:26 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:26 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:26 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:00:27 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:27 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:27 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:00:28 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:28 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:28 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:00:31 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:31 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:31 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:00:31 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:31 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:31 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:00:33 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:33 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:33 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:00:34 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:34 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:34 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:00:35 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:35 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:35 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:00:37 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:37 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:37 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:00:37 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:37 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:37 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:00:39 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:39 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:39 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:00:40 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:40 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:40 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:00:41 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:41 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:41 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:00:43 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:43 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:43 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:00:43 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:43 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:43 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:00:45 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:45 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:45 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:00:46 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:46 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:46 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:00:47 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:47 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:47 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:00:49 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:49 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:49 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:00:49 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:49 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:49 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:00:51 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:51 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:51 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:00:52 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:52 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:52 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:00:53 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:53 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:53 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:00:55 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:55 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:55 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:00:55 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:55 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:55 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:00:57 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:57 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:57 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:00:58 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:58 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:58 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:00:59 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:00:59 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:00:59 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:01:01 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:01:01 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:01:01 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:01:01 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:01:01 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:01:01 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:01:03 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:01:03 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:01:03 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:01:04 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:01:04 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:01:04 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:01:05 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:01:05 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:01:05 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:01:07 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:01:07 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:01:07 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:01:07 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:01:07 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:01:07 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:01:09 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:01:09 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:01:09 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:01:10 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:01:10 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:01:10 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:01:11 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:01:11 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:01:11 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:01:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:01:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:01:13 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:01:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:01:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:01:13 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:01:15 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:01:15 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:01:15 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:01:16 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:01:16 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:01:16 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:01:17 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:01:17 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:01:17 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:01:19 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:01:19 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:01:19 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:01:19 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:01:19 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:01:19 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:01:21 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:01:21 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:01:21 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:01:22 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:01:22 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:01:22 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:01:23 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:01:23 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:01:23 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:01:25 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:01:25 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:01:25 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:01:25 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:01:25 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:01:25 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:01:27 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:01:27 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:01:27 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:01:28 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:01:28 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:01:28 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:01:29 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:01:29 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:01:29 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:01:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:01:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:01:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:01:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:01:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:01:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:02:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:02:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:02:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:02:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:02:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:02:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:03:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:03:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:03:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:03:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:03:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:03:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:04:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:04:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:04:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:04:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:04:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:04:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:05:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:05:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:05:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:05:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:05:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:05:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:06:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:06:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:06:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:06:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:06:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:06:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:07:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:07:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:07:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:07:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:07:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:07:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:08:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:08:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:08:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:08:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:08:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:08:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:09:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:09:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:09:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:09:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:09:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:09:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:10:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:10:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:10:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:10:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:10:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:10:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:11:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:11:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:11:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:11:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:11:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:11:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:12:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:12:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:12:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:12:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:12:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:12:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:13:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:13:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:13:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:13:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:13:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:13:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:14:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:14:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:14:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:14:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:14:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:14:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:15:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:15:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:15:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:15:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:15:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:15:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:16:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:16:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:16:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:16:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:16:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:16:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:17:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:17:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:17:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:17:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:17:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:17:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:18:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:18:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:18:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:18:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:18:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:18:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:19:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:19:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:19:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:19:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:19:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:19:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:20:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:20:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:20:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:20:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:20:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:20:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:21:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:21:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:21:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:21:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:21:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:21:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:22:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:22:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:22:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:22:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:22:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:22:32 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:22:33 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:22:33 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:22:33 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:22:33 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:22:33 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:22:33 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:22:34 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:22:34 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:22:34 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:22:36 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:22:36 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:22:36 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:22:36 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:22:36 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:22:36 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:22:38 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:22:38 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:22:38 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:22:39 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:22:39 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:22:39 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:22:40 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:22:40 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:22:40 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:22:42 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:22:42 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:22:42 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:22:42 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:22:42 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:22:42 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:22:44 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:22:44 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:22:44 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:22:45 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:22:45 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:22:45 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:22:46 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:22:46 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:22:46 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:22:48 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:22:48 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:22:48 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:22:48 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:22:48 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:22:48 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:22:50 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:22:50 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:22:50 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:22:51 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:22:51 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:22:51 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:22:52 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:22:52 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:22:52 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:22:54 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:22:54 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:22:54 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:22:54 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:22:54 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:22:54 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:22:56 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:22:56 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:22:56 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:22:57 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:22:57 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:22:57 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:22:58 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:22:58 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:22:58 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:23:00 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:00 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:00 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:23:00 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:00 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:00 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:23:02 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:02 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:02 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:23:03 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:03 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:03 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:23:04 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:04 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:04 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:23:06 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:06 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:06 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:23:06 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:06 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:06 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:23:08 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:08 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:08 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:23:09 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:09 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:09 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:23:10 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:10 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:10 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:23:10 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:10 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:10 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::assignStaff
+[27-Oct-2025 19:23:10 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:10 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:10 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:23:12 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:12 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:12 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:23:12 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:12 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:12 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:23:14 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:14 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:14 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:23:15 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:15 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:15 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:23:16 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:16 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:16 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:23:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:18 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:23:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:18 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:23:20 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:20 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:20 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:23:21 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:21 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:21 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:23:22 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:22 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:22 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:23:24 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:24 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:24 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:23:24 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:24 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:24 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:23:26 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:26 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:26 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:23:27 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:27 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:27 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:23:28 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:28 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:28 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:23:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:30 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getPendingSessions
+[27-Oct-2025 19:23:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:30 Asia/Ho_Chi_Minh] [v0] Router - About to call ChatController::getMessagesApi
+[27-Oct-2025 19:23:31 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:31 Asia/Ho_Chi_Minh] [v0] Router - About to call StaffMonitoringController::index
+[27-Oct-2025 19:23:31 Asia/Ho_Chi_Minh] [v0] getTodayReports Query executed
+[27-Oct-2025 19:23:31 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:31 Asia/Ho_Chi_Minh] [v0] getTodayReports Result count: 0
+[27-Oct-2025 19:23:31 Asia/Ho_Chi_Minh] [v0] getTodayTripStats Query executed
+[27-Oct-2025 19:23:31 Asia/Ho_Chi_Minh] [v0] getTodayTripStats Result: {"totalTripsToday":2,"departedTrips":"0","completedTrips":"0"}
+[27-Oct-2025 19:23:31 Asia/Ho_Chi_Minh] [v0] getApprovedDepartingTrips Query executed
+[27-Oct-2025 19:23:31 Asia/Ho_Chi_Minh] [v0] getApprovedDepartingTrips Result count: 0
+[27-Oct-2025 19:23:31 Asia/Ho_Chi_Minh] [v0] getCompletedTrips Query executed
+[27-Oct-2025 19:23:31 Asia/Ho_Chi_Minh] [v0] getCompletedTrips Result count: 0
+[27-Oct-2025 19:23:31 Asia/Ho_Chi_Minh] [v0] Staff reports count: 0
+[27-Oct-2025 19:23:31 Asia/Ho_Chi_Minh] [v0] Trip stats: {"totalTripsToday":2,"departedTrips":"0","completedTrips":"0"}
+[27-Oct-2025 19:23:31 Asia/Ho_Chi_Minh] [v0] Approved trips count: 0
+[27-Oct-2025 19:23:31 Asia/Ho_Chi_Minh] [v0] Completed trips count: 0
+[27-Oct-2025 19:23:31 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 19:23:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:32 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 19:23:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:32 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 19:23:45 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:45 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 19:23:45 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:45 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 19:23:45 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:46 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 19:23:46 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:46 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 19:23:46 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:46 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 19:23:48 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:48 Asia/Ho_Chi_Minh] [v0] Router - About to call StaffRentalSupportController::index
+[27-Oct-2025 19:23:48 Asia/Ho_Chi_Minh] [v0] getPendingRentalRequests Query executed
+[27-Oct-2025 19:23:48 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:48 Asia/Ho_Chi_Minh] [v0] getPendingRentalRequests Result count: 3
+[27-Oct-2025 19:23:48 Asia/Ho_Chi_Minh] [v0] StaffRentalSupportController::index - Requests count: 3
+[27-Oct-2025 19:23:48 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 19:23:49 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:49 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 19:23:49 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:49 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 19:23:51 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:51 Asia/Ho_Chi_Minh] [v0] Router - About to call StaffRentalSupportController::detail
+[27-Oct-2025 19:23:51 Asia/Ho_Chi_Minh] [v0] getRentalRequestDetail Query executed with requestId: 3
+[27-Oct-2025 19:23:51 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:51 Asia/Ho_Chi_Minh] [v0] getRentalRequestDetail Result: {"maThuXe":3,"hoTenNguoiThue":"Ho\u00e0ng Phi","soDienThoaiNguoiThue":"0847272232","emailNguoiThue":"phiphamvohoang@gmail.com","diemDi":"Long An","diemDen":"\u0110\u00e0 L\u1ea1t","ngayDi":"2025-10-25","gioDi":"02:30:00","diemDonDi":"t\u00e2n tr\u1ee5 long an","ngayVe":"0000-00-00","gioVe":"00:00:00","diemDonVe":null,"soLuongNguoi":5,"maLoaiPhuongTien":1,"ghiChu":"kh\u00f4ng c\u00f3","trangThai":"Ch\u1edd duy\u1ec7t","ngayTao":"2025-10-21 23:15:02","ngayCapNhat":"2025-10-22 15:09:59","loaiHanhTrinh":"M\u1ed9t chi\u1ec1u","tenLoaiPhuongTien":"Xe Limousine","soTang":1,"soHang":3,"loaiChoNgoiMacDinh":"Gh\u1ebf VIP"}
+[27-Oct-2025 19:23:51 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 19:23:52 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:52 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 19:23:52 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:52 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 19:23:54 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:54 Asia/Ho_Chi_Minh] [v0] Router - About to call StaffRentalSupportController::index
+[27-Oct-2025 19:23:54 Asia/Ho_Chi_Minh] [v0] getPendingRentalRequests Query executed
+[27-Oct-2025 19:23:54 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:54 Asia/Ho_Chi_Minh] [v0] getPendingRentalRequests Result count: 3
+[27-Oct-2025 19:23:54 Asia/Ho_Chi_Minh] [v0] StaffRentalSupportController::index - Requests count: 3
+[27-Oct-2025 19:23:54 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 19:23:55 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:23:55 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 19:23:55 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:23:55 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 19:24:02 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:24:02 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:24:02 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 19:24:02 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:24:02 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 19:24:04 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:24:05 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:24:05 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 19:24:05 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:24:05 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 19:24:06 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:24:06 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::index
+[27-Oct-2025 19:24:06 Asia/Ho_Chi_Minh] === Database Debug ===
+[27-Oct-2025 19:24:06 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:24:06 Asia/Ho_Chi_Minh] Active routes: 3
+[27-Oct-2025 19:24:06 Asia/Ho_Chi_Minh] Route: TP. Hồ Chí Minh -> Đà Lạt (SG-DL)
+[27-Oct-2025 19:24:06 Asia/Ho_Chi_Minh] Route: Đà Lạt -> TP. Hồ Chí Minh (DL-SG)
+[27-Oct-2025 19:24:06 Asia/Ho_Chi_Minh] Route: TP. Hồ Chí Minh -> Vũng Tàu (SG-VT)
+[27-Oct-2025 19:24:06 Asia/Ho_Chi_Minh] Active trips: 6
+[27-Oct-2025 19:24:06 Asia/Ho_Chi_Minh] Sample trip: Đà Lạt -> TP. Hồ Chí Minh on 2025-10-29
+[27-Oct-2025 19:24:06 Asia/Ho_Chi_Minh] Sample trip: Đà Lạt -> TP. Hồ Chí Minh on 2025-10-30
+[27-Oct-2025 19:24:06 Asia/Ho_Chi_Minh] Sample trip: Đà Lạt -> TP. Hồ Chí Minh on 2025-10-31
+[27-Oct-2025 19:24:06 Asia/Ho_Chi_Minh] === SearchController ===
+[27-Oct-2025 19:24:06 Asia/Ho_Chi_Minh] Search params: from='', to='', date='', passengers=1
+[27-Oct-2025 19:24:06 Asia/Ho_Chi_Minh] Form data loaded: 3 cities, 1 popular routes
+[27-Oct-2025 19:24:06 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 19:24:06 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:24:06 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 19:24:06 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:24:06 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 19:24:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:24:13 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::index
+[27-Oct-2025 19:24:13 Asia/Ho_Chi_Minh] === SearchController ===
+[27-Oct-2025 19:24:13 Asia/Ho_Chi_Minh] Search params: from='TP. Hồ Chí Minh', to='Đà Lạt', date='2025-10-30', passengers=1
+[27-Oct-2025 19:24:13 Asia/Ho_Chi_Minh] Performing search...
+[27-Oct-2025 19:24:13 Asia/Ho_Chi_Minh] === TripSearch Debug ===
+[27-Oct-2025 19:24:13 Asia/Ho_Chi_Minh] Outbound search: 'TP. Hồ Chí Minh' -> 'Đà Lạt' on '2025-10-30'
+[27-Oct-2025 19:24:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:24:13 Asia/Ho_Chi_Minh] Found 0 outbound trips
+[27-Oct-2025 19:24:13 Asia/Ho_Chi_Minh] Search completed: 0 outbound, 0 return
+[27-Oct-2025 19:24:13 Asia/Ho_Chi_Minh] Recent search saved: {"from":"TP. H\u1ed3 Ch\u00ed Minh","to":"\u0110\u00e0 L\u1ea1t","departure_date":"2025-10-30","return_date":"","passengers":1,"is_round_trip":false,"search_time":"2025-10-27 19:24:13"}
+[27-Oct-2025 19:24:13 Asia/Ho_Chi_Minh] Form data loaded: 3 cities, 1 popular routes
+[27-Oct-2025 19:24:13 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 19:24:14 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 19:24:14 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 19:24:14 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 19:24:14 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 22:28:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 22:28:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 22:28:32 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[27-Oct-2025 22:28:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 22:28:32 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 22:28:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 22:28:32 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 22:28:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 22:28:32 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 22:28:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 22:28:32 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 22:28:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 22:28:32 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 22:28:52 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 22:28:52 Asia/Ho_Chi_Minh] [v0] Router - About to call StaffRentalSupportController::index
+[27-Oct-2025 22:28:52 Asia/Ho_Chi_Minh] [v0] getPendingRentalRequests Query executed
+[27-Oct-2025 22:28:52 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 22:28:52 Asia/Ho_Chi_Minh] [v0] getPendingRentalRequests Result count: 3
+[27-Oct-2025 22:28:52 Asia/Ho_Chi_Minh] [v0] StaffRentalSupportController::index - Requests count: 3
+[27-Oct-2025 22:28:52 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 22:28:52 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 22:28:52 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 22:28:52 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 22:28:52 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 22:57:01 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 22:57:01 Asia/Ho_Chi_Minh] [v0] Router - About to call StaffRentalSupportController::index
+[27-Oct-2025 22:57:01 Asia/Ho_Chi_Minh] [v0] getPendingRentalRequests Query executed
+[27-Oct-2025 22:57:01 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 22:57:01 Asia/Ho_Chi_Minh] [v0] getPendingRentalRequests Result count: 3
+[27-Oct-2025 22:57:01 Asia/Ho_Chi_Minh] [v0] StaffRentalSupportController::index - Requests count: 3
+[27-Oct-2025 22:57:01 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 22:57:03 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 22:57:03 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 22:57:03 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 22:57:03 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:17:26 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:17:26 Asia/Ho_Chi_Minh] [v0] Router - About to call StaffRentalSupportController::index
+[27-Oct-2025 23:17:26 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:17:26 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:17:26 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[27-Oct-2025 23:17:26 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:17:26 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:17:26 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 23:17:26 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:17:26 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:17:33 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:17:33 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:17:33 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[27-Oct-2025 23:17:34 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:17:34 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:17:34 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:17:34 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 23:17:34 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:17:34 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:17:34 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:17:34 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 23:17:34 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:17:34 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:17:43 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:17:43 Asia/Ho_Chi_Minh] [v0] Router - About to call StaffRentalSupportController::index
+[27-Oct-2025 23:17:43 Asia/Ho_Chi_Minh] [v0] getPendingRentalRequests Query executed
+[27-Oct-2025 23:17:43 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:17:43 Asia/Ho_Chi_Minh] [v0] getPendingRentalRequests Result count: 3
+[27-Oct-2025 23:17:43 Asia/Ho_Chi_Minh] [v0] StaffRentalSupportController::index - Requests count: 3
+[27-Oct-2025 23:17:43 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:17:43 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:17:43 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 23:17:43 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:17:43 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:17:53 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:17:53 Asia/Ho_Chi_Minh] [v0] Router - About to call StaffRentalSupportController::detail
+[27-Oct-2025 23:17:53 Asia/Ho_Chi_Minh] [v0] getRentalRequestDetail Query executed with requestId: 5
+[27-Oct-2025 23:17:53 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:17:53 Asia/Ho_Chi_Minh] [v0] getRentalRequestDetail Result: {"maThuXe":5,"hoTenNguoiThue":"ho\u00e0ng","soDienThoaiNguoiThue":"0337272720","emailNguoiThue":"yasuo@gmail.com","diemDi":"SAIGON","diemDen":"NHATRANG","ngayDi":"2025-10-30","gioDi":"05:50:00","diemDonDi":"Q5 s\u00eca g\u00f2n","ngayVe":"2025-11-01","gioVe":"20:48:00","diemDonVe":"nhang 1245555","soLuongNguoi":6,"maLoaiPhuongTien":1,"ghiChu":"xe \u0111\u1ebfn \u0111\u00f3n s\u1edbm","trangThai":"Ch\u1edd duy\u1ec7t","ngayTao":"2025-10-26 16:45:23","ngayCapNhat":"2025-10-26 16:45:23","loaiHanhTrinh":"Kh\u1ee9 h\u1ed3i","tenLoaiPhuongTien":"Xe Limousine","soTang":1,"soHang":3,"loaiChoNgoiMacDinh":"Gh\u1ebf VIP"}
+[27-Oct-2025 23:17:53 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:17:53 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:17:53 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 23:17:53 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:17:53 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:18:36 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:18:36 Asia/Ho_Chi_Minh] [v0] Router - About to call StaffRentalSupportController::index
+[27-Oct-2025 23:18:36 Asia/Ho_Chi_Minh] [v0] getPendingRentalRequests Query executed
+[27-Oct-2025 23:18:36 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:18:36 Asia/Ho_Chi_Minh] [v0] getPendingRentalRequests Result count: 3
+[27-Oct-2025 23:18:36 Asia/Ho_Chi_Minh] [v0] StaffRentalSupportController::index - Requests count: 3
+[27-Oct-2025 23:18:36 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:18:36 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:18:36 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 23:18:36 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:18:36 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:18:48 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:18:48 Asia/Ho_Chi_Minh] [v0] Router - About to call StaffRentalSupportController::index
+[27-Oct-2025 23:18:48 Asia/Ho_Chi_Minh] [v0] getPendingRentalRequests Query executed
+[27-Oct-2025 23:18:48 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:18:48 Asia/Ho_Chi_Minh] [v0] getPendingRentalRequests Result count: 3
+[27-Oct-2025 23:18:48 Asia/Ho_Chi_Minh] [v0] StaffRentalSupportController::index - Requests count: 3
+[27-Oct-2025 23:18:48 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:18:49 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:18:49 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 23:18:49 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:18:49 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:19:04 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:19:04 Asia/Ho_Chi_Minh] [v0] Router - About to call StaffRentalSupportController::index
+[27-Oct-2025 23:19:04 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:19:04 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:19:04 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[27-Oct-2025 23:19:04 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:19:05 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:19:05 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 23:19:05 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:19:05 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:19:16 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:19:16 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:19:16 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[27-Oct-2025 23:19:17 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:19:17 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:19:17 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:19:17 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 23:19:17 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:19:17 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:19:17 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:19:17 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 23:19:17 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:19:17 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:19:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:19:18 Asia/Ho_Chi_Minh] [v0] Router - About to call StaffRentalSupportController::index
+[27-Oct-2025 23:19:18 Asia/Ho_Chi_Minh] [v0] getPendingRentalRequests Query executed
+[27-Oct-2025 23:19:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:19:18 Asia/Ho_Chi_Minh] [v0] getPendingRentalRequests Result count: 3
+[27-Oct-2025 23:19:18 Asia/Ho_Chi_Minh] [v0] StaffRentalSupportController::index - Requests count: 3
+[27-Oct-2025 23:19:18 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:19:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:19:18 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 23:19:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:19:18 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:19:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:19:18 Asia/Ho_Chi_Minh] [v0] Router - About to call StaffRentalSupportController::index
+[27-Oct-2025 23:19:18 Asia/Ho_Chi_Minh] [v0] getPendingRentalRequests Query executed
+[27-Oct-2025 23:19:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:19:18 Asia/Ho_Chi_Minh] [v0] getPendingRentalRequests Result count: 3
+[27-Oct-2025 23:19:18 Asia/Ho_Chi_Minh] [v0] StaffRentalSupportController::index - Requests count: 3
+[27-Oct-2025 23:19:18 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:19:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:19:18 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 23:19:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:19:18 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:19:28 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:19:28 Asia/Ho_Chi_Minh] [v0] Router - About to call StaffRentalSupportController::index
+[27-Oct-2025 23:19:28 Asia/Ho_Chi_Minh] [v0] getPendingRentalRequests Query executed
+[27-Oct-2025 23:19:28 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:19:28 Asia/Ho_Chi_Minh] [v0] getPendingRentalRequests Result count: 3
+[27-Oct-2025 23:19:28 Asia/Ho_Chi_Minh] [v0] StaffRentalSupportController::index - Requests count: 3
+[27-Oct-2025 23:19:28 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:19:28 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:19:28 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 23:19:28 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:19:28 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:19:36 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:19:36 Asia/Ho_Chi_Minh] [v0] Router - About to call StaffRentalSupportController::detail
+[27-Oct-2025 23:19:36 Asia/Ho_Chi_Minh] [v0] getRentalRequestDetail Query executed with requestId: 5
+[27-Oct-2025 23:19:36 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:19:36 Asia/Ho_Chi_Minh] [v0] getRentalRequestDetail Result: {"maThuXe":5,"hoTenNguoiThue":"ho\u00e0ng","soDienThoaiNguoiThue":"0337272720","emailNguoiThue":"yasuo@gmail.com","diemDi":"SAIGON","diemDen":"NHATRANG","ngayDi":"2025-10-30","gioDi":"05:50:00","diemDonDi":"Q5 s\u00eca g\u00f2n","ngayVe":"2025-11-01","gioVe":"20:48:00","diemDonVe":"nhang 1245555","soLuongNguoi":6,"maLoaiPhuongTien":1,"ghiChu":"xe \u0111\u1ebfn \u0111\u00f3n s\u1edbm","trangThai":"Ch\u1edd duy\u1ec7t","ngayTao":"2025-10-26 16:45:23","ngayCapNhat":"2025-10-26 16:45:23","loaiHanhTrinh":"Kh\u1ee9 h\u1ed3i","tenLoaiPhuongTien":"Xe Limousine","soTang":1,"soHang":3,"loaiChoNgoiMacDinh":"Gh\u1ebf VIP"}
+[27-Oct-2025 23:19:36 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:19:36 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:19:36 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 23:19:36 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:19:36 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:19:39 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:19:39 Asia/Ho_Chi_Minh] [v0] Router - About to call StaffRentalSupportController::detail
+[27-Oct-2025 23:19:39 Asia/Ho_Chi_Minh] [v0] getRentalRequestDetail Query executed with requestId: 5
+[27-Oct-2025 23:19:39 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:19:39 Asia/Ho_Chi_Minh] [v0] getRentalRequestDetail Result: {"maThuXe":5,"hoTenNguoiThue":"ho\u00e0ng","soDienThoaiNguoiThue":"0337272720","emailNguoiThue":"yasuo@gmail.com","diemDi":"SAIGON","diemDen":"NHATRANG","ngayDi":"2025-10-30","gioDi":"05:50:00","diemDonDi":"Q5 s\u00eca g\u00f2n","ngayVe":"2025-11-01","gioVe":"20:48:00","diemDonVe":"nhang 1245555","soLuongNguoi":6,"maLoaiPhuongTien":1,"ghiChu":"xe \u0111\u1ebfn \u0111\u00f3n s\u1edbm","trangThai":"Ch\u1edd duy\u1ec7t","ngayTao":"2025-10-26 16:45:23","ngayCapNhat":"2025-10-26 16:45:23","loaiHanhTrinh":"Kh\u1ee9 h\u1ed3i","tenLoaiPhuongTien":"Xe Limousine","soTang":1,"soHang":3,"loaiChoNgoiMacDinh":"Gh\u1ebf VIP"}
+[27-Oct-2025 23:19:39 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:19:39 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:19:39 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 23:19:39 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:19:39 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:19:39 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:19:39 Asia/Ho_Chi_Minh] [v0] Router - About to call StaffRentalSupportController::detail
+[27-Oct-2025 23:19:39 Asia/Ho_Chi_Minh] [v0] getRentalRequestDetail Query executed with requestId: 5
+[27-Oct-2025 23:19:39 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:19:39 Asia/Ho_Chi_Minh] [v0] getRentalRequestDetail Result: {"maThuXe":5,"hoTenNguoiThue":"ho\u00e0ng","soDienThoaiNguoiThue":"0337272720","emailNguoiThue":"yasuo@gmail.com","diemDi":"SAIGON","diemDen":"NHATRANG","ngayDi":"2025-10-30","gioDi":"05:50:00","diemDonDi":"Q5 s\u00eca g\u00f2n","ngayVe":"2025-11-01","gioVe":"20:48:00","diemDonVe":"nhang 1245555","soLuongNguoi":6,"maLoaiPhuongTien":1,"ghiChu":"xe \u0111\u1ebfn \u0111\u00f3n s\u1edbm","trangThai":"Ch\u1edd duy\u1ec7t","ngayTao":"2025-10-26 16:45:23","ngayCapNhat":"2025-10-26 16:45:23","loaiHanhTrinh":"Kh\u1ee9 h\u1ed3i","tenLoaiPhuongTien":"Xe Limousine","soTang":1,"soHang":3,"loaiChoNgoiMacDinh":"Gh\u1ebf VIP"}
+[27-Oct-2025 23:19:39 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:19:40 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:19:40 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 23:19:40 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:19:40 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:19:40 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:19:40 Asia/Ho_Chi_Minh] [v0] Router - About to call StaffRentalSupportController::detail
+[27-Oct-2025 23:19:40 Asia/Ho_Chi_Minh] [v0] getRentalRequestDetail Query executed with requestId: 5
+[27-Oct-2025 23:19:40 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:19:40 Asia/Ho_Chi_Minh] [v0] getRentalRequestDetail Result: {"maThuXe":5,"hoTenNguoiThue":"ho\u00e0ng","soDienThoaiNguoiThue":"0337272720","emailNguoiThue":"yasuo@gmail.com","diemDi":"SAIGON","diemDen":"NHATRANG","ngayDi":"2025-10-30","gioDi":"05:50:00","diemDonDi":"Q5 s\u00eca g\u00f2n","ngayVe":"2025-11-01","gioVe":"20:48:00","diemDonVe":"nhang 1245555","soLuongNguoi":6,"maLoaiPhuongTien":1,"ghiChu":"xe \u0111\u1ebfn \u0111\u00f3n s\u1edbm","trangThai":"Ch\u1edd duy\u1ec7t","ngayTao":"2025-10-26 16:45:23","ngayCapNhat":"2025-10-26 16:45:23","loaiHanhTrinh":"Kh\u1ee9 h\u1ed3i","tenLoaiPhuongTien":"Xe Limousine","soTang":1,"soHang":3,"loaiChoNgoiMacDinh":"Gh\u1ebf VIP"}
+[27-Oct-2025 23:19:40 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:19:40 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:19:40 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 23:19:40 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:19:40 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:19:52 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:19:52 Asia/Ho_Chi_Minh] [v0] Router - About to call StaffRentalSupportController::index
+[27-Oct-2025 23:19:52 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:19:52 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:19:52 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[27-Oct-2025 23:19:52 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:19:52 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:19:52 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 23:19:52 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:19:52 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:20:02 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:20:02 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:20:02 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[27-Oct-2025 23:20:02 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:20:02 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:20:03 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:20:03 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 23:20:03 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:20:03 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:20:03 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:20:03 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 23:20:03 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:20:03 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:20:03 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:20:03 Asia/Ho_Chi_Minh] [v0] Router - About to call StaffRentalSupportController::index
+[27-Oct-2025 23:20:03 Asia/Ho_Chi_Minh] [v0] getPendingRentalRequests Query executed
+[27-Oct-2025 23:20:03 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:20:03 Asia/Ho_Chi_Minh] [v0] getPendingRentalRequests Result count: 3
+[27-Oct-2025 23:20:03 Asia/Ho_Chi_Minh] [v0] StaffRentalSupportController::index - Requests count: 3
+[27-Oct-2025 23:20:03 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:20:04 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:20:04 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 23:20:04 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:20:04 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:20:07 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:20:07 Asia/Ho_Chi_Minh] [v0] Router - About to call StaffRentalSupportController::detail
+[27-Oct-2025 23:20:07 Asia/Ho_Chi_Minh] [v0] getRentalRequestDetail Query executed with requestId: 3
+[27-Oct-2025 23:20:07 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:20:07 Asia/Ho_Chi_Minh] [v0] getRentalRequestDetail Result: {"maThuXe":3,"hoTenNguoiThue":"Ho\u00e0ng Phi","soDienThoaiNguoiThue":"0847272232","emailNguoiThue":"phiphamvohoang@gmail.com","diemDi":"Long An","diemDen":"\u0110\u00e0 L\u1ea1t","ngayDi":"2025-10-25","gioDi":"02:30:00","diemDonDi":"t\u00e2n tr\u1ee5 long an","ngayVe":"0000-00-00","gioVe":"00:00:00","diemDonVe":null,"soLuongNguoi":5,"maLoaiPhuongTien":1,"ghiChu":"kh\u00f4ng c\u00f3","trangThai":"Ch\u1edd duy\u1ec7t","ngayTao":"2025-10-21 23:15:02","ngayCapNhat":"2025-10-22 15:09:59","loaiHanhTrinh":"M\u1ed9t chi\u1ec1u","tenLoaiPhuongTien":"Xe Limousine","soTang":1,"soHang":3,"loaiChoNgoiMacDinh":"Gh\u1ebf VIP"}
+[27-Oct-2025 23:20:07 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[27-Oct-2025 23:20:07 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[27-Oct-2025 23:20:07 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[27-Oct-2025 23:20:07 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[27-Oct-2025 23:20:07 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
