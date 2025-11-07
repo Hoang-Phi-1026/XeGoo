@@ -265,7 +265,7 @@ class Schedule {
         $sql = "SELECT l.*, t.kyHieuTuyen, t.diemDi, t.diemDen
                 FROM lichtrinh l
                 JOIN tuyenduong t ON l.maTuyenDuong = t.maTuyenDuong
-                WHERE l.maTaiXe = ?
+                WHERE l.maTaiXe = ? 
                   AND l.trangThai IN ('Hoạt động', 'Tạm dừng')
                   AND (
                     (l.ngayBatDau BETWEEN ? AND ?)
@@ -300,6 +300,40 @@ class Schedule {
         }
         
         return $conflicts;
+    }
+    
+    /**
+     * Check if a schedule has already generated trips
+     * Returns information about existing trips if found
+     */
+    public static function hasGeneratedTrips($scheduleId) {
+        $sql = "SELECT COUNT(*) as trip_count, MIN(maPhuongTien) as first_vehicle, 
+                       GROUP_CONCAT(DISTINCT maPhuongTien) as vehicles,
+                       COUNT(DISTINCT maPhuongTien) as vehicle_count
+                FROM chuyenxe 
+                WHERE maLichTrinh = ?";
+        
+        $result = fetch($sql, [$scheduleId]);
+        
+        return [
+            'has_trips' => $result['trip_count'] > 0,
+            'trip_count' => $result['trip_count'],
+            'vehicles' => $result['vehicles'] ? explode(',', $result['vehicles']) : [],
+            'vehicle_count' => $result['vehicle_count'],
+            'first_vehicle' => $result['first_vehicle']
+        ];
+    }
+
+    /**
+     * Get vehicle details for a specific vehicle ID
+     */
+    public static function getVehicleDetails($vehicleId) {
+        $sql = "SELECT p.maPhuongTien, p.bienSo, lpt.tenLoaiPhuongTien
+                FROM phuongtien p
+                JOIN loaiphuongtien lpt ON p.maLoaiPhuongTien = lpt.maLoaiPhuongTien
+                WHERE p.maPhuongTien = ?";
+        
+        return fetch($sql, [$vehicleId]);
     }
 }
 ?>

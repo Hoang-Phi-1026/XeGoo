@@ -11,7 +11,6 @@
         </div>
     </div>
 
-
     <div class="form-container">
         <form method="POST" action="<?php echo BASE_URL; ?>/schedules/store" class="schedule-form">
             <div class="form-grid">
@@ -73,7 +72,6 @@
                     </div>
                 </div>
 
-
                 <!-- Schedule Period -->
                 <div class="form-section">
                     <h3><i class="fas fa-calendar"></i> Thời gian hoạt động</h3>
@@ -95,7 +93,17 @@
                 <!-- Days of Week -->
                 <div class="form-section">
                     <h3><i class="fas fa-calendar-week"></i> Thứ trong tuần hoạt động</h3>
-                    <p class="form-help">Chọn các ngày trong tuần mà lịch trình này sẽ hoạt động</p>
+                    <p class="form-help">Tất cả các thứ được chọn mặc định. Click vào thứ để bỏ chọn</p>
+                    
+                    <!-- Add "Select All" / "Deselect All" buttons -->
+                    <div class="days-actions">
+                        <button type="button" id="selectAllDays" class="btn btn-small btn-outline">
+                            <i class="fas fa-check-double"></i> Chọn tất cả
+                        </button>
+                        <button type="button" id="deselectAllDays" class="btn btn-small btn-outline">
+                            <i class="fas fa-times"></i> Bỏ tất cả
+                        </button>
+                    </div>
                     
                     <div class="days-grid">
                         <?php 
@@ -109,6 +117,9 @@
                             'CN' => 'Chủ nhật'
                         ];
                         $selectedDays = isset($_SESSION['form_data']['thuTrongTuan']) ? $_SESSION['form_data']['thuTrongTuan'] : [];
+                        if (empty($selectedDays)) {
+                            $selectedDays = array_keys($days);
+                        }
                         ?>
                         <?php foreach ($days as $value => $label): ?>
                             <div class="day-checkbox">
@@ -251,6 +262,32 @@ function calculateEndTime() {
     const endTime = String(endHour).padStart(2, '0') + ':' + String(endMin).padStart(2, '0');
     endTimeInput.value = endTime;
 }
+
+// Select All/Deselect All functionality
+document.getElementById('selectAllDays').addEventListener('click', function(e) {
+    e.preventDefault();
+    const checkboxes = document.querySelectorAll('input[name="thuTrongTuan[]"]');
+    checkboxes.forEach(checkbox => {
+        checkbox.checked = true;
+    });
+});
+
+document.getElementById('deselectAllDays').addEventListener('click', function(e) {
+    e.preventDefault();
+    const checkboxes = document.querySelectorAll('input[name="thuTrongTuan[]"]');
+    checkboxes.forEach(checkbox => {
+        checkbox.checked = false;
+    });
+});
+
+// Form validation to ensure at least one day is selected
+document.querySelector('.schedule-form').addEventListener('submit', function(e) {
+    const checkboxes = document.querySelectorAll('input[name="thuTrongTuan[]"]:checked');
+    if (checkboxes.length === 0) {
+        e.preventDefault();
+        alert('Vui lòng chọn ít nhất một thứ trong tuần');
+    }
+});
 </script>
 <?php 
 // Clear form data after displaying

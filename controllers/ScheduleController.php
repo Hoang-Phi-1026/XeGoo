@@ -396,6 +396,18 @@ class ScheduleController {
     private function validateTripGeneration($scheduleId, $vehicleId) {
         $errors = [];
 
+        $tripInfo = Schedule::hasGeneratedTrips($scheduleId);
+        if ($tripInfo['has_trips']) {
+            $vehicleDetails = Schedule::getVehicleDetails($tripInfo['first_vehicle']);
+            $errors[] = "Lịch trình này đã được sinh chuyến xe trước đó! " . 
+                       "Đã có " . $tripInfo['trip_count'] . " chuyến trên " . 
+                       $tripInfo['vehicle_count'] . " phương tiện: " . $tripInfo['vehicles'][0] . 
+                       " (" . ($vehicleDetails ? $vehicleDetails['bienSo'] : 'không xác định') . "). " .
+                       "Không thể sinh lại lịch trình này trên phương tiện khác. " .
+                       "Vui lòng tạo một lịch trình mới nếu muốn sử dụng phương tiện khác.";
+            return $errors;
+        }
+
         // 1 Kiểm tra xe có trạng thái khả dụng
         $vehicleStatus = $this->checkVehicleStatus($vehicleId);
         if (!$vehicleStatus['available']) {
@@ -444,7 +456,6 @@ class ScheduleController {
         return $errors;
     }
 
-    
     /**
      * Check if vehicle is available for trip generation
      */
