@@ -270,6 +270,13 @@ class MoMoController {
             // Xác nhận ghế (chuyển từ "Đang giữ" thành "Đã đặt")
             $this->confirmSeats();
 
+
+            if (isset($_SESSION['applied_promotion']) && $userId) {
+                $promotion = $_SESSION['applied_promotion'];
+                require_once __DIR__ . '/PaymentController.php';
+                $paymentController = new PaymentController();
+                $paymentController->recordPromotionUsage($userId, $promotion['maKhuyenMai'], $bookingId, $pricing['discount']);
+            }
             // Xử lý điểm tích lũy
             $this->processLoyaltyPoints($bookingId, $pricing);
 

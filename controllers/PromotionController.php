@@ -281,8 +281,8 @@ class PromotionController {
         $totalDiscount = $promotionDiscount + $pointsDiscount;
         $finalPrice = max(0, $originalPrice - $totalDiscount);
 
-        // Tính điểm tích lũy nhận được (0.1% tổng tiền gốc)
-        $earnedPoints = floor($originalPrice * 0.001);
+        // Tính điểm tích lũy nhận được (0.03% tổng tiền gốc)
+        $earnedPoints = floor($originalPrice * 0.0003);
 
         return [
             'original_price' => $originalPrice,
@@ -308,8 +308,8 @@ class PromotionController {
 
         $finalPrice = max(0, $originalPrice - $pointsDiscount);
 
-        // Tính điểm tích lũy nhận được (0.1% tổng tiền gốc)
-        $earnedPoints = floor($originalPrice * 0.001);
+        // Tính điểm tích lũy nhận được (0.03% tổng tiền gốc)
+        $earnedPoints = floor($originalPrice * 0.0003);
 
         return [
             'original_price' => $originalPrice,

@@ -130,6 +130,10 @@ $routes = [
     '/api/chat/get-messages' => ['controller' => 'ChatController', 'action' => 'getMessagesApi'],
     '/api/chat/assign-staff' => ['controller' => 'ChatController', 'action' => 'assignStaff'],
     '/api/chat/send-message' => ['controller' => 'ChatController', 'action' => 'sendMessageApi'],
+    
+    // Promotional codes routes
+    '/promotional-codes' => ['controller' => 'PromotionalCodeController', 'action' => 'index'],
+    '/promotional-codes/{id}/delete' => ['controller' => 'PromotionalCodeController', 'action' => 'delete'],
 ];
 
 // Define POST routes
@@ -223,6 +227,9 @@ $postRoutes = [
     '/api/chat/get-messages' => ['controller' => 'ChatController', 'action' => 'getMessagesApi'],
     '/api/chat/assign-staff' => ['controller' => 'ChatController', 'action' => 'assignStaff'],
     '/api/chat/send-message' => ['controller' => 'ChatController', 'action' => 'sendMessageApi'],
+    
+    // Promotional codes store route
+    '/promotional-codes/store' => ['controller' => 'PromotionalCodeController', 'action' => 'store'],
 ];
 
 // Get current URL path and remove base directory
@@ -240,7 +247,7 @@ if ($path === '' || $path === '/') {
 $method = $_SERVER['REQUEST_METHOD'];
 
 error_log("[v0] Router - Method: $method, Original path: " . $_SERVER['REQUEST_URI'] . ", Processed path: $path");
-error_log("[v0] Router - Base path: $basePath");
+error_log("[v0] Router - Base URL path: $baseUrlPath");
 
 // Choose appropriate routes array
 $currentRoutes = ($method === 'POST') ? $postRoutes : $routes;

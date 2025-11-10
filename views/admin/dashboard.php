@@ -50,6 +50,11 @@ $totalSchedulesToday = isset($stats) ? $stats['schedules'] : 0;
                         <span class="nav-text">Quản Lý Tuyến Đường</span>
                         <span class="nav-badge"><?php echo $totalRoutes; ?></span>
                     </a>
+                     <a href="<?= BASE_URL ?>/prices" class="nav-link">
+                        <div class="nav-icon"><i class="fas fa-tags"></i></div>
+                        <span class="nav-text">Quản Lý Giá Vé</span>
+                        <span class="nav-badge"><?php echo $totalPricesToday; ?></span>
+                    </a>
                     <a href="<?= BASE_URL ?>/schedules" class="nav-link">
                         <div class="nav-icon"><i class="fas fa-calendar-alt"></i></div>
                         <span class="nav-text">Quản Lý Lịch Trình</span>
@@ -61,11 +66,12 @@ $totalSchedulesToday = isset($stats) ? $stats['schedules'] : 0;
                         <span class="nav-text">Quản Lý Chuyến Xe</span>
                         <span class="nav-badge"><?php echo $totalTripsToday; ?></span>
                     </a>
-                    <a href="<?= BASE_URL ?>/prices" class="nav-link">
-                        <div class="nav-icon"><i class="fas fa-tags"></i></div>
-                        <span class="nav-text">Quản Lý Giá Vé</span>
-                        <span class="nav-badge"><?php echo $totalPricesToday; ?></span>
+                   <a href="<?= BASE_URL ?>/promotional-codes" class="nav-link">
+                        <div class="nav-icon"><i class="fas fa-gift"></i></div>
+                        <span class="nav-text">Quản Lý Khuyến Mãi</span>
+                        <span class="nav-badge"><?php echo $stats['prices'] ?? 0; ?></span>
                     </a>
+                    
                 </div>
 
                 <div class="nav-section">

@@ -236,6 +236,13 @@ class VNPayController {
                             
                             // Xử lý điểm tích lũy
                             $this->processLoyaltyPoints($bookingId);
+                            if (isset($_SESSION['applied_promotion']) && isset($_SESSION['user_id'])) {
+                                $promotion = $_SESSION['applied_promotion'];
+                                $pricing = $this->calculatePricing($_SESSION['final_booking_data']);
+                                require_once __DIR__ . '/PaymentController.php';
+                                $paymentController = new PaymentController();
+                                $paymentController->recordPromotionUsage($_SESSION['user_id'], $promotion['maKhuyenMai'], $bookingId, $pricing['discount']);
+                            }
                             
                             // Clear session
                             $this->clearBookingSession();
@@ -742,8 +749,8 @@ class VNPayController {
         
         $finalPrice = max(0, $originalPrice - $discount);
         
-        // Tính điểm tích lũy nhận được (0.1% tổng tiền gốc)
-        $earnedPoints = floor($originalPrice * 0.001);
+        // Tính điểm tích lũy nhận được (0.03% tổng tiền gốc)
+        $earnedPoints = floor($originalPrice * 0.0003);
         
         return [
             'original_price' => $originalPrice,

@@ -127,6 +127,26 @@ class PaymentController {
                 return;
             }
 
+            if (isset($_SESSION['user_id'])) {
+                $usageCheck = $this->checkPromotionUsage($_SESSION['user_id'], $promotionId);
+                if (!$usageCheck['can_use']) {
+                    echo json_encode(['success' => false, 'message' => $usageCheck['message']]);
+                    return;
+                }
+            }
+
+            if ($promotion['doiTuongApDung'] === 'Khách hàng thân thiết') {
+                if (!isset($_SESSION['user_id'])) {
+                    echo json_encode(['success' => false, 'message' => 'Bạn phải đăng nhập để sử dụng mã khuyến mãi này']);
+                    return;
+                }
+                
+                if (!$this->isLoyalCustomer($_SESSION['user_id'])) {
+                    echo json_encode(['success' => false, 'message' => 'Bạn chưa đủ điều kiện để sử dụng mã khuyến mãi này. Mã này chỉ dành cho khách hàng thân thiết.']);
+                    return;
+                }
+            }
+
             // Lưu vào session
             $_SESSION['applied_promotion'] = $promotion;
 
@@ -141,7 +161,7 @@ class PaymentController {
             ]);
 
         } catch (Exception $e) {
-            error_log("PaymentController applyPromotion error: " . $e->getMessage());
+            error_log("[v0] PaymentController applyPromotion error: " . $e->getMessage() . " | Stack: " . $e->getTraceAsString());
             echo json_encode(['success' => false, 'message' => 'Có lỗi xảy ra: ' . $e->getMessage()]);
         }
     }
@@ -178,11 +198,22 @@ class PaymentController {
                 return;
             }
 
+            $bookingData = $_SESSION['final_booking_data'];
+            $maxPointsAllowed = floor($bookingData['total_price'] / 200); // 50% of order price
+            
+            if ($pointsToUse > $maxPointsAllowed) {
+                error_log("[v0] Points exceeded 50% limit - Requested: $pointsToUse, Max allowed: $maxPointsAllowed");
+                echo json_encode([
+                    'success' => false, 
+                    'message' => 'Tối đa chỉ được sử dụng 50% giá trị đơn hàng (' . $maxPointsAllowed . ' điểm)'
+                ]);
+                return;
+            }
+
             // Lưu vào session
             $_SESSION['used_points'] = $pointsToUse;
 
             // Tính lại giá
-            $bookingData = $_SESSION['final_booking_data'];
             $pricing = $this->calculatePricing($bookingData);
 
             echo json_encode([
@@ -320,7 +351,6 @@ class PaymentController {
         try {
             error_log("[v0] PaymentController::cancel() called");
             
-            
             if (isset($_SESSION['held_seats'])) {
                 error_log("[v0] Found held seats, releasing them");
                 $heldSeats = $_SESSION['held_seats'];
@@ -344,8 +374,6 @@ class PaymentController {
             exit;
         }
     }
-
-    
 
     /**
      * Giải phóng ghế trực tiếp - NEW SIMPLE METHOD
@@ -490,11 +518,68 @@ class PaymentController {
                     WHERE ngayBatDau <= ? AND ngayKetThuc >= ? 
                     ORDER BY tenKhuyenMai ASC";
             
-            return fetchAll($sql, [$currentDate, $currentDate]);
+            $allPromotions = fetchAll($sql, [$currentDate, $currentDate]);
+            
+            // Only show promotions to loyal customers if required
+            if (!empty($allPromotions) && isset($_SESSION['user_id'])) {
+                $isLoyalCustomer = $this->isLoyalCustomer($_SESSION['user_id']);
+                
+                $filteredPromotions = [];
+                foreach ($allPromotions as $promotion) {
+                    // "Tất cả" = show to everyone
+                    // "Khách hàng thân thiết" = only show to loyal customers (≥5000 points from purchases)
+                    if ($promotion['doiTuongApDung'] === 'Tất cả' || 
+                        ($promotion['doiTuongApDung'] === 'Khách hàng thân thiết' && $isLoyalCustomer)) {
+                        $promotion['has_used'] = $this->checkUserUsedPromotion($_SESSION['user_id'], $promotion['maKhuyenMai']);
+                        $filteredPromotions[] = $promotion;
+                    }
+                }
+                return $filteredPromotions;
+            }
+            
+            // For non-logged-in users, show only "Tất cả" promotions
+            return array_filter($allPromotions, function($p) {
+                return $p['doiTuongApDung'] === 'Tất cả';
+            });
 
         } catch (Exception $e) {
             error_log("getActivePromotions error: " . $e->getMessage());
             return [];
+        }
+    }
+
+    private function checkUserUsedPromotion($userId, $promotionId) {
+        try {
+            $sql = "SELECT COUNT(*) as usage_count FROM khuyenmai_sudung 
+                    WHERE maKhuyenMai = ? AND maNguoiDung = ? AND trangThai = 'SuDung' LIMIT 1";
+            $result = fetch($sql, [$promotionId, $userId]);
+            return (int)$result['usage_count'] > 0;
+        } catch (Exception $e) {
+            error_log("[v0] checkUserUsedPromotion error: " . $e->getMessage());
+            return false;
+        }
+    }
+
+    /**
+     * New method to check if user is a loyal customer
+     * Loyal customer = total points from purchases (MuaVe source) >= 5000
+     */
+    private function isLoyalCustomer($userId) {
+        try {
+            $sql = "SELECT COALESCE(SUM(diem), 0) as total_loyalty_points 
+                    FROM diem_tichluy 
+                    WHERE maNguoiDung = ? AND nguon = 'MuaVe'";
+            
+            $result = fetch($sql, [$userId]);
+            $totalPoints = (int)$result['total_loyalty_points'];
+            
+            error_log("[v0] User $userId loyalty check - Total points from purchases: $totalPoints (Loyal: " . ($totalPoints >= 5000 ? 'yes' : 'no') . ")");
+            
+            return $totalPoints >= 5000;
+
+        } catch (Exception $e) {
+            error_log("isLoyalCustomer error: " . $e->getMessage());
+            return false;
         }
     }
 
@@ -535,32 +620,36 @@ class PaymentController {
      */
     private function calculatePricing($bookingData) {
         $originalPrice = $bookingData['total_price'];
-        $discount = 0;
+        $promotionDiscount = 0;
+        $pointsDiscount = 0;
         $finalPrice = $originalPrice;
 
         // Áp dụng khuyến mãi
         if (isset($_SESSION['applied_promotion'])) {
             $promotion = $_SESSION['applied_promotion'];
             if ($promotion['loai'] === 'PhanTram') {
-                $discount += $originalPrice * ($promotion['giaTri'] / 100);
+                $promotionDiscount = $originalPrice * ($promotion['giaTri'] / 100);
             } else {
-                $discount += $promotion['giaTri'];
+                $promotionDiscount = $promotion['giaTri'];
             }
         }
 
         // Áp dụng điểm tích lũy (1 điểm = 100đ)
         if (isset($_SESSION['used_points'])) {
-            $discount += $_SESSION['used_points'] * 100;
+            $pointsDiscount = $_SESSION['used_points'] * 100;
         }
 
-        $finalPrice = max(0, $originalPrice - $discount);
+        $totalDiscount = $promotionDiscount + $pointsDiscount;
+        $finalPrice = max(0, $originalPrice - $totalDiscount);
 
-        // Tính điểm tích lũy nhận được (0.1% tổng tiền gốc)
-        $earnedPoints = floor($originalPrice * 0.001);
+        // Tính điểm tích lũy nhận được (0.03% tổng tiền gốc)
+        $earnedPoints = floor($originalPrice * 0.0003);
 
         return [
             'original_price' => $originalPrice,
-            'discount' => $discount,
+            'promotion_discount' => $promotionDiscount,
+            'points_discount' => $pointsDiscount,
+            'discount' => $totalDiscount,
             'final_price' => $finalPrice,
             'earned_points' => $earnedPoints
         ];
@@ -722,6 +811,95 @@ class PaymentController {
         unset($_SESSION['booking_errors']);
         unset($_SESSION['booking_data']);
         unset($_SESSION['pending_booking_id']);
+    }
+
+    /**
+     * Kiểm tra xem người dùng có thể sử dụng khuyến mãi không
+     * New method to check promotion usage limits
+     */
+    private function checkPromotionUsage($userId, $promotionId) {
+        try {
+            $promotion = $this->getPromotionById($promotionId);
+            
+            if (!$promotion) {
+                return [
+                    'can_use' => false,
+                    'message' => 'Mã khuyến mãi không tồn tại'
+                ];
+            }
+
+            // Kiểm tra số lần sử dụng tối đa toàn bộ
+            $totalUsageSql = "SELECT COUNT(*) as usage_count FROM khuyenmai_sudung 
+                              WHERE maKhuyenMai = ? AND trangThai = 'SuDung'";
+            $totalUsageResult = fetch($totalUsageSql, [$promotionId]);
+            $totalUsage = (int)$totalUsageResult['usage_count'];
+
+            if ($totalUsage >= $promotion['soLanSuDungToiDa']) {
+                return [
+                    'can_use' => false,
+                    'message' => 'Mã khuyến mãi đã hết lượt sử dụng'
+                ];
+            }
+
+            // Kiểm tra số lần sử dụng tối đa với một người dùng
+            $userUsageSql = "SELECT COUNT(*) as usage_count FROM khuyenmai_sudung 
+                             WHERE maKhuyenMai = ? AND maNguoiDung = ? AND trangThai = 'SuDung'";
+            $userUsageResult = fetch($userUsageSql, [$promotionId, $userId]);
+            $userUsage = (int)$userUsageResult['usage_count'];
+
+            if ($userUsage >= $promotion['soLanSuDungToiDaMotNguoiDung']) {
+                return [
+                    'can_use' => false,
+                    'message' => 'Bạn đã sử dụng mã khuyến mãi này. Mỗi mã chỉ được sử dụng ' . $promotion['soLanSuDungToiDaMotNguoiDung'] . ' lần.'
+                ];
+            }
+
+            return [
+                'can_use' => true,
+                'message' => 'OK'
+            ];
+
+        } catch (Exception $e) {
+            error_log("[v0] checkPromotionUsage error: " . $e->getMessage());
+            return [
+                'can_use' => false,
+                'message' => 'Lỗi kiểm tra mã khuyến mãi: ' . $e->getMessage()
+            ];
+        }
+    }
+
+    /**
+     * Ghi lại lịch sử sử dụng khuyến mãi
+     * Record promotion usage to khuyenmai_sudung table when payment is successful
+     */
+    public function recordPromotionUsage($userId, $promotionId, $bookingId, $discountAmount) {
+        try {
+            error_log("[v0] recordPromotionUsage called - User: $userId, Promotion: $promotionId, Booking: $bookingId, Discount: $discountAmount");
+            
+            // Kiểm tra xem bản ghi đã tồn tại chưa
+            $checkSql = "SELECT * FROM khuyenmai_sudung 
+                        WHERE maNguoiDung = ? AND maKhuyenMai = ? AND maDatVe = ?";
+            $existing = fetch($checkSql, [$userId, $promotionId, $bookingId]);
+            
+            if ($existing) {
+                error_log("[v0] Promotion usage record already exists");
+                return true;
+            }
+            
+            // Thêm bản ghi sử dụng khuyến mãi
+            $sql = "INSERT INTO khuyenmai_sudung (maNguoiDung, maKhuyenMai, maDatVe, soTienGiam, trangThai, thoiGianSuDung) 
+                    VALUES (?, ?, ?, ?, 'SuDung', NOW())";
+            
+            query($sql, [$userId, $promotionId, $bookingId, $discountAmount]);
+            
+            error_log("[v0] Promotion usage recorded successfully");
+            return true;
+            
+        } catch (Exception $e) {
+            error_log("[v0] recordPromotionUsage error: " . $e->getMessage());
+            // Don't throw exception here - payment should not fail just because recording usage failed
+            return false;
+        }
     }
 }
 ?>

@@ -183,6 +183,152 @@
   font-weight: 600;
 }
 
+/* Added badge section styling */
+.badge-section {
+  margin-bottom: var(--space-xl);
+}
+
+.badge-container {
+  padding: var(--space-xl);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.badge-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="badge-stars" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23badge-stars)"/></svg>');
+  pointer-events: none;
+}
+
+/* VIP Badge - Gold */
+.badge-container.badge-vip {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  color: #000;
+}
+
+.badge-container.badge-vip .badge-label,
+.badge-container.badge-vip .badge-subtitle {
+  color: #000;
+}
+
+/* Gold Badge */
+.badge-container.badge-gold {
+  background: linear-gradient(135deg, #ffa500 0%, #ffc857 100%);
+  color: #000;
+}
+
+.badge-container.badge-gold .badge-label,
+.badge-container.badge-gold .badge-subtitle {
+  color: #000;
+}
+
+/* Silver Badge */
+.badge-container.badge-silver {
+  background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 100%);
+  color: #333;
+}
+
+.badge-container.badge-silver .badge-label,
+.badge-container.badge-silver .badge-subtitle {
+  color: #333;
+}
+
+/* Bronze Badge */
+.badge-container.badge-bronze {
+  background: linear-gradient(135deg, #cd7f32 0%, #daa520 100%);
+  color: #fff;
+}
+
+.badge-container.badge-bronze .badge-label,
+.badge-container.badge-bronze .badge-subtitle {
+  color: #fff;
+}
+
+.badge-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.badge-content {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.badge-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+  margin-bottom: 4px;
+}
+
+.badge-name {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.badge-subtitle {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+.badge-progress {
+  position: relative;
+  z-index: 1;
+}
+
+.progress-bar {
+  width: 150px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  transition: width 0.3s ease;
+}
+
+.progress-info {
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.progress-current {
+  opacity: 0.9;
+}
+
 /* Compact info section */
 .points-info-section {
   display: grid;
@@ -458,6 +604,31 @@
     text-align: left;
     margin-top: var(--space-xs);
   }
+
+  /* Responsive badge */
+  .badge-container {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-md);
+  }
+
+  .badge-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+  }
+
+  .badge-name {
+    font-size: 1.5rem;
+  }
+
+  .badge-progress {
+    align-self: center;
+  }
+
+  .progress-bar {
+    width: 120px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -483,5 +654,32 @@
 
   .stat-value {
     font-size: 1.25rem;
+  }
+
+  .badge-container {
+    padding: var(--space-lg);
+    gap: var(--space-md);
+  }
+
+  .badge-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.75rem;
+  }
+
+  .badge-name {
+    font-size: 1.25rem;
+  }
+
+  .badge-label {
+    font-size: 0.75rem;
+  }
+
+  .badge-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .progress-bar {
+    width: 100px;
   }
 }

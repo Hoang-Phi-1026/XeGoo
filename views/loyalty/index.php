@@ -10,6 +10,44 @@
         </div>
     </div>
 
+    <!-- Added customer badge section -->
+    <?php if ($currentBadge): ?>
+    <div class="badge-section">
+        <div class="badge-container badge-<?php echo htmlspecialchars($currentBadge['level']); ?>">
+            <div class="badge-icon">
+                <i class="fas fa-<?php echo htmlspecialchars($currentBadge['icon']); ?>"></i>
+            </div>
+            <div class="badge-content">
+                <div class="badge-label">Chứng chỉ khách hàng</div>
+                <div class="badge-name"><?php echo htmlspecialchars($currentBadge['name']); ?></div>
+                <div class="badge-subtitle">
+                    <?php 
+                    if ($currentBadge['level'] === 'vip') {
+                        echo 'Bạn là khách hàng VIP của XeGoo. Hưởng ưu đãi đặc biệt và hỗ trợ ưu tiên!';
+                    } elseif ($currentBadge['level'] === 'gold') {
+                        echo 'Chỉ cần ' . number_format(5000 - $totalPoints) . ' điểm nữa để nâng cấp thành khách hàng thân thiết!';
+                    } elseif ($currentBadge['level'] === 'silver') {
+                        echo 'Chỉ cần ' . number_format(2000 - $totalPoints) . ' điểm nữa để nâng cấp lên hạng cao cấp!';
+                    } else {
+                        echo 'Tiếp tục mua vé để tích luỹ điểm và nâng cấp hạng khách hàng!';
+                    }
+                    ?>
+                </div>
+            </div>
+            <?php if ($totalPoints > 0): ?>
+            <div class="badge-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: <?php echo min(100, ($totalPoints / ($currentBadge['minPoints'] + 5000)) * 100); ?>%"></div>
+                </div>
+                <div class="progress-info">
+                    <span class="progress-current"><?php echo number_format($totalPoints); ?> điểm</span>
+                </div>
+            </div>
+            <?php endif; ?>
+        </div>
+    </div>
+    <?php endif; ?>
+
     <!-- Points Summary -->
     <div class="points-summary-card">
         <div class="points-summary-content">
@@ -63,7 +101,7 @@
             </div>
             <div class="info-content">
                 <h3>Cách tích điểm</h3>
-                <p>Nhận 0.1% giá trị vé mỗi khi đặt vé thành công. Ví dụ: Vé 100,000đ = 100 điểm</p>
+                <p>Nhận 0.03% giá trị vé mỗi khi đặt vé thành công. Ví dụ: Vé 100,000đ = 30 điểm</p>
             </div>
         </div>
         <div class="info-card">
@@ -89,7 +127,6 @@
     <!-- Transaction History -->
     <div class="history-section">
         <div class="history-header">
-            <!-- Changed title from "Lịch sử giao dịch" to "Lịch sử tích lũy điểm" -->
             <h2><i class="fas fa-history"></i> Lịch sử tích lũy điểm</h2>
             <div class="history-filters">
                 <select id="filterType" class="filter-select">
@@ -106,8 +143,6 @@
 
         <div class="history-list" id="historyList">
             <?php 
-            error_log("[v0] History count in view: " . (is_array($history) ? count($history) : 'not an array'));
-            
             if (empty($history)): 
             ?>
                 <div class="empty-state">

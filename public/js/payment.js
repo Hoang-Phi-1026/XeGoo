@@ -236,7 +236,7 @@ class PaymentManager {
     }
 
     const finalPrice = Math.max(0, originalPrice - totalDiscount)
-    const earnedPoints = Math.floor(originalPrice * 0.001) // 0.1% of original price
+    const earnedPoints = Math.floor(originalPrice * 0.0003) // 0.03% of original price
 
     // Update UI
     document.getElementById("totalDiscount").textContent = totalDiscount.toLocaleString() + "đ"

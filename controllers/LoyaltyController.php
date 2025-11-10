@@ -29,6 +29,8 @@ class LoyaltyController {
         // Get total points
         $totalPoints = $this->calculateUserPoints($userId);
         
+        $currentBadge = $this->determineBadge($totalPoints);
+        
         // Get earned points (positive transactions)
         $stmt = $this->db->prepare("SELECT COALESCE(SUM(diem), 0) as earned FROM diem_tichluy WHERE maNguoiDung = ? AND diem > 0");
         $stmt->execute([$userId]);
@@ -179,8 +181,8 @@ class LoyaltyController {
      */
     public function addPoints($userId, $bookingId, $originalPrice) {
         try {
-            // Tính điểm tích lũy (0.1% tổng tiền gốc)
-            $earnedPoints = floor($originalPrice * 0.001);
+            // Tính điểm tích lũy (0.03% tổng tiền gốc)
+            $earnedPoints = floor($originalPrice * 0.0003);
             
             if ($earnedPoints > 0) {
                 $sql = "INSERT INTO diem_tichluy (maNguoiDung, nguon, diem, maDatVe, ghiChu, ngayTao)
@@ -293,8 +295,8 @@ class LoyaltyController {
         $totalDiscount = $promotionDiscount + $pointsDiscount;
         $finalPrice = max(0, $originalPrice - $totalDiscount);
 
-        // Tính điểm tích lũy nhận được (0.1% tổng tiền gốc)
-        $earnedPoints = floor($originalPrice * 0.001);
+        // Tính điểm tích lũy nhận được (0.03% tổng tiền gốc)
+        $earnedPoints = floor($originalPrice * 0.0003);
 
         return [
             'original_price' => $originalPrice,
@@ -325,8 +327,8 @@ class LoyaltyController {
 
         $finalPrice = max(0, $originalPrice - $promotionDiscount);
 
-        // Tính điểm tích lũy nhận được (0.1% tổng tiền gốc)
-        $earnedPoints = floor($originalPrice * 0.001);
+        // Tính điểm tích lũy nhận được (0.03% tổng tiền gốc)
+        $earnedPoints = floor($originalPrice * 0.0003);
 
         return [
             'original_price' => $originalPrice,
@@ -349,6 +351,45 @@ class LoyaltyController {
 
         } catch (Exception $e) {
             error_log("updateUserTotalPoints error: " . $e->getMessage());
+        }
+    }
+
+    /**
+     * Xác định huy hiệu khách hàng dựa trên điểm tích lũy
+     */
+    private function determineBadge($totalPoints) {
+        if ($totalPoints >= 5000) {
+            return [
+                'name' => 'Khách hàng thân thiết',
+                'level' => 'vip',
+                'icon' => 'crown',
+                'color' => '#ffd700',
+                'minPoints' => 5000
+            ];
+        } elseif ($totalPoints >= 2000) {
+            return [
+                'name' => 'Khách hàng cao cấp',
+                'level' => 'gold',
+                'icon' => 'star',
+                'color' => '#ffa500',
+                'minPoints' => 2000
+            ];
+        } elseif ($totalPoints >= 500) {
+            return [
+                'name' => 'Khách hàng thường xuyên',
+                'level' => 'silver',
+                'icon' => 'medal',
+                'color' => '#c0c0c0',
+                'minPoints' => 500
+            ];
+        } else {
+            return [
+                'name' => 'Khách hàng mới',
+                'level' => 'bronze',
+                'icon' => 'leaf',
+                'color' => '#cd7f32',
+                'minPoints' => 0
+            ];
         }
     }
 }
