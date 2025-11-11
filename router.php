@@ -1,6 +1,56 @@
 <?php
 session_start();
 
+// Serve static files directly without routing
+$staticPatterns = [
+    '/uploads/' => __DIR__ . '/public/uploads/',
+    '/public/' => __DIR__ . '/public/',
+];
+
+$requestPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$baseUrlPath = parse_url(BASE_URL, PHP_URL_PATH) ?? '';
+
+// Check if this is a static file request
+foreach ($staticPatterns as $urlPrefix => $diskPath) {
+    if (strpos($requestPath, $baseUrlPath . $urlPrefix) === 0) {
+        // Remove base URL path and get the relative path
+        $relativePath = substr($requestPath, strlen($baseUrlPath));
+        $filePath = __DIR__ . '/public' . $relativePath;
+        
+        // Security: Prevent directory traversal
+        $realPath = realpath($filePath);
+        $allowedPath = realpath(__DIR__ . '/public');
+        
+        if ($realPath && strpos($realPath, $allowedPath) === 0 && is_file($realPath)) {
+            // Determine content type
+            $contentTypes = [
+                'png' => 'image/png',
+                'jpg' => 'image/jpeg',
+                'jpeg' => 'image/jpeg',
+                'gif' => 'image/gif',
+                'css' => 'text/css',
+                'js' => 'text/javascript',
+                'svg' => 'image/svg+xml',
+                'woff' => 'font/woff',
+                'woff2' => 'font/woff2',
+                'ttf' => 'font/ttf',
+            ];
+            
+            $ext = strtolower(pathinfo($realPath, PATHINFO_EXTENSION));
+            $contentType = $contentTypes[$ext] ?? 'application/octet-stream';
+            
+            header('Content-Type: ' . $contentType);
+            header('Cache-Control: public, max-age=3600');
+            readfile($realPath);
+            exit;
+        } else {
+            error_log("[v0] Router - Static file not found or access denied: $filePath");
+            http_response_code(404);
+            exit;
+        }
+    }
+}
+
 // Define GET routes
 $routes = [
     '/' => ['controller' => 'HomeController', 'action' => 'index'],
@@ -134,6 +184,10 @@ $routes = [
     // Promotional codes routes
     '/promotional-codes' => ['controller' => 'PromotionalCodeController', 'action' => 'index'],
     '/promotional-codes/{id}/delete' => ['controller' => 'PromotionalCodeController', 'action' => 'delete'],
+
+    // Post routes
+    '/post' => ['controller' => 'PostController', 'action' => 'index'],
+    '/post/moderation' => ['controller' => 'PostController', 'action' => 'moderation'],
 ];
 
 // Define POST routes
@@ -230,6 +284,12 @@ $postRoutes = [
     
     // Promotional codes store route
     '/promotional-codes/store' => ['controller' => 'PromotionalCodeController', 'action' => 'store'],
+
+    '/api/posts/create' => ['controller' => 'PostController', 'action' => 'create'],
+    '/api/posts/add-comment' => ['controller' => 'PostController', 'action' => 'addComment'],
+    '/api/posts/add-reaction' => ['controller' => 'PostController', 'action' => 'addReaction'],
+    '/api/posts/approve' => ['controller' => 'PostController', 'action' => 'approve'],
+    '/api/posts/reject' => ['controller' => 'PostController', 'action' => 'reject'],
 ];
 
 // Get current URL path and remove base directory

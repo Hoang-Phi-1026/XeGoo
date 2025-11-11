@@ -104,8 +104,7 @@ class PromotionalCodeController {
             }
         }
 
-        // Target audience (doiTuongApDung)
-        if (empty($_POST['doiTuongApDung']) || !in_array($_POST['doiTuongApDung'], ['Tất cả', 'Khách hàng thân thiết'])) {
+        if (empty($_POST['doiTuongApDung']) || !in_array($_POST['doiTuongApDung'], ['Tất cả', 'Khách hàng thân thiết', 'Khách hàng mới'])) {
             $errors[] = 'Vui lòng chọn đối tượng áp dụng hợp lệ.';
         } else {
             $data['doiTuongApDung'] = $_POST['doiTuongApDung'];
@@ -225,6 +224,50 @@ class PromotionalCodeController {
         $stats['percent'] = $result['percent'] ?? 0;
 
         return $stats;
+    }
+
+    
+    /**
+     * Check if user is a new customer (0 accumulated points from MuaVe source)
+     * @param int $userId User ID
+     * @return bool True if user has 0 points from MuaVe source
+     */
+    public function isNewCustomer($userId) {
+        $sql = "SELECT COALESCE(SUM(soLuong), 0) as total_points 
+                FROM tichluydiem 
+                WHERE nguoiDungId = ? AND nguon = 'MuaVe'";
+        $result = fetch($sql, [$userId]);
+        return ($result['total_points'] ?? 0) == 0;
+    }
+
+    /**
+     * Check if user is a loyal customer (>=5000 accumulated points from MuaVe source)
+     * @param int $userId User ID
+     * @return bool True if user has >=5000 points from MuaVe source
+     */
+    public function isLoyalCustomer($userId) {
+        $sql = "SELECT COALESCE(SUM(soLuong), 0) as total_points 
+                FROM tichluydiem 
+                WHERE nguoiDungId = ? AND nguon = 'MuaVe'";
+        $result = fetch($sql, [$userId]);
+        return ($result['total_points'] ?? 0) >= 5000;
+    }
+
+    /**
+     * Check if promotional code applies to user based on doiTuongApDung
+     * @param int $userId User ID
+     * @param string $doiTuongApDung Target audience ('Tất cả', 'Khách hàng mới', 'Khách hàng thân thiết')
+     * @return bool True if promotion applies to this user
+     */
+    public function isPromotionEligible($userId, $doiTuongApDung) {
+        if ($doiTuongApDung === 'Tất cả') {
+            return true;
+        } elseif ($doiTuongApDung === 'Khách hàng mới') {
+            return $this->isNewCustomer($userId);
+        } elseif ($doiTuongApDung === 'Khách hàng thân thiết') {
+            return $this->isLoyalCustomer($userId);
+        }
+        return false;
     }
 }
 ?>

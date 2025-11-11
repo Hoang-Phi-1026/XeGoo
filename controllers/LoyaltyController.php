@@ -184,6 +184,7 @@ class LoyaltyController {
             // Tính điểm tích lũy (0.03% tổng tiền gốc)
             $earnedPoints = floor($originalPrice * 0.0003);
             
+            
             if ($earnedPoints > 0) {
                 $sql = "INSERT INTO diem_tichluy (maNguoiDung, nguon, diem, maDatVe, ghiChu, ngayTao)
                         VALUES (?, 'MuaVe', ?, ?, 'Tích lũy từ mua vé', NOW())";

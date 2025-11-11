@@ -18,8 +18,6 @@
         </div>
     </div>
 
-
-
     <!-- Create Form Section -->
     <div class="card form-card" id="createFormSection">
         <div class="card-header">
@@ -62,6 +60,7 @@
                             <option value="">-- Chọn đối tượng --</option>
                             <option value="Tất cả" <?= ($_SESSION['form_data']['doiTuongApDung'] ?? '') === 'Tất cả' ? 'selected' : '' ?>>Tất cả khách hàng</option>
                             <option value="Khách hàng thân thiết" <?= ($_SESSION['form_data']['doiTuongApDung'] ?? '') === 'Khách hàng thân thiết' ? 'selected' : '' ?>>Khách hàng thân thiết</option>
+                            <option value="Khách hàng mới" <?= ($_SESSION['form_data']['doiTuongApDung'] ?? '') === 'Khách hàng mới' ? 'selected' : '' ?>>Khách hàng mới</option>
                         </select>
                     </div>
                 </div>
@@ -76,6 +75,24 @@
                         <label for="ngayKetThuc">Ngày kết thúc <span class="required">*</span></label>
                         <input type="date" id="ngayKetThuc" name="ngayKetThuc" class="form-control" 
                                value="<?= $_SESSION['form_data']['ngayKetThuc'] ?? '' ?>" required>
+                    </div>
+                </div>
+
+                <!-- Added usage limit fields for maximum code uses and per-user limits -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="soLanSuDungToiDa">Số lượng mã giảm giá</label>
+                        <input type="number" id="soLanSuDungToiDa" name="soLanSuDungToiDa" class="form-control" 
+                               placeholder="Để trống = không giới hạn" 
+                               min="1"
+                               value="<?= $_SESSION['form_data']['soLanSuDungToiDa'] ?? '' ?>">
+                    </div>
+                    <div class="form-group">
+                        <label for="soLanSuDungToiDaMotNguoiDung">Số lần sử dụng</label>
+                        <input type="number" id="soLanSuDungToiDaMotNguoiDung" name="soLanSuDungToiDaMotNguoiDung" class="form-control" 
+                               placeholder="Mặc định: 1" 
+                               min="1"
+                               value="<?= $_SESSION['form_data']['soLanSuDungToiDaMotNguoiDung'] ?? '' ?>">
                     </div>
                 </div>
 
@@ -118,7 +135,8 @@
                         <select id="status" name="status" class="form-control">
                             <option value="">Tất cả trạng thái</option>
                             <option value="active" <?= ($_GET['status'] ?? '') === 'active' ? 'selected' : '' ?>>Đang hoạt động</option>
-                            <option value="inactive" <?= ($_GET['status'] ?? '') === 'inactive' ? 'selected' : '' ?>>Chưa/Hết hạn</option>
+                            <option value="upcoming" <?= ($_GET['status'] ?? '') === 'upcoming' ? 'selected' : '' ?>>Sắp hoạt động</option>
+                            <option value="expired" <?= ($_GET['status'] ?? '') === 'expired' ? 'selected' : '' ?>>Hết hạn</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -164,6 +182,8 @@
                                 <th>Ngày bắt đầu</th>
                                 <th>Ngày kết thúc</th>
                                 <th>Trạng thái</th>
+                                <th>Số lượng mã giảm</th>
+                                <th>Số lần sử dụng</th>
                                 <th>Thao tác</th>
                             </tr>
                         </thead>
@@ -213,6 +233,8 @@
                                             <?= $statusText ?>
                                         </span>
                                     </td>
+                                    <td><?= htmlspecialchars($code['soLanSuDungToiDa'] ?? 'Không giới hạn') ?></td>
+                                    <td><?= htmlspecialchars($code['soLanSuDungToiDaMotNguoiDung'] ?? '1') ?></td>
                                     <td>
                                         <div class="action-buttons">
                                             <button type="button" class="btn btn-danger btn-sm" 

@@ -523,12 +523,14 @@ class PaymentController {
             // Only show promotions to loyal customers if required
             if (!empty($allPromotions) && isset($_SESSION['user_id'])) {
                 $isLoyalCustomer = $this->isLoyalCustomer($_SESSION['user_id']);
+                $isNewCustomer = $this->isNewCustomer($_SESSION['user_id']);
                 
                 $filteredPromotions = [];
                 foreach ($allPromotions as $promotion) {
                     // "Tất cả" = show to everyone
                     // "Khách hàng thân thiết" = only show to loyal customers (≥5000 points from purchases)
                     if ($promotion['doiTuongApDung'] === 'Tất cả' || 
+                        ($promotion['doiTuongApDung'] === 'Khách hàng mới' && $isNewCustomer) ||
                         ($promotion['doiTuongApDung'] === 'Khách hàng thân thiết' && $isLoyalCustomer)) {
                         $promotion['has_used'] = $this->checkUserUsedPromotion($_SESSION['user_id'], $promotion['maKhuyenMai']);
                         $filteredPromotions[] = $promotion;
@@ -587,6 +589,28 @@ class PaymentController {
 
         } catch (Exception $e) {
             error_log("isLoyalCustomer error: " . $e->getMessage());
+            return false;
+        }
+    }
+    /**
+     * New method to check if user is a new customer
+     * New customer = total points from purchases (MuaVe source) == 0
+     */
+    private function isNewCustomer($userId) {
+        try {
+            $sql = "SELECT COALESCE(SUM(diem), 0) as total_points 
+                    FROM diem_tichluy 
+                    WHERE maNguoiDung = ? AND nguon = 'MuaVe'";
+            
+            $result = fetch($sql, [$userId]);
+            $totalPoints = (int)$result['total_points'];
+            
+            error_log("[v0] User $userId new customer check - Total points from purchases: $totalPoints (New: " . ($totalPoints === 0 ? 'yes' : 'no') . ")");
+            
+            return $totalPoints === 0;
+
+        } catch (Exception $e) {
+            error_log("isNewCustomer error: " . $e->getMessage());
             return false;
         }
     }

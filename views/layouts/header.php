@@ -82,7 +82,7 @@ require_once __DIR__ . '/../../config/config.php';
                             break;
                         case 2: // Nhân Viên Hỗ Trợ
                             ?>
-                            <li class="nav-item"><a href="<?php echo BASE_URL; ?>/" class="nav-link">Kiểm duyệt bài đăng</a></li>
+                            <li class="nav-item"><a href="<?php echo BASE_URL; ?>/post/moderation" class="nav-link">Kiểm duyệt bài đăng</a></li>
                             <li class="nav-item"><a href="<?php echo BASE_URL; ?>/staff/monitoring" class="nav-link">Giám sát chuyến xe</a></li>
                             <li class="nav-item"><a href="<?php echo BASE_URL; ?>/staff/rental-support" class="nav-link">Hỗ trợ thuê xe</a></li>
                             <li class="nav-item"><a href="<?php echo BASE_URL; ?>/staff/support" class="nav-link">Hỗ trợ hành khách</a></li>
@@ -102,6 +102,7 @@ require_once __DIR__ . '/../../config/config.php';
                             <li class="nav-item"><a href="<?php echo BASE_URL; ?>/about" class="nav-link">Giới thiệu</a></li>
                             <li class="nav-item"><a href="<?php echo BASE_URL; ?>/search" class="nav-link">Đặt vé</a></li>
                             <li class="nav-item"><a href="<?php echo BASE_URL; ?>/my-tickets" class="nav-link">Vé của tôi</a></li>
+                            <li class="nav-item"><a href="<?php echo BASE_URL; ?>/post" class="nav-link">Cộng đồng</a></li>
                             <li class="nav-item"><a href="<?php echo BASE_URL; ?>/support" class="nav-link">Hỗ trợ</a></li>
                             <?php
                             break;
