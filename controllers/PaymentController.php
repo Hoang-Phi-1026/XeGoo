@@ -142,7 +142,7 @@ class PaymentController {
                 }
                 
                 if (!$this->isLoyalCustomer($_SESSION['user_id'])) {
-                    echo json_encode(['success' => false, 'message' => 'Bạn chưa đủ điều kiện để sử dụng mã khuyến mãi này. Mã này chỉ dành cho khách hàng thân thiết.']);
+                    echo json_encode(['success' => false, 'message' => 'Bạn chưa đủ điều kiện để sử dụng mã khuyến mãi này. Mã này chỉ dành cho khách hàng thân thiết (≥5000 điểm tích lũy từ mua vé).']);
                     return;
                 }
             }
@@ -551,9 +551,17 @@ class PaymentController {
     private function checkUserUsedPromotion($userId, $promotionId) {
         try {
             $sql = "SELECT COUNT(*) as usage_count FROM khuyenmai_sudung 
-                    WHERE maKhuyenMai = ? AND maNguoiDung = ? AND trangThai = 'SuDung' LIMIT 1";
+                    WHERE maKhuyenMai = ? AND maNguoiDung = ? AND trangThai = 'SuDung'";
             $result = fetch($sql, [$promotionId, $userId]);
-            return (int)$result['usage_count'] > 0;
+            $userUsage = (int)$result['usage_count'];
+            
+            // Lấy thông tin khuyến mãi để kiểm tra số lần tối đa
+            $promotion = $this->getPromotionById($promotionId);
+            if (!$promotion) {
+                return false;
+            }
+            
+            return $userUsage >= $promotion['soLanSuDungToiDaMotNguoiDung'];
         } catch (Exception $e) {
             error_log("[v0] checkUserUsedPromotion error: " . $e->getMessage());
             return false;
@@ -850,7 +858,7 @@ class PaymentController {
             if ($userUsage >= $promotion['soLanSuDungToiDaMotNguoiDung']) {
                 return [
                     'can_use' => false,
-                    'message' => 'Bạn đã sử dụng mã khuyến mãi này. Mỗi mã chỉ được sử dụng ' . $promotion['soLanSuDungToiDaMotNguoiDung'] . ' lần.'
+                    'message' => 'Bạn đã sử dụng hết lần cho mã khuyến mãi này. Mỗi mã chỉ được sử dụng ' . $promotion['soLanSuDungToiDaMotNguoiDung'] . ' lần.'
                 ];
             }
 

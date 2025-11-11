@@ -394,22 +394,49 @@ document.addEventListener('DOMContentLoaded', function() {
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({promotion_id: promotionId})
         })
-        .then(response => response.json())
+        .then(response => {
+            console.log("[v0] Apply promotion response status:", response.status);
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            return response.json();
+        })
         .then(data => {
+            console.log("[v0] Apply promotion response data:", data);
+            
             if (data.success) {
-                document.getElementById('selectedPromotion').style.display = 'flex';
-                document.querySelector('.selected-promo-name').textContent = promotionName;
-                document.querySelector('.selected-promo-value').textContent = promotionValue;
-                document.getElementById('promotionList').closest('.promo-list-wrapper').style.display = 'none';
-                updatePricing(data.pricing);
-                alert(data.message);
+                const selectedPromoElement = document.getElementById('selectedPromotion');
+                const promotionListWrapper = document.getElementById('promotionList')?.closest('.promo-list-wrapper');
+                
+                if (selectedPromoElement) {
+                    selectedPromoElement.style.display = 'flex';
+                }
+                
+                const promo_name_el = document.querySelector('.selected-promo-name');
+                const promo_value_el = document.querySelector('.selected-promo-value');
+                
+                if (promo_name_el) promo_name_el.textContent = promotionName;
+                if (promo_value_el) promo_value_el.textContent = promotionValue;
+                
+                if (promotionListWrapper) {
+                    promotionListWrapper.style.display = 'none';
+                }
+                
+                if (data.pricing) {
+                    updatePricing(data.pricing);
+                }
+                
+                alert(data.message || 'Áp dụng thành công');
             } else {
-                alert(data.message);
+                console.error("[v0] Apply promotion failed:", data.message);
+                alert(data.message || 'Không thể áp dụng mã giảm giá');
             }
         })
         .catch(error => {
-            console.error('Error:', error);
-            alert('Có lỗi xảy ra.');
+            console.error('[v0] Apply promotion error:', error);
+            alert('Lỗi kết nối: ' + error.message);
         });
     }
     
@@ -480,20 +507,44 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function updatePricing(pricing) {
-        document.getElementById('originalPrice').textContent = pricing.original_price.toLocaleString() + 'đ';
-        document.getElementById('finalPrice').textContent = pricing.final_price.toLocaleString() + 'đ';
+        const originalPriceEl = document.getElementById('originalPrice');
+        const finalPriceEl = document.getElementById('finalPrice');
+        const selectedPromoEl = document.getElementById('selectedPromotion');
+        const usedPointsEl = document.getElementById('usedPoints');
         
-        if (document.getElementById('selectedPromotion').style.display !== 'none') {
-            document.getElementById('promotionDiscount').style.display = 'flex';
-            document.getElementById('promotionDiscountValue').textContent = Math.round(pricing.promotion_discount || 0).toLocaleString();
-        } else {
+        if (originalPriceEl && pricing.original_price !== undefined) {
+            originalPriceEl.textContent = pricing.original_price.toLocaleString() + 'đ';
+        }
+        
+        if (finalPriceEl && pricing.final_price !== undefined) {
+            finalPriceEl.textContent = pricing.final_price.toLocaleString() + 'đ';
+        }
+        
+        if (selectedPromoEl && selectedPromoEl.style.display !== 'none') {
+            const promotionDiscountEl = document.getElementById('promotionDiscount');
+            const promotionDiscountValueEl = document.getElementById('promotionDiscountValue');
+            
+            if (promotionDiscountEl) {
+                promotionDiscountEl.style.display = 'flex';
+            }
+            if (promotionDiscountValueEl) {
+                promotionDiscountValueEl.textContent = Math.round(pricing.promotion_discount || 0).toLocaleString();
+            }
+        } else if (document.getElementById('promotionDiscount')) {
             document.getElementById('promotionDiscount').style.display = 'none';
         }
         
-        if (document.getElementById('usedPoints').style.display !== 'none') {
-            document.getElementById('pointsDiscountItem').style.display = 'flex';
-            document.getElementById('pointsDiscountValue').textContent = Math.round(pricing.points_discount || 0).toLocaleString();
-        } else {
+        if (usedPointsEl && usedPointsEl.style.display !== 'none') {
+            const pointsDiscountItemEl = document.getElementById('pointsDiscountItem');
+            const pointsDiscountValueEl = document.getElementById('pointsDiscountValue');
+            
+            if (pointsDiscountItemEl) {
+                pointsDiscountItemEl.style.display = 'flex';
+            }
+            if (pointsDiscountValueEl) {
+                pointsDiscountValueEl.textContent = Math.round(pricing.points_discount || 0).toLocaleString();
+            }
+        } else if (document.getElementById('pointsDiscountItem')) {
             document.getElementById('pointsDiscountItem').style.display = 'none';
         }
     }
