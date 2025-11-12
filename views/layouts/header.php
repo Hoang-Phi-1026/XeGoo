@@ -103,7 +103,7 @@ require_once __DIR__ . '/../../config/config.php';
                             <li class="nav-item"><a href="<?php echo BASE_URL; ?>/search" class="nav-link">Đặt vé</a></li>
                             <li class="nav-item"><a href="<?php echo BASE_URL; ?>/my-tickets" class="nav-link">Vé của tôi</a></li>
                             <li class="nav-item"><a href="<?php echo BASE_URL; ?>/post" class="nav-link">Cộng đồng</a></li>
-                            <li class="nav-item"><a href="<?php echo BASE_URL; ?>/support" class="nav-link">Hỗ trợ</a></li>
+                            <li class="nav-item"><a href="<?php echo BASE_URL; ?>/support/ai" class="nav-link">Hỗ trợ</a></li>
                             <?php
                             break;
                     }

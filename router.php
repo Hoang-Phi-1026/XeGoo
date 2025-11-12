@@ -172,7 +172,9 @@ $routes = [
     '/staff/rental-support/{id}' => ['controller' => 'StaffRentalSupportController', 'action' => 'detail'],
     
     '/support' => ['controller' => 'ChatController', 'action' => 'index'],
+    '/support/ai' => ['controller' => 'AIChatController', 'action' => 'index'],
     '/staff/support' => ['controller' => 'ChatController', 'action' => 'staffDashboard'],
+    
     '/api/chat/sessions' => ['controller' => 'ChatController', 'action' => 'getSessions'],
     '/api/chat/messages/{sessionId}' => ['controller' => 'ChatController', 'action' => 'getMessages'],
     '/api/chat/pending-count' => ['controller' => 'ChatController', 'action' => 'getPendingCount'],
@@ -290,6 +292,10 @@ $postRoutes = [
     '/api/posts/add-reaction' => ['controller' => 'PostController', 'action' => 'addReaction'],
     '/api/posts/approve' => ['controller' => 'PostController', 'action' => 'approve'],
     '/api/posts/reject' => ['controller' => 'PostController', 'action' => 'reject'],
+    
+    // AI chat POST routes
+    '/api/aichat/ask' => ['controller' => 'AIChatController', 'action' => 'askAI'],
+    '/api/aichat/switch-to-staff' => ['controller' => 'AIChatController', 'action' => 'switchToStaffChat'],
 ];
 
 // Get current URL path and remove base directory
@@ -421,3 +427,4 @@ if (!$routeFound) {
         </html>";
     }
 }
+?>
