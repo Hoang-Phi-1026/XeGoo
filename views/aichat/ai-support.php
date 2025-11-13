@@ -10,340 +10,96 @@ if (!defined('BASE_URL')) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hỗ trợ AI - XeGoo</title>
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/main.css">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/chat.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/chatAI.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        /* Override chat styles specifically for AI chat page to match customer support design */
-        .ai-chat-wrapper {
-            position: relative;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .ai-chat-container {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            background: #f8f9fa;
-            max-width: 100%;
-        }
-        
-        .ai-chat-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 24px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        .ai-chat-header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-        }
-        
-        .ai-chat-title {
-            font-size: 28px;
-            font-weight: 600;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .ai-chat-subtitle {
-            font-size: 14px;
-            opacity: 0.9;
-            margin: 8px 0 0 0;
-        }
-        
-        .ai-messages-container {
-            flex: 1;
-            overflow-y: auto;
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-        
-        .ai-message-wrapper {
-            display: flex;
-            gap: 12px;
-            animation: slideIn 0.3s ease-out;
-        }
-        
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .ai-message-wrapper.user {
-            justify-content: flex-end;
-        }
-        
-        .ai-message-wrapper.ai {
-            justify-content: flex-start;
-        }
-        
-        .ai-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            color: white;
-            font-size: 16px;
-            flex-shrink: 0;
-        }
-        
-        .ai-avatar.user {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        
-        .ai-avatar.ai {
-            background: #6c757d;
-        }
-        
-        .ai-message-bubble {
-            max-width: 70%;
-            padding: 16px;
-            border-radius: 12px;
-            line-height: 1.6;
-            word-wrap: break-word;
-        }
-        
-        .ai-message-wrapper.user .ai-message-bubble {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-bottom-right-radius: 4px;
-        }
-        
-        .ai-message-wrapper.ai .ai-message-bubble {
-            background: white;
-            color: #333;
-            border: 1px solid #ddd;
-            border-bottom-left-radius: 4px;
-        }
-        
-        /* Style for formatted AI response content */
-        .ai-response-content {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        
-        .ai-response-section {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-        
-        .ai-response-title {
-            font-weight: 600;
-            font-size: 15px;
-            color: inherit;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .ai-response-item {
-            font-size: 14px;
-            padding-left: 20px;
-            position: relative;
-            color: inherit;
-        }
-        
-        .ai-response-item:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-        
-        .ai-response-link {
-            color: inherit;
-            text-decoration: underline;
-            cursor: pointer;
-        }
-        
-        .ai-message-wrapper.ai .ai-response-link {
-            color: #667eea;
-        }
-        
-        .ai-message-wrapper.user .ai-response-link {
-            color: white;
-        }
-        
-        .ai-trip-info {
-            background: rgba(102, 126, 234, 0.1);
-            padding: 12px;
-            border-left: 3px solid #667eea;
-            border-radius: 4px;
-            margin: 8px 0;
-            font-size: 14px;
-        }
-        
-        .ai-message-wrapper.user .ai-trip-info {
-            background: rgba(255, 255, 255, 0.2);
-            border-left-color: white;
-        }
-        
-        .ai-trip-info-row {
-            display: flex;
-            justify-content: space-between;
-            gap: 16px;
-            margin: 4px 0;
-        }
-        
-        .ai-trip-info-label {
-            font-weight: 500;
-            flex-shrink: 0;
-        }
-        
-        .ai-trip-info-value {
-            text-align: right;
-            flex: 1;
-        }
-        
-        .ai-typing-indicator {
-            display: flex;
-            gap: 4px;
-            padding: 16px;
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 12px;
-            width: fit-content;
-        }
-        
-        .ai-typing-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #667eea;
-            animation: bounce 1.4s infinite;
-        }
-        
-        .ai-typing-dot:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-        
-        .ai-typing-dot:nth-child(3) {
-            animation-delay: 0.4s;
-        }
-        
-        @keyframes bounce {
-            0%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-10px);
-            }
-        }
-        
-        .ai-footer {
-            padding: 16px 24px;
-            background: white;
-            border-top: 1px solid #ddd;
-            display: flex;
-            gap: 8px;
-        }
-        
-        .ai-input-group {
-            flex: 1;
-            display: flex;
-            gap: 8px;
-        }
-        
-        .ai-input-group input {
-            flex: 1;
-            border: 1px solid #ddd;
-            border-radius: 24px;
-            padding: 12px 16px;
-            font-size: 14px;
-            outline: none;
-            transition: border-color 0.3s;
-        }
-        
-        .ai-input-group input:focus {
-            border-color: #667eea;
-        }
-        
-        .ai-send-btn {
-            border: none;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            transition: transform 0.2s;
-            flex-shrink: 0;
-        }
-        
-        .ai-send-btn:hover {
-            transform: scale(1.05);
-        }
-        
-        .ai-send-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-        
-        .ai-action-buttons {
-            display: flex;
-            gap: 8px;
-            padding: 12px 24px;
-            background: white;
-            border-top: 1px solid #ddd;
-            justify-content: center;
-        }
-        
-        .ai-action-btn {
-            padding: 12px 16px;
-            border: 1px solid #ddd;
-            background: white;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 13px;
-            transition: all 0.3s;
-        }
-        
-        .ai-action-btn:hover {
-            background: #f0f0f0;
-            border-color: #667eea;
-        }
-        
-        .ai-action-btn.primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-color: transparent;
-        }
-        
-        @media (max-width: 768px) {
-            .ai-message-bubble {
-                max-width: 85%;
-            }
-            
-            .ai-chat-title {
-                font-size: 20px;
-            }
-        }
-    </style>
 </head>
+<style>
+.ai-welcome-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f9fbff;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  color: #2d3748;
+  font-size: 12px;
+}
+
+.ai-welcome-card {
+  max-width: 460px;
+  background: #fff;
+  padding: 16px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.ai-welcome-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.ai-welcome-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+}
+
+.ai-welcome-text h2 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a237e;
+  margin: 0;
+}
+
+.ai-welcome-text p {
+  color: #4a5568;
+  margin: 2px 0 0 0;
+  font-size: 12px;
+}
+
+.ai-welcome-intro {
+  margin: 10px 0 12px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #555;
+}
+
+.ai-welcome-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 12px auto 16px;
+  max-width: 360px;
+}
+
+.ai-item {
+  background: #f5f8ff;
+  border: 1px solid #dee7ff;
+  border-radius: 8px;
+  padding: 6px 8px;
+  color: #2c3e50;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.ai-item:hover {
+  background: #eaf1ff;
+  transform: translateY(-1px);
+  border-color: #c4d4ff;
+}
+
+.ai-welcome-footer {
+  font-size: 12px;
+  color: #3b4cca;
+  font-weight: 500;
+  margin-top: 4px;
+}
+</style>
 <body>
+     <?php require_once __DIR__ . '/../layouts/header.php'; ?>
     <!-- Redesigned AI support page to match professional customer support design -->
     <div class="ai-chat-wrapper">
         <header class="ai-chat-header">
@@ -357,21 +113,35 @@ if (!defined('BASE_URL')) {
         </header>
         
         <div class="ai-messages-container" id="chatMessages">
-            <div class="ai-message-wrapper ai">
-                <div class="ai-avatar ai">🤖</div>
-                <div class="ai-message-bubble">
-                    <div class="ai-response-content">
-                        <p>Xin chào! Tôi là trợ lý AI của XeGoo. Tôi có thể giúp bạn với:</p>
-                        <div class="ai-response-section">
-                            <div class="ai-response-item">Tìm kiếm và đặt vé chuyến xe</div>
-                            <div class="ai-response-item">Thông tin về thanh toán và hoàn tiền</div>
-                            <div class="ai-response-item">Hướng dẫn sử dụng dịch vụ</div>
-                            <div class="ai-response-item">Khuyến mãi và mã giảm giá</div>
-                            <div class="ai-response-item">Điểm tích lũy và ưu đãi</div>
-                        </div>
-                        <p>Hãy hỏi tôi bất cứ điều gì!</p>
-                    </div>
-                </div>
+            <!-- Welcome message now centered and with improved layout -->
+            <div class="ai-welcome-wrapper">
+  <div class="ai-welcome-card">
+    <div class="ai-welcome-header">
+      <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" alt="AI bot" class="ai-welcome-avatar">
+      <div class="ai-welcome-text">
+        <h2>Xin chào</h2>
+        <p>Tôi là <strong>trợ lý AI của XeGoo</strong> – luôn sẵn sàng giúp bạn!</p>
+      </div>
+    </div>
+
+    <p class="ai-welcome-intro">
+      Tôi có thể hỗ trợ bạn trong việc tra cứu thông tin, đặt vé và giải đáp các thắc mắc liên quan đến dịch vụ của XeGoo.  
+      Dưới đây là những việc tôi có thể giúp bạn:
+    </p>
+
+    <div class="ai-welcome-grid">
+      <div class="ai-item">🚌 Tìm kiếm & đặt vé chuyến xe</div>
+      <div class="ai-item">💳 Thanh toán & hoàn tiền</div>
+      <div class="ai-item">📘 Hướng dẫn sử dụng hệ thống</div>
+      <div class="ai-item">🎟️ Khuyến mãi & mã giảm giá</div>
+      <div class="ai-item">⭐ Tra cứu điểm tích lũy & ưu đãi</div>
+    </div>
+
+    <p class="ai-welcome-footer">
+      Hãy gửi câu hỏi hoặc yêu cầu của bạn — tôi sẽ phản hồi ngay!
+    </p>
+  </div>
+</div>
             </div>
         </div>
         
@@ -415,12 +185,10 @@ if (!defined('BASE_URL')) {
         sendBtn.addEventListener('click', sendMessage);
         
         function formatAIResponse(content) {
-            // If content already has HTML structure, return as is
             if (content.includes('<div') || content.includes('<p')) {
                 return content;
             }
             
-            // Split by newlines and format
             const lines = content.split('\n');
             let formatted = '<div class="ai-response-content">';
             let currentSection = null;
@@ -430,32 +198,28 @@ if (!defined('BASE_URL')) {
                 
                 if (!line) continue;
                 
-                // Detect trip information blocks (contain "Chuyến #" or emoji)
-                if (line.includes('Chuyến #') || line.includes('Loại xe:') || line.includes('Giờ khởi hành:')) {
-                    if (currentSection) {
+                // Detect trip information blocks
+                if (line.includes('Chuyến #') || line.includes('Loại xe:') || line.includes('Giờ khởi hành:') || line.includes('━')) {
+                    if (currentSection === 'trip') {
                         formatted += '</div>';
                     }
-                    formatted += '<div class="ai-trip-info">';
-                    currentSection = 'trip';
-                    formatted += line.replace(/🚌|💰|⏰|📋|🌟|📞|💬|📧|🔗/g, '') + '<br>';
-                } else if (currentSection === 'trip') {
-                    // Continue trip info
                     if (line.includes('━')) {
                         formatted += '</div>';
                         currentSection = null;
-                    } else if (line.length > 0) {
+                    } else {
+                        formatted += '<div class="ai-trip-info">';
+                        currentSection = 'trip';
                         formatted += line.replace(/🚌|💰|⏰|📋|🌟|📞|💬|📧|🔗/g, '') + '<br>';
                     }
+                } else if (currentSection === 'trip' && line.length > 0) {
+                    formatted += line.replace(/🚌|💰|⏰|📋|🌟|📞|💬|📧|🔗/g, '') + '<br>';
                 } else if (line.startsWith('###') || line.startsWith('##') || line.startsWith('#')) {
-                    // Section headers
                     const title = line.replace(/^#+\s*/, '').replace(/🚌|💰|⏰|📋|🌟|📞|💬|📧|🔗/g, '');
                     formatted += `<div class="ai-response-section"><div class="ai-response-title">${title}</div>`;
                 } else if (line.startsWith('-') || line.startsWith('•')) {
-                    // Bullet points
                     const item = line.replace(/^[-•]\s*/, '').replace(/🚌|💰|⏰|📋|🌟|📞|💬|📧|🔗/g, '');
                     formatted += `<div class="ai-response-item">${item}</div>`;
                 } else if (line.includes('[') && line.includes('](')) {
-                    // Markdown links
                     const linkMatch = line.match(/\[(.*?)\]$$(.*?)$$/);
                     if (linkMatch) {
                         const linkText = linkMatch[1];
@@ -465,7 +229,6 @@ if (!defined('BASE_URL')) {
                         formatted += `<p>${line}</p>`;
                     }
                 } else {
-                    // Regular text
                     formatted += `<p>${line}</p>`;
                 }
             }
@@ -501,6 +264,11 @@ if (!defined('BASE_URL')) {
             } else {
                 messageDiv.appendChild(avatarDiv);
                 messageDiv.appendChild(bubbleDiv);
+            }
+            
+            const welcomeWrapper = chatMessages.querySelector('.ai-welcome-wrapper');
+            if (welcomeWrapper) {
+                welcomeWrapper.remove();
             }
             
             chatMessages.appendChild(messageDiv);
