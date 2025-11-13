@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [11-Nov-2025 23:02:25 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
 [11-Nov-2025 23:02:25 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
 [11-Nov-2025 23:02:25 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
@@ -2260,3 +2261,5 @@
 [13-Nov-2025 14:15:57 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
 [13-Nov-2025 14:15:57 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
 [13-Nov-2025 14:15:57 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+=======
+>>>>>>> 9cd6f9557cbe138338b9e19a77c241b0c6db7f04
