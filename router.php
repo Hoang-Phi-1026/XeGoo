@@ -172,9 +172,7 @@ $routes = [
     '/staff/rental-support/{id}' => ['controller' => 'StaffRentalSupportController', 'action' => 'detail'],
     
     '/support' => ['controller' => 'ChatController', 'action' => 'index'],
-    '/support/ai' => ['controller' => 'AIChatController', 'action' => 'index'],
     '/staff/support' => ['controller' => 'ChatController', 'action' => 'staffDashboard'],
-    
     '/api/chat/sessions' => ['controller' => 'ChatController', 'action' => 'getSessions'],
     '/api/chat/messages/{sessionId}' => ['controller' => 'ChatController', 'action' => 'getMessages'],
     '/api/chat/pending-count' => ['controller' => 'ChatController', 'action' => 'getPendingCount'],
@@ -186,7 +184,13 @@ $routes = [
     // Promotional codes routes
     '/promotional-codes' => ['controller' => 'PromotionalCodeController', 'action' => 'index'],
     '/promotional-codes/{id}/delete' => ['controller' => 'PromotionalCodeController', 'action' => 'delete'],
-
+    
+    // Admin statistics route
+    '/admin/statistics' => ['controller' => 'StatisticsController', 'action' => 'index'],
+    
+    // AJAX route for trip load factor pagination
+    '/admin/trip-load-factor-ajax' => ['controller' => 'StatisticsController', 'action' => 'getTripLoadFactorAjax'],
+    
     // Post routes
     '/post' => ['controller' => 'PostController', 'action' => 'index'],
     '/post/moderation' => ['controller' => 'PostController', 'action' => 'moderation'],
@@ -286,16 +290,12 @@ $postRoutes = [
     
     // Promotional codes store route
     '/promotional-codes/store' => ['controller' => 'PromotionalCodeController', 'action' => 'store'],
-
+    
     '/api/posts/create' => ['controller' => 'PostController', 'action' => 'create'],
     '/api/posts/add-comment' => ['controller' => 'PostController', 'action' => 'addComment'],
     '/api/posts/add-reaction' => ['controller' => 'PostController', 'action' => 'addReaction'],
     '/api/posts/approve' => ['controller' => 'PostController', 'action' => 'approve'],
     '/api/posts/reject' => ['controller' => 'PostController', 'action' => 'reject'],
-    
-    // AI chat POST routes
-    '/api/aichat/ask' => ['controller' => 'AIChatController', 'action' => 'askAI'],
-    '/api/aichat/switch-to-staff' => ['controller' => 'AIChatController', 'action' => 'switchToStaffChat'],
 ];
 
 // Get current URL path and remove base directory
@@ -427,4 +427,3 @@ if (!$routeFound) {
         </html>";
     }
 }
-?>
