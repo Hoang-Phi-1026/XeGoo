@@ -9,7 +9,6 @@ if (session_status() === PHP_SESSION_NONE) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thống Kê - Admin XeGoo</title>
-    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/admin-dashboard.css">
     <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/admin-statistics.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -17,102 +16,7 @@ if (session_status() === PHP_SESSION_NONE) {
 <body>
 <?php require_once __DIR__ . '/../layouts/header.php'; ?>
 
-<div class="admin-layout">
-    <button class="sidebar-toggle" id="sidebarToggle">
-        <i class="fas fa-bars"></i>
-    </button>
-
-    <!-- Sidebar -->
-    <aside class="sidebar" id="sidebar">
-        <div class="sidebar-content">
-            <nav class="sidebar-nav">
-                <div class="nav-section">
-                    <h2 class="nav-title">Tổng quan</h2>
-                    <a href="<?= BASE_URL ?>/admin" class="nav-link ">
-                        <div class="nav-icon"><i class="fas fa-tachometer-alt"></i></div>
-                        <span class="nav-text">Dashboard</span>
-                    </a>
-                    <a href="<?= BASE_URL ?>/admin/statistics" class="nav-link active">
-                        <div class="nav-icon"><i class="fas fa-chart-line"></i></div>
-                        <span class="nav-text">Thống kê</span>
-                    </a>
-                </div>
-
-                <div class="nav-section">
-                    <h3 class="nav-title">Quản lý</h3>
-                    <a href="<?= BASE_URL ?>/vehicles" class="nav-link">
-                        <div class="nav-icon"><i class="fas fa-bus"></i></div>
-                        <span class="nav-text">Quản Lý Phương Tiện</span>
-                        <span class="nav-badge"><?php echo $totalVehicles; ?></span>
-                    </a>
-                    <a href="<?= BASE_URL ?>/routes" class="nav-link">
-                        <div class="nav-icon"><i class="fas fa-route"></i></div>
-                        <span class="nav-text">Quản Lý Tuyến Đường</span>
-                        <span class="nav-badge"><?php echo $totalRoutes; ?></span>
-                    </a>
-                     <a href="<?= BASE_URL ?>/prices" class="nav-link">
-                        <div class="nav-icon"><i class="fas fa-tags"></i></div>
-                        <span class="nav-text">Quản Lý Giá Vé</span>
-                        <span class="nav-badge"><?php echo $totalPricesToday; ?></span>
-                    </a>
-                    <a href="<?= BASE_URL ?>/schedules" class="nav-link">
-                        <div class="nav-icon"><i class="fas fa-calendar-alt"></i></div>
-                        <span class="nav-text">Quản Lý Lịch Trình</span>
-                        <span class="nav-badge"><?php echo $totalSchedulesToday; ?></span>
-                        
-                    </a>
-                    <a href="<?= BASE_URL ?>/trips" class="nav-link">
-                        <div class="nav-icon"><i class="fas fa-map-marked-alt"></i></div>
-                        <span class="nav-text">Quản Lý Chuyến Xe</span>
-                        <span class="nav-badge"><?php echo $totalTripsToday; ?></span>
-                    </a>
-                   <a href="<?= BASE_URL ?>/promotional-codes" class="nav-link">
-                        <div class="nav-icon"><i class="fas fa-gift"></i></div>
-                        <span class="nav-text">Quản Lý Khuyến Mãi</span>
-                        <span class="nav-badge"><?php echo $stats['prices'] ?? 0; ?></span>
-                    </a>
-                    
-                </div>
-
-                <div class="nav-section">
-                    <h3 class="nav-title">Người dùng</h3>
-                    <a href="<?= BASE_URL ?>/users" class="nav-link">
-                        <div class="nav-icon"><i class="fas fa-users"></i></div>
-                        <span class="nav-text">Quản lý user</span>
-                        <span class="nav-badge"><?php echo $totalUsers; ?></span>
-                    </a>
-                    <a href="<?= BASE_URL ?>/admin/reports" class="nav-link">
-                        <div class="nav-icon"><i class="fas fa-file-alt"></i></div>
-                        <span class="nav-text">Báo cáo</span>
-                    </a>
-                </div>
-
-                <div class="nav-section">
-                    <h3 class="nav-title">Hệ thống</h3>
-                    <a href="<?= BASE_URL ?>/admin/settings" class="nav-link">
-                        <div class="nav-icon"><i class="fas fa-cog"></i></div>
-                        <span class="nav-text">Cài đặt</span>
-                    </a>
-                    <a href="<?= BASE_URL ?>/admin/logs" class="nav-link">
-                        <div class="nav-icon"><i class="fas fa-list"></i></div>
-                        <span class="nav-text">Nhật ký</span>
-                    </a>
-                </div>
-            </nav>
-        </div>
-    </aside>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        <header class="page-header">
-            <div class="page-img">
-                <img src="<?= BASE_URL ?>/public/uploads/images/logo-dark.png" alt="XeGoo Logo" class="logo-img">
-            </div>
-            <div class="page-title">
-                <h1>Thống Kê</h1>
-                <p>Báo cáo chi tiết hoạt động của hệ thống</p>
-            </div>
-        </header>
+    
 
         <!-- Add tabs navigation for 3 main sections -->
         <div class="stats-tabs">
@@ -131,7 +35,7 @@ if (session_status() === PHP_SESSION_NONE) {
         <div class="tab-content active" id="revenue-tab">
             <!-- Key Metrics -->
             <div class="stats-grid">
-                <div class="stat-card primary">
+                <div class="stat-cardd primary">
                     <div class="stat-icon">
                         <i class="fas fa-coins"></i>
                     </div>
@@ -141,7 +45,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     </div>
                 </div>
 
-                <div class="stat-card success">
+                <div class="stat-cardd success">
                     <div class="stat-icon">
                         <i class="fas fa-chart-bar"></i>
                     </div>
@@ -151,7 +55,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     </div>
                 </div>
 
-                <div class="stat-card info">
+                <div class="stat-cardd info">
                     <div class="stat-icon">
                         <i class="fas fa-route"></i>
                     </div>
@@ -161,7 +65,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     </div>
                 </div>
 
-                <div class="stat-card warning">
+                <div class="stat-cardd warning">
                     <div class="stat-icon">
                         <i class="fas fa-money-bill-wave"></i>
                     </div>
@@ -281,7 +185,7 @@ if (session_status() === PHP_SESSION_NONE) {
         <div class="tab-content" id="customer-tab">
             <!-- Key Metrics -->
             <div class="stats-grid">
-                <div class="stat-card success">
+                <div class="stat-cardd success">
                     <div class="stat-icon">
                         <i class="fas fa-user-plus"></i>
                     </div>
@@ -291,7 +195,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     </div>
                 </div>
 
-                <div class="stat-card info">
+                <div class="stat-cardd info">
                     <div class="stat-icon">
                         <i class="fas fa-sync-alt"></i>
                     </div>
@@ -301,7 +205,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     </div>
                 </div>
 
-                <div class="stat-card warning">
+                <div class="stat-cardd warning">
                     <div class="stat-icon">
                         <i class="fas fa-crown"></i>
                     </div>
@@ -311,7 +215,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     </div>
                 </div>
 
-                <div class="stat-card primary">
+                <div class="stat-cardd primary">
                     <div class="stat-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
@@ -428,7 +332,7 @@ if (session_status() === PHP_SESSION_NONE) {
         <div class="tab-content" id="trip-tab">
             <!-- Key Metrics -->
             <div class="stats-grid">
-                <div class="stat-card info">
+                <div class="stat-cardd info">
                     <div class="stat-icon">
                         <i class="fas fa-bus"></i>
                     </div>
@@ -438,7 +342,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     </div>
                 </div>
 
-                <div class="stat-card success">
+                <div class="stat-cardd success">
                     <div class="stat-icon">
                         <i class="fas fa-check-circle"></i>
                     </div>
@@ -448,7 +352,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     </div>
                 </div>
 
-                <div class="stat-card warning">
+                <div class="stat-cardd warning">
                     <div class="stat-icon">
                         <i class="fas fa-exclamation-triangle"></i>
                     </div>
@@ -458,7 +362,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     </div>
                 </div>
 
-                <div class="stat-card danger">
+                <div class="stat-cardd danger">
                     <div class="stat-icon">
                         <i class="fas fa-times-circle"></i>
                     </div>
