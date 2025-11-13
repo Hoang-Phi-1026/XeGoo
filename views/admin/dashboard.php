@@ -81,10 +81,6 @@ $totalSchedulesToday = isset($stats) ? $stats['schedules'] : 0;
                         <span class="nav-text">Quản lý user</span>
                         <span class="nav-badge"><?php echo $totalUsers; ?></span>
                     </a>
-                    <a href="<?= BASE_URL ?>/admin/reports" class="nav-link">
-                        <div class="nav-icon"><i class="fas fa-file-alt"></i></div>
-                        <span class="nav-text">Báo cáo</span>
-                    </a>
                 </div>
 
                 <div class="nav-section">

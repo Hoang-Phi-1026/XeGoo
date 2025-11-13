@@ -50,6 +50,9 @@ class StatisticsController {
             'driverStats' => $this->getDriverStats(),
             'vehicleStats' => $this->getVehicleStats(),
             'routeStats' => $this->getRouteStats(),
+            
+            // Bán vé trong hôm nay
+            'todayTicketSales' => $this->getTodayTicketSales(),
         ];
         
         require_once __DIR__ . '/../views/admin/statistics.php';
@@ -556,6 +559,200 @@ class StatisticsController {
             ]);
         } catch (Exception $e) {
             error_log("Error in getTripLoadFactorAjax: " . $e->getMessage());
+            echo json_encode([
+                'success' => false,
+                'message' => 'Lỗi khi tải dữ liệu'
+            ]);
+        }
+        exit();
+    }
+
+    // Bán vé trong hôm nay - Updated method to accept date parameter instead of just today
+    private function getTodayTicketSales($selectedDate = null) {
+        try {
+            // Use provided date or current date
+            $dateFilter = $selectedDate ? date('Y-m-d', strtotime($selectedDate)) : date('Y-m-d');
+            
+            $results = fetchAll(
+                "SELECT 
+                    nd.maNguoiDung,
+                    nd.tenNguoiDung as hoTen,
+                    nd.soDienThoai,
+                    nd.eMail,
+                    td.kyHieuTuyen,
+                    cx.ngayKhoiHanh,
+                    cx.thoiGianKhoiHanh as gioKhoiHanh,
+                    COUNT(cdv.maChiTiet) as soVe,
+                    SUM(cdv.giaVe) as tongTien,
+                    dv.phuongThucThanhToan,
+                    dv.trangThai
+                FROM datve dv
+                INNER JOIN nguoidung nd ON dv.maNguoiDung = nd.maNguoiDung
+                INNER JOIN chitiet_datve cdv ON dv.maDatVe = cdv.maDatVe
+                INNER JOIN chuyenxe cx ON cdv.maChuyenXe = cx.maChuyenXe
+                INNER JOIN lichtrinh lt ON cx.maLichTrinh = lt.maLichTrinh
+                INNER JOIN tuyenduong td ON lt.maTuyenDuong = td.maTuyenDuong
+                WHERE DATE(dv.ngayDat) = '" . $dateFilter . "'
+                    AND dv.trangThai IN ('DaThanhToan', 'DaHoanThanh')
+                    AND nd.maVaiTro = 4
+                GROUP BY dv.maDatVe, nd.maNguoiDung
+                ORDER BY dv.ngayDat DESC"
+            );
+            return $results ? $results : [];
+        } catch (Exception $e) {
+            error_log("Error getting ticket sales by date: " . $e->getMessage());
+            return [];
+        }
+    }
+
+    // API endpoint for fetching today's ticket sales via AJAX
+    public function getTodayTicketSalesAjax() {
+        $this->checkAdminAccess();
+        header('Content-Type: application/json');
+        
+        try {
+            $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+            $selectedDate = isset($_GET['date']) ? $_GET['date'] : date('Y-m-d');
+            $perPage = 15;
+            $offset = ($page - 1) * $perPage;
+            
+            // Validate and format date
+            $dateFilter = date('Y-m-d', strtotime($selectedDate));
+            
+            // Get total count
+            $countResult = fetch(
+                "SELECT COUNT(DISTINCT dv.maDatVe) as total 
+                FROM datve dv
+                INNER JOIN nguoidung nd ON dv.maNguoiDung = nd.maNguoiDung
+                INNER JOIN chitiet_datve cdv ON dv.maDatVe = cdv.maDatVe
+                WHERE DATE(dv.ngayDat) = '" . $dateFilter . "'
+                    AND dv.trangThai IN ('DaThanhToan', 'DaHoanThanh')
+                    AND nd.maVaiTro = 4"
+            );
+            $totalRows = $countResult ? $countResult['total'] : 0;
+            $totalPages = ceil($totalRows / $perPage);
+            
+            // Fetch paginated data
+            $results = fetchAll(
+                "SELECT 
+                    dv.maDatVe,
+                    nd.maNguoiDung,
+                    nd.tenNguoiDung as hoTen,
+                    nd.soDienThoai,
+                    nd.eMail,
+                    td.kyHieuTuyen,
+                    cx.ngayKhoiHanh,
+                    cx.thoiGianKhoiHanh as gioKhoiHanh,
+                    COUNT(cdv.maChiTiet) as soVe,
+                    SUM(cdv.giaVe) as tongTien,
+                    dv.phuongThucThanhToan,
+                    dv.trangThai,
+                    dv.ngayDat
+                FROM datve dv
+                INNER JOIN nguoidung nd ON dv.maNguoiDung = nd.maNguoiDung
+                INNER JOIN chitiet_datve cdv ON dv.maDatVe = cdv.maDatVe
+                INNER JOIN chuyenxe cx ON cdv.maChuyenXe = cx.maChuyenXe
+                INNER JOIN lichtrinh lt ON cx.maLichTrinh = lt.maLichTrinh
+                INNER JOIN tuyenduong td ON lt.maTuyenDuong = td.maTuyenDuong
+                WHERE DATE(dv.ngayDat) = '" . $dateFilter . "'
+                    AND dv.trangThai IN ('DaThanhToan', 'DaHoanThanh')
+                    AND nd.maVaiTro = 4
+                GROUP BY dv.maDatVe, nd.maNguoiDung
+                ORDER BY dv.ngayDat DESC
+                LIMIT " . $offset . ", " . $perPage
+            );
+            
+            echo json_encode([
+                'success' => true,
+                'data' => $results ? $results : [],
+                'pagination' => [
+                    'currentPage' => $page,
+                    'totalPages' => $totalPages,
+                    'total' => $totalRows,
+                    'perPage' => $perPage
+                ],
+                'selectedDate' => $dateFilter
+            ]);
+        } catch (Exception $e) {
+            error_log("Error in getTicketSalesByDateAjax: " . $e->getMessage());
+            echo json_encode([
+                'success' => false,
+                'message' => 'Lỗi khi tải dữ liệu'
+            ]);
+        }
+        exit();
+    }
+
+    // API endpoint for fetching ticket sales by date via AJAX
+    public function getTicketSalesByDateAjax() {
+        $this->checkAdminAccess();
+        header('Content-Type: application/json');
+        
+        try {
+            $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+            $selectedDate = isset($_GET['date']) ? $_GET['date'] : date('Y-m-d');
+            $perPage = 15;
+            $offset = ($page - 1) * $perPage;
+            
+            // Validate and format date
+            $dateFilter = date('Y-m-d', strtotime($selectedDate));
+            
+            // Get total count
+            $countResult = fetch(
+                "SELECT COUNT(DISTINCT dv.maDatVe) as total 
+                FROM datve dv
+                INNER JOIN nguoidung nd ON dv.maNguoiDung = nd.maNguoiDung
+                INNER JOIN chitiet_datve cdv ON dv.maDatVe = cdv.maDatVe
+                WHERE DATE(dv.ngayDat) = '" . $dateFilter . "'
+                    AND dv.trangThai IN ('DaThanhToan', 'DaHoanThanh')
+                    AND nd.maVaiTro = 4"
+            );
+            $totalRows = $countResult ? $countResult['total'] : 0;
+            $totalPages = ceil($totalRows / $perPage);
+            
+            // Fetch paginated data
+            $results = fetchAll(
+                "SELECT 
+                    dv.maDatVe,
+                    nd.maNguoiDung,
+                    nd.tenNguoiDung as hoTen,
+                    nd.soDienThoai,
+                    nd.eMail,
+                    td.kyHieuTuyen,
+                    cx.ngayKhoiHanh,
+                    cx.thoiGianKhoiHanh as gioKhoiHanh,
+                    COUNT(cdv.maChiTiet) as soVe,
+                    SUM(cdv.giaVe) as tongTien,
+                    dv.phuongThucThanhToan,
+                    dv.trangThai,
+                    dv.ngayDat
+                FROM datve dv
+                INNER JOIN nguoidung nd ON dv.maNguoiDung = nd.maNguoiDung
+                INNER JOIN chitiet_datve cdv ON dv.maDatVe = cdv.maDatVe
+                INNER JOIN chuyenxe cx ON cdv.maChuyenXe = cx.maChuyenXe
+                INNER JOIN lichtrinh lt ON cx.maLichTrinh = lt.maLichTrinh
+                INNER JOIN tuyenduong td ON lt.maTuyenDuong = td.maTuyenDuong
+                WHERE DATE(dv.ngayDat) = '" . $dateFilter . "'
+                    AND dv.trangThai IN ('DaThanhToan', 'DaHoanThanh')
+                    AND nd.maVaiTro = 4
+                GROUP BY dv.maDatVe, nd.maNguoiDung
+                ORDER BY dv.ngayDat DESC
+                LIMIT " . $offset . ", " . $perPage
+            );
+            
+            echo json_encode([
+                'success' => true,
+                'data' => $results ? $results : [],
+                'pagination' => [
+                    'currentPage' => $page,
+                    'totalPages' => $totalPages,
+                    'total' => $totalRows,
+                    'perPage' => $perPage
+                ],
+                'selectedDate' => $dateFilter
+            ]);
+        } catch (Exception $e) {
+            error_log("Error in getTicketSalesByDateAjax: " . $e->getMessage());
             echo json_encode([
                 'success' => false,
                 'message' => 'Lỗi khi tải dữ liệu'

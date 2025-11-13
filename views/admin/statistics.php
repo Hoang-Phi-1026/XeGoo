@@ -9,6 +9,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thống Kê - Admin XeGoo</title>
+    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/admin-dashboard.css">
     <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/admin-statistics.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -16,7 +17,24 @@ if (session_status() === PHP_SESSION_NONE) {
 <body>
 <?php require_once __DIR__ . '/../layouts/header.php'; ?>
 
-    
+<div class="admin-layout">
+    <button class="sidebar-toggle" id="sidebarToggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="page-header">
+            <div class="page-img">
+                <img src="<?= BASE_URL ?>/public/uploads/images/logo-dark.png" alt="XeGoo Logo" class="logo-img">
+            </div>
+            <div class="page-title">
+                <h1>Thống Kê</h1>
+                <p>Báo cáo chi tiết hoạt động của hệ thống</p>
+            </div>
+        </header>
 
         <!-- Add tabs navigation for 3 main sections -->
         <div class="stats-tabs">
@@ -35,7 +53,7 @@ if (session_status() === PHP_SESSION_NONE) {
         <div class="tab-content active" id="revenue-tab">
             <!-- Key Metrics -->
             <div class="stats-grid">
-                <div class="stat-cardd primary">
+                <div class="stat-card primary">
                     <div class="stat-icon">
                         <i class="fas fa-coins"></i>
                     </div>
@@ -45,7 +63,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     </div>
                 </div>
 
-                <div class="stat-cardd success">
+                <div class="stat-card success">
                     <div class="stat-icon">
                         <i class="fas fa-chart-bar"></i>
                     </div>
@@ -55,7 +73,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     </div>
                 </div>
 
-                <div class="stat-cardd info">
+                <div class="stat-card info">
                     <div class="stat-icon">
                         <i class="fas fa-route"></i>
                     </div>
@@ -65,7 +83,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     </div>
                 </div>
 
-                <div class="stat-cardd warning">
+                <div class="stat-card warning">
                     <div class="stat-icon">
                         <i class="fas fa-money-bill-wave"></i>
                     </div>
@@ -179,13 +197,56 @@ if (session_status() === PHP_SESSION_NONE) {
                     </div>
                 </div>
             </div>
+
+            <!-- Khách Hàng Mua Vé section moved here -->
+            <div class="section-card">
+                <div class="card-header">
+                    <h3>Khách Hàng Mua Vé</h3>
+                </div>
+                <div class="card-content">
+                    <!-- Date picker to filter ticket sales by date -->
+                    <div class="filter-section" style="margin-bottom: 20px; display: flex; gap: 10px; align-items: center;">
+                        <label for="ticketSalesDatePicker" style="font-weight: bold;">Chọn Ngày:</label>
+                        <input type="date" id="ticketSalesDatePicker" class="form-control" value="<?php echo date('Y-m-d'); ?>" style="max-width: 200px;">
+                        <button id="filterTicketSalesBtn" class="btn btn-primary" style="padding: 8px 16px; cursor: pointer;">
+                            <i class="fas fa-search"></i> Tìm Kiếm
+                        </button>
+                    </div>
+                    
+                    <div id="todayTicketSalesTableContainer">
+                        <table class="data-table" id="todayTicketSalesTable">
+                            <thead>
+                                <tr>
+                                    <th>Tên Khách Hàng</th>
+                                    <th>Số Điện Thoại</th>
+                                    <th>Email</th>
+                                    <th>Tuyến Xe</th>
+                                    <th>Ngày Khởi Hành</th>
+                                    <th>Số Vé</th>
+                                    <th>Tổng Tiền</th>
+                                    <th>Thanh Toán</th>
+                                    <th>Trạng Thái</th>
+                                </tr>
+                            </thead>
+                            <tbody id="todayTicketSalesTableBody">
+                                <!-- AJAX will populate this -->
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- Pagination controls -->
+                    <div class="pagination" id="todayTicketSalesPagination">
+                        <!-- AJAX will populate this -->
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- ==================== PHẦN II: THỐNG KÊ HÀNH KHÁCH ==================== -->
         <div class="tab-content" id="customer-tab">
             <!-- Key Metrics -->
             <div class="stats-grid">
-                <div class="stat-cardd success">
+                <div class="stat-card success">
                     <div class="stat-icon">
                         <i class="fas fa-user-plus"></i>
                     </div>
@@ -195,7 +256,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     </div>
                 </div>
 
-                <div class="stat-cardd info">
+                <div class="stat-card info">
                     <div class="stat-icon">
                         <i class="fas fa-sync-alt"></i>
                     </div>
@@ -205,7 +266,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     </div>
                 </div>
 
-                <div class="stat-cardd warning">
+                <div class="stat-card warning">
                     <div class="stat-icon">
                         <i class="fas fa-crown"></i>
                     </div>
@@ -215,7 +276,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     </div>
                 </div>
 
-                <div class="stat-cardd primary">
+                <div class="stat-card primary">
                     <div class="stat-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
@@ -332,7 +393,7 @@ if (session_status() === PHP_SESSION_NONE) {
         <div class="tab-content" id="trip-tab">
             <!-- Key Metrics -->
             <div class="stats-grid">
-                <div class="stat-cardd info">
+                <div class="stat-card info">
                     <div class="stat-icon">
                         <i class="fas fa-bus"></i>
                     </div>
@@ -342,7 +403,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     </div>
                 </div>
 
-                <div class="stat-cardd success">
+                <div class="stat-card success">
                     <div class="stat-icon">
                         <i class="fas fa-check-circle"></i>
                     </div>
@@ -352,7 +413,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     </div>
                 </div>
 
-                <div class="stat-cardd warning">
+                <div class="stat-card warning">
                     <div class="stat-icon">
                         <i class="fas fa-exclamation-triangle"></i>
                     </div>
@@ -362,7 +423,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     </div>
                 </div>
 
-                <div class="stat-cardd danger">
+                <div class="stat-card danger">
                     <div class="stat-icon">
                         <i class="fas fa-times-circle"></i>
                     </div>
@@ -408,7 +469,6 @@ if (session_status() === PHP_SESSION_NONE) {
                                 <tr>
                                     <th>Tuyến</th>
                                     <th>Ngày Khởi Hành</th>
-                                    <th>Giờ Khởi Hành</th>
                                     <th>Tổng Ghế</th>
                                     <th>Ghế Có Người</th>
                                     <th>Tỷ Lệ Lấp Đầy</th>
@@ -486,6 +546,37 @@ if (session_status() === PHP_SESSION_NONE) {
                 </div>
             </div>
         </div>
+
+        <!-- ==================== PHẦN IV: THỐNG KÊ BÁN VÉ TRONG NGÀY ==================== -->
+        <!-- This section has been moved to the Revenue Statistics tab -->
+
+        <!-- Add some basic styling for the date filter -->
+        <style>
+            .filter-section {
+                padding: 15px;
+                background-color: #f8f9fa;
+                border-radius: 5px;
+                border-left: 4px solid #f4481f;
+            }
+            
+            .filter-section input[type="date"] {
+                padding: 8px 12px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                font-size: 14px;
+            }
+            
+            .btn-primary {
+                background-color: #f4481f;
+                color: white;
+                border: none;
+                border-radius: 4px;
+            }
+            
+            .btn-primary:hover {
+                background-color: #d63612;
+            }
+        </style>
     </main>
 </div>
 
@@ -655,6 +746,15 @@ if (session_status() === PHP_SESSION_NONE) {
         }
         
         loadTripLoadFactorData(1);
+
+        // Load today's ticket sales data on page load
+        loadTodayTicketSalesData(1);
+
+        // Event listener for the date filter button
+        document.getElementById('filterTicketSalesBtn').addEventListener('click', function() {
+            const selectedDate = document.getElementById('ticketSalesDatePicker').value;
+            filterTicketSalesByDate(selectedDate);
+        });
     });
 </script>
 
@@ -688,7 +788,7 @@ if (session_status() === PHP_SESSION_NONE) {
         const paginationControls = document.getElementById('tripLoadPaginationControls');
         
         // Show loading state
-        tableBody.innerHTML = '<tr><td colspan="6" class="text-center"><i class="fas fa-spinner fa-spin"></i> Đang tải...</td></tr>';
+        tableBody.innerHTML = '<tr><td colspan="5" class="text-center"><i class="fas fa-spinner fa-spin"></i> Đang tải...</td></tr>';
         
         fetch('<?= BASE_URL ?>/admin/trip-load-factor-ajax?page=' + page)
             .then(response => response.json())
@@ -700,7 +800,6 @@ if (session_status() === PHP_SESSION_NONE) {
                             <tr>
                                 <td><span class="badge badge-primary">${escapeHtml(trip.kyHieuTuyen || '')}</span></td>
                                 <td>${trip.ngayKhoiHanh ? new Date(trip.ngayKhoiHanh).toLocaleDateString('vi-VN') : 'N/A'}</td>
-                                <td>${trip.gioKhoiHanh ? formatTime(trip.gioKhoiHanh) : 'N/A'}</td>
                                 <td class="text-center">${trip.soChoTong || 0}</td>
                                 <td class="text-center">${trip.soChoCoNguoi || 0}</td>
                                 <td>
@@ -712,7 +811,7 @@ if (session_status() === PHP_SESSION_NONE) {
                             </tr>
                         `).join('');
                     } else {
-                        tableBody.innerHTML = '<tr><td colspan="6" class="text-center text-muted">Không có dữ liệu</td></tr>';
+                        tableBody.innerHTML = '<tr><td colspan="5" class="text-center text-muted">Không có dữ liệu</td></tr>';
                     }
                     
                     // Populate pagination controls
@@ -721,12 +820,12 @@ if (session_status() === PHP_SESSION_NONE) {
                     // Scroll to top of table
                     document.getElementById('tripLoadFactorTable').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                 } else {
-                    tableBody.innerHTML = '<tr><td colspan="6" class="text-center text-danger">Lỗi: ' + (data.message || 'Không thể tải dữ liệu') + '</td></tr>';
+                    tableBody.innerHTML = '<tr><td colspan="5" class="text-center text-danger">Lỗi: ' + (data.message || 'Không thể tải dữ liệu') + '</td></tr>';
                 }
             })
             .catch(error => {
                 console.error('Error:', error);
-                tableBody.innerHTML = '<tr><td colspan="6" class="text-center text-danger">Lỗi kết nối: ' + error.message + '</td></tr>';
+                tableBody.innerHTML = '<tr><td colspan="5" class="text-center text-danger">Lỗi kết nối: ' + error.message + '</td></tr>';
             });
     }
     
@@ -783,6 +882,166 @@ if (session_status() === PHP_SESSION_NONE) {
         return timeString;
     }
     
+    function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+</script>
+<!-- AJAX functionality for Today's Ticket Sales pagination -->
+<script>
+    function loadTodayTicketSalesData(page) {
+        fetch('<?= BASE_URL ?>/admin/today-ticket-sales-ajax?page=' + page)
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    renderTodayTicketSalesTable(data.data);
+                    renderTodayTicketSalesPagination(data.pagination);
+                    // Scroll to table
+                    document.getElementById('todayTicketSalesTable').scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    console.error('Error:', data.message);
+                    document.getElementById('todayTicketSalesTableBody').innerHTML = '<tr><td colspan="9" style="text-align: center; color: red;">Lỗi khi tải dữ liệu: ' + (data.message || 'Lỗi không xác định') + '</td></tr>';
+                }
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
+                document.getElementById('todayTicketSalesTableBody').innerHTML = '<tr><td colspan="9" style="text-align: center; color: red;">Lỗi kết nối: ' + error.message + '</td></tr>';
+            });
+    }
+
+    // New function to filter ticket sales by date
+    function filterTicketSalesByDate(date) {
+        fetch(`<?= BASE_URL ?>/admin/today-ticket-sales-ajax?date=${date}&page=1`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    renderTodayTicketSalesTable(data.data);
+                    renderTodayTicketSalesPagination(data.pagination);
+                    document.getElementById('todayTicketSalesTable').scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    console.error('Error filtering:', data.message);
+                    document.getElementById('todayTicketSalesTableBody').innerHTML = `<tr><td colspan="9" style="text-align: center; color: red;">Lỗi khi lọc dữ liệu: ${data.message || 'Lỗi không xác định'}</td></tr>`;
+                }
+            })
+            .catch(error => {
+                console.error('Fetch error during filter:', error);
+                document.getElementById('todayTicketSalesTableBody').innerHTML = `<tr><td colspan="9" style="text-align: center; color: red;">Lỗi kết nối: ${error.message}</td></tr>`;
+            });
+    }
+
+
+    function renderTodayTicketSalesTable(data) {
+        const tableBody = document.getElementById('todayTicketSalesTableBody');
+        tableBody.innerHTML = '';
+
+        if (data.length === 0) {
+            tableBody.innerHTML = '<tr><td colspan="9" style="text-align: center;">Không có khách hàng mua vé vào ngày này</td></tr>';
+            return;
+        }
+
+        data.forEach(row => {
+            const tr = document.createElement('tr');
+            const ngayKhoiHanh = row.ngayKhoiHanh ? new Date(row.ngayKhoiHanh).toLocaleDateString('vi-VN') : 'N/A';
+            // const gioKhoiHanh = row.gioKhoiHanh ? row.gioKhoiHanh.substring(0, 5) : 'N/A'; // Format HH:MM // Commented out as per CHANGE
+
+            let statusBadge = '';
+            if (row.trangThai === 'DaThanhToan') {
+                statusBadge = '<span class="badge badge-success">Đã Thanh Toán</span>';
+            } else if (row.trangThai === 'DaHoanThanh') {
+                statusBadge = '<span class="badge badge-info">Hoàn Thành</span>';
+            } else if (row.trangThai === 'ChoThanhToan') {
+                statusBadge = '<span class="badge badge-warning">Chờ Thanh Toán</span>';
+            } else {
+                statusBadge = `<span class="badge badge-secondary">${row.trangThai}</span>`;
+            }
+            
+            let paymentMethod = row.phuongThucThanhToan;
+            if (paymentMethod === 'MoMo') {
+                paymentMethod = 'MoMo';
+            } else if (paymentMethod === 'VNPay') {
+                paymentMethod = 'VNPay';
+            } else {
+                paymentMethod = 'Khác';
+            }
+            
+            tr.innerHTML = `
+                <td><strong>${escapeHtml(row.hoTen || '')}</strong></td>
+                <td>${escapeHtml(row.soDienThoai || '')}</td>
+                <td>${escapeHtml(row.eMail || '')}</td>
+                <td>${escapeHtml(row.kyHieuTuyen || '')}</td>
+                <td>${ngayKhoiHanh}</td>
+                <td><strong>${row.soVe || 0}</strong></td>
+                <td><strong class="text-success">${new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(row.tongTien || 0)}</strong></td>
+                <td>${paymentMethod}</td>
+                <td>${statusBadge}</td>
+            `;
+            tableBody.appendChild(tr);
+        });
+    }
+
+    function renderTodayTicketSalesPagination(pagination) {
+        const paginationDiv = document.getElementById('todayTicketSalesPagination');
+        paginationDiv.innerHTML = '';
+
+        if (pagination.totalPages <= 1) return;
+
+        const currentPage = pagination.currentPage;
+        const totalPages = pagination.totalPages;
+        const totalItems = pagination.total;
+
+        // First page button
+        if (currentPage > 1) {
+            const firstBtn = document.createElement('button');
+            firstBtn.textContent = 'Đầu';
+            firstBtn.className = 'pagination-btn';
+            firstBtn.onclick = () => loadTodayTicketSalesData(1);
+            paginationDiv.appendChild(firstBtn);
+
+            // Previous page button
+            const prevBtn = document.createElement('button');
+            prevBtn.textContent = 'Trước';
+            prevBtn.className = 'pagination-btn';
+            prevBtn.onclick = () => loadTodayTicketSalesData(currentPage - 1);
+            paginationDiv.appendChild(prevBtn);
+        }
+
+        // Page numbers
+        const startPage = Math.max(1, currentPage - 2);
+        const endPage = Math.min(totalPages, currentPage + 2);
+
+        for (let i = startPage; i <= endPage; i++) {
+            const pageBtn = document.createElement('button');
+            pageBtn.textContent = i;
+            pageBtn.className = i === currentPage ? 'pagination-btn active' : 'pagination-btn';
+            pageBtn.onclick = () => loadTodayTicketSalesData(i);
+            paginationDiv.appendChild(pageBtn);
+        }
+
+        // Next page button
+        if (currentPage < totalPages) {
+            const nextBtn = document.createElement('button');
+            nextBtn.textContent = 'Sau';
+            nextBtn.className = 'pagination-btn';
+            nextBtn.onclick = () => loadTodayTicketSalesData(currentPage + 1);
+            paginationDiv.appendChild(nextBtn);
+
+            // Last page button
+            const lastBtn = document.createElement('button');
+            lastBtn.textContent = 'Cuối';
+            lastBtn.className = 'pagination-btn';
+            lastBtn.onclick = () => loadTodayTicketSalesData(totalPages);
+            paginationDiv.appendChild(lastBtn);
+        }
+
+        // Info text
+        const infoDiv = document.createElement('div');
+        infoDiv.className = 'pagination-info';
+        infoDiv.textContent = `Trang ${currentPage} / ${totalPages} (Tổng: ${totalItems} đơn hàng)`;
+        paginationDiv.appendChild(infoDiv);
+    }
+    
+    // Helper function for HTML escaping
     function escapeHtml(text) {
         const div = document.createElement('div');
         div.textContent = text;

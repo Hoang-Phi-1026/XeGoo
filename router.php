@@ -192,6 +192,13 @@ $routes = [
     
     // AJAX route for trip load factor pagination
     '/admin/trip-load-factor-ajax' => ['controller' => 'StatisticsController', 'action' => 'getTripLoadFactorAjax'],
+    
+    '/admin/today-ticket-sales-ajax' => ['controller' => 'StatisticsController', 'action' => 'getTodayTicketSalesAjax'],
+    
+    // New route for fetching ticket sales by date
+    '/admin/ticket-sales-by-date-ajax' => ['controller' => 'StatisticsController', 'action' => 'getTicketSalesByDateAjax'],
+    
+    '/admin/revenue-by-route-ajax' => ['controller' => 'StatisticsController', 'action' => 'getRevenueByRouteAjax'],
 
     // Post routes
     '/post' => ['controller' => 'PostController', 'action' => 'index'],
