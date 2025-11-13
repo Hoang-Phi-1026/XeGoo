@@ -109,11 +109,7 @@ class AIChat {
 
     private function checkDateHasTrips($date) {
         try {
-            $result = $this->fetchAll("
-                SELECT COUNT(*) as count
-                FROM chuyenxe
-                WHERE DATE(ngayKhoiHanh) = ? AND trangThai IN ('Sẵn sàng', 'Khởi hành')
-            ", [$date]);
+            $result = $this->fetchAll("SELECT COUNT(*) as count FROM chuyenxe WHERE DATE(ngayKhoiHanh) = ? AND trangThai IN ('Sẵn sàng', 'Khởi hành')", [$date]);
             return isset($result[0]['count']) && $result[0]['count'] > 0;
         } catch (Exception $e) {
             return false;
@@ -122,7 +118,7 @@ class AIChat {
 
     private function formatTripsList($trips, $grouped = true) {
         if (empty($trips)) {
-            return "⚠️ Hiện chưa có chuyến xe hoạt động.\nVui lòng chọn ngày khác hoặc liên hệ:\n📞 Hotline: 0800 1234 567\n💬 Chat: xegoo.vn/support";
+            return "Hiện chưa có chuyến xe hoạt động.\n\nVui lòng chọn ngày khác hoặc liên hệ:\nHotline: 0800 1234 567\nChat hỗ trợ: xegoo.vn/support";
         }
 
         $output = "";
@@ -137,9 +133,9 @@ class AIChat {
             }
 
             foreach ($byRoute as $route => $routeTrips) {
-                $output .= "🚌 TUYẾN: " . $route . "\n";
-                $output .= "📍 Từ: " . $routeTrips[0]['diemDi'] . " → Đến: " . $routeTrips[0]['diemDen'] . "\n";
-                $output .= "📊 Tổng chuyến: " . count($routeTrips) . " chuyến\n\n";
+                $output .= "### TUYẾN: " . $route . "\n";
+                $output .= "Từ: " . $routeTrips[0]['diemDi'] . " → Đến: " . $routeTrips[0]['diemDen'] . "\n";
+                $output .= "Tổng chuyến: " . count($routeTrips) . " chuyến\n\n";
                 
                 foreach ($routeTrips as $idx => $trip) {
                     $soChoTrong = $trip['tongCho'] - $trip['soChoDaDat'];
@@ -148,13 +144,13 @@ class AIChat {
                     
                     $output .= "━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
                     $output .= "Chuyến #" . ($idx + 1) . ":\n";
-                    $output .= "⏰ Giờ khởi hành: " . date('H:i', strtotime($trip['thoiGianKhoiHanh'])) . "\n";
-                    $output .= "🚗 Loại xe: " . $trip['tenLoaiPhuongTien'] . "\n";
-                    $output .= "🔢 Biển số xe: " . $trip['bienSo'] . "\n";
-                    $output .= "💰 Giá vé: " . $giaVe . "\n";
-                    $output .= "📊 Chỗ trống: " . $soChoTrong . "/" . $trip['tongCho'] . " (" . $percent . "% đã đặt)\n";
-                    $output .= "✅ Trạng thái: " . $trip['trangThai'] . "\n";
-                    $output .= "🎫 [Đặt vé ngay](xegoo.vn/booking)\n";
+                    $output .= "Giờ khởi hành: " . date('H:i', strtotime($trip['thoiGianKhoiHanh'])) . "\n";
+                    $output .= "Loại xe: " . $trip['tenLoaiPhuongTien'] . "\n";
+                    $output .= "Biển số xe: " . $trip['bienSo'] . "\n";
+                    $output .= "Giá vé: " . $giaVe . "\n";
+                    $output .= "Chỗ trống: " . $soChoTrong . "/" . $trip['tongCho'] . " (" . $percent . "% đã đặt)\n";
+                    $output .= "Trạng thái: " . $trip['trangThai'] . "\n";
+                    $output .= "[Đặt vé ngay](xegoo.vn/booking)\n";
                 }
                 $output .= "\n";
             }
@@ -164,9 +160,9 @@ class AIChat {
                 $percent = $trip['tongCho'] > 0 ? round(($trip['soChoDaDat'] / $trip['tongCho']) * 100, 1) : 0;
                 $giaVe = $trip['giaVe'] ? number_format($trip['giaVe'], 0, ',', '.') . "đ" : "Liên hệ";
                 
-                $output .= "⏰ " . date('H:i', strtotime($trip['thoiGianKhoiHanh'])) . " | ";
-                $output .= "💰 " . $giaVe . " | ";
-                $output .= "📊 Chỗ: " . $soChoTrong . "/" . $trip['tongCho'] . "\n";
+                $output .= date('H:i', strtotime($trip['thoiGianKhoiHanh'])) . " | ";
+                $output .= $giaVe . " | ";
+                $output .= "Chỗ: " . $soChoTrong . "/" . $trip['tongCho'] . "\n";
             }
         }
         
@@ -192,13 +188,32 @@ class AIChat {
         
         $context = "Bạn là trợ lý AI của nhà xe XeGoo - dịch vụ vận tải hành khách chuyên nghiệp tại Việt Nam.\n\n";
         
-        $context .= "### HỨA HẸN CHÍNH XÁC ===\n";
-        $context .= "- Trả lời CHÍNH XÁC 100% dựa trên dữ liệu thực tế\n";
-        $context .= "- Cung cấp đầy đủ: Giờ khởi hành, loại xe, biển số, giá vé, số chỗ còn\n";
-        $context .= "- Nếu không có dữ liệu cho ngày được hỏi, SAY RÕ thay vì phát sinh thông tin\n";
-        $context .= "- Luôn kèm theo thông tin liên lạc\n\n";
+        $context .= "QUYẾT TẮC TRẢ LỜI:\n";
+        $context .= "1. CHÍNH XÁC 100%\n";
+        $context .= "   - Chỉ dùng dữ liệu được cung cấp\n";
+        $context .= "   - Không phát sinh thông tin\n";
+        $context .= "   - Nếu không có dữ liệu → SAY RÕ RÀNG\n\n";
+        $context .= "2. ĐỊNH DẠNG TRẦN ĐẸP\n";
+        $context .= "   - MỖI THÔNG TIN 1 DÒNG RIÊNG\n";
+        $context .= "   - Sử dụng heading rõ ràng\n";
+        $context .= "   - Không nén nhiều info trên 1 dòng\n";
+        $context .= "   - Sử dụng ━━━━━ để tách biệt\n\n";
+        $context .= "3. CẤU TRÚC TRẢ LỜI\n";
+        $context .= "   ### Tiêu đề chính\n";
+        $context .= "   - Thông tin 1\n";
+        $context .= "   - Thông tin 2\n";
+        $context .= "   - Liên kết giúp đỡ\n\n";
+        $context .= "4. LIÊN KẾT VÀ HƯỚNG DẪN\n";
+        $context .= "   [Đặt vé ngay](xegoo.vn/booking)\n";
+        $context .= "   [Tra cứu vé](xegoo.vn/ticket-lookup)\n";
+        $context .= "   [Chat với hỗ trợ](xegoo.vn/support)\n";
+        $context .= "   Hotline: 0800 1234 567\n\n";
+        $context .= "5. HIỂU NGỮ CẢNH\n";
+        $context .= "   - Nếu user hỏi 'giá vé của những chuyến đó'\n";
+        $context .= "   - Hiểu = giá của chuyến xe từ câu hỏi trước\n";
+        $context .= "   - KHÔNG hỏi lại ngày/tuyến mà dùng kết quả trước\n\n";
 
-        $context .= "### PHƯƠNG THỨC THANH TOÁN ===\n";
+        $context .= "PHƯƠNG THỨC THANH TOÁN:\n";
         $context .= "XeGoo hỗ trợ 2 phương thức thanh toán điện tử:\n";
         $context .= "- MoMo - Ví điện tử di động\n";
         $context .= "  • Tải ứng dụng MoMo\n";
@@ -211,7 +226,7 @@ class AIChat {
         $context .= "  • Ví điện tử VNPay\n";
         $context .= "  • Bảo mật theo tiêu chuẩn quốc tế\n\n";
 
-        $context .= "### HƯỚNG DẪN MUA VÉ ===\n";
+        $context .= "HƯỚNG DẪN MUA VÉ:\n";
         $context .= "Truy cập: xegoo.vn/booking-guide để xem hướng dẫn chi tiết:\n";
         $context .= "- Quy trình đặt vé:\n";
         $context .= "  1. Chọn điểm đi & điểm đến\n";
@@ -223,7 +238,7 @@ class AIChat {
         $context .= "  7. Thanh toán & nhận mã QR vé\n";
         $context .= "  8. Mã QR sẽ được gửi qua email\n\n";
 
-        $context .= "### DỊCH VỤ THUÊ XE - ĐẶT XE CHO GIA ĐÌNH ===\n";
+        $context .= "DỊCH VỤ THUÊ XE - ĐẶT XE CHO GIA ĐÌNH:\n";
         $context .= "Truy cập: xegoo.vn/group-rental để xem thông tin chi tiết\n";
         $context .= "- XeGoo cung cấp dịch vụ thuê xe toàn bộ cho gia đình, nhóm du lịch:\n";
         $context .= "  • Giá nhóm ưu tiên (từ 10+ người trở lên)\n";
@@ -233,7 +248,7 @@ class AIChat {
         $context .= "  • Hỗ trợ thêm dịch vụ: hướng dẫn viên, ăn uống\n";
         $context .= "  • Liên hệ ngay: Hotline 0800 1234 567 hoặc email support@xegoo.vn\n\n";
 
-        $context .= "### TRA CỨU VÉ - TRA CỨU NHANH ===\n";
+        $context .= "TRA CỨU VÉ - TRA CỨU NHANH:\n";
         $context .= "Truy cập: xegoo.vn/ticket-lookup để tra cứu vé của bạn\n";
         $context .= "- Chỉ cần nhập:\n";
         $context .= "  • Mã vé (hoặc mã QR)\n";
@@ -244,7 +259,7 @@ class AIChat {
         $context .= "  • Trạng thái vé (hoạt động, đã sử dụng, hủy)\n";
         $context .= "  • Thông tin thanh toán\n\n";
 
-        $context .= "### CHƯƠNG TRÌNH KHUYẾN MÃI ===\n";
+        $context .= "CHƯƠNG TRÌNH KHUYẾN MÃI:\n";
         $context .= "- XeGoo có chương trình khuyến mãi liên tục:\n";
         $context .= "  • Mã khuyến mãi được dành riêng cho bạn\n";
         $context .= "  • Nhận ưu đãi khi mua vé thường xuyên\n";
@@ -257,7 +272,7 @@ class AIChat {
         $context .= "  4. Tiến hành thanh toán\n";
         $context .= "- Lưu ý: Mỗi mã chỉ áp dụng 1 lần, không kết hợp với ưu đãi khác\n\n";
 
-        $context .= "### CHÍNH SÁCH HỦY VÉ ===\n";
+        $context .= "CHÍNH SÁCH HỦY VÉ:\n";
         $context .= "- Điều kiện hủy vé:\n";
         $context .= "  • Chỉ có thể hủy vé TRƯỚC 36 GIỜ so với giờ khởi hành\n";
         $context .= "  • Ví dụ: Chuyến xe 10h ngày 1/1/2025 → Hủy tối đa lúc 10h ngày 30/12/2024\n";
@@ -275,7 +290,7 @@ class AIChat {
         $context .= "  4. Xác nhận hủy\n";
         $context .= "  5. Tiền hoàn về điểm tích lũy trong 24h\n\n";
 
-        $context .= "### HỆ THỐNG ĐIỂM TÍCH LŨY ===\n";
+        $context .= "HỆ THỐNG ĐIỂM TÍCH LŨY:\n";
         $context .= "- Tích điểm khi mua vé:\n";
         $context .= "  • Mỗi lần mua vé = tự động tích lũy điểm\n";
         $context .= "  • Công thức: Điểm tích lũy = (Giá vé × 0.03%) ÷ 100\n";
@@ -290,7 +305,7 @@ class AIChat {
         $context .= "  2. Vào mục 'Tài khoản của tôi' → 'Điểm tích lũy'\n";
         $context .= "  3. Xem số điểm hiện tại & lịch sử tích lũy\n\n";
 
-        $context .= "### NHẬN VÉ ĐIỆN TỬ ===\n";
+        $context .= "NHẬN VÉ ĐIỆN TỬ:\n";
         $context .= "- Nhận vé trực tiếp sau khi đặt:\n";
         $context .= "  • Sau khi thanh toán thành công → Mã QR vé được gửi ngay\n";
         $context .= "  • Kiểm tra Email (hoặc Spam nếu không thấy)\n";
@@ -300,7 +315,7 @@ class AIChat {
         $context .= "  • Xem tất cả vé đã đặt (sắp tới, đã sử dụng, hủy)\n";
         $context .= "  • Mã QR vé luôn có sẵn để tải xuống hoặc in\n\n";
 
-        $context .= "### XEM VÉ ĐÃ ĐẶT - LỊCH SỬ ===\n";
+        $context .= "XEM VÉ ĐÃ ĐẶT - LỊCH SỬ:\n";
         $context .= "- Truy cập lịch sử vé:\n";
         $context .= "  • Trang: xegoo.vn/my-tickets/history\n";
         $context .= "  • Xem toàn bộ vé đã từng đặt (hoạt động, đã sử dụng, hủy)\n";
@@ -308,7 +323,7 @@ class AIChat {
         $context .= "  • Tải lại mã QR nếu bị mất\n";
         $context .= "  • Kiểm tra chi tiết chuyến xe & tài chính\n\n";
 
-        $context .= "### THỦ TỤC CHECK-IN & LÊN XE ===\n";
+        $context .= "THỦ TỤC CHECK-IN & LÊN XE:\n";
         $context .= "- Quy trình kiểm tra & lên xe:\n";
         $context .= "  1. Đến đúng giờ khởi hành (Có mặt ít nhất 15 phút trước)\n";
         $context .= "  2. Kiểm tra - Tìm chuyến xe của bạn theo:\n";
@@ -327,21 +342,21 @@ class AIChat {
         $context .= "  • Hành lý cá nhân tự chịu trách nhiệm bảo quản\n";
         $context .= "  • Tuân thủ quy định an toàn & văn minh trên xe\n\n";
 
-        $context .= "### LIÊN HỆ HỖ TRỢ & XỬ LÝ SỰ CỐ ===\n";
+        $context .= "LIÊN HỆ HỖ TRỢ & XỬ LÝ SỰ CỐ:\n";
         $context .= "- Khi cần hỗ trợ đặc biệt:\n";
         $context .= "  • Liên hệ trực tiếp:\n";
-        $context .= "    • Gọi Hotline: 0800 1234 567\n";
-        $context .= "    • Chat hỗ trợ: xegoo.vn/support\n";
+        $context .= "    - Gọi Hotline: 0800 1234 567\n";
+        $context .= "    - Chat hỗ trợ: xegoo.vn/support\n";
         $context .= "  • Thông báo sự cố:\n";
-        $context .= "    • Mã vé của bạn\n";
-        $context .= "    • Lý do không thể lên xe\n";
-        $context .= "    • Nhu cầu của bạn (hoàn vé, đặt lại, v.v)\n";
+        $context .= "    - Mã vé của bạn\n";
+        $context .= "    - Lý do không thể lên xe\n";
+        $context .= "    - Nhu cầu của bạn (hoàn vé, đặt lại, v.v)\n";
         $context .= "- Nhân viên hỗ trợ sẽ giải quyết:\n";
         $context .= "  • Hỗ trợ đặt lại chuyến khác\n";
         $context .= "  • Hoàn tiền hoặc trừ lệ phí\n";
         $context .= "  • Ghi chú sự cố vào tài khoản\n\n";
 
-        $context .= "### TRƯỜNG HỢP KHÔNG THỂ LÊN XE ===\n";
+        $context .= "TRƯỜNG HỢP KHÔNG THỂ LÊN XE:\n";
         $context .= "- Nếu bạn không thể lên xe (bị ốm, sự cố, v.v):\n";
         $context .= "  1. Liên hệ ngay trước khi xe khởi hành:\n";
         $context .= "    • Gọi Hotline: 0800 1234 567\n";
@@ -355,7 +370,7 @@ class AIChat {
         $context .= "    • Hoàn tiền hoặc trừ lệ phí\n";
         $context .= "    • Ghi chú sự cố vào tài khoản\n\n";
 
-        $context .= "\n### DANH SÁCH LOẠI PHƯƠNG TIỆN ===\n";
+        $context .= "DANH SÁCH LOẠI PHƯƠNG TIỆN:\n";
         try {
             $vehicleTypes = $this->fetchAll("
                 SELECT 
@@ -378,7 +393,7 @@ class AIChat {
             error_log("[AIChat] Error vehicle types: " . $e->getMessage());
         }
 
-        $context .= "\n### DANH SÁCH TUYẾN ĐƯỜNG ===\n";
+        $context .= "\nDANH SÁCH TUYẾN ĐƯỜNG:\n";
         try {
             $routes = $this->fetchAll("
                 SELECT maTuyenDuong, kyHieuTuyen, diemDi, diemDen, khoangCach, thoiGianDiChuyen
@@ -387,13 +402,13 @@ class AIChat {
                 ORDER BY kyHieuTuyen
             ");
             foreach ($routes as $r) {
-                $context .= "- 📍 {$r['kyHieuTuyen']}: {$r['diemDi']} → {$r['diemDen']} ({$r['khoangCach']} km, {$r['thoiGianDiChuyen']})\n";
+                $context .= "- {$r['kyHieuTuyen']}: {$r['diemDi']} → {$r['diemDen']} ({$r['khoangCach']} km, {$r['thoiGianDiChuyen']})\n";
             }
         } catch (Exception $e) {
             error_log("[AIChat] Error routes: " . $e->getMessage());
         }
 
-        $context .= "\n### DANH SÁCH CHUYẾN XE NGÀY " . date('d/m/Y', strtotime($requestedDate)) . " ===\n";
+        $context .= "\nDANH SÁCH CHUYẾN XE NGÀY " . date('d/m/Y', strtotime($requestedDate)) . ":\n";
         try {
             $routeCondition = $requestedRoute ? " AND t.kyHieuTuyen = ? " : "";
             $params = $requestedRoute ? [$requestedDate, $requestedRoute] : [$requestedDate];
@@ -435,24 +450,24 @@ class AIChat {
             if (!empty($trips)) {
                 $context .= $this->formatTripsList($trips, true);
             } else {
-                $context .= "⚠️ Hiện chưa có chuyến xe hoạt động cho ngày " . date('d/m/Y', strtotime($requestedDate));
+                $context .= "Hiện chưa có chuyến xe hoạt động cho ngày " . date('d/m/Y', strtotime($requestedDate));
                 if ($requestedRoute) {
                     $context .= " trên tuyến $requestedRoute";
                 }
                 $context .= ".\n\nVui lòng chọn ngày khác hoặc liên hệ:\n";
-                $context .= "📞 Hotline: 0800 1234 567\n";
-                $context .= "💬 Chat: xegoo.vn/support\n";
+                $context .= "Hotline: 0800 1234 567\n";
+                $context .= "Chat hỗ trợ: xegoo.vn/support\n";
             }
         } catch (Exception $e) {
             error_log("[AIChat] Error trips query: " . $e->getMessage());
-            $context .= "⚠️ Lỗi khi truy vấn dữ liệu chuyến xe.\n";
+            $context .= "Lỗi khi truy vấn dữ liệu chuyến xe.\n";
         }
 
         if (preg_match('/(giá|vé|bao nhiêu|chi phí|tiền)/', $normalized_message)) {
-            $context .= "\n### BẢNG GIÁ VÉ ===\n";
+            $context .= "\nBẢNG GIÁ VÉ:\n";
             try {
                 if ($useLastResults && !empty($this->lastSearchResults['trips'])) {
-                    $context .= "📍 Giá vé cho các chuyến trên:\n\n";
+                    $context .= "Giá vé cho các chuyến trên:\n\n";
                     $prices = $this->lastSearchResults['trips'];
                 } else {
                     $prices = $this->fetchAll("
@@ -469,17 +484,17 @@ class AIChat {
                         WHERE g.trangThai = 'Hoạt động'
                         ORDER BY t.kyHieuTuyen, g.giaVe
                     ");
-                    $context .= "📍 Bảng giá vé XeGoo:\n\n";
+                    $context .= "Bảng giá vé XeGoo:\n\n";
                 }
                 
                 if (!empty($prices)) {
                     foreach ($prices as $p) {
                         $giaVe = $p['giaVe'] ? number_format($p['giaVe'], 0, ',', '.') . "đ" : "Liên hệ";
-                        $context .= "🚌 Tuyến: " . (isset($p['kyHieuTuyen']) ? $p['kyHieuTuyen'] : 'N/A') . "\n";
-                        $context .= "📍 Từ: " . (isset($p['diemDi']) ? $p['diemDi'] : '') . " → Đến: " . (isset($p['diemDen']) ? $p['diemDen'] : '') . "\n";
-                        $context .= "🚗 Loại xe: " . (isset($p['tenLoaiPhuongTien']) ? $p['tenLoaiPhuongTien'] : '') . "\n";
-                        $context .= "💺 Loại chỗ: " . (isset($p['loaiChoNgoi']) ? $p['loaiChoNgoi'] : '') . "\n";
-                        $context .= "💰 Giá: " . $giaVe . "\n";
+                        $context .= "Tuyến: " . (isset($p['kyHieuTuyen']) ? $p['kyHieuTuyen'] : 'N/A') . "\n";
+                        $context .= "Từ: " . (isset($p['diemDi']) ? $p['diemDi'] : '') . " → Đến: " . (isset($p['diemDen']) ? $p['diemDen'] : '') . "\n";
+                        $context .= "Loại xe: " . (isset($p['tenLoaiPhuongTien']) ? $p['tenLoaiPhuongTien'] : '') . "\n";
+                        $context .= "Loại chỗ: " . (isset($p['loaiChoNgoi']) ? $p['loaiChoNgoi'] : '') . "\n";
+                        $context .= "Giá: " . $giaVe . "\n";
                         $context .= "━━━━━━━━━━━━━━━━━━━━━━\n\n";
                     }
                 }
@@ -488,12 +503,12 @@ class AIChat {
             }
         }
 
-        $context .= "\n### LIÊN HỆ HỖ TRỢ ===\n";
-        $context .= "📞 Hotline: 0800 1234 567 (24/7)\n";
-        $context .= "📧 Email: support@xegoo.vn\n";
-        $context .= "💬 Chat hỗ trợ: xegoo.vn/support\n";
-        $context .= "🎫 Đặt vé: xegoo.vn/booking\n";
-        $context .= "📱 Tra cứu vé: xegoo.vn/ticket-lookup\n";
+        $context .= "\nLIÊN HỆ HỖ TRỢ:\n";
+        $context .= "Hotline: 0800 1234 567 (24/7)\n";
+        $context .= "Email: support@xegoo.vn\n";
+        $context .= "Chat hỗ trợ: xegoo.vn/support\n";
+        $context .= "Đặt vé: xegoo.vn/booking\n";
+        $context .= "Tra cứu vé: xegoo.vn/ticket-lookup\n";
         
         return $context;
     }
@@ -552,29 +567,27 @@ class AIChat {
         $context = $this->getBusinessContext($msg);
         
         $systemPrompt = "Bạn là trợ lý AI của XeGoo - nhà xe uy tín hàng đầu Việt Nam.\n\n"
-            . "📋 QUYẾT TẮC TRẢ LỜI:\n"
-            . "1️⃣ CHÍNH XÁC 100%\n"
+            . "QUYẾT TẮC TRẢ LỜI:\n"
+            . "1. CHÍNH XÁC 100%\n"
             . "   - Chỉ dùng dữ liệu được cung cấp\n"
             . "   - Không phát sinh thông tin\n"
             . "   - Nếu không có dữ liệu → SAY RÕ RÀNG\n\n"
-            . "2️⃣ ĐỊNH DẠNG TRẬN ĐẸP\n"
+            . "2. ĐỊNH DẠNG TRẦN ĐẸP\n"
             . "   - MỖI THÔNG TIN 1 DÒNG RIÊNG\n"
-            . "   - Sử dụng emoji & heading rõ ràng\n"
+            . "   - Sử dụng heading rõ ràng\n"
             . "   - Không nén nhiều info trên 1 dòng\n"
             . "   - Sử dụng ━━━━━ để tách biệt\n\n"
-            . "3️⃣ CẤU TRÚC TRẢ LỜI\n"
+            . "3. CẤU TRÚC TRẢ LỜI\n"
             . "   ### Tiêu đề chính\n"
-            . "   📍 [Thông tin]\n"
-            . "   ⏰ [Giờ]\n"
-            . "   💰 [Giá]\n"
-            . "   📊 [Chỗ còn]\n"
-            . "   [Liên kết giúp đỡ]\n\n"
-            . "4️⃣ LIÊN KẾT VÀ HƯỚNG DẪN\n"
-            . "   🎫 [Đặt vé ngay](xegoo.vn/booking)\n"
-            . "   📱 [Tra cứu vé](xegoo.vn/ticket-lookup)\n"
-            . "   💬 [Chat với hỗ trợ](xegoo.vn/support)\n"
-            . "   📞 Hotline: 0800 1234 567\n\n"
-            . "5️⃣ HIỂU NGỮ CẢNH\n"
+            . "   - Thông tin 1\n"
+            . "   - Thông tin 2\n"
+            . "   - Liên kết giúp đỡ\n\n"
+            . "4. LIÊN KẾT VÀ HƯỚNG DẪN\n"
+            . "   [Đặt vé ngay](xegoo.vn/booking)\n"
+            . "   [Tra cứu vé](xegoo.vn/ticket-lookup)\n"
+            . "   [Chat với hỗ trợ](xegoo.vn/support)\n"
+            . "   Hotline: 0800 1234 567\n\n"
+            . "5. HIỂU NGỮ CẢNH\n"
             . "   - Nếu user hỏi 'giá vé của những chuyến đó'\n"
             . "   - Hiểu = giá của chuyến xe từ câu hỏi trước\n"
             . "   - KHÔNG hỏi lại ngày/tuyến mà dùng kết quả trước\n";
