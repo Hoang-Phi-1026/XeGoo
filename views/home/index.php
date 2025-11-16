@@ -236,7 +236,6 @@ require_once __DIR__ . '/../layouts/header.php';
     </div>
 </section>
 
-
 <section class="testimonials-section">
     <div class="container">
         <div class="section-header text-center">
@@ -312,6 +311,15 @@ require_once __DIR__ . '/../layouts/header.php';
                     </div>
                 </div>
             </div>
+        </div>
+        
+        <!-- Added button to view community forum -->
+        <div class="testimonials-cta">
+            <p class="testimonials-cta-text">Bạn có câu hỏi hoặc muốn chia sẻ trải nghiệm của mình?</p>
+            <a href="<?php echo BASE_URL; ?>/post" class="testimonials-cta-btn">
+                <i class="fas fa-comments"></i>
+                Tham gia diễn đàn cộng đồng
+            </a>
         </div>
     </div>
 </section>

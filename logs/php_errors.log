@@ -1,0 +1,139 @@
+[16-Nov-2025 19:21:55 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:21:55 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[16-Nov-2025 19:21:55 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::logout
+[16-Nov-2025 19:21:55 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:21:55 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[16-Nov-2025 19:21:55 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[16-Nov-2025 19:21:55 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:21:55 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:21:55 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[16-Nov-2025 19:21:55 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[16-Nov-2025 19:21:55 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:22:02 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:22:02 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[16-Nov-2025 19:22:02 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
+[16-Nov-2025 19:22:03 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:22:03 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:22:03 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:22:03 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[16-Nov-2025 19:22:03 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[16-Nov-2025 19:22:03 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:22:03 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:22:03 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[16-Nov-2025 19:22:03 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[16-Nov-2025 19:22:03 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:34:08 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:34:08 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:34:08 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:34:08 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[16-Nov-2025 19:34:08 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[16-Nov-2025 19:34:08 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:37:36 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:37:36 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:37:36 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:37:36 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[16-Nov-2025 19:37:36 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[16-Nov-2025 19:37:36 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:37:36 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:37:36 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[16-Nov-2025 19:37:36 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[16-Nov-2025 19:37:36 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:46:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:46:18 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:46:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:46:18 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[16-Nov-2025 19:46:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[16-Nov-2025 19:46:18 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:46:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:46:18 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[16-Nov-2025 19:46:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[16-Nov-2025 19:46:18 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:46:28 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:46:28 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:46:28 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:46:28 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[16-Nov-2025 19:46:28 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[16-Nov-2025 19:46:28 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:46:28 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:46:28 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[16-Nov-2025 19:46:28 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[16-Nov-2025 19:46:28 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:46:39 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:46:39 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:46:39 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:46:39 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[16-Nov-2025 19:46:39 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[16-Nov-2025 19:46:39 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:46:39 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:46:39 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[16-Nov-2025 19:46:39 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[16-Nov-2025 19:46:39 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:47:33 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:47:33 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:47:33 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:47:33 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[16-Nov-2025 19:47:33 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[16-Nov-2025 19:47:33 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:47:40 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:47:41 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:47:41 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:47:41 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[16-Nov-2025 19:47:41 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[16-Nov-2025 19:47:41 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:47:41 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:47:41 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[16-Nov-2025 19:47:41 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[16-Nov-2025 19:47:41 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:48:19 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:48:19 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:48:19 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:48:19 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[16-Nov-2025 19:48:19 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[16-Nov-2025 19:48:19 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:48:19 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:48:19 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[16-Nov-2025 19:48:19 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[16-Nov-2025 19:48:19 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:48:37 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:48:37 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::index
+[16-Nov-2025 19:48:37 Asia/Ho_Chi_Minh] === SearchController ===
+[16-Nov-2025 19:48:37 Asia/Ho_Chi_Minh] Search params: from='Đà Lạt', to='TP. Hồ Chí Minh', date='2025-11-16', passengers=1
+[16-Nov-2025 19:48:37 Asia/Ho_Chi_Minh] Performing search...
+[16-Nov-2025 19:48:37 Asia/Ho_Chi_Minh] === TripSearch Debug ===
+[16-Nov-2025 19:48:37 Asia/Ho_Chi_Minh] Outbound search: 'Đà Lạt' -> 'TP. Hồ Chí Minh' on '2025-11-16'
+[16-Nov-2025 19:48:37 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[16-Nov-2025 19:48:37 Asia/Ho_Chi_Minh] Found 0 outbound trips
+[16-Nov-2025 19:48:37 Asia/Ho_Chi_Minh] Search completed: 0 outbound, 0 return
+[16-Nov-2025 19:48:37 Asia/Ho_Chi_Minh] Recent search saved: {"from":"\u0110\u00e0 L\u1ea1t","to":"TP. H\u1ed3 Ch\u00ed Minh","departure_date":"2025-11-16","return_date":"","passengers":1,"is_round_trip":false,"search_time":"2025-11-16 19:48:37"}
+[16-Nov-2025 19:48:37 Asia/Ho_Chi_Minh] Form data loaded: 3 cities, 4 popular routes
+[16-Nov-2025 19:48:37 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:48:37 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:48:37 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[16-Nov-2025 19:48:37 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[16-Nov-2025 19:48:37 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:48:43 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:48:43 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:48:43 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:48:43 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[16-Nov-2025 19:48:43 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[16-Nov-2025 19:48:43 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:48:43 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:48:43 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[16-Nov-2025 19:48:43 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[16-Nov-2025 19:48:43 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:48:51 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:48:51 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:48:52 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:48:52 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[16-Nov-2025 19:48:52 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[16-Nov-2025 19:48:52 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:48:54 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:48:54 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:48:54 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:48:54 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[16-Nov-2025 19:48:54 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[16-Nov-2025 19:48:54 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[16-Nov-2025 19:48:54 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[16-Nov-2025 19:48:54 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[16-Nov-2025 19:48:54 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[16-Nov-2025 19:48:54 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
