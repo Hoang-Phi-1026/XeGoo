@@ -223,6 +223,7 @@ if (session_status() === PHP_SESSION_NONE) {
                                     <th>Tuyến Xe</th>
                                     <th>Ngày Khởi Hành</th>
                                     <th>Số Vé</th>
+                                    <th>Loại vé</th>
                                     <th>Tổng Tiền</th>
                                     <th>Thanh Toán</th>
                                     <th>Trạng Thái</th>
@@ -936,20 +937,21 @@ if (session_status() === PHP_SESSION_NONE) {
         tableBody.innerHTML = '';
 
         if (data.length === 0) {
-            tableBody.innerHTML = '<tr><td colspan="9" style="text-align: center;">Không có khách hàng mua vé vào ngày này</td></tr>';
+            tableBody.innerHTML = '<tr><td colspan="10" style="text-align: center;">Không có khách hàng mua vé vào ngày này</td></tr>';
             return;
         }
 
         data.forEach(row => {
             const tr = document.createElement('tr');
             const ngayKhoiHanh = row.ngayKhoiHanh ? new Date(row.ngayKhoiHanh).toLocaleDateString('vi-VN') : 'N/A';
-            // const gioKhoiHanh = row.gioKhoiHanh ? row.gioKhoiHanh.substring(0, 5) : 'N/A'; // Format HH:MM // Commented out as per CHANGE
 
             let statusBadge = '';
             if (row.trangThai === 'DaThanhToan') {
                 statusBadge = '<span class="badge badge-success">Đã Thanh Toán</span>';
             } else if (row.trangThai === 'DaHoanThanh') {
                 statusBadge = '<span class="badge badge-info">Hoàn Thành</span>';
+            } else if (row.trangThai === 'DaHuy') {
+                statusBadge = '<span class="badge badge-danger">Đã Hủy</span>';
             } else if (row.trangThai === 'ChoThanhToan') {
                 statusBadge = '<span class="badge badge-warning">Chờ Thanh Toán</span>';
             } else {
@@ -964,6 +966,15 @@ if (session_status() === PHP_SESSION_NONE) {
             } else {
                 paymentMethod = 'Khác';
             }
+
+            let loaiDatVeDisplay = '';
+            if (row.loaiDatVe === 'MotChieu') {
+                loaiDatVeDisplay = '<span class="badge" style="background-color: #3b82f6;">Một Chiều</span>';
+            } else if (row.loaiDatVe === 'KhuHoi') {
+                loaiDatVeDisplay = '<span class="badge" style="background-color: #10b981;">Khứ Hồi</span>';
+            } else {
+                loaiDatVeDisplay = '<span class="badge" style="background-color: #6b7280;">Khác</span>';
+            }
             
             tr.innerHTML = `
                 <td><strong>${escapeHtml(row.hoTen || '')}</strong></td>
@@ -972,13 +983,15 @@ if (session_status() === PHP_SESSION_NONE) {
                 <td>${escapeHtml(row.kyHieuTuyen || '')}</td>
                 <td>${ngayKhoiHanh}</td>
                 <td><strong>${row.soVe || 0}</strong></td>
-                <td><strong class="text-success">${new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(row.tongTien || 0)}</strong></td>
+                <td>${loaiDatVeDisplay}</td>
+                <td><strong class="text-success">${new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(row.tongTienSauGiam || 0)}</strong></td>
                 <td>${paymentMethod}</td>
                 <td>${statusBadge}</td>
             `;
             tableBody.appendChild(tr);
         });
     }
+
 
     function renderTodayTicketSalesPagination(pagination) {
         const paginationDiv = document.getElementById('todayTicketSalesPagination');

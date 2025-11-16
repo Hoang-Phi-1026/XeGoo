@@ -11,7 +11,8 @@ if (session_status() === PHP_SESSION_NONE) {
 $totalUsers = isset($stats) ? $stats['users'] : 0;
 $totalVehicles = isset($stats) ? $stats['vehicles'] : 0; 
 $totalRoutes = isset($stats) ? $stats['routes'] : 0;
-$totalTripsToday = isset($stats) ? $stats['trips'] : 0;
+$totalTrips = isset($stats) ? $stats['trips'] : 0; // All trips for sidebar
+$totalTripsToday = isset($stats) ? $stats['trips_today'] : 0; // Today's trips for card
 $totalPricesToday = isset($stats) ? $stats['prices'] : 0;
 $totalSchedulesToday = isset($stats) ? $stats['schedules'] : 0;
 ?>
@@ -64,7 +65,7 @@ $totalSchedulesToday = isset($stats) ? $stats['schedules'] : 0;
                     <a href="<?= BASE_URL ?>/trips" class="nav-link">
                         <div class="nav-icon"><i class="fas fa-map-marked-alt"></i></div>
                         <span class="nav-text">Quản Lý Chuyến Xe</span>
-                        <span class="nav-badge"><?php echo $totalTripsToday; ?></span>
+                        <span class="nav-badge"><?php echo $totalTrips; ?></span>
                     </a>
                    <a href="<?= BASE_URL ?>/promotional-codes" class="nav-link">
                         <div class="nav-icon"><i class="fas fa-gift"></i></div>

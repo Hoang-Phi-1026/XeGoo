@@ -36,6 +36,7 @@ class AdminController {
                 'routes' => 0,
                 'schedules' => 0,
                 'trips' => 0,
+                'trips_today' => 0,
                 'users' => 0,
                 'prices' => 0
             ];
@@ -52,7 +53,6 @@ class AdminController {
             $result = fetch("SELECT COUNT(*) as count FROM lichtrinh WHERE trangThai = 'Hoạt động'");
             $stats['schedules'] = $result ? $result['count'] : 0;
 
-            // Count trips - using correct status values for active trips
             $result = fetch("SELECT COUNT(*) as count FROM chuyenxe WHERE trangThai IN ('Sẵn sàng', 'Đang bán vé', 'Đã khởi hành')");
             $stats['trips'] = $result ? $result['count'] : 0;
 
@@ -63,6 +63,9 @@ class AdminController {
             // Count prices - using correct status value
             $result = fetch("SELECT COUNT(*) as count FROM giave WHERE trangThai = 'Hoạt động'");
             $stats['prices'] = $result ? $result['count'] : 0;
+
+            $result = fetch("SELECT COUNT(*) as count FROM chuyenxe WHERE trangThai IN ('Sẵn sàng', 'Khởi hành', 'Hoàn thành', 'Bị hủy', 'Delay') AND DATE(ngayKhoiHanh) = CURDATE()");
+            $stats['trips_today'] = $result ? $result['count'] : 0;
 
             error_log("[AdminController] Dashboard stats: " . json_encode($stats));
 
@@ -75,6 +78,7 @@ class AdminController {
                 'routes' => 0,
                 'schedules' => 0,
                 'trips' => 0,
+                'trips_today' => 0,
                 'users' => 0,
                 'prices' => 0
             ];

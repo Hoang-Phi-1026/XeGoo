@@ -575,27 +575,32 @@ class StatisticsController {
             
             $results = fetchAll(
                 "SELECT 
-                    nd.maNguoiDung,
-                    nd.tenNguoiDung as hoTen,
-                    nd.soDienThoai,
-                    nd.eMail,
+                    dv.maDatVe,
+                    COALESCE(nd.maNguoiDung, cdv.maChiTiet) as userIdentifier,
+                    COALESCE(nd.tenNguoiDung, cdv.hoTenHanhKhach) as hoTen,
+                    COALESCE(nd.soDienThoai, cdv.soDienThoaiHanhKhach) as soDienThoai,
+                    COALESCE(nd.eMail, cdv.emailHanhKhach) as eMail,
+                    COALESCE(vt.tenVaiTro, 'Khách Hàng') as vaiTro,
                     td.kyHieuTuyen,
                     cx.ngayKhoiHanh,
                     cx.thoiGianKhoiHanh as gioKhoiHanh,
-                    COUNT(cdv.maChiTiet) as soVe,
-                    SUM(cdv.giaVe) as tongTien,
+                    COUNT(DISTINCT cdv.maChiTiet) as soVe,
+                    dv.tongTienSauGiam,
+                    dv.loaiDatVe,
                     dv.phuongThucThanhToan,
-                    dv.trangThai
+                    dv.trangThai,
+                    dv.ngayDat,
+                    nd.maNguoiDung
                 FROM datve dv
-                INNER JOIN nguoidung nd ON dv.maNguoiDung = nd.maNguoiDung
+                LEFT JOIN nguoidung nd ON dv.maNguoiDung = nd.maNguoiDung
+                LEFT JOIN vaitro vt ON nd.maVaiTro = vt.maVaiTro
                 INNER JOIN chitiet_datve cdv ON dv.maDatVe = cdv.maDatVe
                 INNER JOIN chuyenxe cx ON cdv.maChuyenXe = cx.maChuyenXe
                 INNER JOIN lichtrinh lt ON cx.maLichTrinh = lt.maLichTrinh
                 INNER JOIN tuyenduong td ON lt.maTuyenDuong = td.maTuyenDuong
                 WHERE DATE(dv.ngayDat) = '" . $dateFilter . "'
-                    AND dv.trangThai IN ('DaThanhToan', 'DaHoanThanh')
-                    AND nd.maVaiTro = 4
-                GROUP BY dv.maDatVe, nd.maNguoiDung
+                    AND dv.trangThai IN ('DaThanhToan', 'DaHoanThanh', 'DaHuy')
+                GROUP BY dv.maDatVe, COALESCE(nd.maNguoiDung, cdv.maChiTiet)
                 ORDER BY dv.ngayDat DESC"
             );
             return $results ? $results : [];
@@ -623,11 +628,9 @@ class StatisticsController {
             $countResult = fetch(
                 "SELECT COUNT(DISTINCT dv.maDatVe) as total 
                 FROM datve dv
-                INNER JOIN nguoidung nd ON dv.maNguoiDung = nd.maNguoiDung
                 INNER JOIN chitiet_datve cdv ON dv.maDatVe = cdv.maDatVe
                 WHERE DATE(dv.ngayDat) = '" . $dateFilter . "'
-                    AND dv.trangThai IN ('DaThanhToan', 'DaHoanThanh')
-                    AND nd.maVaiTro = 4"
+                    AND dv.trangThai IN ('DaThanhToan', 'DaHoanThanh', 'DaHuy')"
             );
             $totalRows = $countResult ? $countResult['total'] : 0;
             $totalPages = ceil($totalRows / $perPage);
@@ -636,28 +639,31 @@ class StatisticsController {
             $results = fetchAll(
                 "SELECT 
                     dv.maDatVe,
-                    nd.maNguoiDung,
-                    nd.tenNguoiDung as hoTen,
-                    nd.soDienThoai,
-                    nd.eMail,
+                    COALESCE(nd.maNguoiDung, cdv.maChiTiet) as userIdentifier,
+                    COALESCE(nd.tenNguoiDung, cdv.hoTenHanhKhach) as hoTen,
+                    COALESCE(nd.soDienThoai, cdv.soDienThoaiHanhKhach) as soDienThoai,
+                    COALESCE(nd.eMail, cdv.emailHanhKhach) as eMail,
+                    COALESCE(vt.tenVaiTro, 'Khách Hàng') as vaiTro,
                     td.kyHieuTuyen,
                     cx.ngayKhoiHanh,
                     cx.thoiGianKhoiHanh as gioKhoiHanh,
-                    COUNT(cdv.maChiTiet) as soVe,
-                    SUM(cdv.giaVe) as tongTien,
+                    COUNT(DISTINCT cdv.maChiTiet) as soVe,
+                    dv.tongTienSauGiam,
+                    dv.loaiDatVe,
                     dv.phuongThucThanhToan,
                     dv.trangThai,
-                    dv.ngayDat
+                    dv.ngayDat,
+                    nd.maNguoiDung
                 FROM datve dv
-                INNER JOIN nguoidung nd ON dv.maNguoiDung = nd.maNguoiDung
+                LEFT JOIN nguoidung nd ON dv.maNguoiDung = nd.maNguoiDung
+                LEFT JOIN vaitro vt ON nd.maVaiTro = vt.maVaiTro
                 INNER JOIN chitiet_datve cdv ON dv.maDatVe = cdv.maDatVe
                 INNER JOIN chuyenxe cx ON cdv.maChuyenXe = cx.maChuyenXe
                 INNER JOIN lichtrinh lt ON cx.maLichTrinh = lt.maLichTrinh
                 INNER JOIN tuyenduong td ON lt.maTuyenDuong = td.maTuyenDuong
                 WHERE DATE(dv.ngayDat) = '" . $dateFilter . "'
-                    AND dv.trangThai IN ('DaThanhToan', 'DaHoanThanh')
-                    AND nd.maVaiTro = 4
-                GROUP BY dv.maDatVe, nd.maNguoiDung
+                    AND dv.trangThai IN ('DaThanhToan', 'DaHoanThanh', 'DaHuy')
+                GROUP BY dv.maDatVe, COALESCE(nd.maNguoiDung, cdv.maChiTiet)
                 ORDER BY dv.ngayDat DESC
                 LIMIT " . $offset . ", " . $perPage
             );
@@ -674,7 +680,7 @@ class StatisticsController {
                 'selectedDate' => $dateFilter
             ]);
         } catch (Exception $e) {
-            error_log("Error in getTicketSalesByDateAjax: " . $e->getMessage());
+            error_log("Error in getTodayTicketSalesAjax: " . $e->getMessage());
             echo json_encode([
                 'success' => false,
                 'message' => 'Lỗi khi tải dữ liệu'
@@ -701,11 +707,9 @@ class StatisticsController {
             $countResult = fetch(
                 "SELECT COUNT(DISTINCT dv.maDatVe) as total 
                 FROM datve dv
-                INNER JOIN nguoidung nd ON dv.maNguoiDung = nd.maNguoiDung
                 INNER JOIN chitiet_datve cdv ON dv.maDatVe = cdv.maDatVe
                 WHERE DATE(dv.ngayDat) = '" . $dateFilter . "'
-                    AND dv.trangThai IN ('DaThanhToan', 'DaHoanThanh')
-                    AND nd.maVaiTro = 4"
+                    AND dv.trangThai IN ('DaThanhToan', 'DaHoanThanh', 'DaHuy')"
             );
             $totalRows = $countResult ? $countResult['total'] : 0;
             $totalPages = ceil($totalRows / $perPage);
@@ -714,28 +718,31 @@ class StatisticsController {
             $results = fetchAll(
                 "SELECT 
                     dv.maDatVe,
-                    nd.maNguoiDung,
-                    nd.tenNguoiDung as hoTen,
-                    nd.soDienThoai,
-                    nd.eMail,
+                    COALESCE(nd.maNguoiDung, cdv.maChiTiet) as userIdentifier,
+                    COALESCE(nd.tenNguoiDung, cdv.hoTenHanhKhach) as hoTen,
+                    COALESCE(nd.soDienThoai, cdv.soDienThoaiHanhKhach) as soDienThoai,
+                    COALESCE(nd.eMail, cdv.emailHanhKhach) as eMail,
+                    COALESCE(vt.tenVaiTro, 'Khách Hàng') as vaiTro,
                     td.kyHieuTuyen,
                     cx.ngayKhoiHanh,
                     cx.thoiGianKhoiHanh as gioKhoiHanh,
-                    COUNT(cdv.maChiTiet) as soVe,
-                    SUM(cdv.giaVe) as tongTien,
+                    COUNT(DISTINCT cdv.maChiTiet) as soVe,
+                    dv.tongTienSauGiam,
+                    dv.loaiDatVe,
                     dv.phuongThucThanhToan,
                     dv.trangThai,
-                    dv.ngayDat
+                    dv.ngayDat,
+                    nd.maNguoiDung
                 FROM datve dv
-                INNER JOIN nguoidung nd ON dv.maNguoiDung = nd.maNguoiDung
+                LEFT JOIN nguoidung nd ON dv.maNguoiDung = nd.maNguoiDung
+                LEFT JOIN vaitro vt ON nd.maVaiTro = vt.maVaiTro
                 INNER JOIN chitiet_datve cdv ON dv.maDatVe = cdv.maDatVe
                 INNER JOIN chuyenxe cx ON cdv.maChuyenXe = cx.maChuyenXe
                 INNER JOIN lichtrinh lt ON cx.maLichTrinh = lt.maLichTrinh
                 INNER JOIN tuyenduong td ON lt.maTuyenDuong = td.maTuyenDuong
                 WHERE DATE(dv.ngayDat) = '" . $dateFilter . "'
-                    AND dv.trangThai IN ('DaThanhToan', 'DaHoanThanh')
-                    AND nd.maVaiTro = 4
-                GROUP BY dv.maDatVe, nd.maNguoiDung
+                    AND dv.trangThai IN ('DaThanhToan', 'DaHoanThanh', 'DaHuy')
+                GROUP BY dv.maDatVe, COALESCE(nd.maNguoiDung, cdv.maChiTiet)
                 ORDER BY dv.ngayDat DESC
                 LIMIT " . $offset . ", " . $perPage
             );
