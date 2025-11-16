@@ -232,7 +232,7 @@ class Post {
                     FROM binh_luan bl
                     JOIN nguoidung nd ON bl.ma_nguoi_dung = nd.maNguoiDung
                     WHERE bl.ma_bai_dang = ?
-                    ORDER BY bl.ngay_tao DESC";
+                    ORDER BY bl.ngay_tao ASC";
             
             $stmt = $this->db->prepare($sql);
             $stmt->execute([$ma_bai_dang]);

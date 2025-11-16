@@ -149,6 +149,18 @@ require_once __DIR__ . '/../../config/config.php';
                                             <button type="submit" class="comment-submit">Gửi</button>
                                         </form>
                                     </div>
+                                <?php else: ?>
+                                    <div class="comment-form-wrapper">
+                                        <form class="comment-form" onsubmit="showLoginAlert(event)">
+                                            <input 
+                                                type="text" 
+                                                class="comment-input" 
+                                                placeholder="Viết bình luận..."
+                                                disabled
+                                            >
+                                            <button type="submit" class="comment-submit">Gửi</button>
+                                        </form>
+                                    </div>
                                 <?php endif; ?>
 
                                 <!-- Comments List -->
@@ -157,10 +169,14 @@ require_once __DIR__ . '/../../config/config.php';
                                         <p class="no-comments">Chưa có bình luận</p>
                                     <?php else: ?>
                                         <?php foreach ($post['comments'] as $comment): ?>
+                                            <!-- Updated comment structure to include avatar and better layout -->
                                             <div class="comment-item">
-                                                <div class="comment-author"><?php echo htmlspecialchars($comment['tenNguoiDung']); ?></div>
-                                                <div class="comment-text"><?php echo nl2br(htmlspecialchars($comment['noi_dung'])); ?></div>
-                                                <div class="comment-time"><?php echo date('d/m/Y H:i', strtotime($comment['ngay_tao'])); ?></div>
+                                                <div class="comment-avatar"><?php echo strtoupper(substr($comment['tenNguoiDung'], 0, 1)); ?></div>
+                                                <div class="comment-content">
+                                                    <div class="comment-author"><?php echo htmlspecialchars($comment['tenNguoiDung']); ?></div>
+                                                    <div class="comment-text"><?php echo nl2br(htmlspecialchars($comment['noi_dung'])); ?></div>
+                                                    <div class="comment-time"><?php echo date('d/m/Y H:i', strtotime($comment['ngay_tao'])); ?></div>
+                                                </div>
                                             </div>
                                         <?php endforeach; ?>
                                     <?php endif; ?>
@@ -333,6 +349,32 @@ require_once __DIR__ . '/../../config/config.php';
             });
         }
 
+        function showLoginAlert(e) {
+            e.preventDefault();
+            
+            const existingAlert = document.getElementById('loginAlert');
+            if (existingAlert) {
+                existingAlert.remove();
+            }
+            
+            const alert = document.createElement('div');
+            alert.id = 'loginAlert';
+            alert.className = 'alert-notification';
+            alert.innerHTML = 'Hãy <a href="<?php echo BASE_URL; ?>/login">đăng nhập</a> để chia sẻ bài đăng';
+            
+            document.body.insertBefore(alert, document.body.firstChild);
+            
+            // Auto-remove alert after 5 seconds
+            setTimeout(() => {
+                if (alert.parentNode) {
+                    alert.remove();
+                }
+            }, 5000);
+            
+            // Scroll to top to show alert
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
         function toggleReactionMenu(postId) {
             const menu = document.getElementById('reaction-menu-' + postId);
             if (menu.style.display === 'none') {
@@ -342,7 +384,7 @@ require_once __DIR__ . '/../../config/config.php';
             }
         }
 
-        function addReaction(postId, emotionType, emoji) {
+        function addReaction(postId, emotionType) {
             <?php if (isset($_SESSION['user_id'])): ?>
                 fetch('<?php echo BASE_URL; ?>/api/posts/add-reaction', {
                     method: 'POST',
@@ -354,12 +396,6 @@ require_once __DIR__ . '/../../config/config.php';
                 .then(res => res.json())
                 .then(data => {
                     if (data.success) {
-                        const btn = document.getElementById('emotion-btn-' + postId);
-                        if (btn) {
-                            btn.querySelector('.emotion-btn-icon').textContent = emoji;
-                            btn.querySelector('.emotion-btn-text').textContent = emotionType;
-                        }
-                        
                         // Hide reaction menu after selection
                         const menu = document.getElementById('reaction-menu-' + postId);
                         if (menu) {
@@ -375,10 +411,10 @@ require_once __DIR__ . '/../../config/config.php';
                     }
                 });
             <?php else: ?>
-                alert('Bạn cần đăng nhập!');
-                window.location.href = '<?php echo BASE_URL; ?>/login';
+                showLoginAlert(new Event('submit'));
             <?php endif; ?>
         }
     </script>
 </body>
+  <?php require_once __DIR__ . '/../layouts/footer.php'; ?>
 </html>
