@@ -203,6 +203,9 @@ $routes = [
     // Post routes
     '/post' => ['controller' => 'PostController', 'action' => 'index'],
     '/post/moderation' => ['controller' => 'PostController', 'action' => 'moderation'],
+
+    // Notification API routes for in-app reminders
+    '/api/notifications/unread' => ['controller' => 'NotificationController', 'action' => 'getUnreadNotifications'],
 ];
 
 // Define POST routes
@@ -309,6 +312,10 @@ $postRoutes = [
     // AI chat POST routes
     '/api/aichat/ask' => ['controller' => 'AIChatController', 'action' => 'askAI'],
     '/api/aichat/switch-to-staff' => ['controller' => 'AIChatController', 'action' => 'switchToStaffChat'],
+
+    // Notification API routes for in-app reminders
+    '/api/notifications/mark-read' => ['controller' => 'NotificationController', 'action' => 'markAsRead'],
+    '/api/notifications/mark-all-read' => ['controller' => 'NotificationController', 'action' => 'markAllAsRead'],
 ];
 
 // Get current URL path and remove base directory

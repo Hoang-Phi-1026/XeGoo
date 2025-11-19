@@ -20,6 +20,8 @@ class Database {
                     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
                 ]
             );
+             // Set MySQL session timezone to match PHP timezone (Asia/Ho_Chi_Minh)
+            $this->conn->exec("SET time_zone = '+07:00'");
             error_log("[Database] Connected successfully to " . DB_NAME);
         } catch (PDOException $e) {
             error_log("[Database] Connection failed: " . $e->getMessage());

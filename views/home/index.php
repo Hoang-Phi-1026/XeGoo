@@ -1,7 +1,13 @@
 <?php
 // Include header
 require_once __DIR__ . '/../layouts/header.php';
+$isLoggedIn = isset($_SESSION['user_id']);
 ?>
+
+<!-- Add hidden element to indicate if user is logged in (for JS detection) -->
+<?php if ($isLoggedIn): ?>
+    <div data-user-id="<?php echo htmlspecialchars($_SESSION['user_id']); ?>" style="display: none;"></div>
+<?php endif; ?>
 
 <div class="home-container">
     <div class="min-h-screen bg-gray-50">
@@ -460,4 +466,8 @@ async function loadCities() {
 <?php
 // Include footer
 require_once __DIR__ . '/../layouts/footer.php';
+if ($isLoggedIn):
 ?>
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/reminder-popup.css">
+    <script src="<?php echo BASE_URL; ?>/public/js/reminder-popup.js"></script>
+<?php endif; ?>

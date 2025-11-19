@@ -61,6 +61,16 @@ class EmailService {
     }
     
     /**
+     * Add method to clear mailer for multiple uses
+     */
+    public function clearMailer() {
+        $this->mailer->clearAddresses();
+        $this->mailer->clearCCs();
+        $this->mailer->clearBCCs();
+        $this->mailer->clearReplyTos();
+    }
+    
+    /**
      * Send verification code email for registration
      * 
      * @param string $toEmail Recipient email address
@@ -432,6 +442,56 @@ class EmailService {
             return [
                 'success' => false,
                 'message' => 'Không thể gửi email xác nhận: ' . $this->mailer->ErrorInfo
+            ];
+        }
+    }
+    
+    /**
+     * Send pre-departure reminder email (30 minutes before departure)
+     * 
+     * @param string $toEmail Recipient email
+     * @param string $toName Recipient name
+     * @param array $tripInfo Trip information [kyHieuTuyen, diemDi, diemDen, ngayKhoiHanh, thoiGianKhoiHanh, tenTaiXe, soDienThoaiTaiXe]
+     * @param int $ticketCount Number of tickets
+     * @return array Result with success status
+     */
+    public function sendPreDepartureReminderEmail($toEmail, $toName, $tripInfo, $ticketCount = 1) {
+        try {
+            error_log("[EmailService] sendPreDepartureReminderEmail - START");
+            
+            if (empty($toEmail) || !filter_var($toEmail, FILTER_VALIDATE_EMAIL)) {
+                error_log("[EmailService] Invalid email: " . $toEmail);
+                return [
+                    'success' => false,
+                    'message' => 'Email không hợp lệ'
+                ];
+            }
+            
+            $this->mailer->clearAddresses();
+            $this->mailer->addAddress($toEmail, $toName);
+            $this->mailer->isHTML(true);
+            $this->mailer->Subject = '⏰ Nhắc nhở: Chuyến xe của bạn sắp khởi hành - ' . ($tripInfo['kyHieuTuyen'] ?? 'XeGoo');
+            
+            $htmlBody = $this->getPreDepartureReminderTemplate($toName, $tripInfo, $ticketCount);
+            $this->mailer->Body = $htmlBody;
+            $this->mailer->AltBody = $this->getPreDepartureReminderPlainText($toName, $tripInfo, $ticketCount);
+            
+            error_log("[EmailService] Sending reminder email to: " . $toEmail);
+            $this->mailer->send();
+            
+            error_log("[EmailService] ✅ Pre-departure reminder sent to: " . $toEmail);
+            
+            return [
+                'success' => true,
+                'message' => 'Email nhắc nhở đã được gửi thành công'
+            ];
+            
+        } catch (Exception $e) {
+            error_log("[EmailService] ❌ Send reminder error: " . $e->getMessage());
+            error_log("[EmailService] PHPMailer ErrorInfo: " . $this->mailer->ErrorInfo);
+            return [
+                'success' => false,
+                'message' => 'Lỗi gửi email: ' . $this->mailer->ErrorInfo
             ];
         }
     }
@@ -1931,6 +1991,147 @@ class EmailService {
     }
     
     /**
+     * HTML template for pre-departure reminder email
+     */
+    private function getPreDepartureReminderTemplate($toName, $tripInfo, $ticketCount) {
+        $departureDate = $tripInfo['ngayKhoiHanh'] ?? 'N/A';
+        $departureTime = $tripInfo['thoiGianKhoiHanh'] ?? 'N/A';
+        $route = ($tripInfo['diemDi'] ?? 'N/A') . ' → ' . ($tripInfo['diemDen'] ?? 'N/A');
+        $driverName = $tripInfo['tenTaiXe'] ?? 'N/A';
+        $driverPhone = $tripInfo['soDienThoaiTaiXe'] ?? 'Không có';
+        
+        $html = <<<HTML
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial, sans-serif; color: #333; line-height: 1.6; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; background: #f9f9f9; }
+        .header { background: #FF6B35; color: white; padding: 20px; text-align: center; border-radius: 5px; }
+        .content { background: white; padding: 20px; margin-top: 10px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .trip-info { background: #FFF3E0; padding: 15px; border-left: 4px solid #FF6B35; margin: 15px 0; }
+        .trip-detail { margin: 10px 0; display: flex; justify-content: space-between; }
+        .label { font-weight: bold; color: #555; }
+        .value { color: #333; }
+        .button { display: inline-block; background: #FF6B35; color: white; padding: 12px 20px; text-decoration: none; border-radius: 5px; margin-top: 15px; }
+        .footer { text-align: center; font-size: 12px; color: #999; margin-top: 20px; padding-top: 20px; border-top: 1px solid #ddd; }
+        .warning { background: #FFF3CD; border-left: 4px solid #FFC107; padding: 15px; margin: 15px 0; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>⏰ NHẮC NHỞ: CHUYẾN XE SẮP KHỞI HÀNH</h1>
+        </div>
+        
+        <div class="content">
+            <p>Xin chào <strong>$toName</strong>,</p>
+            
+            <p>Chuyến xe của bạn sắp khởi hành trong <strong>30 phút tới</strong>. Vui lòng tích cực chuẩn bị để không bỏ lỡ chuyến xe!</p>
+            
+            <div class="trip-info">
+                <h2 style="margin-top: 0; color: #FF6B35;">Thông Tin Chuyến Xe</h2>
+                
+                <div class="trip-detail">
+                    <span class="label">🚌 Tuyến đường:</span>
+                    <span class="value">$route</span>
+                </div>
+                
+                <div class="trip-detail">
+                    <span class="label">📅 Ngày:</span>
+                    <span class="value">$departureDate</span>
+                </div>
+                
+                <div class="trip-detail">
+                    <span class="label">⏰ Giờ khởi hành:</span>
+                    <span class="value"><strong>$departureTime</strong></span>
+                </div>
+                
+                <div class="trip-detail">
+                    <span class="label">🎫 Số vé:</span>
+                    <span class="value">$ticketCount</span>
+                </div>
+                
+                <div class="trip-detail">
+                    <span class="label">👨‍✈️ Tài xế:</span>
+                    <span class="value">$driverName</span>
+                </div>
+                
+                <div class="trip-detail">
+                    <span class="label">📞 SĐT tài xế:</span>
+                    <span class="value">$driverPhone</span>
+                </div>
+            </div>
+            
+            <div class="warning">
+                <strong>⚠️ Lưu ý quan trọng:</strong>
+                <ul>
+                    <li>Vui lòng có mặt tại điểm đón trước 15 phút</li>
+                    <li>Mang theo vé hoặc mã số đặt vé của bạn</li>
+                    <li>Nếu không thể đi, vui lòng hủy vé sớm nhất có thể</li>
+                </ul>
+            </div>
+            
+            <p><strong>Cần hỗ trợ?</strong><br>
+            Liên hệ tài xế hoặc chúng tôi qua ứng dụng XeGoo để được giúp đỡ ngay lập tức.</p>
+            
+            <a href="https://xegoo.com" class="button">Xem Thêm Chi Tiết</a>
+        </div>
+        
+        <div class="footer">
+            <p>Đây là email tự động từ hệ thống XeGoo. Vui lòng không trả lời email này.</p>
+            <p>&copy; 2025 XeGoo - Hệ Thống Đặt Vé Xe Khách Trực Tuyến</p>
+        </div>
+    </div>
+</body>
+</html>
+HTML;
+        
+        return $html;
+    }
+    
+    /**
+     * Plain text version for pre-departure reminder email
+     */
+    private function getPreDepartureReminderPlainText($toName, $tripInfo, $ticketCount) {
+        $departureDate = $tripInfo['ngayKhoiHanh'] ?? 'N/A';
+        $departureTime = $tripInfo['thoiGianKhoiHanh'] ?? 'N/A';
+        $route = ($tripInfo['diemDi'] ?? 'N/A') . ' → ' . ($tripInfo['diemDen'] ?? 'N/A');
+        $driverName = $tripInfo['tenTaiXe'] ?? 'N/A';
+        $driverPhone = $tripInfo['soDienThoaiTaiXe'] ?? 'Không có';
+        
+        $text = <<<TEXT
+⏰ NHẮC NHỞ: CHUYẾN XE SẮP KHỞI HÀNH
+
+Xin chào $toName,
+
+Chuyến xe của bạn sắp khởi hành trong 30 phút tới. Vui lòng tích cực chuẩn bị!
+
+THÔNG TIN CHUYẾN XE:
+- Tuyến đường: $route
+- Ngày: $departureDate
+- Giờ khởi hành: $departureTime (CHÍNH XÁC)
+- Số vé: $ticketCount
+- Tài xế: $driverName
+- SĐT tài xế: $driverPhone
+
+LƯU Ý QUAN TRỌNG:
+1. Vui lòng có mặt tại điểm đón trước 15 phút
+2. Mang theo vé hoặc mã số đặt vé của bạn
+3. Nếu không thể đi, vui lòng hủy vé sớm nhất có thể
+
+Cần hỗ trợ? Liên hệ tài xế hoặc chúng tôi qua ứng dụng XeGoo.
+
+---
+Đây là email tự động từ hệ thống XeGoo. Vui lòng không trả lời email này.
+© 2025 XeGoo - Hệ Thống Đặt Vé Xe Khách Trực Tuyến
+TEXT;
+        
+        return $text;
+    }
+    
+    /**
      * Get plain text version of ticket email
      */
     private function getTicketEmailPlainText($bookingData, $ticketDetails) {
@@ -2017,3 +2218,4 @@ class EmailService {
         return $text;
     }
 }
+

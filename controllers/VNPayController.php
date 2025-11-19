@@ -18,8 +18,8 @@ class VNPayController {
             session_start();
         }
         
-        $this->tmnCode = 'O3RU0JR9'; 
-        $this->hashSecret = 'MWQMV1515QDCZFO19Y2N9PNWZVWEJYO2';
+        $this->tmnCode = 'ZXOBZXB6'; 
+        $this->hashSecret = 'TK43HYQK1630NO6UU4TO5M9QCPHHRAWD';
         $this->url = 'https://sandbox.vnpayment.vn/paymentv2/vpcpay.html';
         $this->returnUrl = BASE_URL . '/payment/vnpay/return';
         

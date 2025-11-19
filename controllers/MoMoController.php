@@ -30,15 +30,18 @@ class MoMoController {
      */
     public function createPayment() {
         try {
+            error_log("[v0] MoMoController::createPayment() started");
+            
             // Kiểm tra thông tin đặt vé
             if (!isset($_SESSION['final_booking_data']) || !isset($_SESSION['held_seats'])) {
+                error_log("[v0] No final_booking_data or held_seats in session");
                 $_SESSION['error'] = 'Phiên đặt vé đã hết hạn.';
                 header('Location: ' . BASE_URL . '/search');
                 exit;
             }
 
             $bookingData = $_SESSION['final_booking_data'];
-            $pricing = $this->calculateFinalPricing($bookingData);
+            $pricing = $this->calculatePricing($bookingData);
 
             $orderId = 'XeGoo_' . date('YmdHis') . '_' . rand(1000, 9999);
             $requestId = $orderId;
@@ -89,21 +92,27 @@ class MoMoController {
                 'created_at' => time()
             ];
 
+            error_log("[v0] Sending request to MoMo API");
+            error_log("[v0] Order ID: " . $orderId);
+            error_log("[v0] Amount: " . $amount);
+            
             // Gửi request đến MoMo
             $result = $this->sendRequest($data);
 
             if ($result && isset($result['payUrl'])) {
+                error_log("[v0] MoMo payment URL created successfully");
                 // Chuyển hướng đến trang thanh toán MoMo
                 header('Location: ' . $result['payUrl']);
                 exit;
             } else {
+                error_log("[v0] Failed to create MoMo payment URL");
                 $_SESSION['error'] = 'Không thể tạo yêu cầu thanh toán MoMo. Vui lòng thử lại.';
                 header('Location: ' . BASE_URL . '/payment');
                 exit;
             }
 
         } catch (Exception $e) {
-            error_log("MoMoController createPayment error: " . $e->getMessage());
+            error_log("[v0] MoMoController createPayment error: " . $e->getMessage());
             $_SESSION['error'] = 'Có lỗi xảy ra khi tạo yêu cầu thanh toán: ' . $e->getMessage();
             header('Location: ' . BASE_URL . '/payment');
             exit;
@@ -115,6 +124,9 @@ class MoMoController {
      */
     public function handleReturn() {
         try {
+            error_log("[v0] MoMoController::handleReturn() started");
+            error_log("[v0] GET parameters: " . json_encode($_GET));
+            
             $partnerCode = $_GET['partnerCode'] ?? '';
             $orderId = $_GET['orderId'] ?? '';
             $requestId = $_GET['requestId'] ?? '';
@@ -145,24 +157,69 @@ class MoMoController {
 
             $expectedSignature = hash_hmac("sha256", $rawHash, $this->secretKey);
 
+            error_log("[v0] Calculated hash: " . $expectedSignature);
+            error_log("[v0] MoMo hash: " . $signature);
+            error_log("[v0] Result code: " . $resultCode);
+            error_log("[v0] Transaction ID: " . $transId);
+
             if ($signature !== $expectedSignature) {
+                error_log("[v0] Hash verification failed");
                 $_SESSION['error'] = 'Chữ ký không hợp lệ.';
                 header('Location: ' . BASE_URL . '/payment');
                 exit;
             }
 
+            error_log("[v0] Hash verification successful");
+
             if ($resultCode == '0') {
                 // Thanh toán thành công
-                $this->processSuccessfulPayment($orderId, $transId, $extraData);
+                error_log("[v0] Payment successful - Processing booking");
+                $bookingId = $this->processSuccessfulPayment($orderId, $transId, $extraData);
+                
+                if ($bookingId) {
+                    // Xác nhận ghế (chuyển từ "Đang giữ" thành "Đã đặt")
+                    $this->confirmSeats();
+                    
+                    // Xử lý điểm tích lũy
+                    $this->processLoyaltyPoints($bookingId);
+                    if (isset($_SESSION['applied_promotion']) && isset($_SESSION['user_id'])) {
+                        $promotion = $_SESSION['applied_promotion'];
+                        $pricing = $this->calculatePricing($_SESSION['final_booking_data']);
+                        require_once __DIR__ . '/PaymentController.php';
+                        $paymentController = new PaymentController();
+                        $paymentController->recordPromotionUsage($_SESSION['user_id'], $promotion['maKhuyenMai'], $bookingId, $pricing['discount']);
+                    }
+                    
+                    // Clear session
+                    $this->clearBookingSession();
+                    
+                    $_SESSION['success'] = 'Thanh toán thành công! Mã đặt vé: ' . $bookingId;
+                    header('Location: ' . BASE_URL . '/booking/success/' . $bookingId);
+                    exit;
+                } else {
+                    throw new Exception('Không thể tạo đơn đặt vé');
+                }
             } else {
                 // Thanh toán thất bại
-                $_SESSION['error'] = 'Thanh toán không thành công: ' . $message;
-                header('Location: ' . BASE_URL . '/payment');
+                error_log("[v0] Payment failed - Result code: " . $resultCode);
+                
+                // Tạo đơn đặt vé với trạng thái thất bại
+                $this->createFailedBooking($orderId, $amount, $resultCode);
+                
+                // Giải phóng ghế
+                $this->releaseHeldSeats();
+                
+                // Clear session
+                $this->clearBookingSession();
+                
+                $errorMessage = $this->getMoMoErrorMessage($resultCode);
+                $_SESSION['error'] = 'Thanh toán không thành công: ' . $errorMessage;
+                header('Location: ' . BASE_URL . '/search');
                 exit;
             }
 
         } catch (Exception $e) {
-            error_log("MoMoController handleReturn error: " . $e->getMessage());
+            error_log("[v0] MoMoController handleReturn error: " . $e->getMessage());
             $_SESSION['error'] = 'Có lỗi xảy ra khi xử lý kết quả thanh toán.';
             header('Location: ' . BASE_URL . '/payment');
             exit;
@@ -173,15 +230,22 @@ class MoMoController {
      * Xử lý thông báo IPN từ MoMo
      */
     public function handleNotify() {
+        header('Content-Type: application/json');
+        
         try {
+            error_log("[v0] MoMoController::handleNotify() started");
+            
             $input = file_get_contents('php://input');
             $data = json_decode($input, true);
 
             if (!$data) {
+                error_log("[v0] Invalid JSON data received");
                 http_response_code(400);
                 echo json_encode(['message' => 'Invalid data']);
                 return;
             }
+
+            error_log("[v0] IPN data received: " . json_encode($data));
 
             // Xác thực chữ ký IPN
             $signature = $data['signature'] ?? '';
@@ -196,50 +260,61 @@ class MoMoController {
             
             $expectedSignature = hash_hmac('sha256', $rawHash, $this->secretKey);
 
+            error_log("[v0] IPN signature verification - Expected: " . $expectedSignature . ", Received: " . $signature);
+
             if ($signature !== $expectedSignature) {
+                error_log("[v0] IPN signature verification failed");
                 http_response_code(400);
                 echo json_encode(['message' => 'Invalid signature']);
                 return;
             }
 
+            error_log("[v0] IPN signature verification successful");
+
             // Xử lý thông báo
             if ($data['resultCode'] == '0') {
+                error_log("[v0] Processing successful IPN notification");
                 // Thanh toán thành công, cập nhật database
                 $this->processSuccessfulPayment($data['orderId'], $data['transId'], $data['extraData']);
+            } else {
+                error_log("[v0] IPN notification shows failed payment - Result code: " . $data['resultCode']);
             }
 
             http_response_code(200);
             echo json_encode(['message' => 'Success']);
 
         } catch (Exception $e) {
-            error_log("MoMoController handleNotify error: " . $e->getMessage());
+            error_log("[v0] MoMoController handleNotify error: " . $e->getMessage());
             http_response_code(500);
             echo json_encode(['message' => 'Internal server error']);
         }
     }
 
     /**
-     * Xử lý thanh toán thành công - Updated to use proper booking ID
+     * Xử lý thanh toán thành công - Updated to match VNPay structure
      */
     private function processSuccessfulPayment($orderId, $transactionNo, $extraData = '') {
+        error_log("[v0] ========== processSuccessfulPayment START ==========");
+        error_log("[v0] Parameters: orderId=$orderId, transactionNo=$transactionNo");
+        
         try {
             $bookingData = $_SESSION['final_booking_data'];
-            $pricing = $this->calculateFinalPricing($bookingData);
+            $pricing = $this->calculatePricing($bookingData);
 
             if (!$bookingData) {
                 throw new Exception('Không tìm thấy thông tin đặt vé');
             }
 
+            error_log("[v0] Starting database transaction");
             query("START TRANSACTION");
 
             $userId = $_SESSION['user_id'] ?? null;
             $tripType = isset($bookingData['return']) ? 'KhuHoi' : 'MotChieu';
 
-            // Create main booking record
             $sql = "INSERT INTO datve (
                         maNguoiDung, soLuongVe, tongTien, giamGia, tongTienSauGiam, 
-                        phuongThucThanhToan, loaiDatVe, trangThai, ngayDat
-                    ) VALUES (?, ?, ?, ?, ?, 'MoMo', ?, 'DaThanhToan', NOW())";
+                        phuongThucThanhToan, loaiDatVe, trangThai, ngayDat, ghiChu
+                    ) VALUES (?, ?, ?, ?, ?, 'MoMo', ?, 'DaThanhToan', NOW(), ?)";
         
             $totalTickets = 0;
             if ($bookingData['outbound']) {
@@ -248,82 +323,145 @@ class MoMoController {
             if (isset($bookingData['return'])) {
                 $totalTickets += count($bookingData['return']['passengers']);
             }
-        
+            
+            $note = "MoMo OrderID: $orderId, TransactionNo: $transactionNo";
+            
+            error_log("[v0] About to insert booking record");
             query($sql, [
                 $userId,
                 $totalTickets,
                 $pricing['original_price'],
                 $pricing['discount'],
                 $pricing['final_price'],
-                $tripType
+                $tripType,
+                $note
             ]);
 
             $bookingId = lastInsertId();
-            error_log("[v0] Created successful MoMo booking with ID: $bookingId");
+            error_log("[v0] *** BOOKING CREATED WITH ID: $bookingId ***");
 
-            // Create payment record
-            $this->createPaymentRecord($bookingId, $pricing, $orderId, $transactionNo);
-
-            // Create booking details
-            $this->createBookingDetails($bookingId, $bookingData);
-
-            // Xác nhận ghế (chuyển từ "Đang giữ" thành "Đã đặt")
-            $this->confirmSeats();
-
-
-            if (isset($_SESSION['applied_promotion']) && $userId) {
-                $promotion = $_SESSION['applied_promotion'];
-                require_once __DIR__ . '/PaymentController.php';
-                $paymentController = new PaymentController();
-                $paymentController->recordPromotionUsage($userId, $promotion['maKhuyenMai'], $bookingId, $pricing['discount']);
+            error_log("[v0] Creating booking details");
+            if ($bookingData['outbound']) {
+                $this->createBookingDetail($bookingId, $bookingData['outbound'], 'DaThanhToan');
             }
-            // Xử lý điểm tích lũy
-            $this->processLoyaltyPoints($bookingId, $pricing);
+            
+            if (isset($bookingData['return'])) {
+                $this->createBookingDetail($bookingId, $bookingData['return'], 'DaThanhToan');
+            }
 
+            error_log("[v0] Committing transaction");
             query("COMMIT");
+            error_log("[v0] Transaction committed successfully");
 
+            error_log("[v0] ========== EMAIL SENDING PROCESS START ==========");
             error_log("[v0] MoMo - Starting email sending process for booking ID: $bookingId");
             
             try {
-                $bookingDetail = Booking::getTicketDetailsForEmail($bookingId);
-                error_log("[v0] MoMo - Booking details retrieved: " . ($bookingDetail ? 'YES' : 'NO'));
+                error_log("[v0] MoMo - About to call Booking::getTicketDetailsForEmail");
+                $ticketData = Booking::getTicketDetailsForEmail($bookingId);
+                error_log("[v0] MoMo - getTicketDetailsForEmail returned: " . ($ticketData ? 'DATA' : 'NULL'));
                 
-                if ($bookingDetail) {
-                    error_log("[v0] MoMo - Email in booking details: " . ($bookingDetail['emailNguoiDung'] ?? 'EMPTY'));
-                    error_log("[v0] MoMo - Number of tickets: " . (isset($bookingDetail['tickets']) ? count($bookingDetail['tickets']) : 0));
-                }
-
-                if ($bookingDetail && !empty($bookingDetail['emailNguoiDung'])) {
+                if ($ticketData) {
+                    error_log("[v0] MoMo - Ticket data structure: " . json_encode(array_keys($ticketData)));
+                    error_log("[v0] MoMo - User email: '" . ($ticketData['emailNguoiDung'] ?? 'EMPTY') . "'");
+                    error_log("[v0] MoMo - Passenger emails: " . json_encode($ticketData['passengerEmails'] ?? []));
+                    error_log("[v0] MoMo - Number of tickets: " . (isset($ticketData['tickets']) ? count($ticketData['tickets']) : 0));
+                    
                     error_log("[v0] MoMo - Creating EmailService instance");
                     $emailService = new EmailService();
+                    error_log("[v0] MoMo - EmailService created successfully");
                     
-                    error_log("[v0] MoMo - Calling sendTicketEmail");
-                    $result = $emailService->sendTicketEmail(
-                        $bookingDetail['emailNguoiDung'],
-                        $bookingDetail,
-                        $bookingDetail['tickets']
-                    );
+                    error_log("[v0] MoMo - Calling sendTicketEmail with ticketData");
+                    $result = $emailService->sendTicketEmail($ticketData);
+                    error_log("[v0] MoMo - sendTicketEmail completed");
                     error_log("[v0] MoMo - Ticket email send result: " . json_encode($result));
+                    
+                    if ($result['success']) {
+                        error_log("[v0] MoMo - ✓ EMAIL SENT SUCCESSFULLY!");
+                    } else {
+                        error_log("[v0] MoMo - ✗ EMAIL FAILED: " . $result['message']);
+                    }
                 } else {
-                    error_log("[v0] MoMo - Cannot send email - Reason: " . 
-                        (!$bookingDetail ? 'Booking details not found' : 'Email address is empty'));
+                    error_log("[v0] MoMo - ✗ Cannot send email - Ticket data not found");
                 }
             } catch (Exception $emailError) {
-                error_log("[v0] MoMo - Email sending exception: " . $emailError->getMessage());
-                error_log("[v0] MoMo - Email error trace: " . $emailError->getTraceAsString());
+                error_log("[v0] MoMo - ✗ EMAIL EXCEPTION: " . $emailError->getMessage());
+                error_log("[v0] Email error file: " . $emailError->getFile() . " line " . $emailError->getLine());
+                error_log("[v0] Email error trace: " . $emailError->getTraceAsString());
             }
 
-            // Xóa session
-            $this->clearBookingSession();
+            error_log("[v0] ========== EMAIL SENDING PROCESS END ==========");
+            error_log("[v0] ========== processSuccessfulPayment END - Returning ID: $bookingId ==========");
 
-            $_SESSION['success'] = 'Thanh toán thành công! Mã đặt vé: ' . $bookingId;
-            header('Location: ' . BASE_URL . '/booking/success/' . $bookingId);
-            exit;
+            return $bookingId;
 
         } catch (Exception $e) {
+            error_log("[v0] ✗ EXCEPTION in processSuccessfulPayment: " . $e->getMessage());
+            error_log("[v0] Exception file: " . $e->getFile() . " line " . $e->getLine());
+            error_log("[v0] Exception trace: " . $e->getTraceAsString());
             query("ROLLBACK");
-            error_log("processSuccessfulPayment error: " . $e->getMessage());
+            error_log("[v0] Transaction rolled back");
             throw $e;
+        }
+    }
+
+    /**
+     * Tạo đơn đặt vé thất bại
+     */
+    private function createFailedBooking($orderId, $amount, $resultCode) {
+        try {
+            error_log("[v0] Creating failed booking - OrderID: $orderId, Result Code: $resultCode");
+            
+            $bookingData = $_SESSION['final_booking_data'];
+            $pricing = $this->calculatePricing($bookingData);
+
+            query("START TRANSACTION");
+
+            $userId = $_SESSION['user_id'] ?? null;
+            $tripType = isset($bookingData['return']) ? 'KhuHoi' : 'MotChieu';
+            
+            $sql = "INSERT INTO datve (
+                        maNguoiDung, soLuongVe, tongTien, giamGia, tongTienSauGiam, 
+                        phuongThucThanhToan, loaiDatVe, trangThai, ngayDat,
+                        ghiChu
+                    ) VALUES (?, ?, ?, ?, ?, 'MoMo', ?, 'DaHuy', NOW(), ?)";
+            
+            $totalTickets = 0;
+            if ($bookingData['outbound']) {
+                $totalTickets += count($bookingData['outbound']['passengers']);
+            }
+            if (isset($bookingData['return'])) {
+                $totalTickets += count($bookingData['return']['passengers']);
+            }
+            
+            $note = "MoMo Failed - OrderID: $orderId, Result Code: $resultCode";
+            
+            query($sql, [
+                $userId,
+                $totalTickets,
+                $pricing['original_price'],
+                $pricing['discount'],
+                $pricing['final_price'],
+                $tripType,
+                $note
+            ]);
+            
+            $bookingId = lastInsertId();
+            
+            if ($bookingData['outbound']) {
+                $this->createBookingDetail($bookingId, $bookingData['outbound'], 'DaHuy');
+            }
+            
+            if (isset($bookingData['return'])) {
+                $this->createBookingDetail($bookingId, $bookingData['return'], 'DaHuy');
+            }
+
+            query("COMMIT");
+            error_log("[v0] Successfully created failed booking with ID: $bookingId");
+            
+        } catch (Exception $e) {
+            query("ROLLBACK");
+            error_log("[v0] Error creating failed booking: " . $e->getMessage());
         }
     }
 
@@ -415,7 +553,7 @@ class MoMoController {
     /**
      * Tính giá cuối cùng
      */
-    private function calculateFinalPricing($bookingData) {
+    private function calculatePricing($bookingData) {
         $originalPrice = $bookingData['total_price'];
         $discount = 0;
 
@@ -435,7 +573,7 @@ class MoMoController {
         }
 
         $finalPrice = max(0, $originalPrice - $discount);
-        $earnedPoints = floor($originalPrice * 0.001);
+        $earnedPoints = floor($originalPrice * 0.0003);
 
         return [
             'original_price' => $originalPrice,
@@ -446,53 +584,13 @@ class MoMoController {
     }
 
     /**
-     * Tạo bản ghi thanh toán
+     * Tạo chi tiết đặt vé
      */
-    private function createPaymentRecord($bookingId, $pricing, $orderId, $transactionNo) {
-        $sql = "INSERT INTO datve_thanhtoan (
-                    maDatVe, tongTienGoc, tongTienSauGiam, maKhuyenMai, 
-                    diemSuDung, diemNhanDuoc, phuongThucThanhToan, 
-                    loaiDatVe, trangThai, ngayDat, ghiChu
-                ) VALUES (?, ?, ?, ?, ?, ?, 'MoMo', ?, 'DaThanhToan', NOW(), ?)";
-        
-        $promotionId = isset($_SESSION['applied_promotion']) ? $_SESSION['applied_promotion']['maKhuyenMai'] : null;
-        $usedPoints = $_SESSION['used_points'] ?? 0;
-        $tripType = isset($_SESSION['final_booking_data']['return']) ? 'KhuHoi' : 'MotChieu';
-        $note = "MoMo OrderID: $orderId, TransactionNo: $transactionNo";
-        
-        query($sql, [
-            $bookingId,
-            $pricing['original_price'],
-            $pricing['final_price'],
-            $promotionId,
-            $usedPoints,
-            $pricing['earned_points'],
-            $tripType,
-            $note
-        ]);
-    }
-
-    /**
-     * Tạo chi tiết đặt vé - Updated to use main booking ID
-     */
-    private function createBookingDetails($bookingId, $bookingData) {
-        if ($bookingData['outbound']) {
-            $this->createSingleBookingDetail($bookingId, $bookingData['outbound']);
-        }
-        
-        if (isset($bookingData['return'])) {
-            $this->createSingleBookingDetail($bookingId, $bookingData['return']);
-        }
-    }
-
-    /**
-     * Tạo chi tiết đặt vé cho một chuyến - Updated to use main booking ID
-     */
-    private function createSingleBookingDetail($bookingId, $tripData) {
+    private function createBookingDetail($bookingId, $tripData, $status) {
         foreach ($tripData['passengers'] as $index => $passenger) {
             $seatNumber = $tripData['selected_seats'][$index];
             
-            // Get seat ID from seat number
+            // Lấy ID ghế từ số ghế
             $seatSql = "SELECT g.maGhe FROM ghe g 
                        JOIN chuyenxe cx ON cx.maPhuongTien = g.maPhuongTien 
                        WHERE cx.maChuyenXe = ? AND g.soGhe = ?";
@@ -502,10 +600,10 @@ class MoMoController {
                 $sql = "INSERT INTO chitiet_datve (maDatVe, maChuyenXe, maGhe, hoTenHanhKhach, 
                                                   emailHanhKhach, soDienThoaiHanhKhach, giaVe, 
                                                   maDiemDon, maDiemTra, trangThai, ngayTao)
-                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'DaThanhToan', NOW())";
+                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())";
                 
                 query($sql, [
-                    $bookingId, // Use main booking ID
+                    $bookingId,
                     $tripData['trip_id'],
                     $seat['maGhe'],
                     $passenger['ho_ten'],
@@ -513,25 +611,28 @@ class MoMoController {
                     $passenger['so_dien_thoai'] ?? '',
                     $tripData['total_price'] / count($tripData['passengers']),
                     $tripData['pickup_point'],
-                    $tripData['dropoff_point']
+                    $tripData['dropoff_point'],
+                    $status
                 ]);
             }
         }
     }
 
     /**
-     * Xác nhận ghế
+     * Xác nhận ghế (chuyển từ "Đang giữ" thành "Đã đặt")
      */
     private function confirmSeats() {
         if (!isset($_SESSION['held_seats'])) {
             return;
         }
-
+        
         $heldSeats = $_SESSION['held_seats'];
         
         // Cập nhật trạng thái ghế chuyến đi
-        $this->updateSeatsStatus($heldSeats['trip_id'], $heldSeats['selected_seats'], 'Đã đặt');
-        $this->updateTripSeatCount($heldSeats['trip_id'], count($heldSeats['selected_seats']));
+        if (!empty($heldSeats['trip_id']) && !empty($heldSeats['selected_seats'])) {
+            $this->updateSeatsStatus($heldSeats['trip_id'], $heldSeats['selected_seats'], 'Đã đặt');
+            $this->updateTripSeatCount($heldSeats['trip_id'], count($heldSeats['selected_seats']));
+        }
         
         // Cập nhật trạng thái ghế chuyến về
         if (!empty($heldSeats['return_trip_id']) && !empty($heldSeats['return_selected_seats'])) {
@@ -541,7 +642,29 @@ class MoMoController {
     }
 
     /**
-     * Add new method to update trip seat count
+     * Giải phóng ghế đang giữ
+     */
+    private function releaseHeldSeats() {
+        if (!isset($_SESSION['held_seats'])) {
+            return;
+        }
+        
+        $heldSeats = $_SESSION['held_seats'];
+        
+        // Giải phóng ghế chuyến đi
+        if (!empty($heldSeats['trip_id']) && !empty($heldSeats['selected_seats'])) {
+            $this->updateSeatsStatus($heldSeats['trip_id'], $heldSeats['selected_seats'], 'Trống');
+            $this->updateTripSeatCount($heldSeats['trip_id'], -count($heldSeats['selected_seats']));
+        }
+        
+        // Giải phóng ghế chuyến về
+        if (!empty($heldSeats['return_trip_id']) && !empty($heldSeats['return_selected_seats'])) {
+            $this->updateSeatsStatus($heldSeats['return_trip_id'], $heldSeats['return_selected_seats'], 'Trống');
+            $this->updateTripSeatCount($heldSeats['return_trip_id'], -count($heldSeats['return_selected_seats']));
+        }
+    }
+
+    /**
      * Cập nhật số ghế đã đặt trong bảng chuyenxe
      */
     private function updateTripSeatCount($tripId, $seatCountChange) {
@@ -576,37 +699,51 @@ class MoMoController {
             $sql = "SELECT maPhuongTien FROM chuyenxe WHERE maChuyenXe = ?";
             $trip = fetch($sql, [$tripId]);
             
-            if (!$trip) return;
-
+            if (!$trip) {
+                return false;
+            }
+            
             $vehicleId = $trip['maPhuongTien'];
             
-            // Lấy ID ghế
+            // Lấy ID ghế từ số ghế
             $placeholders = str_repeat('?,', count($seatNumbers) - 1) . '?';
-            $sql = "SELECT maGhe FROM ghe WHERE maPhuongTien = ? AND soGhe IN ($placeholders)";
+            $sql = "SELECT maGhe, soGhe FROM ghe WHERE maPhuongTien = ? AND soGhe IN ($placeholders)";
             $params = array_merge([$vehicleId], $seatNumbers);
             $seats = fetchAll($sql, $params);
             
-            // Cập nhật trạng thái
+            // Cập nhật trạng thái từng ghế
             foreach ($seats as $seat) {
-                $sql = "UPDATE chuyenxe_ghe SET trangThai = ?, ngayCapNhat = NOW() 
-                        WHERE maChuyenXe = ? AND maGhe = ?";
-                query($sql, [$status, $tripId, $seat['maGhe']]);
+                $checkSql = "SELECT COUNT(*) as count FROM chuyenxe_ghe WHERE maChuyenXe = ? AND maGhe = ?";
+                $result = fetch($checkSql, [$tripId, $seat['maGhe']]);
+                
+                if ($result['count'] > 0) {
+                    $updateSql = "UPDATE chuyenxe_ghe SET trangThai = ?, ngayCapNhat = NOW() WHERE maChuyenXe = ? AND maGhe = ?";
+                    query($updateSql, [$status, $tripId, $seat['maGhe']]);
+                } else {
+                    $insertSql = "INSERT INTO chuyenxe_ghe (maChuyenXe, maGhe, trangThai, ngayTao) VALUES (?, ?, ?, NOW())";
+                    query($insertSql, [$tripId, $seat['maGhe'], $status]);
+                }
             }
-
+            
+            return true;
+            
         } catch (Exception $e) {
-            error_log("updateSeatsStatus error: " . $e->getMessage());
+            error_log("[v0] MoMo updateSeatsStatus error: " . $e->getMessage());
+            return false;
         }
     }
 
     /**
      * Xử lý điểm tích lũy
      */
-    private function processLoyaltyPoints($bookingId, $pricing) {
+    private function processLoyaltyPoints($bookingId) {
         if (!isset($_SESSION['user_id'])) {
             return;
         }
 
         $userId = $_SESSION['user_id'];
+        $bookingData = $_SESSION['final_booking_data'];
+        $pricing = $this->calculatePricing($bookingData);
 
         try {
             // Trừ điểm đã sử dụng
@@ -624,7 +761,7 @@ class MoMoController {
             }
 
         } catch (Exception $e) {
-            error_log("processLoyaltyPoints error: " . $e->getMessage());
+            error_log("[v0] MoMo processLoyaltyPoints error: " . $e->getMessage());
         }
     }
 
@@ -640,6 +777,36 @@ class MoMoController {
         unset($_SESSION['booking_outbound_trip']);
         unset($_SESSION['booking_errors']);
         unset($_SESSION['booking_data']);
+    }
+
+    /**
+     * Lấy thông báo lỗi từ mã result code MoMo
+     */
+    private function getMoMoErrorMessage($resultCode) {
+        $errorMessages = [
+            '0' => 'Giao dịch thành công',
+            '1' => 'Giao dịch thất bại do người dùng từ chối',
+            '4' => 'Giao dịch thất bại',
+            '5' => 'Giao dịch bị từ chối',
+            '6' => 'Tài khoản MoMo không đủ quỹ',
+            '7' => 'Giao dịch bị hủy',
+            '8' => 'Liên kết tài khoản ngân hàng thất bại',
+            '9' => 'Tài khoản hoặc mật khẩu không chính xác',
+            '10' => 'Lỗi giao dịch',
+            '11' => 'Giao dịch bị lỗi kỹ thuật',
+            '13' => 'Yêu cầu không hợp lệ',
+            '20' => 'Giao dịch không được tìm thấy',
+            '21' => 'Hoàn tiền bị từ chối',
+            '40' => 'Tài khoản không kích hoạt',
+            '41' => 'Tài khoản bị khóa',
+            '42' => 'Tài khoản bị khóa do quá nhiều lần nhập sai mật khẩu',
+            '43' => 'Tài khoản không tồn tại',
+            '150' => 'Giao dịch bị từ chối - Bảo mật',
+            '1000' => 'Giao dịch bị lỗi hệ thống',
+            '9000' => 'Yêu cầu không hợp lệ'
+        ];
+        
+        return $errorMessages[$resultCode] ?? 'Lỗi không xác định (Mã: ' . $resultCode . ')';
     }
 }
 ?>
