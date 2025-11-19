@@ -77,6 +77,8 @@ class SearchController {
                 
                 // Save recent search after successful search
                 $this->saveRecentSearch($diemDi, $diemDen, $ngayDi, $isRoundTrip, $ngayVe, $soKhach);
+
+                $allTripsUnfiltered = $searchResults['outbound'];
                 
                 if (!empty(array_filter($filters))) {
                     $searchResults['outbound'] = TripSearch::filterTrips($searchResults['outbound'], $filters);

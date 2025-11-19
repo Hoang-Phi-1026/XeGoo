@@ -1,4 +1,4 @@
-    <?php include __DIR__ . '/../layouts/header.php'; ?>
+<?php include __DIR__ . '/../layouts/header.php'; ?>
 
     <div class="min-h-screen bg-gray-50">
         <!-- Updated search form to use unified CSS classes and structure -->
@@ -109,8 +109,7 @@
         <div class="container mx-auto px-4 py-8">
             <?php if ($hasSearched): ?>
                 <?php
-                // Process ALL search results (before filtering) for dynamic filtering options
-                $allTrips = $searchResults['all'] ?? $searchResults['outbound']; // Use 'all' if available, fallback to 'outbound'
+                $allTrips = $allTripsUnfiltered ?? $searchResults['outbound'];
                 
                 $departureTimesCount = []; // Array to count trips by specific departure time
                 $vehicleTypes = [];
@@ -189,6 +188,36 @@
                                             <span><?php echo htmlspecialchars($type); ?> (<?php echo $count; ?>)</span>
                                         </label>
                                     <?php endforeach; ?>
+                                </div>
+                            </div>
+
+                            <!-- Add price range filter section -->
+                            <div class="filter-section">
+                                <h4 class="filter-section-title">Khoảng giá</h4>
+                                <div class="filter-price-range">
+                                    <div class="filter-price-inputs">
+                                        <div class="price-input-group">
+                                            <label for="min_price" class="price-label">Từ:</label>
+                                            <input type="number" id="min_price" name="min_price" 
+                                                value="<?php echo $filters['min_price'] ?? ''; ?>" 
+                                                placeholder="<?php echo number_format($priceRange['min'], 0, ',', '.'); ?>"
+                                                min="<?php echo $priceRange['min']; ?>" 
+                                                max="<?php echo $priceRange['max']; ?>"
+                                                class="form-input price-input" style="width: 100%;">
+                                            <span class="price-unit">đ</span>
+                                        </div>
+                                        <div class="price-input-group">
+                                            <label for="max_price" class="price-label">Đến:</label>
+                                            <input type="number" id="max_price" name="max_price" 
+                                                value="<?php echo $filters['max_price'] ?? ''; ?>" 
+                                                placeholder="<?php echo number_format($priceRange['max'], 0, ',', '.'); ?>"
+                                                min="<?php echo $priceRange['min']; ?>" 
+                                                max="<?php echo $priceRange['max']; ?>"
+                                                class="form-input price-input" style="width: 100%;">
+                                            <span class="price-unit">đ</span>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="filter-price-btn">Áp dụng</button>
                                 </div>
                             </div>
                         </form>
@@ -491,6 +520,71 @@
         align-items: center;
         gap: 0.5rem;
     }
+
+    /* Add styles for price filter section */
+    .filter-price-range {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .filter-price-inputs {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .price-input-group {
+        flex: 1;
+        position: relative;
+    }
+
+    .price-label {
+        display: block;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #666;
+        margin-bottom: 0.25rem;
+        text-transform: uppercase;
+    }
+
+    .price-input {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ddd;
+        border-radius: 0.375rem;
+        font-size: 0.875rem;
+    }
+
+    .price-input:focus {
+        outline: none;
+        border-color: #f97316;
+        box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.1);
+    }
+
+    .price-unit {
+        position: absolute;
+        right: 0.5rem;
+        top: 2rem;
+        color: #999;
+        font-size: 0.75rem;
+    }
+
+    .filter-price-btn {
+        width: 100%;
+        padding: 0.5rem;
+        background-color: #f97316;
+        color: white;
+        border: none;
+        border-radius: 0.375rem;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 0.875rem;
+        transition: background-color 0.2s ease;
+    }
+
+    .filter-price-btn:hover {
+        background-color: #ea580c;
+    }
     </style>
 
     <script>
@@ -502,11 +596,79 @@
             
             radioButtons.forEach(radio => {
                 radio.addEventListener('change', function() {
-                    filterForm.submit();
+                    submitFilterWithAjax();
                 });
             });
+            
+            // Also submit form when price inputs change for price filter
+            const minPriceInput = filterForm.querySelector('input[name="min_price"]');
+            const maxPriceInput = filterForm.querySelector('input[name="max_price"]');
+            const applyPriceBtn = filterForm.querySelector('.filter-price-btn');
+
+            if (applyPriceBtn) {
+                applyPriceBtn.addEventListener('click', function(e) {
+                    e.preventDefault(); // Prevent default button behavior
+                    submitFilterWithAjax();
+                });
+            }
         }
     });
+
+    function submitFilterWithAjax() {
+        const filterForm = document.getElementById('filterForm');
+        if (!filterForm) return;
+
+        // Create FormData from the form
+        const formData = new FormData(filterForm);
+        
+        // Get the current URL parameters
+        const currentUrl = new URL(window.location);
+        
+        // Build query string from form data
+        const params = new URLSearchParams();
+        for (let [key, value] of formData) {
+            if (value !== '') {
+                params.append(key, value);
+            }
+        }
+
+        // Add existing parameters that aren't in the form
+        currentUrl.searchParams.forEach((value, key) => {
+            if (!params.has(key) && key !== 'departure_time' && key !== 'vehicle_type' && key !== 'min_price' && key !== 'max_price') {
+                params.append(key, value);
+            }
+        });
+
+        // Make AJAX request
+        fetch(`<?php echo BASE_URL; ?>/search?` + params.toString(), {
+            method: 'GET',
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest'
+            }
+        })
+        .then(response => response.text())
+        .then(html => {
+            // Extract the results area from the new HTML
+            const parser = new DOMParser();
+            const newDoc = parser.parseFromString(html, 'text/html');
+            const newResultsArea = newDoc.querySelector('.results-area');
+            const currentResultsArea = document.querySelector('.results-area');
+            
+            if (newResultsArea && currentResultsArea) {
+                // Replace only the results area, keeping the filter sidebar intact
+                currentResultsArea.innerHTML = newResultsArea.innerHTML;
+                
+                // Update the URL without page reload
+                window.history.replaceState({}, '', `<?php echo BASE_URL; ?>/search?` + params.toString());
+            }
+        })
+        .catch(error => {
+            console.error('Error submitting filter:', error);
+            // Fallback to regular form submission if AJAX fails
+            filterForm.submit();
+        });
+    }
+
 
     // Function to apply recent search
     function applyRecentSearch(from, to, departureDate, isRoundTrip, returnDate) {

@@ -1,0 +1,13 @@
+[20-Nov-2025 01:03:02 Asia/Ho_Chi_Minh] ===============================================================================
+[20-Nov-2025 01:03:02 Asia/Ho_Chi_Minh] [Cron-DriverReminder] Job started at: 2025-11-20 01:03:02
+[20-Nov-2025 01:03:02 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[20-Nov-2025 01:03:02 Asia/Ho_Chi_Minh] [DriverReminder] === START DRIVER REMINDER PROCESS ===
+[20-Nov-2025 01:03:02 Asia/Ho_Chi_Minh] [DriverReminder] Current server time: 2025-11-20 01:03:02
+[20-Nov-2025 01:03:02 Asia/Ho_Chi_Minh] [DriverReminder] Query params - Start: 2025-11-20 01:03:02, End: 2025-11-20 01:33:02
+[20-Nov-2025 01:03:02 Asia/Ho_Chi_Minh] [DriverReminder] Found 0 trips departing in next 30 minutes
+[20-Nov-2025 01:03:02 Asia/Ho_Chi_Minh] [DriverReminder] === DRIVER REMINDER PROCESS COMPLETED ===
+[20-Nov-2025 01:03:02 Asia/Ho_Chi_Minh] [DriverReminder] Reminders sent: 0, Failed: 0
+[20-Nov-2025 01:03:02 Asia/Ho_Chi_Minh] [Cron-DriverReminder] Result: {"success":true,"message":"G\u1eedi th\u00e0nh c\u00f4ng 0 th\u00f4ng b\u00e1o, l\u1ed7i 0","remindersSent":0,"remindersFailed":0}
+[20-Nov-2025 01:03:02 Asia/Ho_Chi_Minh] [Cron-DriverReminder] Job completed at: 2025-11-20 01:03:02
+[20-Nov-2025 01:03:02 Asia/Ho_Chi_Minh] ===============================================================================
+

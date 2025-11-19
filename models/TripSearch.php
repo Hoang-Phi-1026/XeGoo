@@ -356,25 +356,10 @@ class TripSearch {
         }
         
         return array_filter($trips, function($trip) use ($filters) {
-            // Filter by departure time
             if (!empty($filters['departure_time'])) {
-                $departureHour = (int)date('H', strtotime($trip['thoiGianKhoiHanh']));
-                switch ($filters['departure_time']) {
-                    case 'early_morning':
-                        if ($departureHour < 4 || $departureHour >= 8) return false;
-                        break;
-                    case 'morning':
-                        if ($departureHour < 8 || $departureHour >= 12) return false;
-                        break;
-                    case 'afternoon':
-                        if ($departureHour < 12 || $departureHour >= 18) return false;
-                        break;
-                    case 'evening':
-                        if ($departureHour < 18 || $departureHour >= 22) return false;
-                        break;
-                    case 'night':
-                        if ($departureHour < 22 && $departureHour >= 4) return false;
-                        break;
+                $tripTime = date('H:i', strtotime($trip['thoiGianKhoiHanh']));
+                if ($tripTime !== $filters['departure_time']) {
+                    return false;
                 }
             }
             
@@ -385,11 +370,10 @@ class TripSearch {
                 }
             }
             
-            // Filter by price range
-            if (!empty($filters['min_price']) && $trip['giaVe'] < $filters['min_price']) {
+            if (isset($filters['min_price']) && $filters['min_price'] !== null && $trip['giaVe'] < $filters['min_price']) {
                 return false;
             }
-            if (!empty($filters['max_price']) && $trip['giaVe'] > $filters['max_price']) {
+            if (isset($filters['max_price']) && $filters['max_price'] !== null && $trip['giaVe'] > $filters['max_price']) {
                 return false;
             }
             
@@ -471,7 +455,7 @@ class TripSearch {
                         dt.thuTu
                     FROM tuyenduong_diemdontra dt
                     INNER JOIN chuyenxe_diemdontra cdt ON dt.maDiem = cdt.maDiem
-                    WHERE cdt.maChuyenXe = ?
+                    WHERE cdt.maChuyenXe = ? 
                       AND dt.trangThai = 'Hoạt động'
                     ORDER BY dt.loaiDiem DESC, dt.thuTu ASC";
             
@@ -501,15 +485,7 @@ class TripSearch {
             error_log("Active trips: " . $trips[0]['count']);
             
             // Check sample trip data
-            $sampleTrips = fetchAll("
-                SELECT c.*, t.diemDi, t.diemDen, t.kyHieuTuyen 
-                FROM chuyenxe c 
-                INNER JOIN lichtrinh l ON c.maLichTrinh = l.maLichTrinh
-                INNER JOIN tuyenduong t ON l.maTuyenDuong = t.maTuyenDuong
-                WHERE c.trangThai IN ('Sẵn sàng', 'Đang bán vé') 
-                  AND c.ngayKhoiHanh >= CURDATE()
-                LIMIT 3
-            ");
+            $sampleTrips = fetchAll("SELECT c.*, t.diemDi, t.diemDen, t.kyHieuTuyen FROM chuyenxe c INNER JOIN lichtrinh l ON c.maLichTrinh = l.maLichTrinh INNER JOIN tuyenduong t ON l.maTuyenDuong = t.maTuyenDuong WHERE c.trangThai IN ('Sẵn sàng', 'Đang bán vé') AND c.ngayKhoiHanh >= CURDATE() LIMIT 3");
             
             foreach ($sampleTrips as $trip) {
                 error_log("Sample trip: {$trip['diemDi']} -> {$trip['diemDen']} on {$trip['ngayKhoiHanh']}");
@@ -520,3 +496,4 @@ class TripSearch {
         }
     }
 }
+?>

@@ -38,9 +38,9 @@ class ReminderEmailController {
             error_log("[ReminderEmail] 30 minutes later: " . $thirtyMinutesLaterFormatted);
             
             // === BƯỚC 1: Tìm những chuyến xe khởi hành trong 30 phút nữa ===
+            // Join through chitiet_datve to get bookings since datve table doesn't have maChuyenXe
             $tripsSql = "
-                SET SESSION sql_mode='ALLOW_INVALID_DATES';
-                SELECT 
+                SELECT DISTINCT
                     c.maChuyenXe,
                     c.ngayKhoiHanh,
                     c.thoiGianKhoiHanh,
@@ -51,23 +51,30 @@ class ReminderEmailController {
                     l.maTuyenDuong,
                     lp.soChoMacDinh,
                     tx.tenNguoiDung AS tenTaiXe,
-                    tx.soDienThoai AS soDienThoaiTaiXe
+                    tx.soDienThoai AS soDienThoaiTaiXe,
+                    COUNT(DISTINCT dv.maDatVe) as soBooking
                 FROM chuyenxe c
                 INNER JOIN lichtrinh l ON c.maLichTrinh = l.maLichTrinh
                 INNER JOIN tuyenduong t ON l.maTuyenDuong = t.maTuyenDuong
                 INNER JOIN phuongtien p ON c.maPhuongTien = p.maPhuongTien
                 INNER JOIN loaiphuongtien lp ON p.maLoaiPhuongTien = lp.maLoaiPhuongTien
                 LEFT JOIN nguoidung tx ON c.maTaiXe = tx.maNguoiDung
+                INNER JOIN chitiet_datve cd ON c.maChuyenXe = cd.maChuyenXe
+                INNER JOIN datve dv ON cd.maDatVe = dv.maDatVe
                 WHERE 
                     c.thoiGianKhoiHanh > ?
                     AND c.thoiGianKhoiHanh <= ?
-                    AND c.trangThai IN ('Sẵn sàng', 'sẵn sàng')
+                    AND c.trangThai IN ('Sẵn sàng', 'Khởi hành')
+                    AND dv.trangThai = 'DaThanhToan'
+                GROUP BY c.maChuyenXe, c.ngayKhoiHanh, c.thoiGianKhoiHanh, t.kyHieuTuyen, t.diemDi, t.diemDen, l.maTuyenDuong, lp.soChoMacDinh, tx.tenNguoiDung, tx.soDienThoai
                 ORDER BY c.thoiGianKhoiHanh ASC
             ";
             
             $trips = fetchAll($tripsSql, [$currentTimeFormatted, $thirtyMinutesLaterFormatted]);
 
             error_log("[ReminderEmail] Query params - Start: $currentTimeFormatted, End: $thirtyMinutesLaterFormatted");
+            error_log("[ReminderEmail] [v0] SQL Query: " . $tripsSql);
+            error_log("[ReminderEmail] [v0] Bindings: [" . $currentTimeFormatted . ", " . $thirtyMinutesLaterFormatted . "]");
             
             error_log("[ReminderEmail] Found " . count($trips) . " trips departing in next 30 minutes");
             
@@ -90,7 +97,7 @@ class ReminderEmailController {
                 
                 error_log("[ReminderEmail] Processing trip: $maChuyenXe, departure: $departureDateTime");
                 
-                // Tìm tất cả booking cho chuyến này
+                // But still need to get individual booking details for email sending
                 $bookingsSql = "
                     SELECT DISTINCT
                         dv.maDatVe,
@@ -273,7 +280,7 @@ class ReminderEmailController {
      */
     private function createInAppNotification($maDatVe, $maChuyenXe, $maNguoiDung, $thoiGianDuKien) {
         try {
-             $tripSql = "
+            $tripSql = "
                 SELECT 
                     t.kyHieuTuyen,
                     t.diemDi,
