@@ -21,11 +21,16 @@ class DriverNotificationController {
     public function getUnreadNotifications() {
         header('Content-Type: application/json; charset=utf-8');
         
-        if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] != 3) {
+        error_log("[v0] DriverNotificationController - getUnreadNotifications called");
+        error_log("[v0] Session user_id: " . ($_SESSION['user_id'] ?? 'NOT SET'));
+        error_log("[v0] Session user_role: " . ($_SESSION['user_role'] ?? 'NOT SET'));
+        
+        if (!isset($_SESSION['user_id'])) {
+            error_log("[v0] DriverNotificationController - No user_id in session");
             http_response_code(401);
             echo json_encode([
                 'success' => false,
-                'message' => 'Không có quyền truy cập'
+                'message' => 'Vui lòng đăng nhập'
             ]);
             return;
         }
@@ -37,8 +42,8 @@ class DriverNotificationController {
                 SELECT 
                     maThongBao,
                     maChuyenXe,
-                    tieu_de,
-                    noi_dung,
+                    tieu_de as tieu_de,
+                    noi_dung as noi_dung,
                     loai_thong_bao,
                     thoiGianKhoiHanh,
                     da_xem,
@@ -46,12 +51,14 @@ class DriverNotificationController {
                 FROM thong_bao_tai_xe
                 WHERE 
                     maTaiXe = ?
-                    AND da_xem = FALSE
+                    AND da_xem = 0
                 ORDER BY ngayTao DESC
                 LIMIT 50
             ";
             
             $notifications = fetchAll($sql, [$maTaiXe]);
+            
+            error_log("[v0] DriverNotificationController - Found " . count($notifications) . " notifications");
             
             echo json_encode([
                 'success' => true,
@@ -60,7 +67,7 @@ class DriverNotificationController {
             ]);
             
         } catch (Exception $e) {
-            error_log("[DriverNotificationController] Error: " . $e->getMessage());
+            error_log("[v0] DriverNotificationController Error: " . $e->getMessage());
             http_response_code(500);
             echo json_encode([
                 'success' => false,
@@ -127,7 +134,7 @@ class DriverNotificationController {
             ]);
             
         } catch (Exception $e) {
-            error_log("[DriverNotificationController] Error: " . $e->getMessage());
+            error_log("[v0] DriverNotificationController] Error: " . $e->getMessage());
             http_response_code(500);
             echo json_encode([
                 'success' => false,
@@ -137,3 +144,4 @@ class DriverNotificationController {
     }
 }
 ?>
+ 

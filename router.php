@@ -206,6 +206,10 @@ $routes = [
 
     // Notification API routes for in-app reminders
     '/api/notifications/unread' => ['controller' => 'NotificationController', 'action' => 'getUnreadNotifications'],
+
+       // Driver notification routes
+    '/api/driver/notifications/unread' => ['controller' => 'DriverNotificationController', 'action' => 'getUnreadNotifications'],
+    '/api/driver/notifications/mark-read' => ['controller' => 'DriverNotificationController', 'action' => 'markAsRead'],
 ];
 
 // Define POST routes
@@ -316,6 +320,9 @@ $postRoutes = [
     // Notification API routes for in-app reminders
     '/api/notifications/mark-read' => ['controller' => 'NotificationController', 'action' => 'markAsRead'],
     '/api/notifications/mark-all-read' => ['controller' => 'NotificationController', 'action' => 'markAllAsRead'],
+
+    // Driver notification mark-read POST route
+    '/api/driver/notifications/mark-read' => ['controller' => 'DriverNotificationController', 'action' => 'markAsRead'],
 ];
 
 // Get current URL path and remove base directory

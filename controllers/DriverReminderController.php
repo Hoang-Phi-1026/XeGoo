@@ -22,6 +22,7 @@ class DriverReminderController {
         error_log("[DriverReminder] Query params - Start: " . $currentTime . ", End: " . $thirtyMinutesLater);
         
         try {
+            // This allows finding trips with NO bookings yet (driver still needs 30-min warning)
             $sql = "
                 SELECT DISTINCT
                     c.maChuyenXe,
@@ -35,19 +36,18 @@ class DriverReminderController {
                     tx.maNguoiDung AS maTaiXe,
                     tx.tenNguoiDung AS tenTaiXe,
                     tx.email AS emailTaiXe,
-                    COUNT(DISTINCT dv.maDatVe) as soHanhKhach
+                    COALESCE(COUNT(DISTINCT CASE WHEN dv.trangThai = 'DaThanhToan' THEN dv.maDatVe END), 0) as soHanhKhach
                 FROM chuyenxe c
                 INNER JOIN lichtrinh l ON c.maLichTrinh = l.maLichTrinh
                 INNER JOIN tuyenduong t ON l.maTuyenDuong = t.maTuyenDuong
                 INNER JOIN phuongtien p ON c.maPhuongTien = p.maPhuongTien
                 LEFT JOIN nguoidung tx ON c.maTaiXe = tx.maNguoiDung
-                INNER JOIN chitiet_datve cd ON c.maChuyenXe = cd.maChuyenXe
-                INNER JOIN datve dv ON cd.maDatVe = dv.maDatVe
+                LEFT JOIN chitiet_datve cd ON c.maChuyenXe = cd.maChuyenXe
+                LEFT JOIN datve dv ON cd.maDatVe = dv.maDatVe
                 WHERE 
                     c.thoiGianKhoiHanh > ?
                     AND c.thoiGianKhoiHanh <= ?
                     AND c.trangThai IN ('Sẵn sàng', 'Khởi hành')
-                    AND dv.trangThai = 'DaThanhToan'
                     AND c.maTaiXe IS NOT NULL
                 GROUP BY c.maChuyenXe
                 ORDER BY c.thoiGianKhoiHanh ASC

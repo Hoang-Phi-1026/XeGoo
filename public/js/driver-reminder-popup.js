@@ -4,69 +4,116 @@
  */
 
 class DriverReminderPopup {
-    constructor() {
-        this.pollInterval = 30000; // Poll every 30 seconds
-        this.displayedNotifications = new Set();
-        this.init();
+  constructor() {
+    this.pollInterval = 15000 // Poll every 15 seconds
+    this.displayedNotifications = new Set()
+    this.baseUrl = window.BASE_URL || ""
+    this.init()
+  }
+
+  init() {
+    console.log("[v0] Initializing driver reminder popup system")
+    if (!window.BASE_URL || window.BASE_URL === "") {
+      // Extract base URL from current path
+      const pathname = window.location.pathname
+      // Remove trailing slashes and extract base path
+      const baseMatch = pathname.match(/^(.*?)(?:\/[^/]*)?$/)
+      if (baseMatch && pathname.includes("/xegoo")) {
+        this.baseUrl = pathname.substring(0, pathname.indexOf("/xegoo") + 6)
+      } else {
+        this.baseUrl = window.location.origin
+      }
     }
-    
-    init() {
-        console.log('[v0] Initializing driver reminder popup system');
-        this.startPolling();
-        this.setupStyles();
+    console.log("[v0] Base URL set to:", this.baseUrl)
+    this.startPolling()
+  }
+
+  startPolling() {
+    // Initial check
+    this.checkNotifications()
+
+    // Poll regularly - poll every 15 seconds
+    this.pollTimer = setInterval(() => {
+      this.checkNotifications()
+    }, this.pollInterval)
+
+    console.log("[v0] Started polling for driver notifications")
+  }
+
+  stopPolling() {
+    if (this.pollTimer) {
+      clearInterval(this.pollTimer)
     }
-    
-    startPolling() {
-        // Initial check
-        this.checkNotifications();
-        
-        // Poll regularly
-        this.pollTimer = setInterval(() => {
-            this.checkNotifications();
-        }, this.pollInterval);
-    }
-    
-    stopPolling() {
-        if (this.pollTimer) {
-            clearInterval(this.pollTimer);
+  }
+
+  checkNotifications() {
+    const url = `${this.baseUrl}/api/driver/notifications/unread`
+    console.log("[v0] Polling for notifications:", url)
+
+    fetch(url, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      credentials: "same-origin",
+    })
+      .then((response) => {
+        console.log("[v0] Response status:", response.status)
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`)
         }
-    }
-    
-    checkNotifications() {
-        fetch('/api/driver/notifications/unread')
-            .then(response => response.json())
-            .then(data => {
-                if (data.success && data.notifications && data.notifications.length > 0) {
-                    data.notifications.forEach(notification => {
-                        if (!this.displayedNotifications.has(notification.maThongBao)) {
-                            this.showReminderPopup(notification);
-                            this.displayedNotifications.add(notification.maThongBao);
-                        }
-                    });
-                }
+        return response.text()
+      })
+      .then((text) => {
+        console.log("[v0] Response text:", text.substring(0, 200))
+        try {
+          const data = JSON.parse(text)
+          console.log("[v0] Parsed data successfully")
+          if (data.success && data.notifications && data.notifications.length > 0) {
+            console.log("[v0] Found " + data.notifications.length + " unread notifications")
+            data.notifications.forEach((notification) => {
+              if (!this.displayedNotifications.has(notification.maThongBao)) {
+                console.log("[v0] Displaying notification:", notification.maThongBao)
+                this.showReminderPopup(notification)
+                this.displayedNotifications.add(notification.maThongBao)
+              }
             })
-            .catch(error => console.error('[v0] Error checking notifications:', error));
-    }
-    
-    showReminderPopup(notification) {
-        console.log('[v0] Showing reminder popup for trip:', notification.maChuyenXe);
-        
-        const popup = document.createElement('div');
-        popup.className = 'driver-reminder-popup';
-        popup.innerHTML = `
+          } else {
+            console.log("[v0] No notifications found or API error:", data.message)
+          }
+        } catch (parseError) {
+          console.error("[v0] Failed to parse JSON:", parseError, "Text:", text.substring(0, 300))
+        }
+      })
+      .catch((error) => {
+        console.error("[v0] Error checking notifications:", error)
+      })
+  }
+
+  showReminderPopup(notification) {
+    console.log("[v0] Showing reminder popup for trip:", notification.maChuyenXe)
+
+    const overlay = document.createElement("div")
+    overlay.className = "driver-reminder-overlay"
+    document.body.appendChild(overlay)
+
+    const popup = document.createElement("div")
+    popup.className = "driver-reminder-popup"
+    popup.innerHTML = `
             <div class="popup-container">
                 <div class="popup-header">
                     <div class="popup-icon">
                         <i class="fas fa-bell"></i>
                     </div>
-                    <h3>${notification.tieu_de}</h3>
-                    <button class="popup-close" onclick="this.closest('.driver-reminder-popup').remove()">
+                    <h3>${this.escapeHtml(notification.tieu_de || "Thông báo")}</h3>
+                    <button class="popup-close" onclick="this.closest('.driver-reminder-popup').classList.add('closing'); setTimeout(() => this.closest('.driver-reminder-popup').remove(), 300)">
                         <i class="fas fa-times"></i>
                     </button>
                 </div>
                 
                 <div class="popup-body">
-                    <p class="popup-message">${notification.noi_dung}</p>
+                    <p class="popup-message">${this.escapeHtml(notification.noi_dung || "")}</p>
                     
                     <div class="trip-info-box">
                         <div class="info-row">
@@ -76,219 +123,130 @@ class DriverReminderPopup {
                     </div>
                     
                     <div class="popup-actions">
-                        <button class="btn-primary" onclick="window.location.href = '/driver/report'">
+                        <button class="btn-primary" onclick="window.location.href = '${this.baseUrl}/driver/report'">
                             <i class="fas fa-arrow-right"></i>
                             Xem chuyến xe
                         </button>
-                        <button class="btn-secondary" onclick="driverReminderPopup.markAsRead('${notification.maThongBao}')">
+                        <button class="btn-secondarys" onclick="window.driverReminderPopup.markAsRead('${notification.maThongBao}')">
                             <i class="fas fa-check"></i>
                             Đã biết
                         </button>
                     </div>
                 </div>
             </div>
-        `;
-        
-        document.body.appendChild(popup);
-        
-        // Auto-remove after 10 seconds
+        `
+
+    document.body.appendChild(popup)
+    console.log("[v0] Popup added to DOM")
+
+    // Auto-remove after 10 seconds
+    setTimeout(() => {
+      if (popup.parentElement) {
+        console.log("[v0] Auto-removing popup")
+        popup.classList.add("closing")
         setTimeout(() => {
-            if (popup.parentElement) {
-                popup.remove();
-            }
-        }, 10000);
+          popup.remove()
+          overlay.remove() // Remove overlay with popup
+        }, 300)
+      }
+    }, 10000)
+
+    const closeBtn = popup.querySelector(".popup-close")
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
+        setTimeout(() => {
+          if (!popup.parentElement && overlay.parentElement) {
+            overlay.remove()
+          }
+        }, 300)
+      })
     }
-    
-    markAsRead(maThongBao) {
-        fetch('/api/driver/notifications/mark-read', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ maThongBao })
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                console.log('[v0] Marked notification as read');
-                document.querySelectorAll('.driver-reminder-popup').forEach(p => p.remove());
-            }
-        })
-        .catch(error => console.error('[v0] Error marking as read:', error));
+  }
+
+  markAsRead(maThongBao) {
+    const url = `${this.baseUrl}/api/driver/notifications/mark-read`
+    console.log("[v0] Marking notification as read:", url)
+
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ maThongBao }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          console.log("[v0] Marked notification as read")
+          document.querySelectorAll(".driver-reminder-popup").forEach((p) => {
+            p.classList.add("closing")
+            setTimeout(() => p.remove(), 300)
+          })
+          document.querySelectorAll(".driver-reminder-overlay").forEach((o) => {
+            o.remove()
+          })
+        }
+      })
+      .catch((error) => console.error("[v0] Error marking as read:", error))
+  }
+
+  escapeHtml(text) {
+    if (!text) return ""
+    const map = {
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#039;",
     }
-    
-    formatTime(datetime) {
-        const date = new Date(datetime);
-        return date.toLocaleString('vi-VN', {
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit',
-            hour: '2-digit',
-            minute: '2-digit'
-        });
+    return text.replace(/[&<>"']/g, (char) => map[char])
+  }
+
+  formatTime(datetime) {
+    try {
+      if (!datetime) return "N/A"
+
+      let dateObj = new Date(datetime)
+
+      // Handle string format YYYY-MM-DD HH:mm:ss
+      if (isNaN(dateObj.getTime())) {
+        // Try parsing as local time
+        const parts = datetime.split(/[\s\-:]/)
+        if (parts.length >= 3) {
+          dateObj = new Date(
+            parts[0],
+            Number.parseInt(parts[1]) - 1,
+            parts[2],
+            parts[3] || 0,
+            parts[4] || 0,
+            parts[5] || 0,
+          )
+        }
+      }
+
+      if (isNaN(dateObj.getTime())) {
+        return datetime || "N/A"
+      }
+
+      return dateObj.toLocaleString("vi-VN", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+      })
+    } catch (error) {
+      console.warn("[v0] Error formatting date:", error)
+      return datetime || "N/A"
     }
-    
-    setupStyles() {
-        const style = document.createElement('style');
-        style.textContent = `
-            .driver-reminder-popup {
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                z-index: 9999;
-                animation: slideIn 0.3s ease-out;
-            }
-            
-            @keyframes slideIn {
-                from {
-                    transform: translateX(400px);
-                    opacity: 0;
-                }
-                to {
-                    transform: translateX(0);
-                    opacity: 1;
-                }
-            }
-            
-            .popup-container {
-                background: white;
-                border-radius: 8px;
-                box-shadow: 0 4px 20px rgba(255, 107, 53, 0.3);
-                border-left: 5px solid #FF6B35;
-                max-width: 400px;
-                overflow: hidden;
-            }
-            
-            .popup-header {
-                background: linear-gradient(135deg, #FF6B35 0%, #FF8C5A 100%);
-                color: white;
-                padding: 16px;
-                display: flex;
-                align-items: flex-start;
-                gap: 12px;
-            }
-            
-            .popup-icon {
-                font-size: 24px;
-                animation: pulse 1.5s infinite;
-            }
-            
-            @keyframes pulse {
-                0%, 100% { opacity: 1; }
-                50% { opacity: 0.6; }
-            }
-            
-            .popup-header h3 {
-                flex: 1;
-                margin: 0;
-                font-size: 16px;
-            }
-            
-            .popup-close {
-                background: none;
-                border: none;
-                color: white;
-                cursor: pointer;
-                font-size: 18px;
-                padding: 0;
-                line-height: 1;
-            }
-            
-            .popup-body {
-                padding: 16px;
-            }
-            
-            .popup-message {
-                margin: 0 0 12px 0;
-                font-size: 14px;
-                line-height: 1.5;
-                color: #333;
-            }
-            
-            .trip-info-box {
-                background: #FFF3E0;
-                padding: 12px;
-                border-radius: 4px;
-                margin-bottom: 16px;
-            }
-            
-            .info-row {
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                font-size: 14px;
-                color: #666;
-            }
-            
-            .info-row i {
-                color: #FF6B35;
-                width: 20px;
-                text-align: center;
-            }
-            
-            .info-row strong {
-                color: #333;
-            }
-            
-            .popup-actions {
-                display: flex;
-                gap: 8px;
-            }
-            
-            .btn-primary, .btn-secondary {
-                flex: 1;
-                padding: 10px 12px;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-                font-size: 13px;
-                font-weight: 500;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: 6px;
-                transition: all 0.2s;
-            }
-            
-            .btn-primary {
-                background: #FF6B35;
-                color: white;
-            }
-            
-            .btn-primary:hover {
-                background: #E55A25;
-            }
-            
-            .btn-secondary {
-                background: #f0f0f0;
-                color: #333;
-            }
-            
-            .btn-secondary:hover {
-                background: #e0e0e0;
-            }
-            
-            @media (max-width: 480px) {
-                .driver-reminder-popup {
-                    top: 10px;
-                    right: 10px;
-                    left: 10px;
-                }
-                
-                .popup-container {
-                    max-width: none;
-                }
-            }
-        `;
-        document.head.appendChild(style);
-    }
+  }
 }
 
 // Initialize when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-        window.driverReminderPopup = new DriverReminderPopup();
-    });
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", () => {
+    window.driverReminderPopup = new DriverReminderPopup()
+  })
 } else {
-    window.driverReminderPopup = new DriverReminderPopup();
+  window.driverReminderPopup = new DriverReminderPopup()
 }
