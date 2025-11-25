@@ -497,6 +497,56 @@ class EmailService {
     }
     
     /**
+     * Send delay notification email to customer
+     * 
+     * @param string $toEmail Recipient email
+     * @param string $toName Recipient name
+     * @param array $tripInfo Trip information [kyHieuTuyen, diemDi, diemDen, ngayKhoiHanh, thoiGianKhoiHanh, thoiGianDelay, tenTaiXe, soDienThoaiTaiXe]
+     * @param int $ticketCount Number of tickets
+     * @return array Result with success status
+     */
+    public function sendDelayNotificationEmail($toEmail, $toName, $tripInfo, $ticketCount = 1) {
+        try {
+            error_log("[EmailService] sendDelayNotificationEmail - START");
+            
+            if (empty($toEmail) || !filter_var($toEmail, FILTER_VALIDATE_EMAIL)) {
+                error_log("[EmailService] Invalid email: " . $toEmail);
+                return [
+                    'success' => false,
+                    'message' => 'Email không hợp lệ'
+                ];
+            }
+            
+            $this->mailer->clearAddresses();
+            $this->mailer->addAddress($toEmail, $toName);
+            $this->mailer->isHTML(true);
+            $this->mailer->Subject = '⚠️ Thông báo: Chuyến xe của bạn đang delay - ' . ($tripInfo['kyHieuTuyen'] ?? 'XeGoo');
+            
+            $htmlBody = $this->getDelayNotificationTemplate($toName, $tripInfo, $ticketCount);
+            $this->mailer->Body = $htmlBody;
+            $this->mailer->AltBody = $this->getDelayNotificationPlainText($toName, $tripInfo, $ticketCount);
+            
+            error_log("[EmailService] Sending delay notification email to: " . $toEmail);
+            $this->mailer->send();
+            
+            error_log("[EmailService] ✅ Delay notification sent to: " . $toEmail);
+            
+            return [
+                'success' => true,
+                'message' => 'Email thông báo delay đã được gửi thành công'
+            ];
+            
+        } catch (Exception $e) {
+            error_log("[EmailService] ❌ Send delay notification error: " . $e->getMessage());
+            error_log("[EmailService] PHPMailer ErrorInfo: " . $this->mailer->ErrorInfo);
+            return [
+                'success' => false,
+                'message' => 'Không thể gửi email thông báo delay: ' . $this->mailer->ErrorInfo
+            ];
+        }
+    }
+
+    /**
      * Get HTML template for verification email
      */
     private function getVerificationEmailTemplate($toName, $verificationCode) {
@@ -2132,6 +2182,152 @@ TEXT;
     }
     
     /**
+     * HTML template for delay notification email
+     */
+    private function getDelayNotificationTemplate($toName, $tripInfo, $ticketCount) {
+        $departureDate = $tripInfo['ngayKhoiHanh'] ?? 'N/A';
+        $departureTime = $tripInfo['thoiGianKhoiHanh'] ?? 'N/A';
+        $delayTime = $tripInfo['thoiGianDelay'] ?? null;
+        $route = ($tripInfo['diemDi'] ?? 'N/A') . ' → ' . ($tripInfo['diemDen'] ?? 'N/A');
+        $driverName = $tripInfo['tenTaiXe'] ?? 'N/A';
+        $driverPhone = $tripInfo['soDienThoaiTaiXe'] ?? 'Không có';
+        
+        $html = <<<HTML
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial, sans-serif; color: #333; line-height: 1.6; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; background: #f9f9f9; }
+        .header { background: #E74C3C; color: white; padding: 20px; text-align: center; border-radius: 5px; }
+        .content { background: white; padding: 20px; margin-top: 10px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .alert-box { background: #FDE4E4; border-left: 4px solid #E74C3C; padding: 15px; margin: 15px 0; border-radius: 5px; }
+        .trip-info { background: #FCF5E5; padding: 15px; border-left: 4px solid #F39C12; margin: 15px 0; }
+        .trip-detail { margin: 10px 0; display: flex; justify-content: space-between; }
+        .label { font-weight: bold; color: #555; }
+        .value { color: #333; }
+        .highlight { color: #E74C3C; font-weight: bold; }
+        .button { display: inline-block; background: #27AE60; color: white; padding: 12px 20px; text-decoration: none; border-radius: 5px; margin-top: 15px; }
+        .footer { text-align: center; font-size: 12px; color: #999; margin-top: 20px; padding-top: 20px; border-top: 1px solid #ddd; }
+        .instruction { background: #E8F4F8; border-left: 4px solid #3498DB; padding: 15px; margin: 15px 0; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>⚠️ THÔNG BÁO: CHUYẾN XE ĐANG DELAY</h1>
+        </div>
+        
+        <div class="content">
+            <p>Xin chào <strong>$toName</strong>,</p>
+            
+            <div class="alert-box">
+                <h2 style="margin-top: 0; color: #E74C3C;">Chuyến xe của bạn đã gặp sự cố</h2>
+                <p>Chuyến xe sắp khởi hành của bạn đã gặp sự cố và đang <span class="highlight">DELAY ít phút</span>. Vui lòng chờ thêm một vài phút để khởi hành.</p>
+            </div>
+            
+            <div class="trip-info">
+                <h2 style="margin-top: 0; color: #F39C12;">Thông Tin Chuyến Xe</h2>
+                
+                <div class="trip-detail">
+                    <span class="label">🚌 Tuyến đường:</span>
+                    <span class="value">$route</span>
+                </div>
+                
+                <div class="trip-detail">
+                    <span class="label">📅 Ngày:</span>
+                    <span class="value">$departureDate</span>
+                </div>
+                
+                <div class="trip-detail">
+                    <span class="label">⏰ Giờ khởi hành dự kiến:</span>
+                    <span class="value"><strong>$departureTime</strong></span>
+                </div>
+                
+                <div class="trip-detail">
+                    <span class="label">🎫 Số vé:</span>
+                    <span class="value">$ticketCount</span>
+                </div>
+                
+                <div class="trip-detail">
+                    <span class="label">👨‍✈️ Tài xế:</span>
+                    <span class="value">$driverName</span>
+                </div>
+                
+                <div class="trip-detail">
+                    <span class="label">📞 SĐT tài xế:</span>
+                    <span class="value">$driverPhone</span>
+                </div>
+            </div>
+            
+            <div class="instruction">
+                <h3 style="margin-top: 0; color: #3498DB;">Hướng Dẫn</h3>
+                <ul>
+                    <li>Vui lòng <strong>chờ thêm một vài phút</strong> để chuyến xe khởi hành</li>
+                    <li>Liên hệ tài xế tại số điện thoại trên nếu cần thêm thông tin</li>
+                    <li>Kiểm tra ứng dụng XeGoo để cập nhật tình trạng mới nhất</li>
+                    <li>Nếu bạn không thể chờ, vui lòng hủy vé trong ứng dụng</li>
+                </ul>
+            </div>
+            
+            <p><strong>Cần hỗ trợ ngay?</strong><br>
+            Liên hệ tài xế qua số điện thoại hoặc chat với chúng tôi trong ứng dụng XeGoo.</p>
+            
+            <a href="https://xegoo.com" class="button">Mở Ứng Dụng XeGoo</a>
+        </div>
+        
+        <div class="footer">
+            <p>Đây là email tự động từ hệ thống XeGoo. Vui lòng không trả lời email này.</p>
+            <p>&copy; 2025 XeGoo - Hệ Thống Đặt Vé Xe Khách Trực Tuyến</p>
+        </div>
+    </div>
+</body>
+</html>
+HTML;
+        
+        return $html;
+    }
+    
+    /**
+     * Plain text version for delay notification email
+     */
+    private function getDelayNotificationPlainText($toName, $tripInfo, $ticketCount) {
+        $departureDate = $tripInfo['ngayKhoiHanh'] ?? 'N/A';
+        $departureTime = $tripInfo['thoiGianKhoiHanh'] ?? 'N/A';
+        $route = ($tripInfo['diemDi'] ?? 'N/A') . ' → ' . ($tripInfo['diemDen'] ?? 'N/A');
+        $driverName = $tripInfo['tenTaiXe'] ?? 'N/A';
+        $driverPhone = $tripInfo['soDienThoaiTaiXe'] ?? 'Không có';
+        
+        return <<<TEXT
+Xin chào $toName,
+
+⚠️ THÔNG BÁO: CHUYẾN XE ĐANG DELAY
+
+Chuyến xe sắp khởi hành của bạn đã gặp sự cố và đang delay ít phút. Vui lòng chờ thêm một vài phút để khởi hành.
+
+THÔNG TIN CHUYẾN XE:
+- Tuyến đường: $route
+- Ngày: $departureDate
+- Giờ khởi hành: $departureTime (CHÍNH XÁC)
+- Số vé: $ticketCount
+- Tài xế: $driverName
+- SĐT tài xế: $driverPhone
+
+HƯỚNG DẪN:
+- Vui lòng có mặt tại điểm đón trước 15 phút
+- Mang theo vé hoặc mã số đặt vé của bạn
+- Nếu không thể đi, vui lòng hủy vé sớm nhất có thể
+
+Cần hỗ trợ? Liên hệ tài xế hoặc chúng tôi qua ứng dụng XeGoo.
+
+---
+Đây là email tự động từ hệ thống XeGoo. Vui lòng không trả lời email này.
+© 2025 XeGoo - Hệ Thống Đặt Vé Xe Khách Trực Tuyến
+TEXT;
+    }
+
+    /**
      * Get plain text version of ticket email
      */
     private function getTicketEmailPlainText($bookingData, $ticketDetails) {
@@ -2213,9 +2409,281 @@ TEXT;
         $text .= "Email: support@xegoo.com\n\n";
         
         $text .= "Cảm ơn bạn đã sử dụng dịch vụ của XeGoo!\n\n";
-        $text .= "Trân trọng,\nĐội ngũ Xegoo";
+        $text .= "Trân trọng,\nĐội ngũ XeGoo";
         
         return $text;
     }
-}
 
+    /**
+     * Send cancellation notification email with refund points information
+     * 
+     * @param string $toEmail Recipient email address
+     * @param string $toName Recipient name
+     * @param array $tripInfo Trip information
+     * @param float $totalAmount Amount paid for ticket
+     * @param int $refundPoints Refund points amount
+     * @return array Result with success status and message
+     */
+    public function sendCancellationNotificationEmail($toEmail, $toName, $tripInfo, $totalAmount, $refundPoints) {
+        try {
+            $this->mailer->clearAddresses();
+            $this->mailer->addAddress($toEmail, $toName);
+            
+            $this->mailer->isHTML(true);
+            $this->mailer->Subject = 'Thông báo hủy chuyến xe - XeGoo - Hoàn tiền ' . number_format($totalAmount, 0, ',', '.');
+            
+            $htmlBody = $this->getTripCancellationEmailTemplate($toName, $tripInfo, $totalAmount, $refundPoints);
+            $this->mailer->Body = $htmlBody;
+            
+            // Plain text version
+            $this->mailer->AltBody = $this->getTripCancellationEmailPlainText($toName, $tripInfo, $totalAmount, $refundPoints);
+            
+            $this->mailer->send();
+            
+            error_log("[v0] Cancellation email sent to: " . $toEmail);
+            
+            return [
+                'success' => true,
+                'message' => 'Email thông báo hủy chuyến đã được gửi thành công!'
+            ];
+            
+        } catch (Exception $e) {
+            error_log("[v0] Send cancellation email error: " . $this->mailer->ErrorInfo);
+            return [
+                'success' => false,
+                'message' => 'Không thể gửi email thông báo hủy chuyến: ' . $this->mailer->ErrorInfo
+            ];
+        }
+    }
+    
+    /**
+     * Get HTML template for trip cancellation email (when trip is cancelled and refund issued)
+     */
+    private function getTripCancellationEmailTemplate($toName, $tripInfo, $totalAmount, $refundPoints) {
+        $kyHieuTuyen = htmlspecialchars($tripInfo['kyHieuTuyen'] ?? 'N/A');
+        $diemDi = htmlspecialchars($tripInfo['diemDi'] ?? 'N/A');
+        $diemDen = htmlspecialchars($tripInfo['diemDen'] ?? 'N/A');
+        $ngayKhoiHanh = isset($tripInfo['ngayKhoiHanh']) ? date('d/m/Y', strtotime($tripInfo['ngayKhoiHanh'])) : 'N/A';
+        $thoiGianKhoiHanh = isset($tripInfo['thoiGianKhoiHanh']) ? date('H:i', strtotime($tripInfo['thoiGianKhoiHanh'])) : 'N/A';
+        $tongTien = number_format($totalAmount, 0, ',', '.');
+        $diemRefund = number_format($refundPoints, 0, ',', '.');
+        
+        return '
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <style>
+                body { 
+                    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+                    line-height: 1.6; 
+                    color: #1a1a1a; 
+                    background: #f8f9fa;
+                    margin: 0;
+                    padding: 0;
+                }
+                .container { 
+                    max-width: 600px; 
+                    margin: 40px auto; 
+                    background: #ffffff;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+                }
+                .header { 
+                    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); 
+                    color: white; 
+                    padding: 40px 30px; 
+                    text-align: center;
+                }
+                .header h1 { 
+                    margin: 0 0 8px 0; 
+                    font-size: 32px; 
+                    font-weight: 700;
+                    letter-spacing: -0.5px;
+                }
+                .header p { 
+                    margin: 0; 
+                    font-size: 15px; 
+                    opacity: 0.95;
+                }
+                .content { 
+                    padding: 40px 30px;
+                }
+                .content p {
+                    margin: 0 0 16px 0;
+                    color: #4a5568;
+                    font-size: 15px;
+                    line-height: 1.6;
+                }
+                .alert-box {
+                    background: #fee2e2;
+                    border-left: 4px solid #ef4444;
+                    padding: 16px 20px;
+                    border-radius: 4px;
+                    margin-bottom: 24px;
+                }
+                .alert-box p {
+                    color: #991b1b;
+                    margin: 0;
+                    font-weight: 500;
+                }
+                .section-title { 
+                    font-size: 16px; 
+                    font-weight: 700; 
+                    color: #1a1a1a; 
+                    margin: 28px 0 16px 0; 
+                    padding-bottom: 8px; 
+                    border-bottom: 2px solid #e2e8f0;
+                }
+                .trip-info {
+                    background: #f7fafc;
+                    border-left: 4px solid #3b82f6;
+                    padding: 16px 20px;
+                    border-radius: 4px;
+                    margin-bottom: 24px;
+                }
+                .trip-info p {
+                    margin: 8px 0;
+                    color: #2d3748;
+                    font-size: 14px;
+                }
+                .refund-box {
+                    background: #dcfce7;
+                    border-left: 4px solid #10b981;
+                    padding: 20px;
+                    border-radius: 4px;
+                    margin-bottom: 24px;
+                }
+                .refund-box p {
+                    margin: 0 0 12px 0;
+                    color: #065f46;
+                }
+                .refund-amount {
+                    font-size: 24px;
+                    font-weight: 700;
+                    color: #10b981;
+                    margin: 12px 0;
+                }
+                .points-info {
+                    background: #fef3c7;
+                    border-left: 4px solid #f59e0b;
+                    padding: 16px 20px;
+                    border-radius: 4px;
+                    margin-bottom: 24px;
+                }
+                .points-info p {
+                    margin: 8px 0;
+                    color: #78350f;
+                    font-size: 14px;
+                }
+                .footer { 
+                    background: #f7fafc; 
+                    border-top: 1px solid #e2e8f0;
+                    padding: 24px 30px; 
+                    text-align: center; 
+                    font-size: 12px; 
+                    color: #718096;
+                }
+                .footer p {
+                    margin: 8px 0;
+                }
+                .contact-info {
+                    background: #eff6ff;
+                    border-left: 4px solid #3b82f6;
+                    padding: 16px 20px;
+                    border-radius: 4px;
+                    margin-bottom: 24px;
+                }
+                .contact-info p {
+                    margin: 8px 0;
+                    color: #1e40af;
+                    font-size: 14px;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <div class="header">
+                    <h1>⚠️ Thông báo hủy chuyến xe</h1>
+                    <p>Chúng tôi xin lỗi về sự cố này</p>
+                </div>
+                
+                <div class="content">
+                    <p>Xin chào ' . htmlspecialchars($toName) . ',</p>
+                    
+                    <div class="alert-box">
+                        <p>🚫 Rất tiếc, chuyến xe của bạn đã bị hủy do sự cố không đáng có. Chúng tôi rất tiếc về trải nghiệm của bạn.</p>
+                    </div>
+                    
+                    <div class="section-title">Thông tin chuyến xe</div>
+                    <div class="trip-info">
+                        <p><strong>Tuyến xe:</strong> ' . $kyHieuTuyen . ' - ' . $diemDi . ' → ' . $diemDen . '</p>
+                        <p><strong>Ngày khởi hành:</strong> ' . $ngayKhoiHanh . ' lúc ' . $thoiGianKhoiHanh . '</p>
+                    </div>
+                    
+                    <div class="section-title">Hoàn tiền của bạn</div>
+                    <div class="refund-box">
+                        <p>💰 <strong>Số tiền sẽ được hoàn 100% về tài khoản của bạn dưới dạng điểm tích lũy:</strong></p>
+                        <div class="refund-amount">' . $diemRefund . ' điểm</div>
+                        <p><small>Tương đương với số tiền: ' . $tongTien . ' ₫</small></p>
+                    </div>
+                    
+                    <div class="points-info">
+                        <p><strong>📊 Điểm tích lũy hoàn lại:</strong></p>
+                        <p>Bạn có thể sử dụng ' . $diemRefund . ' điểm này để thanh toán cho lần mua vé tiếp theo, hoặc giữ lại để sử dụng lần sau.</p>
+                    </div>
+                    
+                    <div class="section-title">Cần giúp đỡ?</div>
+                    <div class="contact-info">
+                        <p><strong>Email:</strong> xegoo.notifications@gmail.com</p>
+                        <p><strong>☎️ Hotline:</strong> Vui lòng liên hệ hotline để được hỗ trợ thêm</p>
+                        <p>Chúng tôi sẵn sàng giải đáp mọi khiếu nại hoặc yêu cầu của bạn.</p>
+                    </div>
+                    
+                    <p style="margin-top: 28px; color: #718096; font-size: 14px;">
+                        Chúng tôi rất xin lỗi bạn về trải nghiệm lần này. Hy vọng được phục vụ bạn tốt hơn trong lần đặt vé tiếp theo.
+                    </p>
+                </div>
+                
+                <div class="footer">
+                    <p><strong>© 2025 XeGoo - Hệ thống đặt vé xe online</strong></p>
+                    <p>Email này được gửi tự động. Vui lòng không trả lời email này.</p>
+                    <p>Nếu bạn không đặt vé với XeGoo, vui lòng xóa email này.</p>
+                </div>
+            </div>
+        </body>
+        </html>
+        ';
+    }
+    
+    /**
+     * Get plain text version of cancellation email
+     */
+    private function getTripCancellationEmailPlainText($toName, $tripInfo, $totalAmount, $refundPoints) {
+        $kyHieuTuyen = $tripInfo['kyHieuTuyen'] ?? 'N/A';
+        $diemDi = $tripInfo['diemDi'] ?? 'N/A';
+        $diemDen = $tripInfo['diemDen'] ?? 'N/A';
+        $ngayKhoiHanh = isset($tripInfo['ngayKhoiHanh']) ? date('d/m/Y', strtotime($tripInfo['ngayKhoiHanh'])) : 'N/A';
+        $thoiGianKhoiHanh = isset($tripInfo['thoiGianKhoiHanh']) ? date('H:i', strtotime($tripInfo['thoiGianKhoiHanh'])) : 'N/A';
+        $tongTien = number_format($totalAmount, 0, ',', '.');
+        $diemRefund = number_format($refundPoints, 0, ',', '.');
+        
+        return "Xin chào $toName,\n\n"
+            . "⚠️ THÔNG BÁO HỦY CHUYẾN XE\n"
+            . "Rất tiếc, chuyến xe của bạn đã bị hủy do sự cố không đáng có. Chúng tôi rất xin lỗi.\n\n"
+            . "--- THÔNG TIN CHUYẾN XE ---\n"
+            . "Tuyến: $kyHieuTuyen - $diemDi → $diemDen\n"
+            . "Ngày khởi hành: $ngayKhoiHanh lúc $thoiGianKhoiHanh\n\n"
+            . "--- HOÀN TIỀN ---\n"
+            . "💰 Số tiền sẽ được hoàn 100% về tài khoản của bạn dưới dạng điểm tích lũy:\n"
+            . "   $diemRefund điểm (tương đương $tongTien ₫)\n\n"
+            . "Bạn có thể sử dụng điểm này để thanh toán cho lần mua vé tiếp theo.\n\n"
+            . "--- CẦN GIÚP ĐỠ? ---\n"
+            . "Email: xegoo.notifications@gmail.com\n"
+            . "Hotline: Liên hệ hotline để được hỗ trợ thêm\n\n"
+            . "Chúng tôi rất xin lỗi bạn về trải nghiệm lần này.\n\n"
+            . "Trân trọng,\nĐội ngũ XeGoo";
+    }
+}

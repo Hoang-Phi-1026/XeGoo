@@ -210,6 +210,9 @@ $routes = [
        // Driver notification routes
     '/api/driver/notifications/unread' => ['controller' => 'DriverNotificationController', 'action' => 'getUnreadNotifications'],
     '/api/driver/notifications/mark-read' => ['controller' => 'DriverNotificationController', 'action' => 'markAsRead'],
+
+    // Notification API routes for popup notifications
+    '/api/popup-notifications/pending' => ['controller' => 'PopupNotificationController', 'action' => 'getPendingNotifications'],
 ];
 
 // Define POST routes
@@ -323,6 +326,10 @@ $postRoutes = [
 
     // Driver notification mark-read POST route
     '/api/driver/notifications/mark-read' => ['controller' => 'DriverNotificationController', 'action' => 'markAsRead'],
+
+    // Notification API routes for popup notifications
+    '/api/popup-notifications/update-status' => ['controller' => 'PopupNotificationController', 'action' => 'updateNotificationStatus'],
+    '/api/popup-notifications/mark-all-shown' => ['controller' => 'PopupNotificationController', 'action' => 'markAllAsShown'],
 ];
 
 // Get current URL path and remove base directory

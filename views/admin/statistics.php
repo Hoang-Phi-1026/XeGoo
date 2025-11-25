@@ -201,7 +201,7 @@ if (session_status() === PHP_SESSION_NONE) {
             <!-- Khách Hàng Mua Vé section moved here -->
             <div class="section-card">
                 <div class="card-header">
-                    <h3>Khách Hàng Mua Vé</h3>
+                    <h3>Khách Hàng Mua Vé Hôm Nay</h3>
                 </div>
                 <div class="card-content">
                     <!-- Date picker to filter ticket sales by date -->

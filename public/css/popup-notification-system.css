@@ -1,0 +1,364 @@
+/* Popup Notification System Styles */
+
+/* Container for popup notifications */
+.popup-notification-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9998;
+  max-width: 400px;
+  max-height: 90vh;
+  overflow-y: auto;
+  pointer-events: none;
+}
+
+.popup-notification-container.left {
+  right: auto;
+  left: 20px;
+}
+
+/* Individual notification popup */
+.popup-notification {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  margin-bottom: 12px;
+  min-width: 340px;
+  animation: slideInRight 0.4s ease-out;
+  pointer-events: auto;
+  overflow: hidden;
+}
+
+.popup-notification.left {
+  animation: slideInLeft 0.4s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.popup-notification.closing {
+  animation: slideOutRight 0.3s ease-in forwards;
+}
+
+.popup-notification.left.closing {
+  animation: slideOutLeft 0.3s ease-in forwards;
+}
+
+@keyframes slideOutRight {
+  to {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+}
+
+@keyframes slideOutLeft {
+  to {
+    transform: translateX(-400px);
+    opacity: 0;
+  }
+}
+
+/* Notification header with color indicator */
+.popup-notification-header {
+  padding: 16px;
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.popup-notification.cancellation .popup-notification-header {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+}
+
+.popup-notification.delay .popup-notification-header {
+  background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+}
+
+/* Icon in header */
+.popup-notification-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.popup-notification-header.no-animation .popup-notification-icon {
+  animation: none;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Header text */
+.popup-notification-header-text h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Close button */
+.popup-notification-close {
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.popup-notification-close:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Notification body */
+.popup-notification-body {
+  padding: 16px;
+  background: #fafafa;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.popup-notification-message {
+  margin: 0 0 12px 0;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Trip information */
+.popup-trip-info {
+  background: white;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-left: 4px solid #ff6b35;
+}
+
+.popup-trip-info.cancellation {
+  border-left-color: #e74c3c;
+}
+
+.popup-trip-info-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.popup-trip-info-row:last-child {
+  margin-bottom: 0;
+}
+
+.popup-trip-info-row i {
+  color: #ff6b35;
+  min-width: 16px;
+  text-align: center;
+}
+
+.popup-trip-info.cancellation .popup-trip-info-row i {
+  color: #e74c3c;
+}
+
+.popup-trip-label {
+  color: #666;
+  min-width: 80px;
+  font-weight: 500;
+}
+
+.popup-trip-value {
+  color: #333;
+  font-weight: 600;
+  flex: 1;
+}
+
+/* Notification footer */
+.popup-notification-footer {
+  padding: 12px 16px;
+  background: white;
+  border-top: 1px solid #e5e5e5;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.popup-notification-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.popup-notification-btn-primary {
+  background: #ff6b35;
+  color: white;
+}
+
+.popup-notification-btn-primary:hover {
+  background: #f7931e;
+}
+
+.popup-notification-btn-secondary {
+  background: #e5e5e5;
+  color: #333;
+}
+
+.popup-notification-btn-secondary:hover {
+  background: #ccc;
+}
+
+/* Notification counter badge */
+.popup-notification-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #e74c3c;
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-left: 4px;
+}
+
+/* Auto-dismiss timer progress bar */
+.popup-notification-timer {
+  height: 3px;
+  background: rgba(255, 255, 255, 0.3);
+  width: 100%;
+  animation: timerCountdown 8s linear forwards;
+}
+
+@keyframes timerCountdown {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .popup-notification-container {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+  }
+
+  .popup-notification {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .popup-notification-header {
+    padding: 12px;
+  }
+
+  .popup-notification-header h3 {
+    font-size: 14px;
+  }
+
+  .popup-notification-body {
+    padding: 12px;
+  }
+
+  .popup-notification-footer {
+    flex-direction: column;
+  }
+
+  .popup-notification-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .popup-notification {
+    background: #2d2d2d;
+  }
+
+  .popup-notification-body {
+    background: #1f1f1f;
+    color: #e0e0e0;
+  }
+
+  .popup-trip-info {
+    background: #353535;
+    color: #e0e0e0;
+  }
+
+  .popup-trip-label {
+    color: #aaa;
+  }
+
+  .popup-trip-value {
+    color: #e0e0e0;
+  }
+
+  .popup-notification-message {
+    color: #e0e0e0;
+  }
+
+  .popup-notification-footer {
+    background: #353535;
+    border-top-color: #444;
+  }
+
+  .popup-notification-btn-secondary {
+    background: #444;
+    color: #e0e0e0;
+  }
+
+  .popup-notification-btn-secondary:hover {
+    background: #555;
+  }
+}

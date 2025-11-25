@@ -473,4 +473,7 @@ if ($isLoggedIn):
     <!-- added driver reminder popup for drivers on home page -->
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/driver-reminder-popup.css">
     <script src="<?php echo BASE_URL; ?>/public/js/driver-reminder-popup.js"></script>
+    
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/popup-notification.css">
+    <script src="<?php echo BASE_URL; ?>/public/js/popup-notification-system.js"></script>
 <?php endif; ?>
