@@ -85,7 +85,7 @@ class User {
 
     public function updatePasswordByEmail($email, $newPassword) {
         try {
-            $encodedPassword = PasswordHelper::encodePassword($newPassword);
+            $encodedPassword = PasswordHelper::hashPassword($newPassword);
             $sql = "UPDATE nguoidung SET matKhau = ? WHERE eMail = ?";
             $stmt = $this->db->prepare($sql);
             $result = $stmt->execute([$encodedPassword, $email]);
@@ -136,7 +136,7 @@ class User {
                 ];
             }
 
-            $encodedPassword = PasswordHelper::encodePassword($data['matKhau']);
+            $encodedPassword = PasswordHelper::hashPassword($data['matKhau']);
 
             // Insert new user
             $sql = "INSERT INTO nguoidung (maVaiTro, tenNguoiDung, soDienThoai, eMail, matKhau, gioiTinh, diaChi, ngayTao, maTrangThai) 
@@ -299,7 +299,7 @@ class User {
                 ];
             }
 
-            $encodedPassword = PasswordHelper::encodePassword($data['matKhau']);
+            $encodedPassword = PasswordHelper::hashPassword($data['matKhau']);
 
             // Insert new user
             $sql = "INSERT INTO nguoidung (maVaiTro, tenNguoiDung, soDienThoai, eMail, matKhau, gioiTinh, diaChi, moTa, ngayTao, maTrangThai) 
@@ -385,7 +385,7 @@ class User {
             
             if (!empty($data['matKhau'])) {
                 $sql .= ", matKhau = ?";
-                $params[] = PasswordHelper::encodePassword($data['matKhau']);
+                $params[] = PasswordHelper::hashPassword($data['matKhau']);
             }
             
             $sql .= " WHERE maNguoiDung = ?";

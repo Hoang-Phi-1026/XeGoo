@@ -131,7 +131,7 @@ class ProfileController {
         }
         
         try {
-            $encodedPassword = PasswordHelper::encodePassword($newPassword);
+            $encodedPassword = PasswordHelper::hashPassword($newPassword);
             $stmt = $this->db->prepare("UPDATE nguoidung SET matKhau = ? WHERE maNguoiDung = ?");
             $stmt->execute([$encodedPassword, $_SESSION['user_id']]);
             
