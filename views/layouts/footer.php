@@ -26,15 +26,15 @@
                         <li><a href="<?php echo BASE_URL; ?>/search"><i class="fas fa-bus"></i> Đặt vé xe</a></li>
                         <li><a href="<?php echo BASE_URL; ?>/group-rental"><i class="fas fa-car"></i> Thuê xe</a></li>
                         <li><a href="<?php echo BASE_URL; ?>/ticket-lookup"><i class="fas fa-ticket-alt"></i> Tra cứu vé</a></li>
-                        <li><a href="<?php echo BASE_URL; ?>/routes"><i class="fas fa-route"></i> Tuyến đường</a></li>
-                        <li><a href="<?php echo BASE_URL; ?>/promotions"><i class="fas fa-gift"></i> Khuyến mãi</a></li>
+                        <li><a href="<?php echo BASE_URL; ?>/booking-guide#routes"><i class="fas fa-route"></i> Tuyến đường</a></li>
+                        <li><a href="<?php echo BASE_URL; ?>/post"><i class="fas fa-users"></i> Cộng đồng</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
                     <h3>Hỗ trợ</h3>
                     <ul class="footer-links">
-                        <li><a href="<?php echo BASE_URL; ?>/support"><i class="fas fa-life-ring"></i> Trung tâm trợ giúp</a></li>
+                        <li><a href="<?php echo BASE_URL; ?>/support/ai"><i class="fas fa-life-ring"></i> Trung tâm trợ giúp</a></li>
                          <li><a href="<?php echo BASE_URL; ?>/faq"><i class="fas fa-question-circle"></i> Câu hỏi thường gặp</a></li>
                         <li><a href="<?php echo BASE_URL; ?>/refund"><i class="fas fa-undo"></i> Chính sách hoàn vé</a></li>
                         <li><a href="<?php echo BASE_URL; ?>/terms"><i class="fas fa-file-contract"></i> Điều khoản sử dụng</a></li>

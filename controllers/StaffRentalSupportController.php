@@ -2,6 +2,7 @@
 require_once __DIR__ . '/../config/config.php';
 require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../models/Staff.php';
+require_once __DIR__ . '/../helpers/IDEncryptionHelper.php';
 
 class StaffRentalSupportController {
     public function __construct() {
@@ -33,7 +34,14 @@ class StaffRentalSupportController {
     public function detail($requestId) {
         $this->checkStaffAccess();
         
-        $request = Staff::getRentalRequestDetail($requestId);
+        $decryptedRequestId = IDEncryptionHelper::decryptId($requestId);
+        if (!$decryptedRequestId) {
+            $_SESSION['error'] = 'ID yêu cầu không hợp lệ!';
+            header('Location: ' . BASE_URL . '/staff/rental-support');
+            exit();
+        }
+        
+        $request = Staff::getRentalRequestDetail($decryptedRequestId);
         if (!$request) {
             $_SESSION['error'] = 'Yêu cầu thuê xe không tồn tại!';
             header('Location: ' . BASE_URL . '/staff/rental-support');
@@ -68,7 +76,12 @@ class StaffRentalSupportController {
             exit();
         }
         
-        $result = Staff::updateRentalRequestStatus($requestId, $status);
+        $decryptedRequestId = IDEncryptionHelper::decryptId($requestId);
+        if (!$decryptedRequestId) {
+            $decryptedRequestId = $requestId;
+        }
+        
+        $result = Staff::updateRentalRequestStatus($decryptedRequestId, $status);
         
         error_log("[v0] StaffRentalSupportController::updateStatus - Result: " . json_encode($result));
         

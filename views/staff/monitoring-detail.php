@@ -293,7 +293,7 @@ require_once __DIR__ . '/../../config/config.php';
     <script src="<?php echo BASE_URL; ?>/public/js/notifications.js"></script>
     <script src="<?php echo BASE_URL; ?>/public/js/theme-toggle.js"></script>
     <script>
-        const reportId = <?php echo $report['maBaoCao']; ?>;
+        const reportId = <?php echo json_encode(IDEncryptionHelper::encryptId($report['maBaoCao'])); ?>;
         const baseUrl = '<?php echo BASE_URL; ?>';
 
         function openConfirmModal() {

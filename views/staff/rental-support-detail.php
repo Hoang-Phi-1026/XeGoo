@@ -3,6 +3,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 require_once __DIR__ . '/../../config/config.php';
+require_once __DIR__ . '/../../helpers/IDEncryptionHelper.php'; // Include the helper for encryption
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -213,7 +214,7 @@ require_once __DIR__ . '/../../config/config.php';
     <script src="<?php echo BASE_URL; ?>/public/js/theme-toggle.js"></script>
     <script>
         const baseUrl = '<?php echo BASE_URL; ?>';
-        const requestId = <?php echo $request['maThuXe']; ?>;
+        const requestId = <?php echo json_encode(IDEncryptionHelper::encryptId($request['maThuXe'])); ?>;
 
         function updateStatus(status) {
             if (!confirm(`Bạn có chắc chắn muốn cập nhật trạng thái thành "${status}"?`)) {

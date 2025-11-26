@@ -6,6 +6,7 @@ require_once __DIR__ . '/../config/config.php';
 require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../lib/QRCodeGenerator.php';
 require_once __DIR__ . '/../lib/EmailService.php';
+require_once __DIR__ . '/../helpers/IDEncryptionHelper.php';
 
 class MyTicketsController {
     
@@ -84,8 +85,16 @@ class MyTicketsController {
     /**
      * Show ticket detail page
      */
-    public function detail($bookingId) {
+    public function detail($encryptedBookingId) {
         try {
+            $bookingId = IDEncryptionHelper::decryptId($encryptedBookingId);
+            
+            if (!$bookingId || !IDEncryptionHelper::isValidId($bookingId)) {
+                $_SESSION['error'] = 'ID đặt vé không hợp lệ.';
+                header('Location: ' . BASE_URL . '/my-tickets');
+                exit;
+            }
+            
             // Check if user is logged in
             if (!isset($_SESSION['user_id'])) {
                 $_SESSION['error'] = 'Vui lòng đăng nhập để xem chi tiết vé!';
@@ -133,10 +142,17 @@ class MyTicketsController {
     /**
      * Cancel a ticket booking
      */
-    public function cancel($bookingId) {
+    public function cancel($encryptedBookingId) {
         header('Content-Type: application/json');
         
         try {
+            $bookingId = IDEncryptionHelper::decryptId($encryptedBookingId);
+            
+            if (!$bookingId || !IDEncryptionHelper::isValidId($bookingId)) {
+                echo json_encode(['success' => false, 'message' => 'ID đặt vé không hợp lệ']);
+                return;
+            }
+            
             // Check if user is logged in
             if (!isset($_SESSION['user_id'])) {
                 echo json_encode(['success' => false, 'message' => 'Vui lòng đăng nhập để hủy vé']);

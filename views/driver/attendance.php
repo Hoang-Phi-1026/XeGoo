@@ -1,4 +1,8 @@
-<?php include __DIR__ . '/../layouts/header.php'; ?>
+<?php 
+require_once __DIR__ . '/../../helpers/IDEncryptionHelper.php';
+include __DIR__ . '/../layouts/header.php'; 
+$encryptedTripId = IDEncryptionHelper::encryptId($tripId);
+?>
 <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/driver-attendance.css">
 
 <div class="attendance-container">
@@ -36,7 +40,7 @@
     </div>
 
     <form method="POST" action="<?php echo BASE_URL; ?>/driver/report/confirm-departure" class="attendance-form">
-        <input type="hidden" name="trip_id" value="<?php echo $tripId; ?>">
+        <input type="hidden" name="trip_id" value="<?php echo $encryptedTripId; ?>">
         
         <div class="passengers-section">
             <h2><i class="fas fa-users"></i> Sơ Đồ Ghế & Điểm Danh</h2>

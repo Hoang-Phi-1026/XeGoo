@@ -2,6 +2,7 @@
 require_once __DIR__ . '/../config/config.php';
 require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../models/Staff.php';
+require_once __DIR__ . '/../helpers/IDEncryptionHelper.php';
 
 class StaffMonitoringController {
     public function __construct() {
@@ -40,14 +41,21 @@ class StaffMonitoringController {
     public function detail($reportId) {
         $this->checkStaffAccess();
         
-        $report = Staff::getReportDetail($reportId);
+        $decryptedReportId = IDEncryptionHelper::decryptId($reportId);
+        if (!$decryptedReportId) {
+            $_SESSION['error'] = 'ID báo cáo không hợp lệ!';
+            header('Location: ' . BASE_URL . '/staff/monitoring');
+            exit();
+        }
+        
+        $report = Staff::getReportDetail($decryptedReportId);
         if (!$report) {
             $_SESSION['error'] = 'Báo cáo không tồn tại!';
             header('Location: ' . BASE_URL . '/staff/monitoring');
             exit();
         }
         
-        $passengers = Staff::getReportPassengers($reportId);
+        $passengers = Staff::getReportPassengers($decryptedReportId);
         
         require_once __DIR__ . '/../views/staff/monitoring-detail.php';
     }
@@ -73,7 +81,12 @@ class StaffMonitoringController {
             exit();
         }
         
-        $result = Staff::confirmDeparture($reportId);
+        $decryptedReportId = IDEncryptionHelper::decryptId($reportId);
+        if (!$decryptedReportId) {
+            $decryptedReportId = $reportId;
+        }
+        
+        $result = Staff::confirmDeparture($decryptedReportId);
         
         if ($result['success']) {
             http_response_code(200);
@@ -100,3 +113,4 @@ class StaffMonitoringController {
         exit();
     }
 }
+?>

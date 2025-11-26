@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../models/DriverReport.php';
+require_once __DIR__ . '/../helpers/IDEncryptionHelper.php';
 
 class DriverReportController {
     
@@ -50,6 +51,13 @@ class DriverReportController {
                 exit;
             }
 
+            $tripId = IDEncryptionHelper::decryptId($tripId);
+            if (!$tripId) {
+                $_SESSION['error'] = 'ID chuyến xe không hợp lệ.';
+                header('Location: ' . BASE_URL . '/driver/report');
+                exit;
+            }
+
             $trip = DriverReport::getTripDetails($tripId, $driverId);
             if (!$trip) {
                 $_SESSION['error'] = 'Không tìm thấy chuyến đi.';
@@ -87,13 +95,20 @@ class DriverReportController {
         }
 
         try {
-            $tripId = $_POST['trip_id'] ?? '';
+            $encryptedTripId = $_POST['trip_id'] ?? '';
             $driverId = $_SESSION['user_id'];
             $attendanceData = $_POST['attendance'] ?? [];
             $tripNotes = $_POST['trip_notes'] ?? '';
 
-            if (!$tripId) {
+            if (!$encryptedTripId) {
                 $_SESSION['error'] = 'Không tìm thấy chuyến đi.';
+                header('Location: ' . BASE_URL . '/driver/report');
+                exit;
+            }
+
+            $tripId = IDEncryptionHelper::decryptId($encryptedTripId);
+            if (!$tripId) {
+                $_SESSION['error'] = 'ID chuyến xe không hợp lệ.';
                 header('Location: ' . BASE_URL . '/driver/report');
                 exit;
             }

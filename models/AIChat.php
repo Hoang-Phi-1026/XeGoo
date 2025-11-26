@@ -206,7 +206,7 @@ class AIChat {
         $context .= "4. LIÊN KẾT VÀ HƯỚNG DẪN\n";
         $context .= "   [Đặt vé ngay](xegoo.vn/booking)\n";
         $context .= "   [Tra cứu vé](xegoo.vn/ticket-lookup)\n";
-        $context .= "   [Chat với hỗ trợ](xegoo.vn/support)\n";
+        $context .= "   [Chat với nhân viên hỗ trợ](xegoo.vn/support)\n";
         $context .= "   Hotline: 0800 1234 567\n\n";
         $context .= "5. HIỂU NGỮ CẢNH\n";
         $context .= "   - Nếu user hỏi 'giá vé của những chuyến đó'\n";
@@ -585,7 +585,7 @@ class AIChat {
             . "4. LIÊN KẾT VÀ HƯỚNG DẪN\n"
             . "   [Đặt vé ngay](xegoo.vn/booking)\n"
             . "   [Tra cứu vé](xegoo.vn/ticket-lookup)\n"
-            . "   [Chat với hỗ trợ](xegoo.vn/support)\n"
+            . "   [Chat với nhân viên hỗ trợ](xegoo.vn/support)\n"
             . "   Hotline: 0800 1234 567\n\n"
             . "5. HIỂU NGỮ CẢNH\n"
             . "   - Nếu user hỏi 'giá vé của những chuyến đó'\n"

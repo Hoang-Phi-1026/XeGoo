@@ -6,6 +6,7 @@ require_once __DIR__ . '/../config/config.php';
 require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../models/Booking.php';
 require_once __DIR__ . '/../lib/EmailService.php';
+require_once __DIR__ . '/../helpers/IDEncryptionHelper.php';
 
 class MoMoController {
     
@@ -193,8 +194,10 @@ class MoMoController {
                     // Clear session
                     $this->clearBookingSession();
                     
+                    $encryptedBookingId = IDEncryptionHelper::encryptId($bookingId);
+                    
                     $_SESSION['success'] = 'Thanh toán thành công! Mã đặt vé: ' . $bookingId;
-                    header('Location: ' . BASE_URL . '/booking/success/' . $bookingId);
+                    header('Location: ' . BASE_URL . '/booking/success/' . $encryptedBookingId);
                     exit;
                 } else {
                     throw new Exception('Không thể tạo đơn đặt vé');

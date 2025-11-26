@@ -57,6 +57,7 @@ $routes = [
     '/home' => ['controller' => 'HomeController', 'action' => 'index'],
     '/search' => ['controller' => 'SearchController', 'action' => 'index'],
     '/search/cities' => ['controller' => 'SearchController', 'action' => 'cities'],
+    '/booking/prepare' => ['controller' => 'BookingController', 'action' => 'prepare'], // Added route for prepare action
     '/search/trip-details/{id}' => ['controller' => 'SearchController', 'action' => 'tripDetails'],
     '/booking/{id}' => ['controller' => 'BookingController', 'action' => 'show'],
     '/booking/confirm' => ['controller' => 'BookingController', 'action' => 'confirm'],

@@ -104,7 +104,8 @@ require_once __DIR__ . '/../../config/config.php';
                             </div>
 
                             <div class="request-footer">
-                                <a href="<?php echo BASE_URL; ?>/staff/rental-support/<?php echo $request['maThuXe']; ?>" class="btn-detail">
+                                <!-- Encrypt rental request ID in link -->
+                                <a href="<?php echo BASE_URL; ?>/staff/rental-support/<?php echo urlencode(IDEncryptionHelper::encryptId($request['maThuXe'])); ?>" class="btn-detail">
                                     <i class="fas fa-eye"></i>
                                     Xem chi tiết
                                 </a>

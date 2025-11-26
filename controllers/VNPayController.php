@@ -6,6 +6,7 @@ require_once __DIR__ . '/../config/config.php';
 require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../models/Booking.php';
 require_once __DIR__ . '/../lib/EmailService.php';
+require_once __DIR__ . '/../helpers/IDEncryptionHelper.php'; // Added for ID encryption
 
 class VNPayController {
     private $tmnCode;
@@ -247,8 +248,10 @@ class VNPayController {
                             // Clear session
                             $this->clearBookingSession();
                             
+                            $encryptedBookingId = IDEncryptionHelper::encryptId($bookingId);
+                            
                             $_SESSION['success'] = 'Thanh toán thành công! Mã đặt vé: ' . $bookingId;
-                            header('Location: ' . BASE_URL . '/booking/success/' . $bookingId);
+                            header('Location: ' . BASE_URL . '/booking/success/' . $encryptedBookingId);
                             exit;
                         } else {
                             throw new Exception('Không thể tạo đơn đặt vé');
@@ -818,7 +821,7 @@ class VNPayController {
             '09' => 'GD Hoàn trả bị từ chối',
             '10' => 'Đã giao hàng',
             '11' => 'Giao dịch không thành công do: Khách hàng nhập sai mật khẩu xác thực giao dịch (OTP). Xin quý khách vui lòng thực hiện lại giao dịch.',
-            '12' => 'Giao dịch không thành công do: Thẻ/Tài khoản của khách hàng bị khóa.',
+            '12' => 'Giao dịch không thành công do: Thẻ/Tài khoản của Quý khách bị khóa.',
             '13' => 'Giao dịch không thành công do Quý khách nhập sai mật khẩu xác thực giao dịch (OTP). Xin quý khách vui lòng thực hiện lại giao dịch.',
             '21' => 'Giao dịch không thành công do: Tài khoản của quý khách không đủ số dư để thực hiện giao dịch.',
             '22' => 'Giao dịch không thành công do: Thông tin thẻ/tài khoản của Quý khách không chính xác',

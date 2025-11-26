@@ -7,6 +7,7 @@ require_once __DIR__ . '/../models/TripSearch.php';
 require_once __DIR__ . '/../models/Vehicle.php';
 require_once __DIR__ . '/../config/config.php';
 require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../helpers/IDEncryptionHelper.php';
 
 class BookingController {
     
@@ -17,19 +18,69 @@ class BookingController {
     }
 
 
+    /**
+     * Prepare booking by encrypting trip IDs and redirecting
+     * This is called from the search page when selecting round-trip
+     */
+    public function prepare() {
+        try {
+            $outboundTripId = $_GET['outbound'] ?? null;
+            $returnTripId = $_GET['return'] ?? null;
+            
+            if (!$outboundTripId || !$returnTripId) { // Corrected condition: should check for both null
+                error_log("[v0] Missing trip IDs in prepare: outbound=$outboundTripId, return=$returnTripId");
+                $_SESSION['error'] = 'Lỗi: Thông tin chuyến xe không hợp lệ';
+                header('Location: ' . BASE_URL . '/search');
+                exit;
+            }
+            
+            // Validate trip IDs are numeric
+            if (!IDEncryptionHelper::isValidId($outboundTripId) || !IDEncryptionHelper::isValidId($returnTripId)) {
+                error_log("[v0] Invalid trip IDs format: outbound=$outboundTripId, return=$returnTripId");
+                $_SESSION['error'] = 'Lỗi: ID chuyến xe không hợp lệ';
+                header('Location: ' . BASE_URL . '/search');
+                exit;
+            }
+            
+            // Encrypt both trip IDs
+            $encryptedOutbound = IDEncryptionHelper::encryptId($outboundTripId);
+            $encryptedReturn = IDEncryptionHelper::encryptId($returnTripId);
+            
+            error_log("[v0] Encrypted trip IDs - outbound: $encryptedOutbound, return: $encryptedReturn");
+            
+            // Redirect to booking page with encrypted IDs
+            $redirectUrl = BASE_URL . '/booking/' . $encryptedOutbound . '?return_trip=' . $encryptedReturn . '&is_round_trip=1';
+            header('Location: ' . $redirectUrl);
+            exit;
+            
+        } catch (Exception $e) {
+            error_log("[v0] Error in prepare: " . $e->getMessage());
+            $_SESSION['error'] = 'Lỗi: ' . $e->getMessage();
+            header('Location: ' . BASE_URL . '/search');
+            exit;
+        }
+    }
     
     
     /**
      * Show booking page for selected trip
      */
-    public function show($tripId) {
+    public function show($encryptedTripId) {
         try {
+            $tripId = IDEncryptionHelper::decryptId($encryptedTripId);
+            
+            if (!$tripId || !IDEncryptionHelper::isValidId($tripId)) {
+                error_log("[v0] Invalid encrypted trip ID: $encryptedTripId");
+                echo "<h1>Lỗi: ID chuyến xe không hợp lệ</h1>";
+                return;
+            }
+            
             error_log("[v0] BookingController show called with tripId: $tripId");
             
             $returnTripId = $_GET['return_trip'] ?? null;
             $isRoundTrip = isset($_GET['is_round_trip']) && $_GET['is_round_trip'] == '1';
             
-            error_log("[v0] Return trip ID: $returnTripId, Is round trip: " . ($isRoundTrip ? 'yes' : 'no'));
+            error_log("[v0] Return trip ID (encrypted): $returnTripId, Is round trip: " . ($isRoundTrip ? 'yes' : 'no'));
             
             // Get outbound trip details
             $outboundTrip = $this->getTripDetails($tripId);
@@ -45,10 +96,18 @@ class BookingController {
             $returnTrip = null;
             $returnHasDeparted = false;
             if ($isRoundTrip && $returnTripId) {
-                $returnTrip = $this->getTripDetails($returnTripId);
+                $decryptedReturnTripId = IDEncryptionHelper::decryptId($returnTripId);
+                
+                if (!$decryptedReturnTripId || !IDEncryptionHelper::isValidId($decryptedReturnTripId)) {
+                    error_log("[v0] Invalid encrypted return trip ID: $returnTripId");
+                    echo "<h1>Lỗi: ID chuyến về không hợp lệ</h1>";
+                    return;
+                }
+                
+                $returnTrip = $this->getTripDetails($decryptedReturnTripId);
                 if (!$returnTrip) {
-                    error_log("[v0] Return trip not found for ID: $returnTripId");
-                    echo "<h1>Lỗi: Không tìm thấy chuyến về ID: $returnTripId</h1>";
+                    error_log("[v0] Return trip not found for ID: $decryptedReturnTripId");
+                    echo "<h1>Lỗi: Không tìm thấy chuyến về ID: $decryptedReturnTripId</h1>";
                     return;
                 }
                 $returnHasDeparted = $this->checkIfTripHasDeparted($returnTrip['thoiGianKhoiHanh']);
@@ -89,8 +148,8 @@ class BookingController {
             $returnSeatStatuses = [];
             if ($returnTrip) {
                 $returnSeatLayout = $this->getSeatLayout($returnTrip);
-                $returnBookedSeats = $this->getBookedSeats($returnTripId);
-                $returnSeatStatuses = $this->getSeatStatuses($returnTripId);
+                $returnBookedSeats = $this->getBookedSeats($decryptedReturnTripId); // Use decrypted ID for return trip
+                $returnSeatStatuses = $this->getSeatStatuses($decryptedReturnTripId); // Use decrypted ID for return trip
             }
             
             error_log("[v0] Seat layout: " . json_encode($seatLayout));
@@ -296,8 +355,8 @@ class BookingController {
                 $_SESSION['booking_errors'] = $errors;
                 $_SESSION['booking_data'] = $_POST;
                 $redirectUrl = $isRoundTrip ? 
-                    BASE_URL . '/booking/' . $tripId . '?return_trip=' . $returnTripId . '&is_round_trip=1' :
-                    BASE_URL . '/booking/' . $tripId;
+                    BASE_URL . '/booking/' . IDEncryptionHelper::encryptId($tripId) . '?return_trip=' . IDEncryptionHelper::encryptId($returnTripId) . '&is_round_trip=1' :
+                    BASE_URL . '/booking/' . IDEncryptionHelper::encryptId($tripId);
                 error_log("[v0] Redirecting back to booking due to errors: $redirectUrl");
                 header('Location: ' . $redirectUrl);
                 exit;
@@ -353,8 +412,8 @@ class BookingController {
                 error_log("[v0] Failed to hold seats: " . $holdResult['message']);
                 $_SESSION['error'] = $holdResult['message'];
                 $redirectUrl = $isRoundTrip ? 
-                    BASE_URL . '/booking/' . $tripId . '?return_trip=' . $returnTripId . '&is_round_trip=1' :
-                    BASE_URL . '/booking/' . $tripId;
+                    BASE_URL . '/booking/' . IDEncryptionHelper::encryptId($tripId) . '?return_trip=' . IDEncryptionHelper::encryptId($returnTripId) . '&is_round_trip=1' :
+                    BASE_URL . '/booking/' . IDEncryptionHelper::encryptId($tripId);
                 header('Location: ' . $redirectUrl);
                 exit;
             }
@@ -643,8 +702,16 @@ class BookingController {
     /**
      * Show booking success page - Enhanced with better data handling
      */
-    public function success($bookingId) {
+    public function success($encryptedBookingId) {
         try {
+            
+            $bookingId = IDEncryptionHelper::decryptId($encryptedBookingId);
+            
+            if (!$bookingId || !IDEncryptionHelper::isValidId($bookingId)) {
+                $_SESSION['error'] = 'ID đặt vé không hợp lệ.';
+                header('Location: ' . BASE_URL . '/search');
+                exit;
+            }
             
             // if (!isset($_SESSION['user_id'])) {
             //     $_SESSION['error'] = 'Vui lòng đăng nhập để xem thông tin đặt vé!';

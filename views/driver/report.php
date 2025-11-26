@@ -1,4 +1,7 @@
-<?php include __DIR__ . '/../layouts/header.php'; ?>
+<?php 
+require_once __DIR__ . '/../../helpers/IDEncryptionHelper.php';
+include __DIR__ . '/../layouts/header.php'; 
+?>
 <link rel="stylesheet" href="<?php echo BASE_URL; ?>/public/css/driver-report.css">
 
 <div class="driver-report-container">
@@ -72,7 +75,10 @@
                         
                         <!-- Display different actions based on trip status -->
                         <?php if ($trip['trangThai'] === 'Sẵn sàng'): ?>
-                            <a href="<?php echo BASE_URL; ?>/driver/report/attendance/<?php echo $trip['maChuyenXe']; ?>" class="btn-attendance">
+                            <?php 
+                            $encryptedTripId = IDEncryptionHelper::encryptId($trip['maChuyenXe']);
+                            ?>
+                            <a href="<?php echo BASE_URL; ?>/driver/report/attendance/<?php echo $encryptedTripId; ?>" class="btn-attendance">
                                 <i class="fas fa-clipboard-check"></i>
                                 Điểm danh hành khách
                             </a>

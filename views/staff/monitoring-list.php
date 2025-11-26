@@ -678,7 +678,7 @@ require_once __DIR__ . '/../../config/config.php';
                                 </div>
 
                                 <div class="report-footer">
-                                    <a href="<?php echo BASE_URL; ?>/staff/monitoring/<?php echo $report['maBaoCao']; ?>" 
+                                    <a href="<?php echo BASE_URL; ?>/staff/monitoring/<?php echo urlencode(IDEncryptionHelper::encryptId($report['maBaoCao'])); ?>" 
                                        class="btn-detail">
                                         <i class="fas fa-eye"></i>
                                         Xem chi tiết

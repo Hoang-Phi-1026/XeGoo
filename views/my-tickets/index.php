@@ -81,7 +81,11 @@
                                     <?php echo number_format($booking['booking_info']['tongTienSauGiam']); ?>đ
                                 </span>
                             </div>
-                            <a href="<?php echo BASE_URL; ?>/my-tickets/detail/<?php echo $bookingId; ?>" class="btn-view-detail">
+                            <?php 
+                            require_once __DIR__ . '/../../helpers/IDEncryptionHelper.php';
+                            $encryptedBookingId = IDEncryptionHelper::encryptId($bookingId);
+                            ?>
+                            <a href="<?php echo BASE_URL; ?>/my-tickets/detail/<?php echo $encryptedBookingId; ?>" class="btn-view-detail">
                                 Xem Chi Tiết <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>

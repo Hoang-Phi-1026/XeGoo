@@ -163,7 +163,7 @@ require_once __DIR__ . '/../layouts/header.php';
         </div>
     </section>
 
-    <section class="routes-section" id="routes">
+    <section class="routes-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Tuyến đường <span class="highlight-text">phổ biến</span></h2>
@@ -195,7 +195,7 @@ require_once __DIR__ . '/../layouts/header.php';
             </div>
 
             <?php if (!empty($routes)): ?>
-            <div class="routes-selector-container">
+            <div class="routes-selector-container" id="routes">
                 <div class="selector-header">
                     <div class="selector-icon">
                         <i class="fas fa-map-marked-alt"></i>
