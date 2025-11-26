@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../config/config.php';
+require_once __DIR__ . '/../helpers/PasswordHelper.php';
 
 class ProfileController {
     private $db;
@@ -124,16 +125,15 @@ class ProfileController {
         $stmt->execute([$_SESSION['user_id']]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
         
-        // Note: Database stores plain text passwords, need to check accordingly
-        if (!$user || $currentPassword !== $user['matKhau']) {
+        if (!$user || !PasswordHelper::verifyPassword($currentPassword, $user['matKhau'])) {
             header('Location: ' . BASE_URL . '/profile?error=' . urlencode('Mật khẩu hiện tại không đúng'));
             exit;
         }
         
         try {
-            // Store as plain text to match existing system
+            $encodedPassword = PasswordHelper::encodePassword($newPassword);
             $stmt = $this->db->prepare("UPDATE nguoidung SET matKhau = ? WHERE maNguoiDung = ?");
-            $stmt->execute([$newPassword, $_SESSION['user_id']]);
+            $stmt->execute([$encodedPassword, $_SESSION['user_id']]);
             
             header('Location: ' . BASE_URL . '/profile?success=' . urlencode('Đổi mật khẩu thành công'));
         } catch (PDOException $e) {

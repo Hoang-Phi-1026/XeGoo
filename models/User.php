@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../helpers/PasswordHelper.php';
 
 class User {
     private $db;
@@ -31,7 +32,7 @@ class User {
             $stmt->execute([$identifier]);
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            if ($user && $password === $user['matKhau']) {
+            if ($user && PasswordHelper::verifyPassword($password, $user['matKhau'])) {
                 return $user;
             }
             
@@ -54,7 +55,7 @@ class User {
             $stmt->execute([$sodienthoai]);
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            if ($user && $password === $user['matKhau']) { // Simple password check - in production use password_verify()
+            if ($user && PasswordHelper::verifyPassword($password, $user['matKhau'])) {
                 return $user;
             }
             
@@ -84,9 +85,10 @@ class User {
 
     public function updatePasswordByEmail($email, $newPassword) {
         try {
+            $encodedPassword = PasswordHelper::encodePassword($newPassword);
             $sql = "UPDATE nguoidung SET matKhau = ? WHERE eMail = ?";
             $stmt = $this->db->prepare($sql);
-            $result = $stmt->execute([$newPassword, $email]);
+            $result = $stmt->execute([$encodedPassword, $email]);
             
             if ($result) {
                 return [
@@ -134,6 +136,8 @@ class User {
                 ];
             }
 
+            $encodedPassword = PasswordHelper::encodePassword($data['matKhau']);
+
             // Insert new user
             $sql = "INSERT INTO nguoidung (maVaiTro, tenNguoiDung, soDienThoai, eMail, matKhau, gioiTinh, diaChi, ngayTao, maTrangThai) 
                     VALUES (?, ?, ?, ?, ?, ?, ?, NOW(), 0)";
@@ -144,7 +148,7 @@ class User {
                 $data['tenNguoiDung'],
                 $data['soDienThoai'],
                 $data['eMail'],
-                $data['matKhau'], // In production, use password_hash()
+                $encodedPassword,
                 $data['gioiTinh'],
                 $data['diaChi']
             ]);
@@ -295,6 +299,8 @@ class User {
                 ];
             }
 
+            $encodedPassword = PasswordHelper::encodePassword($data['matKhau']);
+
             // Insert new user
             $sql = "INSERT INTO nguoidung (maVaiTro, tenNguoiDung, soDienThoai, eMail, matKhau, gioiTinh, diaChi, moTa, ngayTao, maTrangThai) 
                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, NOW(), 0)";
@@ -305,7 +311,7 @@ class User {
                 $data['tenNguoiDung'],
                 $data['soDienThoai'],
                 $data['eMail'],
-                $data['matKhau'],
+                $encodedPassword,
                 $data['gioiTinh'],
                 $data['diaChi'],
                 $data['moTa'] ?? ''
@@ -377,10 +383,9 @@ class User {
                 $data['moTa'] ?? ''
             ];
             
-            // Update password if provided
             if (!empty($data['matKhau'])) {
                 $sql .= ", matKhau = ?";
-                $params[] = $data['matKhau'];
+                $params[] = PasswordHelper::encodePassword($data['matKhau']);
             }
             
             $sql .= " WHERE maNguoiDung = ?";
