@@ -66,8 +66,8 @@ require_once __DIR__ . '/../../config/config.php';
                     <li class="nav-item"><a href="<?php echo BASE_URL; ?>/" class="nav-link">Trang chủ</a></li>
                     <li class="nav-item"><a href="<?php echo BASE_URL; ?>/about" class="nav-link">Giới thiệu</a></li>
                     <li class="nav-item"><a href="<?php echo BASE_URL; ?>/search" class="nav-link">Đặt vé</a></li>
-                    <!-- Updated link to point to ticket lookup page -->
                     <li class="nav-item"><a href="<?php echo BASE_URL; ?>/ticket-lookup" class="nav-link">Tra cứu vé</a></li>
+                    <li class="nav-item"><a href="<?php echo BASE_URL; ?>/post" class="nav-link">Cộng đồng</a></li>
                 <?php else: ?>
                     <?php
                     $vai_tro = $_SESSION['user_role'] ?? 4;

@@ -62,7 +62,7 @@ class StatisticsController {
     private function getTotalRevenue() {
         try {
             $result = fetch(
-                "SELECT SUM(tongTienSauGiam) as total FROM datve WHERE trangThai IN ('DaThanhToan', 'DaHoanThanh')"
+                "SELECT SUM(tongTienSauGiam) as total FROM datve WHERE trangThai IN ('DangGiu', 'DaThanhToan', 'HetHieuLuc', 'DaHoanThanh', 'DaHuy')"
             );
             return $result ? (float)$result['total'] : 0;
         } catch (Exception $e) {
@@ -211,23 +211,33 @@ class StatisticsController {
     // Doanh thu theo tuyến xe
     private function getRevenueByRoute() {
         try {
+            // This prevents duplication from chitiet_datve having multiple rows per booking
             $results = fetchAll(
                 "SELECT 
                     td.maTuyenDuong,
                     td.kyHieuTuyen,
                     td.diemDi,
                     td.diemDen,
-                    COUNT(cdv.maChiTiet) as veban,
-                    SUM(cdv.giaVe) as doanhThu,
-                    AVG(cdv.giaVe) as giaTriTrungBinh,
-                    ROUND(SUM(cdv.giaVe) * 0.9, 0) as loiNhuan
-                FROM tuyenduong td
-                LEFT JOIN lichtrinh lt ON td.maTuyenDuong = lt.maTuyenDuong
-                LEFT JOIN chuyenxe cx ON lt.maLichTrinh = cx.maLichTrinh
-                LEFT JOIN chitiet_datve cdv ON cx.maChuyenXe = cdv.maChuyenXe
-                LEFT JOIN datve dv ON cdv.maDatVe = dv.maDatVe
-                WHERE cdv.trangThai = 'DaThanhToan'
-                GROUP BY td.maTuyenDuong
+                    COUNT(DISTINCT bookings.maDatVe) as soGiaoDich,
+                    SUM(bookings.soLuongVe) as soLuongVe,
+                    SUM(bookings.tongTienSauGiam) as doanhThu,
+                    ROUND(AVG(bookings.tongTienSauGiam), 0) as giaTriTrungBinh,
+                    SUM(bookings.tongTienSauGiam) - SUM(bookings.giamGia) as loiNhuan
+                FROM (
+                    SELECT DISTINCT
+                        dv.maDatVe,
+                        dv.soLuongVe,
+                        dv.tongTienSauGiam,
+                        dv.giamGia,
+                        lt.maTuyenDuong
+                    FROM datve dv
+                    INNER JOIN chitiet_datve cdv ON dv.maDatVe = cdv.maDatVe
+                    INNER JOIN chuyenxe cx ON cdv.maChuyenXe = cx.maChuyenXe
+                    INNER JOIN lichtrinh lt ON cx.maLichTrinh = lt.maLichTrinh
+                    WHERE dv.trangThai IN ('DangGiu', 'DaThanhToan', 'HetHieuLuc', 'DaHoanThanh', 'DaHuy')
+                ) as bookings
+                INNER JOIN tuyenduong td ON bookings.maTuyenDuong = td.maTuyenDuong
+                GROUP BY td.maTuyenDuong, td.kyHieuTuyen, td.diemDi, td.diemDen
                 ORDER BY doanhThu DESC
                 LIMIT 20"
             );
@@ -248,7 +258,7 @@ class StatisticsController {
                     SUM(tongTienSauGiam) as totalAmount,
                     AVG(tongTienSauGiam) as avgAmount
                 FROM datve
-                WHERE trangThai IN ('DaThanhToan', 'DaHoanThanh')
+                WHERE trangThai IN ('DaThanhToan', 'HetHieuLuc', 'DaHoanThanh', 'DaHuy')
                 GROUP BY phuongThucThanhToan
                 ORDER BY totalAmount DESC"
             );
@@ -356,19 +366,26 @@ class StatisticsController {
         try {
             // Get pagination parameters
             $page = isset($_GET['trip_load_page']) ? (int)$_GET['trip_load_page'] : 1;
+            $startDate = isset($_GET['trip_start_date']) ? $_GET['trip_start_date'] : date('Y-m-01');
+            $endDate = isset($_GET['trip_end_date']) ? $_GET['trip_end_date'] : date('Y-m-d');
             $perPage = 15;
             $offset = ($page - 1) * $perPage;
             
-            // Get total count
+            // Format dates for query
+            $startDateStr = date('Y-m-d', strtotime($startDate));
+            $endDateStr = date('Y-m-d', strtotime($endDate));
+            
+            // Get total count with date filter
             $countResult = fetch(
                 "SELECT COUNT(*) as total FROM chuyenxe cx
                 LEFT JOIN lichtrinh lt ON cx.maLichTrinh = lt.maLichTrinh
-                LEFT JOIN tuyenduong td ON lt.maTuyenDuong = td.maTuyenDuong"
+                LEFT JOIN tuyenduong td ON lt.maTuyenDuong = td.maTuyenDuong
+                WHERE DATE(cx.ngayKhoiHanh) BETWEEN '" . $startDateStr . "' AND '" . $endDateStr . "'"
             );
             $totalRows = $countResult ? $countResult['total'] : 0;
             $totalPages = ceil($totalRows / $perPage);
             
-            // Fetch paginated data with departure date
+            // Fetch paginated data with departure date filter
             $results = fetchAll(
                 "SELECT 
                     cx.maChuyenXe,
@@ -381,6 +398,7 @@ class StatisticsController {
                 FROM chuyenxe cx
                 LEFT JOIN lichtrinh lt ON cx.maLichTrinh = lt.maLichTrinh
                 LEFT JOIN tuyenduong td ON lt.maTuyenDuong = td.maTuyenDuong
+                WHERE DATE(cx.ngayKhoiHanh) BETWEEN '" . $startDateStr . "' AND '" . $endDateStr . "'
                 ORDER BY cx.ngayKhoiHanh DESC, cx.thoiGianKhoiHanh DESC
                 LIMIT " . $offset . ", " . $perPage
             );
@@ -392,6 +410,10 @@ class StatisticsController {
                     'totalPages' => $totalPages,
                     'total' => $totalRows,
                     'perPage' => $perPage
+                ],
+                'dateRange' => [
+                    'startDate' => $startDateStr,
+                    'endDate' => $endDateStr
                 ]
             ];
         } catch (Exception $e) {
@@ -512,60 +534,77 @@ class StatisticsController {
     }
 
     // API endpoint for fetching trip load factor data via AJAX
+        // API endpoint for fetching trip load factor data via AJAX (có lọc ngày)
     public function getTripLoadFactorAjax() {
         $this->checkAdminAccess();
         header('Content-Type: application/json');
-        
+
         try {
-            $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-            $perPage = 15;
-            $offset = ($page - 1) * $perPage;
-            
-            // Get total count
+            $page      = isset($_GET['page']) ? max(1, (int)$_GET['page']) : 1;
+            $startDate = $_GET['startDate'] ?? date('Y-m-01');
+            $endDate   = $_GET['endDate']   ?? date('Y-m-d');
+            $perPage   = 15;
+            $offset    = ($page - 1) * $perPage;
+
+            // Chuẩn hóa ngày (và escape nếu dùng mysqli, giả sử fetch escape rồi)
+            $startDate = date('Y-m-d', strtotime($startDate));
+            $endDate   = date('Y-m-d', strtotime($endDate));
+
+            // Đếm tổng số chuyến trong khoảng ngày
             $countResult = fetch(
-                "SELECT COUNT(*) as total FROM chuyenxe cx
-                LEFT JOIN lichtrinh lt ON cx.maLichTrinh = lt.maLichTrinh
-                LEFT JOIN tuyenduong td ON lt.maTuyenDuong = td.maTuyenDuong"
+                "SELECT COUNT(*) AS total 
+                FROM chuyenxe cx
+                WHERE DATE(cx.ngayKhoiHanh) BETWEEN '" . $startDate . "' AND '" . $endDate . "'"
             );
-            $totalRows = $countResult ? $countResult['total'] : 0;
+
+            $totalRows  = $countResult['total'] ?? 0;
             $totalPages = ceil($totalRows / $perPage);
-            
-            // Fetch paginated data
+
+            // Lấy dữ liệu phân trang (sửa query dùng COUNT từ chitiet_datve)
             $results = fetchAll(
                 "SELECT 
                     cx.maChuyenXe,
                     td.kyHieuTuyen,
                     cx.ngayKhoiHanh,
-                    cx.thoiGianKhoiHanh as gioKhoiHanh,
+                    cx.thoiGianKhoiHanh AS gioKhoiHanh,
                     cx.soChoTong,
-                    cx.soChoDaDat as soChoCoNguoi,
-                    ROUND((cx.soChoDaDat / cx.soChoTong) * 100, 2) as tyLeLapDay
+                    COUNT(cdv.maChiTiet) AS soChoCoNguoi,
+                    ROUND((COUNT(cdv.maChiTiet) / NULLIF(cx.soChoTong, 0)) * 100, 2) AS tyLeLapDay
                 FROM chuyenxe cx
                 LEFT JOIN lichtrinh lt ON cx.maLichTrinh = lt.maLichTrinh
                 LEFT JOIN tuyenduong td ON lt.maTuyenDuong = td.maTuyenDuong
+                LEFT JOIN chitiet_datve cdv ON cx.maChuyenXe = cdv.maChuyenXe AND cdv.trangThai = 'DaThanhToan'
+                WHERE DATE(cx.ngayKhoiHanh) BETWEEN '" . $startDate . "' AND '" . $endDate . "'
+                GROUP BY cx.maChuyenXe
                 ORDER BY cx.ngayKhoiHanh DESC, cx.thoiGianKhoiHanh DESC
                 LIMIT " . $offset . ", " . $perPage
             );
-            
+
             echo json_encode([
                 'success' => true,
-                'data' => $results ? $results : [],
+                'data'    => $results ?: [],
                 'pagination' => [
                     'currentPage' => $page,
-                    'totalPages' => $totalPages,
-                    'total' => $totalRows,
-                    'perPage' => $perPage
+                    'totalPages'  => $totalPages,
+                    'total'       => $totalRows,
+                    'perPage'     => $perPage
+                ],
+                'dateRange' => [
+                    'startDate' => $startDate,
+                    'endDate'   => $endDate
                 ]
             ]);
+
         } catch (Exception $e) {
-            error_log("Error in getTripLoadFactorAjax: " . $e->getMessage());
+            error_log("Trip Load Factor AJAX Error: " . $e->getMessage());
             echo json_encode([
                 'success' => false,
-                'message' => 'Lỗi khi tải dữ liệu'
+                'message' => 'Lỗi khi tải dữ liệu: ' . $e->getMessage()
             ]);
         }
         exit();
     }
+
 
     // Bán vé trong hôm nay - Updated method to accept date parameter instead of just today
     private function getTodayTicketSales($selectedDate = null) {
@@ -635,35 +674,28 @@ class StatisticsController {
             $totalRows = $countResult ? $countResult['total'] : 0;
             $totalPages = ceil($totalRows / $perPage);
             
-            // Fetch paginated data
             $results = fetchAll(
                 "SELECT 
                     dv.maDatVe,
-                    COALESCE(nd.maNguoiDung, cdv.maChiTiet) as userIdentifier,
-                    COALESCE(nd.tenNguoiDung, cdv.hoTenHanhKhach) as hoTen,
-                    COALESCE(nd.soDienThoai, cdv.soDienThoaiHanhKhach) as soDienThoai,
-                    COALESCE(nd.eMail, cdv.emailHanhKhach) as eMail,
-                    COALESCE(vt.tenVaiTro, 'Khách Hàng') as vaiTro,
+                    IF(nd.maNguoiDung IS NOT NULL, nd.tenNguoiDung, cdv.hoTenHanhKhach) as tenKhachHang,
+                    IF(nd.maNguoiDung IS NOT NULL, nd.soDienThoai, cdv.soDienThoaiHanhKhach) as soDienThoai,
+                    IF(nd.maNguoiDung IS NOT NULL, nd.eMail, cdv.emailHanhKhach) as email,
                     td.kyHieuTuyen,
                     cx.ngayKhoiHanh,
-                    cx.thoiGianKhoiHanh as gioKhoiHanh,
                     COUNT(DISTINCT cdv.maChiTiet) as soVe,
-                    dv.tongTienSauGiam,
                     dv.loaiDatVe,
+                    dv.tongTienSauGiam as tongTien,
                     dv.phuongThucThanhToan,
-                    dv.trangThai,
-                    dv.ngayDat,
-                    nd.maNguoiDung
+                    dv.trangThai
                 FROM datve dv
                 LEFT JOIN nguoidung nd ON dv.maNguoiDung = nd.maNguoiDung
-                LEFT JOIN vaitro vt ON nd.maVaiTro = vt.maVaiTro
                 INNER JOIN chitiet_datve cdv ON dv.maDatVe = cdv.maDatVe
                 INNER JOIN chuyenxe cx ON cdv.maChuyenXe = cx.maChuyenXe
                 INNER JOIN lichtrinh lt ON cx.maLichTrinh = lt.maLichTrinh
                 INNER JOIN tuyenduong td ON lt.maTuyenDuong = td.maTuyenDuong
                 WHERE DATE(dv.ngayDat) = '" . $dateFilter . "'
                     AND dv.trangThai IN ('DaThanhToan', 'DaHoanThanh', 'DaHuy')
-                GROUP BY dv.maDatVe, COALESCE(nd.maNguoiDung, cdv.maChiTiet)
+                GROUP BY dv.maDatVe
                 ORDER BY dv.ngayDat DESC
                 LIMIT " . $offset . ", " . $perPage
             );
@@ -714,35 +746,28 @@ class StatisticsController {
             $totalRows = $countResult ? $countResult['total'] : 0;
             $totalPages = ceil($totalRows / $perPage);
             
-            // Fetch paginated data
             $results = fetchAll(
                 "SELECT 
                     dv.maDatVe,
-                    COALESCE(nd.maNguoiDung, cdv.maChiTiet) as userIdentifier,
-                    COALESCE(nd.tenNguoiDung, cdv.hoTenHanhKhach) as hoTen,
-                    COALESCE(nd.soDienThoai, cdv.soDienThoaiHanhKhach) as soDienThoai,
-                    COALESCE(nd.eMail, cdv.emailHanhKhach) as eMail,
-                    COALESCE(vt.tenVaiTro, 'Khách Hàng') as vaiTro,
+                    IF(nd.maNguoiDung IS NOT NULL, nd.tenNguoiDung, cdv.hoTenHanhKhach) as tenKhachHang,
+                    IF(nd.maNguoiDung IS NOT NULL, nd.soDienThoai, cdv.soDienThoaiHanhKhach) as soDienThoai,
+                    IF(nd.maNguoiDung IS NOT NULL, nd.eMail, cdv.emailHanhKhach) as email,
                     td.kyHieuTuyen,
                     cx.ngayKhoiHanh,
-                    cx.thoiGianKhoiHanh as gioKhoiHanh,
                     COUNT(DISTINCT cdv.maChiTiet) as soVe,
-                    dv.tongTienSauGiam,
                     dv.loaiDatVe,
+                    dv.tongTienSauGiam as tongTien,
                     dv.phuongThucThanhToan,
-                    dv.trangThai,
-                    dv.ngayDat,
-                    nd.maNguoiDung
+                    dv.trangThai
                 FROM datve dv
                 LEFT JOIN nguoidung nd ON dv.maNguoiDung = nd.maNguoiDung
-                LEFT JOIN vaitro vt ON nd.maVaiTro = vt.maVaiTro
                 INNER JOIN chitiet_datve cdv ON dv.maDatVe = cdv.maDatVe
                 INNER JOIN chuyenxe cx ON cdv.maChuyenXe = cx.maChuyenXe
                 INNER JOIN lichtrinh lt ON cx.maLichTrinh = lt.maLichTrinh
                 INNER JOIN tuyenduong td ON lt.maTuyenDuong = td.maTuyenDuong
                 WHERE DATE(dv.ngayDat) = '" . $dateFilter . "'
                     AND dv.trangThai IN ('DaThanhToan', 'DaHoanThanh', 'DaHuy')
-                GROUP BY dv.maDatVe, COALESCE(nd.maNguoiDung, cdv.maChiTiet)
+                GROUP BY dv.maDatVe
                 ORDER BY dv.ngayDat DESC
                 LIMIT " . $offset . ", " . $perPage
             );
@@ -760,6 +785,516 @@ class StatisticsController {
             ]);
         } catch (Exception $e) {
             error_log("Error in getTicketSalesByDateAjax: " . $e->getMessage());
+            echo json_encode([
+                'success' => false,
+                'message' => 'Lỗi khi tải dữ liệu'
+            ]);
+        }
+        exit();
+    }
+
+    // Doanh thu theo ngày/tháng/năm với lọc
+    private function getRevenueByDateRange($startDate = null, $endDate = null, $filterType = 'day') {
+        try {
+            // Nếu không có ngày, sử dụng ngày hôm nay
+            if (!$startDate) {
+                $startDate = date('Y-m-d');
+            }
+            if (!$endDate) {
+                $endDate = $startDate;
+            }
+            
+            // Định dạng ngày
+            $startDate = date('Y-m-d', strtotime($startDate));
+            $endDate = date('Y-m-d', strtotime($endDate));
+            
+            $results = fetchAll(
+                "SELECT 
+                    DATE_FORMAT(dv.ngayCapNhat, '%Y-%m-%d') as ngay,
+                    SUM(dv.tongTienSauGiam) as tongDoanhThu,
+                    COUNT(DISTINCT dv.maDatVe) as soLuongVe,
+                    COUNT(DISTINCT nd.maNguoiDung) as soKhachHang
+                FROM datve dv
+                LEFT JOIN nguoidung nd ON dv.maNguoiDung = nd.maNguoiDung
+                WHERE dv.trangThai IN ('DaThanhToan', 'DaHoanThanh')
+                    AND DATE(dv.ngayCapNhat) BETWEEN '" . $startDate . "' AND '" . $endDate . "'
+                GROUP BY DATE(dv.ngayCapNhat)
+                ORDER BY dv.ngayCapNhat ASC"
+            );
+            
+            return $results ? $results : [];
+        } catch (Exception $e) {
+            error_log("Error getting revenue by date range: " . $e->getMessage());
+            return [];
+        }
+    }
+
+    // Tổng doanh thu theo khoảng thời gian
+    private function getTotalRevenueByDateRange($startDate = null, $endDate = null) {
+        try {
+            if (!$startDate) {
+                $startDate = date('Y-m-d');
+            }
+            if (!$endDate) {
+                $endDate = $startDate;
+            }
+            
+            $startDate = date('Y-m-d', strtotime($startDate));
+            $endDate = date('Y-m-d', strtotime($endDate));
+            
+            $result = fetch(
+                "SELECT 
+                    SUM(dv.tongTienSauGiam) as tongDoanhThu,
+                    COUNT(DISTINCT dv.maDatVe) as soLuongVe,
+                    COUNT(DISTINCT nd.maNguoiDung) as soKhachHang,
+                    AVG(dv.tongTienSauGiam) as giaTriTrungBinh
+                FROM datve dv
+                LEFT JOIN nguoidung nd ON dv.maNguoiDung = nd.maNguoiDung
+                WHERE dv.trangThai IN ('DaThanhToan', 'HetHieuLuc', 'DaHoanThanh', 'DaHuy')
+                    AND DATE(dv.ngayCapNhat) BETWEEN '" . $startDate . "' AND '" . $endDate . "'"
+            );
+            
+            return $result ? $result : ['tongDoanhThu' => 0, 'soLuongVe' => 0, 'soKhachHang' => 0, 'giaTriTrungBinh' => 0];
+        } catch (Exception $e) {
+            error_log("Error getting total revenue by date range: " . $e->getMessage());
+            return ['tongDoanhThu' => 0, 'soLuongVe' => 0, 'soKhachHang' => 0, 'giaTriTrungBinh' => 0];
+        }
+    }
+
+    // Thống kê doanh thu theo tài xế và phương tiện
+    private function getRevenueByDriverAndVehicle($startDate = null, $endDate = null) {
+        try {
+            if (!$startDate) {
+                $startDate = date('Y-m-01');
+            }
+            if (!$endDate) {
+                $endDate = date('Y-m-d');
+            }
+            
+            $startDate = date('Y-m-d', strtotime($startDate));
+            $endDate = date('Y-m-d', strtotime($endDate));
+            
+            $results = fetchAll(
+                "SELECT 
+                    nd.maNguoiDung,
+                    nd.tenNguoiDung as tenTaiXe,
+                    nd.soDienThoai,
+                    lpt.tenLoaiPhuongTien,
+                    pt.bienSo,
+                    COUNT(DISTINCT cx.maChuyenXe) as soChuyenDen,
+                    COUNT(DISTINCT cdv.maDatVe) as soVe,
+                    SUM(cdv.giaVe) as tongDoanhThu,
+                    AVG(cdv.giaVe) as giaTriTrungBinh,
+                    ROUND(SUM(cdv.giaVe) * 0.1, 0) as hoanHong
+                FROM chuyenxe cx
+                INNER JOIN lichtrinh lt ON cx.maLichTrinh = lt.maLichTrinh
+                INNER JOIN tuyenduong td ON lt.maTuyenDuong = td.maTuyenDuong
+                INNER JOIN phuongtien pt ON cx.maPhuongTien = pt.maPhuongTien
+                INNER JOIN loaiphuongtien lpt ON pt.maLoaiPhuongTien = lpt.maLoaiPhuongTien
+                LEFT JOIN baocao_chuyendi bc ON cx.maChuyenXe = bc.maChuyenXe
+                LEFT JOIN nguoidung nd ON bc.maTaiXe = nd.maNguoiDung
+                LEFT JOIN chitiet_datve cdv ON cx.maChuyenXe = cdv.maChuyenXe
+                WHERE cdv.trangThai = 'DaThanhToan'
+                    AND DATE(cx.ngayKhoiHanh) BETWEEN '" . $startDate . "' AND '" . $endDate . "'
+                GROUP BY nd.maNguoiDung, pt.maPhuongTien, lpt.maLoaiPhuongTien
+                ORDER BY tongDoanhThu DESC"
+            );
+            
+            return $results ? $results : [];
+        } catch (Exception $e) {
+            error_log("Error getting revenue by driver and vehicle: " . $e->getMessage());
+            return [];
+        }
+    }
+
+    // AJAX endpoint để lấy doanh thu lọc theo ngày/tháng/năm
+    public function getFilteredRevenueAjax() {
+        $this->checkAdminAccess();
+        header('Content-Type: application/json');
+        
+        try {
+            $startDate = isset($_GET['startDate']) ? $_GET['startDate'] : null;
+            $endDate = isset($_GET['endDate']) ? $_GET['endDate'] : null;
+            $filterType = isset($_GET['filterType']) ? $_GET['filterType'] : 'day'; // day, month, year
+            
+            // Lấy dữ liệu doanh thu
+            $revenueData = $this->getRevenueByDateRange($startDate, $endDate, $filterType);
+            $totalRevenue = $this->getTotalRevenueByDateRange($startDate, $endDate);
+            
+            echo json_encode([
+                'success' => true,
+                'data' => $revenueData,
+                'summary' => $totalRevenue,
+                'dateRange' => [
+                    'startDate' => date('d/m/Y', strtotime($startDate)),
+                    'endDate' => date('d/m/Y', strtotime($endDate))
+                ]
+            ]);
+        } catch (Exception $e) {
+            error_log("Error in getFilteredRevenueAjax: " . $e->getMessage());
+            echo json_encode([
+                'success' => false,
+                'message' => 'Lỗi khi tải dữ liệu'
+            ]);
+        }
+        exit();
+    }
+
+    // AJAX endpoint để lấy thống kê doanh thu tài xế
+   public function getDriverRevenueAjax()
+{
+    $this->checkAdminAccess();
+    header('Content-Type: application/json');
+
+    try {
+        $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+        $startDate = isset($_GET['startDate']) ? $_GET['startDate'] : date('Y-m-01');
+        $endDate = isset($_GET['endDate']) ? $_GET['endDate'] : date('Y-m-d');
+        $perPage = 15;
+        $offset = ($page - 1) * $perPage;
+
+        // Chuẩn hoá ngày
+        $start = date('Y-m-d', strtotime($startDate));
+        $end = date('Y-m-d', strtotime($endDate));
+
+        // =================================================================
+        // 1. COUNT - Đếm số bộ (tài xế + xe) có doanh thu trong khoảng thời gian
+        // =================================================================
+        $countQuery = fetch("
+            SELECT COUNT(*) AS total FROM (
+                SELECT DISTINCT nd.maNguoiDung, pt.maPhuongTien
+                FROM chuyenxe cx
+                INNER JOIN lichtrinh lt ON cx.maLichTrinh = lt.maLichTrinh
+                INNER JOIN phuongtien pt ON cx.maPhuongTien = pt.maPhuongTien
+                INNER JOIN nguoidung nd ON lt.maTaiXe = nd.maNguoiDung  -- Dùng tài xế từ lịch trình
+                INNER JOIN chitiet_datve cdv ON cx.maChuyenXe = cdv.maChuyenXe
+                WHERE cdv.trangThai = 'DaThanhToan'
+                  AND DATE(cx.ngayKhoiHanh) BETWEEN '$start' AND '$end'
+            ) AS sub
+        ");
+
+        $totalRows = $countQuery ? $countQuery['total'] : 0;
+        $totalPages = ceil($totalRows / $perPage);
+
+        // =================================================================
+        // 2. DATA QUERY - Lấy doanh thu chi tiết (tính cả chuyến chưa hoàn thành)
+        // =================================================================
+        $dataQuery = fetchAll("
+            SELECT 
+                nd.maNguoiDung,
+                nd.tenNguoiDung AS tenTaiXe,
+                nd.soDienThoai,
+                lpt.tenLoaiPhuongTien,
+                pt.bienSo,
+
+                COUNT(DISTINCT cx.maChuyenXe) AS soChuyenXe,
+                COUNT(cdv.maChiTiet) AS soVe,
+                COALESCE(SUM(cdv.giaVe), 0) AS tongDoanhThu,
+                COALESCE(AVG(cdv.giaVe), 0) AS giaTriTrungBinh,
+                ROUND(COALESCE(SUM(cdv.giaVe), 0) * 0.1, 0) AS hoanHong
+
+            FROM chuyenxe cx
+            INNER JOIN lichtrinh lt ON cx.maLichTrinh = lt.maLichTrinh
+            INNER JOIN phuongtien pt ON cx.maPhuongTien = pt.maPhuongTien
+            INNER JOIN loaiphuongtien lpt ON pt.maLoaiPhuongTien = lpt.maLoaiPhuongTien
+            INNER JOIN nguoidung nd ON lt.maTaiXe = nd.maNguoiDung  -- Tài xế từ lịch trình
+            INNER JOIN chitiet_datve cdv ON cx.maChuyenXe = cdv.maChuyenXe
+                AND cdv.trangThai = 'DaThanhToan'
+                
+
+            WHERE DATE(cx.ngayKhoiHanh) BETWEEN '$start' AND '$end'
+              AND nd.maVaiTro = 3  -- Đảm bảo là tài xế
+
+            GROUP BY nd.maNguoiDung, pt.maPhuongTien
+            HAVING tongDoanhThu > 0
+            ORDER BY tongDoanhThu DESC
+            LIMIT $offset, $perPage
+        ");
+
+        echo json_encode([
+            'success' => true,
+            'data' => $dataQuery ?: [],
+            'pagination' => [
+                'currentPage' => $page,
+                'totalPages' => $totalPages,
+                'total' => $totalRows,
+                'perPage' => $perPage
+            ],
+            'dateRange' => [
+                'startDate' => date('d/m/Y', strtotime($start)),
+                'endDate' => date('d/m/Y', strtotime($end))
+            ]
+        ]);
+
+    } catch (Exception $e) {
+        error_log("Driver Revenue AJAX Error: " . $e->getMessage());
+        echo json_encode([
+            'success' => false,
+            'message' => 'Lỗi tải dữ liệu: ' . $e->getMessage()
+        ]);
+    }
+    exit();
+}
+    // Thống kê trạng thái chuyến xe theo khoảng ngày
+private function getTripStatusStats($startDate = null, $endDate = null) {
+    try {
+        if (!$startDate) $startDate = date('Y-m-01'); // Mặc định tháng hiện tại
+        if (!$endDate) $endDate = date('Y-m-d');
+        
+        $startDate = date('Y-m-d', strtotime($startDate));
+        $endDate = date('Y-m-d', strtotime($endDate));
+        
+        $results = fetchAll(
+            "SELECT 
+                trangThai as status,
+                COUNT(*) as count
+            FROM chuyenxe
+            WHERE DATE(ngayKhoiHanh) BETWEEN '" . $startDate . "' AND '" . $endDate . "'
+            GROUP BY trangThai
+            ORDER BY FIELD(trangThai, 'Sẵn sàng', 'Khởi hành', 'Hoàn thành', 'Bị hủy', 'Delay')"
+        );
+        
+        // Đảm bảo có tất cả trạng thái, nếu thiếu thì count = 0
+        $statuses = ['Sẵn sàng', 'Khởi hành', 'Hoàn thành', 'Bị hủy', 'Delay'];
+        $stats = [];
+        foreach ($statuses as $status) {
+            $found = array_filter($results, function($row) use ($status) {
+                return $row['status'] === $status;
+            });
+            $stats[$status] = !empty($found) ? reset($found)['count'] : 0;
+        }
+        
+        return $stats;
+    } catch (Exception $e) {
+        error_log("Error getting trip status stats: " . $e->getMessage());
+        return array_fill_keys(['Sẵn sàng', 'Khởi hành', 'Hoàn thành', 'Bị hủy', 'Delay'], 0);
+    }
+}
+
+// AJAX endpoint để lấy thống kê trạng thái chuyến xe
+public function getTripStatusStatsAjax() {
+    $this->checkAdminAccess();
+    header('Content-Type: application/json');
+    
+    try {
+        $startDate = isset($_GET['startDate']) ? $_GET['startDate'] : null;
+        $endDate = isset($_GET['endDate']) ? $_GET['endDate'] : null;
+        
+        $stats = $this->getTripStatusStats($startDate, $endDate);
+        
+        echo json_encode([
+            'success' => true,
+            'data' => $stats,
+            'dateRange' => [
+                'startDate' => date('d/m/Y', strtotime($startDate)),
+                'endDate' => date('d/m/Y', strtotime($endDate))
+            ]
+        ]);
+    } catch (Exception $e) {
+        error_log("Error in getTripStatusStatsAjax: " . $e->getMessage());
+        echo json_encode([
+            'success' => false,
+            'message' => 'Lỗi khi tải dữ liệu'
+        ]);
+    }
+    exit();
+}
+
+    private function getDetailedRevenue($startDate = null, $endDate = null) {
+        try {
+            if (!$startDate) {
+                $startDate = date('Y-m-01');
+            }
+            if (!$endDate) {
+                $endDate = date('Y-m-d');
+            }
+            
+            $startDate = date('Y-m-d', strtotime($startDate));
+            $endDate = date('Y-m-d', strtotime($endDate));
+            
+            $results = fetchAll(
+                "SELECT 
+                    dv.maDatVe,
+                    DATE_FORMAT(dv.ngayCapNhat, '%d/%m/%Y') as ngayCapNhat,
+                    nd.tenNguoiDung,
+                    nd.soDienThoai,
+                    td.kyHieuTuyen,
+                    dv.soLuongVe,
+                    dv.tongTien as doanhThuGop,
+                    dv.giamGia as giam,
+                    dv.tongTienSauGiam as doanhThuThucTe,
+                    dv.phuongThucThanhToan,
+                    dv.trangThai
+                FROM datve dv
+                LEFT JOIN nguoidung nd ON dv.maNguoiDung = nd.maNguoiDung
+                LEFT JOIN chitiet_datve cdv ON dv.maDatVe = cdv.maDatVe
+                LEFT JOIN chuyenxe cx ON cdv.maChuyenXe = cx.maChuyenXe
+                LEFT JOIN lichtrinh lt ON cx.maLichTrinh = lt.maLichTrinh
+                LEFT JOIN tuyenduong td ON lt.maTuyenDuong = td.maTuyenDuong
+                WHERE dv.trangThai IN ('DangGiu', 'DaThanhToan', 'HetHieuLuc', 'DaHoanThanh', 'DaHuy')
+                    AND DATE(dv.ngayCapNhat) BETWEEN '" . $startDate . "' AND '" . $endDate . "'
+                GROUP BY dv.maDatVe
+                ORDER BY dv.ngayCapNhat DESC, dv.maDatVe DESC"
+            );
+            
+            return $results ? $results : [];
+        } catch (Exception $e) {
+            error_log("Error getting detailed revenue: " . $e->getMessage());
+            return [];
+        }
+    }
+
+    public function getDetailedRevenueAjax() {
+        $this->checkAdminAccess();
+        header('Content-Type: application/json');
+        
+        try {
+            $startDate = isset($_GET['startDate']) ? $_GET['startDate'] : date('Y-m-01');
+            $endDate = isset($_GET['endDate']) ? $_GET['endDate'] : date('Y-m-d');
+            $page = isset($_GET['page']) ? max(1, (int)$_GET['page']) : 1;
+            
+            $startDate = date('Y-m-d', strtotime($startDate));
+            $endDate = date('Y-m-d', strtotime($endDate));
+            
+            $perPage = 20;
+            $offset = ($page - 1) * $perPage;
+            
+            // Get total count
+            $countResult = fetch(
+                "SELECT COUNT(DISTINCT dv.maDatVe) as total FROM datve dv
+                WHERE dv.trangThai IN ('DangGiu', 'DaThanhToan', 'HetHieuLuc', 'DaHoanThanh', 'DaHuy')
+                    AND DATE(dv.ngayCapNhat) BETWEEN '" . $startDate . "' AND '" . $endDate . "'"
+            );
+            
+            $totalRows = $countResult ? $countResult['total'] : 0;
+            $totalPages = ceil($totalRows / $perPage);
+            
+            // Get paginated data
+            $revenueData = fetchAll(
+                "SELECT DISTINCT
+                    dv.maDatVe,
+                    DATE_FORMAT(dv.ngayCapNhat, '%d/%m/%Y') as ngayCapNhat,
+                    nd.tenNguoiDung,
+                    nd.soDienThoai,
+                    COALESCE(td.kyHieuTuyen, 'N/A') as kyHieuTuyen,
+                    dv.soLuongVe,
+                    dv.tongTien as doanhThuGop,
+                    dv.giamGia as giam,
+                    dv.tongTienSauGiam as doanhThuThucTe,
+                    dv.phuongThucThanhToan,
+                    dv.trangThai
+                FROM datve dv
+                LEFT JOIN nguoidung nd ON dv.maNguoiDung = nd.maNguoiDung
+                LEFT JOIN (
+                    SELECT DISTINCT maDatVe, maChuyenXe
+                    FROM chitiet_datve
+                ) cdv ON dv.maDatVe = cdv.maDatVe
+                LEFT JOIN chuyenxe cx ON cdv.maChuyenXe = cx.maChuyenXe
+                LEFT JOIN lichtrinh lt ON cx.maLichTrinh = lt.maLichTrinh
+                LEFT JOIN tuyenduong td ON lt.maTuyenDuong = td.maTuyenDuong
+                WHERE dv.trangThai IN ('DangGiu', 'DaThanhToan', 'HetHieuLuc', 'DaHoanThanh', 'DaHuy')
+                    AND DATE(dv.ngayCapNhat) BETWEEN '" . $startDate . "' AND '" . $endDate . "'
+                ORDER BY dv.ngayCapNhat DESC, dv.maDatVe DESC
+                LIMIT " . $offset . ", " . $perPage
+            );
+            
+            // Calculate totals for summary
+            $summaryResult = fetch(
+                "SELECT 
+                    SUM(dv.tongTien) as tongGop,
+                    SUM(dv.giamGia) as tongGiam,
+                    SUM(dv.tongTienSauGiam) as tongThucTe,
+                    COUNT(DISTINCT dv.maDatVe) as soGiaoDich
+                FROM datve dv
+                WHERE dv.trangThai IN ('DangGiu', 'DaThanhToan', 'HetHieuLuc', 'DaHoanThanh', 'DaHuy')
+                    AND DATE(dv.ngayCapNhat) BETWEEN '" . $startDate . "' AND '" . $endDate . "'"
+            );
+            
+            echo json_encode([
+                'success' => true,
+                'data' => $revenueData ?: [],
+                'summary' => $summaryResult ?: ['tongGop' => 0, 'tongGiam' => 0, 'tongThucTe' => 0, 'soGiaoDich' => 0],
+                'pagination' => [
+                    'currentPage' => $page,
+                    'totalPages' => $totalPages,
+                    'total' => $totalRows,
+                    'perPage' => $perPage
+                ],
+                'dateRange' => [
+                    'startDate' => $startDate,
+                    'endDate' => $endDate
+                ]
+            ]);
+        } catch (Exception $e) {
+            error_log("Error in getDetailedRevenueAjax: " . $e->getMessage());
+            echo json_encode([
+                'success' => false,
+                'message' => 'Lỗi khi tải dữ liệu: ' . $e->getMessage()
+            ]);
+        }
+        exit();
+    }
+
+    private function getTransactionStatsByMonth($month = null, $year = null) {
+        try {
+            if (!$month) {
+                $month = date('m');
+            }
+            if (!$year) {
+                $year = date('Y');
+            }
+            
+            $stats = fetch(
+                "SELECT 
+                    SUM(CASE WHEN trangThai = 'DaThanhToan' THEN 1 ELSE 0 END) as daThanhToan,
+                    SUM(CASE WHEN trangThai = 'DaHuy' THEN 1 ELSE 0 END) as daHuy,
+                    SUM(CASE WHEN trangThai = 'DaHoanThanh' THEN 1 ELSE 0 END) as daHoanThanh,
+                    SUM(CASE WHEN trangThai = 'HetHieuLuc' THEN 1 ELSE 0 END) as hetHieuLuc,
+                    SUM(CASE WHEN trangThai = 'DangGiu' THEN 1 ELSE 0 END) as dangGiu,
+                    COUNT(*) as tongCong
+                FROM datve
+                WHERE MONTH(ngayCapNhat) = '" . $month . "' AND YEAR(ngayCapNhat) = '" . $year . "'"
+            );
+            
+            return $stats ?: [
+                'daThanhToan' => 0,
+                'daHuy' => 0,
+                'daHoanThanh' => 0,
+                'hetHieuLuc' => 0,
+                'dangGiu' => 0,
+                'tongCong' => 0
+            ];
+        } catch (Exception $e) {
+            error_log("Error getting transaction stats: " . $e->getMessage());
+            return [
+                'daThanhToan' => 0,
+                'daHuy' => 0,
+                'daHoanThanh' => 0,
+                'hetHieuLuc' => 0,
+                'dangGiu' => 0,
+                'tongCong' => 0
+            ];
+        }
+    }
+
+    public function getTransactionStatsByStatusAjax() {
+        $this->checkAdminAccess();
+        header('Content-Type: application/json');
+        
+        try {
+            $month = isset($_GET['month']) ? str_pad($_GET['month'], 2, '0', STR_PAD_LEFT) : date('m');
+            $year = isset($_GET['year']) ? $_GET['year'] : date('Y');
+            
+            $stats = $this->getTransactionStatsByMonth($month, $year);
+            
+            echo json_encode([
+                'success' => true,
+                'data' => $stats,
+                'month' => $month,
+                'year' => $year
+            ]);
+        } catch (Exception $e) {
+            error_log("Error in getTransactionStatsByStatusAjax: " . $e->getMessage());
             echo json_encode([
                 'success' => false,
                 'message' => 'Lỗi khi tải dữ liệu'

@@ -214,6 +214,23 @@ $routes = [
 
     // Notification API routes for popup notifications
     '/api/popup-notifications/pending' => ['controller' => 'PopupNotificationController', 'action' => 'getPendingNotifications'],
+
+    // Admin AJAX routes for revenue filtering and driver statistics
+    '/admin/filtered-revenue-ajax' => ['controller' => 'StatisticsController', 'action' => 'getFilteredRevenueAjax'],
+    
+    '/admin/driver-revenue-ajax' => ['controller' => 'StatisticsController', 'action' => 'getDriverRevenueAjax'],
+    
+    '/admin/revenue-data-ajax' => ['controller' => 'StatisticsController', 'action' => 'getFilteredRevenueAjax'],
+
+        // AJAX route cho tỷ lệ lấp đầy chuyến xe
+    '/admin/trip-load-factor-ajax' => ['controller' => 'StatisticsController', 'action' => 'getTripLoadFactorAjax'],
+    '/admin/trip-status-stats-ajax' => ['controller' => 'StatisticsController', 'action' => 'getTripStatusStatsAjax'],
+
+    // New route for detailed revenue AJAX
+    '/admin/detailed-revenue-ajax' => ['controller' => 'StatisticsController', 'action' => 'getDetailedRevenueAjax'],
+
+    // Transaction statistics AJAX route
+    '/admin/transaction-stats-ajax' => ['controller' => 'StatisticsController', 'action' => 'getTransactionStatsByStatusAjax'],
 ];
 
 // Define POST routes
