@@ -208,40 +208,75 @@ class StatisticsController {
         }
     }
 
-    // Doanh thu theo tuyến xe
-    private function getRevenueByRoute() {
+    // Doanh thu theo tuyến (không NULL, chỉ đơn có chitiet_datve & trạng thái thu tiền)
+    private function getRevenueByRoute(): array
+    {
         try {
-            // This prevents duplication from chitiet_datve having multiple rows per booking
-            $results = fetchAll(
-                "SELECT 
-                    td.maTuyenDuong,
-                    td.kyHieuTuyen,
-                    td.diemDi,
-                    td.diemDen,
-                    COUNT(DISTINCT bookings.maDatVe) as soGiaoDich,
-                    SUM(bookings.soLuongVe) as soLuongVe,
-                    SUM(bookings.tongTienSauGiam) as doanhThu,
-                    ROUND(AVG(bookings.tongTienSauGiam), 0) as giaTriTrungBinh,
-                    SUM(bookings.tongTienSauGiam) - SUM(bookings.giamGia) as loiNhuan
-                FROM (
-                    SELECT DISTINCT
-                        dv.maDatVe,
-                        dv.soLuongVe,
-                        dv.tongTienSauGiam,
-                        dv.giamGia,
-                        lt.maTuyenDuong
-                    FROM datve dv
-                    INNER JOIN chitiet_datve cdv ON dv.maDatVe = cdv.maDatVe
-                    INNER JOIN chuyenxe cx ON cdv.maChuyenXe = cx.maChuyenXe
-                    INNER JOIN lichtrinh lt ON cx.maLichTrinh = lt.maLichTrinh
-                    WHERE dv.trangThai IN ('DangGiu', 'DaThanhToan', 'HetHieuLuc', 'DaHoanThanh', 'DaHuy')
-                ) as bookings
-                INNER JOIN tuyenduong td ON bookings.maTuyenDuong = td.maTuyenDuong
-                GROUP BY td.maTuyenDuong, td.kyHieuTuyen, td.diemDi, td.diemDen
-                ORDER BY doanhThu DESC
-                LIMIT 20"
-            );
-            return $results ? $results : [];
+            $month = isset($_POST['month']) ? (int)$_POST['month'] : null;
+            $year = isset($_POST['year']) ? (int)$_POST['year'] : null;
+
+            $sql = <<<SQL
+WITH t AS (
+  -- Tổng giá vé theo từng đơn để phân bổ giảm giá theo TỶ LỆ
+  SELECT ctdv.maDatVe, SUM(ctdv.giaVe) AS tongGiaVe
+  FROM chitiet_datve ctdv
+  GROUP BY ctdv.maDatVe
+),
+ve_alloc AS (
+  -- Quy vé về tuyến + phân bổ giảm giá theo tỷ lệ giá vé
+  SELECT
+    td.maTuyenDuong,
+    td.kyHieuTuyen,
+    td.diemDi,
+    td.diemDen,
+    dv.maDatVe,
+    ctdv.giaVe,
+    CASE WHEN t.tongGiaVe > 0
+         THEN dv.giamGia * (ctdv.giaVe / t.tongGiaVe)
+         ELSE 0
+    END AS giamGiaPhanBo
+  FROM datve dv
+  INNER JOIN chitiet_datve ctdv ON ctdv.maDatVe = dv.maDatVe
+  INNER JOIN chuyenxe cx        ON cx.maChuyenXe = ctdv.maChuyenXe
+  INNER JOIN lichtrinh lt       ON lt.maLichTrinh = cx.maLichTrinh
+  INNER JOIN tuyenduong td      ON td.maTuyenDuong = lt.maTuyenDuong
+  INNER JOIN t                  ON t.maDatVe = dv.maDatVe
+  WHERE dv.trangThai IN ('DaThanhToan','DaHoanThanh','DangGiu', 'HetHieuLuc', 'DaHuy')
+SQL;
+
+            if ($month && $year) {
+                $sql .= " AND YEAR(dv.ngayCapNhat) = $year AND MONTH(dv.ngayCapNhat) = $month";
+            }
+
+            $sql .= <<<SQL
+),
+don_theo_tuyen AS (
+  -- Gom theo ĐƠN trên từng TUYẾN
+  SELECT
+    maTuyenDuong, kyHieuTuyen, diemDi, diemDen, maDatVe,
+    SUM(giaVe - giamGiaPhanBo) AS doanhThuDonTrenTuyen,
+    COUNT(*)                    AS soVeTrongDonTrenTuyen
+  FROM ve_alloc
+  GROUP BY maTuyenDuong, kyHieuTuyen, diemDi, diemDen, maDatVe
+)
+SELECT
+  maTuyenDuong,
+  kyHieuTuyen,
+  diemDi,
+  diemDen,
+  COUNT(DISTINCT maDatVe)            AS soGiaoDich,
+  SUM(soVeTrongDonTrenTuyen)         AS soLuongVe,
+  SUM(doanhThuDonTrenTuyen)          AS doanhThu,
+  ROUND(AVG(doanhThuDonTrenTuyen),0) AS giaTriTrungBinh,
+  SUM(doanhThuDonTrenTuyen)          AS loiNhuan
+FROM don_theo_tuyen
+GROUP BY maTuyenDuong, kyHieuTuyen, diemDi, diemDen
+ORDER BY doanhThu DESC
+LIMIT 20;
+SQL;
+
+            $rows = fetchAll($sql);
+            return $rows ?: [];
         } catch (Exception $e) {
             error_log("Error getting revenue by route: " . $e->getMessage());
             return [];
@@ -451,15 +486,17 @@ class StatisticsController {
                     td.kyHieuTuyen,
                     td.diemDi,
                     td.diemDen,
-                    COUNT(DISTINCT cx.maChuyenXe) as totalTrips,
-                    COUNT(DISTINCT cdv.maDatVe) as totalBookings,
+                    COUNT(DISTINCT dv.maDatVe) as totalBookings,
+                    COUNT(DISTINCT cdv.maChiTiet) as totalTickets,
                     SUM(cdv.giaVe) as totalRevenue
                 FROM tuyenduong td
-                LEFT JOIN lichtrinh lt ON td.maTuyenDuong = lt.maTuyenDuong
-                LEFT JOIN chuyenxe cx ON lt.maLichTrinh = cx.maLichTrinh
-                LEFT JOIN chitiet_datve cdv ON cx.maChuyenXe = cdv.maChuyenXe
+                INNER JOIN lichtrinh lt ON td.maTuyenDuong = lt.maTuyenDuong
+                INNER JOIN chuyenxe cx ON lt.maLichTrinh = cx.maLichTrinh
+                INNER JOIN chitiet_datve cdv ON cx.maChuyenXe = cdv.maChuyenXe
+                INNER JOIN datve dv ON cdv.maDatVe = dv.maDatVe
                 WHERE cdv.trangThai = 'DaThanhToan'
-                GROUP BY td.maTuyenDuong
+                    AND dv.trangThai IN ('DaThanhToan', 'DaHoanThanh', 'DangGiu', 'HetHieuLuc', 'DaHuy')
+                GROUP BY td.maTuyenDuong, td.kyHieuTuyen, td.diemDi, td.diemDen
                 ORDER BY totalBookings DESC
                 LIMIT 10"
             );
@@ -573,7 +610,7 @@ class StatisticsController {
                 FROM chuyenxe cx
                 LEFT JOIN lichtrinh lt ON cx.maLichTrinh = lt.maLichTrinh
                 LEFT JOIN tuyenduong td ON lt.maTuyenDuong = td.maTuyenDuong
-                LEFT JOIN chitiet_datve cdv ON cx.maChuyenXe = cdv.maChuyenXe AND cdv.trangThai = 'DaThanhToan'
+                LEFT JOIN chitiet_datve cdv ON cx.maChuyenXe = cdv.maChuyenXe
                 WHERE DATE(cx.ngayKhoiHanh) BETWEEN '" . $startDate . "' AND '" . $endDate . "'
                 GROUP BY cx.maChuyenXe
                 ORDER BY cx.ngayKhoiHanh DESC, cx.thoiGianKhoiHanh DESC
@@ -888,7 +925,6 @@ class StatisticsController {
                     ROUND(SUM(cdv.giaVe) * 0.1, 0) as hoanHong
                 FROM chuyenxe cx
                 INNER JOIN lichtrinh lt ON cx.maLichTrinh = lt.maLichTrinh
-                INNER JOIN tuyenduong td ON lt.maTuyenDuong = td.maTuyenDuong
                 INNER JOIN phuongtien pt ON cx.maPhuongTien = pt.maPhuongTien
                 INNER JOIN loaiphuongtien lpt ON pt.maLoaiPhuongTien = lpt.maLoaiPhuongTien
                 LEFT JOIN baocao_chuyendi bc ON cx.maChuyenXe = bc.maChuyenXe
@@ -1298,6 +1334,86 @@ public function getTripStatusStatsAjax() {
             echo json_encode([
                 'success' => false,
                 'message' => 'Lỗi khi tải dữ liệu'
+            ]);
+        }
+        exit();
+    }
+
+    public function getRevenueByRouteAjax() {
+        $this->checkAdminAccess();
+        header('Content-Type: application/json');
+
+        try {
+            $input = json_decode(file_get_contents('php://input'), true);
+            $month = isset($input['month']) ? (int)$input['month'] : date('m');
+            $year = isset($input['year']) ? (int)$input['year'] : date('Y');
+
+            // Call the private method to get filtered data
+            $sql = <<<SQL
+WITH t AS (
+  SELECT ctdv.maDatVe, SUM(ctdv.giaVe) AS tongGiaVe
+  FROM chitiet_datve ctdv
+  GROUP BY ctdv.maDatVe
+),
+ve_alloc AS (
+  SELECT
+    td.maTuyenDuong,
+    td.kyHieuTuyen,
+    td.diemDi,
+    td.diemDen,
+    dv.maDatVe,
+    ctdv.giaVe,
+    CASE WHEN t.tongGiaVe > 0
+         THEN dv.giamGia * (ctdv.giaVe / t.tongGiaVe)
+         ELSE 0
+    END AS giamGiaPhanBo
+  FROM datve dv
+  INNER JOIN chitiet_datve ctdv ON ctdv.maDatVe = dv.maDatVe
+  INNER JOIN chuyenxe cx ON cx.maChuyenXe = ctdv.maChuyenXe
+  INNER JOIN lichtrinh lt ON lt.maLichTrinh = cx.maLichTrinh
+  INNER JOIN tuyenduong td ON td.maTuyenDuong = lt.maTuyenDuong
+  INNER JOIN t ON t.maDatVe = dv.maDatVe
+  WHERE dv.trangThai IN ('DaThanhToan','DaHoanThanh','DangGiu', 'HetHieuLuc', 'DaHuy')
+    AND YEAR(dv.ngayCapNhat) = {$year} 
+    AND MONTH(dv.ngayCapNhat) = {$month}
+),
+don_theo_tuyen AS (
+  SELECT
+    maTuyenDuong, kyHieuTuyen, diemDi, diemDen, maDatVe,
+    SUM(giaVe - giamGiaPhanBo) AS doanhThuDonTrenTuyen,
+    COUNT(*) AS soVeTrongDonTrenTuyen
+  FROM ve_alloc
+  GROUP BY maTuyenDuong, kyHieuTuyen, diemDi, diemDen, maDatVe
+)
+SELECT
+  maTuyenDuong,
+  kyHieuTuyen,
+  diemDi,
+  diemDen,
+  COUNT(DISTINCT maDatVe) AS soGiaoDich,
+  SUM(soVeTrongDonTrenTuyen) AS soLuongVe,
+  SUM(doanhThuDonTrenTuyen) AS doanhThu,
+  ROUND(AVG(doanhThuDonTrenTuyen),0) AS giaTriTrungBinh,
+  SUM(doanhThuDonTrenTuyen) AS loiNhuan
+FROM don_theo_tuyen
+GROUP BY maTuyenDuong, kyHieuTuyen, diemDi, diemDen
+ORDER BY doanhThu DESC
+LIMIT 20;
+SQL;
+
+            $rows = fetchAll($sql);
+
+            echo json_encode([
+                'success' => true,
+                'data' => $rows ?: [],
+                'month' => $month,
+                'year' => $year
+            ]);
+        } catch (Exception $e) {
+            error_log("Revenue by route AJAX Error: " . $e->getMessage());
+            echo json_encode([
+                'success' => false,
+                'message' => 'Lỗi khi tải dữ liệu: ' . $e->getMessage()
             ]);
         }
         exit();

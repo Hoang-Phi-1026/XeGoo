@@ -231,6 +231,10 @@ $routes = [
 
     // Transaction statistics AJAX route
     '/admin/transaction-stats-ajax' => ['controller' => 'StatisticsController', 'action' => 'getTransactionStatsByStatusAjax'],
+
+    '/admin/loyalty-points-ajax' => ['controller' => 'StatisticsController', 'action' => 'getLoyaltyPointsStatsAjax'],
+
+    
 ];
 
 // Define POST routes
@@ -348,6 +352,9 @@ $postRoutes = [
     // Notification API routes for popup notifications
     '/api/popup-notifications/update-status' => ['controller' => 'PopupNotificationController', 'action' => 'updateNotificationStatus'],
     '/api/popup-notifications/mark-all-shown' => ['controller' => 'PopupNotificationController', 'action' => 'markAllAsShown'],
+
+     // Admin statistics AJAX routes for POST requests
+    '/admin/revenue-by-route-ajax' => ['controller' => 'StatisticsController', 'action' => 'getRevenueByRouteAjax'],
 ];
 
 // Get current URL path and remove base directory

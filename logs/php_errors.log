@@ -1,926 +1,560 @@
-[27-Nov-2025 20:27:44 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:27:44 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::index
-[27-Nov-2025 20:27:44 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:27:44 Asia/Ho_Chi_Minh] Error getting revenue by route: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'dv.maChuyenXe' in 'on clause'
-[27-Nov-2025 20:27:44 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 20:27:44 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:27:44 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 20:27:44 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:27:44 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 20:27:44 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:27:44 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTodayTicketSalesAjax
-[27-Nov-2025 20:27:44 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:27:44 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:27:44 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
-[27-Nov-2025 20:27:44 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:27:44 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:27:44 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
-[27-Nov-2025 20:27:44 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:27:44 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:27:44 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDriverRevenueAjax
-[27-Nov-2025 20:27:44 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:27:44 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:27:44 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripStatusStatsAjax
-[27-Nov-2025 20:27:44 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:27:44 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:27:44 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
-[27-Nov-2025 20:27:44 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:28:16 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:28:16 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
-[27-Nov-2025 20:28:16 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:30:26 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:30:26 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::index
-[27-Nov-2025 20:30:26 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:30:26 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 20:30:26 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:30:26 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 20:30:26 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:30:26 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 20:30:26 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:30:26 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
-[27-Nov-2025 20:30:26 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:30:26 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:30:26 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTodayTicketSalesAjax
-[27-Nov-2025 20:30:26 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:30:26 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:30:26 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
-[27-Nov-2025 20:30:26 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:30:26 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:30:26 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDriverRevenueAjax
-[27-Nov-2025 20:30:26 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:30:26 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:30:26 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripStatusStatsAjax
-[27-Nov-2025 20:30:26 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:30:26 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:30:26 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
-[27-Nov-2025 20:30:26 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:30:46 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:30:46 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
-[27-Nov-2025 20:30:46 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:38:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:38:30 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::index
-[27-Nov-2025 20:38:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:38:30 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 20:38:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:38:30 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 20:38:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:38:30 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 20:38:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:38:30 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
-[27-Nov-2025 20:38:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:38:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:38:30 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTodayTicketSalesAjax
-[27-Nov-2025 20:38:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:38:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:38:30 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
-[27-Nov-2025 20:38:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:38:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:38:30 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripStatusStatsAjax
-[27-Nov-2025 20:38:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:38:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:38:30 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDriverRevenueAjax
-[27-Nov-2025 20:38:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:38:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:38:30 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
-[27-Nov-2025 20:38:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:39:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:39:30 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::index
-[27-Nov-2025 20:39:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:39:30 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 20:39:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:39:30 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 20:39:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:39:30 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 20:39:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:39:30 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
-[27-Nov-2025 20:39:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:39:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:39:30 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTodayTicketSalesAjax
-[27-Nov-2025 20:39:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:39:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:39:30 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDriverRevenueAjax
-[27-Nov-2025 20:39:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:39:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:39:30 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
-[27-Nov-2025 20:39:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:39:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:39:30 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripStatusStatsAjax
-[27-Nov-2025 20:39:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:39:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:39:30 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
-[27-Nov-2025 20:39:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:40:01 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:40:01 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
-[27-Nov-2025 20:40:01 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:40:54 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:40:54 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::index
-[27-Nov-2025 20:40:54 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:40:54 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 20:40:54 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:40:54 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 20:40:54 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:40:54 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 20:40:54 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:40:54 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
-[27-Nov-2025 20:40:54 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:40:54 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:40:54 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTodayTicketSalesAjax
-[27-Nov-2025 20:40:54 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:40:54 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:40:54 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripStatusStatsAjax
-[27-Nov-2025 20:40:54 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:40:54 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:40:54 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
-[27-Nov-2025 20:40:54 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:40:54 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:40:54 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDriverRevenueAjax
-[27-Nov-2025 20:40:54 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:40:54 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:40:54 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
-[27-Nov-2025 20:40:54 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:41:40 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:41:40 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
-[27-Nov-2025 20:41:40 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:48:04 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:48:04 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::index
-[27-Nov-2025 20:48:04 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:48:04 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 20:48:04 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:48:04 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 20:48:04 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:48:04 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 20:48:04 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:48:04 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
-[27-Nov-2025 20:48:04 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:48:04 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:48:04 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTodayTicketSalesAjax
-[27-Nov-2025 20:48:04 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:48:04 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:48:04 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDriverRevenueAjax
-[27-Nov-2025 20:48:04 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:48:04 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:48:04 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripStatusStatsAjax
-[27-Nov-2025 20:48:04 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:48:04 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:48:04 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
-[27-Nov-2025 20:48:04 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:48:04 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:48:04 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
-[27-Nov-2025 20:48:04 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:48:20 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:48:20 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDetailedRevenueAjax
-[27-Nov-2025 20:48:20 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:48:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:48:32 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDetailedRevenueAjax
-[27-Nov-2025 20:48:32 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:48:50 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:48:50 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDetailedRevenueAjax
-[27-Nov-2025 20:48:50 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:48:51 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:48:51 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDetailedRevenueAjax
-[27-Nov-2025 20:48:51 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:48:56 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:48:56 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDetailedRevenueAjax
-[27-Nov-2025 20:48:56 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:50:08 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:50:08 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::index
-[27-Nov-2025 20:50:08 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:50:08 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 20:50:08 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:50:08 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 20:50:08 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:50:08 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 20:50:08 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:50:08 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
-[27-Nov-2025 20:50:08 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:50:08 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:50:08 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDriverRevenueAjax
-[27-Nov-2025 20:50:08 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:50:08 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:50:08 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTodayTicketSalesAjax
-[27-Nov-2025 20:50:08 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:50:08 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:50:08 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
-[27-Nov-2025 20:50:09 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:50:09 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:50:09 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripStatusStatsAjax
-[27-Nov-2025 20:50:09 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:50:09 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:50:09 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
-[27-Nov-2025 20:50:09 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:50:16 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:50:16 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDetailedRevenueAjax
-[27-Nov-2025 20:50:16 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:50:47 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:50:47 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDetailedRevenueAjax
-[27-Nov-2025 20:50:47 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:58:47 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:58:47 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDetailedRevenueAjax
-[27-Nov-2025 20:58:47 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:59:05 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:59:05 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDetailedRevenueAjax
-[27-Nov-2025 20:59:05 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:59:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:59:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDetailedRevenueAjax
-[27-Nov-2025 20:59:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:59:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:59:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDetailedRevenueAjax
-[27-Nov-2025 20:59:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:59:14 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:59:14 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDetailedRevenueAjax
-[27-Nov-2025 20:59:14 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:59:14 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:59:14 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDetailedRevenueAjax
-[27-Nov-2025 20:59:14 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:59:20 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:59:20 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDetailedRevenueAjax
-[27-Nov-2025 20:59:20 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:59:20 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:59:20 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDetailedRevenueAjax
-[27-Nov-2025 20:59:20 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:59:24 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:59:24 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDetailedRevenueAjax
-[27-Nov-2025 20:59:24 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 20:59:39 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 20:59:39 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTodayTicketSalesAjax
-[27-Nov-2025 20:59:39 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:00:56 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:00:56 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:00:56 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:00:56 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:00:56 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:00:56 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:00:56 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:00:56 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:00:56 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:00:56 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:00:58 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:00:58 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:00:58 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
-[27-Nov-2025 21:00:58 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:00:58 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:00:58 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:00:58 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:00:58 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:01:06 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:01:06 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:01:06 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
-[27-Nov-2025 21:01:07 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:01:07 Asia/Ho_Chi_Minh] [v0] Router - About to call AdminController::index
-[27-Nov-2025 21:01:07 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:01:07 Asia/Ho_Chi_Minh] [AdminController] Dashboard stats: {"vehicles":6,"routes":4,"schedules":7,"trips":27,"trips_today":9,"users":16,"prices":7}
-[27-Nov-2025 21:01:07 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:01:07 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:01:07 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:01:07 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:01:07 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:01:09 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:01:09 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:01:09 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::logout
-[27-Nov-2025 21:01:09 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:01:09 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:01:09 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
-[27-Nov-2025 21:01:09 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:01:09 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:01:09 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:01:09 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:01:09 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:01:14 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:01:14 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:01:14 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
-[27-Nov-2025 21:01:15 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:01:15 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:01:15 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:01:15 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:01:15 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:01:15 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:01:15 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:01:15 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:01:15 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:01:15 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:01:16 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:01:16 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::index
-[27-Nov-2025 21:01:16 Asia/Ho_Chi_Minh] === Database Debug ===
-[27-Nov-2025 21:01:16 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:01:16 Asia/Ho_Chi_Minh] Active routes: 4
-[27-Nov-2025 21:01:16 Asia/Ho_Chi_Minh] Route: TP. Hồ Chí Minh -> Đà Lạt (SG-DL)
-[27-Nov-2025 21:01:16 Asia/Ho_Chi_Minh] Route: Đà Lạt -> TP. Hồ Chí Minh (DL-SG)
-[27-Nov-2025 21:01:16 Asia/Ho_Chi_Minh] Route: TP. Hồ Chí Minh -> Vũng Tàu (SG-VT)
-[27-Nov-2025 21:01:16 Asia/Ho_Chi_Minh] Route: Vũng Tàu -> TP. Hồ Chí Minh (VT-SG)
-[27-Nov-2025 21:01:16 Asia/Ho_Chi_Minh] Active trips: 27
-[27-Nov-2025 21:01:16 Asia/Ho_Chi_Minh] Sample trip: TP. Hồ Chí Minh -> Đà Lạt on 2025-11-28
-[27-Nov-2025 21:01:16 Asia/Ho_Chi_Minh] Sample trip: TP. Hồ Chí Minh -> Đà Lạt on 2025-11-29
-[27-Nov-2025 21:01:16 Asia/Ho_Chi_Minh] Sample trip: TP. Hồ Chí Minh -> Đà Lạt on 2025-11-30
-[27-Nov-2025 21:01:16 Asia/Ho_Chi_Minh] === SearchController ===
-[27-Nov-2025 21:01:16 Asia/Ho_Chi_Minh] Search params: from='', to='', date='', passengers=1
-[27-Nov-2025 21:01:16 Asia/Ho_Chi_Minh] Form data loaded: 3 cities, 4 popular routes
-[27-Nov-2025 21:01:16 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:01:16 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:01:16 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:01:16 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:01:16 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:01:20 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:01:20 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:01:20 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:01:20 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:01:20 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:01:20 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:01:20 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:01:20 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:01:20 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:01:20 Asia/Ho_Chi_Minh] [v0] Router - About to call MyTicketsController::index
-[27-Nov-2025 21:01:20 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:01:20 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:01:21 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:01:21 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:01:21 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:01:21 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:01:23 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:01:23 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:01:23 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:01:23 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:01:23 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:01:23 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:01:23 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:01:23 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:01:23 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:01:23 Asia/Ho_Chi_Minh] [v0] Router - About to call MyTicketsController::history
-[27-Nov-2025 21:01:23 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:01:23 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:01:23 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:01:23 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:01:23 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:01:23 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:01:40 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:01:40 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:01:40 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::logout
-[27-Nov-2025 21:01:40 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:01:40 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:01:40 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
-[27-Nov-2025 21:01:40 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:01:40 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:01:40 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:01:40 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:01:40 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:01:46 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:01:46 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:01:46 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
-[27-Nov-2025 21:01:47 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:01:47 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:01:47 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:01:47 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:01:47 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:01:47 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:01:47 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:01:47 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:01:47 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:01:47 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:01:50 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:01:50 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:01:50 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:01:50 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:01:50 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:01:50 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:01:50 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:01:50 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:01:50 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:01:50 Asia/Ho_Chi_Minh] [v0] Router - About to call MyTicketsController::index
-[27-Nov-2025 21:01:50 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:01:50 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:01:50 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:01:50 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:01:50 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:01:50 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:01:52 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:01:52 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:01:52 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:01:52 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:01:52 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:01:52 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:01:52 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:01:52 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:01:52 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:01:52 Asia/Ho_Chi_Minh] [v0] Router - About to call MyTicketsController::history
-[27-Nov-2025 21:01:52 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:01:52 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:01:52 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:01:52 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:01:52 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:01:52 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:02:01 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:02:01 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:02:01 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:02:01 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:02:01 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:02:01 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:02:01 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:02:01 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:02:01 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:02:01 Asia/Ho_Chi_Minh] [v0] Router - About to call MyTicketsController::detail
-[27-Nov-2025 21:02:01 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:02:01 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:02:01 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:02:01 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:02:01 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:02:01 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:02:33 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:02:33 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDetailedRevenueAjax
-[27-Nov-2025 21:02:33 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:03:07 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:03:07 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:03:07 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::logout
-[27-Nov-2025 21:03:07 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:03:07 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:03:07 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
-[27-Nov-2025 21:03:07 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:03:07 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:03:07 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:03:07 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:03:07 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:03:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:03:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:03:13 Asia/Ho_Chi_Minh] [v0] Router - About to call AuthController::showLogin
-[27-Nov-2025 21:03:14 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:03:14 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:03:14 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:03:14 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:03:14 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:03:14 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:03:14 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:03:14 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:03:14 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:03:14 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] [v0] Router - About to call MyTicketsController::index
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::index
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] === Database Debug ===
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] Active routes: 4
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] Route: TP. Hồ Chí Minh -> Đà Lạt (SG-DL)
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] Route: Đà Lạt -> TP. Hồ Chí Minh (DL-SG)
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] Route: TP. Hồ Chí Minh -> Vũng Tàu (SG-VT)
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] Route: Vũng Tàu -> TP. Hồ Chí Minh (VT-SG)
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] Active trips: 27
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] Sample trip: TP. Hồ Chí Minh -> Đà Lạt on 2025-11-28
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] Sample trip: TP. Hồ Chí Minh -> Đà Lạt on 2025-11-29
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] Sample trip: TP. Hồ Chí Minh -> Đà Lạt on 2025-11-30
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] === SearchController ===
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] Search params: from='', to='', date='', passengers=1
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] Form data loaded: 3 cities, 4 popular routes
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:03:16 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:03:17 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:03:17 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:03:17 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:03:17 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:03:17 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:03:17 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:03:17 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:03:17 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:03:17 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:03:17 Asia/Ho_Chi_Minh] [v0] Router - About to call MyTicketsController::index
-[27-Nov-2025 21:03:17 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:03:17 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:03:17 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:03:17 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:03:17 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:03:17 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:03:22 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:03:22 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:03:22 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:03:22 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:03:22 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:03:22 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:03:22 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:03:22 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:03:22 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:03:22 Asia/Ho_Chi_Minh] [v0] Router - About to call MyTicketsController::detail
-[27-Nov-2025 21:03:22 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:03:22 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:03:22 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:03:22 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:03:22 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:03:22 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:03:28 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:03:28 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:03:28 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:03:28 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:03:28 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:03:28 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:03:28 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:03:28 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:03:28 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:03:28 Asia/Ho_Chi_Minh] [v0] Router - About to call MyTicketsController::index
-[27-Nov-2025 21:03:28 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:03:28 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:03:28 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:03:28 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:03:28 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:03:28 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:03:28 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:03:28 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:03:28 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:03:28 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:03:28 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:03:28 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:03:28 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:03:28 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:03:28 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:03:28 Asia/Ho_Chi_Minh] [v0] Router - About to call MyTicketsController::detail
-[27-Nov-2025 21:03:28 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:03:28 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:03:29 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:03:29 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:03:29 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:03:29 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:03:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:03:30 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:03:30 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:03:30 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:03:30 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:03:30 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:03:30 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:03:30 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:03:30 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:03:30 Asia/Ho_Chi_Minh] [v0] Router - About to call MyTicketsController::index
-[27-Nov-2025 21:03:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:03:30 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:03:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:03:30 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:03:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:03:30 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:03:31 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:03:31 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:03:31 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:03:31 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:03:31 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:03:31 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:03:31 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:03:31 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:03:31 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:03:31 Asia/Ho_Chi_Minh] [v0] Router - About to call MyTicketsController::detail
-[27-Nov-2025 21:03:31 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:03:31 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:03:31 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:03:31 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:03:31 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:03:31 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:03:33 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:03:33 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:03:33 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:03:33 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:03:33 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 958
-[27-Nov-2025 21:03:33 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $filename declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:03:33 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $pixelPerPoint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:03:33 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $outerFrame declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:03:33 Asia/Ho_Chi_Minh] PHP Deprecated:  Optional parameter $saveandprint declared before required parameter $fore_color is implicitly treated as a required parameter in C:\xampp\htdocs\XeGoo\lib\phpqrcode\phpqrcode.php on line 3552
-[27-Nov-2025 21:03:33 Asia/Ho_Chi_Minh] [v0] Router - About to call MyTicketsController::index
-[27-Nov-2025 21:03:33 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:03:33 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:03:33 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:03:33 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:03:33 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:03:33 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:04:05 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:04:05 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDetailedRevenueAjax
-[27-Nov-2025 21:04:05 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:05:26 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:05:26 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDetailedRevenueAjax
-[27-Nov-2025 21:05:26 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:05:27 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:05:27 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDetailedRevenueAjax
-[27-Nov-2025 21:05:27 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:10:41 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:10:41 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::index
-[27-Nov-2025 21:10:41 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:10:41 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:10:41 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:10:41 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:10:41 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:10:41 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:10:41 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:10:41 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
-[27-Nov-2025 21:10:41 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:10:41 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:10:41 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripStatusStatsAjax
-[27-Nov-2025 21:10:41 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:10:41 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:10:41 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTodayTicketSalesAjax
-[27-Nov-2025 21:10:41 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:10:41 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:10:41 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
-[27-Nov-2025 21:10:41 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:10:42 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:10:42 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDriverRevenueAjax
-[27-Nov-2025 21:10:42 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:10:42 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:10:42 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
-[27-Nov-2025 21:10:42 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:13:23 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:13:23 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::index
-[27-Nov-2025 21:13:23 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:13:23 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:13:23 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:13:23 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:13:23 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:13:23 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:13:23 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:13:23 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTodayTicketSalesAjax
-[27-Nov-2025 21:13:23 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:13:23 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:13:23 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
-[27-Nov-2025 21:13:23 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:13:23 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:13:23 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDriverRevenueAjax
-[27-Nov-2025 21:13:23 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:13:23 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:13:23 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripStatusStatsAjax
-[27-Nov-2025 21:13:23 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:13:23 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:13:23 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
-[27-Nov-2025 21:13:23 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:13:23 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:13:23 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
-[27-Nov-2025 21:13:23 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:13:27 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:13:27 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDetailedRevenueAjax
-[27-Nov-2025 21:13:27 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:13:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:13:30 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDetailedRevenueAjax
-[27-Nov-2025 21:13:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:13:37 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:13:37 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDetailedRevenueAjax
-[27-Nov-2025 21:13:37 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:14:37 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:14:37 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::index
-[27-Nov-2025 21:14:37 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:14:38 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:14:38 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:14:38 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:14:38 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:14:38 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:14:38 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:14:38 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
-[27-Nov-2025 21:14:38 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:14:38 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:14:38 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDriverRevenueAjax
-[27-Nov-2025 21:14:38 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:14:38 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:14:38 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTodayTicketSalesAjax
-[27-Nov-2025 21:14:38 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:14:38 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:14:38 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
-[27-Nov-2025 21:14:38 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:14:38 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:14:38 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripStatusStatsAjax
-[27-Nov-2025 21:14:38 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:14:38 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:14:38 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
-[27-Nov-2025 21:14:38 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:14:38 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:14:38 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTransactionStatsByStatusAjax
-[27-Nov-2025 21:14:38 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:18 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::index
-[27-Nov-2025 21:15:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:19 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:15:19 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:19 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:15:19 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:19 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:15:19 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:19 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
-[27-Nov-2025 21:15:19 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:19 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:19 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
-[27-Nov-2025 21:15:19 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:19 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:19 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTodayTicketSalesAjax
-[27-Nov-2025 21:15:19 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:19 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:19 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDriverRevenueAjax
-[27-Nov-2025 21:15:19 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:19 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:19 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripStatusStatsAjax
-[27-Nov-2025 21:15:19 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:19 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:19 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTransactionStatsByStatusAjax
-[27-Nov-2025 21:15:19 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:19 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:19 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
-[27-Nov-2025 21:15:19 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:30 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::index
-[27-Nov-2025 21:15:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:30 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:15:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:30 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:15:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:30 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:15:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:30 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
-[27-Nov-2025 21:15:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:30 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
-[27-Nov-2025 21:15:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:30 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTodayTicketSalesAjax
-[27-Nov-2025 21:15:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:30 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTransactionStatsByStatusAjax
-[27-Nov-2025 21:15:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:30 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDriverRevenueAjax
-[27-Nov-2025 21:15:31 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:31 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:31 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripStatusStatsAjax
-[27-Nov-2025 21:15:31 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:31 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:31 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
-[27-Nov-2025 21:15:31 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:35 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:35 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::index
-[27-Nov-2025 21:15:35 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:35 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:15:35 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:35 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:15:35 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:35 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:15:35 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:35 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
-[27-Nov-2025 21:15:35 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:35 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:35 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
-[27-Nov-2025 21:15:35 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:35 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:35 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDriverRevenueAjax
-[27-Nov-2025 21:15:35 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:35 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:35 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTodayTicketSalesAjax
-[27-Nov-2025 21:15:35 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:35 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:35 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTransactionStatsByStatusAjax
-[27-Nov-2025 21:15:35 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:35 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:35 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripStatusStatsAjax
-[27-Nov-2025 21:15:35 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:35 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:35 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
-[27-Nov-2025 21:15:35 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:56 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:56 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::index
-[27-Nov-2025 21:15:56 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:56 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:15:56 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:56 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:15:56 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:56 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:15:56 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:56 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
-[27-Nov-2025 21:15:56 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:56 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:56 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
-[27-Nov-2025 21:15:56 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:56 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:56 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTodayTicketSalesAjax
-[27-Nov-2025 21:15:56 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:56 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:56 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripStatusStatsAjax
-[27-Nov-2025 21:15:56 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:56 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:56 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTransactionStatsByStatusAjax
-[27-Nov-2025 21:15:56 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:56 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:56 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDriverRevenueAjax
-[27-Nov-2025 21:15:56 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:15:56 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:15:56 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
-[27-Nov-2025 21:15:56 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:16:11 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:16:11 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::index
-[27-Nov-2025 21:16:11 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:16:12 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:16:12 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:16:12 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:16:12 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:16:12 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:16:12 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:16:12 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTodayTicketSalesAjax
-[27-Nov-2025 21:16:12 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:16:12 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:16:12 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTransactionStatsByStatusAjax
-[27-Nov-2025 21:16:12 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:16:12 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:16:12 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
-[27-Nov-2025 21:16:12 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:16:12 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:16:12 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
-[27-Nov-2025 21:16:12 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:16:12 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:16:12 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripStatusStatsAjax
-[27-Nov-2025 21:16:12 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:16:12 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:16:12 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDriverRevenueAjax
-[27-Nov-2025 21:16:12 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:16:12 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:16:12 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
-[27-Nov-2025 21:16:12 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:17:37 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:17:37 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::index
-[27-Nov-2025 21:17:37 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:17:37 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:17:37 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:17:37 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:17:37 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:17:37 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:17:37 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:17:37 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripStatusStatsAjax
-[27-Nov-2025 21:17:37 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:17:37 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:17:37 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
-[27-Nov-2025 21:17:37 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:17:37 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:17:37 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTransactionStatsByStatusAjax
-[27-Nov-2025 21:17:37 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:18:02 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:18:02 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::index
-[27-Nov-2025 21:18:02 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:18:02 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:18:02 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:18:02 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:18:02 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:18:02 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:18:02 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:18:02 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
-[27-Nov-2025 21:18:02 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:18:02 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:18:02 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTodayTicketSalesAjax
-[27-Nov-2025 21:18:02 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:18:02 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:18:02 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDriverRevenueAjax
-[27-Nov-2025 21:18:02 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:18:02 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:18:02 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTransactionStatsByStatusAjax
-[27-Nov-2025 21:18:03 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:18:03 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:18:03 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripStatusStatsAjax
-[27-Nov-2025 21:18:03 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:18:03 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:18:03 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
-[27-Nov-2025 21:18:03 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:18:03 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:18:03 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
-[27-Nov-2025 21:18:03 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:19:08 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:19:08 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::index
-[27-Nov-2025 21:19:08 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:19:08 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:19:08 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:19:08 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
-[27-Nov-2025 21:19:08 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:19:08 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
-[27-Nov-2025 21:19:08 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:19:08 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDriverRevenueAjax
-[27-Nov-2025 21:19:08 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:19:08 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:19:08 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
-[27-Nov-2025 21:19:08 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:19:08 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:19:08 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTodayTicketSalesAjax
-[27-Nov-2025 21:19:08 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:19:08 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:19:08 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
-[27-Nov-2025 21:19:08 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:19:08 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:19:08 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripStatusStatsAjax
-[27-Nov-2025 21:19:08 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:19:08 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:19:08 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTransactionStatsByStatusAjax
-[27-Nov-2025 21:19:08 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:19:08 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:19:08 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
-[27-Nov-2025 21:19:08 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:19:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:19:18 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDetailedRevenueAjax
-[27-Nov-2025 21:19:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
-[27-Nov-2025 21:19:22 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
-[27-Nov-2025 21:19:22 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
-[27-Nov-2025 21:19:22 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:31:29 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:31:29 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::index
+[28-Nov-2025 02:31:29 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:31:29 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to undefined function route() in C:\xampp\htdocs\XeGoo\views\admin\statistics.php:265
+Stack trace:
+#0 C:\xampp\htdocs\XeGoo\controllers\StatisticsController.php(58): require_once()
+#1 C:\xampp\htdocs\XeGoo\router.php(443): StatisticsController->index()
+#2 C:\xampp\htdocs\XeGoo\index.php(12): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\XeGoo\views\admin\statistics.php on line 265
+[28-Nov-2025 02:31:29 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:31:29 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[28-Nov-2025 02:31:29 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:31:29 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[28-Nov-2025 02:32:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:32:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::index
+[28-Nov-2025 02:32:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:32:13 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to undefined function route() in C:\xampp\htdocs\XeGoo\views\admin\statistics.php:265
+Stack trace:
+#0 C:\xampp\htdocs\XeGoo\controllers\StatisticsController.php(58): require_once()
+#1 C:\xampp\htdocs\XeGoo\router.php(443): StatisticsController->index()
+#2 C:\xampp\htdocs\XeGoo\index.php(12): require_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\XeGoo\views\admin\statistics.php on line 265
+[28-Nov-2025 02:32:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:32:13 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[28-Nov-2025 02:32:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:32:13 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[28-Nov-2025 02:35:01 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:35:01 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::index
+[28-Nov-2025 02:35:01 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:35:01 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[28-Nov-2025 02:35:02 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:35:02 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[28-Nov-2025 02:35:02 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:35:02 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[28-Nov-2025 02:35:02 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:35:02 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
+[28-Nov-2025 02:35:02 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:35:02 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:35:02 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTodayTicketSalesAjax
+[28-Nov-2025 02:35:02 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:35:02 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:35:02 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
+[28-Nov-2025 02:35:02 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:35:02 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:35:02 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDriverRevenueAjax
+[28-Nov-2025 02:35:02 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:35:02 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:35:02 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripStatusStatsAjax
+[28-Nov-2025 02:35:02 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:35:02 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:35:02 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTransactionStatsByStatusAjax
+[28-Nov-2025 02:35:02 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:35:02 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:35:02 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
+[28-Nov-2025 02:35:02 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:35:05 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:35:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:35:18 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::index
+[28-Nov-2025 02:35:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:35:18 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[28-Nov-2025 02:35:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:35:18 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[28-Nov-2025 02:35:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:35:18 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[28-Nov-2025 02:35:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:35:18 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
+[28-Nov-2025 02:35:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:35:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:35:18 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
+[28-Nov-2025 02:35:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:35:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:35:18 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTodayTicketSalesAjax
+[28-Nov-2025 02:35:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:35:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:35:18 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDriverRevenueAjax
+[28-Nov-2025 02:35:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:35:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:35:18 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripStatusStatsAjax
+[28-Nov-2025 02:35:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:35:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:35:18 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
+[28-Nov-2025 02:35:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:35:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:35:18 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTransactionStatsByStatusAjax
+[28-Nov-2025 02:35:18 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:35:23 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:35:28 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:35:47 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:35:56 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:35:56 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDetailedRevenueAjax
+[28-Nov-2025 02:35:56 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:36:07 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:36:07 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDetailedRevenueAjax
+[28-Nov-2025 02:36:07 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:36:25 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:36:25 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDetailedRevenueAjax
+[28-Nov-2025 02:36:25 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:36:58 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:44:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:44:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::index
+[28-Nov-2025 02:44:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:44:13 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[28-Nov-2025 02:44:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:44:13 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[28-Nov-2025 02:44:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:44:13 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[28-Nov-2025 02:44:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:44:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
+[28-Nov-2025 02:44:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:44:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:44:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTodayTicketSalesAjax
+[28-Nov-2025 02:44:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:44:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:44:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
+[28-Nov-2025 02:44:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:44:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:44:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripStatusStatsAjax
+[28-Nov-2025 02:44:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:44:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:44:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDriverRevenueAjax
+[28-Nov-2025 02:44:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:44:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:44:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
+[28-Nov-2025 02:44:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:44:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:44:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTransactionStatsByStatusAjax
+[28-Nov-2025 02:44:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:44:16 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:44:16 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTransactionStatsByStatusAjax
+[28-Nov-2025 02:44:16 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:44:20 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:44:20 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTransactionStatsByStatusAjax
+[28-Nov-2025 02:44:20 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:44:24 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:46:44 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:46:44 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::index
+[28-Nov-2025 02:46:44 Asia/Ho_Chi_Minh] === Database Debug ===
+[28-Nov-2025 02:46:44 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:46:44 Asia/Ho_Chi_Minh] Active routes: 4
+[28-Nov-2025 02:46:44 Asia/Ho_Chi_Minh] Route: TP. Hồ Chí Minh -> Đà Lạt (SG-DL)
+[28-Nov-2025 02:46:44 Asia/Ho_Chi_Minh] Route: Đà Lạt -> TP. Hồ Chí Minh (DL-SG)
+[28-Nov-2025 02:46:44 Asia/Ho_Chi_Minh] Route: TP. Hồ Chí Minh -> Vũng Tàu (SG-VT)
+[28-Nov-2025 02:46:44 Asia/Ho_Chi_Minh] Route: Vũng Tàu -> TP. Hồ Chí Minh (VT-SG)
+[28-Nov-2025 02:46:44 Asia/Ho_Chi_Minh] Active trips: 26
+[28-Nov-2025 02:46:44 Asia/Ho_Chi_Minh] Sample trip: TP. Hồ Chí Minh -> Đà Lạt on 2025-11-29
+[28-Nov-2025 02:46:44 Asia/Ho_Chi_Minh] Sample trip: TP. Hồ Chí Minh -> Đà Lạt on 2025-11-30
+[28-Nov-2025 02:46:44 Asia/Ho_Chi_Minh] Sample trip: TP. Hồ Chí Minh -> Đà Lạt on 2025-11-28
+[28-Nov-2025 02:46:44 Asia/Ho_Chi_Minh] === SearchController ===
+[28-Nov-2025 02:46:44 Asia/Ho_Chi_Minh] Search params: from='', to='', date='', passengers=1
+[28-Nov-2025 02:46:44 Asia/Ho_Chi_Minh] Form data loaded: 3 cities, 4 popular routes
+[28-Nov-2025 02:46:44 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[28-Nov-2025 02:46:45 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:46:45 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[28-Nov-2025 02:46:45 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:46:45 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[28-Nov-2025 02:46:46 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:46:46 Asia/Ho_Chi_Minh] [v0] Router - About to call AdminController::index
+[28-Nov-2025 02:46:46 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:46:46 Asia/Ho_Chi_Minh] [AdminController] Dashboard stats: {"vehicles":6,"routes":4,"schedules":7,"trips":26,"trips_today":9,"users":16,"prices":7}
+[28-Nov-2025 02:46:46 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[28-Nov-2025 02:46:46 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:46:46 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[28-Nov-2025 02:46:46 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:46:46 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[28-Nov-2025 02:46:47 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:46:47 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::index
+[28-Nov-2025 02:46:47 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:46:47 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[28-Nov-2025 02:46:47 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:46:47 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[28-Nov-2025 02:46:47 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:46:47 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[28-Nov-2025 02:46:47 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:46:47 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
+[28-Nov-2025 02:46:47 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:46:47 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:46:47 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTodayTicketSalesAjax
+[28-Nov-2025 02:46:47 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:46:47 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:46:47 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDriverRevenueAjax
+[28-Nov-2025 02:46:47 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:46:47 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:46:47 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripStatusStatsAjax
+[28-Nov-2025 02:46:47 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:46:47 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:46:47 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
+[28-Nov-2025 02:46:47 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:46:47 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:46:47 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTransactionStatsByStatusAjax
+[28-Nov-2025 02:46:47 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:46:47 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:46:47 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
+[28-Nov-2025 02:46:47 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:46:52 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:50:08 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:50:08 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::index
+[28-Nov-2025 02:50:08 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:50:08 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[28-Nov-2025 02:50:08 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:50:08 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[28-Nov-2025 02:50:08 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:50:08 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[28-Nov-2025 02:50:08 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:50:08 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
+[28-Nov-2025 02:50:08 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:50:08 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:50:08 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDriverRevenueAjax
+[28-Nov-2025 02:50:08 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:50:08 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:50:08 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripStatusStatsAjax
+[28-Nov-2025 02:50:08 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:50:08 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:50:08 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
+[28-Nov-2025 02:50:08 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:50:08 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:50:08 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTodayTicketSalesAjax
+[28-Nov-2025 02:50:08 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:50:08 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:50:08 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
+[28-Nov-2025 02:50:08 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:50:08 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:50:08 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTransactionStatsByStatusAjax
+[28-Nov-2025 02:50:08 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:50:45 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:50:45 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::index
+[28-Nov-2025 02:50:45 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:50:45 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[28-Nov-2025 02:50:45 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:50:45 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[28-Nov-2025 02:50:45 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:50:45 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[28-Nov-2025 02:50:45 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:50:45 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
+[28-Nov-2025 02:50:45 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:50:45 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:50:45 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
+[28-Nov-2025 02:50:45 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:50:45 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:50:45 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDriverRevenueAjax
+[28-Nov-2025 02:50:45 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:50:45 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:50:45 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTodayTicketSalesAjax
+[28-Nov-2025 02:50:45 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:50:45 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:50:45 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripStatusStatsAjax
+[28-Nov-2025 02:50:45 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:50:45 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:50:45 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
+[28-Nov-2025 02:50:45 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:50:45 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:50:45 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTransactionStatsByStatusAjax
+[28-Nov-2025 02:50:45 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:50:47 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:50:47 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getRevenueByRouteAjax
+[28-Nov-2025 02:50:47 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:50:50 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:50:50 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getRevenueByRouteAjax
+[28-Nov-2025 02:50:50 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:50:51 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:50:51 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getRevenueByRouteAjax
+[28-Nov-2025 02:50:51 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:50:52 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:50:52 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getRevenueByRouteAjax
+[28-Nov-2025 02:50:52 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:50:53 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:50:53 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getRevenueByRouteAjax
+[28-Nov-2025 02:50:53 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:50:54 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:50:54 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getRevenueByRouteAjax
+[28-Nov-2025 02:50:54 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:50:54 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:50:54 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getRevenueByRouteAjax
+[28-Nov-2025 02:50:54 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:50:54 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:50:54 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getRevenueByRouteAjax
+[28-Nov-2025 02:50:54 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:50:54 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:50:54 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getRevenueByRouteAjax
+[28-Nov-2025 02:50:54 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:50:56 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:50:56 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getRevenueByRouteAjax
+[28-Nov-2025 02:50:56 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:50:57 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:50:57 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDetailedRevenueAjax
+[28-Nov-2025 02:50:57 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:51:00 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:51:00 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getRevenueByRouteAjax
+[28-Nov-2025 02:51:00 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:51:01 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:51:01 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getRevenueByRouteAjax
+[28-Nov-2025 02:51:01 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:51:01 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:51:01 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getRevenueByRouteAjax
+[28-Nov-2025 02:51:01 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:51:01 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:51:01 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getRevenueByRouteAjax
+[28-Nov-2025 02:51:01 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:51:02 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:51:02 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getRevenueByRouteAjax
+[28-Nov-2025 02:51:02 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:51:02 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:51:02 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getRevenueByRouteAjax
+[28-Nov-2025 02:51:02 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:51:02 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:51:02 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getRevenueByRouteAjax
+[28-Nov-2025 02:51:02 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:51:34 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:51:34 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::index
+[28-Nov-2025 02:51:34 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:51:34 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[28-Nov-2025 02:51:34 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:51:34 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[28-Nov-2025 02:51:34 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:51:34 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[28-Nov-2025 02:51:34 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:51:34 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTodayTicketSalesAjax
+[28-Nov-2025 02:51:34 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:51:34 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:51:34 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
+[28-Nov-2025 02:51:34 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:51:34 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:51:34 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
+[28-Nov-2025 02:51:34 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:51:34 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:51:34 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDriverRevenueAjax
+[28-Nov-2025 02:51:34 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:51:34 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:51:34 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripStatusStatsAjax
+[28-Nov-2025 02:51:34 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:51:34 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:51:34 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
+[28-Nov-2025 02:51:34 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:51:34 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:51:34 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTransactionStatsByStatusAjax
+[28-Nov-2025 02:51:34 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:51:37 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:51:39 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:53:21 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:53:21 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::index
+[28-Nov-2025 02:53:21 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:53:21 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[28-Nov-2025 02:53:21 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:53:21 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[28-Nov-2025 02:53:21 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:53:21 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[28-Nov-2025 02:53:21 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:53:21 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
+[28-Nov-2025 02:53:21 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:53:21 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:53:21 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTodayTicketSalesAjax
+[28-Nov-2025 02:53:21 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:53:21 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:53:21 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDriverRevenueAjax
+[28-Nov-2025 02:53:21 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:53:21 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:53:21 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripStatusStatsAjax
+[28-Nov-2025 02:53:21 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:53:21 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:53:21 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
+[28-Nov-2025 02:53:21 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:53:21 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:53:21 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
+[28-Nov-2025 02:53:21 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:53:22 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:53:22 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTransactionStatsByStatusAjax
+[28-Nov-2025 02:53:22 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:53:32 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:54:08 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:56:51 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:56:51 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::index
+[28-Nov-2025 02:56:51 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:56:51 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[28-Nov-2025 02:56:52 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:56:52 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[28-Nov-2025 02:56:52 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:56:52 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[28-Nov-2025 02:56:52 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:56:52 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTodayTicketSalesAjax
+[28-Nov-2025 02:56:52 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:56:52 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:56:52 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
+[28-Nov-2025 02:56:52 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:56:52 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:56:52 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
+[28-Nov-2025 02:56:52 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:56:52 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:56:52 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDriverRevenueAjax
+[28-Nov-2025 02:56:52 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:56:52 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:56:52 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripStatusStatsAjax
+[28-Nov-2025 02:56:52 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:56:52 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:56:52 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
+[28-Nov-2025 02:56:52 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:56:52 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:56:52 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTransactionStatsByStatusAjax
+[28-Nov-2025 02:56:52 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:56:53 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:58:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:58:30 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::index
+[28-Nov-2025 02:58:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:58:30 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[28-Nov-2025 02:58:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:58:30 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[28-Nov-2025 02:58:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:58:30 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[28-Nov-2025 02:58:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:58:30 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
+[28-Nov-2025 02:58:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:58:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:58:30 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTodayTicketSalesAjax
+[28-Nov-2025 02:58:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:58:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:58:30 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDriverRevenueAjax
+[28-Nov-2025 02:58:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:58:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:58:30 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
+[28-Nov-2025 02:58:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:58:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:58:30 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripStatusStatsAjax
+[28-Nov-2025 02:58:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:58:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:58:30 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
+[28-Nov-2025 02:58:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:58:30 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 02:58:30 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTransactionStatsByStatusAjax
+[28-Nov-2025 02:58:30 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 02:58:31 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::index
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTodayTicketSalesAjax
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripStatusStatsAjax
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDriverRevenueAjax
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTransactionStatsByStatusAjax
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::index
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripStatusStatsAjax
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDriverRevenueAjax
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTodayTicketSalesAjax
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTransactionStatsByStatusAjax
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::index
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDriverRevenueAjax
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripStatusStatsAjax
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTodayTicketSalesAjax
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTransactionStatsByStatusAjax
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
+[28-Nov-2025 03:00:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:00:26 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:01:18 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:08:05 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:08:05 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::index
+[28-Nov-2025 03:08:05 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:08:05 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[28-Nov-2025 03:08:05 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:08:05 Asia/Ho_Chi_Minh] [v0] Router - About to call SearchController::cities
+[28-Nov-2025 03:08:05 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:08:05 Asia/Ho_Chi_Minh] [v0] Router - Controller action completed successfully
+[28-Nov-2025 03:08:05 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:08:05 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getFilteredRevenueAjax
+[28-Nov-2025 03:08:05 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:08:05 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:08:05 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTodayTicketSalesAjax
+[28-Nov-2025 03:08:05 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:08:05 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:08:05 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripStatusStatsAjax
+[28-Nov-2025 03:08:05 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:08:05 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:08:05 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getDriverRevenueAjax
+[28-Nov-2025 03:08:05 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:08:05 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:08:05 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
+[28-Nov-2025 03:08:05 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:08:05 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:08:05 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTripLoadFactorAjax
+[28-Nov-2025 03:08:05 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:08:05 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:08:05 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getTransactionStatsByStatusAjax
+[28-Nov-2025 03:08:05 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:08:07 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:08:07 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getRevenueByRouteAjax
+[28-Nov-2025 03:08:07 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:08:10 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:08:10 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getRevenueByRouteAjax
+[28-Nov-2025 03:08:10 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:08:13 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:08:13 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getRevenueByRouteAjax
+[28-Nov-2025 03:08:13 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db
+[28-Nov-2025 03:08:14 Asia/Ho_Chi_Minh] [v0] Config loaded - BASE_URL: http://localhost/xegoo
+[28-Nov-2025 03:08:14 Asia/Ho_Chi_Minh] [v0] Router - About to call StatisticsController::getRevenueByRouteAjax
+[28-Nov-2025 03:08:15 Asia/Ho_Chi_Minh] [Database] Connected successfully to xegoo_db

@@ -195,6 +195,23 @@ if (session_status() === PHP_SESSION_NONE) {
                     <h3>Doanh Thu Chi Tiết Theo Tuyến Xe</h3>
                 </div>
                 <div class="card-content">
+                    <!-- Add month/year filter section -->
+                    <div class="filter-section" style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; align-items: flex-end;">
+                        <div>
+                            <label for="revenueDetailMonth" style="display: block; font-weight: 600; margin-bottom: 8px;">Tháng:</label>
+                            <input type="number" id="revenueDetailMonth" class="form-control" min="1" max="12" value="<?= date('m') ?>" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                        </div>
+                        <div>
+                            <label for="revenueDetailYear" style="display: block; font-weight: 600; margin-bottom: 8px;">Năm:</label>
+                            <input type="number" id="revenueDetailYear" class="form-control" value="<?= date('Y') ?>" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                        </div>
+                        <div>
+                            <button id="filterRevenueDetailBtn" class="btn btn-primary" style="width: 100%; padding: 8px 16px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 600;">
+                                <i class="fas fa-filter"></i> Lọc
+                            </button>
+                        </div>
+                    </div>
+
                     <div class="table-responsive">
                         <table class="stats-table">
                             <thead>
@@ -209,7 +226,7 @@ if (session_status() === PHP_SESSION_NONE) {
                                     <th>Lợi Nhuận</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="revenueDetailBody">
                                 <?php if (!empty($stats['revenueByRoute'])): ?>
                                     <?php foreach ($stats['revenueByRoute'] as $route): ?>
                                         <tr>
@@ -229,6 +246,62 @@ if (session_status() === PHP_SESSION_NONE) {
                             </tbody>
                         </table>
                     </div>
+
+                    <!-- Add script to handle month filter -->
+                    <script>
+                        document.getElementById('filterRevenueDetailBtn').addEventListener('click', function() {
+                            loadRevenueDetail();
+                        });
+
+                        function loadRevenueDetail() {
+                            const month = document.getElementById('revenueDetailMonth').value;
+                            const year = document.getElementById('revenueDetailYear').value;
+                            
+                            if (!month || !year) {
+                                alert('Vui lòng chọn tháng và năm');
+                                return;
+                            }
+
+                             fetch('<?= BASE_URL ?>/admin/revenue-by-route-ajax', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                },
+                                body: JSON.stringify({
+                                    month: month,
+                                    year: year
+                                })
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                const tbody = document.getElementById('revenueDetailBody');
+                                tbody.innerHTML = '';
+
+                                if (data.success && data.data.length > 0) {
+                                    data.data.forEach(route => {
+                                        const row = document.createElement('tr');
+                                        row.innerHTML = `
+                                            <td><span class="badge badge-primary">${route.kyHieuTuyen}</span></td>
+                                            <td>${route.diemDi}</td>
+                                            <td>${route.diemDen}</td>
+                                            <td class="text-center"><strong>${route.soGiaoDich}</strong></td>
+                                            <td class="text-center"><strong>${route.soLuongVe}</strong></td>
+                                            <td class="amount">${new Intl.NumberFormat('vi-VN').format(route.doanhThu)}</td>
+                                            <td>${new Intl.NumberFormat('vi-VN').format(route.giaTriTrungBinh)}</td>
+                                            <td class="amount-success">${new Intl.NumberFormat('vi-VN').format(route.loiNhuan)}</td>
+                                        `;
+                                        tbody.appendChild(row);
+                                    });
+                                } else {
+                                    tbody.innerHTML = '<tr><td colspan="8" class="text-center text-muted">Không có dữ liệu</td></tr>';
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Error:', error);
+                                alert('Lỗi khi tải dữ liệu');
+                            });
+                        }
+                    </script>
                 </div>
             </div>
 
