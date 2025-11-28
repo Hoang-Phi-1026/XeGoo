@@ -6,7 +6,7 @@ class Schedule {
     /**
      * Get all schedules with optional filtering and search
      */
-    public static function getAll($routeFilter = null, $search = null) {
+    public static function getAll($routeFilter = null, $search = null, $monthFilter = null) {
         try {
             $sql = "SELECT l.*, t.kyHieuTuyen, t.diemDi, t.diemDen,
                            nd.tenNguoiDung as tenTaiXe, nd.soDienThoai as sdtTaiXe
@@ -29,11 +29,34 @@ class Schedule {
                 $params[] = $routeFilter;
             }
             
+            if (!empty($monthFilter)) {
+                // Parse month format (e.g., "2025-12")
+                $parts = explode('-', $monthFilter);
+                if (count($parts) === 2) {
+                    $year = intval($parts[0]);
+                    $month = intval($parts[1]);
+                    
+                    // Get first and last day of the month
+                    $firstDay = date('Y-m-01', mktime(0, 0, 0, $month, 1, $year));
+                    $lastDay = date('Y-m-t', mktime(0, 0, 0, $month, 1, $year));
+                    
+                    // Filter schedules where ngayBatDau <= lastDay AND ngayKetThuc >= firstDay
+                    // This ensures schedules that span the month are included
+                    $conditions[] = "(l.ngayBatDau <= ? AND l.ngayKetThuc >= ?)";
+                    $params[] = $lastDay;
+                    $params[] = $firstDay;
+                }
+            }
+            
             if (!empty($conditions)) {
                 $sql .= " WHERE " . implode(" AND ", $conditions);
             }
             
-            $sql .= " ORDER BY l.maLichTrinh DESC";
+            $sql .= " ORDER BY CASE 
+                        WHEN l.trangThai = 'Hoạt động' THEN 0
+                        WHEN l.trangThai = 'Tạm dừng' THEN 1
+                        ELSE 2
+                      END ASC, l.maLichTrinh DESC";
             
             return fetchAll($sql, $params);
         } catch (Exception $e) {

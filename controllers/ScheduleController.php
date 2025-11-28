@@ -25,9 +25,10 @@ class ScheduleController {
         // Get filter parameters
         $routeFilter = $_GET['route'] ?? null;
         $search = $_GET['search'] ?? '';
+        $monthFilter = $_GET['month'] ?? date('Y-m');
         
         // Get schedules
-        $schedules = Schedule::getAll($routeFilter, $search);
+        $schedules = Schedule::getAll($routeFilter, $search, $monthFilter);
         
         // Get statistics
         $stats = Schedule::getStats();
@@ -37,6 +38,12 @@ class ScheduleController {
         
         // Get status options for filter
         $statusOptions = Schedule::getStatusOptions();
+        
+        $months = [];
+        for ($i = -6; $i <= 6; $i++) {
+            $date = new DateTime('first day of ' . ($i > 0 ? '+' : '') . $i . ' months');
+            $months[$date->format('Y-m')] = $date->format('m/Y');
+        }
         
         // Load view
         include __DIR__ . '/../views/schedules/index.php';

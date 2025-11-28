@@ -70,6 +70,18 @@
                                placeholder="Tìm kiếm theo tên, tuyến..." 
                                value="<?php echo htmlspecialchars($_GET['search'] ?? ''); ?>">
                     </div>
+                    <!-- Add month filter dropdown -->
+                    <div class="form-group">
+                        <select name="month" id="month" class="form-control">
+                            <option value="">-- Chọn tháng --</option>
+                            <?php foreach ($months as $monthKey => $monthLabel): ?>
+                                <option value="<?php echo $monthKey; ?>" 
+                                        <?php echo (isset($_GET['month']) && $_GET['month'] == $monthKey) ? 'selected' : ((!isset($_GET['month']) && $monthKey == date('Y-m')) ? 'selected' : ''); ?>>
+                                    Tháng <?php echo $monthLabel; ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
                     <div class="form-group">
                         <select name="route" id="route" class="form-control">
                             <option value="">Tất cả tuyến</option>
@@ -95,13 +107,27 @@
     </div>
 
     <!-- search results summary -->
-    <?php if (!empty($_GET['search']) || !empty($_GET['route'])): ?>
+    <?php if (!empty($_GET['search']) || !empty($_GET['route']) || !empty($_GET['month'])): ?>
         <div class="search-results-summary">
             <div class="results-info">
                 <i class="fas fa-info-circle"></i>
                 <span>Tìm thấy <strong><?php echo count($schedules); ?></strong> lịch trình</span>
             </div>
             <div class="active-filters">
+                <?php if (!empty($_GET['month'])): ?>
+                    <?php 
+                    $monthParts = explode('-', $_GET['month']);
+                    if (count($monthParts) === 2) {
+                        $monthLabel = 'Tháng ' . intval($monthParts[1]) . '/' . $monthParts[0];
+                    } else {
+                        $monthLabel = $_GET['month'];
+                    }
+                    ?>
+                    <span class="filter-tag">
+                        <i class="fas fa-calendar"></i> <?php echo $monthLabel; ?>
+                        <a href="<?php echo BASE_URL; ?>/schedules?<?php echo http_build_query(array_diff_key($_GET, ['month' => ''])); ?>" class="remove-filter">×</a>
+                    </span>
+                <?php endif; ?>
                 <?php if (!empty($_GET['search'])): ?>
                     <span class="filter-tag">
                         <i class="fas fa-search"></i> "<?php echo htmlspecialchars($_GET['search']); ?>"
@@ -228,6 +254,10 @@ function confirmDelete(scheduleId) {
 }
 
 document.getElementById('route').addEventListener('change', function() {
+    document.getElementById('searchForm').submit();
+});
+
+document.getElementById('month').addEventListener('change', function() {
     document.getElementById('searchForm').submit();
 });
 
