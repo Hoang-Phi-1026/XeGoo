@@ -54,7 +54,7 @@ if (session_status() === PHP_SESSION_NONE) {
         <div class="tab-content active" id="revenue-tab">
             <!-- Filter section for revenue statistics by date/month/year -->
             <div class="filter-section" style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; align-items: flex-end;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; align-items: center;">
                     <div class="form-group">
                         <label for="revenueStartDate" style="display: block; font-weight: 600; margin-bottom: 8px;">Từ Ngày:</label>
                         <input type="date" id="revenueStartDate" class="form-control" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
@@ -71,7 +71,7 @@ if (session_status() === PHP_SESSION_NONE) {
                             <option value="year">Theo Năm</option>
                         </select>
                     </div>
-                    <button id="applyRevenueFilter" class="btn btn-primary" style="width: 100%; padding: 8px 16px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 600;">Lọc</button>
+                    <button id="applyRevenueFilter" class="btn btn-primary" style="width: 100%; padding: 8px 16px; margin-top: 17px; background: #f4481f; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 600;">Lọc</button>
                 </div>
             </div>
 
@@ -133,7 +133,7 @@ if (session_status() === PHP_SESSION_NONE) {
                             <input type="date" id="detailedRevenueEndDate" class="form-control" value="<?= date('Y-m-d') ?>" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
                         </div>
                         <div>
-                            <button id="filterDetailedRevenueBtn" class="btn btn-primary" style="width: 100%; padding: 8px 16px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 600;">
+                            <button id="filterDetailedRevenueBtn" class="btn btn-primary" style="width: 100%; padding: 8px 16px; background: #f4481f; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 600; margin-bottom: 4px;">
                                 <i class="fas fa-filter"></i> Lọc
                             </button>
                         </div>
@@ -206,7 +206,7 @@ if (session_status() === PHP_SESSION_NONE) {
                             <input type="number" id="revenueDetailYear" class="form-control" value="<?= date('Y') ?>" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
                         </div>
                         <div>
-                            <button id="filterRevenueDetailBtn" class="btn btn-primary" style="width: 100%; padding: 8px 16px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 600;">
+                            <button id="filterRevenueDetailBtn" class="btn btn-primary" style="width: 100%; padding: 8px 16px; background: #f4481f; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 600; margin-bottom: 4px;">
                                 <i class="fas fa-filter"></i> Lọc
                             </button>
                         </div>
@@ -375,7 +375,7 @@ if (session_status() === PHP_SESSION_NONE) {
                             <input type="number" id="transactionStatYear" class="form-control" value="<?= date('Y') ?>" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
                         </div>
                         <div>
-                            <button id="filterTransactionStatBtn" class="btn btn-primary" style="width: 100%; padding: 8px 16px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 600;">
+                            <button id="filterTransactionStatBtn" class="btn btn-primary" style="width: 100%; padding: 8px 16px; background: #f4481f; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 600;">
                                 <i class="fas fa-filter"></i> Lọc
                             </button>
                         </div>
@@ -774,7 +774,7 @@ if (session_status() === PHP_SESSION_NONE) {
                 </div>
                 <div class="card-content">
                     <!-- Filter Section -->
-                    <div class="filter-section" style="display: flex; gap: 15px; align-items: flex-end; margin-bottom: 20px;">
+                    <div class="filter-section" style="display: flex; gap: 15px; align-items: center; margin-bottom: 20px;">
                         <div class="form-group" style="flex: 1;">
                             <label for="tripStatusStartDate" style="display: block; font-weight: 600; margin-bottom: 8px;">Từ Ngày:</label>
                             <input type="date" id="tripStatusStartDate" class="form-control" value="<?php echo date('Y-m-01'); ?>" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
@@ -783,7 +783,7 @@ if (session_status() === PHP_SESSION_NONE) {
                             <label for="tripStatusEndDate" style="display: block; font-weight: 600; margin-bottom: 8px;">Đến Ngày:</label>
                             <input type="date" id="tripStatusEndDate" class="form-control" value="<?php echo date('Y-m-d'); ?>" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
                         </div>
-                        <button id="applyTripStatusFilter" class="btn btn-primary" style="padding: 8px 16px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 600;">
+                        <button id="applyTripStatusFilter" class="btn btn-primary" style="padding: 8px 16px; background: #f4481f; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 600; margin-top: 15px;">
                             <i class="fas fa-filter"></i> Lọc
                         </button>
                     </div>
@@ -812,7 +812,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     <h3>Tỷ Lệ Lấp Đầy Chuyến Xe</h3>
                 </div>
                 <div class="card-content">
-                    <div class="filter-section" style="display: flex; gap: 15px; align-items: flex-end; margin-bottom: 20px;">
+                    <div class="filter-section" style="display: flex; gap: 15px; align-items: center; margin-bottom: 20px;">
                 <div class="form-group">
                     <label for="tripStartDate" style="display: block; font-weight: 600; margin-bottom: 8px;">Từ Ngày:</label>
                     <input type="date" id="tripStartDate" class="form-control" value="<?= date('Y-m-01') ?>" style="width: 200px; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
@@ -821,7 +821,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     <label for="tripEndDate" style="display: block; font-weight: 600; margin-bottom: 8px;">Đến Ngày:</label>
                     <input type="date" id="tripEndDate" class="form-control" value="<?= date('Y-m-d') ?>" style="width: 200px; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
                 </div>
-                <button id="applyTripFilter" class="btn btn-primary" style="padding: 8px 16px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 600;">
+                <button id="applyTripFilter" class="btn btn-primary" style="padding: 8px 16px; background: #f4481f; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 600; margin-top: 15px;">
                     <i class="fas fa-filter"></i> Lọc
                 </button>
             </div>
@@ -858,7 +858,7 @@ if (session_status() === PHP_SESSION_NONE) {
         <div class="tab-content" id="driver-tab">
             <!-- Filter section for driver revenue -->
             <div class="filter-section" style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; align-items: flex-end;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; align-items: center;">
                     <div class="form-group">
                         <label for="driverStartDate" style="display: block; font-weight: 600; margin-bottom: 8px;">Từ Ngày:</label>
                         <input type="date" id="driverStartDate" class="form-control" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
@@ -867,7 +867,7 @@ if (session_status() === PHP_SESSION_NONE) {
                         <label for="driverEndDate" style="display: block; font-weight: 600; margin-bottom: 8px;">Đến Ngày:</label>
                         <input type="date" id="driverEndDate" class="form-control" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
                     </div>
-                    <button id="applyDriverFilter" class="btn btn-primary" style="width: 100%; padding: 8px 16px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 600;">Lọc </button>
+                    <button id="applyDriverFilter" class="btn btn-primary" style="width: 100%; padding: 8px 16px; margin-top: 17px; background: #f4481f; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 600;">Lọc </button>
                 </div>
             </div>
 
@@ -1357,7 +1357,7 @@ document.addEventListener('DOMContentLoaded', function() {
         for (let i = 1; i <= pagination.totalPages; i++) {
             const button = document.createElement('button');
             button.textContent = i;
-            button.style.cssText = `padding: 8px 12px; border: 1px solid #ddd; background: ${i === pagination.currentPage ? '#007bff' : '#fff'}; color: ${i === pagination.currentPage ? '#fff' : '#000'}; cursor: pointer; border-radius: 4px; margin: 0 2px;`;
+            button.style.cssText = `padding: 8px 12px; border: 1px solid #ddd; background: ${i === pagination.currentPage ? '#f4481f' : '#fff'}; color: ${i === pagination.currentPage ? '#fff' : '#000'}; cursor: pointer; border-radius: 4px; margin: 0 2px;`;
             button.addEventListener('click', () => loadTodayTicketSalesData(i));
             container.appendChild(button);
         }
@@ -1516,7 +1516,7 @@ document.addEventListener('DOMContentLoaded', function() {
         for (let i = 1; i <= pagination.totalPages; i++) {
             const button = document.createElement('button');
             button.textContent = i;
-            button.style.cssText = `padding: 8px 12px; border: 1px solid #ddd; background: ${i === currentPage ? '#007bff' : '#fff'}; color: ${i === currentPage ? '#fff' : '#000'}; cursor: pointer; border-radius: 4px; margin: 0 2px;`;
+            button.style.cssText = `padding: 8px 12px; border: 1px solid #ddd; background: ${i === currentPage ? '#f4481f' : '#fff'}; color: ${i === currentPage ? '#fff' : '#000'}; cursor: pointer; border-radius: 4px; margin: 0 2px;`;
             button.addEventListener('click', () => loadDriverRevenue(i));
             container.appendChild(button);
         }

@@ -477,3 +477,120 @@
   color: var(--text-secondary);
   margin-bottom: var(--space-md);
 }
+
+/* Updated filter form styling to be more compact and fit on one line */
+.filter-form {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-primary);
+  position: relative;
+}
+
+.filter-form::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.filter-form .form-row {
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.filter-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: 0;
+  flex: 1;
+  min-width: 140px;
+}
+
+.filter-form .form-group label {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: var(--font-primary);
+}
+
+.filter-form .form-control,
+.filter-form input,
+.filter-form select {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  transition: all var(--transition-fast);
+  font-family: var(--font-primary);
+  margin: 0;
+  height: auto;
+}
+
+.filter-form .form-control:focus,
+.filter-form input:focus,
+.filter-form select:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.1);
+}
+
+.filter-form .form-actions {
+  display: flex;
+  gap: var(--space-md);
+  align-items: center;
+  flex: 0 0 auto;
+  margin-bottom: 0;
+}
+
+.filter-form .form-actions button,
+.filter-form .form-actions a {
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+@media (max-width: 1024px) {
+  .filter-form .form-row {
+    gap: var(--space-sm);
+  }
+
+  .filter-form .form-group {
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .filter-form .form-row {
+    flex-direction: column;
+  }
+
+  .filter-form .form-group {
+    width: 100%;
+  }
+
+  .filter-form .form-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

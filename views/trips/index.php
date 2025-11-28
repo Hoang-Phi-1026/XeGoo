@@ -3,7 +3,7 @@
 <div class="container">
     <div class="page-header">
         <div class="page-title">
-            <h1>Quản lý Chuyến Xe</h1>
+            <h1><i class="fas fa-list"></i> Quản lý Chuyến Xe</h1>
         </div>
         <div class="page-actions">
             <a href="<?php echo BASE_URL; ?>/schedules/generate-trips" class="btn btn-success">
@@ -29,7 +29,7 @@
                 <p>Tổng chuyến xe</p>
             </div>
         </div>
-        <div class="stat-card completed">
+        <div class="stat-card">
             <div class="stat-icon">
                 <i class="fas fa-check-circle"></i>
             </div>
@@ -38,7 +38,7 @@
                 <p>Số chuyến xe đã hoàn thành</p>
             </div>
         </div>
-        <div class="stat-card today">
+        <div class="stat-card">
             <div class="stat-icon">
                 <i class="fas fa-calendar-day"></i>
             </div>
@@ -52,7 +52,7 @@
     <!-- Search and Filter Form -->
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Tìm kiếm và lọc</h3>
+            <h3><i class="fas fa-filter"></i> Tìm kiếm và lọc</h3>
         </div>
         <div class="card-body">
             <form method="GET" class="filter-form" id="searchForm">
@@ -83,12 +83,10 @@
                         <label>&nbsp;</label>
                         <div class="form-actions">
                             <button type="submit" class="btn btn-primary">
-                                <i class="fas fa-search"></i>
-                                Tìm kiếm
+                                <i class="fas fa-search"></i> Tìm kiếm
                             </button>
                             <a href="<?php echo BASE_URL; ?>/trips" class="btn btn-secondary">
-                                <i class="fas fa-refresh"></i>
-                                Đặt lại
+                                <i class="fas fa-redo"></i> Đặt lại
                             </a>
                         </div>
                     </div>
@@ -138,8 +136,6 @@
         </div>
     <?php endif; ?>
 
-    <!-- search -->
-
     <!-- Trips Table -->
     <div class="card">
         <div class="card-header">
@@ -148,98 +144,96 @@
         <div class="card-body">
             <div class="table-responsive">
                 <table class="data-table">
-            <thead>
-                <tr>
-                    <th>STT</th>
-                    <th>Lịch trình</th>
-                    <th>Tuyến đường</th>
-                    <th>Xe</th>
-                    <th>Ngày khởi hành</th>
-                    <th>Giờ</th>
-                    <th>Chỗ ngồi</th>
-                    <th>Giá vé</th>
-                    <th>Trạng thái</th>
-                    <th>Thao tác</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php if (empty($trips)): ?>
-                    <tr>
-                        <td colspan="11" class="no-data">
-                            <i class="fas fa-search"></i>
-                            <p>Không tìm thấy chuyến xe nào phù hợp với tiêu chí tìm kiếm</p>
-                            <a href="<?php echo BASE_URL; ?>/trips" class="btn btn-outline btn-sm">
-                                <i class="fas fa-list"></i> Xem tất cả chuyến xe
-                            </a>
-                        </td>
-                    </tr>
-                <?php else: ?>
-                    <?php $dem = 0; foreach ($trips as $trip): ?>
-                        <?php $dem++; ?>
+                    <thead>
                         <tr>
-                            <td>
-                                <?php echo $dem; ?>
-                            </td>
-                            <td>
-                                <div class="schedule-info">
-                                    <strong><?php echo htmlspecialchars($trip['tenLichTrinh']); ?></strong>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="route-info">
-                                    <strong><?php echo htmlspecialchars($trip['kyHieuTuyen']); ?></strong><br>
-                                    <small><?php echo htmlspecialchars($trip['diemDi'] . ' → ' . $trip['diemDen']); ?></small>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="vehicle-info">
-                                    <strong><?php echo htmlspecialchars($trip['bienSo']); ?></strong><br>
-                                    <small><?php echo htmlspecialchars($trip['tenLoaiPhuongTien']); ?></small>
-                                </div>
-                            </td>
-                            <td><?php echo date('d/m/Y', strtotime($trip['ngayKhoiHanh'])); ?></td>
-                            <td>
-                                <div class="time-info">
-                                    <?php echo date('H:i', strtotime($trip['thoiGianKhoiHanh'])); ?><br>
-                                    <small><?php echo date('H:i', strtotime($trip['thoiGianKetThuc'])); ?></small>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="seat-info">
-                                    <strong><?php echo $trip['soChoDaDat']; ?>/<?php echo $trip['soChoTong']; ?></strong><br>
-                                    <small>Trống: <?php echo $trip['soChoTrong']; ?></small>
-                                </div>
-                            </td>
-                            <td>
-                                <?php if ($trip['giaVe']): ?>
-                                    <strong><?php echo number_format($trip['giaVe'], 0, ',', '.'); ?> VNĐ</strong><br>
-                                    <small><?php echo $trip['tenLoaiVe'] ?? 'Vé thường'; ?></small>
-                                <?php else: ?>
-                                    <span class="text-muted">Chưa có giá</span>
-                                <?php endif; ?>
-                            </td>
-                            <td>
-                                <span class="status-badge <?php echo Trip::getStatusBadgeClass($trip['trangThai']); ?>">
-                                    <?php echo $trip['trangThai']; ?>
-                                </span>
-                            </td>
-                            <td class="actions">
-                                <a href="<?php echo BASE_URL; ?>/trips/<?php echo $trip['maChuyenXe']; ?>" 
-                                   class="btn btn-sm btn-info" title="Xem chi tiết">
-                                    <i class="fas fa-eye"></i>
-                                </a>
-                                <?php if (!in_array($trip['trangThai'], ['Đã khởi hành', 'Hoàn thành'])): ?>
-                                    <button onclick="confirmDelete(<?php echo $trip['maChuyenXe']; ?>)" 
-                                            class="btn btn-sm btn-danger" title="Xóa chuyến xe">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                <?php endif; ?>
-                            </td>
+                            <th>STT</th>
+                            <th>Lịch trình</th>
+                            <th>Tuyến đường</th>
+                            <th>Xe</th>
+                            <th>Ngày khởi hành</th>
+                            <th>Giờ</th>
+                            <th>Chỗ ngồi</th>
+                            <th>Giá vé</th>
+                            <th>Trạng thái</th>
+                            <th>Thao tác</th>
                         </tr>
-                    <?php endforeach; ?>
-                <?php endif; ?>
-            </tbody>
-        </table>
+                    </thead>
+                    <tbody>
+                        <?php if (empty($trips)): ?>
+                            <tr>
+                                <td colspan="10" class="no-data">
+                                    <i class="fas fa-search"></i>
+                                    <p>Không tìm thấy chuyến xe nào phù hợp với tiêu chí tìm kiếm</p>
+                                    <a href="<?php echo BASE_URL; ?>/trips" class="btn btn-outline btn-sm">
+                                        <i class="fas fa-list"></i> Xem tất cả chuyến xe
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php else: ?>
+                            <?php $dem = 0; foreach ($trips as $trip): ?>
+                                <?php $dem++; ?>
+                                <tr>
+                                    <td><?php echo $dem; ?></td>
+                                    <td>
+                                        <div class="schedule-info">
+                                            <strong><?php echo htmlspecialchars($trip['tenLichTrinh']); ?></strong>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="route-info">
+                                            <strong><?php echo htmlspecialchars($trip['kyHieuTuyen']); ?></strong>
+                                            <small><?php echo htmlspecialchars($trip['diemDi'] . ' → ' . $trip['diemDen']); ?></small>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="vehicle-info">
+                                            <strong><?php echo htmlspecialchars($trip['bienSo']); ?></strong>
+                                            <small><?php echo htmlspecialchars($trip['tenLoaiPhuongTien']); ?></small>
+                                        </div>
+                                    </td>
+                                    <td><?php echo date('d/m/Y', strtotime($trip['ngayKhoiHanh'])); ?></td>
+                                    <td>
+                                        <div class="time-info">
+                                            <strong><?php echo date('H:i', strtotime($trip['thoiGianKhoiHanh'])); ?></strong>
+                                            <small><?php echo date('H:i', strtotime($trip['thoiGianKetThuc'])); ?></small>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="seat-info">
+                                            <strong><?php echo $trip['soChoDaDat']; ?>/<?php echo $trip['soChoTong']; ?></strong>
+                                            <small>Trống: <?php echo $trip['soChoTrong']; ?></small>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <?php if ($trip['giaVe']): ?>
+                                            <strong><?php echo number_format($trip['giaVe'], 0, ',', '.'); ?></strong><br>
+                                            <small><?php echo $trip['tenLoaiVe'] ?? 'Vé thường'; ?></small>
+                                        <?php else: ?>
+                                            <span class="text-muted">Chưa có giá</span>
+                                        <?php endif; ?>
+                                    </td>
+                                    <td>
+                                        <span class="status-badge <?php echo strtolower(str_replace(' ', '-', $trip['trangThai'])); ?>">
+                                            <?php echo $trip['trangThai']; ?>
+                                        </span>
+                                    </td>
+                                    <td class="actions">
+                                        <a href="<?php echo BASE_URL; ?>/trips/<?php echo $trip['maChuyenXe']; ?>" 
+                                           class="btn btn-sm btn-info" title="Xem chi tiết">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                        <?php if (!in_array($trip['trangThai'], ['Đã khởi hành', 'Hoàn thành'])): ?>
+                                            <button onclick="confirmDelete(<?php echo $trip['maChuyenXe']; ?>)" 
+                                                    class="btn btn-sm btn-danger" title="Xóa chuyến xe">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        <?php endif; ?>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

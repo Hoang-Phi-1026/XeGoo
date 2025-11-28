@@ -60,18 +60,20 @@
     <!-- modern search and filter section -->
     <div class="card search-filters-card">
         <div class="card-header">
-            <h3 class="card-title"><i class="fas fa-filter"></i> Tìm kiếm và lọc</h3>
+            <h3 class="card-title">Tìm kiếm và lọc</h3>
         </div>
         <div class="card-body">
             <form method="GET" class="filter-form" id="searchForm">
                 <div class="filter-row">
-                    <div class="form-group flex-grow">
+                    <div class="form-group ">
+                        <label for="search">Nhập từ khóa:</label>
                         <input type="text" name="search" id="search" class="form-control"
                                placeholder="Tìm kiếm theo tên, tuyến..." 
                                value="<?php echo htmlspecialchars($_GET['search'] ?? ''); ?>">
                     </div>
                     <!-- Add month filter dropdown -->
                     <div class="form-group">
+                        <label for="month">Chọn tháng:</label>
                         <select name="month" id="month" class="form-control">
                             <option value="">-- Chọn tháng --</option>
                             <?php foreach ($months as $monthKey => $monthLabel): ?>
@@ -83,6 +85,7 @@
                         </select>
                     </div>
                     <div class="form-group">
+                        <label for="route">Chọn tuyến đường:</label>
                         <select name="route" id="route" class="form-control">
                             <option value="">Tất cả tuyến</option>
                             <?php foreach ($routes as $route): ?>
@@ -94,12 +97,14 @@
                         </select>
                     </div>
                     <div class="form-group">
+                        <div class="form-actions">
                         <button type="submit" class="btn btn-primary">
                             <i class="fas fa-search"></i> Tìm kiếm
                         </button>
                         <a href="<?php echo BASE_URL; ?>/schedules" class="btn btn-outline">
                             <i class="fas fa-redo"></i> Đặt lại
                         </a>
+                        </div>
                     </div>
                 </div>
             </form>
