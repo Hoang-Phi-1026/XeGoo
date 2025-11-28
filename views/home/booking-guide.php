@@ -534,7 +534,7 @@ require_once __DIR__ . '/../layouts/header.php';
             <div class="payment-grid">
                 <div class="payment-card">
                     <div class="payment-icon">
-                        <img src="/placeholder.svg?height=60&width=60" alt="MoMo">
+                        <img src="<?php echo BASE_URL; ?>\public\uploads\images\momo-logo.png" alt="MoMo">
                     </div>
                     <h3 class="payment-title">Ví MoMo</h3>
                     <p class="payment-description">
@@ -549,7 +549,7 @@ require_once __DIR__ . '/../layouts/header.php';
 
                 <div class="payment-card">
                     <div class="payment-icon">
-                        <img src="/placeholder.svg?height=60&width=60" alt="VNPay">
+                        <img src="<?php echo BASE_URL; ?>\public\uploads\images\vnpay-logo.png" alt="VNPay">
                     </div>
                     <h3 class="payment-title">VNPay</h3>
                     <p class="payment-description">

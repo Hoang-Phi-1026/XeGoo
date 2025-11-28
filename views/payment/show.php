@@ -285,7 +285,7 @@
                             <input type="radio" id="momo" name="payment_method" value="MoMo" required>
                             <label for="momo" class="option-label">
                                 <div class="option-icon">
-                                    <img src="<?php echo BASE_URL; ?>/public/images/momo-logo.png" alt="MoMo" onerror="this.style.display='none';">
+                                    <img src="<?php echo BASE_URL; ?>\public\uploads\images\momo-logo.png" alt="MoMo" onerror="this.style.display='none';">
                                 </div>
                                 <div class="option-text">
                                     <div class="option-name">Ví MoMo</div>
@@ -298,7 +298,7 @@
                             <input type="radio" id="vnpay" name="payment_method" value="VNPay" required>
                             <label for="vnpay" class="option-label">
                                 <div class="option-icon">
-                                    <img src="<?php echo BASE_URL; ?>/public/images/vnpay-logo.png" alt="VNPay" onerror="this.style.display='none';">
+                                    <img src="<?php echo BASE_URL; ?>\public\uploads\images\vnpay-logo.png" alt="VNPay" onerror="this.style.display='none';">
                                 </div>
                                 <div class="option-text">
                                     <div class="option-name">VNPay</div>
