@@ -121,11 +121,13 @@
                         <select name="maPhuongTien" id="maPhuongTien" required class="form-select">
                             <option value="">-- Chọn xe --</option>
                             <?php foreach ($vehicles as $vehicle): ?>
+                                <!-- Added planned route info to vehicle dropdown option -->
                                 <option value="<?php echo $vehicle['maPhuongTien']; ?>"
                                         data-seats="<?php echo $vehicle['soChoMacDinh']; ?>"
                                         data-type="<?php echo htmlspecialchars($vehicle['tenLoaiPhuongTien']); ?>"
-                                        data-seat-type="<?php echo htmlspecialchars($vehicle['loaiChoNgoiMacDinh']); ?>">
-                                    <?php echo $vehicle['tenLoaiPhuongTien'] . ' - ' . $vehicle['bienSo'] . ' (' . $vehicle['soChoMacDinh'] . ' chỗ)'; ?>
+                                        data-seat-type="<?php echo htmlspecialchars($vehicle['loaiChoNgoiMacDinh']); ?>"
+                                        data-route="<?php echo htmlspecialchars($vehicle['tuyen_hoat_dong_du_kien'] ?? ''); ?>">
+                                    <?php echo $vehicle['tenLoaiPhuongTien'] . ' - ' . $vehicle['bienSo'] . ' (' . $vehicle['soChoMacDinh'] . ' chỗ)' . ($vehicle['tuyen_hoat_dong_du_kien'] ? ' - ' . htmlspecialchars($vehicle['tuyen_hoat_dong_du_kien']) : ''); ?>
                                 </option>
                             <?php endforeach; ?>
                         </select>
@@ -145,6 +147,11 @@
                             <div class="info-cell">
                                 <span class="info-label"><i class="fas fa-couch"></i> Loại chỗ ngồi</span>
                                 <span class="info-value" id="seatType"></span>
+                            </div>
+                            <!-- Added planned route info to vehicle display -->
+                            <div class="info-cell">
+                                <span class="info-label"><i class="fas fa-map-marker"></i> Tuyến dự kiến</span>
+                                <span class="info-value" id="plannedRoute">-</span>
                             </div>
                         </div>
                     </div>
@@ -215,6 +222,7 @@ document.getElementById('maPhuongTien').addEventListener('change', function() {
         document.getElementById('vehicleType').textContent = selectedOption.dataset.type;
         document.getElementById('seatCount').textContent = selectedOption.dataset.seats + ' chỗ';
         document.getElementById('seatType').textContent = selectedOption.dataset.seatType;
+        document.getElementById('plannedRoute').textContent = selectedOption.dataset.route || '-';
         document.getElementById('loaiChoNgoiHidden').value = selectedOption.dataset.seatType;
         
         vehicleInfo.style.display = 'block';

@@ -55,6 +55,23 @@
                         Lưu ý: Nếu phương tiện này có chuyến xe với khách hàng đã mua vé, bạn sẽ không thể chuyển sang trạng thái bảo trì.
                     </small>
                 </div>
+
+                <!-- Added planned operating route field for edit view -->
+                <div class="form-group">
+                    <label for="tuyen_hoat_dong_du_kien">Tuyến hoạt động dự kiến</label>
+                    <select name="tuyen_hoat_dong_du_kien" id="tuyen_hoat_dong_du_kien">
+                        <option value="">Chọn tuyến đường</option>
+                        <?php foreach ($routes as $route): ?>
+                            <option value="<?php echo htmlspecialchars($route['kyHieuTuyen']); ?>"
+                                    <?php echo (isset($_SESSION['form_data']['tuyen_hoat_dong_du_kien']) ? 
+                                        ($_SESSION['form_data']['tuyen_hoat_dong_du_kien'] == $route['kyHieuTuyen'] ? 'selected' : '') : 
+                                        ($vehicle['tuyen_hoat_dong_du_kien'] == $route['kyHieuTuyen'] ? 'selected' : '')); ?>>
+                                <?php echo htmlspecialchars($route['kyHieuTuyen']); ?> (<?php echo htmlspecialchars($route['diemDi']); ?> → <?php echo htmlspecialchars($route['diemDen']); ?>)
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                    <small>Tuyến đường dự kiến mà phương tiện này sẽ chạy, giúp dễ dàng chọn xe khi sinh chuyến.</small>
+                </div>
             </div>
 
             <div class="form-actions">

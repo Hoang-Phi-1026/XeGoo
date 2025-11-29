@@ -635,7 +635,7 @@ class ScheduleController {
      * Get available vehicles for trip generation
      */
     private function getAvailableVehicles() {
-        $sql = "SELECT p.maPhuongTien, p.bienSo, lpt.tenLoaiPhuongTien, lpt.soChoMacDinh, lpt.loaiChoNgoiMacDinh FROM phuongtien p JOIN loaiphuongtien lpt ON p.maLoaiPhuongTien = lpt.maLoaiPhuongTien WHERE p.trangThai = 'Đang hoạt động' ORDER BY lpt.tenLoaiPhuongTien, p.bienSo";
+        $sql = "SELECT p.maPhuongTien, p.bienSo, p.tuyen_hoat_dong_du_kien, lpt.tenLoaiPhuongTien, lpt.soChoMacDinh, lpt.loaiChoNgoiMacDinh FROM phuongtien p JOIN loaiphuongtien lpt ON p.maLoaiPhuongTien = lpt.maLoaiPhuongTien WHERE p.trangThai = 'Đang hoạt động' ORDER BY lpt.tenLoaiPhuongTien, p.bienSo";
         return fetchAll($sql);
     }
 }

@@ -112,15 +112,17 @@ class Vehicle {
     
     /**
      * Create new vehicle
+     * Added tuyen_hoat_dong_du_kien parameter to insert statement
      */
     public static function create($data) {
-        $sql = "INSERT INTO phuongtien (maLoaiPhuongTien, bienSo, trangThai) 
-                VALUES (?, ?, ?)";
+        $sql = "INSERT INTO phuongtien (maLoaiPhuongTien, bienSo, trangThai, tuyen_hoat_dong_du_kien) 
+                VALUES (?, ?, ?, ?)";
         
         $params = [
             $data['maLoaiPhuongTien'],
             $data['bienSo'],
-            $data['trangThai'] ?? 'Đang hoạt động'
+            $data['trangThai'] ?? 'Đang hoạt động',
+            $data['tuyen_hoat_dong_du_kien'] ?? null
         ];
         
         query($sql, $params);
@@ -135,16 +137,18 @@ class Vehicle {
     
     /**
      * Update vehicle
+     * Added tuyen_hoat_dong_du_kien to update statement
      */
     public static function update($id, $data) {
         $sql = "UPDATE phuongtien 
-                SET maLoaiPhuongTien = ?, bienSo = ?, trangThai = ?
+                SET maLoaiPhuongTien = ?, bienSo = ?, trangThai = ?, tuyen_hoat_dong_du_kien = ?
                 WHERE maPhuongTien = ?";
         
         $params = [
             $data['maLoaiPhuongTien'],
             $data['bienSo'],
             $data['trangThai'],
+            $data['tuyen_hoat_dong_du_kien'] ?? null,
             $id
         ];
         
@@ -322,3 +326,4 @@ class Vehicle {
         }
     }
 }
+?>

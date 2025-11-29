@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../models/Vehicle.php';
+require_once __DIR__ . '/../models/Route.php';
 require_once __DIR__ . '/../config/config.php';
 
 class VehicleController {
@@ -72,18 +73,21 @@ class VehicleController {
     
     /**
      * Show add vehicle form
+     * Added routes to the form for route selection
      */
     public function create() {
         $this->checkAdminAccess();
         
         $vehicleTypes = Vehicle::getVehicleTypes();
         $statusOptions = Vehicle::getStatusOptions();
+        $routes = Route::getAll('Đang hoạt động');
         
         include __DIR__ . '/../views/vehicles/create.php';
     }
     
     /**
      * Handle add vehicle form submission
+     * Added handling for tuyen_hoat_dong_du_kien
      */
     public function store() {
         $this->checkAdminAccess();
@@ -119,6 +123,8 @@ class VehicleController {
         // Status
         $data['trangThai'] = $_POST['trangThai'] ?? 'Đang hoạt động';
         
+        $data['tuyen_hoat_dong_du_kien'] = $_POST['tuyen_hoat_dong_du_kien'] ?? null;
+        
         if (!empty($errors)) {
             $_SESSION['error'] = implode('<br>', $errors);
             $_SESSION['form_data'] = $_POST;
@@ -141,6 +147,7 @@ class VehicleController {
     
     /**
      * Show edit vehicle form
+     * Added routes to the form for route selection
      */
     public function edit($id) {
         $this->checkAdminAccess();
@@ -155,12 +162,14 @@ class VehicleController {
         
         $vehicleTypes = Vehicle::getVehicleTypes();
         $statusOptions = Vehicle::getStatusOptions();
+        $routes = Route::getAll('Đang hoạt động');
         
         include __DIR__ . '/../views/vehicles/edit.php';
     }
     
     /**
      * Handle edit vehicle form submission
+     * Added handling for tuyen_hoat_dong_du_kien
      */
     public function update($id) {
         $this->checkAdminAccess();
@@ -202,6 +211,8 @@ class VehicleController {
         
         // Status
         $data['trangThai'] = $_POST['trangThai'] ?? 'Đang hoạt động';
+        
+        $data['tuyen_hoat_dong_du_kien'] = $_POST['tuyen_hoat_dong_du_kien'] ?? null;
         
         if ($data['trangThai'] === 'Bảo trì' && $vehicle['trangThai'] !== 'Bảo trì') {
             if (Vehicle::hasTripsWithBookings($id)) {
