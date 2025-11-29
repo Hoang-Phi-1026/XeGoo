@@ -26,8 +26,8 @@ class TripController {
         $vehicleFilter = $_GET['vehicle'] ?? null;
         $statusFilter = $_GET['status'] ?? null;
         $search = $_GET['search'] ?? '';
-        $fromDate = $_GET['from_date'] ?? '';
-        $toDate = $_GET['to_date'] ?? '';
+        $fromDate = $_GET['from_date'] ?? date('Y-m-01'); // First day of current month
+        $toDate = $_GET['to_date'] ?? date('Y-m-d'); // Today
         $routeFilter = $_GET['route'] ?? '';
         
         // Get trips with new filters

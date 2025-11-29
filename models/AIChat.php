@@ -1,10 +1,9 @@
 <?php
 require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../config/config.php';
 
 class AIChat {
     private $db;
-    private const GEMINI_API_KEY = 'AIzaSyAg6zoJgGaDnc0yKzJxxHwkMXxomt3C-oo';
-    private const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent';
     private $conversationHistory = [];
     private $lastSearchResults = null;
 
@@ -518,7 +517,7 @@ class AIChat {
             'contents' => [['parts' => [['text' => $prompt]]]]
         ];
 
-        $ch = curl_init(self::GEMINI_API_URL . '?key=' . self::GEMINI_API_KEY);
+        $ch = curl_init(GEMINI_API_URL . '?key=' . GEMINI_API_KEY);
         curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
