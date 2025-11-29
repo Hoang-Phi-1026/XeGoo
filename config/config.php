@@ -64,7 +64,7 @@ if (!defined('RECAPTCHA_SECRET_KEY')) {
 }
 if (!defined('GEMINI_API_KEY')) {
     // IMPORTANT: Move this to environment variable or .env file in production
-    define('GEMINI_API_KEY', getenv('GEMINI_API_KEY') ?: 'AIzaSyDkdLvDZiFLe3mXBofuYj8sbWDMoknChXw');
+    define('GEMINI_API_KEY', getenv('GEMINI_API_KEY') ?: '****');
 }
 if (!defined('GEMINI_API_URL')) {
     define('GEMINI_API_URL', 'https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent');
